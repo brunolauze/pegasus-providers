@@ -55,12 +55,19 @@ CIMInstance UNIX_MemoryOnCardProvider::constructInstance(
 			CIMName("UNIX_MemoryOnCard"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_Container Properties
+	if (_p.getLocationWithinContainer(p)) inst.addProperty(p);
+
+	//CIM_PackagedComponent Properties
+
+	//CIM_MemoryOnCard Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MemoryOnCardProvider::constructKeyBindings(const UNIX_MemoryOnCard& _p)

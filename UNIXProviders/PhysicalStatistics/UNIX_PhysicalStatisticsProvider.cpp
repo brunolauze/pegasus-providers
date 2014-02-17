@@ -55,12 +55,14 @@ CIMInstance UNIX_PhysicalStatisticsProvider::constructInstance(
 			CIMName("UNIX_PhysicalStatistics"),
 			constructKeyBindings(_p)));
 
+	//CIM_Statistics Properties
 	if (_p.getStats(p)) inst.addProperty(p);
 	if (_p.getElement(p)) inst.addProperty(p);
 
+	//CIM_PhysicalStatistics Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PhysicalStatisticsProvider::constructKeyBindings(const UNIX_PhysicalStatistics& _p)

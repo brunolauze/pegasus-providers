@@ -55,13 +55,18 @@ CIMInstance UNIX_ChassisInRackProvider::constructInstance(
 			CIMName("UNIX_ChassisInRack"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
+
+	//CIM_Container Properties
+	if (_p.getLocationWithinContainer(p)) inst.addProperty(p);
+
+	//CIM_ChassisInRack Properties
 	if (_p.getBottomU(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ChassisInRackProvider::constructKeyBindings(const UNIX_ChassisInRack& _p)

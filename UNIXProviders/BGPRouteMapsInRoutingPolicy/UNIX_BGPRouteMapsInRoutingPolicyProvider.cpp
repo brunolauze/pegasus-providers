@@ -55,13 +55,15 @@ CIMInstance UNIX_BGPRouteMapsInRoutingPolicyProvider::constructInstance(
 			CIMName("UNIX_BGPRouteMapsInRoutingPolicy"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
+
+	//CIM_BGPRouteMapsInRoutingPolicy Properties
 	if (_p.getMapSequence(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BGPRouteMapsInRoutingPolicyProvider::constructKeyBindings(const UNIX_BGPRouteMapsInRoutingPolicy& _p)

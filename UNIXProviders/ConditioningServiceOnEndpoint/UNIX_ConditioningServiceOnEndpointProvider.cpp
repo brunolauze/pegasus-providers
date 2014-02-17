@@ -55,13 +55,15 @@ CIMInstance UNIX_ConditioningServiceOnEndpointProvider::constructInstance(
 			CIMName("UNIX_ConditioningServiceOnEndpoint"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_ConditioningServiceOnEndpoint Properties
 	if (_p.getServiceType(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ConditioningServiceOnEndpointProvider::constructKeyBindings(const UNIX_ConditioningServiceOnEndpoint& _p)

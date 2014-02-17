@@ -55,12 +55,14 @@ CIMInstance UNIX_RunningOSProvider::constructInstance(
 			CIMName("UNIX_RunningOS"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_RunningOS Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RunningOSProvider::constructKeyBindings(const UNIX_RunningOS& _p)

@@ -55,7 +55,24 @@ CIMInstance UNIX_SCSIInterfaceProvider::constructInstance(
 			CIMName("UNIX_SCSIInterface"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
+	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_DeviceConnection Properties
+	if (_p.getNegotiatedSpeed(p)) inst.addProperty(p);
+	if (_p.getNegotiatedDataWidth(p)) inst.addProperty(p);
+
+	//CIM_ControlledBy Properties
+	if (_p.getAccessState(p)) inst.addProperty(p);
+	if (_p.getTimeOfDeviceReset(p)) inst.addProperty(p);
+	if (_p.getNumberOfHardResets(p)) inst.addProperty(p);
+	if (_p.getNumberOfSoftResets(p)) inst.addProperty(p);
+	if (_p.getDeviceNumber(p)) inst.addProperty(p);
+	if (_p.getAccessMode(p)) inst.addProperty(p);
+	if (_p.getAccessPriority(p)) inst.addProperty(p);
+
+	//CIM_SCSIInterface Properties
 	if (_p.getSCSITimeouts(p)) inst.addProperty(p);
 	if (_p.getSCSIRetries(p)) inst.addProperty(p);
 	if (_p.getInitiatorId(p)) inst.addProperty(p);
@@ -67,8 +84,7 @@ CIMInstance UNIX_SCSIInterfaceProvider::constructInstance(
 	if (_p.getQueueDepthLimit(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SCSIInterfaceProvider::constructKeyBindings(const UNIX_SCSIInterface& _p)

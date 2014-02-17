@@ -55,14 +55,18 @@ CIMInstance UNIX_ConfederationProvider::constructInstance(
 			CIMName("UNIX_Confederation"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
+
+	//CIM_SystemComponent Properties
+
+	//CIM_Confederation Properties
 	if (_p.getParentASNumber(p)) inst.addProperty(p);
 	if (_p.getChildASNumber(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ConfederationProvider::constructKeyBindings(const UNIX_Confederation& _p)

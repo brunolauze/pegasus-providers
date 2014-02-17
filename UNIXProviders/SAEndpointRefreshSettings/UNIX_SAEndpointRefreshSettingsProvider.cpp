@@ -55,12 +55,22 @@ CIMInstance UNIX_SAEndpointRefreshSettingsProvider::constructInstance(
 			CIMName("UNIX_SAEndpointRefreshSettings"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_SAEndpointRefreshSettings Properties
 	if (_p.getRefreshThresholdSecondsPercentage(p)) inst.addProperty(p);
 	if (_p.getRefreshThresholdKbytesPercentage(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SAEndpointRefreshSettingsProvider::constructKeyBindings(const UNIX_SAEndpointRefreshSettings& _p)

@@ -55,6 +55,18 @@ CIMInstance UNIX_iSCSILoginStatisticsProvider::constructInstance(
 			CIMName("UNIX_iSCSILoginStatistics"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_iSCSILoginStatistics Properties
 	if (_p.getLoginFailures(p)) inst.addProperty(p);
 	if (_p.getLastLoginFailureTime(p)) inst.addProperty(p);
 	if (_p.getLastLoginFailureType(p)) inst.addProperty(p);
@@ -72,8 +84,7 @@ CIMInstance UNIX_iSCSILoginStatisticsProvider::constructInstance(
 	if (_p.getOtherLogouts(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_iSCSILoginStatisticsProvider::constructKeyBindings(const UNIX_iSCSILoginStatistics& _p)

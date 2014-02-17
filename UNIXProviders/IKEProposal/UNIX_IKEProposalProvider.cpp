@@ -55,6 +55,21 @@ CIMInstance UNIX_IKEProposalProvider::constructInstance(
 			CIMName("UNIX_IKEProposal"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_ScopedSettingData Properties
+
+	//CIM_SAProposal Properties
+
+	//CIM_IKEProposal Properties
 	if (_p.getMaxLifetimeSeconds(p)) inst.addProperty(p);
 	if (_p.getMaxLifetimeKilobytes(p)) inst.addProperty(p);
 	if (_p.getCipherAlgorithm(p)) inst.addProperty(p);
@@ -67,8 +82,7 @@ CIMInstance UNIX_IKEProposalProvider::constructInstance(
 	if (_p.getVendorID(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IKEProposalProvider::constructKeyBindings(const UNIX_IKEProposal& _p)

@@ -55,11 +55,54 @@ CIMInstance UNIX_ToSMarkerServiceProvider::constructInstance(
 			CIMName("UNIX_ToSMarkerService"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_LogicalElement Properties
+
+	//CIM_EnabledLogicalElement Properties
+	if (_p.getEnabledState(p)) inst.addProperty(p);
+	if (_p.getOtherEnabledState(p)) inst.addProperty(p);
+	if (_p.getRequestedState(p)) inst.addProperty(p);
+	if (_p.getEnabledDefault(p)) inst.addProperty(p);
+	if (_p.getTimeOfLastStateChange(p)) inst.addProperty(p);
+	if (_p.getAvailableRequestedStates(p)) inst.addProperty(p);
+	if (_p.getTransitioningToState(p)) inst.addProperty(p);
+
+	//CIM_Service Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPrimaryOwnerName(p)) inst.addProperty(p);
+	if (_p.getPrimaryOwnerContact(p)) inst.addProperty(p);
+	if (_p.getStartMode(p)) inst.addProperty(p);
+	if (_p.getStarted(p)) inst.addProperty(p);
+
+	//CIM_ConditioningService Properties
+	if (_p.getEnabled(p)) inst.addProperty(p);
+
+	//CIM_MarkerService Properties
+
+	//CIM_ToSMarkerService Properties
 	if (_p.getToSValue(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ToSMarkerServiceProvider::constructKeyBindings(const UNIX_ToSMarkerService& _p)

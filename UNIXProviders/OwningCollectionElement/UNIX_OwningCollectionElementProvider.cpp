@@ -55,12 +55,12 @@ CIMInstance UNIX_OwningCollectionElementProvider::constructInstance(
 			CIMName("UNIX_OwningCollectionElement"),
 			constructKeyBindings(_p)));
 
+	//CIM_OwningCollectionElement Properties
 	if (_p.getOwningElement(p)) inst.addProperty(p);
 	if (_p.getOwnedElement(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_OwningCollectionElementProvider::constructKeyBindings(const UNIX_OwningCollectionElement& _p)

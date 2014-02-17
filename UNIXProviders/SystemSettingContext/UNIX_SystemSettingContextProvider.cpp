@@ -55,12 +55,12 @@ CIMInstance UNIX_SystemSettingContextProvider::constructInstance(
 			CIMName("UNIX_SystemSettingContext"),
 			constructKeyBindings(_p)));
 
+	//CIM_SystemSettingContext Properties
 	if (_p.getContext(p)) inst.addProperty(p);
 	if (_p.getSetting(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SystemSettingContextProvider::constructKeyBindings(const UNIX_SystemSettingContext& _p)

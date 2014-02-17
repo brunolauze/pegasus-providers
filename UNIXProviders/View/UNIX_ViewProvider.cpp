@@ -55,10 +55,16 @@ CIMInstance UNIX_ViewProvider::constructInstance(
 			CIMName("UNIX_View"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_View Properties
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ViewProvider::constructKeyBindings(const UNIX_View& _p)

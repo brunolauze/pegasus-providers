@@ -55,13 +55,13 @@ CIMInstance UNIX_ExportProvider::constructInstance(
 			CIMName("UNIX_Export"),
 			constructKeyBindings(_p)));
 
+	//CIM_Export Properties
 	if (_p.getLocalFS(p)) inst.addProperty(p);
 	if (_p.getDirectory(p)) inst.addProperty(p);
 	if (_p.getExportedDirectoryName(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ExportProvider::constructKeyBindings(const UNIX_Export& _p)

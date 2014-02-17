@@ -55,14 +55,28 @@ CIMInstance UNIX_BIOSStringProvider::constructInstance(
 			CIMName("UNIX_BIOSString"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_BIOSAttribute Properties
+	if (_p.getAttributeName(p)) inst.addProperty(p);
+	if (_p.getCurrentValue(p)) inst.addProperty(p);
+	if (_p.getDefaultValue(p)) inst.addProperty(p);
+	if (_p.getPendingValue(p)) inst.addProperty(p);
+	if (_p.getIsOrderedList(p)) inst.addProperty(p);
+	if (_p.getIsReadOnly(p)) inst.addProperty(p);
+
+	//CIM_BIOSString Properties
 	if (_p.getStringType(p)) inst.addProperty(p);
 	if (_p.getMinLength(p)) inst.addProperty(p);
 	if (_p.getMaxLength(p)) inst.addProperty(p);
 	if (_p.getValueExpression(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BIOSStringProvider::constructKeyBindings(const UNIX_BIOSString& _p)

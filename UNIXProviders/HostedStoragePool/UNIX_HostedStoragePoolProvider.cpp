@@ -55,12 +55,16 @@ CIMInstance UNIX_HostedStoragePoolProvider::constructInstance(
 			CIMName("UNIX_HostedStoragePool"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_SystemComponent Properties
+
+	//CIM_HostedStoragePool Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_HostedStoragePoolProvider::constructKeyBindings(const UNIX_HostedStoragePool& _p)

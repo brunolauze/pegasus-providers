@@ -55,6 +55,65 @@ CIMInstance UNIX_FibreChannelAdapterProvider::constructInstance(
 			CIMName("UNIX_FibreChannelAdapter"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_LogicalElement Properties
+
+	//CIM_EnabledLogicalElement Properties
+	if (_p.getEnabledState(p)) inst.addProperty(p);
+	if (_p.getOtherEnabledState(p)) inst.addProperty(p);
+	if (_p.getRequestedState(p)) inst.addProperty(p);
+	if (_p.getEnabledDefault(p)) inst.addProperty(p);
+	if (_p.getTimeOfLastStateChange(p)) inst.addProperty(p);
+	if (_p.getAvailableRequestedStates(p)) inst.addProperty(p);
+	if (_p.getTransitioningToState(p)) inst.addProperty(p);
+
+	//CIM_LogicalDevice Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getDeviceID(p)) inst.addProperty(p);
+	if (_p.getPowerManagementSupported(p)) inst.addProperty(p);
+	if (_p.getPowerManagementCapabilities(p)) inst.addProperty(p);
+	if (_p.getAvailability(p)) inst.addProperty(p);
+	if (_p.getStatusInfo(p)) inst.addProperty(p);
+	if (_p.getLastErrorCode(p)) inst.addProperty(p);
+	if (_p.getErrorDescription(p)) inst.addProperty(p);
+	if (_p.getErrorCleared(p)) inst.addProperty(p);
+	if (_p.getOtherIdentifyingInfo(p)) inst.addProperty(p);
+	if (_p.getPowerOnHours(p)) inst.addProperty(p);
+	if (_p.getTotalPowerOnHours(p)) inst.addProperty(p);
+	if (_p.getIdentifyingDescriptions(p)) inst.addProperty(p);
+	if (_p.getAdditionalAvailability(p)) inst.addProperty(p);
+	if (_p.getMaxQuiesceTime(p)) inst.addProperty(p);
+
+	//CIM_NetworkAdapter Properties
+	if (_p.getPermanentAddress(p)) inst.addProperty(p);
+	if (_p.getNetworkAddresses(p)) inst.addProperty(p);
+	if (_p.getSpeed(p)) inst.addProperty(p);
+	if (_p.getMaxSpeed(p)) inst.addProperty(p);
+	if (_p.getFullDuplex(p)) inst.addProperty(p);
+	if (_p.getAutoSense(p)) inst.addProperty(p);
+	if (_p.getOctetsTransmitted(p)) inst.addProperty(p);
+	if (_p.getOctetsReceived(p)) inst.addProperty(p);
+
+	//CIM_FibreChannelAdapter Properties
 	if (_p.getMaxFrameSize(p)) inst.addProperty(p);
 	if (_p.getSupportedCOS(p)) inst.addProperty(p);
 	if (_p.getFC4TypesSupported(p)) inst.addProperty(p);
@@ -88,8 +147,7 @@ CIMInstance UNIX_FibreChannelAdapterProvider::constructInstance(
 	if (_p.getOutOfOrderFramesReceived(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_FibreChannelAdapterProvider::constructKeyBindings(const UNIX_FibreChannelAdapter& _p)

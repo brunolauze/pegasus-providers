@@ -55,12 +55,14 @@ CIMInstance UNIX_SwitchPortDynamicForwardingProvider::constructInstance(
 			CIMName("UNIX_SwitchPortDynamicForwarding"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_SwitchPortDynamicForwarding Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SwitchPortDynamicForwardingProvider::constructKeyBindings(const UNIX_SwitchPortDynamicForwarding& _p)

@@ -55,13 +55,15 @@ CIMInstance UNIX_SnapshotOfExtentProvider::constructInstance(
 			CIMName("UNIX_SnapshotOfExtent"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_SnapshotOfExtent Properties
 	if (_p.getSnapshotType(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SnapshotOfExtentProvider::constructKeyBindings(const UNIX_SnapshotOfExtent& _p)

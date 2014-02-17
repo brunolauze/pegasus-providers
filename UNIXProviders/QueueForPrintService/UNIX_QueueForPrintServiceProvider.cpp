@@ -55,13 +55,15 @@ CIMInstance UNIX_QueueForPrintServiceProvider::constructInstance(
 			CIMName("UNIX_QueueForPrintService"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_QueueForPrintService Properties
 	if (_p.getQueueAcceptingFromService(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_QueueForPrintServiceProvider::constructKeyBindings(const UNIX_QueueForPrintService& _p)

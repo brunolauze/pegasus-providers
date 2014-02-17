@@ -55,7 +55,21 @@ CIMInstance UNIX_MemoryErrorProvider::constructInstance(
 			CIMName("UNIX_MemoryError"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StorageError Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getDeviceCreationClassName(p)) inst.addProperty(p);
+	if (_p.getDeviceID(p)) inst.addProperty(p);
 	if (_p.getStartingAddress(p)) inst.addProperty(p);
+	if (_p.getEndingAddress(p)) inst.addProperty(p);
+
+	//CIM_MemoryError Properties
 	if (_p.getErrorInfo(p)) inst.addProperty(p);
 	if (_p.getOtherErrorDescription(p)) inst.addProperty(p);
 	if (_p.getCorrectableError(p)) inst.addProperty(p);
@@ -69,8 +83,7 @@ CIMInstance UNIX_MemoryErrorProvider::constructInstance(
 	if (_p.getAdditionalErrorData(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MemoryErrorProvider::constructKeyBindings(const UNIX_MemoryError& _p)

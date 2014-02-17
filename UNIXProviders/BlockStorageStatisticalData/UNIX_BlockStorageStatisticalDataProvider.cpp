@@ -55,6 +55,18 @@ CIMInstance UNIX_BlockStorageStatisticalDataProvider::constructInstance(
 			CIMName("UNIX_BlockStorageStatisticalData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_BlockStorageStatisticalData Properties
 	if (_p.getElementType(p)) inst.addProperty(p);
 	if (_p.getTotalIOs(p)) inst.addProperty(p);
 	if (_p.getKBytesTransferred(p)) inst.addProperty(p);
@@ -74,8 +86,7 @@ CIMInstance UNIX_BlockStorageStatisticalDataProvider::constructInstance(
 	if (_p.getMaintTimeCounter(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BlockStorageStatisticalDataProvider::constructKeyBindings(const UNIX_BlockStorageStatisticalData& _p)

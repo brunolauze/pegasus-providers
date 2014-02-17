@@ -55,7 +55,13 @@ CIMInstance UNIX_BaseMetricValueProvider::constructInstance(
 			CIMName("UNIX_BaseMetricValue"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_BaseMetricValue Properties
 	if (_p.getMetricDefinitionId(p)) inst.addProperty(p);
 	if (_p.getMeasuredElementName(p)) inst.addProperty(p);
 	if (_p.getTimeStamp(p)) inst.addProperty(p);
@@ -66,8 +72,7 @@ CIMInstance UNIX_BaseMetricValueProvider::constructInstance(
 	if (_p.getVolatile(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BaseMetricValueProvider::constructKeyBindings(const UNIX_BaseMetricValue& _p)

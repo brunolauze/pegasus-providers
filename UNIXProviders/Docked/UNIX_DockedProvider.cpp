@@ -55,12 +55,14 @@ CIMInstance UNIX_DockedProvider::constructInstance(
 			CIMName("UNIX_Docked"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_Docked Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DockedProvider::constructKeyBindings(const UNIX_Docked& _p)

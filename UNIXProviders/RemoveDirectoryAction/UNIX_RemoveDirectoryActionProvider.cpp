@@ -55,11 +55,29 @@ CIMInstance UNIX_RemoveDirectoryActionProvider::constructInstance(
 			CIMName("UNIX_RemoveDirectoryAction"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Action Properties
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getVersion(p)) inst.addProperty(p);
+	if (_p.getSoftwareElementState(p)) inst.addProperty(p);
+	if (_p.getSoftwareElementID(p)) inst.addProperty(p);
+	if (_p.getTargetOperatingSystem(p)) inst.addProperty(p);
+	if (_p.getActionID(p)) inst.addProperty(p);
+	if (_p.getDirection(p)) inst.addProperty(p);
+
+	//CIM_DirectoryAction Properties
+	if (_p.getDirectoryName(p)) inst.addProperty(p);
+
+	//CIM_RemoveDirectoryAction Properties
 	if (_p.getMustBeEmpty(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RemoveDirectoryActionProvider::constructKeyBindings(const UNIX_RemoveDirectoryAction& _p)

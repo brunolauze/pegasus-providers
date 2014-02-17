@@ -55,12 +55,16 @@ CIMInstance UNIX_SwitchServiceVLANProvider::constructInstance(
 			CIMName("UNIX_SwitchServiceVLAN"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_ServiceComponent Properties
+
+	//CIM_SwitchServiceVLAN Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SwitchServiceVLANProvider::constructKeyBindings(const UNIX_SwitchServiceVLAN& _p)

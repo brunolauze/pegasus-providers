@@ -55,8 +55,13 @@ CIMInstance UNIX_SwitchPortSpanningTreeProvider::constructInstance(
 			CIMName("UNIX_SwitchPortSpanningTree"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_ServiceSAPDependency Properties
+
+	//CIM_SwitchPortSpanningTree Properties
 	if (_p.getPriority(p)) inst.addProperty(p);
 	if (_p.getState(p)) inst.addProperty(p);
 	if (_p.getEnable(p)) inst.addProperty(p);
@@ -67,8 +72,7 @@ CIMInstance UNIX_SwitchPortSpanningTreeProvider::constructInstance(
 	if (_p.getDesignatedPort(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SwitchPortSpanningTreeProvider::constructKeyBindings(const UNIX_SwitchPortSpanningTree& _p)

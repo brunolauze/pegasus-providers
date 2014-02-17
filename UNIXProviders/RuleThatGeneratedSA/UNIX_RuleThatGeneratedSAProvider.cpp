@@ -55,12 +55,14 @@ CIMInstance UNIX_RuleThatGeneratedSAProvider::constructInstance(
 			CIMName("UNIX_RuleThatGeneratedSA"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_RuleThatGeneratedSA Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RuleThatGeneratedSAProvider::constructKeyBindings(const UNIX_RuleThatGeneratedSA& _p)

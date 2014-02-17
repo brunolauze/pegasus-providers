@@ -55,12 +55,16 @@ CIMInstance UNIX_ExtentInDiskGroupProvider::constructInstance(
 			CIMName("UNIX_ExtentInDiskGroup"),
 			constructKeyBindings(_p)));
 
+	//CIM_MemberOfCollection Properties
 	if (_p.getCollection(p)) inst.addProperty(p);
 	if (_p.getMember(p)) inst.addProperty(p);
 
+	//CIM_CollectedMSEs Properties
+
+	//CIM_ExtentInDiskGroup Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ExtentInDiskGroupProvider::constructKeyBindings(const UNIX_ExtentInDiskGroup& _p)

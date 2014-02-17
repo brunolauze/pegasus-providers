@@ -55,6 +55,18 @@ CIMInstance UNIX_FCPortRateStatisticsProvider::constructInstance(
 			CIMName("UNIX_FCPortRateStatistics"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_FCPortRateStatistics Properties
 	if (_p.getTxFrameRate(p)) inst.addProperty(p);
 	if (_p.getRxFrameRate(p)) inst.addProperty(p);
 	if (_p.getMaxTxFrameRate(p)) inst.addProperty(p);
@@ -65,8 +77,7 @@ CIMInstance UNIX_FCPortRateStatisticsProvider::constructInstance(
 	if (_p.getPeakRxRate(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_FCPortRateStatisticsProvider::constructKeyBindings(const UNIX_FCPortRateStatistics& _p)

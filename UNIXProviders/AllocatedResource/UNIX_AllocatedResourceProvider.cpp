@@ -55,12 +55,14 @@ CIMInstance UNIX_AllocatedResourceProvider::constructInstance(
 			CIMName("UNIX_AllocatedResource"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_AllocatedResource Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AllocatedResourceProvider::constructKeyBindings(const UNIX_AllocatedResource& _p)

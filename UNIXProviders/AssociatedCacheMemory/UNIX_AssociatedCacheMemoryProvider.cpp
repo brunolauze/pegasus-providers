@@ -55,6 +55,13 @@ CIMInstance UNIX_AssociatedCacheMemoryProvider::constructInstance(
 			CIMName("UNIX_AssociatedCacheMemory"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
+	if (_p.getAntecedent(p)) inst.addProperty(p);
+	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_AssociatedMemory Properties
+
+	//CIM_AssociatedCacheMemory Properties
 	if (_p.getLevel(p)) inst.addProperty(p);
 	if (_p.getOtherLevelDescription(p)) inst.addProperty(p);
 	if (_p.getWritePolicy(p)) inst.addProperty(p);
@@ -71,8 +78,7 @@ CIMInstance UNIX_AssociatedCacheMemoryProvider::constructInstance(
 	if (_p.getOtherAssociativityDescription(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AssociatedCacheMemoryProvider::constructKeyBindings(const UNIX_AssociatedCacheMemory& _p)

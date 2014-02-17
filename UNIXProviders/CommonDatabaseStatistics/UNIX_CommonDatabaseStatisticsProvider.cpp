@@ -55,11 +55,22 @@ CIMInstance UNIX_CommonDatabaseStatisticsProvider::constructInstance(
 			CIMName("UNIX_CommonDatabaseStatistics"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_CommonDatabaseStatistics Properties
 	if (_p.getSizeUsed(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CommonDatabaseStatisticsProvider::constructKeyBindings(const UNIX_CommonDatabaseStatistics& _p)

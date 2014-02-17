@@ -55,12 +55,14 @@ CIMInstance UNIX_SuppliesPowerProvider::constructInstance(
 			CIMName("UNIX_SuppliesPower"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_SuppliesPower Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SuppliesPowerProvider::constructKeyBindings(const UNIX_SuppliesPower& _p)

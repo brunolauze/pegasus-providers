@@ -55,12 +55,14 @@ CIMInstance UNIX_DiagnosticTestSoftwareProvider::constructInstance(
 			CIMName("UNIX_DiagnosticTestSoftware"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_DiagnosticTestSoftware Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DiagnosticTestSoftwareProvider::constructKeyBindings(const UNIX_DiagnosticTestSoftware& _p)

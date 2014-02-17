@@ -55,13 +55,15 @@ CIMInstance UNIX_ContainedProposalProvider::constructInstance(
 			CIMName("UNIX_ContainedProposal"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
+
+	//CIM_ContainedProposal Properties
 	if (_p.getSequenceNumber(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ContainedProposalProvider::constructKeyBindings(const UNIX_ContainedProposal& _p)

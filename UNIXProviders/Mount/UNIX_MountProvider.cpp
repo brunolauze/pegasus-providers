@@ -55,12 +55,14 @@ CIMInstance UNIX_MountProvider::constructInstance(
 			CIMName("UNIX_Mount"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_Mount Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MountProvider::constructKeyBindings(const UNIX_Mount& _p)

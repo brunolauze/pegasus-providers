@@ -55,13 +55,15 @@ CIMInstance UNIX_NetworkPipeCompositionProvider::constructInstance(
 			CIMName("UNIX_NetworkPipeComposition"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
+
+	//CIM_NetworkPipeComposition Properties
 	if (_p.getAggregationSequence(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NetworkPipeCompositionProvider::constructKeyBindings(const UNIX_NetworkPipeComposition& _p)

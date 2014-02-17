@@ -55,6 +55,19 @@ CIMInstance UNIX_DatabaseSegmentSettingDataProvider::constructInstance(
 			CIMName("UNIX_DatabaseSegmentSettingData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_ScopedSettingData Properties
+
+	//CIM_DatabaseSegmentSettingData Properties
 	if (_p.getInitialExtentSize(p)) inst.addProperty(p);
 	if (_p.getMinimumExtents(p)) inst.addProperty(p);
 	if (_p.getMaximumExtents(p)) inst.addProperty(p);
@@ -63,8 +76,7 @@ CIMInstance UNIX_DatabaseSegmentSettingDataProvider::constructInstance(
 	if (_p.getNumberOfFreeLists(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DatabaseSegmentSettingDataProvider::constructKeyBindings(const UNIX_DatabaseSegmentSettingData& _p)

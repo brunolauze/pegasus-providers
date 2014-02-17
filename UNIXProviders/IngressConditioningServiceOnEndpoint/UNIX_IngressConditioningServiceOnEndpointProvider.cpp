@@ -55,12 +55,16 @@ CIMInstance UNIX_IngressConditioningServiceOnEndpointProvider::constructInstance
 			CIMName("UNIX_IngressConditioningServiceOnEndpoint"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ServiceSAPDependency Properties
+
+	//CIM_IngressConditioningServiceOnEndpoint Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IngressConditioningServiceOnEndpointProvider::constructKeyBindings(const UNIX_IngressConditioningServiceOnEndpoint& _p)

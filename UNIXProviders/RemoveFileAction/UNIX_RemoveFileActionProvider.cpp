@@ -55,11 +55,28 @@ CIMInstance UNIX_RemoveFileActionProvider::constructInstance(
 			CIMName("UNIX_RemoveFileAction"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Action Properties
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getVersion(p)) inst.addProperty(p);
+	if (_p.getSoftwareElementState(p)) inst.addProperty(p);
+	if (_p.getSoftwareElementID(p)) inst.addProperty(p);
+	if (_p.getTargetOperatingSystem(p)) inst.addProperty(p);
+	if (_p.getActionID(p)) inst.addProperty(p);
+	if (_p.getDirection(p)) inst.addProperty(p);
+
+	//CIM_FileAction Properties
+
+	//CIM_RemoveFileAction Properties
 	if (_p.getFile(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RemoveFileActionProvider::constructKeyBindings(const UNIX_RemoveFileAction& _p)

@@ -55,13 +55,15 @@ CIMInstance UNIX_UseOfLogProvider::constructInstance(
 			CIMName("UNIX_UseOfLog"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_UseOfLog Properties
 	if (_p.getRecordedData(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_UseOfLogProvider::constructKeyBindings(const UNIX_UseOfLog& _p)

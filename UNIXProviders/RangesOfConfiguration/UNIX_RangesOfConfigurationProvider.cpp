@@ -55,13 +55,15 @@ CIMInstance UNIX_RangesOfConfigurationProvider::constructInstance(
 			CIMName("UNIX_RangesOfConfiguration"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_RangesOfConfiguration Properties
 	if (_p.getEnableAdvertise(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RangesOfConfigurationProvider::constructKeyBindings(const UNIX_RangesOfConfiguration& _p)

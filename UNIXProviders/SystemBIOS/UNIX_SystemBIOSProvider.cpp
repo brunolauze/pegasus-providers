@@ -55,12 +55,16 @@ CIMInstance UNIX_SystemBIOSProvider::constructInstance(
 			CIMName("UNIX_SystemBIOS"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_SystemComponent Properties
+
+	//CIM_SystemBIOS Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SystemBIOSProvider::constructKeyBindings(const UNIX_SystemBIOS& _p)

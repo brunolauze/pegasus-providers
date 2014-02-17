@@ -55,12 +55,14 @@ CIMInstance UNIX_ResidesOnExtentProvider::constructInstance(
 			CIMName("UNIX_ResidesOnExtent"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ResidesOnExtent Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ResidesOnExtentProvider::constructKeyBindings(const UNIX_ResidesOnExtent& _p)

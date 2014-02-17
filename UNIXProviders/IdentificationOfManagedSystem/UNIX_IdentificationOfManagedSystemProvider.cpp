@@ -55,12 +55,14 @@ CIMInstance UNIX_IdentificationOfManagedSystemProvider::constructInstance(
 			CIMName("UNIX_IdentificationOfManagedSystem"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_IdentificationOfManagedSystem Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IdentificationOfManagedSystemProvider::constructKeyBindings(const UNIX_IdentificationOfManagedSystem& _p)

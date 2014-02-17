@@ -55,6 +55,24 @@ CIMInstance UNIX_PublicKeyCertificateProvider::constructInstance(
 			CIMName("UNIX_PublicKeyCertificate"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Credential Properties
+	if (_p.getIssued(p)) inst.addProperty(p);
+	if (_p.getExpires(p)) inst.addProperty(p);
+
+	//CIM_SignedCredential Properties
+	if (_p.getIssuerName(p)) inst.addProperty(p);
+	if (_p.getSignature(p)) inst.addProperty(p);
+	if (_p.getSignatureAlgorithm(p)) inst.addProperty(p);
+	if (_p.getOtherSignatureAlgorithm(p)) inst.addProperty(p);
+	if (_p.getSignatureAlgorithmOID(p)) inst.addProperty(p);
+
+	//CIM_PublicKeyCertificate Properties
 	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
 	if (_p.getSystemName(p)) inst.addProperty(p);
 	if (_p.getServiceCreationClassName(p)) inst.addProperty(p);
@@ -64,8 +82,7 @@ CIMInstance UNIX_PublicKeyCertificateProvider::constructInstance(
 	if (_p.getPublicKey(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PublicKeyCertificateProvider::constructKeyBindings(const UNIX_PublicKeyCertificate& _p)

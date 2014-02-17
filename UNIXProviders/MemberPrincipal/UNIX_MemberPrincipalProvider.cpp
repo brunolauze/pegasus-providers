@@ -55,13 +55,15 @@ CIMInstance UNIX_MemberPrincipalProvider::constructInstance(
 			CIMName("UNIX_MemberPrincipal"),
 			constructKeyBindings(_p)));
 
+	//CIM_MemberOfCollection Properties
 	if (_p.getCollection(p)) inst.addProperty(p);
 	if (_p.getMember(p)) inst.addProperty(p);
+
+	//CIM_MemberPrincipal Properties
 	if (_p.getUserAccessBy(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MemberPrincipalProvider::constructKeyBindings(const UNIX_MemberPrincipal& _p)

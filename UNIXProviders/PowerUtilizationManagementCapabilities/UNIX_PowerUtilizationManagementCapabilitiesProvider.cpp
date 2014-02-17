@@ -55,12 +55,26 @@ CIMInstance UNIX_PowerUtilizationManagementCapabilitiesProvider::constructInstan
 			CIMName("UNIX_PowerUtilizationManagementCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_EnabledLogicalElementCapabilities Properties
+	if (_p.getElementNameEditSupported(p)) inst.addProperty(p);
+	if (_p.getMaxElementNameLen(p)) inst.addProperty(p);
+	if (_p.getRequestedStatesSupported(p)) inst.addProperty(p);
+	if (_p.getElementNameMask(p)) inst.addProperty(p);
+
+	//CIM_PowerUtilizationManagementCapabilities Properties
 	if (_p.getPowerUtilizationModesSupported(p)) inst.addProperty(p);
 	if (_p.getSupportedMethods(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PowerUtilizationManagementCapabilitiesProvider::constructKeyBindings(const UNIX_PowerUtilizationManagementCapabilities& _p)

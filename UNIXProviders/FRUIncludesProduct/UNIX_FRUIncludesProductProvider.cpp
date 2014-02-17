@@ -55,12 +55,12 @@ CIMInstance UNIX_FRUIncludesProductProvider::constructInstance(
 			CIMName("UNIX_FRUIncludesProduct"),
 			constructKeyBindings(_p)));
 
+	//CIM_FRUIncludesProduct Properties
 	if (_p.getFRU(p)) inst.addProperty(p);
 	if (_p.getComponent(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_FRUIncludesProductProvider::constructKeyBindings(const UNIX_FRUIncludesProduct& _p)

@@ -55,12 +55,16 @@ CIMInstance UNIX_RelatedTransparentBridgingServiceProvider::constructInstance(
 			CIMName("UNIX_RelatedTransparentBridgingService"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ServiceSAPDependency Properties
+
+	//CIM_RelatedTransparentBridgingService Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RelatedTransparentBridgingServiceProvider::constructKeyBindings(const UNIX_RelatedTransparentBridgingService& _p)

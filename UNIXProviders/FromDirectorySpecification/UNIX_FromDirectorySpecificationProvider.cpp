@@ -55,12 +55,12 @@ CIMInstance UNIX_FromDirectorySpecificationProvider::constructInstance(
 			CIMName("UNIX_FromDirectorySpecification"),
 			constructKeyBindings(_p)));
 
+	//CIM_FromDirectorySpecification Properties
 	if (_p.getSourceDirectory(p)) inst.addProperty(p);
 	if (_p.getFileName(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_FromDirectorySpecificationProvider::constructKeyBindings(const UNIX_FromDirectorySpecification& _p)

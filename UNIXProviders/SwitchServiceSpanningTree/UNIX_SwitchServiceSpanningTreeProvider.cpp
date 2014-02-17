@@ -55,12 +55,16 @@ CIMInstance UNIX_SwitchServiceSpanningTreeProvider::constructInstance(
 			CIMName("UNIX_SwitchServiceSpanningTree"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_ServiceComponent Properties
+
+	//CIM_SwitchServiceSpanningTree Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SwitchServiceSpanningTreeProvider::constructKeyBindings(const UNIX_SwitchServiceSpanningTree& _p)

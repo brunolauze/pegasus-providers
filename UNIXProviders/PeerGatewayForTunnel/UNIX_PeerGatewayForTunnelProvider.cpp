@@ -55,13 +55,15 @@ CIMInstance UNIX_PeerGatewayForTunnelProvider::constructInstance(
 			CIMName("UNIX_PeerGatewayForTunnel"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_PeerGatewayForTunnel Properties
 	if (_p.getSequenceNumber(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PeerGatewayForTunnelProvider::constructKeyBindings(const UNIX_PeerGatewayForTunnel& _p)

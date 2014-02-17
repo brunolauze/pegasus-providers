@@ -55,11 +55,39 @@ CIMInstance UNIX_PreconfiguredTunnelActionProvider::constructInstance(
 			CIMName("UNIX_PreconfiguredTunnelAction"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Policy Properties
+	if (_p.getCommonName(p)) inst.addProperty(p);
+	if (_p.getPolicyKeywords(p)) inst.addProperty(p);
+
+	//CIM_PolicyAction Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getPolicyRuleCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPolicyRuleName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPolicyActionName(p)) inst.addProperty(p);
+	if (_p.getDoActionLogging(p)) inst.addProperty(p);
+
+	//CIM_SAAction Properties
+	if (_p.getDoPacketLogging(p)) inst.addProperty(p);
+
+	//CIM_SAStaticAction Properties
+	if (_p.getLifetimeSeconds(p)) inst.addProperty(p);
+
+	//CIM_PreconfiguredSAAction Properties
+	if (_p.getLifetimeKilobytes(p)) inst.addProperty(p);
+
+	//CIM_PreconfiguredTunnelAction Properties
 	if (_p.getDFHandling(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PreconfiguredTunnelActionProvider::constructKeyBindings(const UNIX_PreconfiguredTunnelAction& _p)

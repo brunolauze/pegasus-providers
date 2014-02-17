@@ -55,12 +55,16 @@ CIMInstance UNIX_VideoBIOSFeatureVideoBIOSElementsProvider::constructInstance(
 			CIMName("UNIX_VideoBIOSFeatureVideoBIOSElements"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_SoftwareFeatureSoftwareElements Properties
+
+	//CIM_VideoBIOSFeatureVideoBIOSElements Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_VideoBIOSFeatureVideoBIOSElementsProvider::constructKeyBindings(const UNIX_VideoBIOSFeatureVideoBIOSElements& _p)

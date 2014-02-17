@@ -55,12 +55,18 @@ CIMInstance UNIX_ForwardedRoutesProvider::constructInstance(
 			CIMName("UNIX_ForwardedRoutes"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_RouteForwardedByService Properties
+	if (_p.getAdminDistance(p)) inst.addProperty(p);
+	if (_p.getPathMetric(p)) inst.addProperty(p);
+
+	//CIM_ForwardedRoutes Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ForwardedRoutesProvider::constructKeyBindings(const UNIX_ForwardedRoutes& _p)

@@ -55,12 +55,22 @@ CIMInstance UNIX_StorageClientSettingDataProvider::constructInstance(
 			CIMName("UNIX_StorageClientSettingData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_StorageClientSettingData Properties
 	if (_p.getClientTypes(p)) inst.addProperty(p);
 	if (_p.getOtherClientTypeDescriptions(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_StorageClientSettingDataProvider::constructKeyBindings(const UNIX_StorageClientSettingData& _p)

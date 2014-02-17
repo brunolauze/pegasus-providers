@@ -55,12 +55,14 @@ CIMInstance UNIX_TransparentBridgingDynamicForwardingProvider::constructInstance
 			CIMName("UNIX_TransparentBridgingDynamicForwarding"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_TransparentBridgingDynamicForwarding Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_TransparentBridgingDynamicForwardingProvider::constructKeyBindings(const UNIX_TransparentBridgingDynamicForwarding& _p)

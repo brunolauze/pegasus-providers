@@ -55,12 +55,19 @@ CIMInstance UNIX_TapePartitionOnSurfaceProvider::constructInstance(
 			CIMName("UNIX_TapePartitionOnSurface"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_BasedOn Properties
+	if (_p.getStartingAddress(p)) inst.addProperty(p);
+	if (_p.getEndingAddress(p)) inst.addProperty(p);
+	if (_p.getOrderIndex(p)) inst.addProperty(p);
+
+	//CIM_TapePartitionOnSurface Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_TapePartitionOnSurfaceProvider::constructKeyBindings(const UNIX_TapePartitionOnSurface& _p)

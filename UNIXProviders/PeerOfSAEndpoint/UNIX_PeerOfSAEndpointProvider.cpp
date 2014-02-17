@@ -55,12 +55,14 @@ CIMInstance UNIX_PeerOfSAEndpointProvider::constructInstance(
 			CIMName("UNIX_PeerOfSAEndpoint"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_PeerOfSAEndpoint Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PeerOfSAEndpointProvider::constructKeyBindings(const UNIX_PeerOfSAEndpoint& _p)

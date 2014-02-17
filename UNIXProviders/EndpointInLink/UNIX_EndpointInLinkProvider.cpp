@@ -55,12 +55,14 @@ CIMInstance UNIX_EndpointInLinkProvider::constructInstance(
 			CIMName("UNIX_EndpointInLink"),
 			constructKeyBindings(_p)));
 
+	//CIM_MemberOfCollection Properties
 	if (_p.getCollection(p)) inst.addProperty(p);
 	if (_p.getMember(p)) inst.addProperty(p);
 
+	//CIM_EndpointInLink Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_EndpointInLinkProvider::constructKeyBindings(const UNIX_EndpointInLink& _p)

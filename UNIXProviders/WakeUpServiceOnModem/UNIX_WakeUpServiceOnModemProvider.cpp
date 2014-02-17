@@ -55,12 +55,16 @@ CIMInstance UNIX_WakeUpServiceOnModemProvider::constructInstance(
 			CIMName("UNIX_WakeUpServiceOnModem"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_DeviceServiceImplementation Properties
+
+	//CIM_WakeUpServiceOnModem Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_WakeUpServiceOnModemProvider::constructKeyBindings(const UNIX_WakeUpServiceOnModem& _p)

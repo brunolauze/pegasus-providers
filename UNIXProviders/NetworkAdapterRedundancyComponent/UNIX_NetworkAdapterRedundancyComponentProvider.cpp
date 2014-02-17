@@ -55,14 +55,18 @@ CIMInstance UNIX_NetworkAdapterRedundancyComponentProvider::constructInstance(
 			CIMName("UNIX_NetworkAdapterRedundancyComponent"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
+
+	//CIM_RedundancyComponent Properties
+
+	//CIM_NetworkAdapterRedundancyComponent Properties
 	if (_p.getScopeOfBalancing(p)) inst.addProperty(p);
 	if (_p.getPrimaryAdapter(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NetworkAdapterRedundancyComponentProvider::constructKeyBindings(const UNIX_NetworkAdapterRedundancyComponent& _p)

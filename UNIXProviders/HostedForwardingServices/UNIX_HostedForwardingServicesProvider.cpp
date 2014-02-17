@@ -55,12 +55,18 @@ CIMInstance UNIX_HostedForwardingServicesProvider::constructInstance(
 			CIMName("UNIX_HostedForwardingServices"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HostedDependency Properties
+
+	//CIM_HostedService Properties
+
+	//CIM_HostedForwardingServices Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_HostedForwardingServicesProvider::constructKeyBindings(const UNIX_HostedForwardingServices& _p)

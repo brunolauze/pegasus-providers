@@ -55,12 +55,12 @@ CIMInstance UNIX_OrgStructureProvider::constructInstance(
 			CIMName("UNIX_OrgStructure"),
 			constructKeyBindings(_p)));
 
+	//CIM_OrgStructure Properties
 	if (_p.getParent(p)) inst.addProperty(p);
 	if (_p.getChild(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_OrgStructureProvider::constructKeyBindings(const UNIX_OrgStructure& _p)

@@ -55,15 +55,20 @@ CIMInstance UNIX_SupportAccessProvider::constructInstance(
 			CIMName("UNIX_SupportAccess"),
 			constructKeyBindings(_p)));
 
-	if (_p.getSupportAccessId(p)) inst.addProperty(p);
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
 	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SupportAccess Properties
+	if (_p.getSupportAccessId(p)) inst.addProperty(p);
 	if (_p.getCommunicationInfo(p)) inst.addProperty(p);
 	if (_p.getCommunicationMode(p)) inst.addProperty(p);
 	if (_p.getLocale(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SupportAccessProvider::constructKeyBindings(const UNIX_SupportAccess& _p)

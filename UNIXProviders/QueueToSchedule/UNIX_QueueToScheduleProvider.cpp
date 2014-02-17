@@ -55,12 +55,12 @@ CIMInstance UNIX_QueueToScheduleProvider::constructInstance(
 			CIMName("UNIX_QueueToSchedule"),
 			constructKeyBindings(_p)));
 
+	//CIM_QueueToSchedule Properties
 	if (_p.getQueue(p)) inst.addProperty(p);
 	if (_p.getSchedElement(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_QueueToScheduleProvider::constructKeyBindings(const UNIX_QueueToSchedule& _p)

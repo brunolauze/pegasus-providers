@@ -55,12 +55,14 @@ CIMInstance UNIX_ReflectorClientServiceProvider::constructInstance(
 			CIMName("UNIX_ReflectorClientService"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ReflectorClientService Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ReflectorClientServiceProvider::constructKeyBindings(const UNIX_ReflectorClientService& _p)

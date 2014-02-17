@@ -55,12 +55,18 @@ CIMInstance UNIX_SwitchesAmongProvider::constructInstance(
 			CIMName("UNIX_SwitchesAmong"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ServiceSAPDependency Properties
+
+	//CIM_ForwardsAmong Properties
+
+	//CIM_SwitchesAmong Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SwitchesAmongProvider::constructKeyBindings(const UNIX_SwitchesAmong& _p)

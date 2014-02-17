@@ -55,12 +55,12 @@ CIMInstance UNIX_AuthorizedSubjectProvider::constructInstance(
 			CIMName("UNIX_AuthorizedSubject"),
 			constructKeyBindings(_p)));
 
+	//CIM_AuthorizedSubject Properties
 	if (_p.getPrivilege(p)) inst.addProperty(p);
 	if (_p.getPrivilegedElement(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AuthorizedSubjectProvider::constructKeyBindings(const UNIX_AuthorizedSubject& _p)

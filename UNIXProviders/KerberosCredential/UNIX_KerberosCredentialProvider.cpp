@@ -55,14 +55,23 @@ CIMInstance UNIX_KerberosCredentialProvider::constructInstance(
 			CIMName("UNIX_KerberosCredential"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Credential Properties
+	if (_p.getIssued(p)) inst.addProperty(p);
+	if (_p.getExpires(p)) inst.addProperty(p);
+
+	//CIM_KerberosCredential Properties
 	if (_p.getAccessesService(p)) inst.addProperty(p);
 	if (_p.getRemoteID(p)) inst.addProperty(p);
 	if (_p.getTicketType(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_KerberosCredentialProvider::constructKeyBindings(const UNIX_KerberosCredential& _p)

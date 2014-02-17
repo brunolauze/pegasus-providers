@@ -55,12 +55,14 @@ CIMInstance UNIX_BGPServiceAttributesProvider::constructInstance(
 			CIMName("UNIX_BGPServiceAttributes"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_BGPServiceAttributes Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BGPServiceAttributesProvider::constructKeyBindings(const UNIX_BGPServiceAttributes& _p)

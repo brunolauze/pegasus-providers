@@ -55,12 +55,14 @@ CIMInstance UNIX_Phase1SAUsedForPhase2Provider::constructInstance(
 			CIMName("UNIX_Phase1SAUsedForPhase2"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_Phase1SAUsedForPhase2 Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_Phase1SAUsedForPhase2Provider::constructKeyBindings(const UNIX_Phase1SAUsedForPhase2& _p)

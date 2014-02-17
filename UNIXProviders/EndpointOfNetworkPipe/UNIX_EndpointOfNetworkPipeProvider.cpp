@@ -55,13 +55,15 @@ CIMInstance UNIX_EndpointOfNetworkPipeProvider::constructInstance(
 			CIMName("UNIX_EndpointOfNetworkPipe"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_EndpointOfNetworkPipe Properties
 	if (_p.getSourceOrSink(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_EndpointOfNetworkPipeProvider::constructKeyBindings(const UNIX_EndpointOfNetworkPipe& _p)

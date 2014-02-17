@@ -55,12 +55,14 @@ CIMInstance UNIX_FilterOfSecurityAssociationProvider::constructInstance(
 			CIMName("UNIX_FilterOfSecurityAssociation"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_FilterOfSecurityAssociation Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_FilterOfSecurityAssociationProvider::constructKeyBindings(const UNIX_FilterOfSecurityAssociation& _p)

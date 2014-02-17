@@ -55,14 +55,24 @@ CIMInstance UNIX_BlockStatisticsCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_BlockStatisticsCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_StatisticsCapabilities Properties
 	if (_p.getElementTypesSupported(p)) inst.addProperty(p);
 	if (_p.getSynchronousMethodsSupported(p)) inst.addProperty(p);
 	if (_p.getAsynchronousMethodsSupported(p)) inst.addProperty(p);
+
+	//CIM_BlockStatisticsCapabilities Properties
 	if (_p.getClockTickInterval(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BlockStatisticsCapabilitiesProvider::constructKeyBindings(const UNIX_BlockStatisticsCapabilities& _p)

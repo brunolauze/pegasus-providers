@@ -55,12 +55,12 @@ CIMInstance UNIX_SettingsDefineStateProvider::constructInstance(
 			CIMName("UNIX_SettingsDefineState"),
 			constructKeyBindings(_p)));
 
+	//CIM_SettingsDefineState Properties
 	if (_p.getManagedElement(p)) inst.addProperty(p);
 	if (_p.getSettingData(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SettingsDefineStateProvider::constructKeyBindings(const UNIX_SettingsDefineState& _p)

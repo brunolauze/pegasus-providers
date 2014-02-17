@@ -55,13 +55,15 @@ CIMInstance UNIX_ClassifierFilterSetProvider::constructInstance(
 			CIMName("UNIX_ClassifierFilterSet"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_ClassifierFilterSet Properties
 	if (_p.getFilterListPosition(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ClassifierFilterSetProvider::constructKeyBindings(const UNIX_ClassifierFilterSet& _p)

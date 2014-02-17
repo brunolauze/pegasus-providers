@@ -55,12 +55,14 @@ CIMInstance UNIX_MetricForMEProvider::constructInstance(
 			CIMName("UNIX_MetricForME"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_MetricForME Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MetricForMEProvider::constructKeyBindings(const UNIX_MetricForME& _p)

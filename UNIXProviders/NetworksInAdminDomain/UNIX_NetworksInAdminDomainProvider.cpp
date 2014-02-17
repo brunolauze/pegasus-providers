@@ -55,12 +55,12 @@ CIMInstance UNIX_NetworksInAdminDomainProvider::constructInstance(
 			CIMName("UNIX_NetworksInAdminDomain"),
 			constructKeyBindings(_p)));
 
+	//CIM_NetworksInAdminDomain Properties
 	if (_p.getDomain(p)) inst.addProperty(p);
 	if (_p.getNetwork(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NetworksInAdminDomainProvider::constructKeyBindings(const UNIX_NetworksInAdminDomain& _p)

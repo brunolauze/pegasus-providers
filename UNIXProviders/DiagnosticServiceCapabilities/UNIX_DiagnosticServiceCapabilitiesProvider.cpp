@@ -55,6 +55,15 @@ CIMInstance UNIX_DiagnosticServiceCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_DiagnosticServiceCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_DiagnosticServiceCapabilities Properties
 	if (_p.getSupportedServiceModes(p)) inst.addProperty(p);
 	if (_p.getOtherSupportedServiceModesDescriptions(p)) inst.addProperty(p);
 	if (_p.getSupportedLoopControl(p)) inst.addProperty(p);
@@ -68,8 +77,7 @@ CIMInstance UNIX_DiagnosticServiceCapabilitiesProvider::constructInstance(
 	if (_p.getSupportedTestWarnings(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DiagnosticServiceCapabilitiesProvider::constructKeyBindings(const UNIX_DiagnosticServiceCapabilities& _p)

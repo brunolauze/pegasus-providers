@@ -55,13 +55,21 @@ CIMInstance UNIX_WRRSchedulingElementProvider::constructInstance(
 			CIMName("UNIX_WRRSchedulingElement"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SchedulingElement Properties
 	if (_p.getWorkConserving(p)) inst.addProperty(p);
+
+	//CIM_WRRSchedulingElement Properties
 	if (_p.getWeightingFactor(p)) inst.addProperty(p);
 	if (_p.getPriority(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_WRRSchedulingElementProvider::constructKeyBindings(const UNIX_WRRSchedulingElement& _p)

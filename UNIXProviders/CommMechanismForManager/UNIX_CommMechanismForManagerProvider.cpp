@@ -55,12 +55,16 @@ CIMInstance UNIX_CommMechanismForManagerProvider::constructInstance(
 			CIMName("UNIX_CommMechanismForManager"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ServiceAccessBySAP Properties
+
+	//CIM_CommMechanismForManager Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CommMechanismForManagerProvider::constructKeyBindings(const UNIX_CommMechanismForManager& _p)

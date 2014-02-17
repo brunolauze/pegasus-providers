@@ -55,12 +55,14 @@ CIMInstance UNIX_DeviceIdentityProvider::constructInstance(
 			CIMName("UNIX_DeviceIdentity"),
 			constructKeyBindings(_p)));
 
+	//CIM_LogicalIdentity Properties
 	if (_p.getSystemElement(p)) inst.addProperty(p);
 	if (_p.getSameElement(p)) inst.addProperty(p);
 
+	//CIM_DeviceIdentity Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DeviceIdentityProvider::constructKeyBindings(const UNIX_DeviceIdentity& _p)

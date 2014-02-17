@@ -55,12 +55,27 @@ CIMInstance UNIX_ExecuteProgramProvider::constructInstance(
 			CIMName("UNIX_ExecuteProgram"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Action Properties
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getVersion(p)) inst.addProperty(p);
+	if (_p.getSoftwareElementState(p)) inst.addProperty(p);
+	if (_p.getSoftwareElementID(p)) inst.addProperty(p);
+	if (_p.getTargetOperatingSystem(p)) inst.addProperty(p);
+	if (_p.getActionID(p)) inst.addProperty(p);
+	if (_p.getDirection(p)) inst.addProperty(p);
+
+	//CIM_ExecuteProgram Properties
 	if (_p.getProgramPath(p)) inst.addProperty(p);
 	if (_p.getCommandLine(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ExecuteProgramProvider::constructKeyBindings(const UNIX_ExecuteProgram& _p)

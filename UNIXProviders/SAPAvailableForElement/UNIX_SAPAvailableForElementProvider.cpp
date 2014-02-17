@@ -55,12 +55,12 @@ CIMInstance UNIX_SAPAvailableForElementProvider::constructInstance(
 			CIMName("UNIX_SAPAvailableForElement"),
 			constructKeyBindings(_p)));
 
+	//CIM_SAPAvailableForElement Properties
 	if (_p.getAvailableSAP(p)) inst.addProperty(p);
 	if (_p.getManagedElement(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SAPAvailableForElementProvider::constructKeyBindings(const UNIX_SAPAvailableForElement& _p)

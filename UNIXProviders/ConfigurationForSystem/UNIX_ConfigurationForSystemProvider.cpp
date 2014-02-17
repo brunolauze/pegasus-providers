@@ -55,12 +55,16 @@ CIMInstance UNIX_ConfigurationForSystemProvider::constructInstance(
 			CIMName("UNIX_ConfigurationForSystem"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HostedDependency Properties
+
+	//CIM_ConfigurationForSystem Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ConfigurationForSystemProvider::constructKeyBindings(const UNIX_ConfigurationForSystem& _p)

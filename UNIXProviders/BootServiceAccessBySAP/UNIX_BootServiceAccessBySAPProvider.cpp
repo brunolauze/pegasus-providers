@@ -55,12 +55,16 @@ CIMInstance UNIX_BootServiceAccessBySAPProvider::constructInstance(
 			CIMName("UNIX_BootServiceAccessBySAP"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ServiceAccessBySAP Properties
+
+	//CIM_BootServiceAccessBySAP Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BootServiceAccessBySAPProvider::constructKeyBindings(const UNIX_BootServiceAccessBySAP& _p)

@@ -55,12 +55,16 @@ CIMInstance UNIX_HostedResourcePoolProvider::constructInstance(
 			CIMName("UNIX_HostedResourcePool"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_SystemComponent Properties
+
+	//CIM_HostedResourcePool Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_HostedResourcePoolProvider::constructKeyBindings(const UNIX_HostedResourcePool& _p)

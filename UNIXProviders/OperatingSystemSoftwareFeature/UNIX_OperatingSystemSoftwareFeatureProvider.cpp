@@ -55,12 +55,14 @@ CIMInstance UNIX_OperatingSystemSoftwareFeatureProvider::constructInstance(
 			CIMName("UNIX_OperatingSystemSoftwareFeature"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_OperatingSystemSoftwareFeature Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_OperatingSystemSoftwareFeatureProvider::constructKeyBindings(const UNIX_OperatingSystemSoftwareFeature& _p)

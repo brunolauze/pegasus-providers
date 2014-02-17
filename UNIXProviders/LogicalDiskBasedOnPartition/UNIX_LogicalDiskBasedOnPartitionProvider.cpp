@@ -55,12 +55,21 @@ CIMInstance UNIX_LogicalDiskBasedOnPartitionProvider::constructInstance(
 			CIMName("UNIX_LogicalDiskBasedOnPartition"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_BasedOn Properties
+	if (_p.getStartingAddress(p)) inst.addProperty(p);
+	if (_p.getEndingAddress(p)) inst.addProperty(p);
+	if (_p.getOrderIndex(p)) inst.addProperty(p);
+
+	//CIM_LogicalDiskBasedOnExtent Properties
+
+	//CIM_LogicalDiskBasedOnPartition Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_LogicalDiskBasedOnPartitionProvider::constructKeyBindings(const UNIX_LogicalDiskBasedOnPartition& _p)

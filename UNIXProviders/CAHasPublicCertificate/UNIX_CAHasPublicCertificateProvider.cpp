@@ -55,12 +55,14 @@ CIMInstance UNIX_CAHasPublicCertificateProvider::constructInstance(
 			CIMName("UNIX_CAHasPublicCertificate"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_CAHasPublicCertificate Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CAHasPublicCertificateProvider::constructKeyBindings(const UNIX_CAHasPublicCertificate& _p)

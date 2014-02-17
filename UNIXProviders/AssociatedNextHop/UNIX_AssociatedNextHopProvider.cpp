@@ -55,12 +55,14 @@ CIMInstance UNIX_AssociatedNextHopProvider::constructInstance(
 			CIMName("UNIX_AssociatedNextHop"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_AssociatedNextHop Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AssociatedNextHopProvider::constructKeyBindings(const UNIX_AssociatedNextHop& _p)

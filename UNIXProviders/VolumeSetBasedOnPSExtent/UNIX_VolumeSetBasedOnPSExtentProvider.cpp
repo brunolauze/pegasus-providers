@@ -55,14 +55,21 @@ CIMInstance UNIX_VolumeSetBasedOnPSExtentProvider::constructInstance(
 			CIMName("UNIX_VolumeSetBasedOnPSExtent"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_BasedOn Properties
+	if (_p.getStartingAddress(p)) inst.addProperty(p);
+	if (_p.getEndingAddress(p)) inst.addProperty(p);
+	if (_p.getOrderIndex(p)) inst.addProperty(p);
+
+	//CIM_VolumeSetBasedOnPSExtent Properties
 	if (_p.getLBAsMappedByDecrementing(p)) inst.addProperty(p);
 	if (_p.getLBAMappingIncludesCheckData(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_VolumeSetBasedOnPSExtentProvider::constructKeyBindings(const UNIX_VolumeSetBasedOnPSExtent& _p)

@@ -55,12 +55,14 @@ CIMInstance UNIX_RoutesBGPProvider::constructInstance(
 			CIMName("UNIX_RoutesBGP"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_RoutesBGP Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RoutesBGPProvider::constructKeyBindings(const UNIX_RoutesBGP& _p)

@@ -55,12 +55,14 @@ CIMInstance UNIX_JobDestinationJobsProvider::constructInstance(
 			CIMName("UNIX_JobDestinationJobs"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_JobDestinationJobs Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_JobDestinationJobsProvider::constructKeyBindings(const UNIX_JobDestinationJobs& _p)

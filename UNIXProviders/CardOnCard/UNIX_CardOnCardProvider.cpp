@@ -55,13 +55,18 @@ CIMInstance UNIX_CardOnCardProvider::constructInstance(
 			CIMName("UNIX_CardOnCard"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
+
+	//CIM_Container Properties
+	if (_p.getLocationWithinContainer(p)) inst.addProperty(p);
+
+	//CIM_CardOnCard Properties
 	if (_p.getMountOrSlotDescription(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CardOnCardProvider::constructKeyBindings(const UNIX_CardOnCard& _p)

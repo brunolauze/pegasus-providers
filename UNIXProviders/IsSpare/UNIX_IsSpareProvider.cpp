@@ -55,14 +55,16 @@ CIMInstance UNIX_IsSpareProvider::constructInstance(
 			CIMName("UNIX_IsSpare"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_IsSpare Properties
 	if (_p.getSpareStatus(p)) inst.addProperty(p);
 	if (_p.getFailoverSupported(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IsSpareProvider::constructKeyBindings(const UNIX_IsSpare& _p)

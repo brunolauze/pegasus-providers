@@ -55,17 +55,29 @@ CIMInstance UNIX_KerberosTicketProvider::constructInstance(
 			CIMName("UNIX_KerberosTicket"),
 			constructKeyBindings(_p)));
 
-	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
-	if (_p.getSystemName(p)) inst.addProperty(p);
-	if (_p.getServiceCreationClassName(p)) inst.addProperty(p);
-	if (_p.getServiceName(p)) inst.addProperty(p);
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Credential Properties
+	if (_p.getIssued(p)) inst.addProperty(p);
+	if (_p.getExpires(p)) inst.addProperty(p);
+
+	//CIM_KerberosCredential Properties
 	if (_p.getAccessesService(p)) inst.addProperty(p);
 	if (_p.getRemoteID(p)) inst.addProperty(p);
 	if (_p.getTicketType(p)) inst.addProperty(p);
 
+	//CIM_KerberosTicket Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getServiceCreationClassName(p)) inst.addProperty(p);
+	if (_p.getServiceName(p)) inst.addProperty(p);
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_KerberosTicketProvider::constructKeyBindings(const UNIX_KerberosTicket& _p)

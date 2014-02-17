@@ -55,12 +55,16 @@ CIMInstance UNIX_DriveInDiskGroupProvider::constructInstance(
 			CIMName("UNIX_DriveInDiskGroup"),
 			constructKeyBindings(_p)));
 
+	//CIM_MemberOfCollection Properties
 	if (_p.getCollection(p)) inst.addProperty(p);
 	if (_p.getMember(p)) inst.addProperty(p);
 
+	//CIM_CollectedMSEs Properties
+
+	//CIM_DriveInDiskGroup Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DriveInDiskGroupProvider::constructKeyBindings(const UNIX_DriveInDiskGroup& _p)

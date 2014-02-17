@@ -55,12 +55,21 @@ CIMInstance UNIX_LogicalDiskBasedOnVolumeProvider::constructInstance(
 			CIMName("UNIX_LogicalDiskBasedOnVolume"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_BasedOn Properties
+	if (_p.getStartingAddress(p)) inst.addProperty(p);
+	if (_p.getEndingAddress(p)) inst.addProperty(p);
+	if (_p.getOrderIndex(p)) inst.addProperty(p);
+
+	//CIM_LogicalDiskBasedOnExtent Properties
+
+	//CIM_LogicalDiskBasedOnVolume Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_LogicalDiskBasedOnVolumeProvider::constructKeyBindings(const UNIX_LogicalDiskBasedOnVolume& _p)

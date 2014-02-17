@@ -55,12 +55,16 @@ CIMInstance UNIX_SubProfileRequiresProfileProvider::constructInstance(
 			CIMName("UNIX_SubProfileRequiresProfile"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ReferencedProfile Properties
+
+	//CIM_SubProfileRequiresProfile Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SubProfileRequiresProfileProvider::constructKeyBindings(const UNIX_SubProfileRequiresProfile& _p)

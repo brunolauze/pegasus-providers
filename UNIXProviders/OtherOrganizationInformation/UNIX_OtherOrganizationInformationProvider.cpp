@@ -55,6 +55,13 @@ CIMInstance UNIX_OtherOrganizationInformationProvider::constructInstance(
 			CIMName("UNIX_OtherOrganizationInformation"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_OtherOrganizationInformation Properties
 	if (_p.getCreationClassName(p)) inst.addProperty(p);
 	if (_p.getName(p)) inst.addProperty(p);
 	if (_p.getObjectClass(p)) inst.addProperty(p);
@@ -88,8 +95,7 @@ CIMInstance UNIX_OtherOrganizationInformationProvider::constructInstance(
 	if (_p.getX121Address(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_OtherOrganizationInformationProvider::constructKeyBindings(const UNIX_OtherOrganizationInformation& _p)

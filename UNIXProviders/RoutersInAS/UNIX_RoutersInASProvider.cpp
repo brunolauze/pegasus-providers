@@ -55,16 +55,20 @@ CIMInstance UNIX_RoutersInASProvider::constructInstance(
 			CIMName("UNIX_RoutersInAS"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
+
+	//CIM_SystemComponent Properties
+
+	//CIM_RoutersInAS Properties
 	if (_p.getBGPSupportedAttributes(p)) inst.addProperty(p);
 	if (_p.getAddCommunityValue(p)) inst.addProperty(p);
 	if (_p.getRole(p)) inst.addProperty(p);
 	if (_p.getOtherRoleDescription(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RoutersInASProvider::constructKeyBindings(const UNIX_RoutersInAS& _p)

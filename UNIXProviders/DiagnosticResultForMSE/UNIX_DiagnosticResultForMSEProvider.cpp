@@ -55,12 +55,12 @@ CIMInstance UNIX_DiagnosticResultForMSEProvider::constructInstance(
 			CIMName("UNIX_DiagnosticResultForMSE"),
 			constructKeyBindings(_p)));
 
+	//CIM_DiagnosticResultForMSE Properties
 	if (_p.getResult(p)) inst.addProperty(p);
 	if (_p.getSystemElement(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DiagnosticResultForMSEProvider::constructKeyBindings(const UNIX_DiagnosticResultForMSE& _p)

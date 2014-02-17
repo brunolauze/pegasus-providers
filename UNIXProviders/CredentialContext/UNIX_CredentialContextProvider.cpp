@@ -55,13 +55,13 @@ CIMInstance UNIX_CredentialContextProvider::constructInstance(
 			CIMName("UNIX_CredentialContext"),
 			constructKeyBindings(_p)));
 
+	//CIM_CredentialContext Properties
 	if (_p.getElementInContext(p)) inst.addProperty(p);
 	if (_p.getElementProvidingContext(p)) inst.addProperty(p);
 	if (_p.getUsage(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CredentialContextProvider::constructKeyBindings(const UNIX_CredentialContext& _p)

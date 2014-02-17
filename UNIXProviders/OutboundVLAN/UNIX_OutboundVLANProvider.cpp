@@ -55,13 +55,17 @@ CIMInstance UNIX_OutboundVLANProvider::constructInstance(
 			CIMName("UNIX_OutboundVLAN"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_SAPSAPDependency Properties
+
+	//CIM_OutboundVLAN Properties
 	if (_p.getTagged(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_OutboundVLANProvider::constructKeyBindings(const UNIX_OutboundVLAN& _p)

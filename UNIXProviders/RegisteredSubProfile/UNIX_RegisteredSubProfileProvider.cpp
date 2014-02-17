@@ -55,10 +55,25 @@ CIMInstance UNIX_RegisteredSubProfileProvider::constructInstance(
 			CIMName("UNIX_RegisteredSubProfile"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_RegisteredProfile Properties
+	if (_p.getRegisteredOrganization(p)) inst.addProperty(p);
+	if (_p.getOtherRegisteredOrganization(p)) inst.addProperty(p);
+	if (_p.getRegisteredName(p)) inst.addProperty(p);
+	if (_p.getRegisteredVersion(p)) inst.addProperty(p);
+	if (_p.getAdvertiseTypes(p)) inst.addProperty(p);
+	if (_p.getAdvertiseTypeDescriptions(p)) inst.addProperty(p);
+	if (_p.getImplementedFeatures(p)) inst.addProperty(p);
+
+	//CIM_RegisteredSubProfile Properties
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RegisteredSubProfileProvider::constructKeyBindings(const UNIX_RegisteredSubProfile& _p)

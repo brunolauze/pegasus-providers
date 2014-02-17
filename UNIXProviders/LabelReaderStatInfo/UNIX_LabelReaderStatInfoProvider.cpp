@@ -55,13 +55,29 @@ CIMInstance UNIX_LabelReaderStatInfoProvider::constructInstance(
 			CIMName("UNIX_LabelReaderStatInfo"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalInformation Properties
+	if (_p.getName(p)) inst.addProperty(p);
+
+	//CIM_DeviceStatisticalInformation Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getDeviceCreationClassName(p)) inst.addProperty(p);
+	if (_p.getDeviceID(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+
+	//CIM_LabelReaderStatInfo Properties
 	if (_p.getScanSuccesses(p)) inst.addProperty(p);
 	if (_p.getScanFailures(p)) inst.addProperty(p);
 	if (_p.getScanRetries(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_LabelReaderStatInfoProvider::constructKeyBindings(const UNIX_LabelReaderStatInfo& _p)

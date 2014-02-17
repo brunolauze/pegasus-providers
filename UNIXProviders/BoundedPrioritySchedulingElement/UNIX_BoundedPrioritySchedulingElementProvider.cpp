@@ -55,12 +55,23 @@ CIMInstance UNIX_BoundedPrioritySchedulingElementProvider::constructInstance(
 			CIMName("UNIX_BoundedPrioritySchedulingElement"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SchedulingElement Properties
 	if (_p.getWorkConserving(p)) inst.addProperty(p);
+
+	//CIM_PrioritySchedulingElement Properties
+	if (_p.getPriority(p)) inst.addProperty(p);
+
+	//CIM_BoundedPrioritySchedulingElement Properties
 	if (_p.getBandwidthBound(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BoundedPrioritySchedulingElementProvider::constructKeyBindings(const UNIX_BoundedPrioritySchedulingElement& _p)

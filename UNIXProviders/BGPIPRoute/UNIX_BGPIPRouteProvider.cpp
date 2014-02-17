@@ -55,12 +55,48 @@ CIMInstance UNIX_BGPIPRouteProvider::constructInstance(
 			CIMName("UNIX_BGPIPRoute"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_LogicalElement Properties
+
+	//CIM_NextHopRouting Properties
+	if (_p.getDestinationAddress(p)) inst.addProperty(p);
+	if (_p.getDestinationMask(p)) inst.addProperty(p);
+	if (_p.getNextHop(p)) inst.addProperty(p);
+	if (_p.getIsStatic(p)) inst.addProperty(p);
+
+	//CIM_IPRoute Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getServiceCreationClassName(p)) inst.addProperty(p);
+	if (_p.getServiceName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getIPDestinationAddress(p)) inst.addProperty(p);
+	if (_p.getIPDestinationMask(p)) inst.addProperty(p);
+	if (_p.getAddressType(p)) inst.addProperty(p);
+
+	//CIM_BGPIPRoute Properties
 	if (_p.getIsBackDoorRoute(p)) inst.addProperty(p);
 	if (_p.getUsesLoopbackPeering(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BGPIPRouteProvider::constructKeyBindings(const UNIX_BGPIPRoute& _p)

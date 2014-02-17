@@ -55,13 +55,15 @@ CIMInstance UNIX_LogInStorageProvider::constructInstance(
 			CIMName("UNIX_LogInStorage"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_LogInStorage Properties
 	if (_p.getStartingOffset(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_LogInStorageProvider::constructKeyBindings(const UNIX_LogInStorage& _p)

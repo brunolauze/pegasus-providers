@@ -55,12 +55,14 @@ CIMInstance UNIX_LogInDeviceFileProvider::constructInstance(
 			CIMName("UNIX_LogInDeviceFile"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_LogInDeviceFile Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_LogInDeviceFileProvider::constructKeyBindings(const UNIX_LogInDeviceFile& _p)

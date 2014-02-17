@@ -55,12 +55,21 @@ CIMInstance UNIX_SwitchableProvider::constructInstance(
 			CIMName("UNIX_Switchable"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_SAPSAPDependency Properties
+
+	//CIM_BindsTo Properties
+
+	//CIM_BindsToLANEndpoint Properties
+	if (_p.getFrameType(p)) inst.addProperty(p);
+
+	//CIM_Switchable Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SwitchableProvider::constructKeyBindings(const UNIX_Switchable& _p)

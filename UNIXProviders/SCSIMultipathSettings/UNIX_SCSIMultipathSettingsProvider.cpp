@@ -55,6 +55,17 @@ CIMInstance UNIX_SCSIMultipathSettingsProvider::constructInstance(
 			CIMName("UNIX_SCSIMultipathSettings"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_SCSIMultipathSettings Properties
 	if (_p.getAsymmetric(p)) inst.addProperty(p);
 	if (_p.getCurrentLoadBalanceType(p)) inst.addProperty(p);
 	if (_p.getOtherCurrentLoadBalanceType(p)) inst.addProperty(p);
@@ -63,8 +74,7 @@ CIMInstance UNIX_SCSIMultipathSettingsProvider::constructInstance(
 	if (_p.getCurrentPollingRate(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SCSIMultipathSettingsProvider::constructKeyBindings(const UNIX_SCSIMultipathSettings& _p)

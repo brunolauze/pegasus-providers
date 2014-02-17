@@ -55,6 +55,59 @@ CIMInstance UNIX_NFSProvider::constructInstance(
 			CIMName("UNIX_NFS"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_LogicalElement Properties
+
+	//CIM_EnabledLogicalElement Properties
+	if (_p.getEnabledState(p)) inst.addProperty(p);
+	if (_p.getOtherEnabledState(p)) inst.addProperty(p);
+	if (_p.getRequestedState(p)) inst.addProperty(p);
+	if (_p.getEnabledDefault(p)) inst.addProperty(p);
+	if (_p.getTimeOfLastStateChange(p)) inst.addProperty(p);
+	if (_p.getAvailableRequestedStates(p)) inst.addProperty(p);
+	if (_p.getTransitioningToState(p)) inst.addProperty(p);
+
+	//CIM_FileSystem Properties
+	if (_p.getCSCreationClassName(p)) inst.addProperty(p);
+	if (_p.getCSName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getRoot(p)) inst.addProperty(p);
+	if (_p.getBlockSize(p)) inst.addProperty(p);
+	if (_p.getFileSystemSize(p)) inst.addProperty(p);
+	if (_p.getAvailableSpace(p)) inst.addProperty(p);
+	if (_p.getReadOnly(p)) inst.addProperty(p);
+	if (_p.getEncryptionMethod(p)) inst.addProperty(p);
+	if (_p.getCompressionMethod(p)) inst.addProperty(p);
+	if (_p.getCaseSensitive(p)) inst.addProperty(p);
+	if (_p.getCasePreserved(p)) inst.addProperty(p);
+	if (_p.getCodeSet(p)) inst.addProperty(p);
+	if (_p.getMaxFileNameLength(p)) inst.addProperty(p);
+	if (_p.getClusterSize(p)) inst.addProperty(p);
+	if (_p.getFileSystemType(p)) inst.addProperty(p);
+	if (_p.getPersistenceType(p)) inst.addProperty(p);
+	if (_p.getOtherPersistenceType(p)) inst.addProperty(p);
+	if (_p.getNumberOfFiles(p)) inst.addProperty(p);
+
+	//CIM_RemoteFileSystem Properties
+
+	//CIM_NFS Properties
 	if (_p.getHardMount(p)) inst.addProperty(p);
 	if (_p.getForegroundMount(p)) inst.addProperty(p);
 	if (_p.getInterrupt(p)) inst.addProperty(p);
@@ -71,8 +124,7 @@ CIMInstance UNIX_NFSProvider::constructInstance(
 	if (_p.getAttributeCachingForDirectoriesMax(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NFSProvider::constructKeyBindings(const UNIX_NFS& _p)

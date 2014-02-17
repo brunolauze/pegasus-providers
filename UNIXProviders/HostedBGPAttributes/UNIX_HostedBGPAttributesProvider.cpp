@@ -55,12 +55,16 @@ CIMInstance UNIX_HostedBGPAttributesProvider::constructInstance(
 			CIMName("UNIX_HostedBGPAttributes"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HostedDependency Properties
+
+	//CIM_HostedBGPAttributes Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_HostedBGPAttributesProvider::constructKeyBindings(const UNIX_HostedBGPAttributes& _p)

@@ -55,12 +55,17 @@ CIMInstance UNIX_AssociatedProcessorMemoryProvider::constructInstance(
 			CIMName("UNIX_AssociatedProcessorMemory"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
+	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_AssociatedMemory Properties
+
+	//CIM_AssociatedProcessorMemory Properties
 	if (_p.getBusSpeed(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AssociatedProcessorMemoryProvider::constructKeyBindings(const UNIX_AssociatedProcessorMemory& _p)

@@ -55,15 +55,38 @@ CIMInstance UNIX_X509CRLProvider::constructInstance(
 			CIMName("UNIX_X509CRL"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Credential Properties
 	if (_p.getIssued(p)) inst.addProperty(p);
 	if (_p.getExpires(p)) inst.addProperty(p);
+
+	//CIM_SignedCredential Properties
+	if (_p.getIssuerName(p)) inst.addProperty(p);
+	if (_p.getSignature(p)) inst.addProperty(p);
+	if (_p.getSignatureAlgorithm(p)) inst.addProperty(p);
+	if (_p.getOtherSignatureAlgorithm(p)) inst.addProperty(p);
+	if (_p.getSignatureAlgorithmOID(p)) inst.addProperty(p);
+
+	//CIM_X509Infrastructure Properties
+	if (_p.getVersion(p)) inst.addProperty(p);
+	if (_p.getTBSCertificate(p)) inst.addProperty(p);
+	if (_p.getMD5Fingerprint(p)) inst.addProperty(p);
+	if (_p.getSHA1Fingerprint(p)) inst.addProperty(p);
+	if (_p.getFingerprintDigestAlgorithms(p)) inst.addProperty(p);
+	if (_p.getFingerprints(p)) inst.addProperty(p);
+
+	//CIM_X509CRL Properties
 	if (_p.getNextUpdate(p)) inst.addProperty(p);
 	if (_p.getEncodedCRL(p)) inst.addProperty(p);
 	if (_p.getSerialNumbers(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_X509CRLProvider::constructKeyBindings(const UNIX_X509CRL& _p)

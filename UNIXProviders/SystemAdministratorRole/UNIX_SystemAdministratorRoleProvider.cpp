@@ -55,12 +55,14 @@ CIMInstance UNIX_SystemAdministratorRoleProvider::constructInstance(
 			CIMName("UNIX_SystemAdministratorRole"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_SystemAdministratorRole Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SystemAdministratorRoleProvider::constructKeyBindings(const UNIX_SystemAdministratorRole& _p)

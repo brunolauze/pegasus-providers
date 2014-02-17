@@ -55,15 +55,17 @@ CIMInstance UNIX_BGPAttributesForRouteProvider::constructInstance(
 			CIMName("UNIX_BGPAttributesForRoute"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_BGPAttributesForRoute Properties
 	if (_p.getPathAttrPeer(p)) inst.addProperty(p);
 	if (_p.getPathAttrIPAddrPrefixLen(p)) inst.addProperty(p);
 	if (_p.getPathAttrIPAddrPrefix(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BGPAttributesForRouteProvider::constructKeyBindings(const UNIX_BGPAttributesForRoute& _p)

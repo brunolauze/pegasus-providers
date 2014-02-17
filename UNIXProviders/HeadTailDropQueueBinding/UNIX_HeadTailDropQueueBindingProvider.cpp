@@ -55,12 +55,14 @@ CIMInstance UNIX_HeadTailDropQueueBindingProvider::constructInstance(
 			CIMName("UNIX_HeadTailDropQueueBinding"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HeadTailDropQueueBinding Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_HeadTailDropQueueBindingProvider::constructKeyBindings(const UNIX_HeadTailDropQueueBinding& _p)

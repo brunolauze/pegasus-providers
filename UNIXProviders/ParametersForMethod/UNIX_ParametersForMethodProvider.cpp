@@ -55,13 +55,13 @@ CIMInstance UNIX_ParametersForMethodProvider::constructInstance(
 			CIMName("UNIX_ParametersForMethod"),
 			constructKeyBindings(_p)));
 
+	//CIM_ParametersForMethod Properties
 	if (_p.getParameters(p)) inst.addProperty(p);
 	if (_p.getTheMethod(p)) inst.addProperty(p);
 	if (_p.getMethodName(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ParametersForMethodProvider::constructKeyBindings(const UNIX_ParametersForMethod& _p)

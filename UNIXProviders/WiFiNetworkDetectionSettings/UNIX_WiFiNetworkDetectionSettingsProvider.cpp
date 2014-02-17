@@ -55,6 +55,17 @@ CIMInstance UNIX_WiFiNetworkDetectionSettingsProvider::constructInstance(
 			CIMName("UNIX_WiFiNetworkDetectionSettings"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_WiFiNetworkDetectionSettings Properties
 	if (_p.getTargetNetworkCategories(p)) inst.addProperty(p);
 	if (_p.getPreferredNetworks(p)) inst.addProperty(p);
 	if (_p.getKnownNetworks(p)) inst.addProperty(p);
@@ -62,8 +73,7 @@ CIMInstance UNIX_WiFiNetworkDetectionSettingsProvider::constructInstance(
 	if (_p.getPortTypes(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_WiFiNetworkDetectionSettingsProvider::constructKeyBindings(const UNIX_WiFiNetworkDetectionSettings& _p)

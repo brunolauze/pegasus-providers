@@ -55,12 +55,12 @@ CIMInstance UNIX_ElementSecuritySensitivityProvider::constructInstance(
 			CIMName("UNIX_ElementSecuritySensitivity"),
 			constructKeyBindings(_p)));
 
+	//CIM_ElementSecuritySensitivity Properties
 	if (_p.getSecurityLevel(p)) inst.addProperty(p);
 	if (_p.getManagedElement(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ElementSecuritySensitivityProvider::constructKeyBindings(const UNIX_ElementSecuritySensitivity& _p)

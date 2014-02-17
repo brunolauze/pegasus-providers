@@ -55,14 +55,14 @@ CIMInstance UNIX_ServiceAffectsElementProvider::constructInstance(
 			CIMName("UNIX_ServiceAffectsElement"),
 			constructKeyBindings(_p)));
 
+	//CIM_ServiceAffectsElement Properties
 	if (_p.getAffectedElement(p)) inst.addProperty(p);
 	if (_p.getAffectingElement(p)) inst.addProperty(p);
 	if (_p.getElementEffects(p)) inst.addProperty(p);
 	if (_p.getOtherElementEffectsDescriptions(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ServiceAffectsElementProvider::constructKeyBindings(const UNIX_ServiceAffectsElement& _p)

@@ -55,12 +55,16 @@ CIMInstance UNIX_SecurityServiceForSystemProvider::constructInstance(
 			CIMName("UNIX_SecurityServiceForSystem"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ProvidesServiceToElement Properties
+
+	//CIM_SecurityServiceForSystem Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SecurityServiceForSystemProvider::constructKeyBindings(const UNIX_SecurityServiceForSystem& _p)

@@ -55,13 +55,13 @@ CIMInstance UNIX_CompatibleProductProvider::constructInstance(
 			CIMName("UNIX_CompatibleProduct"),
 			constructKeyBindings(_p)));
 
+	//CIM_CompatibleProduct Properties
 	if (_p.getProduct(p)) inst.addProperty(p);
 	if (_p.getCompatibleProduct(p)) inst.addProperty(p);
 	if (_p.getCompatibilityDescription(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CompatibleProductProvider::constructKeyBindings(const UNIX_CompatibleProduct& _p)

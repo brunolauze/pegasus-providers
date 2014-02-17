@@ -55,6 +55,7 @@ CIMInstance UNIX_AbstractIndicationSubscriptionProvider::constructInstance(
 			CIMName("UNIX_AbstractIndicationSubscription"),
 			constructKeyBindings(_p)));
 
+	//CIM_AbstractIndicationSubscription Properties
 	if (_p.getFilter(p)) inst.addProperty(p);
 	if (_p.getHandler(p)) inst.addProperty(p);
 	if (_p.getOnFatalErrorPolicy(p)) inst.addProperty(p);
@@ -74,8 +75,7 @@ CIMInstance UNIX_AbstractIndicationSubscriptionProvider::constructInstance(
 	if (_p.getSubscriptionInfo(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AbstractIndicationSubscriptionProvider::constructKeyBindings(const UNIX_AbstractIndicationSubscription& _p)

@@ -55,14 +55,22 @@ CIMInstance UNIX_VLANEndpointCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_VLANEndpointCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_VLANEndpointCapabilities Properties
 	if (_p.getDot1QTagging(p)) inst.addProperty(p);
 	if (_p.getDot1qAcceptableVLANFramesTypes(p)) inst.addProperty(p);
 	if (_p.getDot1qIngressFiltering(p)) inst.addProperty(p);
 	if (_p.getSupportsTrunkEncapsulationNegotiation(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_VLANEndpointCapabilitiesProvider::constructKeyBindings(const UNIX_VLANEndpointCapabilities& _p)

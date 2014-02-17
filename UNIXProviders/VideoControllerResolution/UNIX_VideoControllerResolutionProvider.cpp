@@ -55,7 +55,16 @@ CIMInstance UNIX_VideoControllerResolutionProvider::constructInstance(
 			CIMName("UNIX_VideoControllerResolution"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Setting Properties
 	if (_p.getSettingID(p)) inst.addProperty(p);
+
+	//CIM_VideoControllerResolution Properties
 	if (_p.getHorizontalResolution(p)) inst.addProperty(p);
 	if (_p.getVerticalResolution(p)) inst.addProperty(p);
 	if (_p.getRefreshRate(p)) inst.addProperty(p);
@@ -65,8 +74,7 @@ CIMInstance UNIX_VideoControllerResolutionProvider::constructInstance(
 	if (_p.getNumberOfColors(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_VideoControllerResolutionProvider::constructKeyBindings(const UNIX_VideoControllerResolution& _p)

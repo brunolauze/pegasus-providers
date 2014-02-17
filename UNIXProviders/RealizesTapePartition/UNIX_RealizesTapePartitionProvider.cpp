@@ -55,12 +55,19 @@ CIMInstance UNIX_RealizesTapePartitionProvider::constructInstance(
 			CIMName("UNIX_RealizesTapePartition"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_Realizes Properties
+
+	//CIM_RealizesExtent Properties
+	if (_p.getStartingAddress(p)) inst.addProperty(p);
+
+	//CIM_RealizesTapePartition Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RealizesTapePartitionProvider::constructKeyBindings(const UNIX_RealizesTapePartition& _p)

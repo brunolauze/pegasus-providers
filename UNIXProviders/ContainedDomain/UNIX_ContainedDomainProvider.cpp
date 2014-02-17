@@ -55,12 +55,16 @@ CIMInstance UNIX_ContainedDomainProvider::constructInstance(
 			CIMName("UNIX_ContainedDomain"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_SystemComponent Properties
+
+	//CIM_ContainedDomain Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ContainedDomainProvider::constructKeyBindings(const UNIX_ContainedDomain& _p)

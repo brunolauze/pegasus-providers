@@ -55,17 +55,22 @@ CIMInstance UNIX_FRUProvider::constructInstance(
 			CIMName("UNIX_FRU"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_FRU Properties
 	if (_p.getFRUNumber(p)) inst.addProperty(p);
 	if (_p.getIdentifyingNumber(p)) inst.addProperty(p);
 	if (_p.getVendor(p)) inst.addProperty(p);
-	if (_p.getDescription(p)) inst.addProperty(p);
 	if (_p.getName(p)) inst.addProperty(p);
 	if (_p.getRevisionLevel(p)) inst.addProperty(p);
 	if (_p.getCustomerReplaceable(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_FRUProvider::constructKeyBindings(const UNIX_FRU& _p)

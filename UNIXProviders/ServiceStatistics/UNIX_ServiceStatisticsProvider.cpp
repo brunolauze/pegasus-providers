@@ -55,12 +55,14 @@ CIMInstance UNIX_ServiceStatisticsProvider::constructInstance(
 			CIMName("UNIX_ServiceStatistics"),
 			constructKeyBindings(_p)));
 
+	//CIM_Statistics Properties
 	if (_p.getStats(p)) inst.addProperty(p);
 	if (_p.getElement(p)) inst.addProperty(p);
 
+	//CIM_ServiceStatistics Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ServiceStatisticsProvider::constructKeyBindings(const UNIX_ServiceStatistics& _p)

@@ -55,6 +55,24 @@ CIMInstance UNIX_TokenRingPortStatisticsProvider::constructInstance(
 			CIMName("UNIX_TokenRingPortStatistics"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_NetworkPortStatistics Properties
+	if (_p.getBytesTransmitted(p)) inst.addProperty(p);
+	if (_p.getBytesReceived(p)) inst.addProperty(p);
+	if (_p.getPacketsTransmitted(p)) inst.addProperty(p);
+	if (_p.getPacketsReceived(p)) inst.addProperty(p);
+
+	//CIM_TokenRingPortStatistics Properties
 	if (_p.getBurstErrors(p)) inst.addProperty(p);
 	if (_p.getACErrors(p)) inst.addProperty(p);
 	if (_p.getAbortTransErrors(p)) inst.addProperty(p);
@@ -74,8 +92,7 @@ CIMInstance UNIX_TokenRingPortStatisticsProvider::constructInstance(
 	if (_p.getFrequencyErrors(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_TokenRingPortStatisticsProvider::constructKeyBindings(const UNIX_TokenRingPortStatistics& _p)

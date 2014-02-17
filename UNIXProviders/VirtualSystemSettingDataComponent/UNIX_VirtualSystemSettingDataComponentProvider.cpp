@@ -55,12 +55,14 @@ CIMInstance UNIX_VirtualSystemSettingDataComponentProvider::constructInstance(
 			CIMName("UNIX_VirtualSystemSettingDataComponent"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_VirtualSystemSettingDataComponent Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_VirtualSystemSettingDataComponentProvider::constructKeyBindings(const UNIX_VirtualSystemSettingDataComponent& _p)

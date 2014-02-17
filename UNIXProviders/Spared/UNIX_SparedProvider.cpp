@@ -55,12 +55,14 @@ CIMInstance UNIX_SparedProvider::constructInstance(
 			CIMName("UNIX_Spared"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_Spared Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SparedProvider::constructKeyBindings(const UNIX_Spared& _p)

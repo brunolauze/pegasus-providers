@@ -55,12 +55,12 @@ CIMInstance UNIX_RoleLimitedToTargetProvider::constructInstance(
 			CIMName("UNIX_RoleLimitedToTarget"),
 			constructKeyBindings(_p)));
 
+	//CIM_RoleLimitedToTarget Properties
 	if (_p.getDefiningRole(p)) inst.addProperty(p);
 	if (_p.getTargetElement(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RoleLimitedToTargetProvider::constructKeyBindings(const UNIX_RoleLimitedToTarget& _p)

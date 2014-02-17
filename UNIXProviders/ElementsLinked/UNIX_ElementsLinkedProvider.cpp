@@ -55,12 +55,14 @@ CIMInstance UNIX_ElementsLinkedProvider::constructInstance(
 			CIMName("UNIX_ElementsLinked"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ElementsLinked Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ElementsLinkedProvider::constructKeyBindings(const UNIX_ElementsLinked& _p)

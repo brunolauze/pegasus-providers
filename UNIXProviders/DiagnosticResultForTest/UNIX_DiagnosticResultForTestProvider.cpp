@@ -55,12 +55,12 @@ CIMInstance UNIX_DiagnosticResultForTestProvider::constructInstance(
 			CIMName("UNIX_DiagnosticResultForTest"),
 			constructKeyBindings(_p)));
 
+	//CIM_DiagnosticResultForTest Properties
 	if (_p.getDiagnosticResult(p)) inst.addProperty(p);
 	if (_p.getDiagnosticTest(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DiagnosticResultForTestProvider::constructKeyBindings(const UNIX_DiagnosticResultForTest& _p)

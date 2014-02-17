@@ -55,12 +55,20 @@ CIMInstance UNIX_ComputerSystemIRQProvider::constructInstance(
 			CIMName("UNIX_ComputerSystemIRQ"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_SystemComponent Properties
+
+	//CIM_ResourceOfSystem Properties
+
+	//CIM_ComputerSystemResource Properties
+
+	//CIM_ComputerSystemIRQ Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ComputerSystemIRQProvider::constructKeyBindings(const UNIX_ComputerSystemIRQ& _p)

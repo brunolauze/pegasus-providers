@@ -55,12 +55,14 @@ CIMInstance UNIX_FileStorageProvider::constructInstance(
 			CIMName("UNIX_FileStorage"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_FileStorage Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_FileStorageProvider::constructKeyBindings(const UNIX_FileStorage& _p)

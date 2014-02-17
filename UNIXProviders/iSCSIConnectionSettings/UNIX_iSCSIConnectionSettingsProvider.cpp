@@ -55,6 +55,17 @@ CIMInstance UNIX_iSCSIConnectionSettingsProvider::constructInstance(
 			CIMName("UNIX_iSCSIConnectionSettings"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_iSCSIConnectionSettings Properties
 	if (_p.getMaxReceiveDataSegmentLength(p)) inst.addProperty(p);
 	if (_p.getPrimaryHeaderDigestMethod(p)) inst.addProperty(p);
 	if (_p.getOtherPrimaryHeaderDigestMethod(p)) inst.addProperty(p);
@@ -69,8 +80,7 @@ CIMInstance UNIX_iSCSIConnectionSettingsProvider::constructInstance(
 	if (_p.getSecondaryAuthenticationMethod(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_iSCSIConnectionSettingsProvider::constructKeyBindings(const UNIX_iSCSIConnectionSettings& _p)

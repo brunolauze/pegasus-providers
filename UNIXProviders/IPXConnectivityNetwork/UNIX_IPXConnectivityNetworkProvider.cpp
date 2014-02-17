@@ -55,11 +55,24 @@ CIMInstance UNIX_IPXConnectivityNetworkProvider::constructInstance(
 			CIMName("UNIX_IPXConnectivityNetwork"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_SystemSpecificCollection Properties
+
+	//CIM_ConnectivityCollection Properties
+	if (_p.getConnectivityStatus(p)) inst.addProperty(p);
+
+	//CIM_IPXConnectivityNetwork Properties
 	if (_p.getNetworkNumber(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IPXConnectivityNetworkProvider::constructKeyBindings(const UNIX_IPXConnectivityNetwork& _p)

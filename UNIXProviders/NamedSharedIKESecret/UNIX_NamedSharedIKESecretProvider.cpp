@@ -55,6 +55,17 @@ CIMInstance UNIX_NamedSharedIKESecretProvider::constructInstance(
 			CIMName("UNIX_NamedSharedIKESecret"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Credential Properties
+	if (_p.getIssued(p)) inst.addProperty(p);
+	if (_p.getExpires(p)) inst.addProperty(p);
+
+	//CIM_NamedSharedIKESecret Properties
 	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
 	if (_p.getSystemName(p)) inst.addProperty(p);
 	if (_p.getServiceCreationClassName(p)) inst.addProperty(p);
@@ -66,8 +77,7 @@ CIMInstance UNIX_NamedSharedIKESecretProvider::constructInstance(
 	if (_p.getSharedSecretName(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NamedSharedIKESecretProvider::constructKeyBindings(const UNIX_NamedSharedIKESecret& _p)

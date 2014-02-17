@@ -55,12 +55,16 @@ CIMInstance UNIX_PolicySetValidityPeriodProvider::constructInstance(
 			CIMName("UNIX_PolicySetValidityPeriod"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_PolicyComponent Properties
+
+	//CIM_PolicySetValidityPeriod Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PolicySetValidityPeriodProvider::constructKeyBindings(const UNIX_PolicySetValidityPeriod& _p)

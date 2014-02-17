@@ -55,11 +55,19 @@ CIMInstance UNIX_PhysicalAssetCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_PhysicalAssetCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_PhysicalAssetCapabilities Properties
 	if (_p.getFRUInfoSupported(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PhysicalAssetCapabilitiesProvider::constructKeyBindings(const UNIX_PhysicalAssetCapabilities& _p)

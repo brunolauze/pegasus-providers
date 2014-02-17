@@ -55,12 +55,12 @@ CIMInstance UNIX_ParameterValueSourcesProvider::constructInstance(
 			CIMName("UNIX_ParameterValueSources"),
 			constructKeyBindings(_p)));
 
+	//CIM_ParameterValueSources Properties
 	if (_p.getParameters(p)) inst.addProperty(p);
 	if (_p.getValueSource(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ParameterValueSourcesProvider::constructKeyBindings(const UNIX_ParameterValueSources& _p)

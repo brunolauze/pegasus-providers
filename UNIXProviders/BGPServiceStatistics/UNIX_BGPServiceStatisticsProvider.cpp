@@ -55,12 +55,16 @@ CIMInstance UNIX_BGPServiceStatisticsProvider::constructInstance(
 			CIMName("UNIX_BGPServiceStatistics"),
 			constructKeyBindings(_p)));
 
+	//CIM_Statistics Properties
 	if (_p.getStats(p)) inst.addProperty(p);
 	if (_p.getElement(p)) inst.addProperty(p);
 
+	//CIM_ServiceStatistics Properties
+
+	//CIM_BGPServiceStatistics Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BGPServiceStatisticsProvider::constructKeyBindings(const UNIX_BGPServiceStatistics& _p)

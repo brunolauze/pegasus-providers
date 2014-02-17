@@ -55,6 +55,20 @@ CIMInstance UNIX_NextHopIPRouteProvider::constructInstance(
 			CIMName("UNIX_NextHopIPRoute"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_NextHopRoute Properties
+	if (_p.getDestinationAddress(p)) inst.addProperty(p);
+	if (_p.getAdminDistance(p)) inst.addProperty(p);
+	if (_p.getRouteMetric(p)) inst.addProperty(p);
+	if (_p.getIsStatic(p)) inst.addProperty(p);
+	if (_p.getTypeOfRoute(p)) inst.addProperty(p);
+
+	//CIM_NextHopIPRoute Properties
 	if (_p.getRouteDerivation(p)) inst.addProperty(p);
 	if (_p.getOtherDerivation(p)) inst.addProperty(p);
 	if (_p.getDestinationMask(p)) inst.addProperty(p);
@@ -62,8 +76,7 @@ CIMInstance UNIX_NextHopIPRouteProvider::constructInstance(
 	if (_p.getAddressType(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NextHopIPRouteProvider::constructKeyBindings(const UNIX_NextHopIPRoute& _p)

@@ -55,11 +55,21 @@ CIMInstance UNIX_KeystoreProvider::constructInstance(
 			CIMName("UNIX_Keystore"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_CredentialStore Properties
 	if (_p.getUsage(p)) inst.addProperty(p);
 
+	//CIM_Keystore Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_KeystoreProvider::constructKeyBindings(const UNIX_Keystore& _p)

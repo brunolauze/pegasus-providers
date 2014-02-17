@@ -55,12 +55,17 @@ CIMInstance UNIX_TransformOfSecurityAssociationProvider::constructInstance(
 			CIMName("UNIX_TransformOfSecurityAssociation"),
 			constructKeyBindings(_p)));
 
-	if (_p.getSettingData(p)) inst.addProperty(p);
+	//CIM_ElementSettingData Properties
 	if (_p.getManagedElement(p)) inst.addProperty(p);
+	if (_p.getSettingData(p)) inst.addProperty(p);
+	if (_p.getIsDefault(p)) inst.addProperty(p);
+	if (_p.getIsCurrent(p)) inst.addProperty(p);
+	if (_p.getIsNext(p)) inst.addProperty(p);
+
+	//CIM_TransformOfSecurityAssociation Properties
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_TransformOfSecurityAssociationProvider::constructKeyBindings(const UNIX_TransformOfSecurityAssociation& _p)

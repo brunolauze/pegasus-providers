@@ -55,13 +55,13 @@ CIMInstance UNIX_ServiceProcessProvider::constructInstance(
 			CIMName("UNIX_ServiceProcess"),
 			constructKeyBindings(_p)));
 
+	//CIM_ServiceProcess Properties
 	if (_p.getService(p)) inst.addProperty(p);
 	if (_p.getProcess(p)) inst.addProperty(p);
 	if (_p.getExecutionType(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ServiceProcessProvider::constructKeyBindings(const UNIX_ServiceProcess& _p)

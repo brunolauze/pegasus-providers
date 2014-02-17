@@ -55,8 +55,24 @@ CIMInstance UNIX_EthernetPortStatisticsProvider::constructInstance(
 			CIMName("UNIX_EthernetPortStatistics"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_NetworkPortStatistics Properties
+	if (_p.getBytesTransmitted(p)) inst.addProperty(p);
+	if (_p.getBytesReceived(p)) inst.addProperty(p);
 	if (_p.getPacketsTransmitted(p)) inst.addProperty(p);
 	if (_p.getPacketsReceived(p)) inst.addProperty(p);
+
+	//CIM_EthernetPortStatistics Properties
 	if (_p.getSymbolErrors(p)) inst.addProperty(p);
 	if (_p.getAlignmentErrors(p)) inst.addProperty(p);
 	if (_p.getFCSErrors(p)) inst.addProperty(p);
@@ -72,8 +88,7 @@ CIMInstance UNIX_EthernetPortStatisticsProvider::constructInstance(
 	if (_p.getFrameTooLongs(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_EthernetPortStatisticsProvider::constructKeyBindings(const UNIX_EthernetPortStatistics& _p)

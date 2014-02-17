@@ -55,11 +55,15 @@ CIMInstance UNIX_OrderedMemberOfCollectionProvider::constructInstance(
 			CIMName("UNIX_OrderedMemberOfCollection"),
 			constructKeyBindings(_p)));
 
+	//CIM_MemberOfCollection Properties
+	if (_p.getCollection(p)) inst.addProperty(p);
+	if (_p.getMember(p)) inst.addProperty(p);
+
+	//CIM_OrderedMemberOfCollection Properties
 	if (_p.getAssignedSequence(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_OrderedMemberOfCollectionProvider::constructKeyBindings(const UNIX_OrderedMemberOfCollection& _p)

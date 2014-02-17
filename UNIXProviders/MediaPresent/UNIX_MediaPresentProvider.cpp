@@ -55,13 +55,15 @@ CIMInstance UNIX_MediaPresentProvider::constructInstance(
 			CIMName("UNIX_MediaPresent"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_MediaPresent Properties
 	if (_p.getFixedMedia(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MediaPresentProvider::constructKeyBindings(const UNIX_MediaPresent& _p)

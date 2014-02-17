@@ -55,6 +55,17 @@ CIMInstance UNIX_VirtualSystemSettingDataProvider::constructInstance(
 			CIMName("UNIX_VirtualSystemSettingData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_VirtualSystemSettingData Properties
 	if (_p.getVirtualSystemIdentifier(p)) inst.addProperty(p);
 	if (_p.getVirtualSystemType(p)) inst.addProperty(p);
 	if (_p.getNotes(p)) inst.addProperty(p);
@@ -74,8 +85,7 @@ CIMInstance UNIX_VirtualSystemSettingDataProvider::constructInstance(
 	if (_p.getRecoveryFile(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_VirtualSystemSettingDataProvider::constructKeyBindings(const UNIX_VirtualSystemSettingData& _p)

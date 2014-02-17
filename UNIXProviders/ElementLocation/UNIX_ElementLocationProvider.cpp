@@ -55,12 +55,12 @@ CIMInstance UNIX_ElementLocationProvider::constructInstance(
 			CIMName("UNIX_ElementLocation"),
 			constructKeyBindings(_p)));
 
+	//CIM_ElementLocation Properties
 	if (_p.getElement(p)) inst.addProperty(p);
 	if (_p.getPhysicalLocation(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ElementLocationProvider::constructKeyBindings(const UNIX_ElementLocation& _p)

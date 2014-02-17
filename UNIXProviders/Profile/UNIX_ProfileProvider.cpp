@@ -55,11 +55,18 @@ CIMInstance UNIX_ProfileProvider::constructInstance(
 			CIMName("UNIX_Profile"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_Profile Properties
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ProfileProvider::constructKeyBindings(const UNIX_Profile& _p)

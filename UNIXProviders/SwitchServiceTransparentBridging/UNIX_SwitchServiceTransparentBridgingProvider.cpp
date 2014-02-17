@@ -55,12 +55,16 @@ CIMInstance UNIX_SwitchServiceTransparentBridgingProvider::constructInstance(
 			CIMName("UNIX_SwitchServiceTransparentBridging"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_ServiceComponent Properties
+
+	//CIM_SwitchServiceTransparentBridging Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SwitchServiceTransparentBridgingProvider::constructKeyBindings(const UNIX_SwitchServiceTransparentBridging& _p)

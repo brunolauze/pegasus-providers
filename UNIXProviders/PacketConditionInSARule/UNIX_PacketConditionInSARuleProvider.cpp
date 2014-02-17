@@ -55,12 +55,22 @@ CIMInstance UNIX_PacketConditionInSARuleProvider::constructInstance(
 			CIMName("UNIX_PacketConditionInSARule"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_PolicyComponent Properties
+
+	//CIM_PolicyConditionStructure Properties
+	if (_p.getGroupNumber(p)) inst.addProperty(p);
+	if (_p.getConditionNegated(p)) inst.addProperty(p);
+
+	//CIM_PolicyConditionInPolicyRule Properties
+
+	//CIM_PacketConditionInSARule Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PacketConditionInSARuleProvider::constructKeyBindings(const UNIX_PacketConditionInSARule& _p)

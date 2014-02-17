@@ -55,13 +55,15 @@ CIMInstance UNIX_ListsInRoutingPolicyProvider::constructInstance(
 			CIMName("UNIX_ListsInRoutingPolicy"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
+
+	//CIM_ListsInRoutingPolicy Properties
 	if (_p.getListSequence(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ListsInRoutingPolicyProvider::constructKeyBindings(const UNIX_ListsInRoutingPolicy& _p)

@@ -55,6 +55,21 @@ CIMInstance UNIX_BootServiceCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_BootServiceCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_EnabledLogicalElementCapabilities Properties
+	if (_p.getElementNameEditSupported(p)) inst.addProperty(p);
+	if (_p.getMaxElementNameLen(p)) inst.addProperty(p);
+	if (_p.getRequestedStatesSupported(p)) inst.addProperty(p);
+	if (_p.getElementNameMask(p)) inst.addProperty(p);
+
+	//CIM_BootServiceCapabilities Properties
 	if (_p.getBootConfigCapabilities(p)) inst.addProperty(p);
 	if (_p.getOtherBootConfigCapabilities(p)) inst.addProperty(p);
 	if (_p.getBootStringsSupported(p)) inst.addProperty(p);
@@ -62,8 +77,7 @@ CIMInstance UNIX_BootServiceCapabilitiesProvider::constructInstance(
 	if (_p.getOtherBootCapabilitiesSupported(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BootServiceCapabilitiesProvider::constructKeyBindings(const UNIX_BootServiceCapabilities& _p)

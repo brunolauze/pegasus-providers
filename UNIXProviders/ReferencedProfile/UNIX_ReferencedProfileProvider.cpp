@@ -55,12 +55,14 @@ CIMInstance UNIX_ReferencedProfileProvider::constructInstance(
 			CIMName("UNIX_ReferencedProfile"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ReferencedProfile Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ReferencedProfileProvider::constructKeyBindings(const UNIX_ReferencedProfile& _p)

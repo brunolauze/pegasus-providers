@@ -55,12 +55,18 @@ CIMInstance UNIX_USBPortOnHubProvider::constructInstance(
 			CIMName("UNIX_USBPortOnHub"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HostedDependency Properties
+
+	//CIM_PortOnDevice Properties
+
+	//CIM_USBPortOnHub Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_USBPortOnHubProvider::constructKeyBindings(const UNIX_USBPortOnHub& _p)

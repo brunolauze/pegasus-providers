@@ -55,12 +55,12 @@ CIMInstance UNIX_ReplaceableProductFRUProvider::constructInstance(
 			CIMName("UNIX_ReplaceableProductFRU"),
 			constructKeyBindings(_p)));
 
+	//CIM_ReplaceableProductFRU Properties
 	if (_p.getProduct(p)) inst.addProperty(p);
 	if (_p.getFRU(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ReplaceableProductFRUProvider::constructKeyBindings(const UNIX_ReplaceableProductFRU& _p)

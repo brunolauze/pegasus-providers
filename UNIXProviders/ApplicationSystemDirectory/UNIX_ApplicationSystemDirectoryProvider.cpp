@@ -55,6 +55,7 @@ CIMInstance UNIX_ApplicationSystemDirectoryProvider::constructInstance(
 			CIMName("UNIX_ApplicationSystemDirectory"),
 			constructKeyBindings(_p)));
 
+	//CIM_ApplicationSystemDirectory Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 	if (_p.getName(p)) inst.addProperty(p);
@@ -62,8 +63,7 @@ CIMInstance UNIX_ApplicationSystemDirectoryProvider::constructInstance(
 	if (_p.getOtherUseDescriptions(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ApplicationSystemDirectoryProvider::constructKeyBindings(const UNIX_ApplicationSystemDirectory& _p)

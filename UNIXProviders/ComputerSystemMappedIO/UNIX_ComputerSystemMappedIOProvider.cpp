@@ -55,12 +55,20 @@ CIMInstance UNIX_ComputerSystemMappedIOProvider::constructInstance(
 			CIMName("UNIX_ComputerSystemMappedIO"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_SystemComponent Properties
+
+	//CIM_ResourceOfSystem Properties
+
+	//CIM_ComputerSystemResource Properties
+
+	//CIM_ComputerSystemMappedIO Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ComputerSystemMappedIOProvider::constructKeyBindings(const UNIX_ComputerSystemMappedIO& _p)

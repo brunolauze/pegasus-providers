@@ -55,6 +55,46 @@ CIMInstance UNIX_UnixDeviceFileProvider::constructInstance(
 			CIMName("UNIX_UnixDeviceFile"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_LogicalElement Properties
+
+	//CIM_LogicalFile Properties
+	if (_p.getCSCreationClassName(p)) inst.addProperty(p);
+	if (_p.getCSName(p)) inst.addProperty(p);
+	if (_p.getFSCreationClassName(p)) inst.addProperty(p);
+	if (_p.getFSName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getFileSize(p)) inst.addProperty(p);
+	if (_p.getCreationDate(p)) inst.addProperty(p);
+	if (_p.getLastModified(p)) inst.addProperty(p);
+	if (_p.getLastAccessed(p)) inst.addProperty(p);
+	if (_p.getReadable(p)) inst.addProperty(p);
+	if (_p.getWriteable(p)) inst.addProperty(p);
+	if (_p.getExecutable(p)) inst.addProperty(p);
+	if (_p.getCompressionMethod(p)) inst.addProperty(p);
+	if (_p.getEncryptionMethod(p)) inst.addProperty(p);
+	if (_p.getInUseCount(p)) inst.addProperty(p);
+
+	//CIM_DeviceFile Properties
+
+	//CIM_UnixDeviceFile Properties
 	if (_p.getDeviceFileType(p)) inst.addProperty(p);
 	if (_p.getOtherTypeDescription(p)) inst.addProperty(p);
 	if (_p.getDeviceId(p)) inst.addProperty(p);
@@ -63,8 +103,7 @@ CIMInstance UNIX_UnixDeviceFileProvider::constructInstance(
 	if (_p.getDeviceMinor(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_UnixDeviceFileProvider::constructKeyBindings(const UNIX_UnixDeviceFile& _p)

@@ -55,12 +55,20 @@ CIMInstance UNIX_VirtualSystemSnapshotCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_VirtualSystemSnapshotCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_VirtualSystemSnapshotCapabilities Properties
 	if (_p.getSnapshotTypesEnabled(p)) inst.addProperty(p);
 	if (_p.getGuestOSNotificationEnabled(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_VirtualSystemSnapshotCapabilitiesProvider::constructKeyBindings(const UNIX_VirtualSystemSnapshotCapabilities& _p)

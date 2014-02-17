@@ -55,12 +55,14 @@ CIMInstance UNIX_MoreGroupInfoProvider::constructInstance(
 			CIMName("UNIX_MoreGroupInfo"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_MoreGroupInfo Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MoreGroupInfoProvider::constructKeyBindings(const UNIX_MoreGroupInfo& _p)

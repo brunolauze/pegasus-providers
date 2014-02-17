@@ -55,12 +55,16 @@ CIMInstance UNIX_LibraryPackageProvider::constructInstance(
 			CIMName("UNIX_LibraryPackage"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_SystemPackaging Properties
+
+	//CIM_LibraryPackage Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_LibraryPackageProvider::constructKeyBindings(const UNIX_LibraryPackage& _p)

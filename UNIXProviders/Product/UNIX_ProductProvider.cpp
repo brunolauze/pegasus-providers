@@ -55,6 +55,13 @@ CIMInstance UNIX_ProductProvider::constructInstance(
 			CIMName("UNIX_Product"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Product Properties
 	if (_p.getName(p)) inst.addProperty(p);
 	if (_p.getIdentifyingNumber(p)) inst.addProperty(p);
 	if (_p.getVendor(p)) inst.addProperty(p);
@@ -64,8 +71,7 @@ CIMInstance UNIX_ProductProvider::constructInstance(
 	if (_p.getWarrantyDuration(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ProductProvider::constructKeyBindings(const UNIX_Product& _p)

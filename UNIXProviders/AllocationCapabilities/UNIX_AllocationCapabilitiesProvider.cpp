@@ -55,6 +55,15 @@ CIMInstance UNIX_AllocationCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_AllocationCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_AllocationCapabilities Properties
 	if (_p.getResourceType(p)) inst.addProperty(p);
 	if (_p.getOtherResourceType(p)) inst.addProperty(p);
 	if (_p.getResourceSubType(p)) inst.addProperty(p);
@@ -64,8 +73,7 @@ CIMInstance UNIX_AllocationCapabilitiesProvider::constructInstance(
 	if (_p.getSupportedRemoveStates(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AllocationCapabilitiesProvider::constructKeyBindings(const UNIX_AllocationCapabilities& _p)

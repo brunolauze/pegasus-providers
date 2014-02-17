@@ -55,14 +55,22 @@ CIMInstance UNIX_PhysicalStatisticalInformationProvider::constructInstance(
 			CIMName("UNIX_PhysicalStatisticalInformation"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalInformation Properties
+	if (_p.getName(p)) inst.addProperty(p);
+
+	//CIM_PhysicalStatisticalInformation Properties
 	if (_p.getPhysicalCreationClassName(p)) inst.addProperty(p);
 	if (_p.getTag(p)) inst.addProperty(p);
 	if (_p.getCreationClassName(p)) inst.addProperty(p);
-	if (_p.getName(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PhysicalStatisticalInformationProvider::constructKeyBindings(const UNIX_PhysicalStatisticalInformation& _p)

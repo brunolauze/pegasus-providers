@@ -55,13 +55,21 @@ CIMInstance UNIX_BIOSServiceCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_BIOSServiceCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_BIOSServiceCapabilities Properties
 	if (_p.getMethodsSupported(p)) inst.addProperty(p);
 	if (_p.getSupportedPasswordAlgorithms(p)) inst.addProperty(p);
 	if (_p.getSupportedPasswordEncodings(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BIOSServiceCapabilitiesProvider::constructKeyBindings(const UNIX_BIOSServiceCapabilities& _p)

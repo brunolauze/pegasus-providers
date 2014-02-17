@@ -55,10 +55,25 @@ CIMInstance UNIX_InstReadProvider::constructInstance(
 			CIMName("UNIX_InstRead"),
 			constructKeyBindings(_p)));
 
+	//CIM_Indication Properties
+	if (_p.getIndicationIdentifier(p)) inst.addProperty(p);
+	if (_p.getCorrelatedIndications(p)) inst.addProperty(p);
+	if (_p.getIndicationTime(p)) inst.addProperty(p);
+	if (_p.getPerceivedSeverity(p)) inst.addProperty(p);
+	if (_p.getOtherSeverity(p)) inst.addProperty(p);
+	if (_p.getIndicationFilterName(p)) inst.addProperty(p);
+	if (_p.getSequenceContext(p)) inst.addProperty(p);
+	if (_p.getSequenceNumber(p)) inst.addProperty(p);
+
+	//CIM_InstIndication Properties
+	if (_p.getSourceInstance(p)) inst.addProperty(p);
+	if (_p.getSourceInstanceModelPath(p)) inst.addProperty(p);
+	if (_p.getSourceInstanceHost(p)) inst.addProperty(p);
+
+	//CIM_InstRead Properties
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_InstReadProvider::constructKeyBindings(const UNIX_InstRead& _p)

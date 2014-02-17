@@ -55,6 +55,17 @@ CIMInstance UNIX_UserContactProvider::constructInstance(
 			CIMName("UNIX_UserContact"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_OrganizationalEntity Properties
+
+	//CIM_UserEntity Properties
+
+	//CIM_UserContact Properties
 	if (_p.getCreationClassName(p)) inst.addProperty(p);
 	if (_p.getName(p)) inst.addProperty(p);
 	if (_p.getGivenName(p)) inst.addProperty(p);
@@ -68,8 +79,7 @@ CIMInstance UNIX_UserContactProvider::constructInstance(
 	if (_p.getTelephoneNumber(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_UserContactProvider::constructKeyBindings(const UNIX_UserContact& _p)

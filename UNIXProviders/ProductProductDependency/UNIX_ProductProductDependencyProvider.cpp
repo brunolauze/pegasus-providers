@@ -55,13 +55,13 @@ CIMInstance UNIX_ProductProductDependencyProvider::constructInstance(
 			CIMName("UNIX_ProductProductDependency"),
 			constructKeyBindings(_p)));
 
+	//CIM_ProductProductDependency Properties
 	if (_p.getRequiredProduct(p)) inst.addProperty(p);
 	if (_p.getDependentProduct(p)) inst.addProperty(p);
 	if (_p.getTypeOfDependency(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ProductProductDependencyProvider::constructKeyBindings(const UNIX_ProductProductDependency& _p)

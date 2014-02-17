@@ -55,12 +55,12 @@ CIMInstance UNIX_PolicySetAppliesToElementProvider::constructInstance(
 			CIMName("UNIX_PolicySetAppliesToElement"),
 			constructKeyBindings(_p)));
 
+	//CIM_PolicySetAppliesToElement Properties
 	if (_p.getPolicySet(p)) inst.addProperty(p);
 	if (_p.getManagedElement(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PolicySetAppliesToElementProvider::constructKeyBindings(const UNIX_PolicySetAppliesToElement& _p)

@@ -55,6 +55,18 @@ CIMInstance UNIX_DeviceErrorDataProvider::constructInstance(
 			CIMName("UNIX_DeviceErrorData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_DeviceErrorData Properties
 	if (_p.getIndeterminateErrorCount(p)) inst.addProperty(p);
 	if (_p.getCriticalErrorCount(p)) inst.addProperty(p);
 	if (_p.getMajorErrorCount(p)) inst.addProperty(p);
@@ -64,8 +76,7 @@ CIMInstance UNIX_DeviceErrorDataProvider::constructInstance(
 	if (_p.getErrorDescription(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DeviceErrorDataProvider::constructKeyBindings(const UNIX_DeviceErrorData& _p)

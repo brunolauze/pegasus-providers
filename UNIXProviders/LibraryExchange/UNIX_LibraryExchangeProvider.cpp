@@ -55,13 +55,15 @@ CIMInstance UNIX_LibraryExchangeProvider::constructInstance(
 			CIMName("UNIX_LibraryExchange"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_LibraryExchange Properties
 	if (_p.getCurrentlyAccessingPort(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_LibraryExchangeProvider::constructKeyBindings(const UNIX_LibraryExchange& _p)

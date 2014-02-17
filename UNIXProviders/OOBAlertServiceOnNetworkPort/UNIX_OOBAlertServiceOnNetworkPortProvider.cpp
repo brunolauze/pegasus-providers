@@ -55,12 +55,16 @@ CIMInstance UNIX_OOBAlertServiceOnNetworkPortProvider::constructInstance(
 			CIMName("UNIX_OOBAlertServiceOnNetworkPort"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_DeviceServiceImplementation Properties
+
+	//CIM_OOBAlertServiceOnNetworkPort Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_OOBAlertServiceOnNetworkPortProvider::constructKeyBindings(const UNIX_OOBAlertServiceOnNetworkPort& _p)

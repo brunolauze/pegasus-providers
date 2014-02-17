@@ -55,7 +55,24 @@ CIMInstance UNIX_ListenerDestinationWSManagementProvider::constructInstance(
 			CIMName("UNIX_ListenerDestinationWSManagement"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ListenerDestination Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getPersistenceType(p)) inst.addProperty(p);
+	if (_p.getOtherPersistenceType(p)) inst.addProperty(p);
 	if (_p.getDestination(p)) inst.addProperty(p);
+	if (_p.getOtherProtocol(p)) inst.addProperty(p);
+	if (_p.getProtocol(p)) inst.addProperty(p);
+
+	//CIM_ListenerDestinationWSManagement Properties
 	if (_p.getDestinationEndTo(p)) inst.addProperty(p);
 	if (_p.getLocale(p)) inst.addProperty(p);
 	if (_p.getContentEncoding(p)) inst.addProperty(p);
@@ -67,8 +84,7 @@ CIMInstance UNIX_ListenerDestinationWSManagementProvider::constructInstance(
 	if (_p.getPolyMorphismMode(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ListenerDestinationWSManagementProvider::constructKeyBindings(const UNIX_ListenerDestinationWSManagement& _p)

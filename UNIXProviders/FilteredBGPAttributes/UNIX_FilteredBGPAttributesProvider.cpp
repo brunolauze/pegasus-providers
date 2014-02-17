@@ -55,12 +55,14 @@ CIMInstance UNIX_FilteredBGPAttributesProvider::constructInstance(
 			CIMName("UNIX_FilteredBGPAttributes"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_FilteredBGPAttributes Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_FilteredBGPAttributesProvider::constructKeyBindings(const UNIX_FilteredBGPAttributes& _p)

@@ -55,13 +55,15 @@ CIMInstance UNIX_AllocatedFromStoragePoolProvider::constructInstance(
 			CIMName("UNIX_AllocatedFromStoragePool"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_AllocatedFromStoragePool Properties
 	if (_p.getSpaceConsumed(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AllocatedFromStoragePoolProvider::constructKeyBindings(const UNIX_AllocatedFromStoragePool& _p)

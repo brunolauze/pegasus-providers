@@ -55,10 +55,50 @@ CIMInstance UNIX_NetworkProvider::constructInstance(
 			CIMName("UNIX_Network"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_LogicalElement Properties
+
+	//CIM_EnabledLogicalElement Properties
+	if (_p.getEnabledState(p)) inst.addProperty(p);
+	if (_p.getOtherEnabledState(p)) inst.addProperty(p);
+	if (_p.getRequestedState(p)) inst.addProperty(p);
+	if (_p.getEnabledDefault(p)) inst.addProperty(p);
+	if (_p.getTimeOfLastStateChange(p)) inst.addProperty(p);
+	if (_p.getAvailableRequestedStates(p)) inst.addProperty(p);
+	if (_p.getTransitioningToState(p)) inst.addProperty(p);
+
+	//CIM_System Properties
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getNameFormat(p)) inst.addProperty(p);
+	if (_p.getPrimaryOwnerName(p)) inst.addProperty(p);
+	if (_p.getPrimaryOwnerContact(p)) inst.addProperty(p);
+	if (_p.getRoles(p)) inst.addProperty(p);
+	if (_p.getOtherIdentifyingInfo(p)) inst.addProperty(p);
+	if (_p.getIdentifyingDescriptions(p)) inst.addProperty(p);
+
+	//CIM_AdminDomain Properties
+
+	//CIM_Network Properties
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NetworkProvider::constructKeyBindings(const UNIX_Network& _p)

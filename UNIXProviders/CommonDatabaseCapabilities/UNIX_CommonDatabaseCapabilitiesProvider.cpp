@@ -55,12 +55,20 @@ CIMInstance UNIX_CommonDatabaseCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_CommonDatabaseCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_CommonDatabaseCapabilities Properties
 	if (_p.getRecoverabilityOptions(p)) inst.addProperty(p);
 	if (_p.getOtherRecoverabilityOptions(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CommonDatabaseCapabilitiesProvider::constructKeyBindings(const UNIX_CommonDatabaseCapabilities& _p)

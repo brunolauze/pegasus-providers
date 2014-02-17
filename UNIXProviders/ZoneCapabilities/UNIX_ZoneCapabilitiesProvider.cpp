@@ -55,6 +55,15 @@ CIMInstance UNIX_ZoneCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_ZoneCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_ZoneCapabilities Properties
 	if (_p.getZoneNameMaxLen(p)) inst.addProperty(p);
 	if (_p.getZoneNameFormat(p)) inst.addProperty(p);
 	if (_p.getMaxNumZoneSets(p)) inst.addProperty(p);
@@ -66,8 +75,7 @@ CIMInstance UNIX_ZoneCapabilitiesProvider::constructInstance(
 	if (_p.getSupportedConnectivityMemberTypes(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ZoneCapabilitiesProvider::constructKeyBindings(const UNIX_ZoneCapabilities& _p)

@@ -55,7 +55,19 @@ CIMInstance UNIX_LogEntryProvider::constructInstance(
 			CIMName("UNIX_LogEntry"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_RecordForLog Properties
+	if (_p.getRecordFormat(p)) inst.addProperty(p);
+	if (_p.getRecordData(p)) inst.addProperty(p);
+	if (_p.getLocale(p)) inst.addProperty(p);
+	if (_p.getPerceivedSeverity(p)) inst.addProperty(p);
+
+	//CIM_LogEntry Properties
 	if (_p.getLogInstanceID(p)) inst.addProperty(p);
 	if (_p.getLogName(p)) inst.addProperty(p);
 	if (_p.getRecordID(p)) inst.addProperty(p);
@@ -66,8 +78,7 @@ CIMInstance UNIX_LogEntryProvider::constructInstance(
 	if (_p.getOwningEntity(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_LogEntryProvider::constructKeyBindings(const UNIX_LogEntry& _p)

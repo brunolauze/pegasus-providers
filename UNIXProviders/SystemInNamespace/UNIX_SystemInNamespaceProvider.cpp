@@ -55,14 +55,14 @@ CIMInstance UNIX_SystemInNamespaceProvider::constructInstance(
 			CIMName("UNIX_SystemInNamespace"),
 			constructKeyBindings(_p)));
 
+	//CIM_SystemInNamespace Properties
 	if (_p.getManagedNamespace(p)) inst.addProperty(p);
 	if (_p.getIdentification(p)) inst.addProperty(p);
 	if (_p.getScopeOfContainedData(p)) inst.addProperty(p);
 	if (_p.getDescriptionOfContainedData(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SystemInNamespaceProvider::constructKeyBindings(const UNIX_SystemInNamespace& _p)

@@ -55,6 +55,18 @@ CIMInstance UNIX_PickerStatDataProvider::constructInstance(
 			CIMName("UNIX_PickerStatData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_PickerStatData Properties
 	if (_p.getPickSuccesses(p)) inst.addProperty(p);
 	if (_p.getPickFailures(p)) inst.addProperty(p);
 	if (_p.getPickRetries(p)) inst.addProperty(p);
@@ -63,8 +75,7 @@ CIMInstance UNIX_PickerStatDataProvider::constructInstance(
 	if (_p.getPutRetries(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PickerStatDataProvider::constructKeyBindings(const UNIX_PickerStatData& _p)

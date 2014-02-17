@@ -55,6 +55,51 @@ CIMInstance UNIX_ClusterProvider::constructInstance(
 			CIMName("UNIX_Cluster"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_LogicalElement Properties
+
+	//CIM_EnabledLogicalElement Properties
+	if (_p.getEnabledState(p)) inst.addProperty(p);
+	if (_p.getOtherEnabledState(p)) inst.addProperty(p);
+	if (_p.getRequestedState(p)) inst.addProperty(p);
+	if (_p.getEnabledDefault(p)) inst.addProperty(p);
+	if (_p.getTimeOfLastStateChange(p)) inst.addProperty(p);
+	if (_p.getAvailableRequestedStates(p)) inst.addProperty(p);
+	if (_p.getTransitioningToState(p)) inst.addProperty(p);
+
+	//CIM_System Properties
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getNameFormat(p)) inst.addProperty(p);
+	if (_p.getPrimaryOwnerName(p)) inst.addProperty(p);
+	if (_p.getPrimaryOwnerContact(p)) inst.addProperty(p);
+	if (_p.getRoles(p)) inst.addProperty(p);
+	if (_p.getOtherIdentifyingInfo(p)) inst.addProperty(p);
+	if (_p.getIdentifyingDescriptions(p)) inst.addProperty(p);
+
+	//CIM_ComputerSystem Properties
+	if (_p.getDedicated(p)) inst.addProperty(p);
+	if (_p.getOtherDedicatedDescriptions(p)) inst.addProperty(p);
+	if (_p.getResetCapability(p)) inst.addProperty(p);
+	if (_p.getPowerManagementCapabilities(p)) inst.addProperty(p);
+
+	//CIM_Cluster Properties
 	if (_p.getInterconnect(p)) inst.addProperty(p);
 	if (_p.getInterconnectAddress(p)) inst.addProperty(p);
 	if (_p.getTypes(p)) inst.addProperty(p);
@@ -62,8 +107,7 @@ CIMInstance UNIX_ClusterProvider::constructInstance(
 	if (_p.getClusterState(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ClusterProvider::constructKeyBindings(const UNIX_Cluster& _p)

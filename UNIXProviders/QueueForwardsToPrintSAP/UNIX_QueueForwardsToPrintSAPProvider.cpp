@@ -55,12 +55,14 @@ CIMInstance UNIX_QueueForwardsToPrintSAPProvider::constructInstance(
 			CIMName("UNIX_QueueForwardsToPrintSAP"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_QueueForwardsToPrintSAP Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_QueueForwardsToPrintSAPProvider::constructKeyBindings(const UNIX_QueueForwardsToPrintSAP& _p)

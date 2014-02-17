@@ -55,14 +55,28 @@ CIMInstance UNIX_BIOSIntegerProvider::constructInstance(
 			CIMName("UNIX_BIOSInteger"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_BIOSAttribute Properties
+	if (_p.getAttributeName(p)) inst.addProperty(p);
+	if (_p.getCurrentValue(p)) inst.addProperty(p);
+	if (_p.getDefaultValue(p)) inst.addProperty(p);
+	if (_p.getPendingValue(p)) inst.addProperty(p);
+	if (_p.getIsOrderedList(p)) inst.addProperty(p);
+	if (_p.getIsReadOnly(p)) inst.addProperty(p);
+
+	//CIM_BIOSInteger Properties
 	if (_p.getLowerBound(p)) inst.addProperty(p);
 	if (_p.getUpperBound(p)) inst.addProperty(p);
 	if (_p.getProgrammaticUnit(p)) inst.addProperty(p);
 	if (_p.getScalarIncrement(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BIOSIntegerProvider::constructKeyBindings(const UNIX_BIOSInteger& _p)

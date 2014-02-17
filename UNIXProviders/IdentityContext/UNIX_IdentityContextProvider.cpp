@@ -55,12 +55,12 @@ CIMInstance UNIX_IdentityContextProvider::constructInstance(
 			CIMName("UNIX_IdentityContext"),
 			constructKeyBindings(_p)));
 
+	//CIM_IdentityContext Properties
 	if (_p.getElementInContext(p)) inst.addProperty(p);
 	if (_p.getElementProvidingContext(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IdentityContextProvider::constructKeyBindings(const UNIX_IdentityContext& _p)

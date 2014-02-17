@@ -55,12 +55,14 @@ CIMInstance UNIX_ProductComponentProvider::constructInstance(
 			CIMName("UNIX_ProductComponent"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_ProductComponent Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ProductComponentProvider::constructKeyBindings(const UNIX_ProductComponent& _p)

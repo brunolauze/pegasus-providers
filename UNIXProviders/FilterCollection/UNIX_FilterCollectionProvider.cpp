@@ -55,12 +55,19 @@ CIMInstance UNIX_FilterCollectionProvider::constructInstance(
 			CIMName("UNIX_FilterCollection"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_FilterCollection Properties
 	if (_p.getCollectionName(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_FilterCollectionProvider::constructKeyBindings(const UNIX_FilterCollection& _p)

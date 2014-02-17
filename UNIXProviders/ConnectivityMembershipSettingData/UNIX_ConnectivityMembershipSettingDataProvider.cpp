@@ -55,13 +55,23 @@ CIMInstance UNIX_ConnectivityMembershipSettingDataProvider::constructInstance(
 			CIMName("UNIX_ConnectivityMembershipSettingData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_ConnectivityMembershipSettingData Properties
 	if (_p.getConnectivityMemberType(p)) inst.addProperty(p);
 	if (_p.getOtherConnectivityMemberType(p)) inst.addProperty(p);
 	if (_p.getConnectivityMemberID(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ConnectivityMembershipSettingDataProvider::constructKeyBindings(const UNIX_ConnectivityMembershipSettingData& _p)

@@ -55,12 +55,14 @@ CIMInstance UNIX_LogInDataFileProvider::constructInstance(
 			CIMName("UNIX_LogInDataFile"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_LogInDataFile Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_LogInDataFileProvider::constructKeyBindings(const UNIX_LogInDataFile& _p)

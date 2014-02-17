@@ -55,8 +55,40 @@ CIMInstance UNIX_BIOSElementProvider::constructInstance(
 			CIMName("UNIX_BIOSElement"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_LogicalElement Properties
+
+	//UNIX_SoftwareElement Properties
 	if (_p.getVersion(p)) inst.addProperty(p);
+	if (_p.getSoftwareElementState(p)) inst.addProperty(p);
+	if (_p.getSoftwareElementID(p)) inst.addProperty(p);
+	if (_p.getTargetOperatingSystem(p)) inst.addProperty(p);
+	if (_p.getOtherTargetOS(p)) inst.addProperty(p);
 	if (_p.getManufacturer(p)) inst.addProperty(p);
+	if (_p.getBuildNumber(p)) inst.addProperty(p);
+	if (_p.getSerialNumber(p)) inst.addProperty(p);
+	if (_p.getCodeSet(p)) inst.addProperty(p);
+	if (_p.getIdentificationCode(p)) inst.addProperty(p);
+	if (_p.getLanguageEdition(p)) inst.addProperty(p);
+
+	//CIM_BIOSElement Properties
 	if (_p.getPrimaryBIOS(p)) inst.addProperty(p);
 	if (_p.getListOfLanguages(p)) inst.addProperty(p);
 	if (_p.getCurrentLanguage(p)) inst.addProperty(p);
@@ -67,8 +99,7 @@ CIMInstance UNIX_BIOSElementProvider::constructInstance(
 	if (_p.getRegistryURIs(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BIOSElementProvider::constructKeyBindings(const UNIX_BIOSElement& _p)

@@ -55,12 +55,16 @@ CIMInstance UNIX_HostedRouteProvider::constructInstance(
 			CIMName("UNIX_HostedRoute"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HostedDependency Properties
+
+	//CIM_HostedRoute Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_HostedRouteProvider::constructKeyBindings(const UNIX_HostedRoute& _p)

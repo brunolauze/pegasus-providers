@@ -55,6 +55,15 @@ CIMInstance UNIX_ProtocolControllerMaskingCapabilitiesProvider::constructInstanc
 			CIMName("UNIX_ProtocolControllerMaskingCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_ProtocolControllerMaskingCapabilities Properties
 	if (_p.getValidHardwareIdTypes(p)) inst.addProperty(p);
 	if (_p.getOtherValidHardwareIDTypes(p)) inst.addProperty(p);
 	if (_p.getPortsPerView(p)) inst.addProperty(p);
@@ -74,8 +83,7 @@ CIMInstance UNIX_ProtocolControllerMaskingCapabilitiesProvider::constructInstanc
 	if (_p.getSPCSupportsDefaultViews(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ProtocolControllerMaskingCapabilitiesProvider::constructKeyBindings(const UNIX_ProtocolControllerMaskingCapabilities& _p)

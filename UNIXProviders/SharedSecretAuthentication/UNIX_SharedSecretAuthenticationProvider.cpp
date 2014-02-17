@@ -55,12 +55,32 @@ CIMInstance UNIX_SharedSecretAuthenticationProvider::constructInstance(
 			CIMName("UNIX_SharedSecretAuthentication"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Policy Properties
+	if (_p.getCommonName(p)) inst.addProperty(p);
+	if (_p.getPolicyKeywords(p)) inst.addProperty(p);
+
+	//CIM_PolicyCondition Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getPolicyRuleCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPolicyRuleName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPolicyConditionName(p)) inst.addProperty(p);
+
+	//CIM_AuthenticationCondition Properties
+
+	//CIM_SharedSecretAuthentication Properties
 	if (_p.getIDOfPrincipal(p)) inst.addProperty(p);
 	if (_p.getContextOfSecret(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SharedSecretAuthenticationProvider::constructKeyBindings(const UNIX_SharedSecretAuthentication& _p)

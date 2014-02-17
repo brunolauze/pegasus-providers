@@ -55,6 +55,38 @@ CIMInstance UNIX_EthernetPortAllocationSettingDataProvider::constructInstance(
 			CIMName("UNIX_EthernetPortAllocationSettingData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_ResourceAllocationSettingData Properties
+	if (_p.getResourceType(p)) inst.addProperty(p);
+	if (_p.getOtherResourceType(p)) inst.addProperty(p);
+	if (_p.getResourceSubType(p)) inst.addProperty(p);
+	if (_p.getPoolID(p)) inst.addProperty(p);
+	if (_p.getConsumerVisibility(p)) inst.addProperty(p);
+	if (_p.getHostResource(p)) inst.addProperty(p);
+	if (_p.getAllocationUnits(p)) inst.addProperty(p);
+	if (_p.getVirtualQuantity(p)) inst.addProperty(p);
+	if (_p.getReservation(p)) inst.addProperty(p);
+	if (_p.getLimit(p)) inst.addProperty(p);
+	if (_p.getWeight(p)) inst.addProperty(p);
+	if (_p.getAutomaticAllocation(p)) inst.addProperty(p);
+	if (_p.getAutomaticDeallocation(p)) inst.addProperty(p);
+	if (_p.getParent(p)) inst.addProperty(p);
+	if (_p.getConnection(p)) inst.addProperty(p);
+	if (_p.getAddress(p)) inst.addProperty(p);
+	if (_p.getMappingBehavior(p)) inst.addProperty(p);
+	if (_p.getAddressOnParent(p)) inst.addProperty(p);
+	if (_p.getVirtualQuantityUnits(p)) inst.addProperty(p);
+
+	//CIM_EthernetPortAllocationSettingData Properties
 	if (_p.getDesiredVLANEndpointMode(p)) inst.addProperty(p);
 	if (_p.getOtherEndpointMode(p)) inst.addProperty(p);
 	if (_p.getAllowedPriorities(p)) inst.addProperty(p);
@@ -79,8 +111,7 @@ CIMInstance UNIX_EthernetPortAllocationSettingDataProvider::constructInstance(
 	if (_p.getVSITypeIDVersion(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_EthernetPortAllocationSettingDataProvider::constructKeyBindings(const UNIX_EthernetPortAllocationSettingData& _p)

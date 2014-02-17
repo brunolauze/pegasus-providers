@@ -55,6 +55,18 @@ CIMInstance UNIX_iSCSISessionFailuresProvider::constructInstance(
 			CIMName("UNIX_iSCSISessionFailures"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_iSCSISessionFailures Properties
 	if (_p.getSessionFailures(p)) inst.addProperty(p);
 	if (_p.getLastSessionFailureType(p)) inst.addProperty(p);
 	if (_p.getOtherLastSessionFailureType(p)) inst.addProperty(p);
@@ -64,8 +76,7 @@ CIMInstance UNIX_iSCSISessionFailuresProvider::constructInstance(
 	if (_p.getSessionFormatErrors(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_iSCSISessionFailuresProvider::constructKeyBindings(const UNIX_iSCSISessionFailures& _p)

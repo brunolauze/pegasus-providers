@@ -55,12 +55,16 @@ CIMInstance UNIX_WakeUpServiceOnNetworkPortProvider::constructInstance(
 			CIMName("UNIX_WakeUpServiceOnNetworkPort"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_DeviceServiceImplementation Properties
+
+	//CIM_WakeUpServiceOnNetworkPort Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_WakeUpServiceOnNetworkPortProvider::constructKeyBindings(const UNIX_WakeUpServiceOnNetworkPort& _p)

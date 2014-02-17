@@ -55,6 +55,24 @@ CIMInstance UNIX_ESPTransformProvider::constructInstance(
 			CIMName("UNIX_ESPTransform"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_ScopedSettingData Properties
+
+	//CIM_SATransform Properties
+	if (_p.getMaxLifetimeSeconds(p)) inst.addProperty(p);
+	if (_p.getMaxLifetimeKilobytes(p)) inst.addProperty(p);
+	if (_p.getVendorID(p)) inst.addProperty(p);
+
+	//CIM_ESPTransform Properties
 	if (_p.getIntegrityTransformId(p)) inst.addProperty(p);
 	if (_p.getOtherIntegrityTransformId(p)) inst.addProperty(p);
 	if (_p.getCipherTransformId(p)) inst.addProperty(p);
@@ -65,8 +83,7 @@ CIMInstance UNIX_ESPTransformProvider::constructInstance(
 	if (_p.getReplayPreventionWindowSize(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ESPTransformProvider::constructKeyBindings(const UNIX_ESPTransform& _p)

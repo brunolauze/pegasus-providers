@@ -55,12 +55,19 @@ CIMInstance UNIX_OperationLogProvider::constructInstance(
 			CIMName("UNIX_OperationLog"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_UseOfLog Properties
+	if (_p.getRecordedData(p)) inst.addProperty(p);
+
+	//CIM_UseOfMessageLog Properties
+
+	//CIM_OperationLog Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_OperationLogProvider::constructKeyBindings(const UNIX_OperationLog& _p)

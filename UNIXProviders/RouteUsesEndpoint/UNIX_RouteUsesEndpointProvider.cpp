@@ -55,12 +55,14 @@ CIMInstance UNIX_RouteUsesEndpointProvider::constructInstance(
 			CIMName("UNIX_RouteUsesEndpoint"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_RouteUsesEndpoint Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RouteUsesEndpointProvider::constructKeyBindings(const UNIX_RouteUsesEndpoint& _p)

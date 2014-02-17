@@ -55,14 +55,16 @@ CIMInstance UNIX_BIOSLoadedInNVProvider::constructInstance(
 			CIMName("UNIX_BIOSLoadedInNV"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_BIOSLoadedInNV Properties
 	if (_p.getStartingAddress(p)) inst.addProperty(p);
 	if (_p.getEndingAddress(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BIOSLoadedInNVProvider::constructKeyBindings(const UNIX_BIOSLoadedInNV& _p)

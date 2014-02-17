@@ -55,11 +55,22 @@ CIMInstance UNIX_BGPClusterProvider::constructInstance(
 			CIMName("UNIX_BGPCluster"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_CollectionOfMSEs Properties
+	if (_p.getCollectionID(p)) inst.addProperty(p);
+
+	//CIM_BGPCluster Properties
 	if (_p.getClusterID(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BGPClusterProvider::constructKeyBindings(const UNIX_BGPCluster& _p)

@@ -55,12 +55,12 @@ CIMInstance UNIX_ProductSupportProvider::constructInstance(
 			CIMName("UNIX_ProductSupport"),
 			constructKeyBindings(_p)));
 
+	//CIM_ProductSupport Properties
 	if (_p.getProduct(p)) inst.addProperty(p);
 	if (_p.getSupport(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ProductSupportProvider::constructKeyBindings(const UNIX_ProductSupport& _p)

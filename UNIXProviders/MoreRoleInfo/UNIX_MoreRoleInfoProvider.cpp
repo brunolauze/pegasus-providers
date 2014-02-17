@@ -55,12 +55,14 @@ CIMInstance UNIX_MoreRoleInfoProvider::constructInstance(
 			CIMName("UNIX_MoreRoleInfo"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_MoreRoleInfo Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MoreRoleInfoProvider::constructKeyBindings(const UNIX_MoreRoleInfo& _p)

@@ -55,12 +55,20 @@ CIMInstance UNIX_DeviceSharingCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_DeviceSharingCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_DeviceSharingCapabilities Properties
 	if (_p.getSupportedAccessModes(p)) inst.addProperty(p);
 	if (_p.getOtherSupportedAccessModes(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DeviceSharingCapabilitiesProvider::constructKeyBindings(const UNIX_DeviceSharingCapabilities& _p)

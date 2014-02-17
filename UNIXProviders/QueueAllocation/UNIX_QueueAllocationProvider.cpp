@@ -55,13 +55,15 @@ CIMInstance UNIX_QueueAllocationProvider::constructInstance(
 			CIMName("UNIX_QueueAllocation"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_QueueAllocation Properties
 	if (_p.getAllocationPercentage(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_QueueAllocationProvider::constructKeyBindings(const UNIX_QueueAllocation& _p)

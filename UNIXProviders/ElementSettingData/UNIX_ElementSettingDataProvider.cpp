@@ -55,6 +55,7 @@ CIMInstance UNIX_ElementSettingDataProvider::constructInstance(
 			CIMName("UNIX_ElementSettingData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ElementSettingData Properties
 	if (_p.getManagedElement(p)) inst.addProperty(p);
 	if (_p.getSettingData(p)) inst.addProperty(p);
 	if (_p.getIsDefault(p)) inst.addProperty(p);
@@ -62,8 +63,7 @@ CIMInstance UNIX_ElementSettingDataProvider::constructInstance(
 	if (_p.getIsNext(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ElementSettingDataProvider::constructKeyBindings(const UNIX_ElementSettingData& _p)

@@ -55,12 +55,28 @@ CIMInstance UNIX_AggregationMetricValueProvider::constructInstance(
 			CIMName("UNIX_AggregationMetricValue"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_BaseMetricValue Properties
+	if (_p.getMetricDefinitionId(p)) inst.addProperty(p);
+	if (_p.getMeasuredElementName(p)) inst.addProperty(p);
+	if (_p.getTimeStamp(p)) inst.addProperty(p);
+	if (_p.getDuration(p)) inst.addProperty(p);
+	if (_p.getMetricValue(p)) inst.addProperty(p);
+	if (_p.getBreakdownDimension(p)) inst.addProperty(p);
+	if (_p.getBreakdownValue(p)) inst.addProperty(p);
+	if (_p.getVolatile(p)) inst.addProperty(p);
+
+	//CIM_AggregationMetricValue Properties
 	if (_p.getAggregationTimeStamp(p)) inst.addProperty(p);
 	if (_p.getAggregationDuration(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AggregationMetricValueProvider::constructKeyBindings(const UNIX_AggregationMetricValue& _p)

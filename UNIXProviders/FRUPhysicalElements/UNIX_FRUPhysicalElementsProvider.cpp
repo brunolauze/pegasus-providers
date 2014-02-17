@@ -55,12 +55,12 @@ CIMInstance UNIX_FRUPhysicalElementsProvider::constructInstance(
 			CIMName("UNIX_FRUPhysicalElements"),
 			constructKeyBindings(_p)));
 
+	//CIM_FRUPhysicalElements Properties
 	if (_p.getFRU(p)) inst.addProperty(p);
 	if (_p.getComponent(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_FRUPhysicalElementsProvider::constructKeyBindings(const UNIX_FRUPhysicalElements& _p)

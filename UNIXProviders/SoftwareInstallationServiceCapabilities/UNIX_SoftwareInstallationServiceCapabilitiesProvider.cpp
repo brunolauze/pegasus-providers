@@ -55,6 +55,15 @@ CIMInstance UNIX_SoftwareInstallationServiceCapabilitiesProvider::constructInsta
 			CIMName("UNIX_SoftwareInstallationServiceCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_SoftwareInstallationServiceCapabilities Properties
 	if (_p.getSupportedAsynchronousActions(p)) inst.addProperty(p);
 	if (_p.getSupportedSynchronousActions(p)) inst.addProperty(p);
 	if (_p.getSupportedTargetTypes(p)) inst.addProperty(p);
@@ -69,8 +78,7 @@ CIMInstance UNIX_SoftwareInstallationServiceCapabilitiesProvider::constructInsta
 	if (_p.getSupportedURISchemes(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SoftwareInstallationServiceCapabilitiesProvider::constructKeyBindings(const UNIX_SoftwareInstallationServiceCapabilities& _p)

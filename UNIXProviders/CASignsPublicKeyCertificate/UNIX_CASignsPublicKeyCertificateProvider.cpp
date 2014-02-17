@@ -55,16 +55,20 @@ CIMInstance UNIX_CASignsPublicKeyCertificateProvider::constructInstance(
 			CIMName("UNIX_CASignsPublicKeyCertificate"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_ManagedCredential Properties
+
+	//CIM_CASignsPublicKeyCertificate Properties
 	if (_p.getSerialNumber(p)) inst.addProperty(p);
 	if (_p.getSignature(p)) inst.addProperty(p);
 	if (_p.getExpires(p)) inst.addProperty(p);
 	if (_p.getCRLDistributionPoint(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CASignsPublicKeyCertificateProvider::constructKeyBindings(const UNIX_CASignsPublicKeyCertificate& _p)

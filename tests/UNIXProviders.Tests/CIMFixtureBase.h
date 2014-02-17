@@ -29,6 +29,8 @@
 //
 //%////////////////////////////////////////////////////////////////////////////
 
+#ifndef __CIMFIXTUREBASE_H
+#define __CIMFIXTUREBASE_H
 
 class CIMFixtureBase
 {
@@ -36,3 +38,5 @@ public:
 	virtual void Run()=0;
 	
 };
+
+#endif

@@ -55,12 +55,16 @@ CIMInstance UNIX_NetworkServicesInAdminDomainProvider::constructInstance(
 			CIMName("UNIX_NetworkServicesInAdminDomain"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HostedDependency Properties
+
+	//CIM_NetworkServicesInAdminDomain Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NetworkServicesInAdminDomainProvider::constructKeyBindings(const UNIX_NetworkServicesInAdminDomain& _p)

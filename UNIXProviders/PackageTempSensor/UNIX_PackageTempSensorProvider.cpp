@@ -55,12 +55,16 @@ CIMInstance UNIX_PackageTempSensorProvider::constructInstance(
 			CIMName("UNIX_PackageTempSensor"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_PackageDependency Properties
+
+	//CIM_PackageTempSensor Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PackageTempSensorProvider::constructKeyBindings(const UNIX_PackageTempSensor& _p)

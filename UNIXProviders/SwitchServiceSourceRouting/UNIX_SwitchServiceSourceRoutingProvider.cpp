@@ -55,12 +55,16 @@ CIMInstance UNIX_SwitchServiceSourceRoutingProvider::constructInstance(
 			CIMName("UNIX_SwitchServiceSourceRouting"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_ServiceComponent Properties
+
+	//CIM_SwitchServiceSourceRouting Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SwitchServiceSourceRoutingProvider::constructKeyBindings(const UNIX_SwitchServiceSourceRouting& _p)

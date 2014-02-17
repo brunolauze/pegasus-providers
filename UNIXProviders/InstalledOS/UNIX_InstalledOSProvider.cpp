@@ -55,13 +55,17 @@ CIMInstance UNIX_InstalledOSProvider::constructInstance(
 			CIMName("UNIX_InstalledOS"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
+
+	//CIM_SystemComponent Properties
+
+	//CIM_InstalledOS Properties
 	if (_p.getPrimaryOS(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_InstalledOSProvider::constructKeyBindings(const UNIX_InstalledOS& _p)

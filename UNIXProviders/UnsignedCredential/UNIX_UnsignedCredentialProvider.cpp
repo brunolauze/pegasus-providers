@@ -55,7 +55,17 @@ CIMInstance UNIX_UnsignedCredentialProvider::constructInstance(
 			CIMName("UNIX_UnsignedCredential"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Credential Properties
+	if (_p.getIssued(p)) inst.addProperty(p);
+	if (_p.getExpires(p)) inst.addProperty(p);
+
+	//CIM_UnsignedCredential Properties
 	if (_p.getPeerIdentity(p)) inst.addProperty(p);
 	if (_p.getPeerIdentityType(p)) inst.addProperty(p);
 	if (_p.getPublicKey(p)) inst.addProperty(p);
@@ -63,8 +73,7 @@ CIMInstance UNIX_UnsignedCredentialProvider::constructInstance(
 	if (_p.getOtherPublicKeyEncoding(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_UnsignedCredentialProvider::constructKeyBindings(const UNIX_UnsignedCredential& _p)

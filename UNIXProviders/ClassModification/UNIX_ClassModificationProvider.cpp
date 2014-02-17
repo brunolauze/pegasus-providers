@@ -55,11 +55,24 @@ CIMInstance UNIX_ClassModificationProvider::constructInstance(
 			CIMName("UNIX_ClassModification"),
 			constructKeyBindings(_p)));
 
+	//CIM_Indication Properties
+	if (_p.getIndicationIdentifier(p)) inst.addProperty(p);
+	if (_p.getCorrelatedIndications(p)) inst.addProperty(p);
+	if (_p.getIndicationTime(p)) inst.addProperty(p);
+	if (_p.getPerceivedSeverity(p)) inst.addProperty(p);
+	if (_p.getOtherSeverity(p)) inst.addProperty(p);
+	if (_p.getIndicationFilterName(p)) inst.addProperty(p);
+	if (_p.getSequenceContext(p)) inst.addProperty(p);
+	if (_p.getSequenceNumber(p)) inst.addProperty(p);
+
+	//CIM_ClassIndication Properties
+	if (_p.getClassDefinition(p)) inst.addProperty(p);
+
+	//CIM_ClassModification Properties
 	if (_p.getPreviousClassDefinition(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ClassModificationProvider::constructKeyBindings(const UNIX_ClassModification& _p)

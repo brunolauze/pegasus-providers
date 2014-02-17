@@ -55,6 +55,20 @@ CIMInstance UNIX_NetworkVLANProvider::constructInstance(
 			CIMName("UNIX_NetworkVLAN"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_SystemSpecificCollection Properties
+
+	//CIM_ConnectivityCollection Properties
+	if (_p.getConnectivityStatus(p)) inst.addProperty(p);
+
+	//CIM_NetworkVLAN Properties
 	if (_p.getVLANId(p)) inst.addProperty(p);
 	if (_p.getSAIdentifier(p)) inst.addProperty(p);
 	if (_p.getTransmissionSize(p)) inst.addProperty(p);
@@ -62,8 +76,7 @@ CIMInstance UNIX_NetworkVLANProvider::constructInstance(
 	if (_p.getOtherTypeDescription(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NetworkVLANProvider::constructKeyBindings(const UNIX_NetworkVLAN& _p)

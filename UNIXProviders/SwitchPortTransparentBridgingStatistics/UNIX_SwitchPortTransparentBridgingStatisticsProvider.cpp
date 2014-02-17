@@ -55,13 +55,29 @@ CIMInstance UNIX_SwitchPortTransparentBridgingStatisticsProvider::constructInsta
 			CIMName("UNIX_SwitchPortTransparentBridgingStatistics"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalInformation Properties
+	if (_p.getName(p)) inst.addProperty(p);
+
+	//CIM_SAPStatisticalInformation Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getSAPCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSAPName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+
+	//CIM_SwitchPortTransparentBridgingStatistics Properties
 	if (_p.getInFrames(p)) inst.addProperty(p);
 	if (_p.getOutFrames(p)) inst.addProperty(p);
 	if (_p.getInDiscards(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SwitchPortTransparentBridgingStatisticsProvider::constructKeyBindings(const UNIX_SwitchPortTransparentBridgingStatistics& _p)

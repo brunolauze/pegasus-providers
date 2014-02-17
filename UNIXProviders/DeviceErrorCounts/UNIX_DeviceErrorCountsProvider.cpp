@@ -55,11 +55,20 @@ CIMInstance UNIX_DeviceErrorCountsProvider::constructInstance(
 			CIMName("UNIX_DeviceErrorCounts"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalInformation Properties
+	if (_p.getName(p)) inst.addProperty(p);
+
+	//CIM_DeviceErrorCounts Properties
 	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
 	if (_p.getSystemName(p)) inst.addProperty(p);
 	if (_p.getDeviceCreationClassName(p)) inst.addProperty(p);
 	if (_p.getDeviceID(p)) inst.addProperty(p);
-	if (_p.getName(p)) inst.addProperty(p);
 	if (_p.getIndeterminateErrorCount(p)) inst.addProperty(p);
 	if (_p.getCriticalErrorCount(p)) inst.addProperty(p);
 	if (_p.getMajorErrorCount(p)) inst.addProperty(p);
@@ -67,8 +76,7 @@ CIMInstance UNIX_DeviceErrorCountsProvider::constructInstance(
 	if (_p.getWarningCount(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DeviceErrorCountsProvider::constructKeyBindings(const UNIX_DeviceErrorCounts& _p)

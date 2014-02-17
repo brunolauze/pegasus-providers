@@ -55,12 +55,14 @@ CIMInstance UNIX_PolicySetInRoleCollectionProvider::constructInstance(
 			CIMName("UNIX_PolicySetInRoleCollection"),
 			constructKeyBindings(_p)));
 
+	//CIM_MemberOfCollection Properties
 	if (_p.getCollection(p)) inst.addProperty(p);
 	if (_p.getMember(p)) inst.addProperty(p);
 
+	//CIM_PolicySetInRoleCollection Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PolicySetInRoleCollectionProvider::constructKeyBindings(const UNIX_PolicySetInRoleCollection& _p)

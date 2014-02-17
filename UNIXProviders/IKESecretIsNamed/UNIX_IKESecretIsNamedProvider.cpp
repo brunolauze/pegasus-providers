@@ -55,12 +55,16 @@ CIMInstance UNIX_IKESecretIsNamedProvider::constructInstance(
 			CIMName("UNIX_IKESecretIsNamed"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ManagedCredential Properties
+
+	//CIM_IKESecretIsNamed Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IKESecretIsNamedProvider::constructKeyBindings(const UNIX_IKESecretIsNamed& _p)

@@ -55,15 +55,17 @@ CIMInstance UNIX_ElementSoftwareIdentityProvider::constructInstance(
 			CIMName("UNIX_ElementSoftwareIdentity"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_ElementSoftwareIdentity Properties
 	if (_p.getUpgradeCondition(p)) inst.addProperty(p);
 	if (_p.getOtherUpgradeCondition(p)) inst.addProperty(p);
 	if (_p.getElementSoftwareStatus(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ElementSoftwareIdentityProvider::constructKeyBindings(const UNIX_ElementSoftwareIdentity& _p)

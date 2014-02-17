@@ -55,12 +55,12 @@ CIMInstance UNIX_StorageDefectProvider::constructInstance(
 			CIMName("UNIX_StorageDefect"),
 			constructKeyBindings(_p)));
 
+	//CIM_StorageDefect Properties
 	if (_p.getExtent(p)) inst.addProperty(p);
 	if (_p.getError(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_StorageDefectProvider::constructKeyBindings(const UNIX_StorageDefect& _p)

@@ -55,12 +55,14 @@ CIMInstance UNIX_MoreOrganizationInfoProvider::constructInstance(
 			CIMName("UNIX_MoreOrganizationInfo"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_MoreOrganizationInfo Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MoreOrganizationInfoProvider::constructKeyBindings(const UNIX_MoreOrganizationInfo& _p)

@@ -55,12 +55,16 @@ CIMInstance UNIX_AccessLabelReaderProvider::constructInstance(
 			CIMName("UNIX_AccessLabelReader"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_AssociatedLabelReader Properties
+
+	//CIM_AccessLabelReader Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AccessLabelReaderProvider::constructKeyBindings(const UNIX_AccessLabelReader& _p)

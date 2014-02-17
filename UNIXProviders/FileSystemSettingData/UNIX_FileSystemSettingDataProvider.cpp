@@ -55,12 +55,24 @@ CIMInstance UNIX_FileSystemSettingDataProvider::constructInstance(
 			CIMName("UNIX_FileSystemSettingData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_ScopedSettingData Properties
+
+	//CIM_FileSystemSettingData Properties
 	if (_p.getPersistenceType(p)) inst.addProperty(p);
 	if (_p.getOtherPersistenceType(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_FileSystemSettingDataProvider::constructKeyBindings(const UNIX_FileSystemSettingData& _p)

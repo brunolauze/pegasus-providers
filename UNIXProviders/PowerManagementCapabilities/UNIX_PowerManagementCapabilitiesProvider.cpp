@@ -55,6 +55,15 @@ CIMInstance UNIX_PowerManagementCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_PowerManagementCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_PowerManagementCapabilities Properties
 	if (_p.getPowerCapabilities(p)) inst.addProperty(p);
 	if (_p.getOtherPowerCapabilitiesDescriptions(p)) inst.addProperty(p);
 	if (_p.getPowerStatesSupported(p)) inst.addProperty(p);
@@ -63,8 +72,7 @@ CIMInstance UNIX_PowerManagementCapabilitiesProvider::constructInstance(
 	if (_p.getRequestedPowerStatesSupported(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PowerManagementCapabilitiesProvider::constructKeyBindings(const UNIX_PowerManagementCapabilities& _p)

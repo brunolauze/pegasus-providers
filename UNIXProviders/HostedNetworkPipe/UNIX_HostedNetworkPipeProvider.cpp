@@ -55,12 +55,16 @@ CIMInstance UNIX_HostedNetworkPipeProvider::constructInstance(
 			CIMName("UNIX_HostedNetworkPipe"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HostedDependency Properties
+
+	//CIM_HostedNetworkPipe Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_HostedNetworkPipeProvider::constructKeyBindings(const UNIX_HostedNetworkPipe& _p)

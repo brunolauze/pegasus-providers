@@ -55,11 +55,25 @@ CIMInstance UNIX_RoleBasedManagementCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_RoleBasedManagementCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_PrivilegeManagementCapabilities Properties
+	if (_p.getSharedPrivilegeSupported(p)) inst.addProperty(p);
+	if (_p.getActivitiesSupported(p)) inst.addProperty(p);
+	if (_p.getActivityQualifiersSupported(p)) inst.addProperty(p);
+	if (_p.getQualifierFormatsSupported(p)) inst.addProperty(p);
 	if (_p.getSupportedMethods(p)) inst.addProperty(p);
 
+	//CIM_RoleBasedManagementCapabilities Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RoleBasedManagementCapabilitiesProvider::constructKeyBindings(const UNIX_RoleBasedManagementCapabilities& _p)

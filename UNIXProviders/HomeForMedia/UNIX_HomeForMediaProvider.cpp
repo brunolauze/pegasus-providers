@@ -55,12 +55,14 @@ CIMInstance UNIX_HomeForMediaProvider::constructInstance(
 			CIMName("UNIX_HomeForMedia"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HomeForMedia Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_HomeForMediaProvider::constructKeyBindings(const UNIX_HomeForMedia& _p)

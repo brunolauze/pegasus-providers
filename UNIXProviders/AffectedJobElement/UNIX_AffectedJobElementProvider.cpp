@@ -55,14 +55,14 @@ CIMInstance UNIX_AffectedJobElementProvider::constructInstance(
 			CIMName("UNIX_AffectedJobElement"),
 			constructKeyBindings(_p)));
 
+	//CIM_AffectedJobElement Properties
 	if (_p.getAffectedElement(p)) inst.addProperty(p);
 	if (_p.getAffectingElement(p)) inst.addProperty(p);
 	if (_p.getElementEffects(p)) inst.addProperty(p);
 	if (_p.getOtherElementEffectsDescriptions(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AffectedJobElementProvider::constructKeyBindings(const UNIX_AffectedJobElement& _p)

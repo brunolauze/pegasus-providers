@@ -55,13 +55,27 @@ CIMInstance UNIX_GatewayPathIDProvider::constructInstance(
 			CIMName("UNIX_GatewayPathID"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Identity Properties
+	if (_p.getCurrentlyAuthenticated(p)) inst.addProperty(p);
+
+	//CIM_StorageHardwareID Properties
+	if (_p.getStorageID(p)) inst.addProperty(p);
+	if (_p.getIDType(p)) inst.addProperty(p);
+	if (_p.getOtherIDType(p)) inst.addProperty(p);
+
+	//CIM_GatewayPathID Properties
 	if (_p.getGatewayID(p)) inst.addProperty(p);
 	if (_p.getGatewayIDType(p)) inst.addProperty(p);
 	if (_p.getOtherGatewayIDType(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_GatewayPathIDProvider::constructKeyBindings(const UNIX_GatewayPathID& _p)

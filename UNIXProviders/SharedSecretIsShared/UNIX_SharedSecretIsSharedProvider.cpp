@@ -55,12 +55,16 @@ CIMInstance UNIX_SharedSecretIsSharedProvider::constructInstance(
 			CIMName("UNIX_SharedSecretIsShared"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ManagedCredential Properties
+
+	//CIM_SharedSecretIsShared Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SharedSecretIsSharedProvider::constructKeyBindings(const UNIX_SharedSecretIsShared& _p)

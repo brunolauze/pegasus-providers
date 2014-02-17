@@ -55,6 +55,21 @@ CIMInstance UNIX_MediaPhysicalStatInfoProvider::constructInstance(
 			CIMName("UNIX_MediaPhysicalStatInfo"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalInformation Properties
+	if (_p.getName(p)) inst.addProperty(p);
+
+	//CIM_PhysicalStatisticalInformation Properties
+	if (_p.getPhysicalCreationClassName(p)) inst.addProperty(p);
+	if (_p.getTag(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+
+	//CIM_MediaPhysicalStatInfo Properties
 	if (_p.getScanSuccesses(p)) inst.addProperty(p);
 	if (_p.getScanFailures(p)) inst.addProperty(p);
 	if (_p.getScanRetries(p)) inst.addProperty(p);
@@ -66,8 +81,7 @@ CIMInstance UNIX_MediaPhysicalStatInfoProvider::constructInstance(
 	if (_p.getPutRetries(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MediaPhysicalStatInfoProvider::constructKeyBindings(const UNIX_MediaPhysicalStatInfo& _p)

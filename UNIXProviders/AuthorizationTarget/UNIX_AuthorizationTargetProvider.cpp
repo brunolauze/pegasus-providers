@@ -55,12 +55,14 @@ CIMInstance UNIX_AuthorizationTargetProvider::constructInstance(
 			CIMName("UNIX_AuthorizationTarget"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_AuthorizationTarget Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AuthorizationTargetProvider::constructKeyBindings(const UNIX_AuthorizationTarget& _p)

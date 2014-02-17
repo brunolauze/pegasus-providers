@@ -55,6 +55,7 @@ CIMInstance UNIX_DiagnosticResultProvider::constructInstance(
 			CIMName("UNIX_DiagnosticResult"),
 			constructKeyBindings(_p)));
 
+	//CIM_DiagnosticResult Properties
 	if (_p.getDiagnosticCreationClassName(p)) inst.addProperty(p);
 	if (_p.getDiagnosticName(p)) inst.addProperty(p);
 	if (_p.getDiagSystemCreationClassName(p)) inst.addProperty(p);
@@ -81,8 +82,7 @@ CIMInstance UNIX_DiagnosticResultProvider::constructInstance(
 	if (_p.getPercentOfTestCoverage(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DiagnosticResultProvider::constructKeyBindings(const UNIX_DiagnosticResult& _p)

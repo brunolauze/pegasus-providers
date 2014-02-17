@@ -55,11 +55,19 @@ CIMInstance UNIX_QueryCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_QueryCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_QueryCapabilities Properties
 	if (_p.getCQLFeatures(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_QueryCapabilitiesProvider::constructKeyBindings(const UNIX_QueryCapabilities& _p)

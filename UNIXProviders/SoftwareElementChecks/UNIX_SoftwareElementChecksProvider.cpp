@@ -55,13 +55,13 @@ CIMInstance UNIX_SoftwareElementChecksProvider::constructInstance(
 			CIMName("UNIX_SoftwareElementChecks"),
 			constructKeyBindings(_p)));
 
+	//CIM_SoftwareElementChecks Properties
 	if (_p.getElement(p)) inst.addProperty(p);
 	if (_p.getCheck(p)) inst.addProperty(p);
 	if (_p.getPhase(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SoftwareElementChecksProvider::constructKeyBindings(const UNIX_SoftwareElementChecks& _p)

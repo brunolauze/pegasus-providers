@@ -55,7 +55,17 @@ CIMInstance UNIX_NamedCredentialProvider::constructInstance(
 			CIMName("UNIX_NamedCredential"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Credential Properties
+	if (_p.getIssued(p)) inst.addProperty(p);
+	if (_p.getExpires(p)) inst.addProperty(p);
+
+	//CIM_NamedCredential Properties
 	if (_p.getLocalIdentity(p)) inst.addProperty(p);
 	if (_p.getLocalIdentityType(p)) inst.addProperty(p);
 	if (_p.getPeerIdentity(p)) inst.addProperty(p);
@@ -63,8 +73,7 @@ CIMInstance UNIX_NamedCredentialProvider::constructInstance(
 	if (_p.getSharedSecretName(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NamedCredentialProvider::constructKeyBindings(const UNIX_NamedCredential& _p)

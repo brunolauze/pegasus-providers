@@ -55,6 +55,17 @@ CIMInstance UNIX_AccountSettingDataProvider::constructInstance(
 			CIMName("UNIX_AccountSettingData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_AccountSettingData Properties
 	if (_p.getComplexPasswordRulesEnforced(p)) inst.addProperty(p);
 	if (_p.getInactivityTimeout(p)) inst.addProperty(p);
 	if (_p.getMaximumPasswordExpiration(p)) inst.addProperty(p);
@@ -62,8 +73,7 @@ CIMInstance UNIX_AccountSettingDataProvider::constructInstance(
 	if (_p.getPasswordHistoryDepth(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AccountSettingDataProvider::constructKeyBindings(const UNIX_AccountSettingData& _p)

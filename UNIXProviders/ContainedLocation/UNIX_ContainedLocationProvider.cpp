@@ -55,12 +55,14 @@ CIMInstance UNIX_ContainedLocationProvider::constructInstance(
 			CIMName("UNIX_ContainedLocation"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_ContainedLocation Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ContainedLocationProvider::constructKeyBindings(const UNIX_ContainedLocation& _p)

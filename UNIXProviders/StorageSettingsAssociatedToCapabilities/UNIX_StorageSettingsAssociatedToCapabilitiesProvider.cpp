@@ -55,12 +55,17 @@ CIMInstance UNIX_StorageSettingsAssociatedToCapabilitiesProvider::constructInsta
 			CIMName("UNIX_StorageSettingsAssociatedToCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_SettingAssociatedToCapabilities Properties
+	if (_p.getDefaultSetting(p)) inst.addProperty(p);
+
+	//CIM_StorageSettingsAssociatedToCapabilities Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_StorageSettingsAssociatedToCapabilitiesProvider::constructKeyBindings(const UNIX_StorageSettingsAssociatedToCapabilities& _p)

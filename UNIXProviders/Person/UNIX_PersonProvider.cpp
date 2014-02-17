@@ -55,6 +55,30 @@ CIMInstance UNIX_PersonProvider::constructInstance(
 			CIMName("UNIX_Person"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_OrganizationalEntity Properties
+
+	//CIM_UserEntity Properties
+
+	//CIM_UserContact Properties
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getGivenName(p)) inst.addProperty(p);
+	if (_p.getSurname(p)) inst.addProperty(p);
+	if (_p.getMail(p)) inst.addProperty(p);
+	if (_p.getUserID(p)) inst.addProperty(p);
+	if (_p.getLocalityName(p)) inst.addProperty(p);
+	if (_p.getPostalAddress(p)) inst.addProperty(p);
+	if (_p.getStateOrProvince(p)) inst.addProperty(p);
+	if (_p.getPostalCode(p)) inst.addProperty(p);
+	if (_p.getTelephoneNumber(p)) inst.addProperty(p);
+
+	//CIM_Person Properties
 	if (_p.getBusinessCategory(p)) inst.addProperty(p);
 	if (_p.getCommonName(p)) inst.addProperty(p);
 	if (_p.getEmployeeNumber(p)) inst.addProperty(p);
@@ -72,8 +96,7 @@ CIMInstance UNIX_PersonProvider::constructInstance(
 	if (_p.getTitle(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PersonProvider::constructKeyBindings(const UNIX_Person& _p)

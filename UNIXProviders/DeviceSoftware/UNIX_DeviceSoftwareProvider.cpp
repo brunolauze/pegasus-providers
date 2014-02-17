@@ -55,16 +55,18 @@ CIMInstance UNIX_DeviceSoftwareProvider::constructInstance(
 			CIMName("UNIX_DeviceSoftware"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_DeviceSoftware Properties
 	if (_p.getPurpose(p)) inst.addProperty(p);
 	if (_p.getPurposeDescription(p)) inst.addProperty(p);
 	if (_p.getLoadedOnDevice(p)) inst.addProperty(p);
 	if (_p.getUpgradeableOnDevice(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DeviceSoftwareProvider::constructKeyBindings(const UNIX_DeviceSoftware& _p)

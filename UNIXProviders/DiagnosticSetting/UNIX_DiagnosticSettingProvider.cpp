@@ -55,7 +55,16 @@ CIMInstance UNIX_DiagnosticSettingProvider::constructInstance(
 			CIMName("UNIX_DiagnosticSetting"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Setting Properties
 	if (_p.getSettingID(p)) inst.addProperty(p);
+
+	//CIM_DiagnosticSetting Properties
 	if (_p.getTestWarningLevel(p)) inst.addProperty(p);
 	if (_p.getReportSoftErrors(p)) inst.addProperty(p);
 	if (_p.getReportStatusMessages(p)) inst.addProperty(p);
@@ -75,8 +84,7 @@ CIMInstance UNIX_DiagnosticSettingProvider::constructInstance(
 	if (_p.getLocales(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DiagnosticSettingProvider::constructKeyBindings(const UNIX_DiagnosticSetting& _p)

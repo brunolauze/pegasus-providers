@@ -55,12 +55,16 @@ CIMInstance UNIX_HostedFilterListProvider::constructInstance(
 			CIMName("UNIX_HostedFilterList"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HostedDependency Properties
+
+	//CIM_HostedFilterList Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_HostedFilterListProvider::constructKeyBindings(const UNIX_HostedFilterList& _p)

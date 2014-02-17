@@ -55,12 +55,68 @@ CIMInstance UNIX_PhysicalTapeProvider::constructInstance(
 			CIMName("UNIX_PhysicalTape"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_PhysicalElement Properties
+	if (_p.getTag(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getManufacturer(p)) inst.addProperty(p);
+	if (_p.getModel(p)) inst.addProperty(p);
+	if (_p.getSKU(p)) inst.addProperty(p);
+	if (_p.getSerialNumber(p)) inst.addProperty(p);
+	if (_p.getVersion(p)) inst.addProperty(p);
+	if (_p.getPartNumber(p)) inst.addProperty(p);
+	if (_p.getOtherIdentifyingInfo(p)) inst.addProperty(p);
+	if (_p.getPoweredOn(p)) inst.addProperty(p);
+	if (_p.getManufactureDate(p)) inst.addProperty(p);
+	if (_p.getVendorEquipmentType(p)) inst.addProperty(p);
+	if (_p.getUserTracking(p)) inst.addProperty(p);
+	if (_p.getCanBeFRUed(p)) inst.addProperty(p);
+
+	//CIM_PhysicalComponent Properties
+	if (_p.getRemovalConditions(p)) inst.addProperty(p);
+	if (_p.getRemovable(p)) inst.addProperty(p);
+	if (_p.getReplaceable(p)) inst.addProperty(p);
+	if (_p.getHotSwappable(p)) inst.addProperty(p);
+
+	//CIM_PhysicalMedia Properties
+	if (_p.getCapacity(p)) inst.addProperty(p);
+	if (_p.getMediaType(p)) inst.addProperty(p);
+	if (_p.getMediaDescription(p)) inst.addProperty(p);
+	if (_p.getWriteProtectOn(p)) inst.addProperty(p);
+	if (_p.getCleanerMedia(p)) inst.addProperty(p);
+	if (_p.getMediaSize(p)) inst.addProperty(p);
+	if (_p.getMaxMounts(p)) inst.addProperty(p);
+	if (_p.getMountCount(p)) inst.addProperty(p);
+	if (_p.getDualSided(p)) inst.addProperty(p);
+	if (_p.getPhysicalLabels(p)) inst.addProperty(p);
+	if (_p.getLabelStates(p)) inst.addProperty(p);
+	if (_p.getLabelFormats(p)) inst.addProperty(p);
+	if (_p.getTimeOfLastMount(p)) inst.addProperty(p);
+	if (_p.getTotalMountTime(p)) inst.addProperty(p);
+
+	//CIM_PhysicalTape Properties
 	if (_p.getTapeLength(p)) inst.addProperty(p);
 	if (_p.getUnloadAnywhere(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PhysicalTapeProvider::constructKeyBindings(const UNIX_PhysicalTape& _p)

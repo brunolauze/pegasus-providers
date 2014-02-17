@@ -55,12 +55,14 @@ CIMInstance UNIX_SoftwareFeatureSAPImplementationProvider::constructInstance(
 			CIMName("UNIX_SoftwareFeatureSAPImplementation"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_SoftwareFeatureSAPImplementation Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SoftwareFeatureSAPImplementationProvider::constructKeyBindings(const UNIX_SoftwareFeatureSAPImplementation& _p)

@@ -55,12 +55,18 @@ CIMInstance UNIX_PolicyConditionInPolicyRepositoryProvider::constructInstance(
 			CIMName("UNIX_PolicyConditionInPolicyRepository"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HostedDependency Properties
+
+	//CIM_PolicyInSystem Properties
+
+	//CIM_PolicyConditionInPolicyRepository Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PolicyConditionInPolicyRepositoryProvider::constructKeyBindings(const UNIX_PolicyConditionInPolicyRepository& _p)

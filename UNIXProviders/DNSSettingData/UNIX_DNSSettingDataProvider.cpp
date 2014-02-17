@@ -55,7 +55,21 @@ CIMInstance UNIX_DNSSettingDataProvider::constructInstance(
 			CIMName("UNIX_DNSSettingData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_IPAssignmentSettingData Properties
 	if (_p.getAddressOrigin(p)) inst.addProperty(p);
+	if (_p.getProtocolIFType(p)) inst.addProperty(p);
+
+	//CIM_DNSSettingData Properties
 	if (_p.getDomainName(p)) inst.addProperty(p);
 	if (_p.getRequestedHostname(p)) inst.addProperty(p);
 	if (_p.getUseSuffixWhenRegistering(p)) inst.addProperty(p);
@@ -64,8 +78,7 @@ CIMInstance UNIX_DNSSettingDataProvider::constructInstance(
 	if (_p.getDHCPOptionsToUse(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DNSSettingDataProvider::constructKeyBindings(const UNIX_DNSSettingData& _p)

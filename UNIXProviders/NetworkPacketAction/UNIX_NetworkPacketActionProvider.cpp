@@ -55,12 +55,31 @@ CIMInstance UNIX_NetworkPacketActionProvider::constructInstance(
 			CIMName("UNIX_NetworkPacketAction"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Policy Properties
+	if (_p.getCommonName(p)) inst.addProperty(p);
+	if (_p.getPolicyKeywords(p)) inst.addProperty(p);
+
+	//CIM_PolicyAction Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getPolicyRuleCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPolicyRuleName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPolicyActionName(p)) inst.addProperty(p);
+	if (_p.getDoActionLogging(p)) inst.addProperty(p);
+
+	//CIM_NetworkPacketAction Properties
 	if (_p.getPacketAction(p)) inst.addProperty(p);
 	if (_p.getOtherAction(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NetworkPacketActionProvider::constructKeyBindings(const UNIX_NetworkPacketAction& _p)

@@ -55,12 +55,16 @@ CIMInstance UNIX_RoutersInBGPClusterProvider::constructInstance(
 			CIMName("UNIX_RoutersInBGPCluster"),
 			constructKeyBindings(_p)));
 
+	//CIM_MemberOfCollection Properties
 	if (_p.getCollection(p)) inst.addProperty(p);
 	if (_p.getMember(p)) inst.addProperty(p);
 
+	//CIM_CollectedMSEs Properties
+
+	//CIM_RoutersInBGPCluster Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RoutersInBGPClusterProvider::constructKeyBindings(const UNIX_RoutersInBGPCluster& _p)

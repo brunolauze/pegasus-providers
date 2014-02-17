@@ -55,12 +55,14 @@ CIMInstance UNIX_SnapshotOfVirtualSystemProvider::constructInstance(
 			CIMName("UNIX_SnapshotOfVirtualSystem"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_SnapshotOfVirtualSystem Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SnapshotOfVirtualSystemProvider::constructKeyBindings(const UNIX_SnapshotOfVirtualSystem& _p)

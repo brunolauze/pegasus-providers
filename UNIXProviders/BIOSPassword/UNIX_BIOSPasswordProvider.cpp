@@ -55,16 +55,28 @@ CIMInstance UNIX_BIOSPasswordProvider::constructInstance(
 			CIMName("UNIX_BIOSPassword"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_BIOSAttribute Properties
+	if (_p.getAttributeName(p)) inst.addProperty(p);
+	if (_p.getCurrentValue(p)) inst.addProperty(p);
+	if (_p.getDefaultValue(p)) inst.addProperty(p);
+	if (_p.getPendingValue(p)) inst.addProperty(p);
+	if (_p.getIsOrderedList(p)) inst.addProperty(p);
+	if (_p.getIsReadOnly(p)) inst.addProperty(p);
+
+	//CIM_BIOSPassword Properties
 	if (_p.getMinLength(p)) inst.addProperty(p);
 	if (_p.getMaxLength(p)) inst.addProperty(p);
-	if (_p.getCurrentValue(p)) inst.addProperty(p);
-	if (_p.getPendingValue(p)) inst.addProperty(p);
 	if (_p.getPasswordEncoding(p)) inst.addProperty(p);
 	if (_p.getIsSet(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BIOSPasswordProvider::constructKeyBindings(const UNIX_BIOSPassword& _p)

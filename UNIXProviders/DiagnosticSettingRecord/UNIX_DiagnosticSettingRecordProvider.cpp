@@ -55,6 +55,27 @@ CIMInstance UNIX_DiagnosticSettingRecordProvider::constructInstance(
 			CIMName("UNIX_DiagnosticSettingRecord"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_RecordForLog Properties
+	if (_p.getRecordFormat(p)) inst.addProperty(p);
+	if (_p.getRecordData(p)) inst.addProperty(p);
+	if (_p.getLocale(p)) inst.addProperty(p);
+	if (_p.getPerceivedSeverity(p)) inst.addProperty(p);
+
+	//CIM_DiagnosticRecord Properties
+	if (_p.getServiceName(p)) inst.addProperty(p);
+	if (_p.getManagedElementName(p)) inst.addProperty(p);
+	if (_p.getExpirationDate(p)) inst.addProperty(p);
+	if (_p.getRecordType(p)) inst.addProperty(p);
+	if (_p.getOtherRecordTypeDescription(p)) inst.addProperty(p);
+	if (_p.getCreationTimeStamp(p)) inst.addProperty(p);
+
+	//CIM_DiagnosticSettingRecord Properties
 	if (_p.getHaltOnError(p)) inst.addProperty(p);
 	if (_p.getQuickMode(p)) inst.addProperty(p);
 	if (_p.getPercentOfTestCoverage(p)) inst.addProperty(p);
@@ -69,8 +90,7 @@ CIMInstance UNIX_DiagnosticSettingRecordProvider::constructInstance(
 	if (_p.getVerbosityLevel(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DiagnosticSettingRecordProvider::constructKeyBindings(const UNIX_DiagnosticSettingRecord& _p)

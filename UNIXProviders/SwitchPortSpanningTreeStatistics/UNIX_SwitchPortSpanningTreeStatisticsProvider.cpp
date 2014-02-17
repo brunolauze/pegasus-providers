@@ -55,11 +55,27 @@ CIMInstance UNIX_SwitchPortSpanningTreeStatisticsProvider::constructInstance(
 			CIMName("UNIX_SwitchPortSpanningTreeStatistics"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalInformation Properties
+	if (_p.getName(p)) inst.addProperty(p);
+
+	//CIM_SAPStatisticalInformation Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getSAPCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSAPName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+
+	//CIM_SwitchPortSpanningTreeStatistics Properties
 	if (_p.getForwardTransitions(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SwitchPortSpanningTreeStatisticsProvider::constructKeyBindings(const UNIX_SwitchPortSpanningTreeStatistics& _p)

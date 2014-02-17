@@ -55,14 +55,19 @@ CIMInstance UNIX_TraceLevelTypeProvider::constructInstance(
 			CIMName("UNIX_TraceLevelType"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_TraceLevelType Properties
 	if (_p.getBaseType(p)) inst.addProperty(p);
 	if (_p.getTraceValues(p)) inst.addProperty(p);
 	if (_p.getValueDescriptions(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_TraceLevelTypeProvider::constructKeyBindings(const UNIX_TraceLevelType& _p)

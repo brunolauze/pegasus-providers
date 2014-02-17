@@ -55,6 +55,7 @@ CIMInstance UNIX_SCSIInitiatorTargetLogicalUnitPathProvider::constructInstance(
 			CIMName("UNIX_SCSIInitiatorTargetLogicalUnitPath"),
 			constructKeyBindings(_p)));
 
+	//CIM_SCSIInitiatorTargetLogicalUnitPath Properties
 	if (_p.getInitiator(p)) inst.addProperty(p);
 	if (_p.getTarget(p)) inst.addProperty(p);
 	if (_p.getLogicalUnit(p)) inst.addProperty(p);
@@ -65,8 +66,7 @@ CIMInstance UNIX_SCSIInitiatorTargetLogicalUnitPathProvider::constructInstance(
 	if (_p.getLogicalUnitNumber(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SCSIInitiatorTargetLogicalUnitPathProvider::constructKeyBindings(const UNIX_SCSIInitiatorTargetLogicalUnitPath& _p)

@@ -55,12 +55,14 @@ CIMInstance UNIX_MorePersonInfoProvider::constructInstance(
 			CIMName("UNIX_MorePersonInfo"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_MorePersonInfo Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MorePersonInfoProvider::constructKeyBindings(const UNIX_MorePersonInfo& _p)

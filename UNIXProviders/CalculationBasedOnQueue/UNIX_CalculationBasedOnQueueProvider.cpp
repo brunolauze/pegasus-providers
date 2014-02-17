@@ -55,12 +55,20 @@ CIMInstance UNIX_CalculationBasedOnQueueProvider::constructInstance(
 			CIMName("UNIX_CalculationBasedOnQueue"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ProvidesServiceToElement Properties
+
+	//CIM_ServiceServiceDependency Properties
+	if (_p.getTypeOfDependency(p)) inst.addProperty(p);
+	if (_p.getRestartService(p)) inst.addProperty(p);
+
+	//CIM_CalculationBasedOnQueue Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CalculationBasedOnQueueProvider::constructKeyBindings(const UNIX_CalculationBasedOnQueue& _p)

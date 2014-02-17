@@ -55,12 +55,14 @@ CIMInstance UNIX_DatabaseFileProvider::constructInstance(
 			CIMName("UNIX_DatabaseFile"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_DatabaseFile Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DatabaseFileProvider::constructKeyBindings(const UNIX_DatabaseFile& _p)

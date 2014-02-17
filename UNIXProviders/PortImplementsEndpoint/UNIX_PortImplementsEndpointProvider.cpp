@@ -55,12 +55,16 @@ CIMInstance UNIX_PortImplementsEndpointProvider::constructInstance(
 			CIMName("UNIX_PortImplementsEndpoint"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_DeviceSAPImplementation Properties
+
+	//CIM_PortImplementsEndpoint Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PortImplementsEndpointProvider::constructKeyBindings(const UNIX_PortImplementsEndpoint& _p)

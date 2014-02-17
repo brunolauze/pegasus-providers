@@ -55,13 +55,15 @@ CIMInstance UNIX_ContainedTransformProvider::constructInstance(
 			CIMName("UNIX_ContainedTransform"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
+
+	//CIM_ContainedTransform Properties
 	if (_p.getSequenceNumber(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ContainedTransformProvider::constructKeyBindings(const UNIX_ContainedTransform& _p)

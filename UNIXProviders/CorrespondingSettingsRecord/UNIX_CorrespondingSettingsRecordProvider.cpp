@@ -55,12 +55,12 @@ CIMInstance UNIX_CorrespondingSettingsRecordProvider::constructInstance(
 			CIMName("UNIX_CorrespondingSettingsRecord"),
 			constructKeyBindings(_p)));
 
+	//CIM_CorrespondingSettingsRecord Properties
 	if (_p.getDataRecord(p)) inst.addProperty(p);
 	if (_p.getSettingsRecord(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CorrespondingSettingsRecordProvider::constructKeyBindings(const UNIX_CorrespondingSettingsRecord& _p)

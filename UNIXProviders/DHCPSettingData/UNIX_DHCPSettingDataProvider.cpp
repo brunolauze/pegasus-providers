@@ -55,7 +55,21 @@ CIMInstance UNIX_DHCPSettingDataProvider::constructInstance(
 			CIMName("UNIX_DHCPSettingData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_IPAssignmentSettingData Properties
 	if (_p.getAddressOrigin(p)) inst.addProperty(p);
+	if (_p.getProtocolIFType(p)) inst.addProperty(p);
+
+	//CIM_DHCPSettingData Properties
 	if (_p.getRequestedIPv4Address(p)) inst.addProperty(p);
 	if (_p.getRequestedLeaseTime(p)) inst.addProperty(p);
 	if (_p.getClientIdentifier(p)) inst.addProperty(p);
@@ -64,8 +78,7 @@ CIMInstance UNIX_DHCPSettingDataProvider::constructInstance(
 	if (_p.getRequiredOptions(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DHCPSettingDataProvider::constructKeyBindings(const UNIX_DHCPSettingData& _p)

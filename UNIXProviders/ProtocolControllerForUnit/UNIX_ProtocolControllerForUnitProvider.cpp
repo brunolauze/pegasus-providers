@@ -55,13 +55,20 @@ CIMInstance UNIX_ProtocolControllerForUnitProvider::constructInstance(
 			CIMName("UNIX_ProtocolControllerForUnit"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_ProtocolControllerForDevice Properties
+	if (_p.getDeviceNumber(p)) inst.addProperty(p);
+	if (_p.getAccessPriority(p)) inst.addProperty(p);
+	if (_p.getAccessState(p)) inst.addProperty(p);
+
+	//CIM_ProtocolControllerForUnit Properties
 	if (_p.getDeviceAccess(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ProtocolControllerForUnitProvider::constructKeyBindings(const UNIX_ProtocolControllerForUnit& _p)

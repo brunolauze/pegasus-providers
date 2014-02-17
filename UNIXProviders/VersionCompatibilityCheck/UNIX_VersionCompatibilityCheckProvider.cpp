@@ -55,13 +55,28 @@ CIMInstance UNIX_VersionCompatibilityCheckProvider::constructInstance(
 			CIMName("UNIX_VersionCompatibilityCheck"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Check Properties
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getVersion(p)) inst.addProperty(p);
+	if (_p.getSoftwareElementState(p)) inst.addProperty(p);
+	if (_p.getSoftwareElementID(p)) inst.addProperty(p);
+	if (_p.getTargetOperatingSystem(p)) inst.addProperty(p);
+	if (_p.getCheckID(p)) inst.addProperty(p);
+	if (_p.getCheckMode(p)) inst.addProperty(p);
+
+	//CIM_VersionCompatibilityCheck Properties
 	if (_p.getAllowDownVersion(p)) inst.addProperty(p);
 	if (_p.getAllowMultipleVersions(p)) inst.addProperty(p);
 	if (_p.getReinstall(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_VersionCompatibilityCheckProvider::constructKeyBindings(const UNIX_VersionCompatibilityCheck& _p)

@@ -55,10 +55,23 @@ CIMInstance UNIX_ClassCreationProvider::constructInstance(
 			CIMName("UNIX_ClassCreation"),
 			constructKeyBindings(_p)));
 
+	//CIM_Indication Properties
+	if (_p.getIndicationIdentifier(p)) inst.addProperty(p);
+	if (_p.getCorrelatedIndications(p)) inst.addProperty(p);
+	if (_p.getIndicationTime(p)) inst.addProperty(p);
+	if (_p.getPerceivedSeverity(p)) inst.addProperty(p);
+	if (_p.getOtherSeverity(p)) inst.addProperty(p);
+	if (_p.getIndicationFilterName(p)) inst.addProperty(p);
+	if (_p.getSequenceContext(p)) inst.addProperty(p);
+	if (_p.getSequenceNumber(p)) inst.addProperty(p);
+
+	//CIM_ClassIndication Properties
+	if (_p.getClassDefinition(p)) inst.addProperty(p);
+
+	//CIM_ClassCreation Properties
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ClassCreationProvider::constructKeyBindings(const UNIX_ClassCreation& _p)

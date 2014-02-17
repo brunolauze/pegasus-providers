@@ -55,13 +55,17 @@ CIMInstance UNIX_AssociatedSupplyVoltageSensorProvider::constructInstance(
 			CIMName("UNIX_AssociatedSupplyVoltageSensor"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_AssociatedSensor Properties
+
+	//CIM_AssociatedSupplyVoltageSensor Properties
 	if (_p.getMonitoringRange(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AssociatedSupplyVoltageSensorProvider::constructKeyBindings(const UNIX_AssociatedSupplyVoltageSensor& _p)

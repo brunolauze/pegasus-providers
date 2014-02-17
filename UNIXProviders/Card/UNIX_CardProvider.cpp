@@ -55,6 +55,54 @@ CIMInstance UNIX_CardProvider::constructInstance(
 			CIMName("UNIX_Card"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_PhysicalElement Properties
+	if (_p.getTag(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getManufacturer(p)) inst.addProperty(p);
+	if (_p.getModel(p)) inst.addProperty(p);
+	if (_p.getSKU(p)) inst.addProperty(p);
+	if (_p.getSerialNumber(p)) inst.addProperty(p);
+	if (_p.getVersion(p)) inst.addProperty(p);
+	if (_p.getPartNumber(p)) inst.addProperty(p);
+	if (_p.getOtherIdentifyingInfo(p)) inst.addProperty(p);
+	if (_p.getPoweredOn(p)) inst.addProperty(p);
+	if (_p.getManufactureDate(p)) inst.addProperty(p);
+	if (_p.getVendorEquipmentType(p)) inst.addProperty(p);
+	if (_p.getUserTracking(p)) inst.addProperty(p);
+	if (_p.getCanBeFRUed(p)) inst.addProperty(p);
+
+	//CIM_PhysicalPackage Properties
+	if (_p.getRemovalConditions(p)) inst.addProperty(p);
+	if (_p.getRemovable(p)) inst.addProperty(p);
+	if (_p.getReplaceable(p)) inst.addProperty(p);
+	if (_p.getHotSwappable(p)) inst.addProperty(p);
+	if (_p.getHeight(p)) inst.addProperty(p);
+	if (_p.getDepth(p)) inst.addProperty(p);
+	if (_p.getWidth(p)) inst.addProperty(p);
+	if (_p.getWeight(p)) inst.addProperty(p);
+	if (_p.getPackageType(p)) inst.addProperty(p);
+	if (_p.getOtherPackageType(p)) inst.addProperty(p);
+	if (_p.getVendorCompatibilityStrings(p)) inst.addProperty(p);
+
+	//CIM_Card Properties
 	if (_p.getHostingBoard(p)) inst.addProperty(p);
 	if (_p.getSlotLayout(p)) inst.addProperty(p);
 	if (_p.getRequiresDaughterBoard(p)) inst.addProperty(p);
@@ -63,8 +111,7 @@ CIMInstance UNIX_CardProvider::constructInstance(
 	if (_p.getOperatingVoltages(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CardProvider::constructKeyBindings(const UNIX_Card& _p)

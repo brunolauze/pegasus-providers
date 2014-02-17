@@ -55,12 +55,12 @@ CIMInstance UNIX_ElementStatisticalDataProvider::constructInstance(
 			CIMName("UNIX_ElementStatisticalData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ElementStatisticalData Properties
 	if (_p.getManagedElement(p)) inst.addProperty(p);
 	if (_p.getStats(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ElementStatisticalDataProvider::constructKeyBindings(const UNIX_ElementStatisticalData& _p)

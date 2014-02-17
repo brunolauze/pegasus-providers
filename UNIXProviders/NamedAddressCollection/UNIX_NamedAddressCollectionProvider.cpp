@@ -55,11 +55,21 @@ CIMInstance UNIX_NamedAddressCollectionProvider::constructInstance(
 			CIMName("UNIX_NamedAddressCollection"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_SystemSpecificCollection Properties
+
+	//CIM_NamedAddressCollection Properties
 	if (_p.getCollectionAlias(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NamedAddressCollectionProvider::constructKeyBindings(const UNIX_NamedAddressCollection& _p)

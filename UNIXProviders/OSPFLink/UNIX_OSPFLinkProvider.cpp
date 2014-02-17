@@ -55,14 +55,27 @@ CIMInstance UNIX_OSPFLinkProvider::constructInstance(
 			CIMName("UNIX_OSPFLink"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_SystemSpecificCollection Properties
+
+	//CIM_ConnectivityCollection Properties
+	if (_p.getConnectivityStatus(p)) inst.addProperty(p);
+
+	//CIM_OSPFLink Properties
 	if (_p.getLinkType(p)) inst.addProperty(p);
 	if (_p.getHelloInterval(p)) inst.addProperty(p);
 	if (_p.getRouterDeadInterval(p)) inst.addProperty(p);
 	if (_p.getMulticastForwarding(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_OSPFLinkProvider::constructKeyBindings(const UNIX_OSPFLink& _p)

@@ -55,12 +55,16 @@ CIMInstance UNIX_SlotInSlotProvider::constructInstance(
 			CIMName("UNIX_SlotInSlot"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ConnectedTo Properties
+
+	//CIM_SlotInSlot Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SlotInSlotProvider::constructKeyBindings(const UNIX_SlotInSlot& _p)

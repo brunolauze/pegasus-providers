@@ -55,12 +55,16 @@ CIMInstance UNIX_LocallyManagedPublicKeyProvider::constructInstance(
 			CIMName("UNIX_LocallyManagedPublicKey"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ManagedCredential Properties
+
+	//CIM_LocallyManagedPublicKey Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_LocallyManagedPublicKeyProvider::constructKeyBindings(const UNIX_LocallyManagedPublicKey& _p)

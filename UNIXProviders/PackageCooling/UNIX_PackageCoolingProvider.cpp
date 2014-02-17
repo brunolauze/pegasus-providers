@@ -55,12 +55,16 @@ CIMInstance UNIX_PackageCoolingProvider::constructInstance(
 			CIMName("UNIX_PackageCooling"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_PackageDependency Properties
+
+	//CIM_PackageCooling Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PackageCoolingProvider::constructKeyBindings(const UNIX_PackageCooling& _p)

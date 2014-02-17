@@ -55,6 +55,7 @@ CIMInstance UNIX_AssociatedPrivilegeProvider::constructInstance(
 			CIMName("UNIX_AssociatedPrivilege"),
 			constructKeyBindings(_p)));
 
+	//CIM_AssociatedPrivilege Properties
 	if (_p.getSubject(p)) inst.addProperty(p);
 	if (_p.getTarget(p)) inst.addProperty(p);
 	if (_p.getUseKey(p)) inst.addProperty(p);
@@ -65,8 +66,7 @@ CIMInstance UNIX_AssociatedPrivilegeProvider::constructInstance(
 	if (_p.getRepresentsAuthorizationRights(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AssociatedPrivilegeProvider::constructKeyBindings(const UNIX_AssociatedPrivilege& _p)

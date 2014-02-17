@@ -55,7 +55,25 @@ CIMInstance UNIX_CertificateManagementCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_CertificateManagementCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_EnabledLogicalElementCapabilities Properties
+	if (_p.getElementNameEditSupported(p)) inst.addProperty(p);
+	if (_p.getMaxElementNameLen(p)) inst.addProperty(p);
+	if (_p.getRequestedStatesSupported(p)) inst.addProperty(p);
+	if (_p.getElementNameMask(p)) inst.addProperty(p);
+
+	//CIM_CredentialManagementCapabilities Properties
 	if (_p.getSupportedMethods(p)) inst.addProperty(p);
+	if (_p.getCumulativePrivilegeMethodology(p)) inst.addProperty(p);
+
+	//CIM_CertificateManagementCapabilities Properties
 	if (_p.getKeyAlgorithmSupported(p)) inst.addProperty(p);
 	if (_p.getInputFormatsSupported(p)) inst.addProperty(p);
 	if (_p.getOutputFormatsSupported(p)) inst.addProperty(p);
@@ -63,8 +81,7 @@ CIMInstance UNIX_CertificateManagementCapabilitiesProvider::constructInstance(
 	if (_p.getSupportedSignatureAlgorithms(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CertificateManagementCapabilitiesProvider::constructKeyBindings(const UNIX_CertificateManagementCapabilities& _p)

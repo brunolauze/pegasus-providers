@@ -55,12 +55,14 @@ CIMInstance UNIX_ConcreteDependencyProvider::constructInstance(
 			CIMName("UNIX_ConcreteDependency"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ConcreteDependency Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ConcreteDependencyProvider::constructKeyBindings(const UNIX_ConcreteDependency& _p)

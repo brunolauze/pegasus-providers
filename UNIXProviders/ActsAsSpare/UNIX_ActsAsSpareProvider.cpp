@@ -55,13 +55,13 @@ CIMInstance UNIX_ActsAsSpareProvider::constructInstance(
 			CIMName("UNIX_ActsAsSpare"),
 			constructKeyBindings(_p)));
 
+	//CIM_ActsAsSpare Properties
 	if (_p.getGroup(p)) inst.addProperty(p);
 	if (_p.getSpare(p)) inst.addProperty(p);
 	if (_p.getHotStandby(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ActsAsSpareProvider::constructKeyBindings(const UNIX_ActsAsSpare& _p)

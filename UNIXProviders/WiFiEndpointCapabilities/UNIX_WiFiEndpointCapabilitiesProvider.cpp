@@ -55,14 +55,28 @@ CIMInstance UNIX_WiFiEndpointCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_WiFiEndpointCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_EnabledLogicalElementCapabilities Properties
+	if (_p.getElementNameEditSupported(p)) inst.addProperty(p);
+	if (_p.getMaxElementNameLen(p)) inst.addProperty(p);
+	if (_p.getRequestedStatesSupported(p)) inst.addProperty(p);
+	if (_p.getElementNameMask(p)) inst.addProperty(p);
+
+	//CIM_WiFiEndpointCapabilities Properties
 	if (_p.getSupportedEncryptionMethods(p)) inst.addProperty(p);
 	if (_p.getOtherSupportedEncryptionMethods(p)) inst.addProperty(p);
 	if (_p.getSupportedAuthenticationMethods(p)) inst.addProperty(p);
 	if (_p.getOtherSupportedAuthenticationMethods(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_WiFiEndpointCapabilitiesProvider::constructKeyBindings(const UNIX_WiFiEndpointCapabilities& _p)

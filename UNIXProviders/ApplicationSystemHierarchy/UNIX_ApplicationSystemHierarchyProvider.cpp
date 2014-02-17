@@ -55,12 +55,14 @@ CIMInstance UNIX_ApplicationSystemHierarchyProvider::constructInstance(
 			CIMName("UNIX_ApplicationSystemHierarchy"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_ApplicationSystemHierarchy Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ApplicationSystemHierarchyProvider::constructKeyBindings(const UNIX_ApplicationSystemHierarchy& _p)

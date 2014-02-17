@@ -55,15 +55,17 @@ CIMInstance UNIX_SettingsDefineCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_SettingsDefineCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
+
+	//CIM_SettingsDefineCapabilities Properties
 	if (_p.getPropertyPolicy(p)) inst.addProperty(p);
 	if (_p.getValueRole(p)) inst.addProperty(p);
 	if (_p.getValueRange(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SettingsDefineCapabilitiesProvider::constructKeyBindings(const UNIX_SettingsDefineCapabilities& _p)

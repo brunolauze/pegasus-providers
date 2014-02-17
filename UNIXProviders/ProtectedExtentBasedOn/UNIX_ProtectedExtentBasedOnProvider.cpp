@@ -55,9 +55,16 @@ CIMInstance UNIX_ProtectedExtentBasedOnProvider::constructInstance(
 			CIMName("UNIX_ProtectedExtentBasedOn"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_BasedOn Properties
 	if (_p.getStartingAddress(p)) inst.addProperty(p);
+	if (_p.getEndingAddress(p)) inst.addProperty(p);
+	if (_p.getOrderIndex(p)) inst.addProperty(p);
+
+	//CIM_ProtectedExtentBasedOn Properties
 	if (_p.getNumberOfBlocks(p)) inst.addProperty(p);
 	if (_p.getBlockSize(p)) inst.addProperty(p);
 	if (_p.getUnitsBeforeCheckDataInterleave(p)) inst.addProperty(p);
@@ -65,8 +72,7 @@ CIMInstance UNIX_ProtectedExtentBasedOnProvider::constructInstance(
 	if (_p.getUnitsOfUserData(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ProtectedExtentBasedOnProvider::constructKeyBindings(const UNIX_ProtectedExtentBasedOn& _p)

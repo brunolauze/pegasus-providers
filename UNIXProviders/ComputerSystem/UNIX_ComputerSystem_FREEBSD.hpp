@@ -28,7 +28,20 @@
 //////////////////////////////////////////////////////////////////////////
 //
 //%/////////////////////////////////////////////////////////////////////////
+#include <Pegasus/Common/Logger.h> // for Logger
+#include <Pegasus/Common/FileSystem.h>
+#include <unistd.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <sys/param.h>     // for MAXHOSTNAMELEN
+#include <sys/sysctl.h>	   // sysctl
+#include <sys/stat.h>	   // stat
+#include <errno.h>         // for errno
+#include <stdlib.h>
+#include <string.h>
 
+#define CAPTION "Computer System"
+#define DESCRIPTION "WBEM-enabled computer system"
 
 UNIX_ComputerSystem::UNIX_ComputerSystem(void)
 {
@@ -47,7 +60,7 @@ Boolean UNIX_ComputerSystem::getInstanceID(CIMProperty &p) const
 
 String UNIX_ComputerSystem::getInstanceID() const
 {
-	return String ("");
+	return CIMHelper::HostName;
 }
 
 Boolean UNIX_ComputerSystem::getCaption(CIMProperty &p) const
@@ -58,7 +71,7 @@ Boolean UNIX_ComputerSystem::getCaption(CIMProperty &p) const
 
 String UNIX_ComputerSystem::getCaption() const
 {
-	return String ("");
+	return String (CAPTION);
 }
 
 Boolean UNIX_ComputerSystem::getDescription(CIMProperty &p) const
@@ -69,7 +82,7 @@ Boolean UNIX_ComputerSystem::getDescription(CIMProperty &p) const
 
 String UNIX_ComputerSystem::getDescription() const
 {
-	return String ("");
+	return String (DESCRIPTION);
 }
 
 Boolean UNIX_ComputerSystem::getElementName(CIMProperty &p) const
@@ -91,18 +104,7 @@ Boolean UNIX_ComputerSystem::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_ComputerSystem::getInstallDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return CIMHelper::getInstallDate();
 }
 
 Boolean UNIX_ComputerSystem::getName(CIMProperty &p) const
@@ -113,7 +115,7 @@ Boolean UNIX_ComputerSystem::getName(CIMProperty &p) const
 
 String UNIX_ComputerSystem::getName() const
 {
-	return String ("");
+	return getInstanceID();
 }
 
 Boolean UNIX_ComputerSystem::getOperationalStatus(CIMProperty &p) const
@@ -125,7 +127,7 @@ Boolean UNIX_ComputerSystem::getOperationalStatus(CIMProperty &p) const
 Array<Uint16> UNIX_ComputerSystem::getOperationalStatus() const
 {
 	Array<Uint16> as;
-	
+	as.append(2); //OK
 
 	return as;
 
@@ -176,7 +178,7 @@ Boolean UNIX_ComputerSystem::getCommunicationStatus(CIMProperty &p) const
 
 Uint16 UNIX_ComputerSystem::getCommunicationStatus() const
 {
-	return Uint16(0);
+	return Uint16(DEFAULT_COMMUNICATION_STATUS);
 }
 
 Boolean UNIX_ComputerSystem::getDetailedStatus(CIMProperty &p) const
@@ -323,7 +325,7 @@ Boolean UNIX_ComputerSystem::getNameFormat(CIMProperty &p) const
 
 String UNIX_ComputerSystem::getNameFormat() const
 {
-	return String ("");
+	return String ("Other");
 }
 
 Boolean UNIX_ComputerSystem::getPrimaryOwnerName(CIMProperty &p) const
@@ -357,10 +359,82 @@ Boolean UNIX_ComputerSystem::getRoles(CIMProperty &p) const
 Array<String> UNIX_ComputerSystem::getRoles() const
 {
 	Array<String> as;
-	
+	// Defines Roles
+    // SSH Server -- check sshd_enable
+    // WebServer -- check nginx or apache22
+    // Database Server -- check mysql or postgresql
+    // Network Switch -- check gateway_enable
+    // Firewall -- check pf_enable
+    // Cim Server -- check cimserver
+    // VPN Server -- check openikve2
+    // Mail Server - check dovecot2
+    // Developement - check git lab
+    //  
+    // Desktop check ttys8, kde_enable or gdm_enable or just dbus_enable ?
 
+    Array<String> array;
+    FILE* pipe = popen("/usr/sbin/sysrc sshd_enable ftpd_enable cimserver_enable samba_server_enable nfsd_enable nginx_enable apache22_enable dovecot2_enable postfix_enable dbus_enable", "r");
+    if (!pipe) return false;
+    char buffer[256];
+    bool webserver = false;
+    while(!feof(pipe)) {
+    	if (fgets(buffer, 128, pipe) != NULL)
+    	{
+    		if (strstr(buffer, "sshd_enable: YES") != NULL)
+    		{
+    			as.append("SSH Server");
+    		}
+    		if (strstr(buffer, "ftpd_enable: YES") != NULL)
+    		{
+    			as.append("FTP Server");
+    		}
+    		if (strstr(buffer, "cimserver_enable: YES") != NULL)
+    		{
+    			as.append("CIM Server");
+    		}
+    		if (strstr(buffer, "samba_server_enable: YES") != NULL)
+    		{
+    			as.append("Directory Server");
+    			as.append("File Server");
+    		}
+    		if (strstr(buffer, "nfsd_enable: YES") != NULL)
+    		{
+    			array.append("NFS Server");
+    		}
+    		if (strstr(buffer, "nginx_enable: YES") != NULL)
+    		{
+    			if (!webserver)
+    			{
+	    			as.append("Web Server");
+	    			webserver = true;
+    			}
+    		}
+    		if (strstr(buffer, "apache22_enable: YES") != NULL)
+    		{
+    			if (!webserver)
+    			{
+	    			as.append("Web Server");
+	    			webserver = true;
+    			}
+    		}
+    		if (strstr(buffer, "dovecot2_enable: YES") != NULL)
+    		{
+    			as.append("Mail Server");
+    		}
+    		if (strstr(buffer, "postfix_enable: YES") != NULL)
+    		{
+    			as.append("Smtp Server");
+    		}
+    		/* What is the best way to describe Desktop Role? */
+    		if (strstr(buffer, "dbus_enable: YES") != NULL)
+    		{
+    			as.append("Desktop System");
+    		}
+
+    	}
+    }
+    pclose(pipe);
 	return as;
-
 }
 
 Boolean UNIX_ComputerSystem::getOtherIdentifyingInfo(CIMProperty &p) const
@@ -443,7 +517,32 @@ Boolean UNIX_ComputerSystem::getPowerManagementCapabilities(CIMProperty &p) cons
 Array<Uint16> UNIX_ComputerSystem::getPowerManagementCapabilities() const
 {
 	Array<Uint16> as;
-	
+	size_t ret_len;
+    if (sysctlbyname("hw.acpi.supported_sleep_state", NULL, &ret_len, NULL, 0) != -1)
+    {
+    	char ret[ret_len];
+    	if (sysctlbyname("hw.acpi.supported_sleep_state", &ret, &ret_len, NULL, 0) != -1)
+    	{
+	    	if (strstr(ret, "S2") != NULL)
+	    	{
+	    		as.append(2);
+	    	}
+	    	if (strstr(ret, "S3") != NULL)
+	    	{
+	    		as.append(3);
+	    	}
+	    	if (strstr(ret, "S4") != NULL)
+	    	{
+	    		as.append(4);
+	    	}
+	    	if (strstr(ret, "S5") != NULL)
+	    	{
+	    		as.append(5);
+	    	}
+    	}
+    }	
+    else 
+    	as.append(1);
 
 	return as;
 
@@ -483,7 +582,17 @@ Boolean UNIX_ComputerSystem::getPowerManagementSupported(CIMProperty &p) const
 
 Boolean UNIX_ComputerSystem::getPowerManagementSupported() const
 {
-	return Boolean(false);
+	bool result = false;
+	size_t ret_len;
+    if (sysctlbyname("hw.acpi.supported_sleep_state", NULL, &ret_len, NULL, 0) != -1)
+    {
+    	char ret[ret_len];
+    	if (sysctlbyname("hw.acpi.supported_sleep_state", &ret, &ret_len, NULL, 0) != -1)
+    	{
+	    	result = strstr(ret, "S5") != NULL;
+    	}
+    }
+	return Boolean(result);
 }
 
 Boolean UNIX_ComputerSystem::getPowerState(CIMProperty &p) const
@@ -508,21 +617,20 @@ Uint16 UNIX_ComputerSystem::getWakeUpType() const
 	return Uint16(0);
 }
 
-
-
 Boolean UNIX_ComputerSystem::initialize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_ComputerSystem::load(int &pIndex)
 {
+	if (pIndex == 0) return true;
 	return false;
 }
 
 Boolean UNIX_ComputerSystem::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_ComputerSystem::find(Array<CIMKeyBinding> &kbArray)
@@ -540,9 +648,10 @@ Boolean UNIX_ComputerSystem::find(Array<CIMKeyBinding> &kbArray)
 		else if (keyName.equal(PROPERTY_NAME)) nameKey = kb.getValue();
 	}
 
-
-
-/* EXecute find with extracted keys */
+	/* EXecute find with extracted keys */
+	if (String::equal(nameKey, CIMHelper::EmptyString) ||
+		String::equal(nameKey, CIMHelper::HostName))
+		return true;
 
 	return false;
 }

@@ -55,12 +55,12 @@ CIMInstance UNIX_AssociatedBlockStatisticsManifestCollectionProvider::constructI
 			CIMName("UNIX_AssociatedBlockStatisticsManifestCollection"),
 			constructKeyBindings(_p)));
 
+	//CIM_AssociatedBlockStatisticsManifestCollection Properties
 	if (_p.getStatistics(p)) inst.addProperty(p);
 	if (_p.getManifestCollection(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AssociatedBlockStatisticsManifestCollectionProvider::constructKeyBindings(const UNIX_AssociatedBlockStatisticsManifestCollection& _p)

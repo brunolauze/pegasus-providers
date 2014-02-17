@@ -55,11 +55,15 @@ CIMInstance UNIX_OrderedDependencyProvider::constructInstance(
 			CIMName("UNIX_OrderedDependency"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
+	if (_p.getAntecedent(p)) inst.addProperty(p);
+	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_OrderedDependency Properties
 	if (_p.getAssignedSequence(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_OrderedDependencyProvider::constructKeyBindings(const UNIX_OrderedDependency& _p)

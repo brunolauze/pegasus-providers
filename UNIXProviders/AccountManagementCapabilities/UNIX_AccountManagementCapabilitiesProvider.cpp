@@ -55,6 +55,21 @@ CIMInstance UNIX_AccountManagementCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_AccountManagementCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_EnabledLogicalElementCapabilities Properties
+	if (_p.getElementNameEditSupported(p)) inst.addProperty(p);
+	if (_p.getMaxElementNameLen(p)) inst.addProperty(p);
+	if (_p.getRequestedStatesSupported(p)) inst.addProperty(p);
+	if (_p.getElementNameMask(p)) inst.addProperty(p);
+
+	//CIM_AccountManagementCapabilities Properties
 	if (_p.getOperationsSupported(p)) inst.addProperty(p);
 	if (_p.getOtherSupportedUserPasswordEncryptionAlgorithms(p)) inst.addProperty(p);
 	if (_p.getSupportedUserPasswordEncryptionAlgorithms(p)) inst.addProperty(p);
@@ -63,8 +78,7 @@ CIMInstance UNIX_AccountManagementCapabilitiesProvider::constructInstance(
 	if (_p.getSupportedUserPasswordEncodings(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AccountManagementCapabilitiesProvider::constructKeyBindings(const UNIX_AccountManagementCapabilities& _p)

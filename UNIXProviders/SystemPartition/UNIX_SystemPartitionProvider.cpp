@@ -55,12 +55,18 @@ CIMInstance UNIX_SystemPartitionProvider::constructInstance(
 			CIMName("UNIX_SystemPartition"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_SystemComponent Properties
+
+	//CIM_ComponentCS Properties
+
+	//CIM_SystemPartition Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SystemPartitionProvider::constructKeyBindings(const UNIX_SystemPartition& _p)

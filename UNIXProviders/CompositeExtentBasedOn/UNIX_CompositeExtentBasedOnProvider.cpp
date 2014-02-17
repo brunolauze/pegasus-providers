@@ -55,9 +55,16 @@ CIMInstance UNIX_CompositeExtentBasedOnProvider::constructInstance(
 			CIMName("UNIX_CompositeExtentBasedOn"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_BasedOn Properties
+	if (_p.getStartingAddress(p)) inst.addProperty(p);
+	if (_p.getEndingAddress(p)) inst.addProperty(p);
 	if (_p.getOrderIndex(p)) inst.addProperty(p);
+
+	//CIM_CompositeExtentBasedOn Properties
 	if (_p.getLBAsMappedByDecrementing(p)) inst.addProperty(p);
 	if (_p.getLBAMappingIncludesCheckData(p)) inst.addProperty(p);
 	if (_p.getNumberOfBlocks(p)) inst.addProperty(p);
@@ -68,8 +75,7 @@ CIMInstance UNIX_CompositeExtentBasedOnProvider::constructInstance(
 	if (_p.getUnitsOfUserData(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CompositeExtentBasedOnProvider::constructKeyBindings(const UNIX_CompositeExtentBasedOn& _p)

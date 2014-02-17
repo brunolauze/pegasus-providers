@@ -55,12 +55,12 @@ CIMInstance UNIX_AFRelatedServicesProvider::constructInstance(
 			CIMName("UNIX_AFRelatedServices"),
 			constructKeyBindings(_p)));
 
+	//CIM_AFRelatedServices Properties
 	if (_p.getAFLowerDropPrecedence(p)) inst.addProperty(p);
 	if (_p.getAFHigherDropPrecedence(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AFRelatedServicesProvider::constructKeyBindings(const UNIX_AFRelatedServices& _p)

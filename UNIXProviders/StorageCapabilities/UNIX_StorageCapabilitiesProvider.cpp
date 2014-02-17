@@ -55,6 +55,15 @@ CIMInstance UNIX_StorageCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_StorageCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_StorageCapabilities Properties
 	if (_p.getElementType(p)) inst.addProperty(p);
 	if (_p.getNoSinglePointOfFailure(p)) inst.addProperty(p);
 	if (_p.getNoSinglePointOfFailureDefault(p)) inst.addProperty(p);
@@ -72,8 +81,7 @@ CIMInstance UNIX_StorageCapabilitiesProvider::constructInstance(
 	if (_p.getUserDataStripeDepthDefault(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_StorageCapabilitiesProvider::constructKeyBindings(const UNIX_StorageCapabilities& _p)

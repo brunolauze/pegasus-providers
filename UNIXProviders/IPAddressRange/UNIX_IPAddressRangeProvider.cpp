@@ -55,14 +55,25 @@ CIMInstance UNIX_IPAddressRangeProvider::constructInstance(
 			CIMName("UNIX_IPAddressRange"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_CollectionOfMSEs Properties
+	if (_p.getCollectionID(p)) inst.addProperty(p);
+
+	//CIM_IPAddressRange Properties
 	if (_p.getStartAddress(p)) inst.addProperty(p);
 	if (_p.getEndAddress(p)) inst.addProperty(p);
 	if (_p.getTypeOfAddress(p)) inst.addProperty(p);
 	if (_p.getAllocationRegion(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IPAddressRangeProvider::constructKeyBindings(const UNIX_IPAddressRange& _p)

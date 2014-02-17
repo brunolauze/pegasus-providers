@@ -55,14 +55,18 @@ CIMInstance UNIX_DiagnosticTestForMSEProvider::constructInstance(
 			CIMName("UNIX_DiagnosticTestForMSE"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_ProvidesServiceToElement Properties
+
+	//CIM_DiagnosticTestForMSE Properties
 	if (_p.getEstimatedTimeOfPerforming(p)) inst.addProperty(p);
 	if (_p.getIsExclusiveForMSE(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DiagnosticTestForMSEProvider::constructKeyBindings(const UNIX_DiagnosticTestForMSE& _p)

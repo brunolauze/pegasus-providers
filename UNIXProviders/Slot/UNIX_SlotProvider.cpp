@@ -55,8 +55,52 @@ CIMInstance UNIX_SlotProvider::constructInstance(
 			CIMName("UNIX_Slot"),
 			constructKeyBindings(_p)));
 
-	if (_p.getConnectorType(p)) inst.addProperty(p);
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_PhysicalElement Properties
+	if (_p.getTag(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getManufacturer(p)) inst.addProperty(p);
+	if (_p.getModel(p)) inst.addProperty(p);
+	if (_p.getSKU(p)) inst.addProperty(p);
+	if (_p.getSerialNumber(p)) inst.addProperty(p);
+	if (_p.getVersion(p)) inst.addProperty(p);
+	if (_p.getPartNumber(p)) inst.addProperty(p);
+	if (_p.getOtherIdentifyingInfo(p)) inst.addProperty(p);
 	if (_p.getPoweredOn(p)) inst.addProperty(p);
+	if (_p.getManufactureDate(p)) inst.addProperty(p);
+	if (_p.getVendorEquipmentType(p)) inst.addProperty(p);
+	if (_p.getUserTracking(p)) inst.addProperty(p);
+	if (_p.getCanBeFRUed(p)) inst.addProperty(p);
+
+	//CIM_PhysicalConnector Properties
+	if (_p.getConnectorPinout(p)) inst.addProperty(p);
+	if (_p.getConnectorType(p)) inst.addProperty(p);
+	if (_p.getOtherTypeDescription(p)) inst.addProperty(p);
+	if (_p.getConnectorGender(p)) inst.addProperty(p);
+	if (_p.getConnectorElectricalCharacteristics(p)) inst.addProperty(p);
+	if (_p.getOtherElectricalCharacteristics(p)) inst.addProperty(p);
+	if (_p.getNumPhysicalPins(p)) inst.addProperty(p);
+	if (_p.getConnectorLayout(p)) inst.addProperty(p);
+	if (_p.getConnectorDescription(p)) inst.addProperty(p);
+
+	//CIM_Slot Properties
 	if (_p.getSupportsHotPlug(p)) inst.addProperty(p);
 	if (_p.getHeightAllowed(p)) inst.addProperty(p);
 	if (_p.getLengthAllowed(p)) inst.addProperty(p);
@@ -73,8 +117,7 @@ CIMInstance UNIX_SlotProvider::constructInstance(
 	if (_p.getVendorCompatibilityStrings(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SlotProvider::constructKeyBindings(const UNIX_Slot& _p)

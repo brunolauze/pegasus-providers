@@ -55,14 +55,22 @@ CIMInstance UNIX_SystemSettingProvider::constructInstance(
 			CIMName("UNIX_SystemSetting"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Setting Properties
+	if (_p.getSettingID(p)) inst.addProperty(p);
+
+	//CIM_SystemSetting Properties
 	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
 	if (_p.getSystemName(p)) inst.addProperty(p);
 	if (_p.getCreationClassName(p)) inst.addProperty(p);
-	if (_p.getSettingID(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SystemSettingProvider::constructKeyBindings(const UNIX_SystemSetting& _p)

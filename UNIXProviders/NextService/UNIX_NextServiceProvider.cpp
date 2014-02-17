@@ -55,12 +55,12 @@ CIMInstance UNIX_NextServiceProvider::constructInstance(
 			CIMName("UNIX_NextService"),
 			constructKeyBindings(_p)));
 
+	//CIM_NextService Properties
 	if (_p.getPrecedingService(p)) inst.addProperty(p);
 	if (_p.getFollowingService(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NextServiceProvider::constructKeyBindings(const UNIX_NextService& _p)

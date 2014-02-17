@@ -55,12 +55,14 @@ CIMInstance UNIX_SoftwareFeatureServiceImplementationProvider::constructInstance
 			CIMName("UNIX_SoftwareFeatureServiceImplementation"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_SoftwareFeatureServiceImplementation Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SoftwareFeatureServiceImplementationProvider::constructKeyBindings(const UNIX_SoftwareFeatureServiceImplementation& _p)

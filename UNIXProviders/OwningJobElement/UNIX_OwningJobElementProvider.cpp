@@ -55,12 +55,12 @@ CIMInstance UNIX_OwningJobElementProvider::constructInstance(
 			CIMName("UNIX_OwningJobElement"),
 			constructKeyBindings(_p)));
 
+	//CIM_OwningJobElement Properties
 	if (_p.getOwningElement(p)) inst.addProperty(p);
 	if (_p.getOwnedElement(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_OwningJobElementProvider::constructKeyBindings(const UNIX_OwningJobElement& _p)

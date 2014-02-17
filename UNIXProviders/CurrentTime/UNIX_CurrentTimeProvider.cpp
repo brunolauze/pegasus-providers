@@ -55,6 +55,7 @@ CIMInstance UNIX_CurrentTimeProvider::constructInstance(
 			CIMName("UNIX_CurrentTime"),
 			constructKeyBindings(_p)));
 
+	//CIM_CurrentTime Properties
 	if (_p.getCSCreationClassName(p)) inst.addProperty(p);
 	if (_p.getCSName(p)) inst.addProperty(p);
 	if (_p.getCreationClassName(p)) inst.addProperty(p);
@@ -71,8 +72,7 @@ CIMInstance UNIX_CurrentTimeProvider::constructInstance(
 	if (_p.getTimeZoneOffset(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CurrentTimeProvider::constructKeyBindings(const UNIX_CurrentTime& _p)

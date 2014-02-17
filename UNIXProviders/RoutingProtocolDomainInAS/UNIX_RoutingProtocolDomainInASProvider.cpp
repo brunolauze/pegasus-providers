@@ -55,12 +55,18 @@ CIMInstance UNIX_RoutingProtocolDomainInASProvider::constructInstance(
 			CIMName("UNIX_RoutingProtocolDomainInAS"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_SystemComponent Properties
+
+	//CIM_ContainedDomain Properties
+
+	//CIM_RoutingProtocolDomainInAS Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RoutingProtocolDomainInASProvider::constructKeyBindings(const UNIX_RoutingProtocolDomainInAS& _p)

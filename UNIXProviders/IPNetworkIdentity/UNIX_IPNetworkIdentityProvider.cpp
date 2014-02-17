@@ -55,12 +55,21 @@ CIMInstance UNIX_IPNetworkIdentityProvider::constructInstance(
 			CIMName("UNIX_IPNetworkIdentity"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Identity Properties
+	if (_p.getCurrentlyAuthenticated(p)) inst.addProperty(p);
+
+	//CIM_IPNetworkIdentity Properties
 	if (_p.getIdentityType(p)) inst.addProperty(p);
 	if (_p.getIdentityValue(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IPNetworkIdentityProvider::constructKeyBindings(const UNIX_IPNetworkIdentity& _p)

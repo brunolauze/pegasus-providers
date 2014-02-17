@@ -55,12 +55,14 @@ CIMInstance UNIX_DatabaseAdministratorProvider::constructInstance(
 			CIMName("UNIX_DatabaseAdministrator"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_DatabaseAdministrator Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DatabaseAdministratorProvider::constructKeyBindings(const UNIX_DatabaseAdministrator& _p)

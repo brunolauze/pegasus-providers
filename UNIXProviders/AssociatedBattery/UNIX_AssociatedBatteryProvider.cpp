@@ -55,12 +55,14 @@ CIMInstance UNIX_AssociatedBatteryProvider::constructInstance(
 			CIMName("UNIX_AssociatedBattery"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_AssociatedBattery Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AssociatedBatteryProvider::constructKeyBindings(const UNIX_AssociatedBattery& _p)

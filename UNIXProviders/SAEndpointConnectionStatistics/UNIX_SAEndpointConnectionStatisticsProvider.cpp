@@ -55,12 +55,23 @@ CIMInstance UNIX_SAEndpointConnectionStatisticsProvider::constructInstance(
 			CIMName("UNIX_SAEndpointConnectionStatistics"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_SAEndpointConnectionStatistics Properties
 	if (_p.getByteCount(p)) inst.addProperty(p);
 	if (_p.getLastAccessed(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SAEndpointConnectionStatisticsProvider::constructKeyBindings(const UNIX_SAEndpointConnectionStatistics& _p)

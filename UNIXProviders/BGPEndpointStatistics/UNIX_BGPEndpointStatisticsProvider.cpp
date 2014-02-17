@@ -55,6 +55,18 @@ CIMInstance UNIX_BGPEndpointStatisticsProvider::constructInstance(
 			CIMName("UNIX_BGPEndpointStatistics"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_BGPEndpointStatistics Properties
 	if (_p.getInUpdates(p)) inst.addProperty(p);
 	if (_p.getOutUpdates(p)) inst.addProperty(p);
 	if (_p.getInTotalMessages(p)) inst.addProperty(p);
@@ -65,8 +77,7 @@ CIMInstance UNIX_BGPEndpointStatisticsProvider::constructInstance(
 	if (_p.getInUpdateElapsedTime(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BGPEndpointStatisticsProvider::constructKeyBindings(const UNIX_BGPEndpointStatistics& _p)

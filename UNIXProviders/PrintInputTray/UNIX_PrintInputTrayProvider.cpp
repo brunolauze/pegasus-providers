@@ -55,7 +55,30 @@ CIMInstance UNIX_PrintInputTrayProvider::constructInstance(
 			CIMName("UNIX_PrintInputTray"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
 	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_LogicalElement Properties
+
+	//CIM_PrinterElement Properties
+	if (_p.getSNMPRowId(p)) inst.addProperty(p);
+
+	//CIM_PrintInputTray Properties
 	if (_p.getIsDefault(p)) inst.addProperty(p);
 	if (_p.getLocalizedDescription(p)) inst.addProperty(p);
 	if (_p.getType(p)) inst.addProperty(p);
@@ -78,8 +101,7 @@ CIMInstance UNIX_PrintInputTrayProvider::constructInstance(
 	if (_p.getMediaColor(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PrintInputTrayProvider::constructKeyBindings(const UNIX_PrintInputTray& _p)

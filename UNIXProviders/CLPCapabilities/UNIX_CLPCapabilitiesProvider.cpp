@@ -55,12 +55,31 @@ CIMInstance UNIX_CLPCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_CLPCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_EnabledLogicalElementCapabilities Properties
+	if (_p.getElementNameEditSupported(p)) inst.addProperty(p);
+	if (_p.getMaxElementNameLen(p)) inst.addProperty(p);
+	if (_p.getRequestedStatesSupported(p)) inst.addProperty(p);
+	if (_p.getElementNameMask(p)) inst.addProperty(p);
+
+	//CIM_ProtocolServiceCapabilities Properties
+	if (_p.getMaxConnections(p)) inst.addProperty(p);
+	if (_p.getMaxListeningPorts(p)) inst.addProperty(p);
+	if (_p.getListeningPortManagementSupported(p)) inst.addProperty(p);
+
+	//CIM_CLPCapabilities Properties
 	if (_p.getCLPVersions(p)) inst.addProperty(p);
 	if (_p.getSMMEAddressVersions(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CLPCapabilitiesProvider::constructKeyBindings(const UNIX_CLPCapabilities& _p)

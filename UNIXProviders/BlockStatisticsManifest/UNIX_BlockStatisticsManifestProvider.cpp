@@ -55,7 +55,13 @@ CIMInstance UNIX_BlockStatisticsManifestProvider::constructInstance(
 			CIMName("UNIX_BlockStatisticsManifest"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_BlockStatisticsManifest Properties
 	if (_p.getElementType(p)) inst.addProperty(p);
 	if (_p.getIncludeStartStatisticTime(p)) inst.addProperty(p);
 	if (_p.getIncludeStatisticTime(p)) inst.addProperty(p);
@@ -77,8 +83,7 @@ CIMInstance UNIX_BlockStatisticsManifestProvider::constructInstance(
 	if (_p.getIncludeMaintTimeCounter(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BlockStatisticsManifestProvider::constructKeyBindings(const UNIX_BlockStatisticsManifest& _p)

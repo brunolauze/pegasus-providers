@@ -55,6 +55,23 @@ CIMInstance UNIX_PickerStatInfoProvider::constructInstance(
 			CIMName("UNIX_PickerStatInfo"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalInformation Properties
+	if (_p.getName(p)) inst.addProperty(p);
+
+	//CIM_DeviceStatisticalInformation Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getDeviceCreationClassName(p)) inst.addProperty(p);
+	if (_p.getDeviceID(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+
+	//CIM_PickerStatInfo Properties
 	if (_p.getPickSuccesses(p)) inst.addProperty(p);
 	if (_p.getPickFailures(p)) inst.addProperty(p);
 	if (_p.getPickRetries(p)) inst.addProperty(p);
@@ -63,8 +80,7 @@ CIMInstance UNIX_PickerStatInfoProvider::constructInstance(
 	if (_p.getPutRetries(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PickerStatInfoProvider::constructKeyBindings(const UNIX_PickerStatInfo& _p)

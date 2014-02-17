@@ -55,6 +55,24 @@ CIMInstance UNIX_USBRedirectionCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_USBRedirectionCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_EnabledLogicalElementCapabilities Properties
+	if (_p.getElementNameEditSupported(p)) inst.addProperty(p);
+	if (_p.getMaxElementNameLen(p)) inst.addProperty(p);
+	if (_p.getRequestedStatesSupported(p)) inst.addProperty(p);
+	if (_p.getElementNameMask(p)) inst.addProperty(p);
+
+	//CIM_RedirectionServiceCapabilities Properties
+	if (_p.getSharingModeSupported(p)) inst.addProperty(p);
+
+	//CIM_USBRedirectionCapabilities Properties
 	if (_p.getConnectionModesSupported(p)) inst.addProperty(p);
 	if (_p.getUSBVersionsSupported(p)) inst.addProperty(p);
 	if (_p.getClassesSupported(p)) inst.addProperty(p);
@@ -67,8 +85,7 @@ CIMInstance UNIX_USBRedirectionCapabilitiesProvider::constructInstance(
 	if (_p.getSingleClassPerSAP(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_USBRedirectionCapabilitiesProvider::constructKeyBindings(const UNIX_USBRedirectionCapabilities& _p)

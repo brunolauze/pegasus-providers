@@ -55,12 +55,14 @@ CIMInstance UNIX_ProcessOfJobProvider::constructInstance(
 			CIMName("UNIX_ProcessOfJob"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_ProcessOfJob Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ProcessOfJobProvider::constructKeyBindings(const UNIX_ProcessOfJob& _p)

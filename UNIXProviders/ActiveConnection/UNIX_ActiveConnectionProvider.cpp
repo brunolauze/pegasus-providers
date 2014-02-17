@@ -55,15 +55,19 @@ CIMInstance UNIX_ActiveConnectionProvider::constructInstance(
 			CIMName("UNIX_ActiveConnection"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_SAPSAPDependency Properties
+
+	//CIM_ActiveConnection Properties
 	if (_p.getTrafficType(p)) inst.addProperty(p);
 	if (_p.getOtherTrafficDescription(p)) inst.addProperty(p);
 	if (_p.getIsUnidirectional(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ActiveConnectionProvider::constructKeyBindings(const UNIX_ActiveConnection& _p)

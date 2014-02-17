@@ -55,12 +55,18 @@ CIMInstance UNIX_USBConnectionProvider::constructInstance(
 			CIMName("UNIX_USBConnection"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_DeviceConnection Properties
+	if (_p.getNegotiatedSpeed(p)) inst.addProperty(p);
+	if (_p.getNegotiatedDataWidth(p)) inst.addProperty(p);
+
+	//CIM_USBConnection Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_USBConnectionProvider::constructKeyBindings(const UNIX_USBConnection& _p)

@@ -55,11 +55,26 @@ CIMInstance UNIX_PCIPortGroupProvider::constructInstance(
 			CIMName("UNIX_PCIPortGroup"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_SystemSpecificCollection Properties
+
+	//CIM_LogicalPortGroup Properties
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getNameFormat(p)) inst.addProperty(p);
+	if (_p.getOtherNameFormat(p)) inst.addProperty(p);
+
+	//CIM_PCIPortGroup Properties
 	if (_p.getBusNumber(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PCIPortGroupProvider::constructKeyBindings(const UNIX_PCIPortGroup& _p)

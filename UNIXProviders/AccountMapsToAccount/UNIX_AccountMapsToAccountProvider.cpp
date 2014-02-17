@@ -55,12 +55,14 @@ CIMInstance UNIX_AccountMapsToAccountProvider::constructInstance(
 			CIMName("UNIX_AccountMapsToAccount"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_AccountMapsToAccount Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AccountMapsToAccountProvider::constructKeyBindings(const UNIX_AccountMapsToAccount& _p)

@@ -55,12 +55,14 @@ CIMInstance UNIX_DeviceSAPImplementationProvider::constructInstance(
 			CIMName("UNIX_DeviceSAPImplementation"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_DeviceSAPImplementation Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DeviceSAPImplementationProvider::constructKeyBindings(const UNIX_DeviceSAPImplementation& _p)

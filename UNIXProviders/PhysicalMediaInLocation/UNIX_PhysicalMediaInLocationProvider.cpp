@@ -55,14 +55,16 @@ CIMInstance UNIX_PhysicalMediaInLocationProvider::constructInstance(
 			CIMName("UNIX_PhysicalMediaInLocation"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_PhysicalMediaInLocation Properties
 	if (_p.getOrientation(p)) inst.addProperty(p);
 	if (_p.getTimeOfLastPlacement(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PhysicalMediaInLocationProvider::constructKeyBindings(const UNIX_PhysicalMediaInLocation& _p)

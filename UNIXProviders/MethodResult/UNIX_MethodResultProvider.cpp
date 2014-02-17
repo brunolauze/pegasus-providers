@@ -55,13 +55,18 @@ CIMInstance UNIX_MethodResultProvider::constructInstance(
 			CIMName("UNIX_MethodResult"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_MethodResult Properties
 	if (_p.getPreCallIndication(p)) inst.addProperty(p);
 	if (_p.getPostCallIndication(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MethodResultProvider::constructKeyBindings(const UNIX_MethodResult& _p)

@@ -55,10 +55,24 @@ CIMInstance UNIX_IPsecProposalProvider::constructInstance(
 			CIMName("UNIX_IPsecProposal"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_ScopedSettingData Properties
+
+	//CIM_SAProposal Properties
+
+	//CIM_IPsecProposal Properties
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IPsecProposalProvider::constructKeyBindings(const UNIX_IPsecProposal& _p)

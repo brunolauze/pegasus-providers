@@ -55,13 +55,13 @@ CIMInstance UNIX_LogicalNetworkServiceProvider::constructInstance(
 			CIMName("UNIX_LogicalNetworkService"),
 			constructKeyBindings(_p)));
 
+	//CIM_LogicalNetworkService Properties
 	if (_p.getNetwork(p)) inst.addProperty(p);
 	if (_p.getNetworkService(p)) inst.addProperty(p);
 	if (_p.getContainmentType(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_LogicalNetworkServiceProvider::constructKeyBindings(const UNIX_LogicalNetworkService& _p)

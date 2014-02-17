@@ -55,12 +55,16 @@ CIMInstance UNIX_OOBAlertServiceOnModemProvider::constructInstance(
 			CIMName("UNIX_OOBAlertServiceOnModem"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_DeviceServiceImplementation Properties
+
+	//CIM_OOBAlertServiceOnModem Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_OOBAlertServiceOnModemProvider::constructKeyBindings(const UNIX_OOBAlertServiceOnModem& _p)

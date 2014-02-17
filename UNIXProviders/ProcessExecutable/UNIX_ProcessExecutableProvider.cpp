@@ -55,12 +55,14 @@ CIMInstance UNIX_ProcessExecutableProvider::constructInstance(
 			CIMName("UNIX_ProcessExecutable"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ProcessExecutable Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ProcessExecutableProvider::constructKeyBindings(const UNIX_ProcessExecutable& _p)

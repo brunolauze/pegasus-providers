@@ -55,12 +55,20 @@ CIMInstance UNIX_LocalizationCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_LocalizationCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_LocalizationCapabilities Properties
 	if (_p.getSupportedInputLocales(p)) inst.addProperty(p);
 	if (_p.getSupportedOutputLocales(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_LocalizationCapabilitiesProvider::constructKeyBindings(const UNIX_LocalizationCapabilities& _p)

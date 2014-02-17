@@ -55,8 +55,13 @@ CIMInstance UNIX_SwitchPortSourceRoutingProvider::constructInstance(
 			CIMName("UNIX_SwitchPortSourceRouting"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_ServiceSAPDependency Properties
+
+	//CIM_SwitchPortSourceRouting Properties
 	if (_p.getHopCount(p)) inst.addProperty(p);
 	if (_p.getLocalSegment(p)) inst.addProperty(p);
 	if (_p.getBridgeNum(p)) inst.addProperty(p);
@@ -64,8 +69,7 @@ CIMInstance UNIX_SwitchPortSourceRoutingProvider::constructInstance(
 	if (_p.getSTESpanMode(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SwitchPortSourceRoutingProvider::constructKeyBindings(const UNIX_SwitchPortSourceRouting& _p)

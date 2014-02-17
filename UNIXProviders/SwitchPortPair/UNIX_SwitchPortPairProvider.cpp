@@ -55,14 +55,18 @@ CIMInstance UNIX_SwitchPortPairProvider::constructInstance(
 			CIMName("UNIX_SwitchPortPair"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_SAPSAPDependency Properties
+
+	//CIM_SwitchPortPair Properties
 	if (_p.getBridgeNum(p)) inst.addProperty(p);
 	if (_p.getBridgeState(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SwitchPortPairProvider::constructKeyBindings(const UNIX_SwitchPortPair& _p)

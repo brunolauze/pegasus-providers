@@ -55,14 +55,25 @@ CIMInstance UNIX_StatisticalRuntimeOverviewProvider::constructInstance(
 			CIMName("UNIX_StatisticalRuntimeOverview"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_StatisticalRuntimeOverview Properties
 	if (_p.getLastActivity(p)) inst.addProperty(p);
 	if (_p.getNumberOfActiveRequests(p)) inst.addProperty(p);
 	if (_p.getNumberOfActiveRequestors(p)) inst.addProperty(p);
 	if (_p.getAverageResponseTime(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_StatisticalRuntimeOverviewProvider::constructKeyBindings(const UNIX_StatisticalRuntimeOverview& _p)

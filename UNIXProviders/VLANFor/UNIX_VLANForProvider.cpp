@@ -55,12 +55,16 @@ CIMInstance UNIX_VLANForProvider::constructInstance(
 			CIMName("UNIX_VLANFor"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ServiceSAPDependency Properties
+
+	//CIM_VLANFor Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_VLANForProvider::constructKeyBindings(const UNIX_VLANFor& _p)

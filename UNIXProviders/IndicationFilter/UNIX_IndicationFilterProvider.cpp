@@ -55,6 +55,13 @@ CIMInstance UNIX_IndicationFilterProvider::constructInstance(
 			CIMName("UNIX_IndicationFilter"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_IndicationFilter Properties
 	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
 	if (_p.getSystemName(p)) inst.addProperty(p);
 	if (_p.getCreationClassName(p)) inst.addProperty(p);
@@ -67,8 +74,7 @@ CIMInstance UNIX_IndicationFilterProvider::constructInstance(
 	if (_p.getTemplateVariable(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IndicationFilterProvider::constructKeyBindings(const UNIX_IndicationFilter& _p)

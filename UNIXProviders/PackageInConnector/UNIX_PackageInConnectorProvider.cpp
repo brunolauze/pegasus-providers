@@ -55,12 +55,16 @@ CIMInstance UNIX_PackageInConnectorProvider::constructInstance(
 			CIMName("UNIX_PackageInConnector"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ElementInConnector Properties
+
+	//CIM_PackageInConnector Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PackageInConnectorProvider::constructKeyBindings(const UNIX_PackageInConnector& _p)

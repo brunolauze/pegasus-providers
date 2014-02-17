@@ -55,6 +55,17 @@ CIMInstance UNIX_CLPSettingDataProvider::constructInstance(
 			CIMName("UNIX_CLPSettingData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_CLPSettingData Properties
 	if (_p.getCurrentDefaultTarget(p)) inst.addProperty(p);
 	if (_p.getKeepTime(p)) inst.addProperty(p);
 	if (_p.getWaitBehavior(p)) inst.addProperty(p);
@@ -67,8 +78,7 @@ CIMInstance UNIX_CLPSettingDataProvider::constructInstance(
 	if (_p.getDisplayOption(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CLPSettingDataProvider::constructKeyBindings(const UNIX_CLPSettingData& _p)

@@ -55,12 +55,14 @@ CIMInstance UNIX_RequireCredentialsFromProvider::constructInstance(
 			CIMName("UNIX_RequireCredentialsFrom"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_RequireCredentialsFrom Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RequireCredentialsFromProvider::constructKeyBindings(const UNIX_RequireCredentialsFrom& _p)

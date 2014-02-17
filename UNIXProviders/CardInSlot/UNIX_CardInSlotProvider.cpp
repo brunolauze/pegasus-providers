@@ -55,12 +55,20 @@ CIMInstance UNIX_CardInSlotProvider::constructInstance(
 			CIMName("UNIX_CardInSlot"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ElementInConnector Properties
+
+	//CIM_PackageInConnector Properties
+
+	//CIM_PackageInSlot Properties
+
+	//CIM_CardInSlot Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CardInSlotProvider::constructKeyBindings(const UNIX_CardInSlot& _p)

@@ -55,12 +55,16 @@ CIMInstance UNIX_KDCIssuesKerberosTicketProvider::constructInstance(
 			CIMName("UNIX_KDCIssuesKerberosTicket"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ManagedCredential Properties
+
+	//CIM_KDCIssuesKerberosTicket Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_KDCIssuesKerberosTicketProvider::constructKeyBindings(const UNIX_KDCIssuesKerberosTicket& _p)

@@ -55,6 +55,7 @@ CIMInstance UNIX_ErrorProvider::constructInstance(
 			CIMName("UNIX_Error"),
 			constructKeyBindings(_p)));
 
+	//CIM_Error Properties
 	if (_p.getErrorType(p)) inst.addProperty(p);
 	if (_p.getOtherErrorType(p)) inst.addProperty(p);
 	if (_p.getOwningEntity(p)) inst.addProperty(p);
@@ -72,8 +73,7 @@ CIMInstance UNIX_ErrorProvider::constructInstance(
 	if (_p.getCIMStatusCodeDescription(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ErrorProvider::constructKeyBindings(const UNIX_Error& _p)

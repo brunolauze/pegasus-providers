@@ -55,12 +55,18 @@ CIMInstance UNIX_FibrePortOnFCAdapterProvider::constructInstance(
 			CIMName("UNIX_FibrePortOnFCAdapter"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HostedDependency Properties
+
+	//CIM_PortOnDevice Properties
+
+	//CIM_FibrePortOnFCAdapter Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_FibrePortOnFCAdapterProvider::constructKeyBindings(const UNIX_FibrePortOnFCAdapter& _p)

@@ -55,12 +55,16 @@ CIMInstance UNIX_EgressConditioningServiceOnEndpointProvider::constructInstance(
 			CIMName("UNIX_EgressConditioningServiceOnEndpoint"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ServiceSAPDependency Properties
+
+	//CIM_EgressConditioningServiceOnEndpoint Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_EgressConditioningServiceOnEndpointProvider::constructKeyBindings(const UNIX_EgressConditioningServiceOnEndpoint& _p)

@@ -55,12 +55,38 @@ CIMInstance UNIX_DiagnosticCompletionRecordProvider::constructInstance(
 			CIMName("UNIX_DiagnosticCompletionRecord"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_RecordForLog Properties
+	if (_p.getRecordFormat(p)) inst.addProperty(p);
+	if (_p.getRecordData(p)) inst.addProperty(p);
+	if (_p.getLocale(p)) inst.addProperty(p);
+	if (_p.getPerceivedSeverity(p)) inst.addProperty(p);
+
+	//CIM_DiagnosticRecord Properties
+	if (_p.getServiceName(p)) inst.addProperty(p);
+	if (_p.getManagedElementName(p)) inst.addProperty(p);
+	if (_p.getExpirationDate(p)) inst.addProperty(p);
+	if (_p.getRecordType(p)) inst.addProperty(p);
+	if (_p.getOtherRecordTypeDescription(p)) inst.addProperty(p);
+	if (_p.getCreationTimeStamp(p)) inst.addProperty(p);
+
+	//CIM_DiagnosticServiceRecord Properties
+	if (_p.getErrorCode(p)) inst.addProperty(p);
+	if (_p.getErrorCount(p)) inst.addProperty(p);
+	if (_p.getLoopsFailed(p)) inst.addProperty(p);
+	if (_p.getLoopsPassed(p)) inst.addProperty(p);
+
+	//CIM_DiagnosticCompletionRecord Properties
 	if (_p.getCompletionState(p)) inst.addProperty(p);
 	if (_p.getOtherCompletionStateDescription(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DiagnosticCompletionRecordProvider::constructKeyBindings(const UNIX_DiagnosticCompletionRecord& _p)

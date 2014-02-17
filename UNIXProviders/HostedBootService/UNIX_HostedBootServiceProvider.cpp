@@ -55,12 +55,18 @@ CIMInstance UNIX_HostedBootServiceProvider::constructInstance(
 			CIMName("UNIX_HostedBootService"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HostedDependency Properties
+
+	//CIM_HostedService Properties
+
+	//CIM_HostedBootService Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_HostedBootServiceProvider::constructKeyBindings(const UNIX_HostedBootService& _p)

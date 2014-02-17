@@ -55,7 +55,13 @@ CIMInstance UNIX_NextHopRouteProvider::constructInstance(
 			CIMName("UNIX_NextHopRoute"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_NextHopRoute Properties
 	if (_p.getDestinationAddress(p)) inst.addProperty(p);
 	if (_p.getAdminDistance(p)) inst.addProperty(p);
 	if (_p.getRouteMetric(p)) inst.addProperty(p);
@@ -63,8 +69,7 @@ CIMInstance UNIX_NextHopRouteProvider::constructInstance(
 	if (_p.getTypeOfRoute(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NextHopRouteProvider::constructKeyBindings(const UNIX_NextHopRoute& _p)

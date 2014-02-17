@@ -55,12 +55,12 @@ CIMInstance UNIX_InstalledProductImageProvider::constructInstance(
 			CIMName("UNIX_InstalledProductImage"),
 			constructKeyBindings(_p)));
 
+	//CIM_InstalledProductImage Properties
 	if (_p.getProduct(p)) inst.addProperty(p);
 	if (_p.getCollection(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_InstalledProductImageProvider::constructKeyBindings(const UNIX_InstalledProductImage& _p)

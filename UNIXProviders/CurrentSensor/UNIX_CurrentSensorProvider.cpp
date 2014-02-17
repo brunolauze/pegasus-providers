@@ -55,7 +55,63 @@ CIMInstance UNIX_CurrentSensorProvider::constructInstance(
 			CIMName("UNIX_CurrentSensor"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_LogicalElement Properties
+
+	//CIM_EnabledLogicalElement Properties
+	if (_p.getEnabledState(p)) inst.addProperty(p);
+	if (_p.getOtherEnabledState(p)) inst.addProperty(p);
+	if (_p.getRequestedState(p)) inst.addProperty(p);
+	if (_p.getEnabledDefault(p)) inst.addProperty(p);
+	if (_p.getTimeOfLastStateChange(p)) inst.addProperty(p);
+	if (_p.getAvailableRequestedStates(p)) inst.addProperty(p);
+	if (_p.getTransitioningToState(p)) inst.addProperty(p);
+
+	//CIM_LogicalDevice Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getDeviceID(p)) inst.addProperty(p);
+	if (_p.getPowerManagementSupported(p)) inst.addProperty(p);
+	if (_p.getPowerManagementCapabilities(p)) inst.addProperty(p);
+	if (_p.getAvailability(p)) inst.addProperty(p);
+	if (_p.getStatusInfo(p)) inst.addProperty(p);
+	if (_p.getLastErrorCode(p)) inst.addProperty(p);
+	if (_p.getErrorDescription(p)) inst.addProperty(p);
+	if (_p.getErrorCleared(p)) inst.addProperty(p);
+	if (_p.getOtherIdentifyingInfo(p)) inst.addProperty(p);
+	if (_p.getPowerOnHours(p)) inst.addProperty(p);
+	if (_p.getTotalPowerOnHours(p)) inst.addProperty(p);
+	if (_p.getIdentifyingDescriptions(p)) inst.addProperty(p);
+	if (_p.getAdditionalAvailability(p)) inst.addProperty(p);
+	if (_p.getMaxQuiesceTime(p)) inst.addProperty(p);
+
+	//CIM_Sensor Properties
 	if (_p.getSensorType(p)) inst.addProperty(p);
+	if (_p.getOtherSensorTypeDescription(p)) inst.addProperty(p);
+	if (_p.getPossibleStates(p)) inst.addProperty(p);
+	if (_p.getCurrentState(p)) inst.addProperty(p);
+	if (_p.getPollingInterval(p)) inst.addProperty(p);
+	if (_p.getSensorContext(p)) inst.addProperty(p);
+
+	//CIM_NumericSensor Properties
 	if (_p.getBaseUnits(p)) inst.addProperty(p);
 	if (_p.getUnitModifier(p)) inst.addProperty(p);
 	if (_p.getRateUnits(p)) inst.addProperty(p);
@@ -68,16 +124,22 @@ CIMInstance UNIX_CurrentSensorProvider::constructInstance(
 	if (_p.getResolution(p)) inst.addProperty(p);
 	if (_p.getTolerance(p)) inst.addProperty(p);
 	if (_p.getAccuracy(p)) inst.addProperty(p);
+	if (_p.getIsLinear(p)) inst.addProperty(p);
+	if (_p.getHysteresis(p)) inst.addProperty(p);
 	if (_p.getLowerThresholdNonCritical(p)) inst.addProperty(p);
 	if (_p.getUpperThresholdNonCritical(p)) inst.addProperty(p);
 	if (_p.getLowerThresholdCritical(p)) inst.addProperty(p);
 	if (_p.getUpperThresholdCritical(p)) inst.addProperty(p);
 	if (_p.getLowerThresholdFatal(p)) inst.addProperty(p);
 	if (_p.getUpperThresholdFatal(p)) inst.addProperty(p);
+	if (_p.getSupportedThresholds(p)) inst.addProperty(p);
+	if (_p.getEnabledThresholds(p)) inst.addProperty(p);
+	if (_p.getSettableThresholds(p)) inst.addProperty(p);
+
+	//CIM_CurrentSensor Properties
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CurrentSensorProvider::constructKeyBindings(const UNIX_CurrentSensor& _p)

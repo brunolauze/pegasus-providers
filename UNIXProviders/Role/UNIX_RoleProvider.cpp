@@ -55,6 +55,15 @@ CIMInstance UNIX_RoleProvider::constructInstance(
 			CIMName("UNIX_Role"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_Role Properties
 	if (_p.getCreationClassName(p)) inst.addProperty(p);
 	if (_p.getName(p)) inst.addProperty(p);
 	if (_p.getBusinessCategory(p)) inst.addProperty(p);
@@ -62,8 +71,7 @@ CIMInstance UNIX_RoleProvider::constructInstance(
 	if (_p.getRoleCharacteristics(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RoleProvider::constructKeyBindings(const UNIX_Role& _p)

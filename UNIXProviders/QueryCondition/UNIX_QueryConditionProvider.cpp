@@ -55,14 +55,32 @@ CIMInstance UNIX_QueryConditionProvider::constructInstance(
 			CIMName("UNIX_QueryCondition"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Policy Properties
+	if (_p.getCommonName(p)) inst.addProperty(p);
+	if (_p.getPolicyKeywords(p)) inst.addProperty(p);
+
+	//CIM_PolicyCondition Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getPolicyRuleCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPolicyRuleName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPolicyConditionName(p)) inst.addProperty(p);
+
+	//CIM_QueryCondition Properties
 	if (_p.getQueryResultName(p)) inst.addProperty(p);
 	if (_p.getQuery(p)) inst.addProperty(p);
 	if (_p.getQueryLanguage(p)) inst.addProperty(p);
 	if (_p.getTrigger(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_QueryConditionProvider::constructKeyBindings(const UNIX_QueryCondition& _p)

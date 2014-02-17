@@ -55,12 +55,16 @@ CIMInstance UNIX_HostingCSProvider::constructInstance(
 			CIMName("UNIX_HostingCS"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HostedDependency Properties
+
+	//CIM_HostingCS Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_HostingCSProvider::constructKeyBindings(const UNIX_HostingCS& _p)

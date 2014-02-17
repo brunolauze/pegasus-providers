@@ -55,12 +55,14 @@ CIMInstance UNIX_CommMechanismForAdapterProvider::constructInstance(
 			CIMName("UNIX_CommMechanismForAdapter"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_CommMechanismForAdapter Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CommMechanismForAdapterProvider::constructKeyBindings(const UNIX_CommMechanismForAdapter& _p)

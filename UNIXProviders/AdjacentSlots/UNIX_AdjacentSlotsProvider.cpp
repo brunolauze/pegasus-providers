@@ -55,14 +55,14 @@ CIMInstance UNIX_AdjacentSlotsProvider::constructInstance(
 			CIMName("UNIX_AdjacentSlots"),
 			constructKeyBindings(_p)));
 
+	//CIM_AdjacentSlots Properties
 	if (_p.getSlotA(p)) inst.addProperty(p);
 	if (_p.getSlotB(p)) inst.addProperty(p);
 	if (_p.getDistanceBetweenSlots(p)) inst.addProperty(p);
 	if (_p.getSharedSlots(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AdjacentSlotsProvider::constructKeyBindings(const UNIX_AdjacentSlots& _p)

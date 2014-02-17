@@ -55,12 +55,14 @@ CIMInstance UNIX_UsersCredentialProvider::constructInstance(
 			CIMName("UNIX_UsersCredential"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_UsersCredential Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_UsersCredentialProvider::constructKeyBindings(const UNIX_UsersCredential& _p)

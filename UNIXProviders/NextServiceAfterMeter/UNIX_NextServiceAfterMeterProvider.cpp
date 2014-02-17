@@ -55,13 +55,13 @@ CIMInstance UNIX_NextServiceAfterMeterProvider::constructInstance(
 			CIMName("UNIX_NextServiceAfterMeter"),
 			constructKeyBindings(_p)));
 
+	//CIM_NextServiceAfterMeter Properties
 	if (_p.getPrecedingService(p)) inst.addProperty(p);
 	if (_p.getFollowingService(p)) inst.addProperty(p);
 	if (_p.getMeterResult(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NextServiceAfterMeterProvider::constructKeyBindings(const UNIX_NextServiceAfterMeter& _p)

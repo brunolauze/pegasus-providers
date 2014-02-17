@@ -55,14 +55,14 @@ CIMInstance UNIX_SynchronizedProvider::constructInstance(
 			CIMName("UNIX_Synchronized"),
 			constructKeyBindings(_p)));
 
+	//CIM_Synchronized Properties
 	if (_p.getSystemElement(p)) inst.addProperty(p);
 	if (_p.getSyncedElement(p)) inst.addProperty(p);
 	if (_p.getWhenSynced(p)) inst.addProperty(p);
 	if (_p.getSyncMaintained(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SynchronizedProvider::constructKeyBindings(const UNIX_Synchronized& _p)

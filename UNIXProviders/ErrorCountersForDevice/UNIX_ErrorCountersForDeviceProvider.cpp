@@ -55,12 +55,14 @@ CIMInstance UNIX_ErrorCountersForDeviceProvider::constructInstance(
 			CIMName("UNIX_ErrorCountersForDevice"),
 			constructKeyBindings(_p)));
 
+	//CIM_Statistics Properties
 	if (_p.getStats(p)) inst.addProperty(p);
 	if (_p.getElement(p)) inst.addProperty(p);
 
+	//CIM_ErrorCountersForDevice Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ErrorCountersForDeviceProvider::constructKeyBindings(const UNIX_ErrorCountersForDevice& _p)

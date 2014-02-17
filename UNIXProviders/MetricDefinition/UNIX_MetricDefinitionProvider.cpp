@@ -55,12 +55,30 @@ CIMInstance UNIX_MetricDefinitionProvider::constructInstance(
 			CIMName("UNIX_MetricDefinition"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_BaseMetricDefinition Properties
 	if (_p.getId(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getDataType(p)) inst.addProperty(p);
+	if (_p.getCalculable(p)) inst.addProperty(p);
+	if (_p.getUnits(p)) inst.addProperty(p);
+	if (_p.getBreakdownDimensions(p)) inst.addProperty(p);
+	if (_p.getIsContinuous(p)) inst.addProperty(p);
+	if (_p.getChangeType(p)) inst.addProperty(p);
+	if (_p.getTimeScope(p)) inst.addProperty(p);
+	if (_p.getGatheringType(p)) inst.addProperty(p);
+	if (_p.getProgrammaticUnits(p)) inst.addProperty(p);
+
+	//CIM_MetricDefinition Properties
 	if (_p.getValidity(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MetricDefinitionProvider::constructKeyBindings(const UNIX_MetricDefinition& _p)

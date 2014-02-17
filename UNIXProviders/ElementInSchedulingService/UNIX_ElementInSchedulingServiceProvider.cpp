@@ -55,12 +55,14 @@ CIMInstance UNIX_ElementInSchedulingServiceProvider::constructInstance(
 			CIMName("UNIX_ElementInSchedulingService"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_ElementInSchedulingService Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ElementInSchedulingServiceProvider::constructKeyBindings(const UNIX_ElementInSchedulingService& _p)

@@ -55,12 +55,14 @@ CIMInstance UNIX_FileIdentityProvider::constructInstance(
 			CIMName("UNIX_FileIdentity"),
 			constructKeyBindings(_p)));
 
+	//CIM_LogicalIdentity Properties
 	if (_p.getSystemElement(p)) inst.addProperty(p);
 	if (_p.getSameElement(p)) inst.addProperty(p);
 
+	//CIM_FileIdentity Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_FileIdentityProvider::constructKeyBindings(const UNIX_FileIdentity& _p)

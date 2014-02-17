@@ -55,12 +55,14 @@ CIMInstance UNIX_CollectedSoftwareElementsProvider::constructInstance(
 			CIMName("UNIX_CollectedSoftwareElements"),
 			constructKeyBindings(_p)));
 
+	//CIM_MemberOfCollection Properties
 	if (_p.getCollection(p)) inst.addProperty(p);
 	if (_p.getMember(p)) inst.addProperty(p);
 
+	//CIM_CollectedSoftwareElements Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CollectedSoftwareElementsProvider::constructKeyBindings(const UNIX_CollectedSoftwareElements& _p)

@@ -55,7 +55,50 @@ CIMInstance UNIX_PhysicalMemoryProvider::constructInstance(
 			CIMName("UNIX_PhysicalMemory"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_PhysicalElement Properties
+	if (_p.getTag(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getManufacturer(p)) inst.addProperty(p);
+	if (_p.getModel(p)) inst.addProperty(p);
+	if (_p.getSKU(p)) inst.addProperty(p);
+	if (_p.getSerialNumber(p)) inst.addProperty(p);
+	if (_p.getVersion(p)) inst.addProperty(p);
+	if (_p.getPartNumber(p)) inst.addProperty(p);
+	if (_p.getOtherIdentifyingInfo(p)) inst.addProperty(p);
+	if (_p.getPoweredOn(p)) inst.addProperty(p);
+	if (_p.getManufactureDate(p)) inst.addProperty(p);
+	if (_p.getVendorEquipmentType(p)) inst.addProperty(p);
+	if (_p.getUserTracking(p)) inst.addProperty(p);
+	if (_p.getCanBeFRUed(p)) inst.addProperty(p);
+
+	//CIM_PhysicalComponent Properties
+	if (_p.getRemovalConditions(p)) inst.addProperty(p);
+	if (_p.getRemovable(p)) inst.addProperty(p);
+	if (_p.getReplaceable(p)) inst.addProperty(p);
+	if (_p.getHotSwappable(p)) inst.addProperty(p);
+
+	//CIM_Chip Properties
 	if (_p.getFormFactor(p)) inst.addProperty(p);
+
+	//CIM_PhysicalMemory Properties
 	if (_p.getMemoryType(p)) inst.addProperty(p);
 	if (_p.getTotalWidth(p)) inst.addProperty(p);
 	if (_p.getDataWidth(p)) inst.addProperty(p);
@@ -69,8 +112,7 @@ CIMInstance UNIX_PhysicalMemoryProvider::constructInstance(
 	if (_p.getMaxMemorySpeed(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PhysicalMemoryProvider::constructKeyBindings(const UNIX_PhysicalMemory& _p)

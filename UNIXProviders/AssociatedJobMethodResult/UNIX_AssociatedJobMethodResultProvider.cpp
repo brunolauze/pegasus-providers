@@ -55,12 +55,12 @@ CIMInstance UNIX_AssociatedJobMethodResultProvider::constructInstance(
 			CIMName("UNIX_AssociatedJobMethodResult"),
 			constructKeyBindings(_p)));
 
+	//CIM_AssociatedJobMethodResult Properties
 	if (_p.getJob(p)) inst.addProperty(p);
 	if (_p.getJobParameters(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AssociatedJobMethodResultProvider::constructKeyBindings(const UNIX_AssociatedJobMethodResult& _p)

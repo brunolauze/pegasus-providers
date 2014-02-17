@@ -55,14 +55,31 @@ CIMInstance UNIX_IPCOMPTransformProvider::constructInstance(
 			CIMName("UNIX_IPCOMPTransform"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_ScopedSettingData Properties
+
+	//CIM_SATransform Properties
+	if (_p.getMaxLifetimeSeconds(p)) inst.addProperty(p);
+	if (_p.getMaxLifetimeKilobytes(p)) inst.addProperty(p);
+	if (_p.getVendorID(p)) inst.addProperty(p);
+
+	//CIM_IPCOMPTransform Properties
 	if (_p.getAlgorithm(p)) inst.addProperty(p);
 	if (_p.getOtherAlgorithm(p)) inst.addProperty(p);
 	if (_p.getPrivateAlgorithm(p)) inst.addProperty(p);
 	if (_p.getDictionarySize(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IPCOMPTransformProvider::constructKeyBindings(const UNIX_IPCOMPTransform& _p)

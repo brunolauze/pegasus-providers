@@ -55,14 +55,22 @@ CIMInstance UNIX_MemoryCapacityProvider::constructInstance(
 			CIMName("UNIX_MemoryCapacity"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_PhysicalCapacity Properties
 	if (_p.getName(p)) inst.addProperty(p);
+
+	//CIM_MemoryCapacity Properties
 	if (_p.getMemoryType(p)) inst.addProperty(p);
 	if (_p.getMinimumMemoryCapacity(p)) inst.addProperty(p);
 	if (_p.getMaximumMemoryCapacity(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MemoryCapacityProvider::constructKeyBindings(const UNIX_MemoryCapacity& _p)

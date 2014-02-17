@@ -55,7 +55,15 @@ CIMInstance UNIX_PhysicalComputerSystemViewProvider::constructInstance(
 			CIMName("UNIX_PhysicalComputerSystemView"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_View Properties
+
+	//CIM_PhysicalComputerSystemView Properties
 	if (_p.getEnabledState(p)) inst.addProperty(p);
 	if (_p.getRequestedState(p)) inst.addProperty(p);
 	if (_p.getOperationalStatus(p)) inst.addProperty(p);
@@ -126,8 +134,7 @@ CIMInstance UNIX_PhysicalComputerSystemViewProvider::constructInstance(
 	if (_p.getNumericSensorLowerThresholdNonCritical(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PhysicalComputerSystemViewProvider::constructKeyBindings(const UNIX_PhysicalComputerSystemView& _p)

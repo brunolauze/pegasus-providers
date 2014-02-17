@@ -55,12 +55,18 @@ CIMInstance UNIX_AggregateRedundancyComponentProvider::constructInstance(
 			CIMName("UNIX_AggregateRedundancyComponent"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_RedundancyComponent Properties
+
+	//CIM_ExtentRedundancyComponent Properties
+
+	//CIM_AggregateRedundancyComponent Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AggregateRedundancyComponentProvider::constructKeyBindings(const UNIX_AggregateRedundancyComponent& _p)

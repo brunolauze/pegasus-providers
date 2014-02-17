@@ -55,12 +55,30 @@ CIMInstance UNIX_VendorPolicyConditionProvider::constructInstance(
 			CIMName("UNIX_VendorPolicyCondition"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Policy Properties
+	if (_p.getCommonName(p)) inst.addProperty(p);
+	if (_p.getPolicyKeywords(p)) inst.addProperty(p);
+
+	//CIM_PolicyCondition Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getPolicyRuleCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPolicyRuleName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPolicyConditionName(p)) inst.addProperty(p);
+
+	//CIM_VendorPolicyCondition Properties
 	if (_p.getConstraint(p)) inst.addProperty(p);
 	if (_p.getConstraintEncoding(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_VendorPolicyConditionProvider::constructKeyBindings(const UNIX_VendorPolicyCondition& _p)

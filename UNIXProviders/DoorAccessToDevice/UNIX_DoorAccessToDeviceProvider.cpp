@@ -55,12 +55,14 @@ CIMInstance UNIX_DoorAccessToDeviceProvider::constructInstance(
 			CIMName("UNIX_DoorAccessToDevice"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_DoorAccessToDevice Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DoorAccessToDeviceProvider::constructKeyBindings(const UNIX_DoorAccessToDevice& _p)

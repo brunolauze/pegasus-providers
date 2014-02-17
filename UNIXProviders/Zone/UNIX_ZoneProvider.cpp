@@ -55,7 +55,20 @@ CIMInstance UNIX_ZoneProvider::constructInstance(
 			CIMName("UNIX_Zone"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
 	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_SystemSpecificCollection Properties
+
+	//CIM_ConnectivityCollection Properties
+	if (_p.getConnectivityStatus(p)) inst.addProperty(p);
+
+	//CIM_Zone Properties
 	if (_p.getActive(p)) inst.addProperty(p);
 	if (_p.getZoneType(p)) inst.addProperty(p);
 	if (_p.getOtherZoneTypeDescription(p)) inst.addProperty(p);
@@ -63,8 +76,7 @@ CIMInstance UNIX_ZoneProvider::constructInstance(
 	if (_p.getOtherZoneSubTypeDescription(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ZoneProvider::constructKeyBindings(const UNIX_Zone& _p)

@@ -55,7 +55,18 @@ CIMInstance UNIX_CIMOMStatisticalDataProvider::constructInstance(
 			CIMName("UNIX_CIMOMStatisticalData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_CIMOMStatisticalData Properties
 	if (_p.getOperationType(p)) inst.addProperty(p);
 	if (_p.getOtherOperationType(p)) inst.addProperty(p);
 	if (_p.getNumberOfOperations(p)) inst.addProperty(p);
@@ -65,8 +76,7 @@ CIMInstance UNIX_CIMOMStatisticalDataProvider::constructInstance(
 	if (_p.getResponseSize(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CIMOMStatisticalDataProvider::constructKeyBindings(const UNIX_CIMOMStatisticalData& _p)

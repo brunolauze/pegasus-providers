@@ -55,12 +55,20 @@ CIMInstance UNIX_ComputerSystemNodeCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_ComputerSystemNodeCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_ComputerSystemNodeCapabilities Properties
 	if (_p.getBatterySupported(p)) inst.addProperty(p);
 	if (_p.getECCSupported(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ComputerSystemNodeCapabilitiesProvider::constructKeyBindings(const UNIX_ComputerSystemNodeCapabilities& _p)

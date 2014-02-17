@@ -55,12 +55,16 @@ CIMInstance UNIX_EndpointForIPNetworkConnectionProvider::constructInstance(
 			CIMName("UNIX_EndpointForIPNetworkConnection"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_SAPSAPDependency Properties
+
+	//CIM_EndpointForIPNetworkConnection Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_EndpointForIPNetworkConnectionProvider::constructKeyBindings(const UNIX_EndpointForIPNetworkConnection& _p)

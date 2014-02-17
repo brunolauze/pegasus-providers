@@ -55,12 +55,14 @@ CIMInstance UNIX_DeviceAccessedByFileProvider::constructInstance(
 			CIMName("UNIX_DeviceAccessedByFile"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_DeviceAccessedByFile Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DeviceAccessedByFileProvider::constructKeyBindings(const UNIX_DeviceAccessedByFile& _p)

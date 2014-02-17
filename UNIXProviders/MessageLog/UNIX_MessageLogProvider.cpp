@@ -55,8 +55,43 @@ CIMInstance UNIX_MessageLogProvider::constructInstance(
 			CIMName("UNIX_MessageLog"),
 			constructKeyBindings(_p)));
 
-	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
 	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_LogicalElement Properties
+
+	//CIM_EnabledLogicalElement Properties
+	if (_p.getEnabledState(p)) inst.addProperty(p);
+	if (_p.getOtherEnabledState(p)) inst.addProperty(p);
+	if (_p.getRequestedState(p)) inst.addProperty(p);
+	if (_p.getEnabledDefault(p)) inst.addProperty(p);
+	if (_p.getTimeOfLastStateChange(p)) inst.addProperty(p);
+	if (_p.getAvailableRequestedStates(p)) inst.addProperty(p);
+	if (_p.getTransitioningToState(p)) inst.addProperty(p);
+
+	//CIM_Log Properties
+	if (_p.getMaxNumberOfRecords(p)) inst.addProperty(p);
+	if (_p.getCurrentNumberOfRecords(p)) inst.addProperty(p);
+	if (_p.getOverwritePolicy(p)) inst.addProperty(p);
+	if (_p.getLogState(p)) inst.addProperty(p);
+
+	//CIM_MessageLog Properties
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
 	if (_p.getCapabilities(p)) inst.addProperty(p);
 	if (_p.getCapabilitiesDescriptions(p)) inst.addProperty(p);
 	if (_p.getMaxLogSize(p)) inst.addProperty(p);
@@ -65,7 +100,6 @@ CIMInstance UNIX_MessageLogProvider::constructInstance(
 	if (_p.getMaxRecordSize(p)) inst.addProperty(p);
 	if (_p.getSizeOfRecordHeader(p)) inst.addProperty(p);
 	if (_p.getRecordHeaderFormat(p)) inst.addProperty(p);
-	if (_p.getOverwritePolicy(p)) inst.addProperty(p);
 	if (_p.getOtherPolicyDescription(p)) inst.addProperty(p);
 	if (_p.getTimeWhenOutdated(p)) inst.addProperty(p);
 	if (_p.getPercentageNearFull(p)) inst.addProperty(p);
@@ -76,8 +110,7 @@ CIMInstance UNIX_MessageLogProvider::constructInstance(
 	if (_p.getCharacterSet(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MessageLogProvider::constructKeyBindings(const UNIX_MessageLog& _p)

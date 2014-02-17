@@ -55,12 +55,14 @@ CIMInstance UNIX_UnixProcessStatisticsProvider::constructInstance(
 			CIMName("UNIX_UnixProcessStatistics"),
 			constructKeyBindings(_p)));
 
-	if (_p.getElement(p)) inst.addProperty(p);
+	//CIM_Statistics Properties
 	if (_p.getStats(p)) inst.addProperty(p);
+	if (_p.getElement(p)) inst.addProperty(p);
+
+	//CIM_UnixProcessStatistics Properties
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_UnixProcessStatisticsProvider::constructKeyBindings(const UNIX_UnixProcessStatistics& _p)

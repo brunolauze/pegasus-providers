@@ -55,13 +55,22 @@ CIMInstance UNIX_UnixProcessStatisticalInformationProvider::constructInstance(
 			CIMName("UNIX_UnixProcessStatisticalInformation"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalInformation Properties
+	if (_p.getName(p)) inst.addProperty(p);
+
+	//CIM_UnixProcessStatisticalInformation Properties
 	if (_p.getCSCreationClassName(p)) inst.addProperty(p);
 	if (_p.getCSName(p)) inst.addProperty(p);
 	if (_p.getOSCreationClassName(p)) inst.addProperty(p);
 	if (_p.getOSName(p)) inst.addProperty(p);
 	if (_p.getHandle(p)) inst.addProperty(p);
 	if (_p.getProcessCreationClassName(p)) inst.addProperty(p);
-	if (_p.getName(p)) inst.addProperty(p);
 	if (_p.getCPUTime(p)) inst.addProperty(p);
 	if (_p.getRealText(p)) inst.addProperty(p);
 	if (_p.getRealData(p)) inst.addProperty(p);
@@ -75,8 +84,7 @@ CIMInstance UNIX_UnixProcessStatisticalInformationProvider::constructInstance(
 	if (_p.getSystemTimeDeadChildren(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_UnixProcessStatisticalInformationProvider::constructKeyBindings(const UNIX_UnixProcessStatisticalInformation& _p)

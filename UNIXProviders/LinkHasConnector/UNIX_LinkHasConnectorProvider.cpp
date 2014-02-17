@@ -55,12 +55,14 @@ CIMInstance UNIX_LinkHasConnectorProvider::constructInstance(
 			CIMName("UNIX_LinkHasConnector"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_LinkHasConnector Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_LinkHasConnectorProvider::constructKeyBindings(const UNIX_LinkHasConnector& _p)

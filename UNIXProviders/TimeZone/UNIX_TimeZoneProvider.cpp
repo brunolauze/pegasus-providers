@@ -55,6 +55,16 @@ CIMInstance UNIX_TimeZoneProvider::constructInstance(
 			CIMName("UNIX_TimeZone"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Setting Properties
+	if (_p.getSettingID(p)) inst.addProperty(p);
+
+	//CIM_TimeZone Properties
 	if (_p.getTimeZoneID(p)) inst.addProperty(p);
 	if (_p.getTimeZoneStartDate(p)) inst.addProperty(p);
 	if (_p.getStandardName(p)) inst.addProperty(p);
@@ -73,8 +83,7 @@ CIMInstance UNIX_TimeZoneProvider::constructInstance(
 	if (_p.getDaylightStartInterval(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_TimeZoneProvider::constructKeyBindings(const UNIX_TimeZone& _p)

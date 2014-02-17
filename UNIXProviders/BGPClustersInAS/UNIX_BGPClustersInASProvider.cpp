@@ -55,12 +55,12 @@ CIMInstance UNIX_BGPClustersInASProvider::constructInstance(
 			CIMName("UNIX_BGPClustersInAS"),
 			constructKeyBindings(_p)));
 
+	//CIM_BGPClustersInAS Properties
 	if (_p.getGroupAS(p)) inst.addProperty(p);
 	if (_p.getPartAS(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BGPClustersInASProvider::constructKeyBindings(const UNIX_BGPClustersInAS& _p)

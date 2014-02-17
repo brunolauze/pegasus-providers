@@ -55,12 +55,14 @@ CIMInstance UNIX_IPsecPolicyForEndpointProvider::constructInstance(
 			CIMName("UNIX_IPsecPolicyForEndpoint"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_IPsecPolicyForEndpoint Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IPsecPolicyForEndpointProvider::constructKeyBindings(const UNIX_IPsecPolicyForEndpoint& _p)

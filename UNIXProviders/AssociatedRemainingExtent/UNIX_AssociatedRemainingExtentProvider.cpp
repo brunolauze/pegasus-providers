@@ -55,12 +55,14 @@ CIMInstance UNIX_AssociatedRemainingExtentProvider::constructInstance(
 			CIMName("UNIX_AssociatedRemainingExtent"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_AssociatedRemainingExtent Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AssociatedRemainingExtentProvider::constructKeyBindings(const UNIX_AssociatedRemainingExtent& _p)

@@ -55,12 +55,12 @@ CIMInstance UNIX_ServiceAvailableToElementProvider::constructInstance(
 			CIMName("UNIX_ServiceAvailableToElement"),
 			constructKeyBindings(_p)));
 
+	//CIM_ServiceAvailableToElement Properties
 	if (_p.getServiceProvided(p)) inst.addProperty(p);
 	if (_p.getUserOfService(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ServiceAvailableToElementProvider::constructKeyBindings(const UNIX_ServiceAvailableToElement& _p)

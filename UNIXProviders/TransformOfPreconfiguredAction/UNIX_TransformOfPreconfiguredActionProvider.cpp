@@ -55,14 +55,16 @@ CIMInstance UNIX_TransformOfPreconfiguredActionProvider::constructInstance(
 			CIMName("UNIX_TransformOfPreconfiguredAction"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_TransformOfPreconfiguredAction Properties
 	if (_p.getSPI(p)) inst.addProperty(p);
 	if (_p.getInboundDirection(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_TransformOfPreconfiguredActionProvider::constructKeyBindings(const UNIX_TransformOfPreconfiguredAction& _p)

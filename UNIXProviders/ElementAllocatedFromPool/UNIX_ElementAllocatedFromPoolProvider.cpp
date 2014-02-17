@@ -55,12 +55,14 @@ CIMInstance UNIX_ElementAllocatedFromPoolProvider::constructInstance(
 			CIMName("UNIX_ElementAllocatedFromPool"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ElementAllocatedFromPool Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ElementAllocatedFromPoolProvider::constructKeyBindings(const UNIX_ElementAllocatedFromPool& _p)

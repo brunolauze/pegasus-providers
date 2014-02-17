@@ -55,12 +55,22 @@ CIMInstance UNIX_StatisticsCollectionProvider::constructInstance(
 			CIMName("UNIX_StatisticsCollection"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_SystemSpecificCollection Properties
+
+	//CIM_StatisticsCollection Properties
 	if (_p.getSampleInterval(p)) inst.addProperty(p);
 	if (_p.getTimeLastSampled(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_StatisticsCollectionProvider::constructKeyBindings(const UNIX_StatisticsCollection& _p)

@@ -55,12 +55,14 @@ CIMInstance UNIX_ConcreteIdentityProvider::constructInstance(
 			CIMName("UNIX_ConcreteIdentity"),
 			constructKeyBindings(_p)));
 
+	//CIM_LogicalIdentity Properties
 	if (_p.getSystemElement(p)) inst.addProperty(p);
 	if (_p.getSameElement(p)) inst.addProperty(p);
 
+	//CIM_ConcreteIdentity Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ConcreteIdentityProvider::constructKeyBindings(const UNIX_ConcreteIdentity& _p)

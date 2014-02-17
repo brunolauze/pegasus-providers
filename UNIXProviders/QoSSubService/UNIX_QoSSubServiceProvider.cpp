@@ -55,12 +55,16 @@ CIMInstance UNIX_QoSSubServiceProvider::constructInstance(
 			CIMName("UNIX_QoSSubService"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_ServiceComponent Properties
+
+	//CIM_QoSSubService Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_QoSSubServiceProvider::constructKeyBindings(const UNIX_QoSSubService& _p)

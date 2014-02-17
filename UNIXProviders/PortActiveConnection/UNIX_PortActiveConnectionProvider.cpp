@@ -55,12 +55,14 @@ CIMInstance UNIX_PortActiveConnectionProvider::constructInstance(
 			CIMName("UNIX_PortActiveConnection"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_PortActiveConnection Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PortActiveConnectionProvider::constructKeyBindings(const UNIX_PortActiveConnection& _p)

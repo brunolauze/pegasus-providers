@@ -55,12 +55,14 @@ CIMInstance UNIX_ApplicationSystemDependencyProvider::constructInstance(
 			CIMName("UNIX_ApplicationSystemDependency"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ApplicationSystemDependency Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ApplicationSystemDependencyProvider::constructKeyBindings(const UNIX_ApplicationSystemDependency& _p)

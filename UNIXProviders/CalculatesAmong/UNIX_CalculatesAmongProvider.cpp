@@ -55,13 +55,17 @@ CIMInstance UNIX_CalculatesAmongProvider::constructInstance(
 			CIMName("UNIX_CalculatesAmong"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_ServiceSAPDependency Properties
+
+	//CIM_CalculatesAmong Properties
 	if (_p.getIsStatic(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CalculatesAmongProvider::constructKeyBindings(const UNIX_CalculatesAmong& _p)

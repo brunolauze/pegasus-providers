@@ -55,6 +55,36 @@ CIMInstance UNIX_VirtualEthernetSwitchSettingDataProvider::constructInstance(
 			CIMName("UNIX_VirtualEthernetSwitchSettingData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_VirtualSystemSettingData Properties
+	if (_p.getVirtualSystemIdentifier(p)) inst.addProperty(p);
+	if (_p.getVirtualSystemType(p)) inst.addProperty(p);
+	if (_p.getNotes(p)) inst.addProperty(p);
+	if (_p.getCreationTime(p)) inst.addProperty(p);
+	if (_p.getConfigurationID(p)) inst.addProperty(p);
+	if (_p.getConfigurationDataRoot(p)) inst.addProperty(p);
+	if (_p.getConfigurationFile(p)) inst.addProperty(p);
+	if (_p.getSnapshotDataRoot(p)) inst.addProperty(p);
+	if (_p.getSuspendDataRoot(p)) inst.addProperty(p);
+	if (_p.getSwapFileDataRoot(p)) inst.addProperty(p);
+	if (_p.getLogDataRoot(p)) inst.addProperty(p);
+	if (_p.getAutomaticStartupAction(p)) inst.addProperty(p);
+	if (_p.getAutomaticStartupActionDelay(p)) inst.addProperty(p);
+	if (_p.getAutomaticStartupActionSequenceNumber(p)) inst.addProperty(p);
+	if (_p.getAutomaticShutdownAction(p)) inst.addProperty(p);
+	if (_p.getAutomaticRecoveryAction(p)) inst.addProperty(p);
+	if (_p.getRecoveryFile(p)) inst.addProperty(p);
+
+	//CIM_VirtualEthernetSwitchSettingData Properties
 	if (_p.getVLANConnection(p)) inst.addProperty(p);
 	if (_p.getAssociatedResourcePool(p)) inst.addProperty(p);
 	if (_p.getMaxNumMACAddress(p)) inst.addProperty(p);
@@ -62,8 +92,7 @@ CIMInstance UNIX_VirtualEthernetSwitchSettingDataProvider::constructInstance(
 	if (_p.getOtherEVBMode(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_VirtualEthernetSwitchSettingDataProvider::constructKeyBindings(const UNIX_VirtualEthernetSwitchSettingData& _p)

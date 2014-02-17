@@ -55,7 +55,13 @@ CIMInstance UNIX_PrivilegeProvider::constructInstance(
 			CIMName("UNIX_Privilege"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Privilege Properties
 	if (_p.getPrivilegeGranted(p)) inst.addProperty(p);
 	if (_p.getActivities(p)) inst.addProperty(p);
 	if (_p.getActivityQualifiers(p)) inst.addProperty(p);
@@ -63,8 +69,7 @@ CIMInstance UNIX_PrivilegeProvider::constructInstance(
 	if (_p.getRepresentsAuthorizationRights(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PrivilegeProvider::constructKeyBindings(const UNIX_Privilege& _p)

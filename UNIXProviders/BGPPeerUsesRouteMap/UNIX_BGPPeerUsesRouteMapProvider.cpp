@@ -55,13 +55,17 @@ CIMInstance UNIX_BGPPeerUsesRouteMapProvider::constructInstance(
 			CIMName("UNIX_BGPPeerUsesRouteMap"),
 			constructKeyBindings(_p)));
 
+	//CIM_MemberOfCollection Properties
 	if (_p.getCollection(p)) inst.addProperty(p);
 	if (_p.getMember(p)) inst.addProperty(p);
+
+	//CIM_CollectedMSEs Properties
+
+	//CIM_BGPPeerUsesRouteMap Properties
 	if (_p.getMapSequence(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BGPPeerUsesRouteMapProvider::constructKeyBindings(const UNIX_BGPPeerUsesRouteMap& _p)

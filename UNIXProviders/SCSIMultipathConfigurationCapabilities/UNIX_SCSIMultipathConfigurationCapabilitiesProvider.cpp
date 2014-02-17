@@ -55,6 +55,15 @@ CIMInstance UNIX_SCSIMultipathConfigurationCapabilitiesProvider::constructInstan
 			CIMName("UNIX_SCSIMultipathConfigurationCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_SCSIMultipathConfigurationCapabilities Properties
 	if (_p.getSupportedLoadBalanceTypes(p)) inst.addProperty(p);
 	if (_p.getOtherSupportedLoadBalanceAlgorithmNames(p)) inst.addProperty(p);
 	if (_p.getOtherSupportedLoadBalanceVendorNames(p)) inst.addProperty(p);
@@ -71,8 +80,7 @@ CIMInstance UNIX_SCSIMultipathConfigurationCapabilitiesProvider::constructInstan
 	if (_p.getDefaultLoadBalanceType(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SCSIMultipathConfigurationCapabilitiesProvider::constructKeyBindings(const UNIX_SCSIMultipathConfigurationCapabilities& _p)

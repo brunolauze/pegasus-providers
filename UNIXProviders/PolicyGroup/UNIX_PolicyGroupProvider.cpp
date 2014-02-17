@@ -55,14 +55,29 @@ CIMInstance UNIX_PolicyGroupProvider::constructInstance(
 			CIMName("UNIX_PolicyGroup"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Policy Properties
+	if (_p.getCommonName(p)) inst.addProperty(p);
+	if (_p.getPolicyKeywords(p)) inst.addProperty(p);
+
+	//CIM_PolicySet Properties
+	if (_p.getPolicyDecisionStrategy(p)) inst.addProperty(p);
+	if (_p.getPolicyRoles(p)) inst.addProperty(p);
+	if (_p.getEnabled(p)) inst.addProperty(p);
+
+	//CIM_PolicyGroup Properties
 	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
 	if (_p.getSystemName(p)) inst.addProperty(p);
 	if (_p.getCreationClassName(p)) inst.addProperty(p);
 	if (_p.getPolicyGroupName(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PolicyGroupProvider::constructKeyBindings(const UNIX_PolicyGroup& _p)

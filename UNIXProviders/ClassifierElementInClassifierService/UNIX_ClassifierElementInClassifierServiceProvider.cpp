@@ -55,13 +55,17 @@ CIMInstance UNIX_ClassifierElementInClassifierServiceProvider::constructInstance
 			CIMName("UNIX_ClassifierElementInClassifierService"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
+
+	//CIM_ServiceComponent Properties
+
+	//CIM_ClassifierElementInClassifierService Properties
 	if (_p.getClassifierOrder(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ClassifierElementInClassifierServiceProvider::constructKeyBindings(const UNIX_ClassifierElementInClassifierService& _p)

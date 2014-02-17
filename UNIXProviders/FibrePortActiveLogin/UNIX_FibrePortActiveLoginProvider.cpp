@@ -55,6 +55,7 @@ CIMInstance UNIX_FibrePortActiveLoginProvider::constructInstance(
 			CIMName("UNIX_FibrePortActiveLogin"),
 			constructKeyBindings(_p)));
 
+	//CIM_FibrePortActiveLogin Properties
 	if (_p.getLoginOriginator(p)) inst.addProperty(p);
 	if (_p.getLoginResponder(p)) inst.addProperty(p);
 	if (_p.getNegotiatedCOS(p)) inst.addProperty(p);
@@ -68,8 +69,7 @@ CIMInstance UNIX_FibrePortActiveLoginProvider::constructInstance(
 	if (_p.getResponderEndCredit(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_FibrePortActiveLoginProvider::constructKeyBindings(const UNIX_FibrePortActiveLogin& _p)

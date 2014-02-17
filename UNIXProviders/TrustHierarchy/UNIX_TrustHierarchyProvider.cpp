@@ -55,12 +55,14 @@ CIMInstance UNIX_TrustHierarchyProvider::constructInstance(
 			CIMName("UNIX_TrustHierarchy"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_TrustHierarchy Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_TrustHierarchyProvider::constructKeyBindings(const UNIX_TrustHierarchy& _p)

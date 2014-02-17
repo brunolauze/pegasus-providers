@@ -55,12 +55,16 @@ CIMInstance UNIX_PackageAlarmProvider::constructInstance(
 			CIMName("UNIX_PackageAlarm"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_PackageDependency Properties
+
+	//CIM_PackageAlarm Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PackageAlarmProvider::constructKeyBindings(const UNIX_PackageAlarm& _p)

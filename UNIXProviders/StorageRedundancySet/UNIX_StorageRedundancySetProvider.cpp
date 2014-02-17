@@ -55,12 +55,32 @@ CIMInstance UNIX_StorageRedundancySetProvider::constructInstance(
 			CIMName("UNIX_StorageRedundancySet"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_SystemSpecificCollection Properties
+
+	//CIM_RedundancySet Properties
+	if (_p.getRedundancyStatus(p)) inst.addProperty(p);
+	if (_p.getTypeOfSet(p)) inst.addProperty(p);
+	if (_p.getMinNumberNeeded(p)) inst.addProperty(p);
+	if (_p.getMaxNumberSupported(p)) inst.addProperty(p);
+	if (_p.getVendorIdentifyingInfo(p)) inst.addProperty(p);
+	if (_p.getOtherTypeOfSet(p)) inst.addProperty(p);
+	if (_p.getLoadBalanceAlgorithm(p)) inst.addProperty(p);
+	if (_p.getOtherLoadBalanceAlgorithm(p)) inst.addProperty(p);
+
+	//CIM_StorageRedundancySet Properties
 	if (_p.getTypeOfAlgorithm(p)) inst.addProperty(p);
 	if (_p.getOtherAlgorithm(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_StorageRedundancySetProvider::constructKeyBindings(const UNIX_StorageRedundancySet& _p)

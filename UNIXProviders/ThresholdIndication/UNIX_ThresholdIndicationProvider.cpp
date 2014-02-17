@@ -55,13 +55,46 @@ CIMInstance UNIX_ThresholdIndicationProvider::constructInstance(
 			CIMName("UNIX_ThresholdIndication"),
 			constructKeyBindings(_p)));
 
+	//CIM_Indication Properties
+	if (_p.getIndicationIdentifier(p)) inst.addProperty(p);
+	if (_p.getCorrelatedIndications(p)) inst.addProperty(p);
+	if (_p.getIndicationTime(p)) inst.addProperty(p);
+	if (_p.getPerceivedSeverity(p)) inst.addProperty(p);
+	if (_p.getOtherSeverity(p)) inst.addProperty(p);
+	if (_p.getIndicationFilterName(p)) inst.addProperty(p);
+	if (_p.getSequenceContext(p)) inst.addProperty(p);
+	if (_p.getSequenceNumber(p)) inst.addProperty(p);
+
+	//CIM_ProcessIndication Properties
+
+	//CIM_AlertIndication Properties
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getAlertingManagedElement(p)) inst.addProperty(p);
+	if (_p.getAlertingElementFormat(p)) inst.addProperty(p);
+	if (_p.getOtherAlertingElementFormat(p)) inst.addProperty(p);
+	if (_p.getAlertType(p)) inst.addProperty(p);
+	if (_p.getOtherAlertType(p)) inst.addProperty(p);
+	if (_p.getProbableCause(p)) inst.addProperty(p);
+	if (_p.getProbableCauseDescription(p)) inst.addProperty(p);
+	if (_p.getTrending(p)) inst.addProperty(p);
+	if (_p.getRecommendedActions(p)) inst.addProperty(p);
+	if (_p.getEventID(p)) inst.addProperty(p);
+	if (_p.getEventTime(p)) inst.addProperty(p);
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getProviderName(p)) inst.addProperty(p);
+	if (_p.getMessage(p)) inst.addProperty(p);
+	if (_p.getMessageArguments(p)) inst.addProperty(p);
+	if (_p.getMessageID(p)) inst.addProperty(p);
+	if (_p.getOwningEntity(p)) inst.addProperty(p);
+
+	//CIM_ThresholdIndication Properties
 	if (_p.getThresholdIdentifier(p)) inst.addProperty(p);
 	if (_p.getThresholdValue(p)) inst.addProperty(p);
 	if (_p.getObservedValue(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ThresholdIndicationProvider::constructKeyBindings(const UNIX_ThresholdIndication& _p)

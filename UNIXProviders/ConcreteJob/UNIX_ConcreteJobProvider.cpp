@@ -55,15 +55,56 @@ CIMInstance UNIX_ConcreteJobProvider::constructInstance(
 			CIMName("UNIX_ConcreteJob"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
 	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_LogicalElement Properties
+
+	//CIM_Job Properties
+	if (_p.getJobStatus(p)) inst.addProperty(p);
+	if (_p.getTimeSubmitted(p)) inst.addProperty(p);
+	if (_p.getScheduledStartTime(p)) inst.addProperty(p);
+	if (_p.getStartTime(p)) inst.addProperty(p);
+	if (_p.getElapsedTime(p)) inst.addProperty(p);
+	if (_p.getJobRunTimes(p)) inst.addProperty(p);
+	if (_p.getRunMonth(p)) inst.addProperty(p);
+	if (_p.getRunDay(p)) inst.addProperty(p);
+	if (_p.getRunDayOfWeek(p)) inst.addProperty(p);
+	if (_p.getRunStartInterval(p)) inst.addProperty(p);
+	if (_p.getLocalOrUtcTime(p)) inst.addProperty(p);
+	if (_p.getUntilTime(p)) inst.addProperty(p);
+	if (_p.getNotify(p)) inst.addProperty(p);
+	if (_p.getOwner(p)) inst.addProperty(p);
+	if (_p.getPriority(p)) inst.addProperty(p);
+	if (_p.getPercentComplete(p)) inst.addProperty(p);
+	if (_p.getDeleteOnCompletion(p)) inst.addProperty(p);
+	if (_p.getErrorCode(p)) inst.addProperty(p);
+	if (_p.getErrorDescription(p)) inst.addProperty(p);
+	if (_p.getRecoveryAction(p)) inst.addProperty(p);
+	if (_p.getOtherRecoveryAction(p)) inst.addProperty(p);
+
+	//CIM_ConcreteJob Properties
 	if (_p.getJobState(p)) inst.addProperty(p);
 	if (_p.getTimeOfLastStateChange(p)) inst.addProperty(p);
 	if (_p.getTimeBeforeRemoval(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ConcreteJobProvider::constructKeyBindings(const UNIX_ConcreteJob& _p)

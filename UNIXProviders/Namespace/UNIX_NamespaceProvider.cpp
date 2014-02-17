@@ -55,6 +55,13 @@ CIMInstance UNIX_NamespaceProvider::constructInstance(
 			CIMName("UNIX_Namespace"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Namespace Properties
 	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
 	if (_p.getSystemName(p)) inst.addProperty(p);
 	if (_p.getObjectManagerCreationClassName(p)) inst.addProperty(p);
@@ -68,8 +75,7 @@ CIMInstance UNIX_NamespaceProvider::constructInstance(
 	if (_p.getDescriptionOfClassType(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NamespaceProvider::constructKeyBindings(const UNIX_Namespace& _p)

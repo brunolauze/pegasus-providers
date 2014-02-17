@@ -55,12 +55,16 @@ CIMInstance UNIX_ScopedSettingProvider::constructInstance(
 			CIMName("UNIX_ScopedSetting"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HostedDependency Properties
+
+	//CIM_ScopedSetting Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ScopedSettingProvider::constructKeyBindings(const UNIX_ScopedSetting& _p)

@@ -55,12 +55,19 @@ CIMInstance UNIX_RealizesDiskPartitionProvider::constructInstance(
 			CIMName("UNIX_RealizesDiskPartition"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_Realizes Properties
+
+	//CIM_RealizesExtent Properties
+	if (_p.getStartingAddress(p)) inst.addProperty(p);
+
+	//CIM_RealizesDiskPartition Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RealizesDiskPartitionProvider::constructKeyBindings(const UNIX_RealizesDiskPartition& _p)

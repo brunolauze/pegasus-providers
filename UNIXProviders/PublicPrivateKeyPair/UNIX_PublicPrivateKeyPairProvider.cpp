@@ -55,16 +55,20 @@ CIMInstance UNIX_PublicPrivateKeyPairProvider::constructInstance(
 			CIMName("UNIX_PublicPrivateKeyPair"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_UsersCredential Properties
+
+	//CIM_PublicPrivateKeyPair Properties
 	if (_p.getUse(p)) inst.addProperty(p);
 	if (_p.getNonRepudiation(p)) inst.addProperty(p);
 	if (_p.getBackedUp(p)) inst.addProperty(p);
 	if (_p.getRepository(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PublicPrivateKeyPairProvider::constructKeyBindings(const UNIX_PublicPrivateKeyPair& _p)

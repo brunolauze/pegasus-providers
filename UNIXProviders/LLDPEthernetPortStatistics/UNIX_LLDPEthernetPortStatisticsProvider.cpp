@@ -55,6 +55,39 @@ CIMInstance UNIX_LLDPEthernetPortStatisticsProvider::constructInstance(
 			CIMName("UNIX_LLDPEthernetPortStatistics"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_NetworkPortStatistics Properties
+	if (_p.getBytesTransmitted(p)) inst.addProperty(p);
+	if (_p.getBytesReceived(p)) inst.addProperty(p);
+	if (_p.getPacketsTransmitted(p)) inst.addProperty(p);
+	if (_p.getPacketsReceived(p)) inst.addProperty(p);
+
+	//CIM_EthernetPortStatistics Properties
+	if (_p.getSymbolErrors(p)) inst.addProperty(p);
+	if (_p.getAlignmentErrors(p)) inst.addProperty(p);
+	if (_p.getFCSErrors(p)) inst.addProperty(p);
+	if (_p.getSingleCollisionFrames(p)) inst.addProperty(p);
+	if (_p.getMultipleCollisionFrames(p)) inst.addProperty(p);
+	if (_p.getSQETestErrors(p)) inst.addProperty(p);
+	if (_p.getDeferredTransmissions(p)) inst.addProperty(p);
+	if (_p.getLateCollisions(p)) inst.addProperty(p);
+	if (_p.getExcessiveCollisions(p)) inst.addProperty(p);
+	if (_p.getInternalMACTransmitErrors(p)) inst.addProperty(p);
+	if (_p.getInternalMACReceiveErrors(p)) inst.addProperty(p);
+	if (_p.getCarrierSenseErrors(p)) inst.addProperty(p);
+	if (_p.getFrameTooLongs(p)) inst.addProperty(p);
+
+	//CIM_LLDPEthernetPortStatistics Properties
 	if (_p.getTxDestMACAddress(p)) inst.addProperty(p);
 	if (_p.getTxPortFramesTotal(p)) inst.addProperty(p);
 	if (_p.getTxLLDPDULengthErrors(p)) inst.addProperty(p);
@@ -66,8 +99,7 @@ CIMInstance UNIX_LLDPEthernetPortStatisticsProvider::constructInstance(
 	if (_p.getRxPortAgeoutsTotal(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_LLDPEthernetPortStatisticsProvider::constructKeyBindings(const UNIX_LLDPEthernetPortStatistics& _p)

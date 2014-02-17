@@ -55,12 +55,12 @@ CIMInstance UNIX_DependencyContextProvider::constructInstance(
 			CIMName("UNIX_DependencyContext"),
 			constructKeyBindings(_p)));
 
+	//CIM_DependencyContext Properties
 	if (_p.getContext(p)) inst.addProperty(p);
 	if (_p.getDependency(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DependencyContextProvider::constructKeyBindings(const UNIX_DependencyContext& _p)

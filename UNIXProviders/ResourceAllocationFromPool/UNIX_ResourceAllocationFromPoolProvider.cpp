@@ -55,12 +55,14 @@ CIMInstance UNIX_ResourceAllocationFromPoolProvider::constructInstance(
 			CIMName("UNIX_ResourceAllocationFromPool"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ResourceAllocationFromPool Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ResourceAllocationFromPoolProvider::constructKeyBindings(const UNIX_ResourceAllocationFromPool& _p)

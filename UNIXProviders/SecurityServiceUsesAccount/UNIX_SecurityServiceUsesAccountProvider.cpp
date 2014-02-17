@@ -55,12 +55,14 @@ CIMInstance UNIX_SecurityServiceUsesAccountProvider::constructInstance(
 			CIMName("UNIX_SecurityServiceUsesAccount"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_SecurityServiceUsesAccount Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SecurityServiceUsesAccountProvider::constructKeyBindings(const UNIX_SecurityServiceUsesAccount& _p)

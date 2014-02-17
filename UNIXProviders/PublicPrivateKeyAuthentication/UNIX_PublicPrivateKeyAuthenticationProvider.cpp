@@ -55,13 +55,33 @@ CIMInstance UNIX_PublicPrivateKeyAuthenticationProvider::constructInstance(
 			CIMName("UNIX_PublicPrivateKeyAuthentication"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Policy Properties
+	if (_p.getCommonName(p)) inst.addProperty(p);
+	if (_p.getPolicyKeywords(p)) inst.addProperty(p);
+
+	//CIM_PolicyCondition Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getPolicyRuleCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPolicyRuleName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPolicyConditionName(p)) inst.addProperty(p);
+
+	//CIM_AuthenticationCondition Properties
+
+	//CIM_PublicPrivateKeyAuthentication Properties
 	if (_p.getSelfIssuedKey(p)) inst.addProperty(p);
 	if (_p.getDistinguishedName(p)) inst.addProperty(p);
 	if (_p.getPublicKey(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PublicPrivateKeyAuthenticationProvider::constructKeyBindings(const UNIX_PublicPrivateKeyAuthentication& _p)

@@ -55,7 +55,21 @@ CIMInstance UNIX_StaticIPAssignmentSettingDataProvider::constructInstance(
 			CIMName("UNIX_StaticIPAssignmentSettingData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_IPAssignmentSettingData Properties
 	if (_p.getAddressOrigin(p)) inst.addProperty(p);
+	if (_p.getProtocolIFType(p)) inst.addProperty(p);
+
+	//CIM_StaticIPAssignmentSettingData Properties
 	if (_p.getIPv4Address(p)) inst.addProperty(p);
 	if (_p.getSubnetMask(p)) inst.addProperty(p);
 	if (_p.getGatewayIPv4Address(p)) inst.addProperty(p);
@@ -65,8 +79,7 @@ CIMInstance UNIX_StaticIPAssignmentSettingDataProvider::constructInstance(
 	if (_p.getIPv6SubnetPrefixLength(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_StaticIPAssignmentSettingDataProvider::constructKeyBindings(const UNIX_StaticIPAssignmentSettingData& _p)

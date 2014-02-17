@@ -55,12 +55,12 @@ CIMInstance UNIX_ParticipatesInSetProvider::constructInstance(
 			CIMName("UNIX_ParticipatesInSet"),
 			constructKeyBindings(_p)));
 
+	//CIM_ParticipatesInSet Properties
 	if (_p.getSet(p)) inst.addProperty(p);
 	if (_p.getElement(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ParticipatesInSetProvider::constructKeyBindings(const UNIX_ParticipatesInSet& _p)

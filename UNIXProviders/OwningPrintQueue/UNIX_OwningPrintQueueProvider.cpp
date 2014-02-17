@@ -55,13 +55,17 @@ CIMInstance UNIX_OwningPrintQueueProvider::constructInstance(
 			CIMName("UNIX_OwningPrintQueue"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_JobDestinationJobs Properties
+
+	//CIM_OwningPrintQueue Properties
 	if (_p.getQueuePosition(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_OwningPrintQueueProvider::constructKeyBindings(const UNIX_OwningPrintQueue& _p)

@@ -55,13 +55,21 @@ CIMInstance UNIX_EGPRouteCalcDependencyProvider::constructInstance(
 			CIMName("UNIX_EGPRouteCalcDependency"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_ProvidesServiceToElement Properties
+
+	//CIM_ServiceServiceDependency Properties
+	if (_p.getTypeOfDependency(p)) inst.addProperty(p);
+	if (_p.getRestartService(p)) inst.addProperty(p);
+
+	//CIM_EGPRouteCalcDependency Properties
 	if (_p.getIGPInjection(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_EGPRouteCalcDependencyProvider::constructKeyBindings(const UNIX_EGPRouteCalcDependency& _p)

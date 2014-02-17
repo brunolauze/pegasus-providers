@@ -55,6 +55,23 @@ CIMInstance UNIX_BGPStatisticsProvider::constructInstance(
 			CIMName("UNIX_BGPStatistics"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalInformation Properties
+	if (_p.getName(p)) inst.addProperty(p);
+
+	//CIM_ServiceStatisticalInformation Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getServiceCreationClassName(p)) inst.addProperty(p);
+	if (_p.getServiceName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+
+	//CIM_BGPStatistics Properties
 	if (_p.getInUpdates(p)) inst.addProperty(p);
 	if (_p.getOutUpdates(p)) inst.addProperty(p);
 	if (_p.getInTotalMessages(p)) inst.addProperty(p);
@@ -65,8 +82,7 @@ CIMInstance UNIX_BGPStatisticsProvider::constructInstance(
 	if (_p.getInUpdateElapsedTime(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BGPStatisticsProvider::constructKeyBindings(const UNIX_BGPStatistics& _p)

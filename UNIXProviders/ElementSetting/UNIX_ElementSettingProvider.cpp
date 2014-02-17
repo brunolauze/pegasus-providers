@@ -55,12 +55,12 @@ CIMInstance UNIX_ElementSettingProvider::constructInstance(
 			CIMName("UNIX_ElementSetting"),
 			constructKeyBindings(_p)));
 
+	//CIM_ElementSetting Properties
 	if (_p.getElement(p)) inst.addProperty(p);
 	if (_p.getSetting(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ElementSettingProvider::constructKeyBindings(const UNIX_ElementSetting& _p)

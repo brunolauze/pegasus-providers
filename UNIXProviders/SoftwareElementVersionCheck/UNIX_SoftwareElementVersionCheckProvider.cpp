@@ -55,6 +55,22 @@ CIMInstance UNIX_SoftwareElementVersionCheckProvider::constructInstance(
 			CIMName("UNIX_SoftwareElementVersionCheck"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Check Properties
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getVersion(p)) inst.addProperty(p);
+	if (_p.getSoftwareElementState(p)) inst.addProperty(p);
+	if (_p.getSoftwareElementID(p)) inst.addProperty(p);
+	if (_p.getTargetOperatingSystem(p)) inst.addProperty(p);
+	if (_p.getCheckID(p)) inst.addProperty(p);
+	if (_p.getCheckMode(p)) inst.addProperty(p);
+
+	//CIM_SoftwareElementVersionCheck Properties
 	if (_p.getSoftwareElementName(p)) inst.addProperty(p);
 	if (_p.getLowerSoftwareElementVersion(p)) inst.addProperty(p);
 	if (_p.getUpperSoftwareElementVersion(p)) inst.addProperty(p);
@@ -62,8 +78,7 @@ CIMInstance UNIX_SoftwareElementVersionCheckProvider::constructInstance(
 	if (_p.getTargetOperatingSystemDesired(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SoftwareElementVersionCheckProvider::constructKeyBindings(const UNIX_SoftwareElementVersionCheck& _p)

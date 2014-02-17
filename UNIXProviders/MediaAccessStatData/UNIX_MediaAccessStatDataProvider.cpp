@@ -55,6 +55,18 @@ CIMInstance UNIX_MediaAccessStatDataProvider::constructInstance(
 			CIMName("UNIX_MediaAccessStatData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_MediaAccessStatData Properties
 	if (_p.getReadOperations(p)) inst.addProperty(p);
 	if (_p.getUnrecoverableReadOperations(p)) inst.addProperty(p);
 	if (_p.getWriteOperations(p)) inst.addProperty(p);
@@ -65,8 +77,7 @@ CIMInstance UNIX_MediaAccessStatDataProvider::constructInstance(
 	if (_p.getUnrecoverableSeekOperations(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_MediaAccessStatDataProvider::constructKeyBindings(const UNIX_MediaAccessStatData& _p)

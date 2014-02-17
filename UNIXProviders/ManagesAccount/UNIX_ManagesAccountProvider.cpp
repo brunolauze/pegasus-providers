@@ -55,12 +55,14 @@ CIMInstance UNIX_ManagesAccountProvider::constructInstance(
 			CIMName("UNIX_ManagesAccount"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_ManagesAccount Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ManagesAccountProvider::constructKeyBindings(const UNIX_ManagesAccount& _p)

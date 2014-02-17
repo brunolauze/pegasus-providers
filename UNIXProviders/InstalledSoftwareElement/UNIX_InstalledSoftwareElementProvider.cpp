@@ -55,12 +55,12 @@ CIMInstance UNIX_InstalledSoftwareElementProvider::constructInstance(
 			CIMName("UNIX_InstalledSoftwareElement"),
 			constructKeyBindings(_p)));
 
+	//CIM_InstalledSoftwareElement Properties
 	if (_p.getSoftware(p)) inst.addProperty(p);
 	if (_p.getSystem(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_InstalledSoftwareElementProvider::constructKeyBindings(const UNIX_InstalledSoftwareElement& _p)

@@ -55,12 +55,14 @@ CIMInstance UNIX_AuthenticateForUseProvider::constructInstance(
 			CIMName("UNIX_AuthenticateForUse"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_AuthenticateForUse Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AuthenticateForUseProvider::constructKeyBindings(const UNIX_AuthenticateForUse& _p)

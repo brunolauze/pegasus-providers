@@ -55,14 +55,24 @@ CIMInstance UNIX_BootSourceSettingProvider::constructInstance(
 			CIMName("UNIX_BootSourceSetting"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_BootSourceSetting Properties
 	if (_p.getBootString(p)) inst.addProperty(p);
 	if (_p.getBIOSBootString(p)) inst.addProperty(p);
 	if (_p.getStructuredBootString(p)) inst.addProperty(p);
 	if (_p.getFailThroughSupported(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BootSourceSettingProvider::constructKeyBindings(const UNIX_BootSourceSetting& _p)

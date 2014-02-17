@@ -55,12 +55,20 @@ CIMInstance UNIX_ComputerSystemDMAProvider::constructInstance(
 			CIMName("UNIX_ComputerSystemDMA"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_SystemComponent Properties
+
+	//CIM_ResourceOfSystem Properties
+
+	//CIM_ComputerSystemResource Properties
+
+	//CIM_ComputerSystemDMA Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ComputerSystemDMAProvider::constructKeyBindings(const UNIX_ComputerSystemDMA& _p)

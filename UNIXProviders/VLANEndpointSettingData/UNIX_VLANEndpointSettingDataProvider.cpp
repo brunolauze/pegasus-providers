@@ -55,6 +55,17 @@ CIMInstance UNIX_VLANEndpointSettingDataProvider::constructInstance(
 			CIMName("UNIX_VLANEndpointSettingData"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_VLANEndpointSettingData Properties
 	if (_p.getPruneEligibleVLANList(p)) inst.addProperty(p);
 	if (_p.getNativeVLAN(p)) inst.addProperty(p);
 	if (_p.getDefaultVLAN(p)) inst.addProperty(p);
@@ -62,8 +73,7 @@ CIMInstance UNIX_VLANEndpointSettingDataProvider::constructInstance(
 	if (_p.getAccessVLAN(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_VLANEndpointSettingDataProvider::constructKeyBindings(const UNIX_VLANEndpointSettingData& _p)

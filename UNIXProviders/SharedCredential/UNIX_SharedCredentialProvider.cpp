@@ -55,15 +55,24 @@ CIMInstance UNIX_SharedCredentialProvider::constructInstance(
 			CIMName("UNIX_SharedCredential"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Credential Properties
+	if (_p.getIssued(p)) inst.addProperty(p);
+	if (_p.getExpires(p)) inst.addProperty(p);
+
+	//CIM_SharedCredential Properties
 	if (_p.getRemoteID(p)) inst.addProperty(p);
 	if (_p.getSecret(p)) inst.addProperty(p);
 	if (_p.getAlgorithm(p)) inst.addProperty(p);
 	if (_p.getProtocol(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SharedCredentialProvider::constructKeyBindings(const UNIX_SharedCredential& _p)

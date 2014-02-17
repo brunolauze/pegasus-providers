@@ -55,12 +55,16 @@ CIMInstance UNIX_HostedACIProvider::constructInstance(
 			CIMName("UNIX_HostedACI"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HostedDependency Properties
+
+	//CIM_HostedACI Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_HostedACIProvider::constructKeyBindings(const UNIX_HostedACI& _p)

@@ -55,10 +55,83 @@ CIMInstance UNIX_DiskDriveProvider::constructInstance(
 			CIMName("UNIX_DiskDrive"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_ManagedSystemElement Properties
+	if (_p.getInstallDate(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getOperationalStatus(p)) inst.addProperty(p);
+	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
+	if (_p.getStatus(p)) inst.addProperty(p);
+	if (_p.getHealthState(p)) inst.addProperty(p);
+	if (_p.getCommunicationStatus(p)) inst.addProperty(p);
+	if (_p.getDetailedStatus(p)) inst.addProperty(p);
+	if (_p.getOperatingStatus(p)) inst.addProperty(p);
+	if (_p.getPrimaryStatus(p)) inst.addProperty(p);
+
+	//CIM_LogicalElement Properties
+
+	//CIM_EnabledLogicalElement Properties
+	if (_p.getEnabledState(p)) inst.addProperty(p);
+	if (_p.getOtherEnabledState(p)) inst.addProperty(p);
+	if (_p.getRequestedState(p)) inst.addProperty(p);
+	if (_p.getEnabledDefault(p)) inst.addProperty(p);
+	if (_p.getTimeOfLastStateChange(p)) inst.addProperty(p);
+	if (_p.getAvailableRequestedStates(p)) inst.addProperty(p);
+	if (_p.getTransitioningToState(p)) inst.addProperty(p);
+
+	//CIM_LogicalDevice Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getDeviceID(p)) inst.addProperty(p);
+	if (_p.getPowerManagementSupported(p)) inst.addProperty(p);
+	if (_p.getPowerManagementCapabilities(p)) inst.addProperty(p);
+	if (_p.getAvailability(p)) inst.addProperty(p);
+	if (_p.getStatusInfo(p)) inst.addProperty(p);
+	if (_p.getLastErrorCode(p)) inst.addProperty(p);
+	if (_p.getErrorDescription(p)) inst.addProperty(p);
+	if (_p.getErrorCleared(p)) inst.addProperty(p);
+	if (_p.getOtherIdentifyingInfo(p)) inst.addProperty(p);
+	if (_p.getPowerOnHours(p)) inst.addProperty(p);
+	if (_p.getTotalPowerOnHours(p)) inst.addProperty(p);
+	if (_p.getIdentifyingDescriptions(p)) inst.addProperty(p);
+	if (_p.getAdditionalAvailability(p)) inst.addProperty(p);
+	if (_p.getMaxQuiesceTime(p)) inst.addProperty(p);
+
+	//CIM_MediaAccessDevice Properties
+	if (_p.getCapabilities(p)) inst.addProperty(p);
+	if (_p.getCapabilityDescriptions(p)) inst.addProperty(p);
+	if (_p.getErrorMethodology(p)) inst.addProperty(p);
+	if (_p.getCompressionMethod(p)) inst.addProperty(p);
+	if (_p.getNumberOfMediaSupported(p)) inst.addProperty(p);
+	if (_p.getMaxMediaSize(p)) inst.addProperty(p);
+	if (_p.getDefaultBlockSize(p)) inst.addProperty(p);
+	if (_p.getMaxBlockSize(p)) inst.addProperty(p);
+	if (_p.getMinBlockSize(p)) inst.addProperty(p);
+	if (_p.getNeedsCleaning(p)) inst.addProperty(p);
+	if (_p.getMediaIsLocked(p)) inst.addProperty(p);
+	if (_p.getSecurity(p)) inst.addProperty(p);
+	if (_p.getLastCleaned(p)) inst.addProperty(p);
+	if (_p.getMaxAccessTime(p)) inst.addProperty(p);
+	if (_p.getUncompressedDataRate(p)) inst.addProperty(p);
+	if (_p.getLoadTime(p)) inst.addProperty(p);
+	if (_p.getUnloadTime(p)) inst.addProperty(p);
+	if (_p.getMountCount(p)) inst.addProperty(p);
+	if (_p.getTimeOfLastMount(p)) inst.addProperty(p);
+	if (_p.getTotalMountTime(p)) inst.addProperty(p);
+	if (_p.getUnitsDescription(p)) inst.addProperty(p);
+	if (_p.getMaxUnitsBeforeCleaning(p)) inst.addProperty(p);
+	if (_p.getUnitsUsed(p)) inst.addProperty(p);
+
+	//CIM_DiskDrive Properties
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_DiskDriveProvider::constructKeyBindings(const UNIX_DiskDrive& _p)

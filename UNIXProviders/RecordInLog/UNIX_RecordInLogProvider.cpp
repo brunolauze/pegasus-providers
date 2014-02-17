@@ -55,12 +55,12 @@ CIMInstance UNIX_RecordInLogProvider::constructInstance(
 			CIMName("UNIX_RecordInLog"),
 			constructKeyBindings(_p)));
 
+	//CIM_RecordInLog Properties
 	if (_p.getMessageLog(p)) inst.addProperty(p);
 	if (_p.getLogRecord(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RecordInLogProvider::constructKeyBindings(const UNIX_RecordInLog& _p)

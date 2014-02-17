@@ -55,13 +55,20 @@ CIMInstance UNIX_RealizedOnSideProvider::constructInstance(
 			CIMName("UNIX_RealizedOnSide"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_Realizes Properties
+
+	//CIM_RealizesExtent Properties
+	if (_p.getStartingAddress(p)) inst.addProperty(p);
+
+	//CIM_RealizedOnSide Properties
 	if (_p.getSide(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RealizedOnSideProvider::constructKeyBindings(const UNIX_RealizedOnSide& _p)

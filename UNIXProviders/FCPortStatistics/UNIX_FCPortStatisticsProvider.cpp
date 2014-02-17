@@ -55,6 +55,24 @@ CIMInstance UNIX_FCPortStatisticsProvider::constructInstance(
 			CIMName("UNIX_FCPortStatistics"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_StatisticalData Properties
+	if (_p.getStartStatisticTime(p)) inst.addProperty(p);
+	if (_p.getStatisticTime(p)) inst.addProperty(p);
+	if (_p.getSampleInterval(p)) inst.addProperty(p);
+
+	//CIM_NetworkPortStatistics Properties
+	if (_p.getBytesTransmitted(p)) inst.addProperty(p);
+	if (_p.getBytesReceived(p)) inst.addProperty(p);
+	if (_p.getPacketsTransmitted(p)) inst.addProperty(p);
+	if (_p.getPacketsReceived(p)) inst.addProperty(p);
+
+	//CIM_FCPortStatistics Properties
 	if (_p.getLIPCount(p)) inst.addProperty(p);
 	if (_p.getNOSCount(p)) inst.addProperty(p);
 	if (_p.getErrorFrames(p)) inst.addProperty(p);
@@ -99,8 +117,7 @@ CIMInstance UNIX_FCPortStatisticsProvider::constructInstance(
 	if (_p.getTXBroadcastFrames(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_FCPortStatisticsProvider::constructKeyBindings(const UNIX_FCPortStatistics& _p)

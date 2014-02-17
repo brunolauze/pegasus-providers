@@ -55,12 +55,19 @@ CIMInstance UNIX_PolicyActionInPolicyRuleProvider::constructInstance(
 			CIMName("UNIX_PolicyActionInPolicyRule"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_PolicyComponent Properties
+
+	//CIM_PolicyActionStructure Properties
+	if (_p.getActionOrder(p)) inst.addProperty(p);
+
+	//CIM_PolicyActionInPolicyRule Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PolicyActionInPolicyRuleProvider::constructKeyBindings(const UNIX_PolicyActionInPolicyRule& _p)

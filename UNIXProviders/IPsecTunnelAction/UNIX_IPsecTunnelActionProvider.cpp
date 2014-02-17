@@ -55,11 +55,46 @@ CIMInstance UNIX_IPsecTunnelActionProvider::constructInstance(
 			CIMName("UNIX_IPsecTunnelAction"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Policy Properties
+	if (_p.getCommonName(p)) inst.addProperty(p);
+	if (_p.getPolicyKeywords(p)) inst.addProperty(p);
+
+	//CIM_PolicyAction Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getPolicyRuleCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPolicyRuleName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPolicyActionName(p)) inst.addProperty(p);
+	if (_p.getDoActionLogging(p)) inst.addProperty(p);
+
+	//CIM_SAAction Properties
+	if (_p.getDoPacketLogging(p)) inst.addProperty(p);
+
+	//CIM_SANegotiationAction Properties
+	if (_p.getMinLifetimeSeconds(p)) inst.addProperty(p);
+	if (_p.getIdleDurationSeconds(p)) inst.addProperty(p);
+	if (_p.getMinLifetimeKilobytes(p)) inst.addProperty(p);
+
+	//CIM_IPsecAction Properties
+	if (_p.getUsePFS(p)) inst.addProperty(p);
+	if (_p.getUsePhase1Group(p)) inst.addProperty(p);
+	if (_p.getGroupId(p)) inst.addProperty(p);
+	if (_p.getVendorID(p)) inst.addProperty(p);
+	if (_p.getGranularity(p)) inst.addProperty(p);
+	if (_p.getOtherGranularity(p)) inst.addProperty(p);
+
+	//CIM_IPsecTunnelAction Properties
 	if (_p.getDFHandling(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IPsecTunnelActionProvider::constructKeyBindings(const UNIX_IPsecTunnelAction& _p)

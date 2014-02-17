@@ -55,12 +55,12 @@ CIMInstance UNIX_ActionSequenceProvider::constructInstance(
 			CIMName("UNIX_ActionSequence"),
 			constructKeyBindings(_p)));
 
+	//CIM_ActionSequence Properties
 	if (_p.getNext(p)) inst.addProperty(p);
 	if (_p.getPrior(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ActionSequenceProvider::constructKeyBindings(const UNIX_ActionSequence& _p)

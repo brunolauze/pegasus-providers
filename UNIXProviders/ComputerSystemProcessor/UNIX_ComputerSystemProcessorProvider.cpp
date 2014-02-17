@@ -55,12 +55,18 @@ CIMInstance UNIX_ComputerSystemProcessorProvider::constructInstance(
 			CIMName("UNIX_ComputerSystemProcessor"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_SystemComponent Properties
+
+	//CIM_SystemDevice Properties
+
+	//CIM_ComputerSystemProcessor Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ComputerSystemProcessorProvider::constructKeyBindings(const UNIX_ComputerSystemProcessor& _p)

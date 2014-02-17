@@ -55,13 +55,19 @@ CIMInstance UNIX_LocationProvider::constructInstance(
 			CIMName("UNIX_Location"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Location Properties
 	if (_p.getName(p)) inst.addProperty(p);
 	if (_p.getPhysicalPosition(p)) inst.addProperty(p);
 	if (_p.getAddress(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_LocationProvider::constructKeyBindings(const UNIX_Location& _p)

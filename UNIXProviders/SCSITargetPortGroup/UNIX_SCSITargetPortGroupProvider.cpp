@@ -55,6 +55,17 @@ CIMInstance UNIX_SCSITargetPortGroupProvider::constructInstance(
 			CIMName("UNIX_SCSITargetPortGroup"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_SystemSpecificCollection Properties
+
+	//CIM_SCSITargetPortGroup Properties
 	if (_p.getAsymmetric(p)) inst.addProperty(p);
 	if (_p.getCurrentLoadBalanceType(p)) inst.addProperty(p);
 	if (_p.getOtherCurrentLoadBalanceType(p)) inst.addProperty(p);
@@ -68,8 +79,7 @@ CIMInstance UNIX_SCSITargetPortGroupProvider::constructInstance(
 	if (_p.getSupportsLuAssignment(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SCSITargetPortGroupProvider::constructKeyBindings(const UNIX_SCSITargetPortGroup& _p)

@@ -55,13 +55,21 @@ CIMInstance UNIX_IEEE8021xCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_IEEE8021xCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_IEEE8021xCapabilities Properties
 	if (_p.getSupportedAuthenticationProtocols(p)) inst.addProperty(p);
 	if (_p.getRoamingSupported(p)) inst.addProperty(p);
 	if (_p.getFastRoamingSupported(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IEEE8021xCapabilitiesProvider::constructKeyBindings(const UNIX_IEEE8021xCapabilities& _p)

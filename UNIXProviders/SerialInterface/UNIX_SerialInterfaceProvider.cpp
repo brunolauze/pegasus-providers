@@ -55,15 +55,30 @@ CIMInstance UNIX_SerialInterfaceProvider::constructInstance(
 			CIMName("UNIX_SerialInterface"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
+	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_DeviceConnection Properties
+	if (_p.getNegotiatedSpeed(p)) inst.addProperty(p);
 	if (_p.getNegotiatedDataWidth(p)) inst.addProperty(p);
+
+	//CIM_ControlledBy Properties
+	if (_p.getAccessState(p)) inst.addProperty(p);
+	if (_p.getTimeOfDeviceReset(p)) inst.addProperty(p);
+	if (_p.getNumberOfHardResets(p)) inst.addProperty(p);
+	if (_p.getNumberOfSoftResets(p)) inst.addProperty(p);
+	if (_p.getDeviceNumber(p)) inst.addProperty(p);
+	if (_p.getAccessMode(p)) inst.addProperty(p);
+	if (_p.getAccessPriority(p)) inst.addProperty(p);
+
+	//CIM_SerialInterface Properties
 	if (_p.getNumberOfStopBits(p)) inst.addProperty(p);
 	if (_p.getParityInfo(p)) inst.addProperty(p);
 	if (_p.getFlowControlInfo(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SerialInterfaceProvider::constructKeyBindings(const UNIX_SerialInterface& _p)

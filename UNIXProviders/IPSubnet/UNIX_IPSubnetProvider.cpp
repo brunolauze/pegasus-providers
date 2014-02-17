@@ -55,14 +55,33 @@ CIMInstance UNIX_IPSubnetProvider::constructInstance(
 			CIMName("UNIX_IPSubnet"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Collection Properties
+
+	//CIM_CollectionOfMSEs Properties
+	if (_p.getCollectionID(p)) inst.addProperty(p);
+
+	//CIM_LogicalNetwork Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getName(p)) inst.addProperty(p);
+	if (_p.getNetworkType(p)) inst.addProperty(p);
+	if (_p.getOtherTypeDescription(p)) inst.addProperty(p);
+
+	//CIM_IPSubnet Properties
 	if (_p.getSubnetNumber(p)) inst.addProperty(p);
 	if (_p.getSubnetMask(p)) inst.addProperty(p);
 	if (_p.getPrefixLength(p)) inst.addProperty(p);
 	if (_p.getAddressType(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IPSubnetProvider::constructKeyBindings(const UNIX_IPSubnet& _p)

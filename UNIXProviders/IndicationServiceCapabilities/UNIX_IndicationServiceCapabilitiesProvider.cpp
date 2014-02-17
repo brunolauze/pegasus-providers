@@ -55,6 +55,15 @@ CIMInstance UNIX_IndicationServiceCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_IndicationServiceCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_IndicationServiceCapabilities Properties
 	if (_p.getFilterCreationEnabledIsSettable(p)) inst.addProperty(p);
 	if (_p.getDeliveryRetryAttemptsIsSettable(p)) inst.addProperty(p);
 	if (_p.getDeliveryRetryIntervalIsSettable(p)) inst.addProperty(p);
@@ -65,8 +74,7 @@ CIMInstance UNIX_IndicationServiceCapabilitiesProvider::constructInstance(
 	if (_p.getSubscriptionsPersisted(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IndicationServiceCapabilitiesProvider::constructKeyBindings(const UNIX_IndicationServiceCapabilities& _p)

@@ -55,12 +55,17 @@ CIMInstance UNIX_PackageInChassisProvider::constructInstance(
 			CIMName("UNIX_PackageInChassis"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_Container Properties
+	if (_p.getLocationWithinContainer(p)) inst.addProperty(p);
+
+	//CIM_PackageInChassis Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PackageInChassisProvider::constructKeyBindings(const UNIX_PackageInChassis& _p)

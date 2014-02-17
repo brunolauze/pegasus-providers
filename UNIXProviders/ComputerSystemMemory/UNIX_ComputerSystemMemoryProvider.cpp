@@ -55,12 +55,18 @@ CIMInstance UNIX_ComputerSystemMemoryProvider::constructInstance(
 			CIMName("UNIX_ComputerSystemMemory"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_SystemComponent Properties
+
+	//CIM_SystemDevice Properties
+
+	//CIM_ComputerSystemMemory Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_ComputerSystemMemoryProvider::constructKeyBindings(const UNIX_ComputerSystemMemory& _p)

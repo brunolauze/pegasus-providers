@@ -55,14 +55,16 @@ CIMInstance UNIX_RemoteAccessAvailableToElementProvider::constructInstance(
 			CIMName("UNIX_RemoteAccessAvailableToElement"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_RemoteAccessAvailableToElement Properties
 	if (_p.getIsDefault(p)) inst.addProperty(p);
 	if (_p.getOrderOfAccess(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_RemoteAccessAvailableToElementProvider::constructKeyBindings(const UNIX_RemoteAccessAvailableToElement& _p)

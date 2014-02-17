@@ -55,12 +55,14 @@ CIMInstance UNIX_CalculatedRoutesProvider::constructInstance(
 			CIMName("UNIX_CalculatedRoutes"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_CalculatedRoutes Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CalculatedRoutesProvider::constructKeyBindings(const UNIX_CalculatedRoutes& _p)

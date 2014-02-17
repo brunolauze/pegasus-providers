@@ -55,13 +55,17 @@ CIMInstance UNIX_AssociatedSupplyCurrentSensorProvider::constructInstance(
 			CIMName("UNIX_AssociatedSupplyCurrentSensor"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
+
+	//CIM_AssociatedSensor Properties
+
+	//CIM_AssociatedSupplyCurrentSensor Properties
 	if (_p.getMonitoringRange(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AssociatedSupplyCurrentSensorProvider::constructKeyBindings(const UNIX_AssociatedSupplyCurrentSensor& _p)

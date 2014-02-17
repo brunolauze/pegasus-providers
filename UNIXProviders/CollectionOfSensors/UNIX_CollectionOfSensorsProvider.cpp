@@ -55,12 +55,14 @@ CIMInstance UNIX_CollectionOfSensorsProvider::constructInstance(
 			CIMName("UNIX_CollectionOfSensors"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_CollectionOfSensors Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_CollectionOfSensorsProvider::constructKeyBindings(const UNIX_CollectionOfSensors& _p)

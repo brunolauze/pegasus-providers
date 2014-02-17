@@ -55,12 +55,20 @@ CIMInstance UNIX_PolicyConditionInPolicyConditionProvider::constructInstance(
 			CIMName("UNIX_PolicyConditionInPolicyCondition"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_PolicyComponent Properties
+
+	//CIM_PolicyConditionStructure Properties
+	if (_p.getGroupNumber(p)) inst.addProperty(p);
+	if (_p.getConditionNegated(p)) inst.addProperty(p);
+
+	//CIM_PolicyConditionInPolicyCondition Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_PolicyConditionInPolicyConditionProvider::constructKeyBindings(const UNIX_PolicyConditionInPolicyCondition& _p)

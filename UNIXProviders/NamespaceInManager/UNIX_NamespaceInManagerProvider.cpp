@@ -55,12 +55,16 @@ CIMInstance UNIX_NamespaceInManagerProvider::constructInstance(
 			CIMName("UNIX_NamespaceInManager"),
 			constructKeyBindings(_p)));
 
+	//CIM_Dependency Properties
 	if (_p.getAntecedent(p)) inst.addProperty(p);
 	if (_p.getDependent(p)) inst.addProperty(p);
 
+	//CIM_HostedDependency Properties
+
+	//CIM_NamespaceInManager Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NamespaceInManagerProvider::constructKeyBindings(const UNIX_NamespaceInManager& _p)

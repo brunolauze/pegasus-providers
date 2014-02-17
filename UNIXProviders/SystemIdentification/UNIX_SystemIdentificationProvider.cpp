@@ -55,6 +55,13 @@ CIMInstance UNIX_SystemIdentificationProvider::constructInstance(
 			CIMName("UNIX_SystemIdentification"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SystemIdentification Properties
 	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
 	if (_p.getSystemName(p)) inst.addProperty(p);
 	if (_p.getObjectManagerCreationClassName(p)) inst.addProperty(p);
@@ -68,8 +75,7 @@ CIMInstance UNIX_SystemIdentificationProvider::constructInstance(
 	if (_p.getIdentificationData(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_SystemIdentificationProvider::constructKeyBindings(const UNIX_SystemIdentification& _p)

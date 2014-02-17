@@ -55,10 +55,40 @@ CIMInstance UNIX_IPsecRuleProvider::constructInstance(
 			CIMName("UNIX_IPsecRule"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Policy Properties
+	if (_p.getCommonName(p)) inst.addProperty(p);
+	if (_p.getPolicyKeywords(p)) inst.addProperty(p);
+
+	//CIM_PolicySet Properties
+	if (_p.getPolicyDecisionStrategy(p)) inst.addProperty(p);
+	if (_p.getPolicyRoles(p)) inst.addProperty(p);
+	if (_p.getEnabled(p)) inst.addProperty(p);
+
+	//CIM_PolicyRule Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
+	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	if (_p.getPolicyRuleName(p)) inst.addProperty(p);
+	if (_p.getConditionListType(p)) inst.addProperty(p);
+	if (_p.getRuleUsage(p)) inst.addProperty(p);
+	if (_p.getPriority(p)) inst.addProperty(p);
+	if (_p.getMandatory(p)) inst.addProperty(p);
+	if (_p.getSequencedActions(p)) inst.addProperty(p);
+	if (_p.getExecutionStrategy(p)) inst.addProperty(p);
+
+	//CIM_SARule Properties
+	if (_p.getLimitNegotiation(p)) inst.addProperty(p);
+
+	//CIM_IPsecRule Properties
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_IPsecRuleProvider::constructKeyBindings(const UNIX_IPsecRule& _p)

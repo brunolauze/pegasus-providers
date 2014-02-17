@@ -55,6 +55,17 @@ CIMInstance UNIX_StorageSettingProvider::constructInstance(
 			CIMName("UNIX_StorageSetting"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SettingData Properties
+	if (_p.getChangeableType(p)) inst.addProperty(p);
+	if (_p.getConfigurationName(p)) inst.addProperty(p);
+
+	//CIM_StorageSetting Properties
 	if (_p.getNoSinglePointOfFailure(p)) inst.addProperty(p);
 	if (_p.getDataRedundancyMax(p)) inst.addProperty(p);
 	if (_p.getDataRedundancyMin(p)) inst.addProperty(p);
@@ -65,7 +76,6 @@ CIMInstance UNIX_StorageSettingProvider::constructInstance(
 	if (_p.getDeltaReservationMax(p)) inst.addProperty(p);
 	if (_p.getDeltaReservationMin(p)) inst.addProperty(p);
 	if (_p.getDeltaReservationGoal(p)) inst.addProperty(p);
-	if (_p.getChangeableType(p)) inst.addProperty(p);
 	if (_p.getExtentStripeLength(p)) inst.addProperty(p);
 	if (_p.getExtentStripeLengthMin(p)) inst.addProperty(p);
 	if (_p.getExtentStripeLengthMax(p)) inst.addProperty(p);
@@ -75,8 +85,7 @@ CIMInstance UNIX_StorageSettingProvider::constructInstance(
 	if (_p.getUserDataStripeDepthMax(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_StorageSettingProvider::constructKeyBindings(const UNIX_StorageSetting& _p)

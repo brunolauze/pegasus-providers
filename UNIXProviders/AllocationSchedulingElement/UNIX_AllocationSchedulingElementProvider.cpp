@@ -55,6 +55,16 @@ CIMInstance UNIX_AllocationSchedulingElementProvider::constructInstance(
 			CIMName("UNIX_AllocationSchedulingElement"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_SchedulingElement Properties
+	if (_p.getWorkConserving(p)) inst.addProperty(p);
+
+	//CIM_AllocationSchedulingElement Properties
 	if (_p.getAllocationUnits(p)) inst.addProperty(p);
 	if (_p.getBandwidthAllocation(p)) inst.addProperty(p);
 	if (_p.getBurstAllocation(p)) inst.addProperty(p);
@@ -62,8 +72,7 @@ CIMInstance UNIX_AllocationSchedulingElementProvider::constructInstance(
 	if (_p.getWorkFlexible(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_AllocationSchedulingElementProvider::constructKeyBindings(const UNIX_AllocationSchedulingElement& _p)

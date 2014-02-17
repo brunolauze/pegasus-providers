@@ -55,6 +55,25 @@ CIMInstance UNIX_NetworkPortCapabilitiesProvider::constructInstance(
 			CIMName("UNIX_NetworkPortCapabilities"),
 			constructKeyBindings(_p)));
 
+	//CIM_ManagedElement Properties
+	if (_p.getInstanceID(p)) inst.addProperty(p);
+	if (_p.getCaption(p)) inst.addProperty(p);
+	if (_p.getDescription(p)) inst.addProperty(p);
+	if (_p.getElementName(p)) inst.addProperty(p);
+
+	//CIM_Capabilities Properties
+
+	//CIM_EnabledLogicalElementCapabilities Properties
+	if (_p.getElementNameEditSupported(p)) inst.addProperty(p);
+	if (_p.getMaxElementNameLen(p)) inst.addProperty(p);
+	if (_p.getRequestedStatesSupported(p)) inst.addProperty(p);
+	if (_p.getElementNameMask(p)) inst.addProperty(p);
+
+	//CIM_LogicalPortCapabilities Properties
+	if (_p.getRequestedSpeedsSupported(p)) inst.addProperty(p);
+	if (_p.getAutoSenseSpeedConfigurable(p)) inst.addProperty(p);
+
+	//CIM_NetworkPortCapabilities Properties
 	if (_p.getSpeedConfigurable(p)) inst.addProperty(p);
 	if (_p.getPortSpeedsSupported(p)) inst.addProperty(p);
 	if (_p.getNetworkIDsConfigurable(p)) inst.addProperty(p);
@@ -62,8 +81,7 @@ CIMInstance UNIX_NetworkPortCapabilitiesProvider::constructInstance(
 	if (_p.getLinkTechnologiesSupported(p)) inst.addProperty(p);
 
 
-
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_NetworkPortCapabilitiesProvider::constructKeyBindings(const UNIX_NetworkPortCapabilities& _p)

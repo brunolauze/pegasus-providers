@@ -55,12 +55,16 @@ CIMInstance UNIX_BIOSFeatureBIOSElementsProvider::constructInstance(
 			CIMName("UNIX_BIOSFeatureBIOSElements"),
 			constructKeyBindings(_p)));
 
+	//CIM_Component Properties
 	if (_p.getGroupComponent(p)) inst.addProperty(p);
 	if (_p.getPartComponent(p)) inst.addProperty(p);
 
+	//CIM_SoftwareFeatureSoftwareElements Properties
+
+	//CIM_BIOSFeatureBIOSElements Properties
 
 
-return inst;
+	return inst;
 }
 
 Array<CIMKeyBinding> UNIX_BIOSFeatureBIOSElementsProvider::constructKeyBindings(const UNIX_BIOSFeatureBIOSElements& _p)
