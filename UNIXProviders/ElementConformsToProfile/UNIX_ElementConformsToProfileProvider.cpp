@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ElementConformsToProfileProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CONFORMANT_STANDARD,
-		String("CIM_ElementConformsToProfile"),
+		_p.getConformantStandard(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MANAGED_ELEMENT,
-		String("CIM_ElementConformsToProfile"),
+		_p.getManagedElement(),
 		CIMKeyBinding::REFERENCE));
 
 

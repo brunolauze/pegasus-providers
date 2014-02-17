@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_RoleBasedManagementCapabilitiesProvider::constructKeyB
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_RoleBasedManagementCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

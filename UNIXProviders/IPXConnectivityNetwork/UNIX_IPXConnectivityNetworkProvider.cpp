@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_IPXConnectivityNetworkProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_IPXConnectivityNetwork"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

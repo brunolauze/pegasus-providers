@@ -76,11 +76,11 @@ Array<CIMKeyBinding> UNIX_ConfigurationCapacityProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_ConfigurationCapacity"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_OBJECT_TYPE,
-		String("CIM_ConfigurationCapacity"),
+		_p.getObjectType(),
 		CIMKeyBinding::NUMERIC));
 
 

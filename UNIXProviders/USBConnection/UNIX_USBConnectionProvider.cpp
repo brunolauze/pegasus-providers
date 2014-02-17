@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_USBConnectionProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_USBConnection"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_USBConnection"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

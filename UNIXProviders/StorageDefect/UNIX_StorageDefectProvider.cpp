@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_StorageDefectProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_EXTENT,
-		String("CIM_StorageDefect"),
+		_p.getExtent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_ERROR,
-		String("CIM_StorageDefect"),
+		_p.getError(),
 		CIMKeyBinding::REFERENCE));
 
 

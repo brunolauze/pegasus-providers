@@ -73,15 +73,15 @@ Array<CIMKeyBinding> UNIX_UsersAccessProvider::constructKeyBindings(const UNIX_U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_UsersAccess"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_UsersAccess"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_ELEMENT_ID,
-		String("CIM_UsersAccess"),
+		_p.getElementID(),
 		CIMKeyBinding::STRING));
 
 

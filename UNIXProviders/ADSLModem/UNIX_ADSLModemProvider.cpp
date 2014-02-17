@@ -74,19 +74,19 @@ Array<CIMKeyBinding> UNIX_ADSLModemProvider::constructKeyBindings(const UNIX_ADS
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_ADSLModem"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_ADSLModem"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_ADSLModem"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEVICE_ID,
-		String("CIM_ADSLModem"),
+		_p.getDeviceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -69,19 +69,19 @@ Array<CIMKeyBinding> UNIX_AuthenticationRuleProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_AuthenticationRule"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_AuthenticationRule"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_AuthenticationRule"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_RULE_NAME,
-		String("CIM_AuthenticationRule"),
+		_p.getPolicyRuleName(),
 		CIMKeyBinding::STRING));
 
 

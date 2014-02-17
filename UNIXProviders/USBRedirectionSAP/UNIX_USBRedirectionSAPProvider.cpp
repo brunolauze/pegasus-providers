@@ -72,19 +72,19 @@ Array<CIMKeyBinding> UNIX_USBRedirectionSAPProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_USBRedirectionSAP"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_USBRedirectionSAP"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_USBRedirectionSAP"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_USBRedirectionSAP"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

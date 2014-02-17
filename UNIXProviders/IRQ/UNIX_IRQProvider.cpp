@@ -78,19 +78,19 @@ Array<CIMKeyBinding> UNIX_IRQProvider::constructKeyBindings(const UNIX_IRQ& _p)
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_CREATION_CLASS_NAME,
-		String("CIM_IRQ"),
+		_p.getCSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_NAME,
-		String("CIM_IRQ"),
+		_p.getCSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_IRQ"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_I_R_Q_NUMBER,
-		String("CIM_IRQ"),
+		_p.getIRQNumber(),
 		CIMKeyBinding::NUMERIC));
 
 

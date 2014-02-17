@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_HostedForwardingServicesProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_HostedForwardingServices"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_HostedForwardingServices"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

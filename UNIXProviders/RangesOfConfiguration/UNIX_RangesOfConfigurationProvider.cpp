@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_RangesOfConfigurationProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_RangesOfConfiguration"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_RangesOfConfiguration"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

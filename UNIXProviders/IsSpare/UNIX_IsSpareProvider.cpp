@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_IsSpareProvider::constructKeyBindings(const UNIX_IsSpa
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_IsSpare"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_IsSpare"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

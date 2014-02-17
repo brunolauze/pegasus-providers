@@ -93,23 +93,23 @@ Array<CIMKeyBinding> UNIX_DiagnosticResultProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_DIAGNOSTIC_CREATION_CLASS_NAME,
-		String("CIM_DiagnosticResult"),
+		_p.getDiagnosticCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DIAGNOSTIC_NAME,
-		String("CIM_DiagnosticResult"),
+		_p.getDiagnosticName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DIAG_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_DiagnosticResult"),
+		_p.getDiagSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DIAG_SYSTEM_NAME,
-		String("CIM_DiagnosticResult"),
+		_p.getDiagSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_EXECUTION_ID,
-		String("CIM_DiagnosticResult"),
+		_p.getExecutionID(),
 		CIMKeyBinding::STRING));
 
 

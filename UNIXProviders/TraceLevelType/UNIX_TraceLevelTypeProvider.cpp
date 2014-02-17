@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_TraceLevelTypeProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_TraceLevelType"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

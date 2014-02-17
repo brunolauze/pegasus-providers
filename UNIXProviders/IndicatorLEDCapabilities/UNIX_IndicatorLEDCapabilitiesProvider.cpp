@@ -76,7 +76,7 @@ Array<CIMKeyBinding> UNIX_IndicatorLEDCapabilitiesProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_IndicatorLEDCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

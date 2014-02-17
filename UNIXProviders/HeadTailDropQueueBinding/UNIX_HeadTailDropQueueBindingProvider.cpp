@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_HeadTailDropQueueBindingProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_HeadTailDropQueueBinding"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_HeadTailDropQueueBinding"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

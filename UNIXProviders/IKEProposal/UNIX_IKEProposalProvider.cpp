@@ -79,7 +79,7 @@ Array<CIMKeyBinding> UNIX_IKEProposalProvider::constructKeyBindings(const UNIX_I
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_IKEProposal"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

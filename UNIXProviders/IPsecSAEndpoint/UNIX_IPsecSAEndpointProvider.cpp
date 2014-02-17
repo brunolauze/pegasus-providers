@@ -74,19 +74,19 @@ Array<CIMKeyBinding> UNIX_IPsecSAEndpointProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_IPsecSAEndpoint"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_IPsecSAEndpoint"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_IPsecSAEndpoint"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_IPsecSAEndpoint"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_MoreGroupInfoProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_MoreGroupInfo"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_MoreGroupInfo"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

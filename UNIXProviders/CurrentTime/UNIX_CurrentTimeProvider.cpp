@@ -83,15 +83,15 @@ Array<CIMKeyBinding> UNIX_CurrentTimeProvider::constructKeyBindings(const UNIX_C
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_CREATION_CLASS_NAME,
-		String("CIM_CurrentTime"),
+		_p.getCSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_NAME,
-		String("CIM_CurrentTime"),
+		_p.getCSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_CurrentTime"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 
 

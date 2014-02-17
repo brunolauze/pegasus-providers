@@ -77,15 +77,15 @@ Array<CIMKeyBinding> UNIX_AssociatedPrivilegeProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SUBJECT,
-		String("CIM_AssociatedPrivilege"),
+		_p.getSubject(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TARGET,
-		String("CIM_AssociatedPrivilege"),
+		_p.getTarget(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_USE_KEY,
-		String("CIM_AssociatedPrivilege"),
+		_p.getUseKey(),
 		CIMKeyBinding::STRING));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_PolicyConditionInPolicyConditionProvider::constructKey
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_PolicyConditionInPolicyCondition"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_PolicyConditionInPolicyCondition"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

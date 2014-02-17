@@ -69,7 +69,7 @@ Array<CIMKeyBinding> UNIX_IPsecProposalProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_IPsecProposal"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

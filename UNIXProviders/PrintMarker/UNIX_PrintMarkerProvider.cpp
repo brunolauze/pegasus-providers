@@ -85,7 +85,7 @@ Array<CIMKeyBinding> UNIX_PrintMarkerProvider::constructKeyBindings(const UNIX_P
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_PrintMarker"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

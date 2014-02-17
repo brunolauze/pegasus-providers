@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_DNSGeneralSettingDataProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_DNSGeneralSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

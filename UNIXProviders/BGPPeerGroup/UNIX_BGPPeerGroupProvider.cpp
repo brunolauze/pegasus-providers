@@ -78,19 +78,19 @@ Array<CIMKeyBinding> UNIX_BGPPeerGroupProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_BGPPeerGroup"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_BGPPeerGroup"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_BGPPeerGroup"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_BGPPeerGroup"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

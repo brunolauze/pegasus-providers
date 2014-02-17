@@ -75,23 +75,23 @@ Array<CIMKeyBinding> UNIX_LogRecordProvider::constructKeyBindings(const UNIX_Log
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_LOG_CREATION_CLASS_NAME,
-		String("CIM_LogRecord"),
+		_p.getLogCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_LOG_NAME,
-		String("CIM_LogRecord"),
+		_p.getLogName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_LogRecord"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_RECORD_ID,
-		String("CIM_LogRecord"),
+		_p.getRecordID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MESSAGE_TIMESTAMP,
-		String("CIM_LogRecord"),
+		_p.getMessageTimestamp(),
 		CIMKeyBinding::STRING));
 
 

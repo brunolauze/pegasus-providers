@@ -92,11 +92,11 @@ Array<CIMKeyBinding> UNIX_OtherRoleInformationProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_OtherRoleInformation"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_OtherRoleInformation"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

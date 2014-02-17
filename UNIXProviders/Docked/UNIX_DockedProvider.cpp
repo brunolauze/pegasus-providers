@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_DockedProvider::constructKeyBindings(const UNIX_Docked
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_Docked"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_Docked"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

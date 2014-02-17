@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_IEEE8021xCapabilitiesProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_IEEE8021xCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

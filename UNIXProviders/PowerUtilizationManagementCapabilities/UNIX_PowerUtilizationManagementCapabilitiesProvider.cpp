@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_PowerUtilizationManagementCapabilitiesProvider::constr
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_PowerUtilizationManagementCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

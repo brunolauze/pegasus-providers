@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_ProductProductDependencyProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_REQUIRED_PRODUCT,
-		String("CIM_ProductProductDependency"),
+		_p.getRequiredProduct(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT_PRODUCT,
-		String("CIM_ProductProductDependency"),
+		_p.getDependentProduct(),
 		CIMKeyBinding::REFERENCE));
 
 

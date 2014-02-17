@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_RoutersInBGPClusterProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION,
-		String("CIM_RoutersInBGPCluster"),
+		_p.getCollection(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MEMBER,
-		String("CIM_RoutersInBGPCluster"),
+		_p.getMember(),
 		CIMKeyBinding::REFERENCE));
 
 

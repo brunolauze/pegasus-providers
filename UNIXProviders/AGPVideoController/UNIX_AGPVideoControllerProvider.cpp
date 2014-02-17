@@ -79,19 +79,19 @@ Array<CIMKeyBinding> UNIX_AGPVideoControllerProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_AGPVideoController"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_AGPVideoController"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_AGPVideoController"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEVICE_ID,
-		String("CIM_AGPVideoController"),
+		_p.getDeviceID(),
 		CIMKeyBinding::STRING));
 
 

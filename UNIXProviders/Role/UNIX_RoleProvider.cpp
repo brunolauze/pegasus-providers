@@ -74,11 +74,11 @@ Array<CIMKeyBinding> UNIX_RoleProvider::constructKeyBindings(const UNIX_Role& _p
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_Role"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_Role"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

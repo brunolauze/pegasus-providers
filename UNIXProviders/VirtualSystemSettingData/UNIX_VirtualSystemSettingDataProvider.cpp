@@ -86,7 +86,7 @@ Array<CIMKeyBinding> UNIX_VirtualSystemSettingDataProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_VirtualSystemSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

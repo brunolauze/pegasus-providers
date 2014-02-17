@@ -69,27 +69,27 @@ Array<CIMKeyBinding> UNIX_DataFileProvider::constructKeyBindings(const UNIX_Data
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_CREATION_CLASS_NAME,
-		String("CIM_DataFile"),
+		_p.getCSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_NAME,
-		String("CIM_DataFile"),
+		_p.getCSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_FS_CREATION_CLASS_NAME,
-		String("CIM_DataFile"),
+		_p.getFSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_FS_NAME,
-		String("CIM_DataFile"),
+		_p.getFSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_DataFile"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_DataFile"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

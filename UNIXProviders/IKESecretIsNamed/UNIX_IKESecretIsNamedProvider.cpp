@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_IKESecretIsNamedProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_IKESecretIsNamed"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_IKESecretIsNamed"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

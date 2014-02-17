@@ -73,23 +73,23 @@ Array<CIMKeyBinding> UNIX_VideoBIOSElementProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_VideoBIOSElement"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VERSION,
-		String("CIM_VideoBIOSElement"),
+		_p.getVersion(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_STATE,
-		String("CIM_VideoBIOSElement"),
+		_p.getSoftwareElementState(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_ID,
-		String("CIM_VideoBIOSElement"),
+		_p.getSoftwareElementID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TARGET_OPERATING_SYSTEM,
-		String("CIM_VideoBIOSElement"),
+		_p.getTargetOperatingSystem(),
 		CIMKeyBinding::NUMERIC));
 
 

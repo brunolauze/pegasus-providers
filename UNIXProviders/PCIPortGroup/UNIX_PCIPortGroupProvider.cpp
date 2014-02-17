@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_PCIPortGroupProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_PCIPortGroup"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_HomeForMediaProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_HomeForMedia"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_HomeForMedia"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

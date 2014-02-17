@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_VirtualSystemSnapshotServiceCapabilitiesProvider::cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_VirtualSystemSnapshotServiceCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

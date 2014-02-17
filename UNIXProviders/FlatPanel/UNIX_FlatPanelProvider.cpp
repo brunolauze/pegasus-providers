@@ -75,19 +75,19 @@ Array<CIMKeyBinding> UNIX_FlatPanelProvider::constructKeyBindings(const UNIX_Fla
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_FlatPanel"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_FlatPanel"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_FlatPanel"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEVICE_ID,
-		String("CIM_FlatPanel"),
+		_p.getDeviceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -70,27 +70,27 @@ Array<CIMKeyBinding> UNIX_MemoryCheckProvider::constructKeyBindings(const UNIX_M
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_MemoryCheck"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VERSION,
-		String("CIM_MemoryCheck"),
+		_p.getVersion(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_STATE,
-		String("CIM_MemoryCheck"),
+		_p.getSoftwareElementState(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_ID,
-		String("CIM_MemoryCheck"),
+		_p.getSoftwareElementID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TARGET_OPERATING_SYSTEM,
-		String("CIM_MemoryCheck"),
+		_p.getTargetOperatingSystem(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CHECK_ID,
-		String("CIM_MemoryCheck"),
+		_p.getCheckID(),
 		CIMKeyBinding::STRING));
 
 

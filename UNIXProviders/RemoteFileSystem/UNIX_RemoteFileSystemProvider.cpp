@@ -69,19 +69,19 @@ Array<CIMKeyBinding> UNIX_RemoteFileSystemProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_CREATION_CLASS_NAME,
-		String("CIM_RemoteFileSystem"),
+		_p.getCSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_NAME,
-		String("CIM_RemoteFileSystem"),
+		_p.getCSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_RemoteFileSystem"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_RemoteFileSystem"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_SoftwareElementChecksProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ELEMENT,
-		String("CIM_SoftwareElementChecks"),
+		_p.getElement(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CHECK,
-		String("CIM_SoftwareElementChecks"),
+		_p.getCheck(),
 		CIMKeyBinding::REFERENCE));
 
 

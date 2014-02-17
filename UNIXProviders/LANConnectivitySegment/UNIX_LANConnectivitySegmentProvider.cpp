@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_LANConnectivitySegmentProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_LANConnectivitySegment"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

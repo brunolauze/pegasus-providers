@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_USBControllerHasHubProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_USBControllerHasHub"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_USBControllerHasHub"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

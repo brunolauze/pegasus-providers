@@ -77,19 +77,19 @@ Array<CIMKeyBinding> UNIX_DNSProtocolEndpointProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_DNSProtocolEndpoint"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_DNSProtocolEndpoint"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_DNSProtocolEndpoint"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_DNSProtocolEndpoint"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

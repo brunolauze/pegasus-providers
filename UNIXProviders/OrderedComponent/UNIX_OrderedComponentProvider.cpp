@@ -70,11 +70,11 @@ Array<CIMKeyBinding> UNIX_OrderedComponentProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_OrderedComponent"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_OrderedComponent"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -77,7 +77,7 @@ Array<CIMKeyBinding> UNIX_OpaqueManagementDataCapabilitiesProvider::constructKey
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_OpaqueManagementDataCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

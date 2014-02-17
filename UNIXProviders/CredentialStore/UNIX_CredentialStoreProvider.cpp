@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_CredentialStoreProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_CredentialStore"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

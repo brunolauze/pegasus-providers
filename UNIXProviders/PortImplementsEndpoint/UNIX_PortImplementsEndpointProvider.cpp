@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_PortImplementsEndpointProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_PortImplementsEndpoint"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_PortImplementsEndpoint"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

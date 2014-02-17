@@ -73,19 +73,19 @@ Array<CIMKeyBinding> UNIX_TokenBucketMeterServiceProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_TokenBucketMeterService"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_TokenBucketMeterService"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_TokenBucketMeterService"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_TokenBucketMeterService"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

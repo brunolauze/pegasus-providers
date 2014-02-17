@@ -75,7 +75,7 @@ Array<CIMKeyBinding> UNIX_DatabaseSegmentSettingDataProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_DatabaseSegmentSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

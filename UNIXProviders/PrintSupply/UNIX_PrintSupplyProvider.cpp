@@ -85,7 +85,7 @@ Array<CIMKeyBinding> UNIX_PrintSupplyProvider::constructKeyBindings(const UNIX_P
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_PrintSupply"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SwitchableProvider::constructKeyBindings(const UNIX_Sw
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_Switchable"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_Switchable"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

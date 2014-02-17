@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_DoorAccessToPhysicalElementProvider::constructKeyBindi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_DoorAccessToPhysicalElement"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_DoorAccessToPhysicalElement"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

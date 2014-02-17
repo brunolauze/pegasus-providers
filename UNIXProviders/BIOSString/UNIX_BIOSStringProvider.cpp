@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_BIOSStringProvider::constructKeyBindings(const UNIX_BI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_BIOSString"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ResidesOnExtentProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ResidesOnExtent"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ResidesOnExtent"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

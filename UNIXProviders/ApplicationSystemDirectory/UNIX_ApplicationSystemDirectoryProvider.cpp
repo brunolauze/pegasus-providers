@@ -74,15 +74,15 @@ Array<CIMKeyBinding> UNIX_ApplicationSystemDirectoryProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ApplicationSystemDirectory"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ApplicationSystemDirectory"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_ApplicationSystemDirectory"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_NetworksInAdminDomainProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_DOMAIN,
-		String("CIM_NetworksInAdminDomain"),
+		_p.getDomain(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NETWORK,
-		String("CIM_NetworksInAdminDomain"),
+		_p.getNetwork(),
 		CIMKeyBinding::REFERENCE));
 
 

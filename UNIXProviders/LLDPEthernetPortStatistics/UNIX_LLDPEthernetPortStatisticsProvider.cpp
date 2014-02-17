@@ -78,7 +78,7 @@ Array<CIMKeyBinding> UNIX_LLDPEthernetPortStatisticsProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_LLDPEthernetPortStatistics"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

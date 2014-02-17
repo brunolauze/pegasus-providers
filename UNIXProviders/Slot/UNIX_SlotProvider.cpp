@@ -85,11 +85,11 @@ Array<CIMKeyBinding> UNIX_SlotProvider::constructKeyBindings(const UNIX_Slot& _p
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_TAG,
-		String("CIM_Slot"),
+		_p.getTag(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_Slot"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 
 

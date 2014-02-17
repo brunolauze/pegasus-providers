@@ -71,27 +71,27 @@ Array<CIMKeyBinding> UNIX_SwitchPortStatisticsProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_SwitchPortStatistics"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_SwitchPortStatistics"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_S_A_P_CREATION_CLASS_NAME,
-		String("CIM_SwitchPortStatistics"),
+		_p.getSAPCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_S_A_P_NAME,
-		String("CIM_SwitchPortStatistics"),
+		_p.getSAPName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_SwitchPortStatistics"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_SwitchPortStatistics"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

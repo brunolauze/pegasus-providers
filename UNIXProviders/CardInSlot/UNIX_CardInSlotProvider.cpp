@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_CardInSlotProvider::constructKeyBindings(const UNIX_Ca
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_CardInSlot"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_CardInSlot"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

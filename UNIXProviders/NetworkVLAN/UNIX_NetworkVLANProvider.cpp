@@ -74,7 +74,7 @@ Array<CIMKeyBinding> UNIX_NetworkVLANProvider::constructKeyBindings(const UNIX_N
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_NetworkVLAN"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

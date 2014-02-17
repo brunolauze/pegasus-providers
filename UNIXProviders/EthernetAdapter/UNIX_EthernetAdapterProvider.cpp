@@ -89,19 +89,19 @@ Array<CIMKeyBinding> UNIX_EthernetAdapterProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_EthernetAdapter"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_EthernetAdapter"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_EthernetAdapter"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEVICE_ID,
-		String("CIM_EthernetAdapter"),
+		_p.getDeviceID(),
 		CIMKeyBinding::STRING));
 
 

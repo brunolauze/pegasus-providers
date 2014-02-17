@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_RoutingProtocolDomainInASProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_RoutingProtocolDomainInAS"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_RoutingProtocolDomainInAS"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

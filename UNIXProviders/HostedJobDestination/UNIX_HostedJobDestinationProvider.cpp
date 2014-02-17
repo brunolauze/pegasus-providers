@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_HostedJobDestinationProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_HostedJobDestination"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_HostedJobDestination"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

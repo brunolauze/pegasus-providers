@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_FilterOfSecurityAssociationProvider::constructKeyBindi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_FilterOfSecurityAssociation"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_FilterOfSecurityAssociation"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

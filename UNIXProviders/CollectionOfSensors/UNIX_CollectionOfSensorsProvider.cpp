@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_CollectionOfSensorsProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_CollectionOfSensors"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_CollectionOfSensors"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

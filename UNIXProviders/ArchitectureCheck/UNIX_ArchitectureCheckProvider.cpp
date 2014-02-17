@@ -70,27 +70,27 @@ Array<CIMKeyBinding> UNIX_ArchitectureCheckProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_ArchitectureCheck"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VERSION,
-		String("CIM_ArchitectureCheck"),
+		_p.getVersion(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_STATE,
-		String("CIM_ArchitectureCheck"),
+		_p.getSoftwareElementState(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_ID,
-		String("CIM_ArchitectureCheck"),
+		_p.getSoftwareElementID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TARGET_OPERATING_SYSTEM,
-		String("CIM_ArchitectureCheck"),
+		_p.getTargetOperatingSystem(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CHECK_ID,
-		String("CIM_ArchitectureCheck"),
+		_p.getCheckID(),
 		CIMKeyBinding::STRING));
 
 

@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_ServiceAffectsElementProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_AFFECTED_ELEMENT,
-		String("CIM_ServiceAffectsElement"),
+		_p.getAffectedElement(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_AFFECTING_ELEMENT,
-		String("CIM_ServiceAffectsElement"),
+		_p.getAffectingElement(),
 		CIMKeyBinding::REFERENCE));
 
 

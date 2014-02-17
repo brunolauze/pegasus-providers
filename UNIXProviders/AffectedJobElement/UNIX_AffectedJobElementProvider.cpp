@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_AffectedJobElementProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_AFFECTED_ELEMENT,
-		String("CIM_AffectedJobElement"),
+		_p.getAffectedElement(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_AFFECTING_ELEMENT,
-		String("CIM_AffectedJobElement"),
+		_p.getAffectingElement(),
 		CIMKeyBinding::REFERENCE));
 
 

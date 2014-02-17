@@ -74,27 +74,27 @@ Array<CIMKeyBinding> UNIX_SoftwareElementVersionCheckProvider::constructKeyBindi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_SoftwareElementVersionCheck"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VERSION,
-		String("CIM_SoftwareElementVersionCheck"),
+		_p.getVersion(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_STATE,
-		String("CIM_SoftwareElementVersionCheck"),
+		_p.getSoftwareElementState(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_ID,
-		String("CIM_SoftwareElementVersionCheck"),
+		_p.getSoftwareElementID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TARGET_OPERATING_SYSTEM,
-		String("CIM_SoftwareElementVersionCheck"),
+		_p.getTargetOperatingSystem(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CHECK_ID,
-		String("CIM_SoftwareElementVersionCheck"),
+		_p.getCheckID(),
 		CIMKeyBinding::STRING));
 
 

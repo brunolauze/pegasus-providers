@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_LabelReaderStatDataProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_LabelReaderStatData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

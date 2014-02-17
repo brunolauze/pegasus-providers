@@ -71,27 +71,27 @@ Array<CIMKeyBinding> UNIX_VendorPolicyActionProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_VendorPolicyAction"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_VendorPolicyAction"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_RULE_CREATION_CLASS_NAME,
-		String("CIM_VendorPolicyAction"),
+		_p.getPolicyRuleCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_RULE_NAME,
-		String("CIM_VendorPolicyAction"),
+		_p.getPolicyRuleName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_VendorPolicyAction"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_ACTION_NAME,
-		String("CIM_VendorPolicyAction"),
+		_p.getPolicyActionName(),
 		CIMKeyBinding::STRING));
 
 

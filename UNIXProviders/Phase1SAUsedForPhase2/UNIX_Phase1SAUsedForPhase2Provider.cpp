@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_Phase1SAUsedForPhase2Provider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_Phase1SAUsedForPhase2"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_Phase1SAUsedForPhase2"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

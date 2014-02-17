@@ -70,27 +70,27 @@ Array<CIMKeyBinding> UNIX_DiskSpaceCheckProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_DiskSpaceCheck"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VERSION,
-		String("CIM_DiskSpaceCheck"),
+		_p.getVersion(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_STATE,
-		String("CIM_DiskSpaceCheck"),
+		_p.getSoftwareElementState(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_ID,
-		String("CIM_DiskSpaceCheck"),
+		_p.getSoftwareElementID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TARGET_OPERATING_SYSTEM,
-		String("CIM_DiskSpaceCheck"),
+		_p.getTargetOperatingSystem(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CHECK_ID,
-		String("CIM_DiskSpaceCheck"),
+		_p.getCheckID(),
 		CIMKeyBinding::STRING));
 
 

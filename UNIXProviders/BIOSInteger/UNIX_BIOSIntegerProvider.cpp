@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_BIOSIntegerProvider::constructKeyBindings(const UNIX_B
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_BIOSInteger"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

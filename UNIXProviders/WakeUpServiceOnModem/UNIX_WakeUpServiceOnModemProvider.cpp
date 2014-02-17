@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_WakeUpServiceOnModemProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_WakeUpServiceOnModem"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_WakeUpServiceOnModem"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

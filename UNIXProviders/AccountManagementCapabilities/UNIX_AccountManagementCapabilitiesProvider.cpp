@@ -75,7 +75,7 @@ Array<CIMKeyBinding> UNIX_AccountManagementCapabilitiesProvider::constructKeyBin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_AccountManagementCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

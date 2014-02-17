@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ReusablePolicyProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ReusablePolicy"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ReusablePolicy"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

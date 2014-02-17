@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_PeerGatewayForTunnelProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_PeerGatewayForTunnel"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_PeerGatewayForTunnel"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_FilteredBGPAttributesProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_FilteredBGPAttributes"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_FilteredBGPAttributes"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

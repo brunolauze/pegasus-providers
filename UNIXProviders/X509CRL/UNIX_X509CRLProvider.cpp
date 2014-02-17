@@ -74,7 +74,7 @@ Array<CIMKeyBinding> UNIX_X509CRLProvider::constructKeyBindings(const UNIX_X509C
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_X509CRL"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

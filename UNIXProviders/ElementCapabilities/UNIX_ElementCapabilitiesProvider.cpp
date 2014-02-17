@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_ElementCapabilitiesProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_MANAGED_ELEMENT,
-		String("CIM_ElementCapabilities"),
+		_p.getManagedElement(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CAPABILITIES,
-		String("CIM_ElementCapabilities"),
+		_p.getCapabilities(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_AssociatedRemainingExtentProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_AssociatedRemainingExtent"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_AssociatedRemainingExtent"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

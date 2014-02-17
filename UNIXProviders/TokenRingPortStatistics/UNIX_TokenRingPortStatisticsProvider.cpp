@@ -86,7 +86,7 @@ Array<CIMKeyBinding> UNIX_TokenRingPortStatisticsProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_TokenRingPortStatistics"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

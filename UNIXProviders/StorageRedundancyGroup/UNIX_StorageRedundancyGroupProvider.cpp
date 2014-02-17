@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_StorageRedundancyGroupProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_StorageRedundancyGroup"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_StorageRedundancyGroup"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

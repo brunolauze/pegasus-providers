@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_WakeUpServiceOnNetworkPortProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_WakeUpServiceOnNetworkPort"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_WakeUpServiceOnNetworkPort"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

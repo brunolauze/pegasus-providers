@@ -80,27 +80,27 @@ Array<CIMKeyBinding> UNIX_NamespaceProvider::constructKeyBindings(const UNIX_Nam
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_Namespace"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_Namespace"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_OBJECT_MANAGER_CREATION_CLASS_NAME,
-		String("CIM_Namespace"),
+		_p.getObjectManagerCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_OBJECT_MANAGER_NAME,
-		String("CIM_Namespace"),
+		_p.getObjectManagerName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_Namespace"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_Namespace"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

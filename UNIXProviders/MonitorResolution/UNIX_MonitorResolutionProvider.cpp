@@ -76,7 +76,7 @@ Array<CIMKeyBinding> UNIX_MonitorResolutionProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SETTING_ID,
-		String("CIM_MonitorResolution"),
+		_p.getSettingID(),
 		CIMKeyBinding::STRING));
 
 

@@ -73,19 +73,19 @@ Array<CIMKeyBinding> UNIX_PhysicalStatisticalInformationProvider::constructKeyBi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_PHYSICAL_CREATION_CLASS_NAME,
-		String("CIM_PhysicalStatisticalInformation"),
+		_p.getPhysicalCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TAG,
-		String("CIM_PhysicalStatisticalInformation"),
+		_p.getTag(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_PhysicalStatisticalInformation"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_PhysicalStatisticalInformation"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

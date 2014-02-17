@@ -77,7 +77,7 @@ Array<CIMKeyBinding> UNIX_ESPTransformProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_ESPTransform"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

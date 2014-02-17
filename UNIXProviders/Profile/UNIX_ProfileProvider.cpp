@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_ProfileProvider::constructKeyBindings(const UNIX_Profi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_Profile"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

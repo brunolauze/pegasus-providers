@@ -73,19 +73,19 @@ Array<CIMKeyBinding> UNIX_PolicyGroupProvider::constructKeyBindings(const UNIX_P
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_PolicyGroup"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_PolicyGroup"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_PolicyGroup"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_GROUP_NAME,
-		String("CIM_PolicyGroup"),
+		_p.getPolicyGroupName(),
 		CIMKeyBinding::STRING));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_IngressConditioningServiceOnEndpointProvider::construc
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_IngressConditioningServiceOnEndpoint"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_IngressConditioningServiceOnEndpoint"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

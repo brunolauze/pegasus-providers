@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_OperatingSystemCapabilitiesProvider::constructKeyBindi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_OperatingSystemCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

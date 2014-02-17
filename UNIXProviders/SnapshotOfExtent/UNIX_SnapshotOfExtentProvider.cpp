@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_SnapshotOfExtentProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_SnapshotOfExtent"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_SnapshotOfExtent"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

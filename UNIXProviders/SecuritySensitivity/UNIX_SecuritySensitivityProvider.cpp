@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_SecuritySensitivityProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_SecuritySensitivity"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

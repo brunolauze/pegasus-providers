@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_OSPFServiceConfigurationProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_OSPFServiceConfiguration"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_OSPFServiceConfiguration"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

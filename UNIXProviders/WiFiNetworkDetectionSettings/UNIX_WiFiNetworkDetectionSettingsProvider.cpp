@@ -74,7 +74,7 @@ Array<CIMKeyBinding> UNIX_WiFiNetworkDetectionSettingsProvider::constructKeyBind
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_WiFiNetworkDetectionSettings"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

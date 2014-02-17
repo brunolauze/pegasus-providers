@@ -79,7 +79,7 @@ Array<CIMKeyBinding> UNIX_USBRedirectionCapabilitiesProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_USBRedirectionCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

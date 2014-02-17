@@ -26,6 +26,6 @@ Global
 		{FB6D38B1-B280-4DC5-BFA8-4709837175EF} = {08605017-1DEB-456B-99D3-F1E090E5EDF9}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = UNIXProviders\UNIXProviders.cproj
+		StartupItem = tests\UNIXProviders.Tests\UNIXProviders.Tests.cproj
 	EndGlobalSection
 EndGlobal

@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_MemberPrincipalProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION,
-		String("CIM_MemberPrincipal"),
+		_p.getCollection(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MEMBER,
-		String("CIM_MemberPrincipal"),
+		_p.getMember(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -75,7 +75,7 @@ Array<CIMKeyBinding> UNIX_NextHopRouteProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_NextHopRoute"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -74,7 +74,7 @@ Array<CIMKeyBinding> UNIX_AccountSettingDataProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_AccountSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -78,27 +78,27 @@ Array<CIMKeyBinding> UNIX_UnixProcessProvider::constructKeyBindings(const UNIX_U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_CREATION_CLASS_NAME,
-		String("CIM_UnixProcess"),
+		_p.getCSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_NAME,
-		String("CIM_UnixProcess"),
+		_p.getCSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_OS_CREATION_CLASS_NAME,
-		String("CIM_UnixProcess"),
+		_p.getOSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_OS_NAME,
-		String("CIM_UnixProcess"),
+		_p.getOSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_UnixProcess"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_HANDLE,
-		String("CIM_UnixProcess"),
+		_p.getHandle(),
 		CIMKeyBinding::STRING));
 
 

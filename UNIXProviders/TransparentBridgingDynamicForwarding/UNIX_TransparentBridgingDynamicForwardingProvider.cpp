@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_TransparentBridgingDynamicForwardingProvider::construc
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_TransparentBridgingDynamicForwarding"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_TransparentBridgingDynamicForwarding"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

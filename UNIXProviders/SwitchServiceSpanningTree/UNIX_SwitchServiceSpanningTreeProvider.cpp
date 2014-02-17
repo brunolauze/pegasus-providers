@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SwitchServiceSpanningTreeProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_SwitchServiceSpanningTree"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_SwitchServiceSpanningTree"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

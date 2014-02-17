@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_InSegmentProvider::constructKeyBindings(const UNIX_InS
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION,
-		String("CIM_InSegment"),
+		_p.getCollection(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MEMBER,
-		String("CIM_InSegment"),
+		_p.getMember(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,23 +71,23 @@ Array<CIMKeyBinding> UNIX_AGPSoftwareFeatureProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_IDENTIFYING_NUMBER,
-		String("CIM_AGPSoftwareFeature"),
+		_p.getIdentifyingNumber(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PRODUCT_NAME,
-		String("CIM_AGPSoftwareFeature"),
+		_p.getProductName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VENDOR,
-		String("CIM_AGPSoftwareFeature"),
+		_p.getVendor(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VERSION,
-		String("CIM_AGPSoftwareFeature"),
+		_p.getVersion(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_AGPSoftwareFeature"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

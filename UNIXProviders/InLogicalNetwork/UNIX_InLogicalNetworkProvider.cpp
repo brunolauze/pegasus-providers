@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_InLogicalNetworkProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION,
-		String("CIM_InLogicalNetwork"),
+		_p.getCollection(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MEMBER,
-		String("CIM_InLogicalNetwork"),
+		_p.getMember(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_RemoteAccessAvailableToElementProvider::constructKeyBi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_RemoteAccessAvailableToElement"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_RemoteAccessAvailableToElement"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

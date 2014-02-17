@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_HostedBGPAttributesProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_HostedBGPAttributes"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_HostedBGPAttributes"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

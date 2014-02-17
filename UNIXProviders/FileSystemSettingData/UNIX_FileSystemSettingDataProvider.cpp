@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_FileSystemSettingDataProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_FileSystemSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

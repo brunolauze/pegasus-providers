@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_AFRelatedServicesProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_A_F_LOWER_DROP_PRECEDENCE,
-		String("CIM_AFRelatedServices"),
+		_p.getAFLowerDropPrecedence(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_A_F_HIGHER_DROP_PRECEDENCE,
-		String("CIM_AFRelatedServices"),
+		_p.getAFHigherDropPrecedence(),
 		CIMKeyBinding::REFERENCE));
 
 

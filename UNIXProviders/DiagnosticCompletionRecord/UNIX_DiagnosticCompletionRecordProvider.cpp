@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_DiagnosticCompletionRecordProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_DiagnosticCompletionRecord"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

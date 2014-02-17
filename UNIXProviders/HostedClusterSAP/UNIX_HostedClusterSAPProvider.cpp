@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_HostedClusterSAPProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_HostedClusterSAP"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_HostedClusterSAP"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

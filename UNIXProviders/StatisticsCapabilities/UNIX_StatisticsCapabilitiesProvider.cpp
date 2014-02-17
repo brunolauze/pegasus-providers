@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_StatisticsCapabilitiesProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_StatisticsCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

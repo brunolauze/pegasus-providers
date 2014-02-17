@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_FRUIncludesSoftwareFeatureProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_F_R_U,
-		String("CIM_FRUIncludesSoftwareFeature"),
+		_p.getFRU(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_COMPONENT,
-		String("CIM_FRUIncludesSoftwareFeature"),
+		_p.getComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_MemoryOnCardProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_MemoryOnCard"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_MemoryOnCard"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

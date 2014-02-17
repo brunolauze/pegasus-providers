@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_QueueHierarchyProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_QueueHierarchy"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_QueueHierarchy"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_BlockStatisticsManifestCollectionProvider::constructKe
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_BlockStatisticsManifestCollection"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

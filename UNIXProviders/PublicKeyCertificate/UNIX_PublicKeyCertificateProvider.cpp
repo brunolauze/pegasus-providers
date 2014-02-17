@@ -76,7 +76,7 @@ Array<CIMKeyBinding> UNIX_PublicKeyCertificateProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_PublicKeyCertificate"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

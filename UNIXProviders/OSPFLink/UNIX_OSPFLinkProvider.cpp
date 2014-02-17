@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_OSPFLinkProvider::constructKeyBindings(const UNIX_OSPF
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_OSPFLink"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

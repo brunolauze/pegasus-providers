@@ -111,7 +111,7 @@ Array<CIMKeyBinding> UNIX_FCPortStatisticsProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_FCPortStatistics"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

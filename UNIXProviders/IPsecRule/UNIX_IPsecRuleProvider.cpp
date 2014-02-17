@@ -69,19 +69,19 @@ Array<CIMKeyBinding> UNIX_IPsecRuleProvider::constructKeyBindings(const UNIX_IPs
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_IPsecRule"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_IPsecRule"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_IPsecRule"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_RULE_NAME,
-		String("CIM_IPsecRule"),
+		_p.getPolicyRuleName(),
 		CIMKeyBinding::STRING));
 
 

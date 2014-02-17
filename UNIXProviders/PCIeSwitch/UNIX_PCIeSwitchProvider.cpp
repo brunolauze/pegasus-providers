@@ -71,19 +71,19 @@ Array<CIMKeyBinding> UNIX_PCIeSwitchProvider::constructKeyBindings(const UNIX_PC
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_PCIeSwitch"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_PCIeSwitch"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_PCIeSwitch"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEVICE_ID,
-		String("CIM_PCIeSwitch"),
+		_p.getDeviceID(),
 		CIMKeyBinding::STRING));
 
 

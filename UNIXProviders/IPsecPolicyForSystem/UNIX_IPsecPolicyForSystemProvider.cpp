@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_IPsecPolicyForSystemProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_IPsecPolicyForSystem"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_IPsecPolicyForSystem"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_LocalizationCapabilitiesProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_LocalizationCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

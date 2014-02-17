@@ -75,27 +75,27 @@ Array<CIMKeyBinding> UNIX_UnixDeviceFileProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_CREATION_CLASS_NAME,
-		String("CIM_UnixDeviceFile"),
+		_p.getCSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_NAME,
-		String("CIM_UnixDeviceFile"),
+		_p.getCSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_FS_CREATION_CLASS_NAME,
-		String("CIM_UnixDeviceFile"),
+		_p.getFSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_FS_NAME,
-		String("CIM_UnixDeviceFile"),
+		_p.getFSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_UnixDeviceFile"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_UnixDeviceFile"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

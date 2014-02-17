@@ -82,7 +82,7 @@ Array<CIMKeyBinding> UNIX_StorageAllocationSettingDataProvider::constructKeyBind
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_StorageAllocationSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

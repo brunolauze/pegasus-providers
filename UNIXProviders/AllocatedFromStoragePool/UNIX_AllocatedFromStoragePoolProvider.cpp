@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_AllocatedFromStoragePoolProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_AllocatedFromStoragePool"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_AllocatedFromStoragePool"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

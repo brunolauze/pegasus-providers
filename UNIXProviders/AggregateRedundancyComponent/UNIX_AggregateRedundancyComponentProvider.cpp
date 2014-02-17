@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_AggregateRedundancyComponentProvider::constructKeyBind
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_AggregateRedundancyComponent"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_AggregateRedundancyComponent"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

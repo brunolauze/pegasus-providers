@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_FRUPhysicalElementsProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_F_R_U,
-		String("CIM_FRUPhysicalElements"),
+		_p.getFRU(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_COMPONENT,
-		String("CIM_FRUPhysicalElements"),
+		_p.getComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

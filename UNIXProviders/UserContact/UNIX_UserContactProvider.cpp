@@ -80,11 +80,11 @@ Array<CIMKeyBinding> UNIX_UserContactProvider::constructKeyBindings(const UNIX_U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_UserContact"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_UserContact"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

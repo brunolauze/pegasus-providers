@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_LibraryExchangeProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_LibraryExchange"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_LibraryExchange"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

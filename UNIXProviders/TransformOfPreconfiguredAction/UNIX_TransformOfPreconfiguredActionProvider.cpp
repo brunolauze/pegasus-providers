@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_TransformOfPreconfiguredActionProvider::constructKeyBi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_TransformOfPreconfiguredAction"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_TransformOfPreconfiguredAction"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

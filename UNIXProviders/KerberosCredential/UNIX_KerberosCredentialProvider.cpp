@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_KerberosCredentialProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_KerberosCredential"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

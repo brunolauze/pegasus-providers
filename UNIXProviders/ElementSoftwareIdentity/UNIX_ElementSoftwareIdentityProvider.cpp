@@ -74,11 +74,11 @@ Array<CIMKeyBinding> UNIX_ElementSoftwareIdentityProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ElementSoftwareIdentity"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ElementSoftwareIdentity"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

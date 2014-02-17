@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_QueueForwardsToPrintSAPProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_QueueForwardsToPrintSAP"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_QueueForwardsToPrintSAP"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

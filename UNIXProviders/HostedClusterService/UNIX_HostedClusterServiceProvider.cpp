@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_HostedClusterServiceProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_HostedClusterService"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_HostedClusterService"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

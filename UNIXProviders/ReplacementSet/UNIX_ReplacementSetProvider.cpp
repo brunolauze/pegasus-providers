@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_ReplacementSetProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_ReplacementSet"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

@@ -80,7 +80,7 @@ Array<CIMKeyBinding> UNIX_SCSITargetPortGroupProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_SCSITargetPortGroup"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

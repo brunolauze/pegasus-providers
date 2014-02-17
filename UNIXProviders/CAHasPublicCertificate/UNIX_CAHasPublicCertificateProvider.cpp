@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_CAHasPublicCertificateProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_CAHasPublicCertificate"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_CAHasPublicCertificate"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

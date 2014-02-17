@@ -75,7 +75,7 @@ Array<CIMKeyBinding> UNIX_CertificateManagementCapabilitiesProvider::constructKe
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_CertificateManagementCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

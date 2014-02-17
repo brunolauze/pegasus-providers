@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SystemSettingContextProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CONTEXT,
-		String("CIM_SystemSettingContext"),
+		_p.getContext(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SETTING,
-		String("CIM_SystemSettingContext"),
+		_p.getSetting(),
 		CIMKeyBinding::REFERENCE));
 
 

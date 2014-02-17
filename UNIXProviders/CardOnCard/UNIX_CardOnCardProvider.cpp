@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_CardOnCardProvider::constructKeyBindings(const UNIX_Ca
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_CardOnCard"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_CardOnCard"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

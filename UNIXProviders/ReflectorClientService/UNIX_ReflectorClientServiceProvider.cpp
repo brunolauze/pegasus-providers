@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ReflectorClientServiceProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ReflectorClientService"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ReflectorClientService"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_HostedAuthenticationRequirementProvider::constructKeyB
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_HostedAuthenticationRequirement"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_HostedAuthenticationRequirement"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

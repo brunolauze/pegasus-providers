@@ -75,7 +75,7 @@ Array<CIMKeyBinding> UNIX_BIOSPasswordProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_BIOSPassword"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

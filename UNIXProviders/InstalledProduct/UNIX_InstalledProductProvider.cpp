@@ -76,27 +76,27 @@ Array<CIMKeyBinding> UNIX_InstalledProductProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_PRODUCT_IDENTIFYING_NUMBER,
-		String("CIM_InstalledProduct"),
+		_p.getProductIdentifyingNumber(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PRODUCT_NAME,
-		String("CIM_InstalledProduct"),
+		_p.getProductName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PRODUCT_VENDOR,
-		String("CIM_InstalledProduct"),
+		_p.getProductVendor(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PRODUCT_VERSION,
-		String("CIM_InstalledProduct"),
+		_p.getProductVersion(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_ID,
-		String("CIM_InstalledProduct"),
+		_p.getSystemID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION_ID,
-		String("CIM_InstalledProduct"),
+		_p.getCollectionID(),
 		CIMKeyBinding::STRING));
 
 

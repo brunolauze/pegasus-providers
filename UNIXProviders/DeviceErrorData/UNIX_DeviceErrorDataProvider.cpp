@@ -76,7 +76,7 @@ Array<CIMKeyBinding> UNIX_DeviceErrorDataProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_DeviceErrorData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

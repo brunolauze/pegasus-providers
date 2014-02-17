@@ -74,11 +74,11 @@ Array<CIMKeyBinding> UNIX_ClusterProvider::constructKeyBindings(const UNIX_Clust
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_Cluster"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_Cluster"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

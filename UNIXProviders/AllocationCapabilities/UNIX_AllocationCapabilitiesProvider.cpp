@@ -76,7 +76,7 @@ Array<CIMKeyBinding> UNIX_AllocationCapabilitiesProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_AllocationCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

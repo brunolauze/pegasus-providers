@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_InstalledOSProvider::constructKeyBindings(const UNIX_I
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_InstalledOS"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_InstalledOS"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

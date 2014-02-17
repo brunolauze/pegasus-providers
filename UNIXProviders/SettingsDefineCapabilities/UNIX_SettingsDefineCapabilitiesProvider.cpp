@@ -74,11 +74,11 @@ Array<CIMKeyBinding> UNIX_SettingsDefineCapabilitiesProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_SettingsDefineCapabilities"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_SettingsDefineCapabilities"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

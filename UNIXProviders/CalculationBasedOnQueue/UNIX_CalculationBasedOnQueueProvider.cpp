@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_CalculationBasedOnQueueProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_CalculationBasedOnQueue"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_CalculationBasedOnQueue"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

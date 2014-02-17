@@ -80,35 +80,35 @@ Array<CIMKeyBinding> UNIX_SystemIdentificationProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_SystemIdentification"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_SystemIdentification"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_OBJECT_MANAGER_CREATION_CLASS_NAME,
-		String("CIM_SystemIdentification"),
+		_p.getObjectManagerCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_OBJECT_MANAGER_NAME,
-		String("CIM_SystemIdentification"),
+		_p.getObjectManagerName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAMESPACE_CREATION_CLASS_NAME,
-		String("CIM_SystemIdentification"),
+		_p.getNamespaceCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAMESPACE_NAME,
-		String("CIM_SystemIdentification"),
+		_p.getNamespaceName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_SystemIdentification"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_SystemIdentification"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

@@ -71,19 +71,19 @@ Array<CIMKeyBinding> UNIX_SCSIProtocolControllerProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_SCSIProtocolController"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_SCSIProtocolController"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_SCSIProtocolController"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEVICE_ID,
-		String("CIM_SCSIProtocolController"),
+		_p.getDeviceID(),
 		CIMKeyBinding::STRING));
 
 

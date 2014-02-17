@@ -83,7 +83,7 @@ Array<CIMKeyBinding> UNIX_SCSIMultipathConfigurationCapabilitiesProvider::constr
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_SCSIMultipathConfigurationCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

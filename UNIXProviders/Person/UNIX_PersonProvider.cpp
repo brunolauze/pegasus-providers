@@ -84,11 +84,11 @@ Array<CIMKeyBinding> UNIX_PersonProvider::constructKeyBindings(const UNIX_Person
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_Person"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_Person"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

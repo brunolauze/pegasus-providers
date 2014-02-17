@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_PolicySetValidityPeriodProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_PolicySetValidityPeriod"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_PolicySetValidityPeriod"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

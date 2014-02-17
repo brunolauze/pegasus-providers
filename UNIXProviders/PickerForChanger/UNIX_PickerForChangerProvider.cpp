@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_PickerForChangerProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_PickerForChanger"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_PickerForChanger"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

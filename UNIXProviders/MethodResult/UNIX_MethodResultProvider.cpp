@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_MethodResultProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_MethodResult"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

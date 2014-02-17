@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ReferencedProfileProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ReferencedProfile"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ReferencedProfile"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

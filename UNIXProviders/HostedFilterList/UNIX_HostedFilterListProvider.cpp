@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_HostedFilterListProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_HostedFilterList"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_HostedFilterList"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

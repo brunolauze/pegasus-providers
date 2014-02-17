@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_ProcessorAllocationSettingDataProvider::constructKeyBi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_ProcessorAllocationSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

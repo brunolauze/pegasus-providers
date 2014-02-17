@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_HostedBootServiceProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_HostedBootService"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_HostedBootService"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

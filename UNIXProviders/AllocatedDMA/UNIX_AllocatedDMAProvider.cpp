@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_AllocatedDMAProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_AllocatedDMA"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_AllocatedDMA"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

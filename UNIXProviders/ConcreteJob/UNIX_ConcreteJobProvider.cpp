@@ -74,7 +74,7 @@ Array<CIMKeyBinding> UNIX_ConcreteJobProvider::constructKeyBindings(const UNIX_C
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_ConcreteJob"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

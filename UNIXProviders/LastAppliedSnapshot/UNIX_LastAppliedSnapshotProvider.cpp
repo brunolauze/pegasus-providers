@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_LastAppliedSnapshotProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_LastAppliedSnapshot"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_LastAppliedSnapshot"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

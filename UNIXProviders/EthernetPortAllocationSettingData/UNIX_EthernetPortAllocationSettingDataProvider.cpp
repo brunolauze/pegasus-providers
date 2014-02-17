@@ -91,7 +91,7 @@ Array<CIMKeyBinding> UNIX_EthernetPortAllocationSettingDataProvider::constructKe
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_EthernetPortAllocationSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

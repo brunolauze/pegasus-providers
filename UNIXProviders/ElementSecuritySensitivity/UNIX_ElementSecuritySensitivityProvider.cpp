@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ElementSecuritySensitivityProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SECURITY_LEVEL,
-		String("CIM_ElementSecuritySensitivity"),
+		_p.getSecurityLevel(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MANAGED_ELEMENT,
-		String("CIM_ElementSecuritySensitivity"),
+		_p.getManagedElement(),
 		CIMKeyBinding::REFERENCE));
 
 

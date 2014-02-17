@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ReflectorNonClientServiceProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ReflectorNonClientService"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ReflectorNonClientService"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

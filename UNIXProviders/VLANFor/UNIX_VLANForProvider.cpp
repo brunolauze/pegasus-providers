@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_VLANForProvider::constructKeyBindings(const UNIX_VLANF
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_VLANFor"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_VLANFor"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_ClassifierFilterSetProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ClassifierFilterSet"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ClassifierFilterSet"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

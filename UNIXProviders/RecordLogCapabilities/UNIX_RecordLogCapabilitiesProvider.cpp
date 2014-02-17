@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_RecordLogCapabilitiesProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_RecordLogCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

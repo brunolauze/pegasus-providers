@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ComputerSystemIRQProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_ComputerSystemIRQ"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_ComputerSystemIRQ"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

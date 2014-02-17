@@ -77,27 +77,27 @@ Array<CIMKeyBinding> UNIX_StaticForwardingEntryProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_StaticForwardingEntry"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_StaticForwardingEntry"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SERVICE_CREATION_CLASS_NAME,
-		String("CIM_StaticForwardingEntry"),
+		_p.getServiceCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SERVICE_NAME,
-		String("CIM_StaticForwardingEntry"),
+		_p.getServiceName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_StaticForwardingEntry"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_M_A_C_ADDRESS,
-		String("CIM_StaticForwardingEntry"),
+		_p.getMACAddress(),
 		CIMKeyBinding::STRING));
 
 

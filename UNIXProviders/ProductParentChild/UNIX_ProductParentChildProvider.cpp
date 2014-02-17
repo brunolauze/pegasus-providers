@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ProductParentChildProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_PARENT,
-		String("CIM_ProductParentChild"),
+		_p.getParent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CHILD,
-		String("CIM_ProductParentChild"),
+		_p.getChild(),
 		CIMKeyBinding::REFERENCE));
 
 

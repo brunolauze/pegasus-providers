@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ActionSequenceProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NEXT,
-		String("CIM_ActionSequence"),
+		_p.getNext(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PRIOR,
-		String("CIM_ActionSequence"),
+		_p.getPrior(),
 		CIMKeyBinding::REFERENCE));
 
 

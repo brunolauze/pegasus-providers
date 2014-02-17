@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_MetricDefinitionProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ID,
-		String("CIM_MetricDefinition"),
+		_p.getId(),
 		CIMKeyBinding::STRING));
 
 

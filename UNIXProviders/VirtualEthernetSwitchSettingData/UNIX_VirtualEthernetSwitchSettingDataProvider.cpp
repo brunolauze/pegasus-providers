@@ -74,7 +74,7 @@ Array<CIMKeyBinding> UNIX_VirtualEthernetSwitchSettingDataProvider::constructKey
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_VirtualEthernetSwitchSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

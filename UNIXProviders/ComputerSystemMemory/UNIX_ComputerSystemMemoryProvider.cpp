@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ComputerSystemMemoryProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_ComputerSystemMemory"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_ComputerSystemMemory"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

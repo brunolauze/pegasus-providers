@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_ConnectivityMembershipSettingDataProvider::constructKe
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_ConnectivityMembershipSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

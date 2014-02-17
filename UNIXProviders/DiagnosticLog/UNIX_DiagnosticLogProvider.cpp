@@ -69,7 +69,7 @@ Array<CIMKeyBinding> UNIX_DiagnosticLogProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_DiagnosticLog"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

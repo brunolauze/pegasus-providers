@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_PortActiveConnectionProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_PortActiveConnection"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_PortActiveConnection"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

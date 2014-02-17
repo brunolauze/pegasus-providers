@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_EndpointInAreaProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_EndpointInArea"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_EndpointInArea"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

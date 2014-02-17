@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_ContainedTransformProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_ContainedTransform"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_ContainedTransform"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

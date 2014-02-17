@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_RelatedStatisticsProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_STATS,
-		String("CIM_RelatedStatistics"),
+		_p.getStats(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_RELATED_STATS,
-		String("CIM_RelatedStatistics"),
+		_p.getRelatedStats(),
 		CIMKeyBinding::REFERENCE));
 
 

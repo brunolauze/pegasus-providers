@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_PrioritySchedulingElementProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_PrioritySchedulingElement"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

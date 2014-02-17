@@ -74,11 +74,11 @@ Array<CIMKeyBinding> UNIX_ApplicationSystemProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("UNIX_ApplicationSystem"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("UNIX_ApplicationSystem"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

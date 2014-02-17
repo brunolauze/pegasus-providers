@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_AccessLabelReaderProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_AccessLabelReader"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_AccessLabelReader"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

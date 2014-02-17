@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_DeviceServicesLocationProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_DeviceServicesLocation"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_DeviceServicesLocation"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

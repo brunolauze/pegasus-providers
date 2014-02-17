@@ -95,23 +95,23 @@ Array<CIMKeyBinding> UNIX_PrintJobProvider::constructKeyBindings(const UNIX_Prin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_PrintJob"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_PrintJob"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_QUEUE_CREATION_CLASS_NAME,
-		String("CIM_PrintJob"),
+		_p.getQueueCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_QUEUE_NAME,
-		String("CIM_PrintJob"),
+		_p.getQueueName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_JOB_ID,
-		String("CIM_PrintJob"),
+		_p.getJobID(),
 		CIMKeyBinding::STRING));
 
 

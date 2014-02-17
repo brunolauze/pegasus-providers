@@ -88,11 +88,11 @@ Array<CIMKeyBinding> UNIX_MessageLogProvider::constructKeyBindings(const UNIX_Me
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_MessageLog"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_MessageLog"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

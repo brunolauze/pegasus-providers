@@ -79,19 +79,19 @@ Array<CIMKeyBinding> UNIX_ListenerDestinationWSManagementProvider::constructKeyB
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_ListenerDestinationWSManagement"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_ListenerDestinationWSManagement"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_ListenerDestinationWSManagement"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_ListenerDestinationWSManagement"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

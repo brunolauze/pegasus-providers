@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_TrustHierarchyProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_TrustHierarchy"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_TrustHierarchy"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

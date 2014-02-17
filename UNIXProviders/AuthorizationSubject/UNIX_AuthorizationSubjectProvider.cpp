@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_AuthorizationSubjectProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_AuthorizationSubject"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_AuthorizationSubject"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

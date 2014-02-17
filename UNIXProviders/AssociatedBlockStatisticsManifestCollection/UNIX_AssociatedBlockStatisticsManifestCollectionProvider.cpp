@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_AssociatedBlockStatisticsManifestCollectionProvider::c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_STATISTICS,
-		String("CIM_AssociatedBlockStatisticsManifestCollection"),
+		_p.getStatistics(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MANIFEST_COLLECTION,
-		String("CIM_AssociatedBlockStatisticsManifestCollection"),
+		_p.getManifestCollection(),
 		CIMKeyBinding::REFERENCE));
 
 

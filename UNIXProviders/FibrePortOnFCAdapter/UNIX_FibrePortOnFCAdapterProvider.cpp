@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_FibrePortOnFCAdapterProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_FibrePortOnFCAdapter"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_FibrePortOnFCAdapter"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

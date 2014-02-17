@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_CommonDatabaseStatisticsProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_CommonDatabaseStatistics"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

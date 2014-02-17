@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ErrorCountersForDeviceProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_STATS,
-		String("CIM_ErrorCountersForDevice"),
+		_p.getStats(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_ELEMENT,
-		String("CIM_ErrorCountersForDevice"),
+		_p.getElement(),
 		CIMKeyBinding::REFERENCE));
 
 

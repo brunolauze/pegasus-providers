@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ClusterServiceAccessBySAPProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ClusterServiceAccessBySAP"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ClusterServiceAccessBySAP"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

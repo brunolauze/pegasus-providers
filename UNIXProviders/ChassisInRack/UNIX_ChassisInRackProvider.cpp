@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_ChassisInRackProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_ChassisInRack"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_ChassisInRack"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

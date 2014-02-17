@@ -84,7 +84,7 @@ Array<CIMKeyBinding> UNIX_iSCSILoginStatisticsProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_iSCSILoginStatistics"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_AssociatedSupplyCurrentSensorProvider::constructKeyBin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_AssociatedSupplyCurrentSensor"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_AssociatedSupplyCurrentSensor"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

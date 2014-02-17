@@ -80,7 +80,7 @@ Array<CIMKeyBinding> UNIX_DiagnosticServiceCapabilitiesProvider::constructKeyBin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_DiagnosticServiceCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -86,11 +86,11 @@ Array<CIMKeyBinding> UNIX_AbstractIndicationSubscriptionProvider::constructKeyBi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_FILTER,
-		String("CIM_AbstractIndicationSubscription"),
+		_p.getFilter(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_HANDLER,
-		String("CIM_AbstractIndicationSubscription"),
+		_p.getHandler(),
 		CIMKeyBinding::REFERENCE));
 
 

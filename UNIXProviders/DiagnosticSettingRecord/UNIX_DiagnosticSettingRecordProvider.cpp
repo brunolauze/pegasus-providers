@@ -81,7 +81,7 @@ Array<CIMKeyBinding> UNIX_DiagnosticSettingRecordProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_DiagnosticSettingRecord"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

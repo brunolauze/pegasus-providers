@@ -77,23 +77,23 @@ Array<CIMKeyBinding> UNIX_SharedSecretProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_SharedSecret"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_SharedSecret"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SERVICE_CREATION_CLASS_NAME,
-		String("CIM_SharedSecret"),
+		_p.getServiceCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SERVICE_NAME,
-		String("CIM_SharedSecret"),
+		_p.getServiceName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_REMOTE_ID,
-		String("CIM_SharedSecret"),
+		_p.getRemoteID(),
 		CIMKeyBinding::STRING));
 
 

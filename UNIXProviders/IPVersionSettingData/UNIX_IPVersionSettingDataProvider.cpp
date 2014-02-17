@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_IPVersionSettingDataProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_IPVersionSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

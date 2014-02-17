@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_BIOSLoadedInNVProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_BIOSLoadedInNV"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_BIOSLoadedInNV"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -69,11 +69,11 @@ Array<CIMKeyBinding> UNIX_RoutingProtocolDomainProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_RoutingProtocolDomain"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_RoutingProtocolDomain"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

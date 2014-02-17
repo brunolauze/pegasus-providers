@@ -90,7 +90,7 @@ Array<CIMKeyBinding> UNIX_PrintInputTrayProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_PrintInputTray"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

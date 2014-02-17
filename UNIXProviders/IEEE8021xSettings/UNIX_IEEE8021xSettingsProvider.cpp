@@ -79,7 +79,7 @@ Array<CIMKeyBinding> UNIX_IEEE8021xSettingsProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_IEEE8021xSettings"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

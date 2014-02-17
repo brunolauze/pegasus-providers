@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_StorageClientSettingDataProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_StorageClientSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

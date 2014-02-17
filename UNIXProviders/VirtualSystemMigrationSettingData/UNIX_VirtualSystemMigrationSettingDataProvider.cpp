@@ -75,7 +75,7 @@ Array<CIMKeyBinding> UNIX_VirtualSystemMigrationSettingDataProvider::constructKe
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_VirtualSystemMigrationSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_AggregatePSExtentBasedOnAggregatePExtentProvider::cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_AggregatePSExtentBasedOnAggregatePExtent"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_AggregatePSExtentBasedOnAggregatePExtent"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

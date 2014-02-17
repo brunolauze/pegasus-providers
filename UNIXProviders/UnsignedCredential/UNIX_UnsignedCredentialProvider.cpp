@@ -75,7 +75,7 @@ Array<CIMKeyBinding> UNIX_UnsignedCredentialProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_UnsignedCredential"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

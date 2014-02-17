@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_PSExtentBasedOnPExtentProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_PSExtentBasedOnPExtent"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_PSExtentBasedOnPExtent"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -74,11 +74,11 @@ Array<CIMKeyBinding> UNIX_ComputerSystemProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_UnitaryComputerSystem"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_UnitaryComputerSystem"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_UnixProcessStatisticsProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_STATS,
-		String("CIM_UnixProcessStatistics"),
+		_p.getStats(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_ELEMENT,
-		String("CIM_UnixProcessStatistics"),
+		_p.getElement(),
 		CIMKeyBinding::REFERENCE));
 
 

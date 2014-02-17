@@ -74,11 +74,11 @@ Array<CIMKeyBinding> UNIX_BGPAttributesForRouteProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_BGPAttributesForRoute"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_BGPAttributesForRoute"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_LogicalDiskBasedOnVolumeProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_LogicalDiskBasedOnVolume"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_LogicalDiskBasedOnVolume"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

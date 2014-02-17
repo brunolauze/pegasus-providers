@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SAPAvailableForElementProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_AVAILABLE_S_A_P,
-		String("CIM_SAPAvailableForElement"),
+		_p.getAvailableSAP(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MANAGED_ELEMENT,
-		String("CIM_SAPAvailableForElement"),
+		_p.getManagedElement(),
 		CIMKeyBinding::REFERENCE));
 
 

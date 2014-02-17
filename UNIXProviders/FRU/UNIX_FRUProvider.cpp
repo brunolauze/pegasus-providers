@@ -76,15 +76,15 @@ Array<CIMKeyBinding> UNIX_FRUProvider::constructKeyBindings(const UNIX_FRU& _p)
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_F_R_U_NUMBER,
-		String("CIM_FRU"),
+		_p.getFRUNumber(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_IDENTIFYING_NUMBER,
-		String("CIM_FRU"),
+		_p.getIdentifyingNumber(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VENDOR,
-		String("CIM_FRU"),
+		_p.getVendor(),
 		CIMKeyBinding::STRING));
 
 

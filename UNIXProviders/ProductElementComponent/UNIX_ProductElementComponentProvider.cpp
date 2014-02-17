@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ProductElementComponentProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_ProductElementComponent"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_ProductElementComponent"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

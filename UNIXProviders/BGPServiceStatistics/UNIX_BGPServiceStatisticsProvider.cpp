@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_BGPServiceStatisticsProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_STATS,
-		String("CIM_BGPServiceStatistics"),
+		_p.getStats(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_ELEMENT,
-		String("CIM_BGPServiceStatistics"),
+		_p.getElement(),
 		CIMKeyBinding::REFERENCE));
 
 

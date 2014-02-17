@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_DatabaseResourceStatisticsProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_DatabaseResourceStatistics"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

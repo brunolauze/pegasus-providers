@@ -77,7 +77,7 @@ Array<CIMKeyBinding> UNIX_StorageSettingWithHintsProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_StorageSettingWithHints"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

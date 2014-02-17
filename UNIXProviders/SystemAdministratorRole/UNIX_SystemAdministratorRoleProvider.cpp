@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SystemAdministratorRoleProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_SystemAdministratorRole"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_SystemAdministratorRole"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

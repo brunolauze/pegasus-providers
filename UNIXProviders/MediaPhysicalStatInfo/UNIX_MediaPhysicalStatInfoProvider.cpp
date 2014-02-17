@@ -78,19 +78,19 @@ Array<CIMKeyBinding> UNIX_MediaPhysicalStatInfoProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_PHYSICAL_CREATION_CLASS_NAME,
-		String("CIM_MediaPhysicalStatInfo"),
+		_p.getPhysicalCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TAG,
-		String("CIM_MediaPhysicalStatInfo"),
+		_p.getTag(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_MediaPhysicalStatInfo"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_MediaPhysicalStatInfo"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

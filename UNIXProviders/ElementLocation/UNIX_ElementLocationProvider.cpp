@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ElementLocationProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ELEMENT,
-		String("CIM_ElementLocation"),
+		_p.getElement(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PHYSICAL_LOCATION,
-		String("CIM_ElementLocation"),
+		_p.getPhysicalLocation(),
 		CIMKeyBinding::REFERENCE));
 
 

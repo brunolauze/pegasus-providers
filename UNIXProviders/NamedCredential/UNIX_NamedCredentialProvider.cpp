@@ -75,7 +75,7 @@ Array<CIMKeyBinding> UNIX_NamedCredentialProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_NamedCredential"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

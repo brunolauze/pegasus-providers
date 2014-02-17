@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_WiFiPortCapabilitiesProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_WiFiPortCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

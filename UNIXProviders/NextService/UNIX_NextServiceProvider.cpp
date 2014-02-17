@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_NextServiceProvider::constructKeyBindings(const UNIX_N
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_PRECEDING_SERVICE,
-		String("CIM_NextService"),
+		_p.getPrecedingService(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_FOLLOWING_SERVICE,
-		String("CIM_NextService"),
+		_p.getFollowingService(),
 		CIMKeyBinding::REFERENCE));
 
 

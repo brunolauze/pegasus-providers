@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_KeystoreProvider::constructKeyBindings(const UNIX_Keys
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_Keystore"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -74,11 +74,11 @@ Array<CIMKeyBinding> UNIX_ActiveConnectionProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ActiveConnection"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ActiveConnection"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -78,7 +78,7 @@ Array<CIMKeyBinding> UNIX_ZoneCapabilitiesProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_ZoneCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -69,7 +69,7 @@ Array<CIMKeyBinding> UNIX_AuthorizedPrivilegeProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_AuthorizedPrivilege"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

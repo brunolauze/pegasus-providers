@@ -74,11 +74,11 @@ Array<CIMKeyBinding> UNIX_SerialInterfaceProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_SerialInterface"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_SerialInterface"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

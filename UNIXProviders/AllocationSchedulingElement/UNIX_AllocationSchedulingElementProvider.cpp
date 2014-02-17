@@ -74,7 +74,7 @@ Array<CIMKeyBinding> UNIX_AllocationSchedulingElementProvider::constructKeyBindi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_AllocationSchedulingElement"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

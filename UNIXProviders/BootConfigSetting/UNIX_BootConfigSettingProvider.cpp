@@ -69,7 +69,7 @@ Array<CIMKeyBinding> UNIX_BootConfigSettingProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_BootConfigSetting"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

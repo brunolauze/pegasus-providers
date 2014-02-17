@@ -79,23 +79,23 @@ Array<CIMKeyBinding> UNIX_DeviceErrorCountsProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_DeviceErrorCounts"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_DeviceErrorCounts"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEVICE_CREATION_CLASS_NAME,
-		String("CIM_DeviceErrorCounts"),
+		_p.getDeviceCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEVICE_ID,
-		String("CIM_DeviceErrorCounts"),
+		_p.getDeviceID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_DeviceErrorCounts"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

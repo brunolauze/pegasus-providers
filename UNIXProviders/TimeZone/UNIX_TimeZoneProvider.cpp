@@ -85,11 +85,11 @@ Array<CIMKeyBinding> UNIX_TimeZoneProvider::constructKeyBindings(const UNIX_Time
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_TIME_ZONE_ID,
-		String("CIM_TimeZone"),
+		_p.getTimeZoneID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TIME_ZONE_START_DATE,
-		String("CIM_TimeZone"),
+		_p.getTimeZoneStartDate(),
 		CIMKeyBinding::STRING));
 
 

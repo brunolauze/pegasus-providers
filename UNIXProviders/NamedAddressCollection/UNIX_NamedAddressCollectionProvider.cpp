@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_NamedAddressCollectionProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_NamedAddressCollection"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

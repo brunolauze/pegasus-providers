@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SAPStatisticsProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_STATS,
-		String("CIM_SAPStatistics"),
+		_p.getStats(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_ELEMENT,
-		String("CIM_SAPStatistics"),
+		_p.getElement(),
 		CIMKeyBinding::REFERENCE));
 
 

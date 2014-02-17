@@ -132,11 +132,11 @@ Array<CIMKeyBinding> UNIX_OtherPersonInformationProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_OtherPersonInformation"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_OtherPersonInformation"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

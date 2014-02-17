@@ -77,7 +77,7 @@ Array<CIMKeyBinding> UNIX_IndicationServiceCapabilitiesProvider::constructKeyBin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_IndicationServiceCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

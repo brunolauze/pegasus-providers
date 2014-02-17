@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_PlatformWatchdogServiceCapabilitiesProvider::construct
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_PlatformWatchdogServiceCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

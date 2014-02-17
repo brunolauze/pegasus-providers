@@ -72,19 +72,19 @@ Array<CIMKeyBinding> UNIX_OpaqueManagementDataServiceProvider::constructKeyBindi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_OpaqueManagementDataService"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_OpaqueManagementDataService"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_OpaqueManagementDataService"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_OpaqueManagementDataService"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

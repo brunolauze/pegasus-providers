@@ -100,11 +100,11 @@ Array<CIMKeyBinding> UNIX_OtherOrganizationInformationProvider::constructKeyBind
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_OtherOrganizationInformation"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_OtherOrganizationInformation"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

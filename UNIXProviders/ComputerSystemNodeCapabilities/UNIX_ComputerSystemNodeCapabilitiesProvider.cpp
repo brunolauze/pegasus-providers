@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_ComputerSystemNodeCapabilitiesProvider::constructKeyBi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_ComputerSystemNodeCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

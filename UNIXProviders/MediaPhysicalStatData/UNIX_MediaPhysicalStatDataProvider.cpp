@@ -78,7 +78,7 @@ Array<CIMKeyBinding> UNIX_MediaPhysicalStatDataProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_MediaPhysicalStatData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

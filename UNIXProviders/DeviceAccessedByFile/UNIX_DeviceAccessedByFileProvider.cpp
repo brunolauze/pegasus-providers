@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_DeviceAccessedByFileProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_DeviceAccessedByFile"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_DeviceAccessedByFile"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

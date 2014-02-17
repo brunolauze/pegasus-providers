@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_ExportProvider::constructKeyBindings(const UNIX_Export
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_LOCAL_FS,
-		String("CIM_Export"),
+		_p.getLocalFS(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DIRECTORY,
-		String("CIM_Export"),
+		_p.getDirectory(),
 		CIMKeyBinding::REFERENCE));
 
 

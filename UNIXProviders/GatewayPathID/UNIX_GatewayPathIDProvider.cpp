@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_GatewayPathIDProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_GatewayPathID"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

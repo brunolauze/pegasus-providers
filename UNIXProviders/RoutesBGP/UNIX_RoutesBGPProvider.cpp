@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_RoutesBGPProvider::constructKeyBindings(const UNIX_Rou
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_RoutesBGP"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_RoutesBGP"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

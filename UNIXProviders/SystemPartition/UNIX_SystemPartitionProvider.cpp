@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SystemPartitionProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_SystemPartition"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_SystemPartition"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

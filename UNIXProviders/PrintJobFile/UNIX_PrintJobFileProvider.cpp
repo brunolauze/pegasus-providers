@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_PrintJobFileProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_PrintJobFile"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_PrintJobFile"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

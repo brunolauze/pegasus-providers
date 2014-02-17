@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_PhysicalMediaInLocationProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_PhysicalMediaInLocation"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_PhysicalMediaInLocation"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

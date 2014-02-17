@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_HardwareThreadProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_HardwareThread"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

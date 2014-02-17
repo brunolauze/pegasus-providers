@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ResourceAllocationFromPoolProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ResourceAllocationFromPool"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ResourceAllocationFromPool"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

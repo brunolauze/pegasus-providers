@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ElementStatisticalDataProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_MANAGED_ELEMENT,
-		String("CIM_ElementStatisticalData"),
+		_p.getManagedElement(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_STATS,
-		String("CIM_ElementStatisticalData"),
+		_p.getStats(),
 		CIMKeyBinding::REFERENCE));
 
 

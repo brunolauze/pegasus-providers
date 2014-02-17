@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_AssociatedNextHopProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_AssociatedNextHop"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_AssociatedNextHop"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

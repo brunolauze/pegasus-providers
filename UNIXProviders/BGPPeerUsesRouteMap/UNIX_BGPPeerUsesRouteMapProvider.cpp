@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_BGPPeerUsesRouteMapProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION,
-		String("CIM_BGPPeerUsesRouteMap"),
+		_p.getCollection(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MEMBER,
-		String("CIM_BGPPeerUsesRouteMap"),
+		_p.getMember(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_RackProvider::constructKeyBindings(const UNIX_Rack& _p
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_TAG,
-		String("CIM_Rack"),
+		_p.getTag(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_Rack"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 
 

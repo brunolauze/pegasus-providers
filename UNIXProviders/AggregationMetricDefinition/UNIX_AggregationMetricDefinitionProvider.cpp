@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_AggregationMetricDefinitionProvider::constructKeyBindi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ID,
-		String("CIM_AggregationMetricDefinition"),
+		_p.getId(),
 		CIMKeyBinding::STRING));
 
 

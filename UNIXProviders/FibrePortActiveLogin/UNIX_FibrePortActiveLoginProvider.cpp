@@ -80,15 +80,15 @@ Array<CIMKeyBinding> UNIX_FibrePortActiveLoginProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_LOGIN_ORIGINATOR,
-		String("CIM_FibrePortActiveLogin"),
+		_p.getLoginOriginator(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_LOGIN_RESPONDER,
-		String("CIM_FibrePortActiveLogin"),
+		_p.getLoginResponder(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NEGOTIATED_C_OS,
-		String("CIM_FibrePortActiveLogin"),
+		_p.getNegotiatedCOS(),
 		CIMKeyBinding::NUMERIC));
 
 

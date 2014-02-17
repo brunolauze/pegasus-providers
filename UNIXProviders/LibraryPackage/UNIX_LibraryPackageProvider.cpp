@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_LibraryPackageProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_LibraryPackage"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_LibraryPackage"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

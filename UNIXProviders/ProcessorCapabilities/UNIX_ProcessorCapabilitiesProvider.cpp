@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_ProcessorCapabilitiesProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_ProcessorCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

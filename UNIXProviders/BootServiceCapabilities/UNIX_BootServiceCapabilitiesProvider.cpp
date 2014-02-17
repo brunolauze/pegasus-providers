@@ -74,7 +74,7 @@ Array<CIMKeyBinding> UNIX_BootServiceCapabilitiesProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_BootServiceCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

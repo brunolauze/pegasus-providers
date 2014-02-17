@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_StatisticalRuntimeOverviewProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_StatisticalRuntimeOverview"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

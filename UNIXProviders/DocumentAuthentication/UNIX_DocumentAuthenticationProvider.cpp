@@ -72,27 +72,27 @@ Array<CIMKeyBinding> UNIX_DocumentAuthenticationProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_DocumentAuthentication"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_DocumentAuthentication"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_RULE_CREATION_CLASS_NAME,
-		String("CIM_DocumentAuthentication"),
+		_p.getPolicyRuleCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_RULE_NAME,
-		String("CIM_DocumentAuthentication"),
+		_p.getPolicyRuleName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_DocumentAuthentication"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_CONDITION_NAME,
-		String("CIM_DocumentAuthentication"),
+		_p.getPolicyConditionName(),
 		CIMKeyBinding::STRING));
 
 

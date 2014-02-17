@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_AssociatedSupplyVoltageSensorProvider::constructKeyBin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_AssociatedSupplyVoltageSensor"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_AssociatedSupplyVoltageSensor"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -76,11 +76,11 @@ Array<CIMKeyBinding> UNIX_SwitchPortSourceRoutingProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_SwitchPortSourceRouting"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_SwitchPortSourceRouting"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

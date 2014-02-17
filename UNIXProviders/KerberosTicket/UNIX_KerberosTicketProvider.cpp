@@ -76,7 +76,7 @@ Array<CIMKeyBinding> UNIX_KerberosTicketProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_KerberosTicket"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

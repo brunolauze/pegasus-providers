@@ -74,7 +74,7 @@ Array<CIMKeyBinding> UNIX_StoragePoolProvider::constructKeyBindings(const UNIX_S
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_StoragePool"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

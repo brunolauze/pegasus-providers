@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_PolicyRoleCollectionProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_PolicyRoleCollection"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -69,7 +69,7 @@ Array<CIMKeyBinding> UNIX_RegisteredSubProfileProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_RegisteredSubProfile"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

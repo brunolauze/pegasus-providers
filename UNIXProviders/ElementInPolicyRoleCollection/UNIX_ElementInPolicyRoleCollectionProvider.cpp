@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ElementInPolicyRoleCollectionProvider::constructKeyBin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION,
-		String("CIM_ElementInPolicyRoleCollection"),
+		_p.getCollection(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MEMBER,
-		String("CIM_ElementInPolicyRoleCollection"),
+		_p.getMember(),
 		CIMKeyBinding::REFERENCE));
 
 

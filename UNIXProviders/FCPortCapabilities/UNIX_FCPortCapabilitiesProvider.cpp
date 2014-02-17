@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_FCPortCapabilitiesProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_FCPortCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -76,23 +76,23 @@ Array<CIMKeyBinding> UNIX_UnsignedPublicKeyProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_UnsignedPublicKey"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_UnsignedPublicKey"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SERVICE_CREATION_CLASS_NAME,
-		String("CIM_UnsignedPublicKey"),
+		_p.getServiceCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SERVICE_NAME,
-		String("CIM_UnsignedPublicKey"),
+		_p.getServiceName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PEER_IDENTITY,
-		String("CIM_UnsignedPublicKey"),
+		_p.getPeerIdentity(),
 		CIMKeyBinding::STRING));
 
 

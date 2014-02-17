@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SuppliesPowerProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_SuppliesPower"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_SuppliesPower"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

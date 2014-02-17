@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_LogicalPortSettingsProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_LogicalPortSettings"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

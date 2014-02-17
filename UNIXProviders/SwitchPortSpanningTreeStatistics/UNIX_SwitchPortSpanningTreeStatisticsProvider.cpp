@@ -70,27 +70,27 @@ Array<CIMKeyBinding> UNIX_SwitchPortSpanningTreeStatisticsProvider::constructKey
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_SwitchPortSpanningTreeStatistics"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_SwitchPortSpanningTreeStatistics"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_S_A_P_CREATION_CLASS_NAME,
-		String("CIM_SwitchPortSpanningTreeStatistics"),
+		_p.getSAPCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_S_A_P_NAME,
-		String("CIM_SwitchPortSpanningTreeStatistics"),
+		_p.getSAPName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_SwitchPortSpanningTreeStatistics"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_SwitchPortSpanningTreeStatistics"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

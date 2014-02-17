@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ManagesAccountProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ManagesAccount"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ManagesAccount"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

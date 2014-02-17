@@ -79,35 +79,35 @@ Array<CIMKeyBinding> UNIX_UnixThreadProvider::constructKeyBindings(const UNIX_Un
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_CREATION_CLASS_NAME,
-		String("CIM_UnixThread"),
+		_p.getCSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_NAME,
-		String("CIM_UnixThread"),
+		_p.getCSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_OS_CREATION_CLASS_NAME,
-		String("CIM_UnixThread"),
+		_p.getOSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_OS_NAME,
-		String("CIM_UnixThread"),
+		_p.getOSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PROCESS_CREATION_CLASS_NAME,
-		String("CIM_UnixThread"),
+		_p.getProcessCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PROCESS_HANDLE,
-		String("CIM_UnixThread"),
+		_p.getProcessHandle(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_UnixThread"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_HANDLE,
-		String("CIM_UnixThread"),
+		_p.getHandle(),
 		CIMKeyBinding::STRING));
 
 

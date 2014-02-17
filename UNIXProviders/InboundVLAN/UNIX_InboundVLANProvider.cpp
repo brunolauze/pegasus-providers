@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_InboundVLANProvider::constructKeyBindings(const UNIX_I
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_InboundVLAN"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_InboundVLAN"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

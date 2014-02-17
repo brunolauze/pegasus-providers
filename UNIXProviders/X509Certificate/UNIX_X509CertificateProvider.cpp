@@ -86,7 +86,7 @@ Array<CIMKeyBinding> UNIX_X509CertificateProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_X509Certificate"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_SharingDependencyProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_SharingDependency"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_SharingDependency"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

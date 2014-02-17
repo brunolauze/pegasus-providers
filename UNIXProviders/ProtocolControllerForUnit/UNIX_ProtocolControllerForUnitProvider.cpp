@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_ProtocolControllerForUnitProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ProtocolControllerForUnit"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ProtocolControllerForUnit"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

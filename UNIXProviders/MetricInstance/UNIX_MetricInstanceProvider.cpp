@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_MetricInstanceProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_MetricInstance"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_MetricInstance"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

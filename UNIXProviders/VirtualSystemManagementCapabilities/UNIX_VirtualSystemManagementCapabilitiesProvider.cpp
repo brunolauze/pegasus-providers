@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_VirtualSystemManagementCapabilitiesProvider::construct
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_VirtualSystemManagementCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

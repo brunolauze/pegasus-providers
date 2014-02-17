@@ -77,7 +77,7 @@ Array<CIMKeyBinding> UNIX_FCPortRateStatisticsProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_FCPortRateStatistics"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_ProcessorCoreProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_ProcessorCore"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

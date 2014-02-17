@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_QueueToScheduleProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_QUEUE,
-		String("CIM_QueueToSchedule"),
+		_p.getQueue(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SCHED_ELEMENT,
-		String("CIM_QueueToSchedule"),
+		_p.getSchedElement(),
 		CIMKeyBinding::REFERENCE));
 
 

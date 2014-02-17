@@ -72,19 +72,19 @@ Array<CIMKeyBinding> UNIX_TextRedirectionSAPProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_TextRedirectionSAP"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_TextRedirectionSAP"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_TextRedirectionSAP"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_TextRedirectionSAP"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

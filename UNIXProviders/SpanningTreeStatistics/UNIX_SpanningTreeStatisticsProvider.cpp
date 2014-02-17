@@ -71,27 +71,27 @@ Array<CIMKeyBinding> UNIX_SpanningTreeStatisticsProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_SpanningTreeStatistics"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_SpanningTreeStatistics"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SERVICE_CREATION_CLASS_NAME,
-		String("CIM_SpanningTreeStatistics"),
+		_p.getServiceCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SERVICE_NAME,
-		String("CIM_SpanningTreeStatistics"),
+		_p.getServiceName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_SpanningTreeStatistics"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_SpanningTreeStatistics"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

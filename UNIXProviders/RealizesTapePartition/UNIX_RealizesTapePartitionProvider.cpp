@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_RealizesTapePartitionProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_RealizesTapePartition"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_RealizesTapePartition"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_WiFiEndpointCapabilitiesProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_WiFiEndpointCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

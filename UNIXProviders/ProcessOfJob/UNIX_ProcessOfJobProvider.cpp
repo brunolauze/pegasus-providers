@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ProcessOfJobProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_ProcessOfJob"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_ProcessOfJob"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

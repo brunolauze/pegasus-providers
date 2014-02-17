@@ -70,27 +70,27 @@ Array<CIMKeyBinding> UNIX_KerberosAuthenticationProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_KerberosAuthentication"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_KerberosAuthentication"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_RULE_CREATION_CLASS_NAME,
-		String("CIM_KerberosAuthentication"),
+		_p.getPolicyRuleCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_RULE_NAME,
-		String("CIM_KerberosAuthentication"),
+		_p.getPolicyRuleName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_KerberosAuthentication"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_CONDITION_NAME,
-		String("CIM_KerberosAuthentication"),
+		_p.getPolicyConditionName(),
 		CIMKeyBinding::STRING));
 
 

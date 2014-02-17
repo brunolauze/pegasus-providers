@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_LogicalDiskBasedOnPartitionProvider::constructKeyBindi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_LogicalDiskBasedOnPartition"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_LogicalDiskBasedOnPartition"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

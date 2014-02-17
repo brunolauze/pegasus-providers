@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_DiskGroupProvider::constructKeyBindings(const UNIX_Dis
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION_ID,
-		String("CIM_DiskGroup"),
+		_p.getCollectionID(),
 		CIMKeyBinding::STRING));
 
 

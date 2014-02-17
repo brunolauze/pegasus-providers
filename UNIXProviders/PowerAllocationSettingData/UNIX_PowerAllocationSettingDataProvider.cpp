@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_PowerAllocationSettingDataProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_PowerAllocationSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

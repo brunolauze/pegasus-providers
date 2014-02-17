@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_LogInDeviceFileProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_LogInDeviceFile"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_LogInDeviceFile"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

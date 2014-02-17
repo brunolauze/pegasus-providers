@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ApplicationSystemHierarchyProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_ApplicationSystemHierarchy"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_ApplicationSystemHierarchy"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

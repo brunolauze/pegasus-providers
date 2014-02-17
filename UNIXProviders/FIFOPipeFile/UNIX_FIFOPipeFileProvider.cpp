@@ -69,27 +69,27 @@ Array<CIMKeyBinding> UNIX_FIFOPipeFileProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_CREATION_CLASS_NAME,
-		String("CIM_FIFOPipeFile"),
+		_p.getCSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_NAME,
-		String("CIM_FIFOPipeFile"),
+		_p.getCSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_FS_CREATION_CLASS_NAME,
-		String("CIM_FIFOPipeFile"),
+		_p.getFSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_FS_NAME,
-		String("CIM_FIFOPipeFile"),
+		_p.getFSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_FIFOPipeFile"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_FIFOPipeFile"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

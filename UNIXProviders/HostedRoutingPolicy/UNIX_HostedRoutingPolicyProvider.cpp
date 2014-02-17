@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_HostedRoutingPolicyProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_HostedRoutingPolicy"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_HostedRoutingPolicy"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

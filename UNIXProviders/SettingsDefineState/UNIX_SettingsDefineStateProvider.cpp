@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SettingsDefineStateProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_MANAGED_ELEMENT,
-		String("CIM_SettingsDefineState"),
+		_p.getManagedElement(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SETTING_DATA,
-		String("CIM_SettingsDefineState"),
+		_p.getSettingData(),
 		CIMKeyBinding::REFERENCE));
 
 

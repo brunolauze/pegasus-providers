@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ProcessThreadProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_ProcessThread"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_ProcessThread"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ComputerSystemMappedIOProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_ComputerSystemMappedIO"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_ComputerSystemMappedIO"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

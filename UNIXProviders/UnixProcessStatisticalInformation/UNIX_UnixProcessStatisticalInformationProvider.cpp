@@ -87,31 +87,31 @@ Array<CIMKeyBinding> UNIX_UnixProcessStatisticalInformationProvider::constructKe
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_CREATION_CLASS_NAME,
-		String("CIM_UnixProcessStatisticalInformation"),
+		_p.getCSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_NAME,
-		String("CIM_UnixProcessStatisticalInformation"),
+		_p.getCSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_OS_CREATION_CLASS_NAME,
-		String("CIM_UnixProcessStatisticalInformation"),
+		_p.getOSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_OS_NAME,
-		String("CIM_UnixProcessStatisticalInformation"),
+		_p.getOSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_HANDLE,
-		String("CIM_UnixProcessStatisticalInformation"),
+		_p.getHandle(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PROCESS_CREATION_CLASS_NAME,
-		String("CIM_UnixProcessStatisticalInformation"),
+		_p.getProcessCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_UnixProcessStatisticalInformation"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

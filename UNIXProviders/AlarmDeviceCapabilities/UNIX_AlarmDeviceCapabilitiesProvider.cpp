@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_AlarmDeviceCapabilitiesProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_AlarmDeviceCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

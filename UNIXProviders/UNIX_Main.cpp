@@ -42,7 +42,9 @@ PEGASUS_USING_STD;
 #include <AcceptCredentialFrom/UNIX_AcceptCredentialFromProvider.h>
 #include <AccessControlInformation/UNIX_AccessControlInformationProvider.h>
 #include <AccessLabelReader/UNIX_AccessLabelReaderProvider.h>
+*/
 #include <Account/UNIX_AccountProvider.h>
+/*
 #include <AccountAuthentication/UNIX_AccountAuthenticationProvider.h>
 #include <AccountIdentity/UNIX_AccountIdentityProvider.h>
 #include <AccountManagementCapabilities/UNIX_AccountManagementCapabilitiesProvider.h>
@@ -1125,7 +1127,7 @@ PEGASUS_EXPORT CIMProvider* PegasusCreateProvider(const String& providerName)
 	//else if (String::equalNoCase(providerName, "UNIX_AcceptCredentialFromProvider")) return new UNIX_AcceptCredentialFromProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_AccessControlInformationProvider")) return new UNIX_AccessControlInformationProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_AccessLabelReaderProvider")) return new UNIX_AccessLabelReaderProvider();
-	//else if (String::equalNoCase(providerName, "UNIX_AccountProvider")) return new UNIX_AccountProvider();
+	if (String::equalNoCase(providerName, "UNIX_AccountProvider")) return new UNIX_AccountProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_AccountAuthenticationProvider")) return new UNIX_AccountAuthenticationProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_AccountIdentityProvider")) return new UNIX_AccountIdentityProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_AccountManagementCapabilitiesProvider")) return new UNIX_AccountManagementCapabilitiesProvider();

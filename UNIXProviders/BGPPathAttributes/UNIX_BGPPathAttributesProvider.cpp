@@ -82,11 +82,11 @@ Array<CIMKeyBinding> UNIX_BGPPathAttributesProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_A_S_NUMBERS,
-		String("CIM_BGPPathAttributes"),
+		_p.getASNumbers(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PATH_ATTR_NEXT_HOP,
-		String("CIM_BGPPathAttributes"),
+		_p.getPathAttrNextHop(),
 		CIMKeyBinding::STRING));
 
 

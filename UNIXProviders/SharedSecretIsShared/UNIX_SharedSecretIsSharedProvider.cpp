@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SharedSecretIsSharedProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_SharedSecretIsShared"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_SharedSecretIsShared"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

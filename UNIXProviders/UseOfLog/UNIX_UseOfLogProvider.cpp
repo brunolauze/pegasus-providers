@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_UseOfLogProvider::constructKeyBindings(const UNIX_UseO
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_UseOfLog"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_UseOfLog"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

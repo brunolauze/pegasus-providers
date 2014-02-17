@@ -76,7 +76,7 @@ Array<CIMKeyBinding> UNIX_DHCPSettingDataProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_DHCPSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

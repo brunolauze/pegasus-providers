@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ReplaceableProductFRUProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_PRODUCT,
-		String("CIM_ReplaceableProductFRU"),
+		_p.getProduct(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_F_R_U,
-		String("CIM_ReplaceableProductFRU"),
+		_p.getFRU(),
 		CIMKeyBinding::REFERENCE));
 
 

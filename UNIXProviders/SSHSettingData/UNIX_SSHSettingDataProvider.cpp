@@ -81,7 +81,7 @@ Array<CIMKeyBinding> UNIX_SSHSettingDataProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_SSHSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

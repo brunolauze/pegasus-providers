@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_DatabaseControlFileProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_DatabaseControlFile"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_DatabaseControlFile"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

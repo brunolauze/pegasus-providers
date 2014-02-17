@@ -75,11 +75,11 @@ Array<CIMKeyBinding> UNIX_PublicPrivateKeyPairProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_PublicPrivateKeyPair"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_PublicPrivateKeyPair"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

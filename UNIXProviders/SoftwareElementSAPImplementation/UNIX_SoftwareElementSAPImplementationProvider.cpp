@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SoftwareElementSAPImplementationProvider::constructKey
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_SoftwareElementSAPImplementation"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_SoftwareElementSAPImplementation"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

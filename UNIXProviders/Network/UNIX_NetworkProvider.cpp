@@ -69,11 +69,11 @@ Array<CIMKeyBinding> UNIX_NetworkProvider::constructKeyBindings(const UNIX_Netwo
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_Network"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_Network"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

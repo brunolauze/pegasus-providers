@@ -87,7 +87,7 @@ Array<CIMKeyBinding> UNIX_StorageSettingProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_StorageSetting"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

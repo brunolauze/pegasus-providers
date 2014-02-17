@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_AcceptCredentialFromProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_AcceptCredentialFrom"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_AcceptCredentialFrom"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

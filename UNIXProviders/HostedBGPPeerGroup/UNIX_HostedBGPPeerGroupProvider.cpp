@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_HostedBGPPeerGroupProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_HostedBGPPeerGroup"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_HostedBGPPeerGroup"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

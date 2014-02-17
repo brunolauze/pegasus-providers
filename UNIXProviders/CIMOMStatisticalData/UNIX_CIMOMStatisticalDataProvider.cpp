@@ -77,7 +77,7 @@ Array<CIMKeyBinding> UNIX_CIMOMStatisticalDataProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_CIMOMStatisticalData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

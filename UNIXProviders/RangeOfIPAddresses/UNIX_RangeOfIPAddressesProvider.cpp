@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_RangeOfIPAddressesProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_RangeOfIPAddresses"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

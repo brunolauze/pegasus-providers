@@ -71,23 +71,23 @@ Array<CIMKeyBinding> UNIX_VideoBIOSFeatureProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_IDENTIFYING_NUMBER,
-		String("CIM_VideoBIOSFeature"),
+		_p.getIdentifyingNumber(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PRODUCT_NAME,
-		String("CIM_VideoBIOSFeature"),
+		_p.getProductName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VENDOR,
-		String("CIM_VideoBIOSFeature"),
+		_p.getVendor(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VERSION,
-		String("CIM_VideoBIOSFeature"),
+		_p.getVersion(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_VideoBIOSFeature"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

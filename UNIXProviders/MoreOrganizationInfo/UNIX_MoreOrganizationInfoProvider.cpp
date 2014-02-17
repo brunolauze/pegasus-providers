@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_MoreOrganizationInfoProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_MoreOrganizationInfo"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_MoreOrganizationInfo"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_EGPRouteCalcDependencyProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_EGPRouteCalcDependency"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_EGPRouteCalcDependency"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_IdentificationOfManagedSystemProvider::constructKeyBin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_IdentificationOfManagedSystem"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_IdentificationOfManagedSystem"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

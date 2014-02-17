@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SoftwareFeatureServiceImplementationProvider::construc
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_SoftwareFeatureServiceImplementation"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_SoftwareFeatureServiceImplementation"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

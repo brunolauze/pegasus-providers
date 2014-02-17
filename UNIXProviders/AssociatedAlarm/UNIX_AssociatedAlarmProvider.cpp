@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_AssociatedAlarmProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_AssociatedAlarm"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_AssociatedAlarm"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

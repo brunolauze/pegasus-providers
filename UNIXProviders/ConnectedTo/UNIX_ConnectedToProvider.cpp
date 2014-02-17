@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ConnectedToProvider::constructKeyBindings(const UNIX_C
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ConnectedTo"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ConnectedTo"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SchedulerUsedProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_SchedulerUsed"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_SchedulerUsed"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

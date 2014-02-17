@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_DiagnosticServiceRecordProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_DiagnosticServiceRecord"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

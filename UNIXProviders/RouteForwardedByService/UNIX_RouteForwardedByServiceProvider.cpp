@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_RouteForwardedByServiceProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_RouteForwardedByService"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_RouteForwardedByService"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

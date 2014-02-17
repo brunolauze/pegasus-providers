@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_ResourcePoolConfigurationCapabilitiesProvider::constru
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_ResourcePoolConfigurationCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

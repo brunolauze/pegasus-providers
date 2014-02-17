@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_EndpointForIPNetworkConnectionProvider::constructKeyBi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_EndpointForIPNetworkConnection"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_EndpointForIPNetworkConnection"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

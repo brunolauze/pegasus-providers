@@ -79,23 +79,23 @@ Array<CIMKeyBinding> UNIX_BIOSElementProvider::constructKeyBindings(const UNIX_B
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_BIOSElement"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VERSION,
-		String("CIM_BIOSElement"),
+		_p.getVersion(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_STATE,
-		String("CIM_BIOSElement"),
+		_p.getSoftwareElementState(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_ID,
-		String("CIM_BIOSElement"),
+		_p.getSoftwareElementID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TARGET_OPERATING_SYSTEM,
-		String("CIM_BIOSElement"),
+		_p.getTargetOperatingSystem(),
 		CIMKeyBinding::NUMERIC));
 
 

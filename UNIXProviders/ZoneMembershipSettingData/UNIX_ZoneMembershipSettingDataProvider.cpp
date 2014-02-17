@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_ZoneMembershipSettingDataProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_ZoneMembershipSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

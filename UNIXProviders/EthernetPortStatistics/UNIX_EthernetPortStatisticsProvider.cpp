@@ -84,7 +84,7 @@ Array<CIMKeyBinding> UNIX_EthernetPortStatisticsProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_EthernetPortStatistics"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

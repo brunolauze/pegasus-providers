@@ -74,7 +74,7 @@ Array<CIMKeyBinding> UNIX_VLANEndpointSettingDataProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_VLANEndpointSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

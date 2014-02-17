@@ -71,23 +71,23 @@ Array<CIMKeyBinding> UNIX_BIOSFeatureProvider::constructKeyBindings(const UNIX_B
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_IDENTIFYING_NUMBER,
-		String("CIM_BIOSFeature"),
+		_p.getIdentifyingNumber(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PRODUCT_NAME,
-		String("CIM_BIOSFeature"),
+		_p.getProductName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VENDOR,
-		String("CIM_BIOSFeature"),
+		_p.getVendor(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VERSION,
-		String("CIM_BIOSFeature"),
+		_p.getVersion(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_BIOSFeature"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

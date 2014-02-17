@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_RoleLimitedToTargetProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEFINING_ROLE,
-		String("CIM_RoleLimitedToTarget"),
+		_p.getDefiningRole(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TARGET_ELEMENT,
-		String("CIM_RoleLimitedToTarget"),
+		_p.getTargetElement(),
 		CIMKeyBinding::REFERENCE));
 
 

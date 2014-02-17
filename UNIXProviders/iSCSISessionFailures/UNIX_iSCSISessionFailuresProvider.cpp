@@ -76,7 +76,7 @@ Array<CIMKeyBinding> UNIX_iSCSISessionFailuresProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_iSCSISessionFailures"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

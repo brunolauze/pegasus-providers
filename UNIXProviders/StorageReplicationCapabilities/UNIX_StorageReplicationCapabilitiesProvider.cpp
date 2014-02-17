@@ -103,7 +103,7 @@ Array<CIMKeyBinding> UNIX_StorageReplicationCapabilitiesProvider::constructKeyBi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_StorageReplicationCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

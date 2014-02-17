@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_AHTransformProvider::constructKeyBindings(const UNIX_A
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_AHTransform"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_IPConnectivitySubnetProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_IPConnectivitySubnet"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

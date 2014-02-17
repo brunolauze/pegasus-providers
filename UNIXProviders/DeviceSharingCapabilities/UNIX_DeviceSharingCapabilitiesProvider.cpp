@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_DeviceSharingCapabilitiesProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_DeviceSharingCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

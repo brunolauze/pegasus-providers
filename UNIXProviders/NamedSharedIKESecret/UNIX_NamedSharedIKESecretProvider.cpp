@@ -78,35 +78,35 @@ Array<CIMKeyBinding> UNIX_NamedSharedIKESecretProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_NamedSharedIKESecret"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_NamedSharedIKESecret"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SERVICE_CREATION_CLASS_NAME,
-		String("CIM_NamedSharedIKESecret"),
+		_p.getServiceCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SERVICE_NAME,
-		String("CIM_NamedSharedIKESecret"),
+		_p.getServiceName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_LOCAL_IDENTITY,
-		String("CIM_NamedSharedIKESecret"),
+		_p.getLocalIdentity(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_LOCAL_IDENTITY_TYPE,
-		String("CIM_NamedSharedIKESecret"),
+		_p.getLocalIdentityType(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PEER_IDENTITY,
-		String("CIM_NamedSharedIKESecret"),
+		_p.getPeerIdentity(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PEER_IDENTITY_TYPE,
-		String("CIM_NamedSharedIKESecret"),
+		_p.getPeerIdentityType(),
 		CIMKeyBinding::NUMERIC));
 
 

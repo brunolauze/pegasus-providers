@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_LogicalPortGroupProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_LogicalPortGroup"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

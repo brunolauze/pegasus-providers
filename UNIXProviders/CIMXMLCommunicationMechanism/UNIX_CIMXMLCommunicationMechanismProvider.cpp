@@ -73,19 +73,19 @@ Array<CIMKeyBinding> UNIX_CIMXMLCommunicationMechanismProvider::constructKeyBind
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_CIMXMLCommunicationMechanism"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_CIMXMLCommunicationMechanism"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_CIMXMLCommunicationMechanism"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_CIMXMLCommunicationMechanism"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

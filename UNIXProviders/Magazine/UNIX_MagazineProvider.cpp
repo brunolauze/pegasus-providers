@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_MagazineProvider::constructKeyBindings(const UNIX_Maga
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_TAG,
-		String("CIM_Magazine"),
+		_p.getTag(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_Magazine"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 
 

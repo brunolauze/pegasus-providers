@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SwitchPortDynamicForwardingProvider::constructKeyBindi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_SwitchPortDynamicForwarding"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_SwitchPortDynamicForwarding"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_OrgStructureProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_PARENT,
-		String("CIM_OrgStructure"),
+		_p.getParent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CHILD,
-		String("CIM_OrgStructure"),
+		_p.getChild(),
 		CIMKeyBinding::REFERENCE));
 
 

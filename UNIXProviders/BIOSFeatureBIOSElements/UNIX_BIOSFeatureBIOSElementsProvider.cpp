@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_BIOSFeatureBIOSElementsProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_BIOSFeatureBIOSElements"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_BIOSFeatureBIOSElements"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

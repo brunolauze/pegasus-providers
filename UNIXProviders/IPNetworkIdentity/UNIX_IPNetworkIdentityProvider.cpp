@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_IPNetworkIdentityProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_IPNetworkIdentity"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SubProfileRequiresProfileProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_SubProfileRequiresProfile"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_SubProfileRequiresProfile"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

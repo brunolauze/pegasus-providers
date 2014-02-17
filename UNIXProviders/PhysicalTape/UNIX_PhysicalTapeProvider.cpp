@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_PhysicalTapeProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_TAG,
-		String("CIM_PhysicalTape"),
+		_p.getTag(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_PhysicalTape"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 
 

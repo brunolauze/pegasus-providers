@@ -77,11 +77,11 @@ Array<CIMKeyBinding> UNIX_BufferPoolProvider::constructKeyBindings(const UNIX_Bu
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION_ID,
-		String("CIM_BufferPool"),
+		_p.getCollectionID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_BufferPool"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 
 

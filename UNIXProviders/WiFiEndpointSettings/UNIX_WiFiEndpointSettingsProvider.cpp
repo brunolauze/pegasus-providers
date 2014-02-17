@@ -80,7 +80,7 @@ Array<CIMKeyBinding> UNIX_WiFiEndpointSettingsProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_WiFiEndpointSettings"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

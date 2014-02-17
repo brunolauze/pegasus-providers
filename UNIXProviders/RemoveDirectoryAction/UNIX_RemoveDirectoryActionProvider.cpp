@@ -70,27 +70,27 @@ Array<CIMKeyBinding> UNIX_RemoveDirectoryActionProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_RemoveDirectoryAction"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VERSION,
-		String("CIM_RemoveDirectoryAction"),
+		_p.getVersion(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_STATE,
-		String("CIM_RemoveDirectoryAction"),
+		_p.getSoftwareElementState(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_ID,
-		String("CIM_RemoveDirectoryAction"),
+		_p.getSoftwareElementID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TARGET_OPERATING_SYSTEM,
-		String("CIM_RemoveDirectoryAction"),
+		_p.getTargetOperatingSystem(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_ACTION_ID,
-		String("CIM_RemoveDirectoryAction"),
+		_p.getActionID(),
 		CIMKeyBinding::STRING));
 
 

@@ -75,7 +75,7 @@ Array<CIMKeyBinding> UNIX_PickerStatDataProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_PickerStatData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

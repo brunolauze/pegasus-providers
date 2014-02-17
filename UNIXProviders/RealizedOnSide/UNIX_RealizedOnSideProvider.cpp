@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_RealizedOnSideProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_RealizedOnSide"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_RealizedOnSide"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

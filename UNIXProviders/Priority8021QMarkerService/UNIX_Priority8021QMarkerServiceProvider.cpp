@@ -70,19 +70,19 @@ Array<CIMKeyBinding> UNIX_Priority8021QMarkerServiceProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_Priority8021QMarkerService"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_Priority8021QMarkerService"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_Priority8021QMarkerService"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_Priority8021QMarkerService"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

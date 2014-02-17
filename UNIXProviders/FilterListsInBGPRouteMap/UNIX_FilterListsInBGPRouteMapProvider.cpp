@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_FilterListsInBGPRouteMapProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_FilterListsInBGPRouteMap"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_FilterListsInBGPRouteMap"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

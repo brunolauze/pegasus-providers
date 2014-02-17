@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ASBGPEndpointsProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_ASBGPEndpoints"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_ASBGPEndpoints"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_FilterOfPacketConditionProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_FilterOfPacketCondition"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_FilterOfPacketCondition"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

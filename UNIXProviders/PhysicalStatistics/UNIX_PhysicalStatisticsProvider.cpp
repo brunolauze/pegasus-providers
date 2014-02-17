@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_PhysicalStatisticsProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_STATS,
-		String("CIM_PhysicalStatistics"),
+		_p.getStats(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_ELEMENT,
-		String("CIM_PhysicalStatistics"),
+		_p.getElement(),
 		CIMKeyBinding::REFERENCE));
 
 

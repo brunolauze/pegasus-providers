@@ -81,7 +81,7 @@ Array<CIMKeyBinding> UNIX_iSCSIConnectionSettingsProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_iSCSIConnectionSettings"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

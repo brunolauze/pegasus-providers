@@ -74,7 +74,7 @@ Array<CIMKeyBinding> UNIX_MetricServiceCapabilitiesProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_MetricServiceCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_StorageRedundancySetProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_StorageRedundancySet"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

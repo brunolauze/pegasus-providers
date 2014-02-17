@@ -75,11 +75,11 @@ Array<CIMKeyBinding> UNIX_DeviceSoftwareProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_DeviceSoftware"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_DeviceSoftware"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

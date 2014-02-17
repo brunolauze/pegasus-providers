@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_CLPCapabilitiesProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_CLPCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

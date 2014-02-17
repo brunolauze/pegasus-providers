@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_QueryCapabilitiesProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_QueryCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

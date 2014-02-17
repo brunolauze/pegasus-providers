@@ -76,7 +76,7 @@ Array<CIMKeyBinding> UNIX_DNSSettingDataProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_DNSSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

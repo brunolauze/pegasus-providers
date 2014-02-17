@@ -82,19 +82,19 @@ Array<CIMKeyBinding> UNIX_DMAProvider::constructKeyBindings(const UNIX_DMA& _p)
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_CREATION_CLASS_NAME,
-		String("CIM_DMA"),
+		_p.getCSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_NAME,
-		String("CIM_DMA"),
+		_p.getCSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_DMA"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_D_M_A_CHANNEL,
-		String("CIM_DMA"),
+		_p.getDMAChannel(),
 		CIMKeyBinding::NUMERIC));
 
 

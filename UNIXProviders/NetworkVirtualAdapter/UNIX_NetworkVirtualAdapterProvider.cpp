@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_NetworkVirtualAdapterProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_ELEMENT,
-		String("CIM_NetworkVirtualAdapter"),
+		_p.getSystemElement(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SAME_ELEMENT,
-		String("CIM_NetworkVirtualAdapter"),
+		_p.getSameElement(),
 		CIMKeyBinding::REFERENCE));
 
 

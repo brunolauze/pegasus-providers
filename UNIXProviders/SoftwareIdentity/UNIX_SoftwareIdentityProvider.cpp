@@ -95,7 +95,7 @@ Array<CIMKeyBinding> UNIX_SoftwareIdentityProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_SoftwareIdentity"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

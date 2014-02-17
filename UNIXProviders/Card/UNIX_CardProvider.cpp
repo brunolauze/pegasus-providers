@@ -75,11 +75,11 @@ Array<CIMKeyBinding> UNIX_CardProvider::constructKeyBindings(const UNIX_Card& _p
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_TAG,
-		String("CIM_Card"),
+		_p.getTag(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_Card"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 
 

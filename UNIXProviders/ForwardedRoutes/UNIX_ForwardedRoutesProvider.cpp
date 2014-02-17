@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ForwardedRoutesProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ForwardedRoutes"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ForwardedRoutes"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -86,7 +86,7 @@ Array<CIMKeyBinding> UNIX_BlockStorageStatisticalDataProvider::constructKeyBindi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_BlockStorageStatisticalData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_BootOSFromFSProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_BootOSFromFS"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_BootOSFromFS"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

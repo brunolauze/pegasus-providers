@@ -71,27 +71,27 @@ Array<CIMKeyBinding> UNIX_DirectorySpecificationProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_DirectorySpecification"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VERSION,
-		String("CIM_DirectorySpecification"),
+		_p.getVersion(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_STATE,
-		String("CIM_DirectorySpecification"),
+		_p.getSoftwareElementState(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_ID,
-		String("CIM_DirectorySpecification"),
+		_p.getSoftwareElementID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TARGET_OPERATING_SYSTEM,
-		String("CIM_DirectorySpecification"),
+		_p.getTargetOperatingSystem(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CHECK_ID,
-		String("CIM_DirectorySpecification"),
+		_p.getCheckID(),
 		CIMKeyBinding::STRING));
 
 

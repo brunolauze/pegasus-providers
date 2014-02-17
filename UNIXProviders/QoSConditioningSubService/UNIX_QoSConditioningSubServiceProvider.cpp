@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_QoSConditioningSubServiceProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_QoSConditioningSubService"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_QoSConditioningSubService"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

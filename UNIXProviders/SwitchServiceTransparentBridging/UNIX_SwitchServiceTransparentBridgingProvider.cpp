@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SwitchServiceTransparentBridgingProvider::constructKey
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_SwitchServiceTransparentBridging"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_SwitchServiceTransparentBridging"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

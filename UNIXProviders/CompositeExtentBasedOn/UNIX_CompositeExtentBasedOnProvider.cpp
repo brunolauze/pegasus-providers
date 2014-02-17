@@ -80,11 +80,11 @@ Array<CIMKeyBinding> UNIX_CompositeExtentBasedOnProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_CompositeExtentBasedOn"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_CompositeExtentBasedOn"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

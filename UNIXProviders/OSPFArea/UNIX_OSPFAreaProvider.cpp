@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_OSPFAreaProvider::constructKeyBindings(const UNIX_OSPF
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_OSPFArea"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_OSPFArea"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

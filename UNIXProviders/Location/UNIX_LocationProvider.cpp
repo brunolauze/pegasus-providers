@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_LocationProvider::constructKeyBindings(const UNIX_Loca
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_Location"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PHYSICAL_POSITION,
-		String("CIM_Location"),
+		_p.getPhysicalPosition(),
 		CIMKeyBinding::STRING));
 
 

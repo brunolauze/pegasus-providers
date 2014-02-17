@@ -76,11 +76,11 @@ Array<CIMKeyBinding> UNIX_StorageLibraryProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_StorageLibrary"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_StorageLibrary"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

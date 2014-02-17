@@ -75,7 +75,7 @@ Array<CIMKeyBinding> UNIX_MediaRedirectionCapabilitiesProvider::constructKeyBind
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_MediaRedirectionCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

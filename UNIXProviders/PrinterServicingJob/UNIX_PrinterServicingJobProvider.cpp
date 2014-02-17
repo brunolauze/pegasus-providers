@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_PrinterServicingJobProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_PrinterServicingJob"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_PrinterServicingJob"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

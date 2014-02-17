@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_CredentialManagementCapabilitiesProvider::constructKey
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_CredentialManagementCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

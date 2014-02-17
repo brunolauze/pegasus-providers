@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_NotaryVerifiesBiometricProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_NotaryVerifiesBiometric"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_NotaryVerifiesBiometric"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

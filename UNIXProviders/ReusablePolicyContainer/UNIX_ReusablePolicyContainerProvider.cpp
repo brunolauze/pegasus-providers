@@ -69,11 +69,11 @@ Array<CIMKeyBinding> UNIX_ReusablePolicyContainerProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_ReusablePolicyContainer"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_ReusablePolicyContainer"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

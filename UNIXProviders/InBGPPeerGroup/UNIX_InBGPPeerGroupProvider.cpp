@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_InBGPPeerGroupProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION,
-		String("CIM_InBGPPeerGroup"),
+		_p.getCollection(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MEMBER,
-		String("CIM_InBGPPeerGroup"),
+		_p.getMember(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -83,11 +83,11 @@ Array<CIMKeyBinding> UNIX_AssociatedCacheMemoryProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_AssociatedCacheMemory"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_AssociatedCacheMemory"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_ConfederationProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_Confederation"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_Confederation"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

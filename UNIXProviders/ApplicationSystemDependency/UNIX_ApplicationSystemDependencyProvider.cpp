@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ApplicationSystemDependencyProvider::constructKeyBindi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ApplicationSystemDependency"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ApplicationSystemDependency"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

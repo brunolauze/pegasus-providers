@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_TransparentBridgingStaticForwardingProvider::construct
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_TransparentBridgingStaticForwarding"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_TransparentBridgingStaticForwarding"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

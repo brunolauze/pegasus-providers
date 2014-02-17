@@ -75,23 +75,23 @@ Array<CIMKeyBinding> UNIX_StorageErrorProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_StorageError"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_StorageError"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEVICE_CREATION_CLASS_NAME,
-		String("CIM_StorageError"),
+		_p.getDeviceCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEVICE_ID,
-		String("CIM_StorageError"),
+		_p.getDeviceID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_STARTING_ADDRESS,
-		String("CIM_StorageError"),
+		_p.getStartingAddress(),
 		CIMKeyBinding::NUMERIC));
 
 

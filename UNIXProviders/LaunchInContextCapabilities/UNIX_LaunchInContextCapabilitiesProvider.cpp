@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_LaunchInContextCapabilitiesProvider::constructKeyBindi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_LaunchInContextCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

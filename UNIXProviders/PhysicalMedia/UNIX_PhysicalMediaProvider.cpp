@@ -83,11 +83,11 @@ Array<CIMKeyBinding> UNIX_PhysicalMediaProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_TAG,
-		String("CIM_PhysicalMedia"),
+		_p.getTag(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_PhysicalMedia"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 
 

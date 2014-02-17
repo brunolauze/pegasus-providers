@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ApplicationSystemSoftwareFeatureProvider::constructKey
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_ApplicationSystemSoftwareFeature"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_ApplicationSystemSoftwareFeature"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

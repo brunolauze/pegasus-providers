@@ -78,7 +78,7 @@ Array<CIMKeyBinding> UNIX_LogEntryProvider::constructKeyBindings(const UNIX_LogE
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_LogEntry"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

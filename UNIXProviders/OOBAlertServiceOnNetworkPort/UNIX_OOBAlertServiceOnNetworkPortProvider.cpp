@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_OOBAlertServiceOnNetworkPortProvider::constructKeyBind
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_OOBAlertServiceOnNetworkPort"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_OOBAlertServiceOnNetworkPort"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

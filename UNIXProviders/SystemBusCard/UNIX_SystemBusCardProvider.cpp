@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SystemBusCardProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_TAG,
-		String("CIM_SystemBusCard"),
+		_p.getTag(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_SystemBusCard"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 
 

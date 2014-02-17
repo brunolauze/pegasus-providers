@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_ConfigurationProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_Configuration"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

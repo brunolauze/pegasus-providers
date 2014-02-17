@@ -79,11 +79,11 @@ Array<CIMKeyBinding> UNIX_OtherGroupInformationProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_OtherGroupInformation"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_OtherGroupInformation"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

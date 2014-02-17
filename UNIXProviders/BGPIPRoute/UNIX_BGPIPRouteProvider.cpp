@@ -71,35 +71,35 @@ Array<CIMKeyBinding> UNIX_BGPIPRouteProvider::constructKeyBindings(const UNIX_BG
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_BGPIPRoute"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_BGPIPRoute"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SERVICE_CREATION_CLASS_NAME,
-		String("CIM_BGPIPRoute"),
+		_p.getServiceCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SERVICE_NAME,
-		String("CIM_BGPIPRoute"),
+		_p.getServiceName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_BGPIPRoute"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_I_P_DESTINATION_ADDRESS,
-		String("CIM_BGPIPRoute"),
+		_p.getIPDestinationAddress(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_I_P_DESTINATION_MASK,
-		String("CIM_BGPIPRoute"),
+		_p.getIPDestinationMask(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_ADDRESS_TYPE,
-		String("CIM_BGPIPRoute"),
+		_p.getAddressType(),
 		CIMKeyBinding::NUMERIC));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_DirectoryContainsFileProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_DirectoryContainsFile"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_DirectoryContainsFile"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

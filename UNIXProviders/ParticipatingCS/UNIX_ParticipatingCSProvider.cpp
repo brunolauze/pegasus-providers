@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_ParticipatingCSProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ParticipatingCS"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ParticipatingCS"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -74,7 +74,7 @@ Array<CIMKeyBinding> UNIX_PrivilegeManagementCapabilitiesProvider::constructKeyB
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_PrivilegeManagementCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

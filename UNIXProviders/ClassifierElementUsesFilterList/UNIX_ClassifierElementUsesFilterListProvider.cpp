@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ClassifierElementUsesFilterListProvider::constructKeyB
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ClassifierElementUsesFilterList"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ClassifierElementUsesFilterList"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

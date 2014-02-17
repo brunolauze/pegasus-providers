@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ConnectorOnPackageProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_ConnectorOnPackage"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_ConnectorOnPackage"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

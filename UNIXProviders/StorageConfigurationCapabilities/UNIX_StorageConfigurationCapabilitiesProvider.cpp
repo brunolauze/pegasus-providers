@@ -76,7 +76,7 @@ Array<CIMKeyBinding> UNIX_StorageConfigurationCapabilitiesProvider::constructKey
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_StorageConfigurationCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SparedProvider::constructKeyBindings(const UNIX_Spared
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_Spared"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_Spared"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

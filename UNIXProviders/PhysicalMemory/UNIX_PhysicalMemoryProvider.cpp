@@ -81,11 +81,11 @@ Array<CIMKeyBinding> UNIX_PhysicalMemoryProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_TAG,
-		String("CIM_PhysicalMemory"),
+		_p.getTag(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_PhysicalMemory"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 
 

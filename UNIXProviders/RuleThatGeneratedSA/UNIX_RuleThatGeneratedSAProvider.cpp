@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_RuleThatGeneratedSAProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_RuleThatGeneratedSA"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_RuleThatGeneratedSA"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

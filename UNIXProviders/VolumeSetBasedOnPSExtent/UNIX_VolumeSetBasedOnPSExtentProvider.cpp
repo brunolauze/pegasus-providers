@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_VolumeSetBasedOnPSExtentProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_VolumeSetBasedOnPSExtent"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_VolumeSetBasedOnPSExtent"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

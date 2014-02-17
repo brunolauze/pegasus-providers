@@ -72,15 +72,15 @@ Array<CIMKeyBinding> UNIX_ParametersForMethodProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_PARAMETERS,
-		String("CIM_ParametersForMethod"),
+		_p.getParameters(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_THE_METHOD,
-		String("CIM_ParametersForMethod"),
+		_p.getTheMethod(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_METHOD_NAME,
-		String("CIM_ParametersForMethod"),
+		_p.getMethodName(),
 		CIMKeyBinding::STRING));
 
 

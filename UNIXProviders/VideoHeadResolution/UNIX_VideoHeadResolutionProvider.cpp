@@ -77,7 +77,7 @@ Array<CIMKeyBinding> UNIX_VideoHeadResolutionProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_VideoHeadResolution"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

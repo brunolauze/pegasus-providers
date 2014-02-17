@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ScopedSettingProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ScopedSetting"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ScopedSetting"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

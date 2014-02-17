@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_CredentialContextProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ELEMENT_IN_CONTEXT,
-		String("CIM_CredentialContext"),
+		_p.getElementInContext(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_ELEMENT_PROVIDING_CONTEXT,
-		String("CIM_CredentialContext"),
+		_p.getElementProvidingContext(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -72,19 +72,19 @@ Array<CIMKeyBinding> UNIX_iSCSIProtocolEndpointProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_iSCSIProtocolEndpoint"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_iSCSIProtocolEndpoint"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_iSCSIProtocolEndpoint"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_iSCSIProtocolEndpoint"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

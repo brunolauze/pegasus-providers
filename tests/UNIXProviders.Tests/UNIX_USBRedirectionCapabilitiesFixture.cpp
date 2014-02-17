@@ -56,16 +56,18 @@ void UNIX_USBRedirectionCapabilitiesFixture::Run()
 		CIMInstance instance = _provider.constructInstance(className,
 					nameSpace,
 					_p);
+		CIMObjectPath path = instance.getPath();
+		cout << path.toString() << endl;
 		propertyCount = instance.getPropertyCount();
 		for(Uint32 i = 0; i < propertyCount; i++)
 		{
 
 			CIMProperty propertyItem = instance.getProperty(i);
-			const char* name = propertyItem.getName().getString().getCString();
-			const char* value = propertyItem.getValue().toString().getCString();
-			printf("Name: %s - Value: %s", name, value);
+			cout << "	Name: " << propertyItem.getName().getString() << " - Value: " << propertyItem.getValue().toString() << endl;
 
 		}
+		cout << "------------------------------------" << endl;
+		cout << endl;
 	}
 
 	_p.finalize();

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_HostedNetworkPipeProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_HostedNetworkPipe"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_HostedNetworkPipe"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

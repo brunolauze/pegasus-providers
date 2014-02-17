@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_KDCIssuesKerberosTicketProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_KDCIssuesKerberosTicket"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_KDCIssuesKerberosTicket"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -74,7 +74,7 @@ Array<CIMKeyBinding> UNIX_SupportAccessProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SUPPORT_ACCESS_ID,
-		String("CIM_SupportAccess"),
+		_p.getSupportAccessId(),
 		CIMKeyBinding::STRING));
 
 

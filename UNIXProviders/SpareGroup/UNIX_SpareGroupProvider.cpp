@@ -69,11 +69,11 @@ Array<CIMKeyBinding> UNIX_SpareGroupProvider::constructKeyBindings(const UNIX_Sp
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_SpareGroup"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_SpareGroup"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

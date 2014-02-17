@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_SAEndpointRefreshSettingsProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_SAEndpointRefreshSettings"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

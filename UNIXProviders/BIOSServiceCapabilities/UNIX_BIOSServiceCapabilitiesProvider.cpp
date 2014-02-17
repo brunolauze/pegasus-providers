@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_BIOSServiceCapabilitiesProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_BIOSServiceCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

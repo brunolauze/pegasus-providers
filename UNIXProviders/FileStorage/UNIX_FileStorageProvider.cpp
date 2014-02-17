@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_FileStorageProvider::constructKeyBindings(const UNIX_F
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_FileStorage"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_FileStorage"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

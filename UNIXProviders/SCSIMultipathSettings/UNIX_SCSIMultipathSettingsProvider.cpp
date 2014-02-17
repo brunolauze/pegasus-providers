@@ -75,7 +75,7 @@ Array<CIMKeyBinding> UNIX_SCSIMultipathSettingsProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_SCSIMultipathSettings"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

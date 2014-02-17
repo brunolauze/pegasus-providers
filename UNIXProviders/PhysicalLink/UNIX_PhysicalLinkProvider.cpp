@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_PhysicalLinkProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_TAG,
-		String("CIM_PhysicalLink"),
+		_p.getTag(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_PhysicalLink"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 
 

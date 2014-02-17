@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_MemoryCapacityProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_MemoryCapacity"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MEMORY_TYPE,
-		String("CIM_MemoryCapacity"),
+		_p.getMemoryType(),
 		CIMKeyBinding::NUMERIC));
 
 

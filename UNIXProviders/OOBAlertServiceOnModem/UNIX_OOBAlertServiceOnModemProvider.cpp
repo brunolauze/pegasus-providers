@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_OOBAlertServiceOnModemProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_OOBAlertServiceOnModem"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_OOBAlertServiceOnModem"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

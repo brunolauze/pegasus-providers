@@ -79,11 +79,11 @@ Array<CIMKeyBinding> UNIX_OrgUnitProvider::constructKeyBindings(const UNIX_OrgUn
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_OrgUnit"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_OrgUnit"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

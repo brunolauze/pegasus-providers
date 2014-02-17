@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_PolicySetComponentProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_PolicySetComponent"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_PolicySetComponent"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

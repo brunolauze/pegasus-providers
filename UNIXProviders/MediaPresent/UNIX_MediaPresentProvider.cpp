@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_MediaPresentProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_MediaPresent"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_MediaPresent"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

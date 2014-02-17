@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_PolicySetAppliesToElementProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_SET,
-		String("CIM_PolicySetAppliesToElement"),
+		_p.getPolicySet(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MANAGED_ELEMENT,
-		String("CIM_PolicySetAppliesToElement"),
+		_p.getManagedElement(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SystemAdministratorGroupProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_SystemAdministratorGroup"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_SystemAdministratorGroup"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

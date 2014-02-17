@@ -81,7 +81,7 @@ Array<CIMKeyBinding> UNIX_SoftwareInstallationServiceCapabilitiesProvider::const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_SoftwareInstallationServiceCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_AssociatedDatabaseSystemProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_AssociatedDatabaseSystem"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_AssociatedDatabaseSystem"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

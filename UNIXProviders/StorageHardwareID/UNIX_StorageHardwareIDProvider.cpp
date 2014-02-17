@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_StorageHardwareIDProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_StorageHardwareID"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

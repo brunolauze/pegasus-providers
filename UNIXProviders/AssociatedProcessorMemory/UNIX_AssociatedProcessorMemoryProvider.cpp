@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_AssociatedProcessorMemoryProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_AssociatedProcessorMemory"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_AssociatedProcessorMemory"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -93,11 +93,11 @@ Array<CIMKeyBinding> UNIX_OtherOrgUnitInformationProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_OtherOrgUnitInformation"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_OtherOrgUnitInformation"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

@@ -69,19 +69,19 @@ Array<CIMKeyBinding> UNIX_NonWorkConservingSchedulingServiceProvider::constructK
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_NonWorkConservingSchedulingService"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_NonWorkConservingSchedulingService"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_NonWorkConservingSchedulingService"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_NonWorkConservingSchedulingService"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

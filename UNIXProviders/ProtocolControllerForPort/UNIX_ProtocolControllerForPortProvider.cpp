@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ProtocolControllerForPortProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ProtocolControllerForPort"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ProtocolControllerForPort"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -69,19 +69,19 @@ Array<CIMKeyBinding> UNIX_MemoryResourceProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_CREATION_CLASS_NAME,
-		String("CIM_MemoryResource"),
+		_p.getCSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CS_NAME,
-		String("CIM_MemoryResource"),
+		_p.getCSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_MemoryResource"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_STARTING_ADDRESS,
-		String("CIM_MemoryResource"),
+		_p.getStartingAddress(),
 		CIMKeyBinding::NUMERIC));
 
 

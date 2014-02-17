@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_DiskPartitionBasedOnVolumeProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_DiskPartitionBasedOnVolume"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_DiskPartitionBasedOnVolume"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

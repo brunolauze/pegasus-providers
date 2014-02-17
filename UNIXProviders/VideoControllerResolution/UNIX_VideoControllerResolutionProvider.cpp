@@ -77,7 +77,7 @@ Array<CIMKeyBinding> UNIX_VideoControllerResolutionProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SETTING_ID,
-		String("CIM_VideoControllerResolution"),
+		_p.getSettingID(),
 		CIMKeyBinding::STRING));
 
 

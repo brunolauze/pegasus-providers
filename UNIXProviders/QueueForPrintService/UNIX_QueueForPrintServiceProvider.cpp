@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_QueueForPrintServiceProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_QueueForPrintService"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_QueueForPrintService"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

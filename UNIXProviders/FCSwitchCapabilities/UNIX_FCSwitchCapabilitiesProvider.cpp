@@ -74,7 +74,7 @@ Array<CIMKeyBinding> UNIX_FCSwitchCapabilitiesProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_FCSwitchCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

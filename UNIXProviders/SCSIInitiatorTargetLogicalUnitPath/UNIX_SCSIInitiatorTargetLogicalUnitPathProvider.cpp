@@ -77,15 +77,15 @@ Array<CIMKeyBinding> UNIX_SCSIInitiatorTargetLogicalUnitPathProvider::constructK
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INITIATOR,
-		String("CIM_SCSIInitiatorTargetLogicalUnitPath"),
+		_p.getInitiator(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TARGET,
-		String("CIM_SCSIInitiatorTargetLogicalUnitPath"),
+		_p.getTarget(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_LOGICAL_UNIT,
-		String("CIM_SCSIInitiatorTargetLogicalUnitPath"),
+		_p.getLogicalUnit(),
 		CIMKeyBinding::REFERENCE));
 
 

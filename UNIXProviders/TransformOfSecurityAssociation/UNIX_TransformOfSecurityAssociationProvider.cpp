@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_TransformOfSecurityAssociationProvider::constructKeyBi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_MANAGED_ELEMENT,
-		String("CIM_TransformOfSecurityAssociation"),
+		_p.getManagedElement(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SETTING_DATA,
-		String("CIM_TransformOfSecurityAssociation"),
+		_p.getSettingData(),
 		CIMKeyBinding::REFERENCE));
 
 

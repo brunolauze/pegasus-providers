@@ -76,19 +76,19 @@ Array<CIMKeyBinding> UNIX_ProductProvider::constructKeyBindings(const UNIX_Produ
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_Product"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_IDENTIFYING_NUMBER,
-		String("CIM_Product"),
+		_p.getIdentifyingNumber(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VENDOR,
-		String("CIM_Product"),
+		_p.getVendor(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VERSION,
-		String("CIM_Product"),
+		_p.getVersion(),
 		CIMKeyBinding::STRING));
 
 

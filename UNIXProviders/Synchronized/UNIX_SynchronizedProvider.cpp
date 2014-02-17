@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_SynchronizedProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_ELEMENT,
-		String("CIM_Synchronized"),
+		_p.getSystemElement(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYNCED_ELEMENT,
-		String("CIM_Synchronized"),
+		_p.getSyncedElement(),
 		CIMKeyBinding::REFERENCE));
 
 

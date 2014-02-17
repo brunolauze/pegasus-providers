@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_TapePartitionOnSurfaceProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_TapePartitionOnSurface"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_TapePartitionOnSurface"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

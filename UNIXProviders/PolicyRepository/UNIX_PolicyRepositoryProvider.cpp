@@ -69,11 +69,11 @@ Array<CIMKeyBinding> UNIX_PolicyRepositoryProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_PolicyRepository"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_PolicyRepository"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

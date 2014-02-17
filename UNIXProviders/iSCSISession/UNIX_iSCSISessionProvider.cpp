@@ -85,7 +85,7 @@ Array<CIMKeyBinding> UNIX_iSCSISessionProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_iSCSISession"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

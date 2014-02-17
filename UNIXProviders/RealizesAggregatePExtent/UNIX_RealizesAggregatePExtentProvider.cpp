@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_RealizesAggregatePExtentProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_RealizesAggregatePExtent"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_RealizesAggregatePExtent"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -77,7 +77,7 @@ Array<CIMKeyBinding> UNIX_StaticIPAssignmentSettingDataProvider::constructKeyBin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_StaticIPAssignmentSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

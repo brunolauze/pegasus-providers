@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_BGPAdminDistanceProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_BGPAdminDistance"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_BGPAdminDistance"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

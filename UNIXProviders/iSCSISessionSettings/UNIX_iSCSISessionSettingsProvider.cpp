@@ -80,7 +80,7 @@ Array<CIMKeyBinding> UNIX_iSCSISessionSettingsProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_iSCSISessionSettings"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

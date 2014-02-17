@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_LocallyManagedPublicKeyProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_LocallyManagedPublicKey"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_LocallyManagedPublicKey"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

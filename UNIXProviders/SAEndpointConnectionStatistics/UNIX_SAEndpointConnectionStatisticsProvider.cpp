@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_SAEndpointConnectionStatisticsProvider::constructKeyBi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_SAEndpointConnectionStatistics"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

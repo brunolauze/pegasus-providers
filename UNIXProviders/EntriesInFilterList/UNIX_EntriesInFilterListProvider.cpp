@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_EntriesInFilterListProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_EntriesInFilterList"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_EntriesInFilterList"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

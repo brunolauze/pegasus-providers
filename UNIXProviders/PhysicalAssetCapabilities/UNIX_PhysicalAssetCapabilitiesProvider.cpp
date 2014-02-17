@@ -70,7 +70,7 @@ Array<CIMKeyBinding> UNIX_PhysicalAssetCapabilitiesProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_PhysicalAssetCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

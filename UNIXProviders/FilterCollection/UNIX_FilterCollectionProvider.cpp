@@ -71,7 +71,7 @@ Array<CIMKeyBinding> UNIX_FilterCollectionProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_FilterCollection"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -72,27 +72,27 @@ Array<CIMKeyBinding> UNIX_VersionCompatibilityCheckProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_VersionCompatibilityCheck"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VERSION,
-		String("CIM_VersionCompatibilityCheck"),
+		_p.getVersion(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_STATE,
-		String("CIM_VersionCompatibilityCheck"),
+		_p.getSoftwareElementState(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_ID,
-		String("CIM_VersionCompatibilityCheck"),
+		_p.getSoftwareElementID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TARGET_OPERATING_SYSTEM,
-		String("CIM_VersionCompatibilityCheck"),
+		_p.getTargetOperatingSystem(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CHECK_ID,
-		String("CIM_VersionCompatibilityCheck"),
+		_p.getCheckID(),
 		CIMKeyBinding::STRING));
 
 

@@ -70,27 +70,27 @@ Array<CIMKeyBinding> UNIX_NetworkingIDAuthenticationProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_NetworkingIDAuthentication"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_NetworkingIDAuthentication"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_RULE_CREATION_CLASS_NAME,
-		String("CIM_NetworkingIDAuthentication"),
+		_p.getPolicyRuleCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_RULE_NAME,
-		String("CIM_NetworkingIDAuthentication"),
+		_p.getPolicyRuleName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_NetworkingIDAuthentication"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_POLICY_CONDITION_NAME,
-		String("CIM_NetworkingIDAuthentication"),
+		_p.getPolicyConditionName(),
 		CIMKeyBinding::STRING));
 
 

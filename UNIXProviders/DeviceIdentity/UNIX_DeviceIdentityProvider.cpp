@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_DeviceIdentityProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_ELEMENT,
-		String("CIM_DeviceIdentity"),
+		_p.getSystemElement(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SAME_ELEMENT,
-		String("CIM_DeviceIdentity"),
+		_p.getSameElement(),
 		CIMKeyBinding::REFERENCE));
 
 

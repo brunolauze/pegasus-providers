@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_CalculatesAmongProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_CalculatesAmong"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_CalculatesAmong"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

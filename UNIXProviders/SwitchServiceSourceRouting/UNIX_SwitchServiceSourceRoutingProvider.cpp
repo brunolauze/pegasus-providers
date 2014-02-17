@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SwitchServiceSourceRoutingProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		String("CIM_SwitchServiceSourceRouting"),
+		_p.getGroupComponent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		String("CIM_SwitchServiceSourceRouting"),
+		_p.getPartComponent(),
 		CIMKeyBinding::REFERENCE));
 
 

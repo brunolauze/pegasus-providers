@@ -138,7 +138,7 @@ Array<CIMKeyBinding> UNIX_PhysicalComputerSystemViewProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_PhysicalComputerSystemView"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

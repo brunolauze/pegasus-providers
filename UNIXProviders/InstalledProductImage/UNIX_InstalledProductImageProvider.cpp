@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_InstalledProductImageProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_PRODUCT,
-		String("CIM_InstalledProductImage"),
+		_p.getProduct(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION,
-		String("CIM_InstalledProductImage"),
+		_p.getCollection(),
 		CIMKeyBinding::REFERENCE));
 
 

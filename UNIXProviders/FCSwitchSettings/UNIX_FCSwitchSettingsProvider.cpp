@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_FCSwitchSettingsProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_FCSwitchSettings"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

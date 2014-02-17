@@ -77,7 +77,7 @@ Array<CIMKeyBinding> UNIX_RedundancySetProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_RedundancySet"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

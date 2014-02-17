@@ -74,11 +74,11 @@ Array<CIMKeyBinding> UNIX_StorageMediaLocationProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_TAG,
-		String("CIM_StorageMediaLocation"),
+		_p.getTag(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_StorageMediaLocation"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 
 

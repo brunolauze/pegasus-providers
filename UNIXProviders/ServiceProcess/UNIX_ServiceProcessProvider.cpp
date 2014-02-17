@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_ServiceProcessProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SERVICE,
-		String("CIM_ServiceProcess"),
+		_p.getService(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PROCESS,
-		String("CIM_ServiceProcess"),
+		_p.getProcess(),
 		CIMKeyBinding::REFERENCE));
 
 

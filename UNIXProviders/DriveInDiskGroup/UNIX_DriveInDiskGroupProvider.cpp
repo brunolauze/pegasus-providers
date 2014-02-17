@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_DriveInDiskGroupProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION,
-		String("CIM_DriveInDiskGroup"),
+		_p.getCollection(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MEMBER,
-		String("CIM_DriveInDiskGroup"),
+		_p.getMember(),
 		CIMKeyBinding::REFERENCE));
 
 

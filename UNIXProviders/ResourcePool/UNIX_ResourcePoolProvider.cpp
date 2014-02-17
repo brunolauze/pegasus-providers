@@ -81,7 +81,7 @@ Array<CIMKeyBinding> UNIX_ResourcePoolProvider::constructKeyBindings(const UNIX_
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_ResourcePool"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

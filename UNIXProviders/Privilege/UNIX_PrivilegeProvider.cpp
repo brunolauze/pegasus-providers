@@ -75,7 +75,7 @@ Array<CIMKeyBinding> UNIX_PrivilegeProvider::constructKeyBindings(const UNIX_Pri
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_Privilege"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

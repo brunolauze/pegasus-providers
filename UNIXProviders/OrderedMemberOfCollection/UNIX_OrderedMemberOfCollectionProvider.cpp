@@ -70,11 +70,11 @@ Array<CIMKeyBinding> UNIX_OrderedMemberOfCollectionProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION,
-		String("CIM_OrderedMemberOfCollection"),
+		_p.getCollection(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MEMBER,
-		String("CIM_OrderedMemberOfCollection"),
+		_p.getMember(),
 		CIMKeyBinding::REFERENCE));
 
 

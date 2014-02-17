@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ServiceUsesSecurityServiceProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ServiceUsesSecurityService"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ServiceUsesSecurityService"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

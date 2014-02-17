@@ -72,7 +72,7 @@ Array<CIMKeyBinding> UNIX_WRRSchedulingElementProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_WRRSchedulingElement"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -70,11 +70,11 @@ Array<CIMKeyBinding> UNIX_PackageLocationProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_TAG,
-		String("CIM_PackageLocation"),
+		_p.getTag(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_PackageLocation"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 
 

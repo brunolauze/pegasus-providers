@@ -86,7 +86,7 @@ Array<CIMKeyBinding> UNIX_ProtocolControllerMaskingCapabilitiesProvider::constru
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_ProtocolControllerMaskingCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

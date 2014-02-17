@@ -79,7 +79,7 @@ Array<CIMKeyBinding> UNIX_CLPSettingDataProvider::constructKeyBindings(const UNI
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_CLPSettingData"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

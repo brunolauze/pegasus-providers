@@ -77,19 +77,19 @@ Array<CIMKeyBinding> UNIX_UninterruptiblePowerSupplyProvider::constructKeyBindin
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_UninterruptiblePowerSupply"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_UninterruptiblePowerSupply"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_UninterruptiblePowerSupply"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEVICE_ID,
-		String("CIM_UninterruptiblePowerSupply"),
+		_p.getDeviceID(),
 		CIMKeyBinding::STRING));
 
 

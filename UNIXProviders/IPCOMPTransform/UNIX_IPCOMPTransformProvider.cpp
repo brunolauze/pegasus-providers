@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_IPCOMPTransformProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_IPCOMPTransform"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_QueueAllocationProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_QueueAllocation"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_QueueAllocation"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

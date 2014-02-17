@@ -80,27 +80,27 @@ Array<CIMKeyBinding> UNIX_FCAdapterEventCountersProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		String("CIM_FCAdapterEventCounters"),
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_NAME,
-		String("CIM_FCAdapterEventCounters"),
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEVICE_CREATION_CLASS_NAME,
-		String("CIM_FCAdapterEventCounters"),
+		_p.getDeviceCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEVICE_ID,
-		String("CIM_FCAdapterEventCounters"),
+		_p.getDeviceID(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_FCAdapterEventCounters"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_FCAdapterEventCounters"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

@@ -73,7 +73,7 @@ Array<CIMKeyBinding> UNIX_SSHCapabilitiesProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_INSTANCE_ID,
-		String("CIM_SSHCapabilities"),
+		_p.getInstanceID(),
 		CIMKeyBinding::STRING));
 
 

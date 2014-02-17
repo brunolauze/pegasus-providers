@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_GroupProvider::constructKeyBindings(const UNIX_Group& 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_Group"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NAME,
-		String("CIM_Group"),
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 

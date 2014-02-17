@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ProcessExecutableProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ProcessExecutable"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ProcessExecutable"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

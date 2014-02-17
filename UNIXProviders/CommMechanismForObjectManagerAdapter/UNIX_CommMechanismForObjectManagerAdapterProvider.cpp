@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_CommMechanismForObjectManagerAdapterProvider::construc
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_CommMechanismForObjectManagerAdapter"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_CommMechanismForObjectManagerAdapter"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ElementAllocatedFromPoolProvider::constructKeyBindings
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		String("CIM_ElementAllocatedFromPool"),
+		_p.getAntecedent(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		String("CIM_ElementAllocatedFromPool"),
+		_p.getDependent(),
 		CIMKeyBinding::REFERENCE));
 
 

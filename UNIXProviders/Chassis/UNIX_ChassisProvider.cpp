@@ -78,11 +78,11 @@ Array<CIMKeyBinding> UNIX_ChassisProvider::constructKeyBindings(const UNIX_Chass
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_TAG,
-		String("CIM_Chassis"),
+		_p.getTag(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
-		String("CIM_Chassis"),
+		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 
 
