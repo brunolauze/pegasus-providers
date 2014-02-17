@@ -1,0 +1,5 @@
+Name: UNIXProviders
+Description: 
+Version: 0.1
+Libs: -L"/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/bin/Debug" -lUNIXProviders
+Cflags: -I"/usr/home/bruno/workspace/pegasus-providers/UNIXProviders" -I"/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/Account"

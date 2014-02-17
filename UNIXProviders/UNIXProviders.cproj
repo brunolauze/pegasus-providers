@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4DC6B981-CE60-4CD1-9DF5-7AEE2873EBDD}</ProjectGuid>
+    <Compiler>
+      <Compiler ctype="ClangppCompiler" />
+    </Compiler>
+    <Language>CPP</Language>
+    <Target>Bin</Target>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug</OutputPath>
+    <OutputName>UNIXProviders</OutputName>
+    <CompileTarget>SharedLibrary</CompileTarget>
+    <DefineSymbols>DEBUG MONODEVELOP</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+    <Includes>
+      <Includes>
+        <Include>/root/workspace/pegasus/src</Include>
+        <Include>/usr/local/include</Include>
+        <Include>${ProjectDir}</Include>
+        <Include>${ProjectDir}/*</Include>
+      </Includes>
+    </Includes>
+    <ExtraCompilerArguments>-W -Wall -Wno-unused-parameter  -Wno-unused-value -D_GNU_SOURCE -DTHREAD_SAFE -D_REENTRANT -Werror=unused-variable	-DPEGASUS_COMMON_INTERNAL -DPEGASUS_INTERNALONLY  -DPEGASUS_PLATFORM_FREEBSD_GENERIC_GNU -DPEGASUS_OS_FREEBSD -DPEGASUS_PLATFORM_FREEBSD_X86_64_CLANG -DPEGASUS_USE_SYSLOGS -DPEGASUS_ARCH_LIB=\"lib\" -DPEGASUS_ENABLE_USERGROUP_AUTHORIZATION -DPEGASUS_ENABLE_CQL -DPEGASUS_DEFAULT_ENABLE_OOP -DPEGASUS_ENABLE_EXECQUERY -DPEGASUS_HAS_SSL -DPEGASUS_SSL_RANDOMFILE -DPEGASUS_ENABLE_SSL_CRL_VERIFICATION -DPEGASUS_ENABLE_AUDIT_LOGGER -DPEGASUS_ENABLE_IPV6 -DPEGASUS_ENABLE_INDICATION_COUNT -DPEGASUS_ENABLE_SLP -DPEGASUS_USE_EXTERNAL_SLP_TYPE=1 -DPEGASUS_ENABLE_INTEROP_PROVIDER -DPEGASUS_USE_EXPERIMENTAL_INTERFACES -DPEGASUS_ENABLE_CMPI_PROVIDER_MANAGER -DPEGASUS_DEST_LIB_DIR=\"lib\" -DPEGASUS_ENABLE_PROTOCOL_WSMAN -DPEGASUS_PAM_AUTHENTICATION -DPEGASUS_NO_PASSWORDFILE -DPEGASUS_ENABLE_PROTOCOL_BINARY -DPEGASUS_EXTRA_PROVIDER_LIB_DIR=\"\"</ExtraCompilerArguments>
+    <ExtraLinkerArguments>-L/usr/local/lib/pegasus/lib -L/usr/local/lib -lpegcommon -lpegprovider -lpegclient -lpegslp_client -lpegquerycommon -lpegqueryexpression -lpegcql -lpegwql -lutil -lgeom -lpkg</ExtraLinkerArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release</OutputPath>
+    <OutputName>UNIXProviders</OutputName>
+    <CompileTarget>SharedLibrary</CompileTarget>
+    <OptimizationLevel>3</OptimizationLevel>
+    <DefineSymbols>MONODEVELOP</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="CIMHelper.cpp" />
+    <Compile Include="UNIX_Main.cpp" />
+    <Compile Include="Account\UNIX_Account.cpp" />
+    <Compile Include="Account\UNIX_AccountProvider.cpp" />
+    <Compile Include="Account\UNIX_Account_AIX.cxx" />
+    <Compile Include="Account\UNIX_Account_DARWIN.cxx" />
+    <Compile Include="Account\UNIX_Account_FREEBSD.cxx" />
+    <Compile Include="Account\UNIX_Account_HPUX.cxx" />
+    <Compile Include="Account\UNIX_Account_LINUX.cxx" />
+    <Compile Include="Account\UNIX_Account_SOLARIS.cxx" />
+    <Compile Include="Account\UNIX_Account_STUB.cxx" />
+    <Compile Include="Account\UNIX_Account_TRU64.cxx" />
+    <Compile Include="Account\UNIX_Account_VMS.cxx" />
+    <Compile Include="Account\UNIX_Account_ZOS.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CIMHelper.h" />
+    <None Include="CIM_ClassBase.h" />
+    <None Include="UNIXProviderBase.h" />
+    <None Include="UNIXProviderBase.hpp" />
+    <None Include="UNIX_Common.h" />
+    <None Include="CIM_Dependency.h" />
+    <None Include="CIM_ManagedElement.h" />
+    <None Include="CIM_ManagedSystemElement.h" />
+    <None Include="CIM_EnabledLogicalElement.h" />
+    <None Include="CIM_LogicalElement.h" />
+    <None Include="CIM_ComputerSystem.h" />
+    <None Include="CIM_Log.h" />
+    <None Include="CIM_LogicalDevice.h" />
+    <None Include="CIM_LogicalDiskBasedOnExtent.h" />
+    <None Include="CIM_LogicalFile.h" />
+    <None Include="CIM_Service.h" />
+    <None Include="CIM_SoftwareFeature.h" />
+    <None Include="CIM_IPRoute.h" />
+    <None Include="CIM_Component.h" />
+    <None Include="CIM_System.h" />
+    <None Include="CIM_SystemComponent.h" />
+    <None Include="Account\UNIX_Account.h" />
+    <None Include="Account\UNIX_AccountDeps.h" />
+    <None Include="Account\UNIX_AccountDeps_AIX.h" />
+    <None Include="Account\UNIX_AccountDeps_DARWIN.h" />
+    <None Include="Account\UNIX_AccountDeps_FREEBSD.h" />
+    <None Include="Account\UNIX_AccountDeps_HPUX.h" />
+    <None Include="Account\UNIX_AccountDeps_LINUX.h" />
+    <None Include="Account\UNIX_AccountDeps_SOLARIS.h" />
+    <None Include="Account\UNIX_AccountDeps_STUB.h" />
+    <None Include="Account\UNIX_AccountDeps_TRU64.h" />
+    <None Include="Account\UNIX_AccountDeps_VMS.h" />
+    <None Include="Account\UNIX_AccountDeps_ZOS.h" />
+    <None Include="Account\UNIX_AccountPrivate.h" />
+    <None Include="Account\UNIX_AccountPrivate_AIX.h" />
+    <None Include="Account\UNIX_AccountPrivate_DARWIN.h" />
+    <None Include="Account\UNIX_AccountPrivate_FREEBSD.h" />
+    <None Include="Account\UNIX_AccountPrivate_HPUX.h" />
+    <None Include="Account\UNIX_AccountPrivate_LINUX.h" />
+    <None Include="Account\UNIX_AccountPrivate_SOLARIS.h" />
+    <None Include="Account\UNIX_AccountPrivate_STUB.h" />
+    <None Include="Account\UNIX_AccountPrivate_TRU64.h" />
+    <None Include="Account\UNIX_AccountPrivate_VMS.h" />
+    <None Include="Account\UNIX_AccountPrivate_ZOS.h" />
+    <None Include="Account\UNIX_AccountProvider.h" />
+    <None Include="Account\UNIX_Account_AIX.hpp" />
+    <None Include="Account\UNIX_Account_AIX.hxx" />
+    <None Include="Account\UNIX_Account_DARWIN.hpp" />
+    <None Include="Account\UNIX_Account_DARWIN.hxx" />
+    <None Include="Account\UNIX_Account_FREEBSD.hpp" />
+    <None Include="Account\UNIX_Account_FREEBSD.hxx" />
+    <None Include="Account\UNIX_Account_HPUX.hpp" />
+    <None Include="Account\UNIX_Account_HPUX.hxx" />
+    <None Include="Account\UNIX_Account_LINUX.hpp" />
+    <None Include="Account\UNIX_Account_LINUX.hxx" />
+    <None Include="Account\UNIX_Account_SOLARIS.hpp" />
+    <None Include="Account\UNIX_Account_SOLARIS.hxx" />
+    <None Include="Account\UNIX_Account_STUB.hpp" />
+    <None Include="Account\UNIX_Account_STUB.hxx" />
+    <None Include="Account\UNIX_Account_TRU64.hpp" />
+    <None Include="Account\UNIX_Account_TRU64.hxx" />
+    <None Include="Account\UNIX_Account_VMS.hpp" />
+    <None Include="Account\UNIX_Account_VMS.hxx" />
+    <None Include="Account\UNIX_Account_WIN32.hpp" />
+    <None Include="Account\UNIX_Account_ZOS.hpp" />
+    <None Include="Account\UNIX_Account_ZOS.hxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Account\" />
+  </ItemGroup>
+</Project>

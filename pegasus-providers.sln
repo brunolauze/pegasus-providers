@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2857B73E-F847-4B02-9238-064979017E93}") = "UNIXProviders", "UNIXProviders\UNIXProviders.cproj", "{4DC6B981-CE60-4CD1-9DF5-7AEE2873EBDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{08605017-1DEB-456B-99D3-F1E090E5EDF9}"
+EndProject
+Project("{2857B73E-F847-4B02-9238-064979017E93}") = "UNIXProviders.Tests", "tests\UNIXProviders.Tests\UNIXProviders.Tests.cproj", "{FB6D38B1-B280-4DC5-BFA8-4709837175EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DC6B981-CE60-4CD1-9DF5-7AEE2873EBDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DC6B981-CE60-4CD1-9DF5-7AEE2873EBDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DC6B981-CE60-4CD1-9DF5-7AEE2873EBDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DC6B981-CE60-4CD1-9DF5-7AEE2873EBDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB6D38B1-B280-4DC5-BFA8-4709837175EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB6D38B1-B280-4DC5-BFA8-4709837175EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB6D38B1-B280-4DC5-BFA8-4709837175EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB6D38B1-B280-4DC5-BFA8-4709837175EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FB6D38B1-B280-4DC5-BFA8-4709837175EF} = {08605017-1DEB-456B-99D3-F1E090E5EDF9}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = UNIXProviders\UNIXProviders.cproj
+	EndGlobalSection
+EndGlobal
