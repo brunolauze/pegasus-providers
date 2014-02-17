@@ -33,6 +33,30 @@
 #define __CIM_HELPER_H
 #include "UNIX_Common.h"
 
+
+#if defined(PEGASUS_OS_HPUX)
+
+#elif defined(PEGASUS_OS_LINUX)
+
+#elif defined(PEGASUS_OS_DARWIN)
+
+#elif defined(PEGASUS_OS_AIX)
+
+#elif defined(PEGASUS_OS_FREEBSD)
+#	include <kvm.h>
+#elif defined(PEGASUS_OS_SOLARIS)
+
+#elif defined(PEGASUS_OS_ZOS)
+
+#elif defined(PEGASUS_OS_VMS)
+
+#elif defined(PEGASUS_OS_TRU64)
+
+#else
+
+#endif
+
+
 class CIMHelper
 {
 public:
@@ -45,6 +69,27 @@ public:
 	static String OSName;
 	static String EmptyString;
 
+#if defined(PEGASUS_OS_HPUX)
+
+#elif defined(PEGASUS_OS_LINUX)
+
+#elif defined(PEGASUS_OS_DARWIN)
+
+#elif defined(PEGASUS_OS_AIX)
+
+#elif defined(PEGASUS_OS_FREEBSD)
+	static kvm_t *kd;
+#elif defined(PEGASUS_OS_SOLARIS)
+
+#elif defined(PEGASUS_OS_ZOS)
+
+#elif defined(PEGASUS_OS_VMS)
+
+#elif defined(PEGASUS_OS_TRU64)
+
+#else
+
+#endif
 private:
 
 };

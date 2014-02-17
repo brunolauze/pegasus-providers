@@ -634,7 +634,7 @@ PEGASUS_USING_STD;
 //#include <OpaqueManagementData/UNIX_OpaqueManagementDataProvider.h>
 //#include <OpaqueManagementDataCapabilities/UNIX_OpaqueManagementDataCapabilitiesProvider.h>
 //#include <OpaqueManagementDataService/UNIX_OpaqueManagementDataServiceProvider.h>
-//#include <OperatingSystem/UNIX_OperatingSystemProvider.h>
+#include <OperatingSystem/UNIX_OperatingSystemProvider.h>
 //#include <OperatingSystemCapabilities/UNIX_OperatingSystemCapabilitiesProvider.h>
 //#include <OperatingSystemSoftwareFeature/UNIX_OperatingSystemSoftwareFeatureProvider.h>
 //#include <OperationLog/UNIX_OperationLogProvider.h>
@@ -1717,7 +1717,7 @@ PEGASUS_EXPORT CIMProvider* PegasusCreateProvider(const String& providerName)
 	//else if (String::equalNoCase(providerName, "UNIX_OpaqueManagementDataProvider")) return new UNIX_OpaqueManagementDataProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_OpaqueManagementDataCapabilitiesProvider")) return new UNIX_OpaqueManagementDataCapabilitiesProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_OpaqueManagementDataServiceProvider")) return new UNIX_OpaqueManagementDataServiceProvider();
-	//else if (String::equalNoCase(providerName, "UNIX_OperatingSystemProvider")) return new UNIX_OperatingSystemProvider();
+	else if (String::equalNoCase(providerName, "UNIX_OperatingSystemProvider")) return new UNIX_OperatingSystemProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_OperatingSystemCapabilitiesProvider")) return new UNIX_OperatingSystemCapabilitiesProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_OperatingSystemSoftwareFeatureProvider")) return new UNIX_OperatingSystemSoftwareFeatureProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_OperationLogProvider")) return new UNIX_OperationLogProvider();

@@ -30,6 +30,10 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+extern "C" {
+	#include <pkg.h>
+}
+
 UNIX_SoftwareElement::UNIX_SoftwareElement(void)
 {
 }

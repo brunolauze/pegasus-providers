@@ -26,7 +26,7 @@
       </Includes>
     </Includes>
     <ExtraCompilerArguments>-W -Wall -Wno-unused-parameter  -Wno-unused-value -D_GNU_SOURCE -DTHREAD_SAFE -D_REENTRANT -Werror=unused-variable	-DPEGASUS_COMMON_INTERNAL -DPEGASUS_INTERNALONLY  -DPEGASUS_PLATFORM_FREEBSD_GENERIC_GNU -DPEGASUS_OS_FREEBSD -DPEGASUS_PLATFORM_FREEBSD_X86_64_CLANG -DPEGASUS_USE_SYSLOGS -DPEGASUS_ARCH_LIB=\"lib\" -DPEGASUS_ENABLE_USERGROUP_AUTHORIZATION -DPEGASUS_ENABLE_CQL -DPEGASUS_DEFAULT_ENABLE_OOP -DPEGASUS_ENABLE_EXECQUERY -DPEGASUS_HAS_SSL -DPEGASUS_SSL_RANDOMFILE -DPEGASUS_ENABLE_SSL_CRL_VERIFICATION -DPEGASUS_ENABLE_AUDIT_LOGGER -DPEGASUS_ENABLE_IPV6 -DPEGASUS_ENABLE_INDICATION_COUNT -DPEGASUS_ENABLE_SLP -DPEGASUS_USE_EXTERNAL_SLP_TYPE=1 -DPEGASUS_ENABLE_INTEROP_PROVIDER -DPEGASUS_USE_EXPERIMENTAL_INTERFACES -DPEGASUS_ENABLE_CMPI_PROVIDER_MANAGER -DPEGASUS_DEST_LIB_DIR=\"lib\" -DPEGASUS_ENABLE_PROTOCOL_WSMAN -DPEGASUS_PAM_AUTHENTICATION -DPEGASUS_NO_PASSWORDFILE -DPEGASUS_ENABLE_PROTOCOL_BINARY -DPEGASUS_EXTRA_PROVIDER_LIB_DIR=\"\"</ExtraCompilerArguments>
-    <ExtraLinkerArguments>-L/usr/local/lib/pegasus/lib -L/usr/local/lib -lpegcommon -lpegprovider -lpegclient -lpegslp_client -lpegquerycommon -lpegqueryexpression -lpegcql -lpegwql -lutil -lgeom -lpkg</ExtraLinkerArguments>
+    <ExtraLinkerArguments>-L/usr/local/lib/pegasus/lib -L/usr/local/lib -lpegcommon -lpegprovider -lpegclient -lpegslp_client -lpegquerycommon -lpegqueryexpression -lpegcql -lpegwql -lutil -lgeom -lpkg -lkvm -pthread</ExtraLinkerArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release</OutputPath>
@@ -75,6 +75,18 @@
     <Compile Include="OperatingSystem\UNIX_OperatingSystem_TRU64.cxx" />
     <Compile Include="OperatingSystem\UNIX_OperatingSystem_VMS.cxx" />
     <Compile Include="OperatingSystem\UNIX_OperatingSystem_ZOS.cxx" />
+    <Compile Include="SoftwareElement\UNIX_SoftwareElement.cpp" />
+    <Compile Include="SoftwareElement\UNIX_SoftwareElementProvider.cpp" />
+    <Compile Include="SoftwareElement\UNIX_SoftwareElement_AIX.cxx" />
+    <Compile Include="SoftwareElement\UNIX_SoftwareElement_DARWIN.cxx" />
+    <Compile Include="SoftwareElement\UNIX_SoftwareElement_FREEBSD.cxx" />
+    <Compile Include="SoftwareElement\UNIX_SoftwareElement_HPUX.cxx" />
+    <Compile Include="SoftwareElement\UNIX_SoftwareElement_LINUX.cxx" />
+    <Compile Include="SoftwareElement\UNIX_SoftwareElement_SOLARIS.cxx" />
+    <Compile Include="SoftwareElement\UNIX_SoftwareElement_STUB.cxx" />
+    <Compile Include="SoftwareElement\UNIX_SoftwareElement_TRU64.cxx" />
+    <Compile Include="SoftwareElement\UNIX_SoftwareElement_VMS.cxx" />
+    <Compile Include="SoftwareElement\UNIX_SoftwareElement_ZOS.cxx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CIMHelper.h" />
@@ -233,10 +245,56 @@
     <None Include="OperatingSystem\UNIX_OperatingSystem_WIN32.hpp" />
     <None Include="OperatingSystem\UNIX_OperatingSystem_ZOS.hpp" />
     <None Include="OperatingSystem\UNIX_OperatingSystem_ZOS.hxx" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementDeps.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementDeps_AIX.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementDeps_DARWIN.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementDeps_FREEBSD.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementDeps_HPUX.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementDeps_LINUX.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementDeps_SOLARIS.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementDeps_STUB.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementDeps_TRU64.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementDeps_VMS.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementDeps_ZOS.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementPrivate.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementPrivate_AIX.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementPrivate_DARWIN.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementPrivate_FREEBSD.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementPrivate_HPUX.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementPrivate_LINUX.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementPrivate_SOLARIS.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementPrivate_STUB.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementPrivate_TRU64.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementPrivate_VMS.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementPrivate_ZOS.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElementProvider.h" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_AIX.hpp" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_AIX.hxx" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_DARWIN.hpp" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_DARWIN.hxx" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_FREEBSD.hpp" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_FREEBSD.hxx" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_HPUX.hpp" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_HPUX.hxx" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_LINUX.hpp" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_LINUX.hxx" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_SOLARIS.hpp" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_SOLARIS.hxx" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_STUB.hpp" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_STUB.hxx" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_TRU64.hpp" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_TRU64.hxx" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_VMS.hpp" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_VMS.hxx" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_WIN32.hpp" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_ZOS.hpp" />
+    <None Include="SoftwareElement\UNIX_SoftwareElement_ZOS.hxx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Account\" />
     <Folder Include="ComputerSystem\" />
     <Folder Include="OperatingSystem\" />
+    <Folder Include="SoftwareElement\" />
   </ItemGroup>
 </Project>

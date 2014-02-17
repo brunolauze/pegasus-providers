@@ -124,3 +124,27 @@ String CIMHelper::getTimeAsString()
 String CIMHelper::HostName(CIMHelper::getHostName());
 String CIMHelper::OSName(CIMHelper::getOSName());
 String CIMHelper::EmptyString(String::EMPTY);
+
+
+#if defined(PEGASUS_OS_HPUX)
+
+#elif defined(PEGASUS_OS_LINUX)
+
+#elif defined(PEGASUS_OS_DARWIN)
+
+#elif defined(PEGASUS_OS_AIX)
+
+#elif defined(PEGASUS_OS_FREEBSD)
+	kvm_t * CIMHelper::kd;
+#elif defined(PEGASUS_OS_SOLARIS)
+
+#elif defined(PEGASUS_OS_ZOS)
+
+#elif defined(PEGASUS_OS_VMS)
+
+#elif defined(PEGASUS_OS_TRU64)
+
+#else
+
+#endif
+

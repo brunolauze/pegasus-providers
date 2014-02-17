@@ -29,6 +29,15 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
+#include <unistd.h>
+#include <sys/stat.h>
+#include <sys/sysctl.h>
+#include <sys/utsname.h>
+#include <sys/user.h>
+#include <sys/vmmeter.h>
+#include <utmpx.h>
+#include <sys/fcntl.h>
+#include <kvm.h>
 
 UNIX_OperatingSystem::UNIX_OperatingSystem(void)
 {
@@ -47,7 +56,11 @@ Boolean UNIX_OperatingSystem::getInstanceID(CIMProperty &p) const
 
 String UNIX_OperatingSystem::getInstanceID() const
 {
-	return String ("");
+	String s;
+	s.append(CIMHelper::OSName);
+	s.append("-");
+	s.append(CIMHelper::HostName);
+	return s;
 }
 
 Boolean UNIX_OperatingSystem::getCaption(CIMProperty &p) const
@@ -58,7 +71,7 @@ Boolean UNIX_OperatingSystem::getCaption(CIMProperty &p) const
 
 String UNIX_OperatingSystem::getCaption() const
 {
-	return String ("");
+	return getName();
 }
 
 Boolean UNIX_OperatingSystem::getDescription(CIMProperty &p) const
@@ -69,7 +82,9 @@ Boolean UNIX_OperatingSystem::getDescription(CIMProperty &p) const
 
 String UNIX_OperatingSystem::getDescription() const
 {
-	return String ("");
+	return String ("This instance reflects the Operating System"
+           " on which the CIMOM is executing (as distinguished from instances"
+           " of other installed operating systems that could be run).");
 }
 
 Boolean UNIX_OperatingSystem::getElementName(CIMProperty &p) const
@@ -91,18 +106,7 @@ Boolean UNIX_OperatingSystem::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_OperatingSystem::getInstallDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return CIMHelper::getInstallDate();
 }
 
 Boolean UNIX_OperatingSystem::getName(CIMProperty &p) const
@@ -113,7 +117,7 @@ Boolean UNIX_OperatingSystem::getName(CIMProperty &p) const
 
 String UNIX_OperatingSystem::getName() const
 {
-	return String ("");
+	return CIMHelper::OSName;
 }
 
 Boolean UNIX_OperatingSystem::getOperationalStatus(CIMProperty &p) const
@@ -125,7 +129,7 @@ Boolean UNIX_OperatingSystem::getOperationalStatus(CIMProperty &p) const
 Array<Uint16> UNIX_OperatingSystem::getOperationalStatus() const
 {
 	Array<Uint16> as;
-	
+	as.append(2); //OK
 
 	return as;
 
@@ -345,7 +349,7 @@ Boolean UNIX_OperatingSystem::getOSType(CIMProperty &p) const
 
 Uint16 UNIX_OperatingSystem::getOSType() const
 {
-	return Uint16(0);
+	return Uint16(FreeBSD);
 }
 
 Boolean UNIX_OperatingSystem::getOtherTypeDescription(CIMProperty &p) const
@@ -356,7 +360,17 @@ Boolean UNIX_OperatingSystem::getOtherTypeDescription(CIMProperty &p) const
 
 String UNIX_OperatingSystem::getOtherTypeDescription() const
 {
-	return String ("");
+	struct utsname  unameInfo;
+    char version[sizeof(unameInfo.release) + sizeof(unameInfo.version) + 1];
+
+    // Call uname and check for any errors.
+    if (uname(&unameInfo) < 0)
+    {
+       return CIMHelper::EmptyString;
+    }
+
+    sprintf(version, "%s %s", unameInfo.version, unameInfo.release);
+	return String (version);
 }
 
 Boolean UNIX_OperatingSystem::getVersion(CIMProperty &p) const
@@ -367,7 +381,15 @@ Boolean UNIX_OperatingSystem::getVersion(CIMProperty &p) const
 
 String UNIX_OperatingSystem::getVersion() const
 {
-	return String ("");
+	struct utsname  unameInfo;
+
+    // Call uname and check for any errors.
+    if (uname(&unameInfo) < 0)
+    {
+       return CIMHelper::EmptyString;
+    }
+
+    return String(unameInfo.release);
 }
 
 Boolean UNIX_OperatingSystem::getLastBootUpTime(CIMProperty &p) const
@@ -378,9 +400,15 @@ Boolean UNIX_OperatingSystem::getLastBootUpTime(CIMProperty &p) const
 
 CIMDateTime UNIX_OperatingSystem::getLastBootUpTime() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
+	int mib[2] = { CTL_KERN, KERN_BOOTTIME };
+    struct timeval   tv;
+    struct tm* clock;
+    size_t len = sizeof(tv);
+    if (sysctl(mib, 2, &tv, &len, NULL, 0) == -1)
+    {
+        return CIMHelper::getInstallDate();
+    }
+	clock = gmtime(&(tv.tv_sec));	// Get the last modified time and put it into the time structure
 	return CIMDateTime(
 		clock->tm_year + 1900,
 		clock->tm_mon + 1,
@@ -422,7 +450,10 @@ Boolean UNIX_OperatingSystem::getCurrentTimeZone(CIMProperty &p) const
 
 Sint16 UNIX_OperatingSystem::getCurrentTimeZone() const
 {
-	return Sint16(0);
+	time_t now;
+   	now = time(NULL);
+    struct tm* clock = gmtime(&(now));
+	return Sint16(-clock->tm_gmtoff);
 }
 
 Boolean UNIX_OperatingSystem::getNumberOfLicensedUsers(CIMProperty &p) const
@@ -444,7 +475,20 @@ Boolean UNIX_OperatingSystem::getNumberOfUsers(CIMProperty &p) const
 
 Uint32 UNIX_OperatingSystem::getNumberOfUsers() const
 {
-	return Uint32(0);
+	struct utmpx * utmpp;
+
+    Uint32 numberOfUsers(0);
+
+    while ((utmpp = getutxent()) != NULL)
+    {
+        if (utmpp->ut_type == USER_PROCESS)
+        {
+            numberOfUsers++;
+        }
+    }
+
+    endutxent();
+	return numberOfUsers;
 }
 
 Boolean UNIX_OperatingSystem::getNumberOfProcesses(CIMProperty &p) const
@@ -455,6 +499,15 @@ Boolean UNIX_OperatingSystem::getNumberOfProcesses(CIMProperty &p) const
 
 Uint32 UNIX_OperatingSystem::getNumberOfProcesses() const
 {
+	size_t length = 0;
+    static const int name[] = { CTL_KERN, KERN_PROC, KERN_PROC_ALL, 0 };
+
+    // Call sysctl with a NULL buffer to get proper length
+    if (sysctl((int *)name, (sizeof(name) / sizeof(*name)) - 1, NULL, &length, NULL, 0) != -1)
+    {
+    	int proc_count = length / sizeof(struct kinfo_proc);
+		return Uint32(proc_count);
+	}
 	return Uint32(0);
 }
 
@@ -466,6 +519,12 @@ Boolean UNIX_OperatingSystem::getMaxNumberOfProcesses(CIMProperty &p) const
 
 Uint32 UNIX_OperatingSystem::getMaxNumberOfProcesses() const
 {
+	long pid_max;
+    size_t ret_len = sizeof(pid_max);
+    if (sysctlbyname("kern.pid_max", &pid_max, &ret_len, NULL, 0) != -1)
+    {
+    	return Uint32(pid_max);
+    }
 	return Uint32(0);
 }
 
@@ -475,9 +534,32 @@ Boolean UNIX_OperatingSystem::getTotalSwapSpaceSize(CIMProperty &p) const
 	return true;
 }
 
+#define NSWAP 16
+static struct kvm_swap swapary[NSWAP];
+
 Uint64 UNIX_OperatingSystem::getTotalSwapSpaceSize() const
 {
-	return Uint64(0);
+	long retavail = 0;
+	int n;
+	int hlen = 0;
+	long blocksize = 0;
+	getbsize(&hlen, &blocksize);
+	int pagesize = getpagesize();
+
+	if (CIMHelper::kd == NULL)
+	{
+		char errbuf[_POSIX2_LINE_MAX];
+		CIMHelper::kd = kvm_openfiles("/dev/null", "/dev/null", "/dev/null", O_RDONLY, errbuf);
+	}
+	if (CIMHelper::kd == NULL) return Uint64(0);
+	n = kvm_getswapinfo(CIMHelper::kd, swapary, NSWAP, 0);
+	#define CONVERT(v)	((quad_t)(v) * pagesize)
+	if (n < 0 || swapary[0].ksw_total == 0) {
+		return Uint64(0);
+	}
+	retavail = CONVERT(swapary[0].ksw_total);
+	//retfree = CONVERT(swapary[0].ksw_total - swapary[0].ksw_used);
+	return Uint64(retavail);
 }
 
 Boolean UNIX_OperatingSystem::getTotalVirtualMemorySize(CIMProperty &p) const
@@ -488,7 +570,16 @@ Boolean UNIX_OperatingSystem::getTotalVirtualMemorySize(CIMProperty &p) const
 
 Uint64 UNIX_OperatingSystem::getTotalVirtualMemorySize() const
 {
-	return Uint64(0);
+  	struct vmtotal vm_info;
+  	int mib[2];
+  
+  	mib[0] = CTL_VM;
+  	mib[1] = VM_TOTAL;
+
+  	size_t len = sizeof(vm_info);
+  	sysctl(mib, 2, &vm_info, &len, NULL, 0);
+
+  	return Uint64(vm_info.t_vm);
 }
 
 Boolean UNIX_OperatingSystem::getFreeVirtualMemory(CIMProperty &p) const
@@ -499,7 +590,16 @@ Boolean UNIX_OperatingSystem::getFreeVirtualMemory(CIMProperty &p) const
 
 Uint64 UNIX_OperatingSystem::getFreeVirtualMemory() const
 {
-	return Uint64(0);
+  	struct vmtotal vm_info;
+  	int mib[2];
+  
+  	mib[0] = CTL_VM;
+  	mib[1] = VM_TOTAL;
+
+  	size_t len = sizeof(vm_info);
+  	sysctl(mib, 2, &vm_info, &len, NULL, 0);
+
+  	return Uint64(vm_info.t_free);
 }
 
 Boolean UNIX_OperatingSystem::getFreePhysicalMemory(CIMProperty &p) const
@@ -510,7 +610,16 @@ Boolean UNIX_OperatingSystem::getFreePhysicalMemory(CIMProperty &p) const
 
 Uint64 UNIX_OperatingSystem::getFreePhysicalMemory() const
 {
-	return Uint64(0);
+	long val = 0;
+	size_t len = sizeof(val);
+    long blocksize = 0;
+    int hlen = 0;
+    getbsize(&hlen, &blocksize);
+    if (sysctlbyname("vm.stats.vm.v_free_count", &val, &len, NULL, 0) == -1)
+    {
+        return Uint64(0);
+    }
+	return Uint64(val * blocksize);
 }
 
 Boolean UNIX_OperatingSystem::getTotalVisibleMemorySize(CIMProperty &p) const
@@ -521,13 +630,22 @@ Boolean UNIX_OperatingSystem::getTotalVisibleMemorySize(CIMProperty &p) const
 
 Uint64 UNIX_OperatingSystem::getTotalVisibleMemorySize() const
 {
-	return Uint64(0);
+	long memory;
+	int mib[2] = { CTL_HW, HW_REALMEM };
+    size_t len = sizeof(memory);
+
+    if (sysctl(mib, 2, &memory, &len, NULL, 0) == -1)
+    {
+        return Uint64(0);
+    }
+	return Uint64(memory);
 }
 
 Boolean UNIX_OperatingSystem::getSizeStoredInPagingFiles(CIMProperty &p) const
 {
-	p = CIMProperty(PROPERTY_SIZE_STORED_IN_PAGING_FILES, getSizeStoredInPagingFiles());
-	return true;
+	/* TODO: */
+	//p = CIMProperty(PROPERTY_SIZE_STORED_IN_PAGING_FILES, getSizeStoredInPagingFiles());
+	return false;
 }
 
 Uint64 UNIX_OperatingSystem::getSizeStoredInPagingFiles() const
@@ -537,8 +655,9 @@ Uint64 UNIX_OperatingSystem::getSizeStoredInPagingFiles() const
 
 Boolean UNIX_OperatingSystem::getFreeSpaceInPagingFiles(CIMProperty &p) const
 {
-	p = CIMProperty(PROPERTY_FREE_SPACE_IN_PAGING_FILES, getFreeSpaceInPagingFiles());
-	return true;
+	/* TODO: */
+	//p = CIMProperty(PROPERTY_FREE_SPACE_IN_PAGING_FILES, getFreeSpaceInPagingFiles());
+	return false;
 }
 
 Uint64 UNIX_OperatingSystem::getFreeSpaceInPagingFiles() const
@@ -554,7 +673,16 @@ Boolean UNIX_OperatingSystem::getMaxProcessMemorySize(CIMProperty &p) const
 
 Uint64 UNIX_OperatingSystem::getMaxProcessMemorySize() const
 {
-	return Uint64(0);
+	long val = 0;
+    size_t len = sizeof(val);
+    long blocksize = 0;
+    int hlen = 0;
+    getbsize(&hlen, &blocksize);
+    if (sysctlbyname("kern.maxdsiz", &val, &len, NULL, 0) == -1)
+    {
+        return Uint64(0);
+    }
+	return Uint64(val);
 }
 
 Boolean UNIX_OperatingSystem::getDistributed(CIMProperty &p) const
@@ -576,24 +704,33 @@ Boolean UNIX_OperatingSystem::getMaxProcessesPerUser(CIMProperty &p) const
 
 Uint32 UNIX_OperatingSystem::getMaxProcessesPerUser() const
 {
-	return Uint32(0);
+	int mib[2] = { CTL_KERN, KERN_MAXPROCPERUID };
+    long maxp = 0;
+    size_t len = sizeof(maxp);
+
+    if (sysctl(mib, 2, &maxp, &len, NULL, 0) == -1)
+    {
+        return Uint32(0);
+    }
+    return Uint32(maxp);
 }
 
 
 
 Boolean UNIX_OperatingSystem::initialize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_OperatingSystem::load(int &pIndex)
 {
+	if (pIndex == 0) return true;
 	return false;
 }
 
 Boolean UNIX_OperatingSystem::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_OperatingSystem::find(Array<CIMKeyBinding> &kbArray)
@@ -603,7 +740,6 @@ Boolean UNIX_OperatingSystem::find(Array<CIMKeyBinding> &kbArray)
 	String cSNameKey;
 	String creationClassNameKey;
 	String nameKey;
-
 
 	for(Uint32 i = 0; i < kbArray.size(); i++)
 	{
@@ -615,9 +751,10 @@ Boolean UNIX_OperatingSystem::find(Array<CIMKeyBinding> &kbArray)
 		else if (keyName.equal(PROPERTY_NAME)) nameKey = kb.getValue();
 	}
 
-
-
-/* EXecute find with extracted keys */
+	/* EXecute find with extracted keys */
+	if (String::equal(nameKey, CIMHelper::EmptyString) ||
+		String::equalNoCase(nameKey, CIMHelper::OSName))
+		return true;
 
 	return false;
 }

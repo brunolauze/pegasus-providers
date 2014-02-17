@@ -628,7 +628,7 @@
 //#include "UNIX_OpaqueManagementDataFixture.h"
 //#include "UNIX_OpaqueManagementDataCapabilitiesFixture.h"
 //#include "UNIX_OpaqueManagementDataServiceFixture.h"
-//#include "UNIX_OperatingSystemFixture.h"
+#include "UNIX_OperatingSystemFixture.h"
 //#include "UNIX_OperatingSystemCapabilitiesFixture.h"
 //#include "UNIX_OperatingSystemSoftwareFeatureFixture.h"
 //#include "UNIX_OperationLogFixture.h"
@@ -1725,7 +1725,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_OpaqueManagementData")) { UNIX_OpaqueManagementDataFixture opaqueManagementData; opaqueManagementData.Run(); }
 	//if (IsTarget(s, "UNIX_OpaqueManagementDataCapabilities")) { UNIX_OpaqueManagementDataCapabilitiesFixture opaqueManagementDataCapabilities; opaqueManagementDataCapabilities.Run(); }
 	//if (IsTarget(s, "UNIX_OpaqueManagementDataService")) { UNIX_OpaqueManagementDataServiceFixture opaqueManagementDataService; opaqueManagementDataService.Run(); }
-	//if (IsTarget(s, "UNIX_OperatingSystem")) { UNIX_OperatingSystemFixture operatingSystem; operatingSystem.Run(); }
+	if (IsTarget(s, "UNIX_OperatingSystem")) { UNIX_OperatingSystemFixture operatingSystem; operatingSystem.Run(); }
 	//if (IsTarget(s, "UNIX_OperatingSystemCapabilities")) { UNIX_OperatingSystemCapabilitiesFixture operatingSystemCapabilities; operatingSystemCapabilities.Run(); }
 	//if (IsTarget(s, "UNIX_OperatingSystemSoftwareFeature")) { UNIX_OperatingSystemSoftwareFeatureFixture operatingSystemSoftwareFeature; operatingSystemSoftwareFeature.Run(); }
 	//if (IsTarget(s, "UNIX_OperationLog")) { UNIX_OperationLogFixture operationLog; operationLog.Run(); }
@@ -2204,6 +2204,6 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_ZoneSet")) { UNIX_ZoneSetFixture zoneSet; zoneSet.Run(); }
 	//if (IsTarget(s, "UNIX_ApplicationSystem")) { UNIX_ApplicationSystemFixture applicationSystem; applicationSystem.Run(); }
 	//if (IsTarget(s, "UNIX_SoftwareElement")) { UNIX_SoftwareElementFixture softwareElement; softwareElement.Run(); }
-
+	return 0;
 }
 

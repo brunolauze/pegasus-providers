@@ -2,7 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="tests/UNIXProviders.Tests/main.cpp">
     <Files>
-      <File FileName="tests/UNIXProviders.Tests/main.cpp" Line="1126" Column="11" />
+      <File FileName="UNIXProviders/CIMHelper.h" Line="72" Column="1" />
+      <File FileName="UNIXProviders/CIMHelper.cpp" Line="139" Column="27" />
+      <File FileName="tests/UNIXProviders.Tests/main.cpp" Line="631" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
