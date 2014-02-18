@@ -29,6 +29,7 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
+#include <sys/sysctl.h>
 
 UNIX_DiskDrive::UNIX_DiskDrive(void)
 {
@@ -47,7 +48,12 @@ Boolean UNIX_DiskDrive::getInstanceID(CIMProperty &p) const
 
 String UNIX_DiskDrive::getInstanceID() const
 {
-	return String ("");
+	String s;
+	s.append(disknode->name);
+	char unit[128];
+	sprintf(unit, "%d", disknode->unit);
+	s.append(unit);
+	return s;
 }
 
 Boolean UNIX_DiskDrive::getCaption(CIMProperty &p) const
@@ -58,7 +64,7 @@ Boolean UNIX_DiskDrive::getCaption(CIMProperty &p) const
 
 String UNIX_DiskDrive::getCaption() const
 {
-	return String ("");
+	return String(disknode->product);
 }
 
 Boolean UNIX_DiskDrive::getDescription(CIMProperty &p) const
@@ -69,7 +75,7 @@ Boolean UNIX_DiskDrive::getDescription(CIMProperty &p) const
 
 String UNIX_DiskDrive::getDescription() const
 {
-	return String ("");
+	return String(disknode->desc);
 }
 
 Boolean UNIX_DiskDrive::getElementName(CIMProperty &p) const
@@ -91,18 +97,7 @@ Boolean UNIX_DiskDrive::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_DiskDrive::getInstallDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return CIMHelper::getInstallDate();
 }
 
 Boolean UNIX_DiskDrive::getName(CIMProperty &p) const
@@ -113,7 +108,7 @@ Boolean UNIX_DiskDrive::getName(CIMProperty &p) const
 
 String UNIX_DiskDrive::getName() const
 {
-	return String ("");
+	return getInstanceID();
 }
 
 Boolean UNIX_DiskDrive::getOperationalStatus(CIMProperty &p) const
@@ -125,7 +120,7 @@ Boolean UNIX_DiskDrive::getOperationalStatus(CIMProperty &p) const
 Array<Uint16> UNIX_DiskDrive::getOperationalStatus() const
 {
 	Array<Uint16> as;
-	
+	as.append(2); //OK
 
 	return as;
 
@@ -345,7 +340,7 @@ Boolean UNIX_DiskDrive::getDeviceID(CIMProperty &p) const
 
 String UNIX_DiskDrive::getDeviceID() const
 {
-	return String ("");
+	return getInstanceID();
 }
 
 Boolean UNIX_DiskDrive::getPowerManagementSupported(CIMProperty &p) const
@@ -438,7 +433,6 @@ Boolean UNIX_DiskDrive::getOtherIdentifyingInfo(CIMProperty &p) const
 Array<String> UNIX_DiskDrive::getOtherIdentifyingInfo() const
 {
 	Array<String> as;
-	
 
 	return as;
 
@@ -475,7 +469,12 @@ Boolean UNIX_DiskDrive::getIdentifyingDescriptions(CIMProperty &p) const
 Array<String> UNIX_DiskDrive::getIdentifyingDescriptions() const
 {
 	Array<String> as;
-	
+	String vendor; vendor.append("Vendor: "); vendor.append(disknode->vendor);
+	String product; product.append("Product: "); product.append(disknode->product);
+	String revision; revision.append("Revision: "); revision.append(disknode->revision);
+	String firmware; firmware.append("Firmware: "); firmware.append(disknode->firmware);
+	String serial; serial.append("Serial: "); serial.append(disknode->serial);
+	as.append(vendor); as.append(product); as.append(revision); as.append(firmware); as.append(serial);
 
 	return as;
 
@@ -556,7 +555,7 @@ Boolean UNIX_DiskDrive::getCompressionMethod(CIMProperty &p) const
 
 String UNIX_DiskDrive::getCompressionMethod() const
 {
-	return String ("");
+	return String ("Unknown");
 }
 
 Boolean UNIX_DiskDrive::getNumberOfMediaSupported(CIMProperty &p) const
@@ -567,7 +566,7 @@ Boolean UNIX_DiskDrive::getNumberOfMediaSupported(CIMProperty &p) const
 
 Uint32 UNIX_DiskDrive::getNumberOfMediaSupported() const
 {
-	return Uint32(0);
+	return Uint32(1);
 }
 
 Boolean UNIX_DiskDrive::getMaxMediaSize(CIMProperty &p) const
@@ -589,7 +588,7 @@ Boolean UNIX_DiskDrive::getDefaultBlockSize(CIMProperty &p) const
 
 Uint64 UNIX_DiskDrive::getDefaultBlockSize() const
 {
-	return Uint64(0);
+	return Uint64(512);
 }
 
 Boolean UNIX_DiskDrive::getMaxBlockSize(CIMProperty &p) const
@@ -600,7 +599,7 @@ Boolean UNIX_DiskDrive::getMaxBlockSize(CIMProperty &p) const
 
 Uint64 UNIX_DiskDrive::getMaxBlockSize() const
 {
-	return Uint64(0);
+	return Uint64(512);
 }
 
 Boolean UNIX_DiskDrive::getMinBlockSize(CIMProperty &p) const
@@ -611,7 +610,7 @@ Boolean UNIX_DiskDrive::getMinBlockSize(CIMProperty &p) const
 
 Uint64 UNIX_DiskDrive::getMinBlockSize() const
 {
-	return Uint64(0);
+	return Uint64(512);
 }
 
 Boolean UNIX_DiskDrive::getNeedsCleaning(CIMProperty &p) const
@@ -732,9 +731,23 @@ Boolean UNIX_DiskDrive::getTimeOfLastMount(CIMProperty &p) const
 
 CIMDateTime UNIX_DiskDrive::getTimeOfLastMount() const
 {
+	/* Last Boot or Modified Dev File ??? */
+	int mib[2] = { CTL_KERN, KERN_BOOTTIME };
+    struct timeval   tv;
+    struct tm* clock;
+    size_t len = sizeof(tv);
+    if (sysctl(mib, 2, &tv, &len, NULL, 0) == -1)
+    {
+        return CIMHelper::getInstallDate();
+    }
+	clock = gmtime(&(tv.tv_sec));	// Get the last modified time and put it into the time structure
+	/*
 	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
+	struct stat attrib;			// create a file attribute structure
+	const char* devName = getName().getCString();
+	stat(devName, &attrib);		// get the attributes mnt
+	clock = gmtime(&(attrib.st_mtime));	// Get the last modified time and put it into the time structure
+	*/
 	return CIMDateTime(
 		clock->tm_year + 1900,
 		clock->tm_mon + 1,
@@ -744,6 +757,8 @@ CIMDateTime UNIX_DiskDrive::getTimeOfLastMount() const
 		clock->tm_sec,
 		0,0,
 		clock->tm_gmtoff);
+
+
 }
 
 Boolean UNIX_DiskDrive::getTotalMountTime(CIMProperty &p) const
@@ -790,20 +805,266 @@ Uint64 UNIX_DiskDrive::getUnitsUsed() const
 	return Uint64(0);
 }
 
-
-
 Boolean UNIX_DiskDrive::initialize()
 {
-	return false;
+	int bufsize;
+	disknode = NULL;
+	if ((fd = open(XPT_DEVICE, O_RDWR)) == -1) {
+		//warn("couldn't open %s", XPT_DEVICE);
+		return false;
+	}
+
+	bzero(&ccb, sizeof(union ccb));
+
+	ccb.ccb_h.path_id = CAM_XPT_PATH_ID;
+	ccb.ccb_h.target_id = CAM_TARGET_WILDCARD;
+	ccb.ccb_h.target_lun = CAM_LUN_WILDCARD;
+
+	ccb.ccb_h.func_code = XPT_DEV_MATCH;
+	bufsize = sizeof(struct dev_match_result) * 100;
+	ccb.cdm.match_buf_len = bufsize;
+	ccb.cdm.matches = (struct dev_match_result *)malloc(bufsize);
+	if (ccb.cdm.matches == NULL) {
+		//warnx("can't malloc memory for matches");
+		close(fd);
+		return false;
+	}
+	ccb.cdm.num_matches = 0;
+
+	/*
+	 * We fetch all nodes, since we display most of them in the default
+	 * case, and all in the verbose case.
+	 */
+	ccb.cdm.num_patterns = 0;
+	ccb.cdm.pattern_buf_len = 0;
+
+	int error;
+	unsigned int i;
+	int need_close;
+	int skip_device;
+	do {
+		if (ioctl(fd, CAMIOCOMMAND, &ccb) == -1) {
+			//warn("error sending CAMIOCOMMAND ioctl");
+			error = 1;
+			break;
+		}
+
+		if ((ccb.ccb_h.status != CAM_REQ_CMP)
+		 || ((ccb.cdm.status != CAM_DEV_MATCH_LAST)
+		    && (ccb.cdm.status != CAM_DEV_MATCH_MORE))) {
+			//warnx("got CAM error %#x, CDM error %d\n",
+			//      ccb.ccb_h.status, ccb.cdm.status);
+			error = 1;
+			break;
+		}
+		char _desc[512];
+		char _vendor[96];
+		char _product[96];
+		char _serial[96];
+		char _revision[32];
+		char _firmware[10];
+		for (i = 0; i < ccb.cdm.num_matches; i++) {
+			
+			switch (ccb.cdm.matches[i].type) {
+			case DEV_MATCH_BUS: {
+				
+				/*
+				struct bus_match_result *bus_result;
+				bus_result =
+					&ccb.cdm.matches[i].result.bus_result;
+
+
+				cout << "DEVNAME :" << bus_result->dev_name << endl;
+				*/
+
+				/*
+				fprintf(stdout, "scbus%d on %s%d bus %d%s\n",
+					bus_result->path_id,
+					bus_result->dev_name,
+					bus_result->unit_number,
+					bus_result->bus_id,
+					":");
+				*/
+				break;
+			}
+			case DEV_MATCH_DEVICE: {
+				struct device_match_result *dev_result;
+				u_char vendor[16], product[48], serial[48], revision[16];
+				u_char fw[5];
+				//char tmpstr[256];
+
+				dev_result =
+				     &ccb.cdm.matches[i].result.device_result;
+
+				if ((dev_result->flags
+				     & DEV_RESULT_UNCONFIGURED)) {
+					skip_device = 1;
+					break;
+				} else
+					skip_device = 0;
+
+				if (dev_result->protocol == PROTO_SCSI) {
+				    cam_strvis(vendor, (unsigned char*)dev_result->inq_data.vendor,
+					   sizeof(dev_result->inq_data.vendor),
+					   sizeof(vendor));
+				    cam_strvis(product,
+					   (unsigned char*)dev_result->inq_data.product,
+					   sizeof(dev_result->inq_data.product),
+					   sizeof(product));
+				    cam_strvis(revision,
+					   (unsigned char*)dev_result->inq_data.revision,
+					  sizeof(dev_result->inq_data.revision),
+					   sizeof(revision));
+					sprintf(_desc, "%s %s %s", vendor, product,
+					revision);
+				    sprintf(_vendor, "%s", vendor);
+				    sprintf(_product, "%s", product);
+				    sprintf(_revision, "%s", revision);
+				    sprintf(_firmware, "%s", "");
+				    sprintf(_serial, "%s", "");
+				} else if (dev_result->protocol == PROTO_ATA ||
+				    dev_result->protocol == PROTO_SATAPM) {
+				    cam_strvis(vendor, (unsigned char*)dev_result->ident_data.vendor7,
+					   sizeof(dev_result->ident_data.vendor7),
+					   sizeof(vendor));
+				    cam_strvis(product,
+					   dev_result->ident_data.model,
+					   sizeof(dev_result->ident_data.model),
+					   sizeof(product));
+				    cam_strvis(revision,
+					   dev_result->ident_data.revision,
+					  sizeof(dev_result->ident_data.revision),
+					   sizeof(revision));
+					cam_strvis(serial,
+					   dev_result->ident_data.serial,
+					  sizeof(dev_result->ident_data.serial),
+					   sizeof(serial));
+				    sprintf(_desc, "%s %s", product,
+					revision);
+					sprintf(_vendor, "%s", vendor);
+					sprintf(_product, "%s", product);
+					sprintf(_revision, "%s", revision);
+					sprintf(_firmware, "%s", "");
+					sprintf(_serial, "%s", serial);
+				} else if (dev_result->protocol == PROTO_SEMB) {
+					struct sep_identify_data *sid;
+					cam_strvis(serial,
+					   dev_result->ident_data.serial,
+					  sizeof(dev_result->ident_data.serial),
+					   sizeof(serial));
+					sid = (struct sep_identify_data *)
+					    &dev_result->ident_data;
+					cam_strvis(vendor, sid->vendor_id,
+					    sizeof(sid->vendor_id),
+					    sizeof(vendor));
+					cam_strvis(product, sid->product_id,
+					    sizeof(sid->product_id),
+					    sizeof(product));
+					cam_strvis(revision, sid->product_rev,
+					    sizeof(sid->product_rev),
+					    sizeof(revision));
+					cam_strvis(fw, sid->firmware_rev,
+					    sizeof(sid->firmware_rev),
+					    sizeof(fw));
+					sprintf(_desc, "%s %s %s %s",
+					    vendor, product, revision, fw);
+					sprintf(_vendor, "%s", vendor);
+					sprintf(_product, "%s", product);
+					sprintf(_revision, "%s", revision);
+					sprintf(_firmware, "%s", fw);
+					sprintf(_serial, "%s", serial);
+				}
+				if (need_close) {
+					/* fprintf(stdout, ")\n"); */
+					need_close = 0;
+				}
+
+				/*
+				fprintf(stdout, "%-33s  at scbus%d "
+					"target %d lun %jx (",
+					tmpstr,
+					dev_result->path_id,
+					dev_result->target_id,
+					(uintmax_t)dev_result->target_lun);
+				*/
+				need_close = 1;
+
+				break;
+			}
+			case DEV_MATCH_PERIPH: {
+				
+
+				struct periph_match_result *periph_result;
+				periph_result =
+				      &ccb.cdm.matches[i].result.periph_result;
+				
+				if (skip_device != 0)
+					break;
+				
+				if (strcmp(periph_result->periph_name, "pass") == 0) continue;
+				struct disknode_t __unused *temp;
+				struct disknode_t __unused *nn=(struct  disknode_t*)malloc(sizeof(struct disknode_t));
+
+				sprintf(nn->desc, "%s", _desc);
+				sprintf(nn->vendor, "%s", _vendor);
+				sprintf(nn->product, "%s", _product);
+				sprintf(nn->revision, "%s", _revision);
+				sprintf(nn->firmware, "%s", _firmware);
+				sprintf(nn->serial, "%s", _serial);
+				nn->name = periph_result->periph_name;
+				nn->unit = periph_result->unit_number;
+
+				/*
+				cout << " Name: " << periph_result->periph_name <<
+						" Unit: " << periph_result->unit_number <<
+						" PathId: " << periph_result->path_id <<
+						" TargetId: " << periph_result->target_id <<
+						" LunId: " << periph_result->target_lun << endl;
+				*/
+				/*
+				fprintf(stdout, "%s%d",
+					periph_result->periph_name,
+					periph_result->unit_number);
+				*/
+
+				nn->next=NULL;
+				if(disknode==NULL)
+				{
+					disknode=nn;
+				}
+				else
+				{
+				 	temp=disknode;
+				   while(temp->next!=NULL)
+				     temp=temp->next;
+				   temp->next=nn;
+				}   
+				need_close++;
+				break;
+			}
+			default:
+				/* fprintf(stdout, "unknown match type\n"); */
+				break;
+			}
+		}
+	} while ((ccb.ccb_h.status == CAM_REQ_CMP)
+		&& (ccb.cdm.status == CAM_DEV_MATCH_MORE));
+	return true;
 }
 
 Boolean UNIX_DiskDrive::load(int &pIndex)
 {
+	if (pIndex > 0) disknode = disknode->next;
+	if (disknode != NULL)
+	{
+		return true;		
+	}
 	return false;
 }
 
 Boolean UNIX_DiskDrive::finalize()
 {
+	close(fd);
 	return false;
 }
 
@@ -815,7 +1076,6 @@ Boolean UNIX_DiskDrive::find(Array<CIMKeyBinding> &kbArray)
 	String creationClassNameKey;
 	String deviceIDKey;
 
-
 	for(Uint32 i = 0; i < kbArray.size(); i++)
 	{
 		kb = kbArray[i];
@@ -826,9 +1086,15 @@ Boolean UNIX_DiskDrive::find(Array<CIMKeyBinding> &kbArray)
 		else if (keyName.equal(PROPERTY_DEVICE_ID)) deviceIDKey = kb.getValue();
 	}
 
-
-
-/* EXecute find with extracted keys */
+	/* EXecute find with extracted keys */
+	for(int i = 0; load(i); i++)
+	{
+		if (String::equal(systemNameKey, getSystemName()) &&
+			String::equal(deviceIDKey, getDeviceID()))
+		{
+			return true;
+		}
+	}
 
 	return false;
 }

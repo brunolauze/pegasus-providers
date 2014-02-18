@@ -30,20 +30,20 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
-#include "UNIX_DiskDriveProvider.h"
+#include "UNIX_FileSystemProvider.h"
 
-UNIX_DiskDriveProvider::UNIX_DiskDriveProvider()
+UNIX_FileSystemProvider::UNIX_FileSystemProvider()
 {
 }
 
-UNIX_DiskDriveProvider::~UNIX_DiskDriveProvider()
+UNIX_FileSystemProvider::~UNIX_FileSystemProvider()
 {
 }
 
-CIMInstance UNIX_DiskDriveProvider::constructInstance(
+CIMInstance UNIX_FileSystemProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_DiskDrive &_p) const
+	const UNIX_FileSystem &_p) const
 {
 	CIMProperty p;
 
@@ -52,7 +52,7 @@ CIMInstance UNIX_DiskDriveProvider::constructInstance(
 	// Set path
 	inst.setPath(CIMObjectPath(String(""), // hostname
 			nameSpace,
-			CIMName("UNIX_DiskDrive"),
+			CIMName("UNIX_FileSystem"),
 			constructKeyBindings(_p)));
 
 	//CIM_ManagedElement Properties
@@ -84,76 +84,51 @@ CIMInstance UNIX_DiskDriveProvider::constructInstance(
 	if (_p.getAvailableRequestedStates(p)) inst.addProperty(p);
 	if (_p.getTransitioningToState(p)) inst.addProperty(p);
 
-	//CIM_LogicalDevice Properties
-	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
-	if (_p.getSystemName(p)) inst.addProperty(p);
+	//UNIX_FileSystem Properties
+	if (_p.getCSCreationClassName(p)) inst.addProperty(p);
+	if (_p.getCSName(p)) inst.addProperty(p);
 	if (_p.getCreationClassName(p)) inst.addProperty(p);
-	if (_p.getDeviceID(p)) inst.addProperty(p);
-	if (_p.getPowerManagementSupported(p)) inst.addProperty(p);
-	if (_p.getPowerManagementCapabilities(p)) inst.addProperty(p);
-	if (_p.getAvailability(p)) inst.addProperty(p);
-	if (_p.getStatusInfo(p)) inst.addProperty(p);
-	if (_p.getLastErrorCode(p)) inst.addProperty(p);
-	if (_p.getErrorDescription(p)) inst.addProperty(p);
-	if (_p.getErrorCleared(p)) inst.addProperty(p);
-	if (_p.getOtherIdentifyingInfo(p)) inst.addProperty(p);
-	if (_p.getPowerOnHours(p)) inst.addProperty(p);
-	if (_p.getTotalPowerOnHours(p)) inst.addProperty(p);
-	if (_p.getIdentifyingDescriptions(p)) inst.addProperty(p);
-	if (_p.getAdditionalAvailability(p)) inst.addProperty(p);
-	if (_p.getMaxQuiesceTime(p)) inst.addProperty(p);
-
-	//CIM_MediaAccessDevice Properties
-	if (_p.getCapabilities(p)) inst.addProperty(p);
-	if (_p.getCapabilityDescriptions(p)) inst.addProperty(p);
-	if (_p.getErrorMethodology(p)) inst.addProperty(p);
+	if (_p.getRoot(p)) inst.addProperty(p);
+	if (_p.getBlockSize(p)) inst.addProperty(p);
+	if (_p.getFileSystemSize(p)) inst.addProperty(p);
+	if (_p.getAvailableSpace(p)) inst.addProperty(p);
+	if (_p.getReadOnly(p)) inst.addProperty(p);
+	if (_p.getEncryptionMethod(p)) inst.addProperty(p);
 	if (_p.getCompressionMethod(p)) inst.addProperty(p);
-	if (_p.getNumberOfMediaSupported(p)) inst.addProperty(p);
-	if (_p.getMaxMediaSize(p)) inst.addProperty(p);
-	if (_p.getDefaultBlockSize(p)) inst.addProperty(p);
-	if (_p.getMaxBlockSize(p)) inst.addProperty(p);
-	if (_p.getMinBlockSize(p)) inst.addProperty(p);
-	if (_p.getNeedsCleaning(p)) inst.addProperty(p);
-	if (_p.getMediaIsLocked(p)) inst.addProperty(p);
-	if (_p.getSecurity(p)) inst.addProperty(p);
-	if (_p.getLastCleaned(p)) inst.addProperty(p);
-	if (_p.getMaxAccessTime(p)) inst.addProperty(p);
-	if (_p.getUncompressedDataRate(p)) inst.addProperty(p);
-	if (_p.getLoadTime(p)) inst.addProperty(p);
-	if (_p.getUnloadTime(p)) inst.addProperty(p);
-	if (_p.getMountCount(p)) inst.addProperty(p);
-	if (_p.getTimeOfLastMount(p)) inst.addProperty(p);
-	if (_p.getTotalMountTime(p)) inst.addProperty(p);
-	if (_p.getUnitsDescription(p)) inst.addProperty(p);
-	if (_p.getMaxUnitsBeforeCleaning(p)) inst.addProperty(p);
-	if (_p.getUnitsUsed(p)) inst.addProperty(p);
-
-	//CIM_DiskDrive Properties
+	if (_p.getCaseSensitive(p)) inst.addProperty(p);
+	if (_p.getCasePreserved(p)) inst.addProperty(p);
+	if (_p.getCodeSet(p)) inst.addProperty(p);
+	if (_p.getMaxFileNameLength(p)) inst.addProperty(p);
+	if (_p.getClusterSize(p)) inst.addProperty(p);
+	if (_p.getFileSystemType(p)) inst.addProperty(p);
+	if (_p.getPersistenceType(p)) inst.addProperty(p);
+	if (_p.getOtherPersistenceType(p)) inst.addProperty(p);
+	if (_p.getNumberOfFiles(p)) inst.addProperty(p);
 
 
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_DiskDriveProvider::constructKeyBindings(const UNIX_DiskDrive& _p) const
+Array<CIMKeyBinding> UNIX_FileSystemProvider::constructKeyBindings(const UNIX_FileSystem& _p) const
 {
 
 	Array<CIMKeyBinding> keys;
 
 	keys.append(CIMKeyBinding(
-		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
-		_p.getSystemCreationClassName(),
+		PROPERTY_CS_CREATION_CLASS_NAME,
+		_p.getCSCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
-		PROPERTY_SYSTEM_NAME,
-		_p.getSystemName(),
+		PROPERTY_CS_NAME,
+		_p.getCSName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
 		_p.getCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
-		PROPERTY_DEVICE_ID,
-		_p.getDeviceID(),
+		PROPERTY_NAME,
+		_p.getName(),
 		CIMKeyBinding::STRING));
 
 
@@ -162,12 +137,12 @@ Array<CIMKeyBinding> UNIX_DiskDriveProvider::constructKeyBindings(const UNIX_Dis
 
 
 
-#define UNIX_PROVIDER UNIX_DiskDriveProvider
-#define UNIX_PROVIDER_NAME "UNIX_DiskDriveProvider"
-#define CLASS_IMPLEMENTATION UNIX_DiskDrive
-#define CLASS_IMPLEMENTATION_NAME "UNIX_DiskDrive"
-#define BASE_CLASS_NAME "CIM_DiskDrive"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define UNIX_PROVIDER UNIX_FileSystemProvider
+#define UNIX_PROVIDER_NAME "UNIX_FileSystemProvider"
+#define CLASS_IMPLEMENTATION UNIX_FileSystem
+#define CLASS_IMPLEMENTATION_NAME "UNIX_FileSystem"
+#define BASE_CLASS_NAME "UNIX_FileSystem"
+#define NUMKEYS_CLASS_IMPLEMENTATION 4
 
 
 #include "UNIXProviderBase.hpp"

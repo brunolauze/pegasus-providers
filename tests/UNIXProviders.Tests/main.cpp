@@ -302,7 +302,7 @@
 //#include "UNIX_DirectorySpecificationFixture.h"
 //#include "UNIX_DirectorySpecificationFileFixture.h"
 //#include "UNIX_DiscreteSensorFixture.h"
-//#include "UNIX_DiskDriveFixture.h"
+#include "UNIX_DiskDriveFixture.h"
 //#include "UNIX_DisketteDriveFixture.h"
 //#include "UNIX_DiskGroupFixture.h"
 //#include "UNIX_DiskPartitionFixture.h"
@@ -1023,7 +1023,7 @@
 //#include "UNIX_UnimodemFixture.h"
 //#include "UNIX_UninterruptiblePowerSupplyFixture.h"
 #include "UNIX_ComputerSystemFixture.h"
-//#include "UNIX_DeviceFileFixture.h"
+#include "UNIX_DeviceFileFixture.h"
 //#include "UNIX_UnixDirectoryFixture.h"
 //#include "UNIX_FileFixture.h"
 //#include "UNIX_LocalFileSystemFixture.h"
@@ -1368,7 +1368,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_DeviceAccessedByFile")) { UNIX_DeviceAccessedByFileFixture deviceAccessedByFile; deviceAccessedByFile.Run(); }
 	//if (IsTarget(s, "UNIX_DeviceErrorCounts")) { UNIX_DeviceErrorCountsFixture deviceErrorCounts; deviceErrorCounts.Run(); }
 	//if (IsTarget(s, "UNIX_DeviceErrorData")) { UNIX_DeviceErrorDataFixture deviceErrorData; deviceErrorData.Run(); }
-	//if (IsTarget(s, "UNIX_DeviceFile")) { UNIX_DeviceFileFixture deviceFile; deviceFile.Run(); }
+	if (IsTarget(s, "UNIX_DeviceFile")) { UNIX_DeviceFileFixture deviceFile; deviceFile.Run(); }
 	//if (IsTarget(s, "UNIX_DeviceIdentity")) { UNIX_DeviceIdentityFixture deviceIdentity; deviceIdentity.Run(); }
 	//if (IsTarget(s, "UNIX_DeviceSAPImplementation")) { UNIX_DeviceSAPImplementationFixture deviceSAPImplementation; deviceSAPImplementation.Run(); }
 	//if (IsTarget(s, "UNIX_DeviceServicesLocation")) { UNIX_DeviceServicesLocationFixture deviceServicesLocation; deviceServicesLocation.Run(); }
@@ -1401,7 +1401,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_DirectorySpecification")) { UNIX_DirectorySpecificationFixture directorySpecification; directorySpecification.Run(); }
 	//if (IsTarget(s, "UNIX_DirectorySpecificationFile")) { UNIX_DirectorySpecificationFileFixture directorySpecificationFile; directorySpecificationFile.Run(); }
 	//if (IsTarget(s, "UNIX_DiscreteSensor")) { UNIX_DiscreteSensorFixture discreteSensor; discreteSensor.Run(); }
-	//if (IsTarget(s, "UNIX_DiskDrive")) { UNIX_DiskDriveFixture diskDrive; diskDrive.Run(); }
+	if (IsTarget(s, "UNIX_DiskDrive")) { UNIX_DiskDriveFixture diskDrive; diskDrive.Run(); }
 	//if (IsTarget(s, "UNIX_DisketteDrive")) { UNIX_DisketteDriveFixture disketteDrive; disketteDrive.Run(); }
 	//if (IsTarget(s, "UNIX_DiskGroup")) { UNIX_DiskGroupFixture diskGroup; diskGroup.Run(); }
 	//if (IsTarget(s, "UNIX_DiskPartition")) { UNIX_DiskPartitionFixture diskPartition; diskPartition.Run(); }

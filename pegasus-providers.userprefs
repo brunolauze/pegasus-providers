@@ -1,13 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/Process/UNIX_Process_FREEBSD.hpp">
+  <MonoDevelop.Ide.Workbench ActiveDocument="tests/UNIXProviders.Tests/main.cpp">
     <Files>
-      <File FileName="UNIXProviders/OSProcess/UNIX_OSProcess_FREEBSD.hpp" Line="107" Column="3" />
-      <File FileName="UNIXProviders/InstalledOS/UNIX_InstalledOS_FREEBSD.hpp" Line="86" Column="2" />
-      <File FileName="UNIXProviders/OSProcess/UNIX_OSProcessProvider.cpp" Line="41" Column="2" />
-      <File FileName="UNIXProviders/Process/UNIX_Process_FREEBSD.hpp" Line="637" Column="19" />
-      <File FileName="UNIXProviders/Process/UNIX_Process.cpp" Line="77" Column="2" />
-      <File FileName="UNIXProviders/Process/UNIX_Process.h" Line="158" Column="5" />
+      <File FileName="UNIXProviders/DiskDrive/UNIX_DiskDrive_FREEBSD.hpp" Line="90" Column="2" />
+      <File FileName="UNIXProviders/DeviceFile/UNIX_DeviceFile_FREEBSD.hpp" Line="488" Column="2" />
+      <File FileName="tests/UNIXProviders.Tests/main.cpp" Line="1027" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

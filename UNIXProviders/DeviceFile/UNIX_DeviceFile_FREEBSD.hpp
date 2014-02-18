@@ -29,6 +29,7 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
+#include <sys/stat.h>
 
 UNIX_DeviceFile::UNIX_DeviceFile(void)
 {
@@ -47,7 +48,7 @@ Boolean UNIX_DeviceFile::getInstanceID(CIMProperty &p) const
 
 String UNIX_DeviceFile::getInstanceID() const
 {
-	return String ("");
+	return String (ep->d_name);
 }
 
 Boolean UNIX_DeviceFile::getCaption(CIMProperty &p) const
@@ -58,7 +59,9 @@ Boolean UNIX_DeviceFile::getCaption(CIMProperty &p) const
 
 String UNIX_DeviceFile::getCaption() const
 {
-	return String ("");
+	char fullpath[MAXNAMLEN];
+	sprintf(fullpath, "/dev/%s", ep->d_name);
+	return fullpath;
 }
 
 Boolean UNIX_DeviceFile::getDescription(CIMProperty &p) const
@@ -91,18 +94,7 @@ Boolean UNIX_DeviceFile::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_DeviceFile::getInstallDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return CIMHelper::getInstallDate();
 }
 
 Boolean UNIX_DeviceFile::getName(CIMProperty &p) const
@@ -113,7 +105,7 @@ Boolean UNIX_DeviceFile::getName(CIMProperty &p) const
 
 String UNIX_DeviceFile::getName() const
 {
-	return String ("");
+	return getInstanceID();
 }
 
 Boolean UNIX_DeviceFile::getOperationalStatus(CIMProperty &p) const
@@ -125,7 +117,7 @@ Boolean UNIX_DeviceFile::getOperationalStatus(CIMProperty &p) const
 Array<Uint16> UNIX_DeviceFile::getOperationalStatus() const
 {
 	Array<Uint16> as;
-	
+	as.append(2); //OK
 
 	return as;
 
@@ -253,7 +245,7 @@ Boolean UNIX_DeviceFile::getFSName(CIMProperty &p) const
 
 String UNIX_DeviceFile::getFSName() const
 {
-	return String ("");
+	return String ("devfs");
 }
 
 Boolean UNIX_DeviceFile::getCreationClassName(CIMProperty &p) const
@@ -275,7 +267,13 @@ Boolean UNIX_DeviceFile::getFileSize(CIMProperty &p) const
 
 Uint64 UNIX_DeviceFile::getFileSize() const
 {
-	return Uint64(0);
+	struct stat statbuf;
+	char fullpath[MAXNAMLEN];
+	sprintf(fullpath, "/dev/%s", ep->d_name);
+	if (stat(fullpath, &statbuf) == -1) {
+  		return Uint64(0);
+	}
+	return Uint64(statbuf.st_size);
 }
 
 Boolean UNIX_DeviceFile::getCreationDate(CIMProperty &p) const
@@ -286,18 +284,7 @@ Boolean UNIX_DeviceFile::getCreationDate(CIMProperty &p) const
 
 CIMDateTime UNIX_DeviceFile::getCreationDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return CIMHelper::getInstallDate();
 }
 
 Boolean UNIX_DeviceFile::getLastModified(CIMProperty &p) const
@@ -308,9 +295,12 @@ Boolean UNIX_DeviceFile::getLastModified(CIMProperty &p) const
 
 CIMDateTime UNIX_DeviceFile::getLastModified() const
 {
+	char fullpath[MAXNAMLEN];
+	sprintf(fullpath, "/dev/%s", ep->d_name);
 	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
+	struct stat attrib;			// create a file attribute structure
+	stat(fullpath, &attrib);		// get the attributes mnt
+	clock = gmtime(&(attrib.st_mtime));	// Get the last modified time and put it into the time structure
 	return CIMDateTime(
 		clock->tm_year + 1900,
 		clock->tm_mon + 1,
@@ -330,9 +320,12 @@ Boolean UNIX_DeviceFile::getLastAccessed(CIMProperty &p) const
 
 CIMDateTime UNIX_DeviceFile::getLastAccessed() const
 {
+	char fullpath[MAXNAMLEN];
+	sprintf(fullpath, "/dev/%s", ep->d_name);
 	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
+	struct stat attrib;			// create a file attribute structure
+	stat(fullpath, &attrib);		// get the attributes mnt
+	clock = gmtime(&(attrib.st_atime));	// Get the last modified time and put it into the time structure
 	return CIMDateTime(
 		clock->tm_year + 1900,
 		clock->tm_mon + 1,
@@ -352,7 +345,11 @@ Boolean UNIX_DeviceFile::getReadable(CIMProperty &p) const
 
 Boolean UNIX_DeviceFile::getReadable() const
 {
-	return Boolean(false);
+	char fullpath[MAXNAMLEN];
+	sprintf(fullpath, "/dev/%s", ep->d_name);
+	struct stat attrib;			// create a file attribute structure
+	stat(fullpath, &attrib);		// get the attributes mnt
+	return Boolean((attrib.st_mode & S_IRUSR) || (attrib.st_mode & S_IRGRP) || (attrib.st_mode & S_IROTH));
 }
 
 Boolean UNIX_DeviceFile::getWriteable(CIMProperty &p) const
@@ -363,7 +360,11 @@ Boolean UNIX_DeviceFile::getWriteable(CIMProperty &p) const
 
 Boolean UNIX_DeviceFile::getWriteable() const
 {
-	return Boolean(false);
+	char fullpath[MAXNAMLEN];
+	sprintf(fullpath, "/dev/%s", ep->d_name);
+	struct stat attrib;			// create a file attribute structure
+	stat(fullpath, &attrib);		// get the attributes mnt
+	return Boolean((attrib.st_mode & S_IWUSR) || ((attrib.st_mode & S_IWGRP)) || ((attrib.st_mode & S_IWOTH)));
 }
 
 Boolean UNIX_DeviceFile::getExecutable(CIMProperty &p) const
@@ -374,7 +375,11 @@ Boolean UNIX_DeviceFile::getExecutable(CIMProperty &p) const
 
 Boolean UNIX_DeviceFile::getExecutable() const
 {
-	return Boolean(false);
+	char fullpath[MAXNAMLEN];
+	sprintf(fullpath, "/dev/%s", ep->d_name);
+	struct stat attrib;			// create a file attribute structure
+	stat(fullpath, &attrib);		// get the attributes mnt
+	return Boolean(((attrib.st_mode & S_IXUSR)) || ((attrib.st_mode & S_IXGRP)) || ((attrib.st_mode & S_IXOTH)));
 }
 
 Boolean UNIX_DeviceFile::getCompressionMethod(CIMProperty &p) const
@@ -479,18 +484,31 @@ String UNIX_DeviceFile::getDeviceMinor() const
 
 
 Boolean UNIX_DeviceFile::initialize()
-{
+{ 
+	dp = opendir ("/dev");
+	if (dp != NULL)
+	{
+		ep = readdir (dp); /* Skip . */
+		ep = readdir (dp); /* Skip .. */
+		return true;
+	}
 	return false;
 }
 
 Boolean UNIX_DeviceFile::load(int &pIndex)
 {
+
+	while ((ep = readdir (dp)))
+	{
+		return true;		
+	}
 	return false;
 }
 
 Boolean UNIX_DeviceFile::finalize()
 {
-	return false;
+	closedir (dp);
+	return true;
 }
 
 Boolean UNIX_DeviceFile::find(Array<CIMKeyBinding> &kbArray)
