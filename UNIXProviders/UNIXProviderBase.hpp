@@ -290,7 +290,11 @@ void UNIX_PROVIDER::enumerateInstances(
     // will call us as natural part of recursing through subtree on
     // enumerate - if we return instances on enumerate of our superclass,
     // there would be dups
+
     if (className.equal (BASE_CLASS_CIM_NAME) ||
+#ifdef BASE_BASE_CLASS_CIM_NAME
+    	className.equal(BASE_BASE_CLASS_CIM_NAME) ||
+#endif
     	className.equal(CLASS_IMPLEMENTATION_CIM_NAME))
     {
         handler.processing();

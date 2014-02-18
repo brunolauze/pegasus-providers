@@ -34,9 +34,7 @@
 
 
 #include "CIM_NetworkAdapter.h"
-
-#include "UNIX_EthernetAdapterDeps.h"
-
+#include <EthernetPort/UNIX_EthernetPort.h>
 
 #define PROPERTY_MAX_DATA_SIZE				"MaxDataSize"
 #define PROPERTY_CAPABILITIES				"Capabilities"
@@ -207,9 +205,7 @@ public:
 
 private:
 	CIMName currentScope;
-
-#	include "UNIX_EthernetAdapterPrivate.h"
-
+	UNIX_EthernetPort underlyingClass;
 
 };
 

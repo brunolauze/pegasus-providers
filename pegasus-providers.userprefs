@@ -1,10 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="tests/UNIXProviders.Tests/main.cpp">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/EthernetPort/UNIX_EthernetPort_FREEBSD.hpp">
     <Files>
-      <File FileName="UNIXProviders/DiskDrive/UNIX_DiskDrive_FREEBSD.hpp" Line="90" Column="2" />
-      <File FileName="UNIXProviders/DeviceFile/UNIX_DeviceFile_FREEBSD.hpp" Line="488" Column="2" />
-      <File FileName="tests/UNIXProviders.Tests/main.cpp" Line="1027" Column="1" />
+      <File FileName="UNIXProviders/EthernetPort/UNIX_EthernetPort.h" Line="35" Column="1" />
+      <File FileName="UNIXProviders/EthernetPort/UNIX_EthernetPort_FREEBSD.hpp" Line="93" Column="9" />
+      <File FileName="../../../../../root/workspace/pegasus/src/Providers/ManagedSystem/UNIX_Common/UNIX_Common.h" Line="6" Column="25" />
+      <File FileName="UNIXProviders/EthernetPort/UNIX_EthernetPortDeps_FREEBSD.h" Line="3" Column="21" />
+      <File FileName="UNIXProviders/EthernetPort/UNIX_EthernetPortPrivate_FREEBSD.h" Line="4" Column="2" />
+      <File FileName="../../../../../root/workspace/pegasus/src/Providers/ManagedSystem/UNIX_IPRoute/UNIX_IPRoute.cpp" Line="60" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

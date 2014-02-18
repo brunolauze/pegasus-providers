@@ -36,7 +36,7 @@
         <Variable name="LD_LIBRARY_PATH" value="/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/bin/Debug:/usr/local/lib/pegasus/lib:/usr/local/lib:/usr/lib:/lib" />
       </EnvironmentVariables>
     </EnvironmentVariables>
-    <Commandlineparameters>UNIX_DeviceFile</Commandlineparameters>
+    <Commandlineparameters>UNIX_EthernetPort</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release</OutputPath>
@@ -57,6 +57,7 @@
     <Compile Include="UNIX_OSProcessFixture.cpp" />
     <Compile Include="UNIX_DiskDriveFixture.cpp" />
     <Compile Include="UNIX_DeviceFileFixture.cpp" />
+    <Compile Include="UNIX_EthernetPortFixture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CIMFixtureBase.h" />
@@ -69,5 +70,6 @@
     <None Include="UNIX_OSProcessFixture.h" />
     <None Include="UNIX_DiskDriveFixture.h" />
     <None Include="UNIX_DeviceFileFixture.h" />
+    <None Include="UNIX_EthernetPortFixture.h" />
   </ItemGroup>
 </Project>

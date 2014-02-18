@@ -29,6 +29,41 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
+#define INET6 1
+
+#include <sys/socketvar.h>
+#include <net/ethernet.h>
+#include <net/if.h>
+#include <net/if_var.h>
+#include <net/if_dl.h>
+#include <net/if_types.h>
+
+#include <netinet/in.h>
+#include <netipx/ipx.h>
+#include <netatalk/at.h>
+#include <netgraph/ng_socket.h>
+#include <arpa/inet.h>
+#include <libutil.h>
+
+char* UNIX_EthernetPort::getAddress (struct sockaddr * sockaddr_ptr)
+{
+	char* s;
+    switch(sockaddr_ptr->sa_family) {
+        case AF_INET:
+        	s = (char*)malloc(INET_ADDRSTRLEN);
+            inet_ntop(AF_INET, &(((struct sockaddr_in *)sockaddr_ptr)->sin_addr),
+                    s, INET_ADDRSTRLEN);
+            break;
+        case AF_INET6:
+			s = (char*)malloc(INET6_ADDRSTRLEN);
+            inet_ntop(AF_INET6, &(((struct sockaddr_in6 *)sockaddr_ptr)->sin6_addr),
+                    s, INET6_ADDRSTRLEN);
+            break;
+        default:
+            return NULL;
+    }
+    return s;
+}
 
 UNIX_EthernetPort::UNIX_EthernetPort(void)
 {
@@ -47,7 +82,7 @@ Boolean UNIX_EthernetPort::getInstanceID(CIMProperty &p) const
 
 String UNIX_EthernetPort::getInstanceID() const
 {
-	return String ("");
+	return String(ifap->ifa_name);
 }
 
 Boolean UNIX_EthernetPort::getCaption(CIMProperty &p) const
@@ -58,7 +93,7 @@ Boolean UNIX_EthernetPort::getCaption(CIMProperty &p) const
 
 String UNIX_EthernetPort::getCaption() const
 {
-	return String ("");
+	return getInstanceID();
 }
 
 Boolean UNIX_EthernetPort::getDescription(CIMProperty &p) const
@@ -91,18 +126,7 @@ Boolean UNIX_EthernetPort::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_EthernetPort::getInstallDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return CIMHelper::getInstallDate();
 }
 
 Boolean UNIX_EthernetPort::getName(CIMProperty &p) const
@@ -113,7 +137,7 @@ Boolean UNIX_EthernetPort::getName(CIMProperty &p) const
 
 String UNIX_EthernetPort::getName() const
 {
-	return String ("");
+	return getInstanceID();
 }
 
 Boolean UNIX_EthernetPort::getOperationalStatus(CIMProperty &p) const
@@ -125,8 +149,10 @@ Boolean UNIX_EthernetPort::getOperationalStatus(CIMProperty &p) const
 Array<Uint16> UNIX_EthernetPort::getOperationalStatus() const
 {
 	Array<Uint16> as;
-	
-
+	if (ifap->ifa_flags & IFF_UP)
+		as.append(2); //UP
+	else 
+		as.append(10); //DOWN
 	return as;
 
 }
@@ -154,7 +180,9 @@ Boolean UNIX_EthernetPort::getStatus(CIMProperty &p) const
 
 String UNIX_EthernetPort::getStatus() const
 {
-	return String(DEFAULT_STATUS);
+	if (ifap->ifa_flags & IFF_UP)
+		return String(DEFAULT_STATUS);
+	return String("Stopped");
 }
 
 Boolean UNIX_EthernetPort::getHealthState(CIMProperty &p) const
@@ -165,7 +193,9 @@ Boolean UNIX_EthernetPort::getHealthState(CIMProperty &p) const
 
 Uint16 UNIX_EthernetPort::getHealthState() const
 {
-	return Uint16(DEFAULT_HEALTH_STATE);
+	if (ifap->ifa_flags & IFF_UP)
+		return Uint16(DEFAULT_HEALTH_STATE);
+	return Uint16(25); /* DOWN - Critical Failure */
 }
 
 Boolean UNIX_EthernetPort::getCommunicationStatus(CIMProperty &p) const
@@ -176,7 +206,9 @@ Boolean UNIX_EthernetPort::getCommunicationStatus(CIMProperty &p) const
 
 Uint16 UNIX_EthernetPort::getCommunicationStatus() const
 {
-	return Uint16(0);
+	if (ifap->ifa_flags & IFF_UP)
+		return Uint16(2);
+	return Uint16(4);
 }
 
 Boolean UNIX_EthernetPort::getDetailedStatus(CIMProperty &p) const
@@ -198,7 +230,9 @@ Boolean UNIX_EthernetPort::getOperatingStatus(CIMProperty &p) const
 
 Uint16 UNIX_EthernetPort::getOperatingStatus() const
 {
-	return Uint16(DEFAULT_OPERATING_STATUS);
+	if (ifap->ifa_flags & IFF_UP)
+		return Uint16(DEFAULT_OPERATING_STATUS);
+	return Uint16(5);
 }
 
 Boolean UNIX_EthernetPort::getPrimaryStatus(CIMProperty &p) const
@@ -209,7 +243,9 @@ Boolean UNIX_EthernetPort::getPrimaryStatus(CIMProperty &p) const
 
 Uint16 UNIX_EthernetPort::getPrimaryStatus() const
 {
-	return Uint16(DEFAULT_PRIMARY_STATUS);
+	if (ifap->ifa_flags & IFF_UP)
+		return Uint16(DEFAULT_PRIMARY_STATUS);
+	return Uint16(3);
 }
 
 Boolean UNIX_EthernetPort::getEnabledState(CIMProperty &p) const
@@ -345,7 +381,7 @@ Boolean UNIX_EthernetPort::getDeviceID(CIMProperty &p) const
 
 String UNIX_EthernetPort::getDeviceID() const
 {
-	return String ("");
+	return getInstanceID();
 }
 
 Boolean UNIX_EthernetPort::getPowerManagementSupported(CIMProperty &p) const
@@ -559,7 +595,7 @@ Boolean UNIX_EthernetPort::getPortType(CIMProperty &p) const
 
 Uint16 UNIX_EthernetPort::getPortType() const
 {
-	return Uint16(0);
+	return Uint16(1);
 }
 
 Boolean UNIX_EthernetPort::getOtherPortType(CIMProperty &p) const
@@ -570,7 +606,7 @@ Boolean UNIX_EthernetPort::getOtherPortType(CIMProperty &p) const
 
 String UNIX_EthernetPort::getOtherPortType() const
 {
-	return String ("");
+	return String ("Ethernet");
 }
 
 Boolean UNIX_EthernetPort::getOtherNetworkPortType(CIMProperty &p) const
@@ -581,7 +617,7 @@ Boolean UNIX_EthernetPort::getOtherNetworkPortType(CIMProperty &p) const
 
 String UNIX_EthernetPort::getOtherNetworkPortType() const
 {
-	return String ("");
+	return String ("E");
 }
 
 Boolean UNIX_EthernetPort::getPortNumber(CIMProperty &p) const
@@ -603,7 +639,7 @@ Boolean UNIX_EthernetPort::getLinkTechnology(CIMProperty &p) const
 
 Uint16 UNIX_EthernetPort::getLinkTechnology() const
 {
-	return Uint16(0);
+	return Uint16(2);
 }
 
 Boolean UNIX_EthernetPort::getOtherLinkTechnology(CIMProperty &p) const
@@ -625,6 +661,20 @@ Boolean UNIX_EthernetPort::getPermanentAddress(CIMProperty &p) const
 
 String UNIX_EthernetPort::getPermanentAddress() const
 {
+	struct ifaddrs *ifa;
+	char macaddrstr[18];
+	unsigned char *ptr;
+	for(ifa = ifap_head; ifa; ifa = ifa->ifa_next)
+	{
+		if (strcmp(ifap->ifa_name, ifa->ifa_name) == 0 && ifa->ifa_addr->sa_family == AF_LINK)
+		{
+			// Add Address
+			ptr = (unsigned char *)LLADDR((struct sockaddr_dl *)(ifa)->ifa_addr);
+			sprintf(macaddrstr, "%02x:%02x:%02x:%02x:%02x:%02x",
+                                    *ptr, *(ptr+1), *(ptr+2), *(ptr+3), *(ptr+4), *(ptr+5));
+			return String(macaddrstr);
+		}
+	}
 	return String ("");
 }
 
@@ -637,8 +687,17 @@ Boolean UNIX_EthernetPort::getNetworkAddresses(CIMProperty &p) const
 Array<String> UNIX_EthernetPort::getNetworkAddresses() const
 {
 	Array<String> as;
-	
-
+	struct ifaddrs *ifa;
+	for(ifa = ifap_head; ifa; ifa = ifa->ifa_next)
+	{
+		if (strcmp(ifap->ifa_name, ifa->ifa_name) == 0)
+		{
+			// Add Address
+			char* address = getAddress(ifa->ifa_addr);
+			if (address != NULL)
+				as.append(String(address));
+		}
+	}
 	return as;
 
 }
@@ -651,6 +710,10 @@ Boolean UNIX_EthernetPort::getFullDuplex(CIMProperty &p) const
 
 Boolean UNIX_EthernetPort::getFullDuplex() const
 {
+	struct ifmediareq *ifmr = (struct ifmediareq *)arg;
+	if (ioctl(s, SIOCSIFMEDIA, (caddr_t)&ifr) < 0)
+			err(1, "SIOCSIFMEDIA (media)");
+
 	return Boolean(false);
 }
 
@@ -792,23 +855,39 @@ Array<String> UNIX_EthernetPort::getPortDiscriminator() const
 	
 
 	return as;
-
 }
-
-
 
 Boolean UNIX_EthernetPort::initialize()
 {
-	return false;
+	if (getifaddrs(&ifap) != 0)
+		return false;
+	ifap_head = ifap;
+	return true;
 }
 
 Boolean UNIX_EthernetPort::load(int &pIndex)
 {
+	char* if_name;
+	if (ifap != NULL)
+	{
+		if_name = ifap->ifa_name;
+	}
+	if (pIndex > 0)  ifap = ifap->ifa_next;
+	if (ifap != NULL) 
+	{
+		if (pIndex > 0)
+		{
+			if (strcmp(if_name, ifap->ifa_name) == 0) return load(pIndex);
+		}
+		return true;
+	}
 	return false;
 }
 
 Boolean UNIX_EthernetPort::finalize()
 {
+	ifap = NULL;
+	ifap_head = NULL;
 	return false;
 }
 
@@ -820,7 +899,6 @@ Boolean UNIX_EthernetPort::find(Array<CIMKeyBinding> &kbArray)
 	String creationClassNameKey;
 	String deviceIDKey;
 
-
 	for(Uint32 i = 0; i < kbArray.size(); i++)
 	{
 		kb = kbArray[i];
@@ -831,9 +909,7 @@ Boolean UNIX_EthernetPort::find(Array<CIMKeyBinding> &kbArray)
 		else if (keyName.equal(PROPERTY_DEVICE_ID)) deviceIDKey = kb.getValue();
 	}
 
-
-
-/* EXecute find with extracted keys */
+	/* EXecute find with extracted keys */
 
 	return false;
 }

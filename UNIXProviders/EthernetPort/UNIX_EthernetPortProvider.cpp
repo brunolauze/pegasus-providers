@@ -43,7 +43,7 @@ UNIX_EthernetPortProvider::~UNIX_EthernetPortProvider()
 CIMInstance UNIX_EthernetPortProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_EthernetPort &_p)
+	const UNIX_EthernetPort &_p) const
 {
 	CIMProperty p;
 
@@ -137,7 +137,7 @@ CIMInstance UNIX_EthernetPortProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_EthernetPortProvider::constructKeyBindings(const UNIX_EthernetPort& _p)
+Array<CIMKeyBinding> UNIX_EthernetPortProvider::constructKeyBindings(const UNIX_EthernetPort& _p) const
 
 {
 
@@ -171,6 +171,7 @@ Array<CIMKeyBinding> UNIX_EthernetPortProvider::constructKeyBindings(const UNIX_
 #define CLASS_IMPLEMENTATION UNIX_EthernetPort
 #define CLASS_IMPLEMENTATION_NAME "UNIX_EthernetPort"
 #define BASE_CLASS_NAME "CIM_EthernetPort"
+#define BASE_BASE_CLASS_CIM_NAME "CIM_NetworkPort"
 #define NUMKEYS_CLASS_IMPLEMENTATION 0
 
 

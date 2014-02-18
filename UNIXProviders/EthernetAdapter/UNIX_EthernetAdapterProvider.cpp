@@ -43,7 +43,7 @@ UNIX_EthernetAdapterProvider::~UNIX_EthernetAdapterProvider()
 CIMInstance UNIX_EthernetAdapterProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_EthernetAdapter &_p)
+	const UNIX_EthernetAdapter &_p) const
 {
 	CIMProperty p;
 
@@ -138,8 +138,7 @@ CIMInstance UNIX_EthernetAdapterProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_EthernetAdapterProvider::constructKeyBindings(const UNIX_EthernetAdapter& _p)
-
+Array<CIMKeyBinding> UNIX_EthernetAdapterProvider::constructKeyBindings(const UNIX_EthernetAdapter& _p) const
 {
 
 	Array<CIMKeyBinding> keys;
@@ -172,8 +171,8 @@ Array<CIMKeyBinding> UNIX_EthernetAdapterProvider::constructKeyBindings(const UN
 #define CLASS_IMPLEMENTATION UNIX_EthernetAdapter
 #define CLASS_IMPLEMENTATION_NAME "UNIX_EthernetAdapter"
 #define BASE_CLASS_NAME "CIM_EthernetAdapter"
+#define BASE_BASE_CLASS_CIM_NAME "CIM_NetworkAdapter"
 #define NUMKEYS_CLASS_IMPLEMENTATION 0
-
 
 #include "UNIXProviderBase.hpp"
 

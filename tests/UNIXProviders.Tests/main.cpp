@@ -355,7 +355,7 @@
 //#include "UNIX_ESCONControllerFixture.h"
 //#include "UNIX_ESPTransformFixture.h"
 //#include "UNIX_EthernetAdapterFixture.h"
-//#include "UNIX_EthernetPortFixture.h"
+#include "UNIX_EthernetPortFixture.h"
 //#include "UNIX_EthernetPortAllocationSettingDataFixture.h"
 //#include "UNIX_EthernetPortStatisticsFixture.h"
 //#include "UNIX_EWMAMeterServiceFixture.h"
@@ -1454,7 +1454,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_ESCONController")) { UNIX_ESCONControllerFixture eSCONController; eSCONController.Run(); }
 	//if (IsTarget(s, "UNIX_ESPTransform")) { UNIX_ESPTransformFixture eSPTransform; eSPTransform.Run(); }
 	//if (IsTarget(s, "UNIX_EthernetAdapter")) { UNIX_EthernetAdapterFixture ethernetAdapter; ethernetAdapter.Run(); }
-	//if (IsTarget(s, "UNIX_EthernetPort")) { UNIX_EthernetPortFixture ethernetPort; ethernetPort.Run(); }
+	if (IsTarget(s, "UNIX_EthernetPort")) { UNIX_EthernetPortFixture ethernetPort; ethernetPort.Run(); }
 	//if (IsTarget(s, "UNIX_EthernetPortAllocationSettingData")) { UNIX_EthernetPortAllocationSettingDataFixture ethernetPortAllocationSettingData; ethernetPortAllocationSettingData.Run(); }
 	//if (IsTarget(s, "UNIX_EthernetPortStatistics")) { UNIX_EthernetPortStatisticsFixture ethernetPortStatistics; ethernetPortStatistics.Run(); }
 	//if (IsTarget(s, "UNIX_EWMAMeterService")) { UNIX_EWMAMeterServiceFixture eWMAMeterService; eWMAMeterService.Run(); }
