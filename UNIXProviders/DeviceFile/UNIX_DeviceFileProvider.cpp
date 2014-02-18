@@ -43,7 +43,7 @@ UNIX_DeviceFileProvider::~UNIX_DeviceFileProvider()
 CIMInstance UNIX_DeviceFileProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_DeviceFile &_p)
+	const UNIX_DeviceFile &_p) const
 {
 	CIMProperty p;
 
@@ -106,7 +106,7 @@ CIMInstance UNIX_DeviceFileProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_DeviceFileProvider::constructKeyBindings(const UNIX_DeviceFile& _p)
+Array<CIMKeyBinding> UNIX_DeviceFileProvider::constructKeyBindings(const UNIX_DeviceFile& _p) const
 
 {
 

@@ -33,7 +33,7 @@
 #define __UNIX_DEVICEFILE_H
 
 
-#include "CIM_DeviceFile.h"
+#include "CIM_LogicalFile.h"
 
 #include "UNIX_DeviceFileDeps.h"
 
@@ -47,7 +47,7 @@
 
 
 class UNIX_DeviceFile :
-	public CIM_DeviceFile
+	public CIM_LogicalFile
 {
 public:
 

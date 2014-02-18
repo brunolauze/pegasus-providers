@@ -43,7 +43,7 @@ UNIX_ProcessProvider::~UNIX_ProcessProvider()
 CIMInstance UNIX_ProcessProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_Process &_p)
+	const UNIX_Process &_p) const
 {
 	CIMProperty p;
 
@@ -115,7 +115,7 @@ CIMInstance UNIX_ProcessProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_ProcessProvider::constructKeyBindings(const UNIX_Process& _p)
+Array<CIMKeyBinding> UNIX_ProcessProvider::constructKeyBindings(const UNIX_Process& _p) const
 
 {
 
@@ -149,7 +149,6 @@ Array<CIMKeyBinding> UNIX_ProcessProvider::constructKeyBindings(const UNIX_Proce
 
 	return keys;
 }
-
 
 
 #define UNIX_PROVIDER UNIX_ProcessProvider

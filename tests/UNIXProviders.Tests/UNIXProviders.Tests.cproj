@@ -36,7 +36,7 @@
         <Variable name="LD_LIBRARY_PATH" value="/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/bin/Debug:/usr/local/lib/pegasus/lib:/usr/local/lib:/usr/lib:/lib" />
       </EnvironmentVariables>
     </EnvironmentVariables>
-    <Commandlineparameters>UNIX_Process</Commandlineparameters>
+    <Commandlineparameters>UNIX_OSProcess</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release</OutputPath>
@@ -53,6 +53,8 @@
     <Compile Include="UNIX_ComputerSystemFixture.cpp" />
     <Compile Include="UNIX_OperatingSystemFixture.cpp" />
     <Compile Include="UNIX_ProcessFixture.cpp" />
+    <Compile Include="UNIX_InstalledOSFixture.cpp" />
+    <Compile Include="UNIX_OSProcessFixture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CIMFixtureBase.h" />
@@ -61,5 +63,7 @@
     <None Include="UNIX_OperatingSystemFixture.h" />
     <None Include="UNIX_ProcessFixture.h" />
     <None Include="run.sh" />
+    <None Include="UNIX_InstalledOSFixture.h" />
+    <None Include="UNIX_OSProcessFixture.h" />
   </ItemGroup>
 </Project>

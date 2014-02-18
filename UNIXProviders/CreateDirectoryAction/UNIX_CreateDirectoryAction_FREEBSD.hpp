@@ -217,3 +217,21 @@ Boolean UNIX_CreateDirectoryAction::find(Array<CIMKeyBinding> &kbArray)
 
 	return false;
 }
+
+
+Boolean UNIX_CreateDirectoryAction::Invoke() const
+{
+	//Check instance 
+	return Boolean(false);
+}
+
+Boolean UNIX_CreateDirectoryAction::Invoke(CIMInstance targetSystem) const
+{
+	//Check if targetSystem = Current System
+
+	//Otherwise we can forward creation to the suitable targetSystem...
+
+	return Invoke();
+}
+
+

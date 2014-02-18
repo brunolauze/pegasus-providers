@@ -80,6 +80,10 @@ public:
 	virtual Boolean getDirectoryName(CIMProperty&) const;
 	virtual String getDirectoryName() const;
 
+	/* Methods */
+	Boolean Invoke() const;
+	Boolean Invoke(CIMInstance targetSystem) const;
+
 private:
 	CIMName currentScope;
 

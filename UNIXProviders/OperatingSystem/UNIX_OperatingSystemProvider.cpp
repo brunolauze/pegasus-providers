@@ -43,7 +43,7 @@ UNIX_OperatingSystemProvider::~UNIX_OperatingSystemProvider()
 CIMInstance UNIX_OperatingSystemProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_OperatingSystem &_p)
+	const UNIX_OperatingSystem &_p) const
 {
 	CIMProperty p;
 
@@ -113,7 +113,7 @@ CIMInstance UNIX_OperatingSystemProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_OperatingSystemProvider::constructKeyBindings(const UNIX_OperatingSystem& _p)
+Array<CIMKeyBinding> UNIX_OperatingSystemProvider::constructKeyBindings(const UNIX_OperatingSystem& _p) const
 
 {
 

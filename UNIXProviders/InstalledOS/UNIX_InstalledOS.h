@@ -34,10 +34,10 @@
 
 
 #include "CIM_SystemComponent.h"
-#include <VirtualComputerSystem/UNIX_VirtualComputerSystem.h>
-#include <ComputerSystem/UNIX_ComputerSystem.h>
-#include <Cluster/UNIX_Cluster.h>
-#include <OperatingSystem/UNIX_OperatingSystem.h>
+#include <VirtualComputerSystem/UNIX_VirtualComputerSystemProvider.h>
+#include <ComputerSystem/UNIX_ComputerSystemProvider.h>
+#include <Cluster/UNIX_ClusterProvider.h>
+#include <OperatingSystem/UNIX_OperatingSystemProvider.h>
 
 #include "UNIX_InstalledOSDeps.h"
 
@@ -75,15 +75,19 @@ private:
 	int groupIndex;
 	int partIndex;
 	UNIX_VirtualComputerSystem group_UNIX_VirtualComputerSystem_Component;
+	UNIX_VirtualComputerSystemProvider group_UNIX_VirtualComputerSystem_ComponentProvider;
 	int group_UNIX_VirtualComputerSystem_Index;
 	bool endOf_UNIX_VirtualComputerSystem_Group;
 	UNIX_ComputerSystem group_UNIX_ComputerSystem_Component;
+	UNIX_ComputerSystemProvider group_UNIX_ComputerSystem_ComponentProvider;
 	int group_UNIX_ComputerSystem_Index;
 	bool endOf_UNIX_ComputerSystem_Group;
 	UNIX_Cluster group_UNIX_Cluster_Component;
+	UNIX_ClusterProvider group_UNIX_Cluster_ComponentProvider;
 	int group_UNIX_Cluster_Index;
 	bool endOf_UNIX_Cluster_Group;
 	UNIX_OperatingSystem part_UNIX_OperatingSystem_Component;
+	UNIX_OperatingSystemProvider part_UNIX_OperatingSystem_ComponentProvider;
 	int part_UNIX_OperatingSystem_Index;
 	bool endOf_UNIX_OperatingSystem_Part;
 

@@ -47,7 +47,32 @@ Boolean UNIX_InstalledOS::getGroupComponent(CIMProperty &p) const
 
 CIMInstance UNIX_InstalledOS::getGroupComponent() const
 {
-	return CIMInstance(CIMName("CIM_Component"));
+	CIMInstance instance;
+	if (groupIndex == 0)
+	{
+		instance = group_UNIX_VirtualComputerSystem_ComponentProvider.constructInstance(
+			CIMName("UNIX_VirtualComputerSystem"),
+			CIMNamespaceName("root/cimv2"),
+			group_UNIX_VirtualComputerSystem_Component
+		);
+	}
+	else if (groupIndex == 1)
+	{
+		instance = group_UNIX_ComputerSystem_ComponentProvider.constructInstance(
+			CIMName("UNIX_ComputerSystem"),
+			CIMNamespaceName("root/cimv2"),
+			group_UNIX_ComputerSystem_Component
+		);
+	}
+	else if (groupIndex == 2)
+	{
+		instance = group_UNIX_Cluster_ComponentProvider.constructInstance(
+			CIMName("UNIX_Cluster"),
+			CIMNamespaceName("root/cimv2"),
+			group_UNIX_Cluster_Component
+		);
+	}
+	return instance;
 }
 
 Boolean UNIX_InstalledOS::getPartComponent(CIMProperty &p) const
@@ -58,7 +83,13 @@ Boolean UNIX_InstalledOS::getPartComponent(CIMProperty &p) const
 
 CIMInstance UNIX_InstalledOS::getPartComponent() const
 {
-	return CIMInstance(CIMName("CIM_Component"));
+	CIMInstance instance = part_UNIX_OperatingSystem_ComponentProvider.constructInstance(
+		CIMName("UNIX_OperatingSystem"),
+		CIMNamespaceName("root/cimv2"),
+		part_UNIX_OperatingSystem_Component
+	);
+		
+	return instance;
 }
 
 Boolean UNIX_InstalledOS::getPrimaryOS(CIMProperty &p) const
@@ -69,26 +100,23 @@ Boolean UNIX_InstalledOS::getPrimaryOS(CIMProperty &p) const
 
 Boolean UNIX_InstalledOS::getPrimaryOS() const
 {
-	return Boolean(false);
+	return Boolean(true);
 }
 
 
 
 Boolean UNIX_InstalledOS::initialize()
 {
-	groupIndex = -1;
+	groupIndex = 0;
 	partIndex = 0;
 	group_UNIX_VirtualComputerSystem_Index = -1;
-	endOf_UNIX_VirtualComputerSystem_Group = false;
-	group_UNIX_VirtualComputerSystem_Component.initialize();
+	endOf_UNIX_VirtualComputerSystem_Group = !group_UNIX_VirtualComputerSystem_Component.initialize();
 	group_UNIX_ComputerSystem_Index = -1;
-	endOf_UNIX_ComputerSystem_Group = false;
-	group_UNIX_ComputerSystem_Component.initialize();
+	endOf_UNIX_ComputerSystem_Group = !group_UNIX_ComputerSystem_Component.initialize();
 	group_UNIX_Cluster_Index = -1;
-	endOf_UNIX_Cluster_Group = false;
-	group_UNIX_Cluster_Component.initialize();
+	endOf_UNIX_Cluster_Group = !group_UNIX_Cluster_Component.initialize();
 	part_UNIX_OperatingSystem_Index = -1;
-	endOf_UNIX_OperatingSystem_Part = false;
+	endOf_UNIX_OperatingSystem_Part = !part_UNIX_OperatingSystem_Component.initialize();
 	return true;
 }
 
@@ -107,6 +135,8 @@ Boolean UNIX_InstalledOS::load(int &pIndex)
 				part_UNIX_OperatingSystem_Component.initialize();
 				partIndex = 0;
 				groupIndex++;
+				pIndex++;
+				return load(pIndex);
 			}
 		}
 		else if (groupIndex == 1)
@@ -120,6 +150,8 @@ Boolean UNIX_InstalledOS::load(int &pIndex)
 				part_UNIX_OperatingSystem_Component.initialize();
 				partIndex = 0;
 				groupIndex++;
+				pIndex++;
+				return load(pIndex);
 			}
 		}
 		else if (groupIndex == 2)
@@ -128,23 +160,21 @@ Boolean UNIX_InstalledOS::load(int &pIndex)
 			endOf_UNIX_Cluster_Group = !group_UNIX_Cluster_Component.load(group_UNIX_Cluster_Index);
 			if (endOf_UNIX_Cluster_Group)
 			{
-				endOf_UNIX_OperatingSystem_Part = false;
-				part_UNIX_OperatingSystem_Component.setScope(CIMName("UNIX_Cluster"));
-				part_UNIX_OperatingSystem_Component.initialize();
-				partIndex = 0;
-				groupIndex++;
+				return false;
 			}
 		}
 	}
-	if (partIndex == 0)
+	if (partIndex == 0 && !endOf_UNIX_OperatingSystem_Part)
 	{
 		part_UNIX_OperatingSystem_Index++;
-	endOf_UNIX_OperatingSystem_Part = !part_UNIX_OperatingSystem_Component.load(part_UNIX_OperatingSystem_Index);
+		endOf_UNIX_OperatingSystem_Part = !part_UNIX_OperatingSystem_Component.load(part_UNIX_OperatingSystem_Index);
 	}
 	if (partIndex == 0 && endOf_UNIX_OperatingSystem_Part)
 	{
 		part_UNIX_OperatingSystem_Component.finalize();
 		partIndex++;
+		pIndex++;
+		return load(pIndex);
 	}
 
 	if (endOf_UNIX_VirtualComputerSystem_Group &&

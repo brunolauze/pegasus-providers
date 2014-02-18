@@ -43,7 +43,7 @@ UNIX_OSProcessProvider::~UNIX_OSProcessProvider()
 CIMInstance UNIX_OSProcessProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_OSProcess &_p)
+	const UNIX_OSProcess &_p) const
 {
 	CIMProperty p;
 
@@ -65,20 +65,22 @@ CIMInstance UNIX_OSProcessProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_OSProcessProvider::constructKeyBindings(const UNIX_OSProcess& _p)
-
+Array<CIMKeyBinding> UNIX_OSProcessProvider::constructKeyBindings(const UNIX_OSProcess& _p) const
 {
 
 	Array<CIMKeyBinding> keys;
 
-	keys.append(CIMKeyBinding(
+	CIMKeyBinding k1(
 		PROPERTY_GROUP_COMPONENT,
-		CIMValue(_p.getGroupComponent()).toString(),
-		CIMKeyBinding::REFERENCE));
-	keys.append(CIMKeyBinding(
+		CIMValue(_p.getGroupComponent().getPath()));
+	k1.setType(CIMKeyBinding::REFERENCE);
+	CIMKeyBinding k2(
 		PROPERTY_PART_COMPONENT,
-		CIMValue(_p.getPartComponent()).toString(),
-		CIMKeyBinding::REFERENCE));
+		CIMValue(_p.getPartComponent().getPath()));
+	k2.setType(CIMKeyBinding::REFERENCE);
+
+	keys.append(k1);
+	keys.append(k2);
 
 
 	return keys;

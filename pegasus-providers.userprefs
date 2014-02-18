@@ -1,8 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/Process/UNIX_Process_FREEBSD.hpp">
+    <Files>
+      <File FileName="UNIXProviders/OSProcess/UNIX_OSProcess_FREEBSD.hpp" Line="107" Column="3" />
+      <File FileName="UNIXProviders/InstalledOS/UNIX_InstalledOS_FREEBSD.hpp" Line="86" Column="2" />
+      <File FileName="UNIXProviders/OSProcess/UNIX_OSProcessProvider.cpp" Line="41" Column="2" />
+      <File FileName="UNIXProviders/Process/UNIX_Process_FREEBSD.hpp" Line="637" Column="19" />
+      <File FileName="UNIXProviders/Process/UNIX_Process.cpp" Line="77" Column="2" />
+      <File FileName="UNIXProviders/Process/UNIX_Process.h" Line="158" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/InstalledOS/UNIX_InstalledOS_FREEBSD.hpp" line="46" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

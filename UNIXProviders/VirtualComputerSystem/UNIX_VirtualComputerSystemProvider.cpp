@@ -43,7 +43,7 @@ UNIX_VirtualComputerSystemProvider::~UNIX_VirtualComputerSystemProvider()
 CIMInstance UNIX_VirtualComputerSystemProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_VirtualComputerSystem &_p)
+	const UNIX_VirtualComputerSystem &_p) const
 {
 	CIMProperty p;
 
@@ -106,8 +106,7 @@ CIMInstance UNIX_VirtualComputerSystemProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_VirtualComputerSystemProvider::constructKeyBindings(const UNIX_VirtualComputerSystem& _p)
-
+Array<CIMKeyBinding> UNIX_VirtualComputerSystemProvider::constructKeyBindings(const UNIX_VirtualComputerSystem& _p) const
 {
 
 	Array<CIMKeyBinding> keys;

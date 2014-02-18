@@ -116,11 +116,9 @@ public:
     CIMInstance constructInstance(
         const CIMName &clnam,
         const CIMNamespaceName &nameSpace,
-        const CLASS_IMPLEMENTATION &p);
-
-	void addProperties(CIMInstance&,CLASS_IMPLEMENTATION);
+        const CLASS_IMPLEMENTATION &p) const;
         
-	Array<CIMKeyBinding> constructKeyBindings(const CLASS_IMPLEMENTATION&);
+	Array<CIMKeyBinding> constructKeyBindings(const CLASS_IMPLEMENTATION&) const;
 
 private:
 	// private member to store handle passed by initialize()

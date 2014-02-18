@@ -47,7 +47,13 @@ Boolean UNIX_OSProcess::getGroupComponent(CIMProperty &p) const
 
 CIMInstance UNIX_OSProcess::getGroupComponent() const
 {
-	return CIMInstance(CIMName("CIM_Component"));
+	CIMInstance instance = group_UNIX_OperatingSystem_ComponentProvider.constructInstance(
+		CIMName("UNIX_OperatingSystem"),
+		CIMNamespaceName("root/cimv2"),
+		group_UNIX_OperatingSystem_Component
+	);
+		
+	return instance;
 }
 
 Boolean UNIX_OSProcess::getPartComponent(CIMProperty &p) const
@@ -58,20 +64,23 @@ Boolean UNIX_OSProcess::getPartComponent(CIMProperty &p) const
 
 CIMInstance UNIX_OSProcess::getPartComponent() const
 {
-	return CIMInstance(CIMName("CIM_Component"));
+	CIMInstance instance = part_UNIX_Process_ComponentProvider.constructInstance(
+		CIMName("UNIX_Process"),
+		CIMNamespaceName("root/cimv2"),
+		part_UNIX_Process_Component
+	);
+		
+	return instance;
 }
-
-
 
 Boolean UNIX_OSProcess::initialize()
 {
-	groupIndex = -1;
+	groupIndex = 0;
 	partIndex = 0;
 	group_UNIX_OperatingSystem_Index = -1;
-	endOf_UNIX_OperatingSystem_Group = false;
-	group_UNIX_OperatingSystem_Component.initialize();
+	endOf_UNIX_OperatingSystem_Group = !group_UNIX_OperatingSystem_Component.initialize();
 	part_UNIX_Process_Index = -1;
-	endOf_UNIX_Process_Part = false;
+	endOf_UNIX_Process_Part = !part_UNIX_Process_Component.initialize();
 	return true;
 }
 
@@ -85,23 +94,21 @@ Boolean UNIX_OSProcess::load(int &pIndex)
 			endOf_UNIX_OperatingSystem_Group = !group_UNIX_OperatingSystem_Component.load(group_UNIX_OperatingSystem_Index);
 			if (endOf_UNIX_OperatingSystem_Group)
 			{
-				endOf_UNIX_Process_Part = false;
-				part_UNIX_Process_Component.setScope(CIMName("UNIX_OperatingSystem"));
-				part_UNIX_Process_Component.initialize();
-				partIndex = 0;
-				groupIndex++;
+				return false;
 			}
 		}
 	}
-	if (partIndex == 0)
+	if (partIndex == 0 && !endOf_UNIX_Process_Part)
 	{
 		part_UNIX_Process_Index++;
-	endOf_UNIX_Process_Part = !part_UNIX_Process_Component.load(part_UNIX_Process_Index);
+		endOf_UNIX_Process_Part = !part_UNIX_Process_Component.load(part_UNIX_Process_Index);
 	}
 	if (partIndex == 0 && endOf_UNIX_Process_Part)
 	{
 		part_UNIX_Process_Component.finalize();
 		partIndex++;
+		pIndex++;
+		return load(pIndex);
 	}
 
 	if (endOf_UNIX_OperatingSystem_Group &&

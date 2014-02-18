@@ -43,7 +43,7 @@ UNIX_InstalledOSProvider::~UNIX_InstalledOSProvider()
 CIMInstance UNIX_InstalledOSProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_InstalledOS &_p)
+	const UNIX_InstalledOS &_p) const
 {
 	CIMProperty p;
 
@@ -64,25 +64,26 @@ CIMInstance UNIX_InstalledOSProvider::constructInstance(
 	//CIM_InstalledOS Properties
 	if (_p.getPrimaryOS(p)) inst.addProperty(p);
 
-
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_InstalledOSProvider::constructKeyBindings(const UNIX_InstalledOS& _p)
+Array<CIMKeyBinding> UNIX_InstalledOSProvider::constructKeyBindings(const UNIX_InstalledOS& _p) const
 
 {
 
 	Array<CIMKeyBinding> keys;
 
-	keys.append(CIMKeyBinding(
+	CIMKeyBinding k1(
 		PROPERTY_GROUP_COMPONENT,
-		CIMValue(_p.getGroupComponent()).toString(),
-		CIMKeyBinding::REFERENCE));
-	keys.append(CIMKeyBinding(
+		CIMValue(_p.getGroupComponent().getPath()));
+	k1.setType(CIMKeyBinding::REFERENCE);
+	CIMKeyBinding k2(
 		PROPERTY_PART_COMPONENT,
-		CIMValue(_p.getPartComponent()).toString(),
-		CIMKeyBinding::REFERENCE));
+		CIMValue(_p.getPartComponent().getPath()));
+	k2.setType(CIMKeyBinding::REFERENCE);
 
+	keys.append(k1);
+	keys.append(k2);
 
 	return keys;
 }

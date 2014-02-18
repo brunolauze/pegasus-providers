@@ -155,7 +155,7 @@ public:
 
 private:
 	CIMName currentScope;
-
+	int processCount;
 #	include "UNIX_ProcessPrivate.h"
 
 

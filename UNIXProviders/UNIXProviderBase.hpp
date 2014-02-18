@@ -64,7 +64,7 @@ void UNIX_PROVIDER::_checkClass(CIMName& className)
 #ifndef __invokeMethod_H
 /*
 ================================================================================
-NAME              : _checkClass
+NAME              : invokeMethod
 DESCRIPTION       : tests the argument for valid classname,
                   : throws exception if not
 ASSUMPTIONS       : None

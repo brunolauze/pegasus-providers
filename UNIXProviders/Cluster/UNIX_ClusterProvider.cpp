@@ -43,7 +43,7 @@ UNIX_ClusterProvider::~UNIX_ClusterProvider()
 CIMInstance UNIX_ClusterProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_Cluster &_p)
+	const UNIX_Cluster &_p) const
 {
 	CIMProperty p;
 
@@ -110,7 +110,7 @@ CIMInstance UNIX_ClusterProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_ClusterProvider::constructKeyBindings(const UNIX_Cluster& _p)
+Array<CIMKeyBinding> UNIX_ClusterProvider::constructKeyBindings(const UNIX_Cluster& _p) const
 
 {
 

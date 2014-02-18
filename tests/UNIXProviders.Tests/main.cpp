@@ -462,7 +462,7 @@
 //#include "UNIX_IngressConditioningServiceOnEndpointFixture.h"
 //#include "UNIX_InLogicalNetworkFixture.h"
 //#include "UNIX_InSegmentFixture.h"
-//#include "UNIX_InstalledOSFixture.h"
+#include "UNIX_InstalledOSFixture.h"
 //#include "UNIX_InstalledProductFixture.h"
 //#include "UNIX_InstalledProductImageFixture.h"
 //#include "UNIX_InstalledSoftwareElementFixture.h"
@@ -646,7 +646,7 @@
 //#include "UNIX_OSPFServiceCapabilitiesFixture.h"
 //#include "UNIX_OSPFServiceConfigurationFixture.h"
 //#include "UNIX_OSPFVirtualInterfaceFixture.h"
-//#include "UNIX_OSProcessFixture.h"
+#include "UNIX_OSProcessFixture.h"
 //#include "UNIX_OSVersionCheckFixture.h"
 //#include "UNIX_OtherGroupInformationFixture.h"
 //#include "UNIX_OtherOrganizationInformationFixture.h"
@@ -1561,7 +1561,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_IngressConditioningServiceOnEndpoint")) { UNIX_IngressConditioningServiceOnEndpointFixture ingressConditioningServiceOnEndpoint; ingressConditioningServiceOnEndpoint.Run(); }
 	//if (IsTarget(s, "UNIX_InLogicalNetwork")) { UNIX_InLogicalNetworkFixture inLogicalNetwork; inLogicalNetwork.Run(); }
 	//if (IsTarget(s, "UNIX_InSegment")) { UNIX_InSegmentFixture inSegment; inSegment.Run(); }
-	//if (IsTarget(s, "UNIX_InstalledOS")) { UNIX_InstalledOSFixture installedOS; installedOS.Run(); }
+	if (IsTarget(s, "UNIX_InstalledOS")) { UNIX_InstalledOSFixture installedOS; installedOS.Run(); }
 	//if (IsTarget(s, "UNIX_InstalledProduct")) { UNIX_InstalledProductFixture installedProduct; installedProduct.Run(); }
 	//if (IsTarget(s, "UNIX_InstalledProductImage")) { UNIX_InstalledProductImageFixture installedProductImage; installedProductImage.Run(); }
 	//if (IsTarget(s, "UNIX_InstalledSoftwareElement")) { UNIX_InstalledSoftwareElementFixture installedSoftwareElement; installedSoftwareElement.Run(); }
@@ -1745,7 +1745,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_OSPFServiceCapabilities")) { UNIX_OSPFServiceCapabilitiesFixture oSPFServiceCapabilities; oSPFServiceCapabilities.Run(); }
 	//if (IsTarget(s, "UNIX_OSPFServiceConfiguration")) { UNIX_OSPFServiceConfigurationFixture oSPFServiceConfiguration; oSPFServiceConfiguration.Run(); }
 	//if (IsTarget(s, "UNIX_OSPFVirtualInterface")) { UNIX_OSPFVirtualInterfaceFixture oSPFVirtualInterface; oSPFVirtualInterface.Run(); }
-	//if (IsTarget(s, "UNIX_OSProcess")) { UNIX_OSProcessFixture oSProcess; oSProcess.Run(); }
+	if (IsTarget(s, "UNIX_OSProcess")) { UNIX_OSProcessFixture oSProcess; oSProcess.Run(); }
 	//if (IsTarget(s, "UNIX_OSVersionCheck")) { UNIX_OSVersionCheckFixture oSVersionCheck; oSVersionCheck.Run(); }
 	//if (IsTarget(s, "UNIX_OtherGroupInformation")) { UNIX_OtherGroupInformationFixture otherGroupInformation; otherGroupInformation.Run(); }
 	//if (IsTarget(s, "UNIX_OtherOrganizationInformation")) { UNIX_OtherOrganizationInformationFixture otherOrganizationInformation; otherOrganizationInformation.Run(); }

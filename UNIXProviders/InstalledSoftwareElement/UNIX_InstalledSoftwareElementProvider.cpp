@@ -43,7 +43,7 @@ UNIX_InstalledSoftwareElementProvider::~UNIX_InstalledSoftwareElementProvider()
 CIMInstance UNIX_InstalledSoftwareElementProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_InstalledSoftwareElement &_p)
+	const UNIX_InstalledSoftwareElement &_p) const
 {
 	CIMProperty p;
 
@@ -63,7 +63,7 @@ CIMInstance UNIX_InstalledSoftwareElementProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_InstalledSoftwareElementProvider::constructKeyBindings(const UNIX_InstalledSoftwareElement& _p)
+Array<CIMKeyBinding> UNIX_InstalledSoftwareElementProvider::constructKeyBindings(const UNIX_InstalledSoftwareElement& _p) const
 
 {
 

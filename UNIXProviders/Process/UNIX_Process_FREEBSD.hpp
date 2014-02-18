@@ -545,7 +545,7 @@ Array<String> UNIX_Process::getParameters() const
 
 	int narg = 2048;
 	char **argv = kvm_getargv(CIMHelper::kd, kp, narg);
-
+	if (argv == NULL) return as;
 	String s(argv[0]);
 
 	Uint32 start = 0;
@@ -599,28 +599,34 @@ Boolean UNIX_Process::initialize()
 	kp = kvm_getprocs(CIMHelper::kd, KERN_PROC_PROC, O_RDONLY, &nentries);
 	if ((kp == NULL && nentries > 0) || (kp != NULL && nentries < 0))
 		return false;
+	
+	processCount = nentries;
 	/*
 	cout << "Number of Processes:" << nentries << endl;
-
 	for(int i = 0; i < nentries; ++kp)
 	{
+		i++;
 		if (kp->ki_pid == 0) continue;
-		cout << kp->ki_pid << endl;
+		cout << kp->ki_pid << " : " << kp->ki_comm << endl;
 	}
+	cout << "ENDING " << endl;
 	*/
 	return true;
 }
 
 Boolean UNIX_Process::load(int &pIndex)
 {
-	if (pIndex > 0) ++kp;
-	while (kp != NULL)
+	if (pIndex < processCount -1)
 	{
-		if (kp->ki_pid == 0)
+		if (pIndex > 0) ++kp;
+		while (kp != NULL)
 		{
-			++kp; continue;
+			if (kp->ki_pid == 0)
+			{
+				++kp; continue;
+			}
+			return true;
 		}
-		return true;
 	}
 	return false;
 }
@@ -628,6 +634,7 @@ Boolean UNIX_Process::load(int &pIndex)
 Boolean UNIX_Process::finalize()
 {
 	kp = NULL;
+	processCount = 0;
 	return true;
 }
 

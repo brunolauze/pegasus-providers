@@ -43,7 +43,7 @@ UNIX_AccountManagementCapabilitiesProvider::~UNIX_AccountManagementCapabilitiesP
 CIMInstance UNIX_AccountManagementCapabilitiesProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_AccountManagementCapabilities &_p)
+	const UNIX_AccountManagementCapabilities &_p) const
 {
 	CIMProperty p;
 
@@ -81,7 +81,7 @@ CIMInstance UNIX_AccountManagementCapabilitiesProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_AccountManagementCapabilitiesProvider::constructKeyBindings(const UNIX_AccountManagementCapabilities& _p)
+Array<CIMKeyBinding> UNIX_AccountManagementCapabilitiesProvider::constructKeyBindings(const UNIX_AccountManagementCapabilities& _p) const
 
 {
 

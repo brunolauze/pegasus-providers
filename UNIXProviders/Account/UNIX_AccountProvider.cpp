@@ -43,7 +43,7 @@ UNIX_AccountProvider::~UNIX_AccountProvider()
 CIMInstance UNIX_AccountProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_Account &_p)
+	const UNIX_Account &_p) const
 {
 	CIMProperty p;
 
@@ -112,7 +112,7 @@ CIMInstance UNIX_AccountProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_AccountProvider::constructKeyBindings(const UNIX_Account& _p)
+Array<CIMKeyBinding> UNIX_AccountProvider::constructKeyBindings(const UNIX_Account& _p) const
 
 {
 
