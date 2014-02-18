@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ParticipatesInSetProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SET,
-		_p.getSet(),
+		CIMValue(_p.getSet()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_ELEMENT,
-		_p.getElement(),
+		CIMValue(_p.getElement()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

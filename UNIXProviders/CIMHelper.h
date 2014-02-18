@@ -33,7 +33,6 @@
 #define __CIM_HELPER_H
 #include "UNIX_Common.h"
 
-
 #if defined(PEGASUS_OS_HPUX)
 
 #elif defined(PEGASUS_OS_LINUX)
@@ -55,8 +54,6 @@
 #else
 
 #endif
-
-
 class CIMHelper
 {
 public:
@@ -90,6 +87,8 @@ public:
 #else
 
 #endif
+
+
 private:
 
 };

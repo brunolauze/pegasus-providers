@@ -34,8 +34,8 @@
 
 
 #include "CIM_Component.h"
-#include <UnixProcess/UNIX_UnixProcess.h>
-#include <UnixThread/UNIX_UnixThread.h>
+#include <Process/UNIX_Process.h>
+#include <Thread/UNIX_Thread.h>
 
 #include "UNIX_ProcessThreadDeps.h"
 
@@ -69,12 +69,12 @@ private:
 
 	int groupIndex;
 	int partIndex;
-	UNIX_UnixProcess group_UNIX_UnixProcess_Component;
-	int group_UNIX_UnixProcess_Index;
-	bool endOf_UNIX_UnixProcess_Group;
-	UNIX_UnixThread part_UNIX_UnixThread_Component;
-	int part_UNIX_UnixThread_Index;
-	bool endOf_UNIX_UnixThread_Part;
+	UNIX_Process group_UNIX_Process_Component;
+	int group_UNIX_Process_Index;
+	bool endOf_UNIX_Process_Group;
+	UNIX_Thread part_UNIX_Thread_Component;
+	int part_UNIX_Thread_Index;
+	bool endOf_UNIX_Thread_Part;
 
 
 };

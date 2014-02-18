@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_EndpointIdentityProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_ELEMENT,
-		_p.getSystemElement(),
+		CIMValue(_p.getSystemElement()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SAME_ELEMENT,
-		_p.getSameElement(),
+		CIMValue(_p.getSameElement()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

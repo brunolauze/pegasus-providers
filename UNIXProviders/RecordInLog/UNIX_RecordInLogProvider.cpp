@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_RecordInLogProvider::constructKeyBindings(const UNIX_R
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_MESSAGE_LOG,
-		_p.getMessageLog(),
+		CIMValue(_p.getMessageLog()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_LOG_RECORD,
-		_p.getLogRecord(),
+		CIMValue(_p.getLogRecord()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

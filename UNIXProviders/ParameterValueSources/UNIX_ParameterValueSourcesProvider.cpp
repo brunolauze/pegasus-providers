@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ParameterValueSourcesProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_PARAMETERS,
-		_p.getParameters(),
+		CIMValue(_p.getParameters()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_VALUE_SOURCE,
-		_p.getValueSource(),
+		CIMValue(_p.getValueSource()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

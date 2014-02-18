@@ -35,7 +35,7 @@
 #define UNIX_PROVIDER UNIX_DeviceFileProvider
 #define CLASS_IMPLEMENTATION UNIX_DeviceFile
 #define CLASS_IMPLEMENTATION_NAME "UNIX_DeviceFile"
-#define BASE_CLASS_NAME "CIM_DeviceFile"
+#define BASE_CLASS_NAME "CIM_UnixDeviceFile"
 #define NUMKEYS_CLASS_IMPLEMENTATION 0
 
 

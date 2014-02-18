@@ -1029,14 +1029,14 @@ PEGASUS_USING_STD;
 //#include <Unimodem/UNIX_UnimodemProvider.h>
 //#include <UninterruptiblePowerSupply/UNIX_UninterruptiblePowerSupplyProvider.h>
 #include <ComputerSystem/UNIX_ComputerSystemProvider.h>
-//#include <UnixDeviceFile/UNIX_UnixDeviceFileProvider.h>
+//#include <DeviceFile/UNIX_DeviceFileProvider.h>
 //#include <UnixDirectory/UNIX_UnixDirectoryProvider.h>
-//#include <UnixFile/UNIX_UnixFileProvider.h>
-//#include <UnixLocalFileSystem/UNIX_UnixLocalFileSystemProvider.h>
-//#include <UnixProcess/UNIX_UnixProcessProvider.h>
-//#include <UnixProcessStatisticalInformation/UNIX_UnixProcessStatisticalInformationProvider.h>
-//#include <UnixProcessStatistics/UNIX_UnixProcessStatisticsProvider.h>
-//#include <UnixThread/UNIX_UnixThreadProvider.h>
+//#include <File/UNIX_FileProvider.h>
+//#include <LocalFileSystem/UNIX_LocalFileSystemProvider.h>
+#include <Process/UNIX_ProcessProvider.h>
+//#include <ProcessStatisticalInformation/UNIX_ProcessStatisticalInformationProvider.h>
+//#include <ProcessStatistics/UNIX_ProcessStatisticsProvider.h>
+//#include <Thread/UNIX_ThreadProvider.h>
 //#include <UnsignedCredential/UNIX_UnsignedCredentialProvider.h>
 //#include <UnsignedPublicKey/UNIX_UnsignedPublicKeyProvider.h>
 //#include <USBConnection/UNIX_USBConnectionProvider.h>
@@ -1112,7 +1112,9 @@ PEGASUS_USING_STD;
 //#include <ZoneService/UNIX_ZoneServiceProvider.h>
 //#include <ZoneSet/UNIX_ZoneSetProvider.h>
 //#include <ApplicationSystem/UNIX_ApplicationSystemProvider.h>
+//#include <FileSystem/UNIX_FileSystemProvider.h>
 //#include <SoftwareElement/UNIX_SoftwareElementProvider.h>
+//#include <SoftwareFeature/UNIX_SoftwareFeatureProvider.h>
 
 
 
@@ -2112,14 +2114,14 @@ PEGASUS_EXPORT CIMProvider* PegasusCreateProvider(const String& providerName)
 	//else if (String::equalNoCase(providerName, "UNIX_UnimodemProvider")) return new UNIX_UnimodemProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_UninterruptiblePowerSupplyProvider")) return new UNIX_UninterruptiblePowerSupplyProvider();
 	else if (String::equalNoCase(providerName, "UNIX_ComputerSystemProvider")) return new UNIX_ComputerSystemProvider();
-	//else if (String::equalNoCase(providerName, "UNIX_UnixDeviceFileProvider")) return new UNIX_UnixDeviceFileProvider();
+	//else if (String::equalNoCase(providerName, "UNIX_DeviceFileProvider")) return new UNIX_DeviceFileProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_UnixDirectoryProvider")) return new UNIX_UnixDirectoryProvider();
-	//else if (String::equalNoCase(providerName, "UNIX_UnixFileProvider")) return new UNIX_UnixFileProvider();
-	//else if (String::equalNoCase(providerName, "UNIX_UnixLocalFileSystemProvider")) return new UNIX_UnixLocalFileSystemProvider();
-	//else if (String::equalNoCase(providerName, "UNIX_UnixProcessProvider")) return new UNIX_UnixProcessProvider();
-	//else if (String::equalNoCase(providerName, "UNIX_UnixProcessStatisticalInformationProvider")) return new UNIX_UnixProcessStatisticalInformationProvider();
-	//else if (String::equalNoCase(providerName, "UNIX_UnixProcessStatisticsProvider")) return new UNIX_UnixProcessStatisticsProvider();
-	//else if (String::equalNoCase(providerName, "UNIX_UnixThreadProvider")) return new UNIX_UnixThreadProvider();
+	//else if (String::equalNoCase(providerName, "UNIX_FileProvider")) return new UNIX_FileProvider();
+	//else if (String::equalNoCase(providerName, "UNIX_LocalFileSystemProvider")) return new UNIX_LocalFileSystemProvider();
+	else if (String::equalNoCase(providerName, "UNIX_ProcessProvider")) return new UNIX_ProcessProvider();
+	//else if (String::equalNoCase(providerName, "UNIX_ProcessStatisticalInformationProvider")) return new UNIX_ProcessStatisticalInformationProvider();
+	//else if (String::equalNoCase(providerName, "UNIX_ProcessStatisticsProvider")) return new UNIX_ProcessStatisticsProvider();
+	//else if (String::equalNoCase(providerName, "UNIX_ThreadProvider")) return new UNIX_ThreadProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_UnsignedCredentialProvider")) return new UNIX_UnsignedCredentialProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_UnsignedPublicKeyProvider")) return new UNIX_UnsignedPublicKeyProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_USBConnectionProvider")) return new UNIX_USBConnectionProvider();
@@ -2195,6 +2197,8 @@ PEGASUS_EXPORT CIMProvider* PegasusCreateProvider(const String& providerName)
 	//else if (String::equalNoCase(providerName, "UNIX_ZoneServiceProvider")) return new UNIX_ZoneServiceProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_ZoneSetProvider")) return new UNIX_ZoneSetProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_ApplicationSystemProvider")) return new UNIX_ApplicationSystemProvider();
+	//else if (String::equalNoCase(providerName, "UNIX_FileSystemProvider")) return new UNIX_FileSystemProvider();
 	//else if (String::equalNoCase(providerName, "UNIX_SoftwareElementProvider")) return new UNIX_SoftwareElementProvider();
+	//else if (String::equalNoCase(providerName, "UNIX_SoftwareFeatureProvider")) return new UNIX_SoftwareFeatureProvider();
 	return NULL;
 }

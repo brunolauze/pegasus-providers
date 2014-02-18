@@ -235,25 +235,36 @@ void UNIX_PROVIDER::getInstance(const OperationContext &ctx,
   /* process handle to an integer.  This is necessary because the   */
   /* handle is the process id on HP-UX which must be passed to      */
   /* pstat_getproc() as an integer.                                 */
-
-  /* Get the process information. */
-  if (_p.find(kbArray))
+  bool found = false;
+  if (_p.initialize())
   {
-    /* Notify processing is starting. */
-    handler.processing();
+	  /* Get the process information. */
+	  if (_p.find(kbArray))
+	  {
+	    /* Notify processing is starting. */
+	    handler.processing();
+	    found = true;
+	    /* Return the instance. */
+	    handler.deliver(constructInstance(className,
+	                                       nameSpace,
+	                                       _p));
 
-    /* Return the instance. */
-    handler.deliver(constructInstance(className,
-                                       nameSpace,
-                                       _p));
-
-    /* Notify processing is complete. */
-    handler.complete();
-    return;
+	    
+	  }
+  }
+  _p.finalize();
+  /* Notify processing is complete. */
+  if (found)
+  {
+	  handler.complete();
+	  return;
   }
 
-  throw CIMObjectNotFoundException(handle+": No such process");
-
+  String msg;
+  msg.append(handle);
+  msg.append(": No such ");
+  msg.append("instance"); //_p.getElementName());
+  throw CIMObjectNotFoundException(msg);
   return; // can never execute, but required to keep compiler happy
 }
 #endif

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_AssignedIdentityProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_IDENTITY_INFO,
-		_p.getIdentityInfo(),
+		CIMValue(_p.getIdentityInfo()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MANAGED_ELEMENT,
-		_p.getManagedElement(),
+		CIMValue(_p.getManagedElement()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

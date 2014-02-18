@@ -84,7 +84,7 @@ CIMInstance UNIX_LocalFileSystemProvider::constructInstance(
 	if (_p.getAvailableRequestedStates(p)) inst.addProperty(p);
 	if (_p.getTransitioningToState(p)) inst.addProperty(p);
 
-	//CIM_FileSystem Properties
+	//UNIX_FileSystem Properties
 	if (_p.getCSCreationClassName(p)) inst.addProperty(p);
 	if (_p.getCSName(p)) inst.addProperty(p);
 	if (_p.getCreationClassName(p)) inst.addProperty(p);
@@ -106,6 +106,11 @@ CIMInstance UNIX_LocalFileSystemProvider::constructInstance(
 	if (_p.getNumberOfFiles(p)) inst.addProperty(p);
 
 	//CIM_LocalFileSystem Properties
+
+	//CIM_UnixLocalFileSystem Properties
+	if (_p.getFreeInodes(p)) inst.addProperty(p);
+	if (_p.getTotalInodes(p)) inst.addProperty(p);
+	if (_p.getFSReservedCapacity(p)) inst.addProperty(p);
 
 
 	return inst;
@@ -144,7 +149,7 @@ Array<CIMKeyBinding> UNIX_LocalFileSystemProvider::constructKeyBindings(const UN
 #define UNIX_PROVIDER_NAME "UNIX_LocalFileSystemProvider"
 #define CLASS_IMPLEMENTATION UNIX_LocalFileSystem
 #define CLASS_IMPLEMENTATION_NAME "UNIX_LocalFileSystem"
-#define BASE_CLASS_NAME "CIM_LocalFileSystem"
+#define BASE_CLASS_NAME "CIM_UnixLocalFileSystem"
 #define NUMKEYS_CLASS_IMPLEMENTATION 0
 
 

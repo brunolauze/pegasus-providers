@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_DependencyContextProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CONTEXT,
-		_p.getContext(),
+		CIMValue(_p.getContext()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENCY,
-		_p.getDependency(),
+		CIMValue(_p.getDependency()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

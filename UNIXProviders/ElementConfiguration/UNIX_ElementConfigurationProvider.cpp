@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ElementConfigurationProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ELEMENT,
-		_p.getElement(),
+		CIMValue(_p.getElement()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CONFIGURATION,
-		_p.getConfiguration(),
+		CIMValue(_p.getConfiguration()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

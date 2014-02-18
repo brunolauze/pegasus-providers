@@ -135,7 +135,7 @@ Array<CIMKeyBinding> UNIX_BGPIPRouteProvider::constructKeyBindings(const UNIX_BG
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_ADDRESS_TYPE,
-		_p.getAddressType(),
+		CIMValue(_p.getAddressType()).toString(),
 		CIMKeyBinding::NUMERIC));
 
 

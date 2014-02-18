@@ -70,26 +70,12 @@ Boolean UNIX_HostedFileSystem::initialize()
 	group_UNIX_ComputerSystem_Index = -1;
 	endOf_UNIX_ComputerSystem_Group = false;
 	group_UNIX_ComputerSystem_Component.initialize();
-	part_UNIX_RemoteFileSystem_Index = -1;
-	endOf_UNIX_RemoteFileSystem_Part = false;
-	part_UNIX_NFS_Index = -1;
-	endOf_UNIX_NFS_Part = false;
-	part_UNIX_DatabaseStorageArea_Index = -1;
-	endOf_UNIX_DatabaseStorageArea_Part = false;
-	part_UNIX_LocalFileSystem_Index = -1;
-	endOf_UNIX_LocalFileSystem_Part = false;
-	part_UNIX_UnixLocalFileSystem_Index = -1;
-	endOf_UNIX_UnixLocalFileSystem_Part = false;
 	return true;
 }
 
 Boolean UNIX_HostedFileSystem::load(int &pIndex)
 {
-	if (pIndex == 0 || (endOf_UNIX_RemoteFileSystem_Part &&
-			endOf_UNIX_NFS_Part &&
-			endOf_UNIX_DatabaseStorageArea_Part &&
-			endOf_UNIX_LocalFileSystem_Part &&
-			endOf_UNIX_UnixLocalFileSystem_Part))
+	if (pIndex == 0 || ())
 	{
 		if (groupIndex == 0)
 		{
@@ -97,94 +83,19 @@ Boolean UNIX_HostedFileSystem::load(int &pIndex)
 			endOf_UNIX_ComputerSystem_Group = !group_UNIX_ComputerSystem_Component.load(group_UNIX_ComputerSystem_Index);
 			if (endOf_UNIX_ComputerSystem_Group)
 			{
-				endOf_UNIX_RemoteFileSystem_Part = false;
-				part_UNIX_RemoteFileSystem_Component.setScope(CIMName("UNIX_ComputerSystem"));
-				part_UNIX_RemoteFileSystem_Component.initialize();
-				endOf_UNIX_NFS_Part = false;
-				part_UNIX_NFS_Component.setScope(CIMName("UNIX_ComputerSystem"));
-				part_UNIX_NFS_Component.initialize();
-				endOf_UNIX_DatabaseStorageArea_Part = false;
-				part_UNIX_DatabaseStorageArea_Component.setScope(CIMName("UNIX_ComputerSystem"));
-				part_UNIX_DatabaseStorageArea_Component.initialize();
-				endOf_UNIX_LocalFileSystem_Part = false;
-				part_UNIX_LocalFileSystem_Component.setScope(CIMName("UNIX_ComputerSystem"));
-				part_UNIX_LocalFileSystem_Component.initialize();
-				endOf_UNIX_UnixLocalFileSystem_Part = false;
-				part_UNIX_UnixLocalFileSystem_Component.setScope(CIMName("UNIX_ComputerSystem"));
-				part_UNIX_UnixLocalFileSystem_Component.initialize();
 				partIndex = 0;
 				groupIndex++;
 			}
 		}
 	}
-	if (partIndex == 0)
-	{
-		part_UNIX_RemoteFileSystem_Index++;
-	endOf_UNIX_RemoteFileSystem_Part = !part_UNIX_RemoteFileSystem_Component.load(part_UNIX_RemoteFileSystem_Index);
-	}
-	if (partIndex == 1)
-	{
-		part_UNIX_NFS_Index++;
-	endOf_UNIX_NFS_Part = !part_UNIX_NFS_Component.load(part_UNIX_NFS_Index);
-	}
-	if (partIndex == 2)
-	{
-		part_UNIX_DatabaseStorageArea_Index++;
-	endOf_UNIX_DatabaseStorageArea_Part = !part_UNIX_DatabaseStorageArea_Component.load(part_UNIX_DatabaseStorageArea_Index);
-	}
-	if (partIndex == 3)
-	{
-		part_UNIX_LocalFileSystem_Index++;
-	endOf_UNIX_LocalFileSystem_Part = !part_UNIX_LocalFileSystem_Component.load(part_UNIX_LocalFileSystem_Index);
-	}
-	if (partIndex == 4)
-	{
-		part_UNIX_UnixLocalFileSystem_Index++;
-	endOf_UNIX_UnixLocalFileSystem_Part = !part_UNIX_UnixLocalFileSystem_Component.load(part_UNIX_UnixLocalFileSystem_Index);
-	}
-	if (partIndex == 0 && endOf_UNIX_RemoteFileSystem_Part)
-	{
-		part_UNIX_RemoteFileSystem_Component.finalize();
-		partIndex++;
-	}
-	if (partIndex == 1 && endOf_UNIX_NFS_Part)
-	{
-		part_UNIX_NFS_Component.finalize();
-		partIndex++;
-	}
-	if (partIndex == 2 && endOf_UNIX_DatabaseStorageArea_Part)
-	{
-		part_UNIX_DatabaseStorageArea_Component.finalize();
-		partIndex++;
-	}
-	if (partIndex == 3 && endOf_UNIX_LocalFileSystem_Part)
-	{
-		part_UNIX_LocalFileSystem_Component.finalize();
-		partIndex++;
-	}
-	if (partIndex == 4 && endOf_UNIX_UnixLocalFileSystem_Part)
-	{
-		part_UNIX_UnixLocalFileSystem_Component.finalize();
-		partIndex++;
-	}
 
-	if (endOf_UNIX_ComputerSystem_Group &&
-		endOf_UNIX_RemoteFileSystem_Part &&
-		endOf_UNIX_NFS_Part &&
-		endOf_UNIX_DatabaseStorageArea_Part &&
-		endOf_UNIX_LocalFileSystem_Part &&
-		endOf_UNIX_UnixLocalFileSystem_Part)		return false;
+	if (endOf_UNIX_ComputerSystem_Group)		return false;
 	return true;
 }
 
 Boolean UNIX_HostedFileSystem::finalize()
 {
 	group_UNIX_ComputerSystem_Component.finalize();
-	part_UNIX_RemoteFileSystem_Component.finalize();
-	part_UNIX_NFS_Component.finalize();
-	part_UNIX_DatabaseStorageArea_Component.finalize();
-	part_UNIX_LocalFileSystem_Component.finalize();
-	part_UNIX_UnixLocalFileSystem_Component.finalize();
 	return true;
 }
 

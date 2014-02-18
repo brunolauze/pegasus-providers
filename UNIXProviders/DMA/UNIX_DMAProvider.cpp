@@ -127,7 +127,7 @@ Array<CIMKeyBinding> UNIX_DMAProvider::constructKeyBindings(const UNIX_DMA& _p)
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_D_M_A_CHANNEL,
-		_p.getDMAChannel(),
+		CIMValue(_p.getDMAChannel()).toString(),
 		CIMKeyBinding::NUMERIC));
 
 

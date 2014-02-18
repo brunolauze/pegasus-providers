@@ -125,7 +125,6 @@ String CIMHelper::HostName(CIMHelper::getHostName());
 String CIMHelper::OSName(CIMHelper::getOSName());
 String CIMHelper::EmptyString(String::EMPTY);
 
-
 #if defined(PEGASUS_OS_HPUX)
 
 #elif defined(PEGASUS_OS_LINUX)
@@ -147,4 +146,3 @@ String CIMHelper::EmptyString(String::EMPTY);
 #else
 
 #endif
-

@@ -75,11 +75,11 @@ Array<CIMKeyBinding> UNIX_HostedStoragePoolProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		_p.getGroupComponent(),
+		CIMValue(_p.getGroupComponent()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		_p.getPartComponent(),
+		CIMValue(_p.getPartComponent()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

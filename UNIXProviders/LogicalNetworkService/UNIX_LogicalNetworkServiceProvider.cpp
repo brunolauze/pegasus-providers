@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_LogicalNetworkServiceProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_NETWORK,
-		_p.getNetwork(),
+		CIMValue(_p.getNetwork()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_NETWORK_SERVICE,
-		_p.getNetworkService(),
+		CIMValue(_p.getNetworkService()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -35,7 +35,7 @@
 
 #include "CIM_Component.h"
 #include <OperatingSystem/UNIX_OperatingSystem.h>
-#include <UnixProcess/UNIX_UnixProcess.h>
+#include <Process/UNIX_Process.h>
 
 #include "UNIX_OSProcessDeps.h"
 
@@ -72,9 +72,9 @@ private:
 	UNIX_OperatingSystem group_UNIX_OperatingSystem_Component;
 	int group_UNIX_OperatingSystem_Index;
 	bool endOf_UNIX_OperatingSystem_Group;
-	UNIX_UnixProcess part_UNIX_UnixProcess_Component;
-	int part_UNIX_UnixProcess_Index;
-	bool endOf_UNIX_UnixProcess_Part;
+	UNIX_Process part_UNIX_Process_Component;
+	int part_UNIX_Process_Index;
+	bool endOf_UNIX_Process_Part;
 
 
 };

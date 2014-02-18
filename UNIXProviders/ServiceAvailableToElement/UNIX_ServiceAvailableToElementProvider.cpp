@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_ServiceAvailableToElementProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SERVICE_PROVIDED,
-		_p.getServiceProvided(),
+		CIMValue(_p.getServiceProvided()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_USER_OF_SERVICE,
-		_p.getUserOfService(),
+		CIMValue(_p.getUserOfService()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

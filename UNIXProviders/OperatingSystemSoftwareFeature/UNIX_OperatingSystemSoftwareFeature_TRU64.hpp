@@ -70,20 +70,12 @@ Boolean UNIX_OperatingSystemSoftwareFeature::initialize()
 	group_UNIX_OperatingSystem_Index = -1;
 	endOf_UNIX_OperatingSystem_Group = false;
 	group_UNIX_OperatingSystem_Component.initialize();
-	part_UNIX_BIOSFeature_Index = -1;
-	endOf_UNIX_BIOSFeature_Part = false;
-	part_UNIX_AGPSoftwareFeature_Index = -1;
-	endOf_UNIX_AGPSoftwareFeature_Part = false;
-	part_UNIX_VideoBIOSFeature_Index = -1;
-	endOf_UNIX_VideoBIOSFeature_Part = false;
 	return true;
 }
 
 Boolean UNIX_OperatingSystemSoftwareFeature::load(int &pIndex)
 {
-	if (pIndex == 0 || (endOf_UNIX_BIOSFeature_Part &&
-			endOf_UNIX_AGPSoftwareFeature_Part &&
-			endOf_UNIX_VideoBIOSFeature_Part))
+	if (pIndex == 0 || ())
 	{
 		if (groupIndex == 0)
 		{
@@ -91,64 +83,19 @@ Boolean UNIX_OperatingSystemSoftwareFeature::load(int &pIndex)
 			endOf_UNIX_OperatingSystem_Group = !group_UNIX_OperatingSystem_Component.load(group_UNIX_OperatingSystem_Index);
 			if (endOf_UNIX_OperatingSystem_Group)
 			{
-				endOf_UNIX_BIOSFeature_Part = false;
-				part_UNIX_BIOSFeature_Component.setScope(CIMName("UNIX_OperatingSystem"));
-				part_UNIX_BIOSFeature_Component.initialize();
-				endOf_UNIX_AGPSoftwareFeature_Part = false;
-				part_UNIX_AGPSoftwareFeature_Component.setScope(CIMName("UNIX_OperatingSystem"));
-				part_UNIX_AGPSoftwareFeature_Component.initialize();
-				endOf_UNIX_VideoBIOSFeature_Part = false;
-				part_UNIX_VideoBIOSFeature_Component.setScope(CIMName("UNIX_OperatingSystem"));
-				part_UNIX_VideoBIOSFeature_Component.initialize();
 				partIndex = 0;
 				groupIndex++;
 			}
 		}
 	}
-	if (partIndex == 0)
-	{
-		part_UNIX_BIOSFeature_Index++;
-	endOf_UNIX_BIOSFeature_Part = !part_UNIX_BIOSFeature_Component.load(part_UNIX_BIOSFeature_Index);
-	}
-	if (partIndex == 1)
-	{
-		part_UNIX_AGPSoftwareFeature_Index++;
-	endOf_UNIX_AGPSoftwareFeature_Part = !part_UNIX_AGPSoftwareFeature_Component.load(part_UNIX_AGPSoftwareFeature_Index);
-	}
-	if (partIndex == 2)
-	{
-		part_UNIX_VideoBIOSFeature_Index++;
-	endOf_UNIX_VideoBIOSFeature_Part = !part_UNIX_VideoBIOSFeature_Component.load(part_UNIX_VideoBIOSFeature_Index);
-	}
-	if (partIndex == 0 && endOf_UNIX_BIOSFeature_Part)
-	{
-		part_UNIX_BIOSFeature_Component.finalize();
-		partIndex++;
-	}
-	if (partIndex == 1 && endOf_UNIX_AGPSoftwareFeature_Part)
-	{
-		part_UNIX_AGPSoftwareFeature_Component.finalize();
-		partIndex++;
-	}
-	if (partIndex == 2 && endOf_UNIX_VideoBIOSFeature_Part)
-	{
-		part_UNIX_VideoBIOSFeature_Component.finalize();
-		partIndex++;
-	}
 
-	if (endOf_UNIX_OperatingSystem_Group &&
-		endOf_UNIX_BIOSFeature_Part &&
-		endOf_UNIX_AGPSoftwareFeature_Part &&
-		endOf_UNIX_VideoBIOSFeature_Part)		return false;
+	if (endOf_UNIX_OperatingSystem_Group)		return false;
 	return true;
 }
 
 Boolean UNIX_OperatingSystemSoftwareFeature::finalize()
 {
 	group_UNIX_OperatingSystem_Component.finalize();
-	part_UNIX_BIOSFeature_Component.finalize();
-	part_UNIX_AGPSoftwareFeature_Component.finalize();
-	part_UNIX_VideoBIOSFeature_Component.finalize();
 	return true;
 }
 

@@ -75,11 +75,11 @@ Array<CIMKeyBinding> UNIX_SlotInSlotProvider::constructKeyBindings(const UNIX_Sl
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		_p.getAntecedent(),
+		CIMValue(_p.getAntecedent()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		_p.getDependent(),
+		CIMValue(_p.getDependent()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

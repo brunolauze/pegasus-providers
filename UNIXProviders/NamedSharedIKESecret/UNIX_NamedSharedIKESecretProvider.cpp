@@ -108,7 +108,7 @@ Array<CIMKeyBinding> UNIX_NamedSharedIKESecretProvider::constructKeyBindings(con
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_LOCAL_IDENTITY_TYPE,
-		_p.getLocalIdentityType(),
+		CIMValue(_p.getLocalIdentityType()).toString(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PEER_IDENTITY,
@@ -116,7 +116,7 @@ Array<CIMKeyBinding> UNIX_NamedSharedIKESecretProvider::constructKeyBindings(con
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PEER_IDENTITY_TYPE,
-		_p.getPeerIdentityType(),
+		CIMValue(_p.getPeerIdentityType()).toString(),
 		CIMKeyBinding::NUMERIC));
 
 

@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_SystemInNamespaceProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_MANAGED_NAMESPACE,
-		_p.getManagedNamespace(),
+		CIMValue(_p.getManagedNamespace()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_IDENTIFICATION,
-		_p.getIdentification(),
+		CIMValue(_p.getIdentification()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

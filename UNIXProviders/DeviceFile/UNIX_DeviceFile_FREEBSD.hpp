@@ -410,6 +410,72 @@ Uint64 UNIX_DeviceFile::getInUseCount() const
 	return Uint64(0);
 }
 
+Boolean UNIX_DeviceFile::getDeviceFileType(CIMProperty &p) const
+{
+	p = CIMProperty(PROPERTY_DEVICE_FILE_TYPE, getDeviceFileType());
+	return true;
+}
+
+Uint16 UNIX_DeviceFile::getDeviceFileType() const
+{
+	return Uint16(0);
+}
+
+Boolean UNIX_DeviceFile::getOtherTypeDescription(CIMProperty &p) const
+{
+	p = CIMProperty(PROPERTY_OTHER_TYPE_DESCRIPTION, getOtherTypeDescription());
+	return true;
+}
+
+String UNIX_DeviceFile::getOtherTypeDescription() const
+{
+	return String ("");
+}
+
+Boolean UNIX_DeviceFile::getDeviceId(CIMProperty &p) const
+{
+	p = CIMProperty(PROPERTY_DEVICE_ID, getDeviceId());
+	return true;
+}
+
+String UNIX_DeviceFile::getDeviceId() const
+{
+	return String ("");
+}
+
+Boolean UNIX_DeviceFile::getDeviceDescription(CIMProperty &p) const
+{
+	p = CIMProperty(PROPERTY_DEVICE_DESCRIPTION, getDeviceDescription());
+	return true;
+}
+
+String UNIX_DeviceFile::getDeviceDescription() const
+{
+	return String ("");
+}
+
+Boolean UNIX_DeviceFile::getDeviceMajor(CIMProperty &p) const
+{
+	p = CIMProperty(PROPERTY_DEVICE_MAJOR, getDeviceMajor());
+	return true;
+}
+
+String UNIX_DeviceFile::getDeviceMajor() const
+{
+	return String ("");
+}
+
+Boolean UNIX_DeviceFile::getDeviceMinor(CIMProperty &p) const
+{
+	p = CIMProperty(PROPERTY_DEVICE_MINOR, getDeviceMinor());
+	return true;
+}
+
+String UNIX_DeviceFile::getDeviceMinor() const
+{
+	return String ("");
+}
+
 
 
 Boolean UNIX_DeviceFile::initialize()

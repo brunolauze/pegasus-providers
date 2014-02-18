@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_BGPClustersInASProvider::constructKeyBindings(const UN
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_A_S,
-		_p.getGroupAS(),
+		CIMValue(_p.getGroupAS()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_A_S,
-		_p.getPartAS(),
+		CIMValue(_p.getPartAS()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

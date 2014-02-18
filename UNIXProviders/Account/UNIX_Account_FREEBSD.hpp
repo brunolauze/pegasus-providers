@@ -688,18 +688,15 @@ Boolean UNIX_Account::find(Array<CIMKeyBinding> &kbArray)
 
 	/* EXecute find with extracted keys */
 	bool found = false;	
-	if (initialize())
+
+	for(int i = 0; i < load(i); i++)
 	{
-		for(int i = 0; i < load(i); i++)
+		if (String::equal(nameKey, getName()))
 		{
-			if (String::equal(nameKey, getName()))
-			{
-				found = true;
-				break;
-			}
+			found = true;
+			break;
 		}
 	}
-	finalize();
 
 	return found;
 }

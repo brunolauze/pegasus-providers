@@ -72,15 +72,15 @@ Array<CIMKeyBinding> UNIX_NextServiceAfterMeterProvider::constructKeyBindings(co
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_PRECEDING_SERVICE,
-		_p.getPrecedingService(),
+		CIMValue(_p.getPrecedingService()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_FOLLOWING_SERVICE,
-		_p.getFollowingService(),
+		CIMValue(_p.getFollowingService()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_METER_RESULT,
-		_p.getMeterResult(),
+		CIMValue(_p.getMeterResult()).toString(),
 		CIMKeyBinding::NUMERIC));
 
 

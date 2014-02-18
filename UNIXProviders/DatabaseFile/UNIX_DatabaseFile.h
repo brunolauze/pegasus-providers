@@ -38,7 +38,7 @@
 #include <DataFile/UNIX_DataFile.h>
 #include <FIFOPipeFile/UNIX_FIFOPipeFile.h>
 #include <DeviceFile/UNIX_DeviceFile.h>
-#include <UnixDeviceFile/UNIX_UnixDeviceFile.h>
+#include <DeviceFile/UNIX_DeviceFile.h>
 #include <Directory/UNIX_Directory.h>
 #include <UnixDirectory/UNIX_UnixDirectory.h>
 #include <SymbolicLink/UNIX_SymbolicLink.h>
@@ -87,9 +87,9 @@ private:
 	UNIX_DeviceFile part_UNIX_DeviceFile_Component;
 	int part_UNIX_DeviceFile_Index;
 	bool endOf_UNIX_DeviceFile_Part;
-	UNIX_UnixDeviceFile part_UNIX_UnixDeviceFile_Component;
-	int part_UNIX_UnixDeviceFile_Index;
-	bool endOf_UNIX_UnixDeviceFile_Part;
+	UNIX_DeviceFile part_UNIX_DeviceFile_Component;
+	int part_UNIX_DeviceFile_Index;
+	bool endOf_UNIX_DeviceFile_Part;
 	UNIX_Directory part_UNIX_Directory_Component;
 	int part_UNIX_Directory_Index;
 	bool endOf_UNIX_Directory_Part;

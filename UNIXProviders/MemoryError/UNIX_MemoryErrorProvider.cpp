@@ -110,7 +110,7 @@ Array<CIMKeyBinding> UNIX_MemoryErrorProvider::constructKeyBindings(const UNIX_M
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_STARTING_ADDRESS,
-		_p.getStartingAddress(),
+		CIMValue(_p.getStartingAddress()).toString(),
 		CIMKeyBinding::NUMERIC));
 
 

@@ -122,7 +122,7 @@ Array<CIMKeyBinding> UNIX_MemoryResourceProvider::constructKeyBindings(const UNI
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_STARTING_ADDRESS,
-		_p.getStartingAddress(),
+		CIMValue(_p.getStartingAddress()).toString(),
 		CIMKeyBinding::NUMERIC));
 
 

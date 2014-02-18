@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_CollectedCollectionsProvider::constructKeyBindings(con
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION,
-		_p.getCollection(),
+		CIMValue(_p.getCollection()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION_IN_COLLECTION,
-		_p.getCollectionInCollection(),
+		CIMValue(_p.getCollectionInCollection()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

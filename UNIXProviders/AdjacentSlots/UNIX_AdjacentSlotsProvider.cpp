@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_AdjacentSlotsProvider::constructKeyBindings(const UNIX
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SLOT_A,
-		_p.getSlotA(),
+		CIMValue(_p.getSlotA()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SLOT_B,
-		_p.getSlotB(),
+		CIMValue(_p.getSlotB()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

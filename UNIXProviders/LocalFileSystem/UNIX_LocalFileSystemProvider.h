@@ -35,7 +35,7 @@
 #define UNIX_PROVIDER UNIX_LocalFileSystemProvider
 #define CLASS_IMPLEMENTATION UNIX_LocalFileSystem
 #define CLASS_IMPLEMENTATION_NAME "UNIX_LocalFileSystem"
-#define BASE_CLASS_NAME "CIM_LocalFileSystem"
+#define BASE_CLASS_NAME "CIM_UnixLocalFileSystem"
 #define NUMKEYS_CLASS_IMPLEMENTATION 0
 
 

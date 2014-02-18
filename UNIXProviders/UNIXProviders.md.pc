@@ -2,4 +2,4 @@ Name: UNIXProviders
 Description: 
 Version: 0.1
 Libs: -L"/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/bin/Debug" -lUNIXProviders
-Cflags: -I"/usr/home/bruno/workspace/pegasus-providers/UNIXProviders" -I"/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/Account" -I"/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/ComputerSystem" -I"/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/OperatingSystem" -I"/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/SoftwareElement"
+Cflags: -I"/usr/home/bruno/workspace/pegasus-providers/UNIXProviders" -I"/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/Account" -I"/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/ComputerSystem" -I"/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/OperatingSystem" -I"/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/SoftwareElement" -I"/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/Process"

@@ -34,12 +34,6 @@
 
 
 #include "CIM_Component.h"
-#include <BIOSFeature/UNIX_BIOSFeature.h>
-#include <AGPSoftwareFeature/UNIX_AGPSoftwareFeature.h>
-#include <VideoBIOSFeature/UNIX_VideoBIOSFeature.h>
-#include <BIOSFeature/UNIX_BIOSFeature.h>
-#include <AGPSoftwareFeature/UNIX_AGPSoftwareFeature.h>
-#include <VideoBIOSFeature/UNIX_VideoBIOSFeature.h>
 
 #include "UNIX_SoftwareFeatureComponentDeps.h"
 
@@ -73,24 +67,6 @@ private:
 
 	int groupIndex;
 	int partIndex;
-	UNIX_BIOSFeature group_UNIX_BIOSFeature_Component;
-	int group_UNIX_BIOSFeature_Index;
-	bool endOf_UNIX_BIOSFeature_Group;
-	UNIX_AGPSoftwareFeature group_UNIX_AGPSoftwareFeature_Component;
-	int group_UNIX_AGPSoftwareFeature_Index;
-	bool endOf_UNIX_AGPSoftwareFeature_Group;
-	UNIX_VideoBIOSFeature group_UNIX_VideoBIOSFeature_Component;
-	int group_UNIX_VideoBIOSFeature_Index;
-	bool endOf_UNIX_VideoBIOSFeature_Group;
-	UNIX_BIOSFeature part_UNIX_BIOSFeature_Component;
-	int part_UNIX_BIOSFeature_Index;
-	bool endOf_UNIX_BIOSFeature_Part;
-	UNIX_AGPSoftwareFeature part_UNIX_AGPSoftwareFeature_Component;
-	int part_UNIX_AGPSoftwareFeature_Index;
-	bool endOf_UNIX_AGPSoftwareFeature_Part;
-	UNIX_VideoBIOSFeature part_UNIX_VideoBIOSFeature_Component;
-	int part_UNIX_VideoBIOSFeature_Index;
-	bool endOf_UNIX_VideoBIOSFeature_Part;
 
 
 };

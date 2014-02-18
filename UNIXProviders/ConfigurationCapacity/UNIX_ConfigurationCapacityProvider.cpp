@@ -88,7 +88,7 @@ Array<CIMKeyBinding> UNIX_ConfigurationCapacityProvider::constructKeyBindings(co
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_OBJECT_TYPE,
-		_p.getObjectType(),
+		CIMValue(_p.getObjectType()).toString(),
 		CIMKeyBinding::NUMERIC));
 
 

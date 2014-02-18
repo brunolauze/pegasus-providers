@@ -84,7 +84,7 @@ CIMInstance UNIX_DatabaseStorageAreaProvider::constructInstance(
 	if (_p.getAvailableRequestedStates(p)) inst.addProperty(p);
 	if (_p.getTransitioningToState(p)) inst.addProperty(p);
 
-	//CIM_FileSystem Properties
+	//UNIX_FileSystem Properties
 	if (_p.getCSCreationClassName(p)) inst.addProperty(p);
 	if (_p.getCSName(p)) inst.addProperty(p);
 	if (_p.getCreationClassName(p)) inst.addProperty(p);

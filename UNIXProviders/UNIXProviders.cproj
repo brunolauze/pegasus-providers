@@ -87,6 +87,18 @@
     <Compile Include="SoftwareElement\UNIX_SoftwareElement_TRU64.cxx" />
     <Compile Include="SoftwareElement\UNIX_SoftwareElement_VMS.cxx" />
     <Compile Include="SoftwareElement\UNIX_SoftwareElement_ZOS.cxx" />
+    <Compile Include="Process\UNIX_Process.cpp" />
+    <Compile Include="Process\UNIX_ProcessProvider.cpp" />
+    <Compile Include="Process\UNIX_Process_AIX.cxx" />
+    <Compile Include="Process\UNIX_Process_DARWIN.cxx" />
+    <Compile Include="Process\UNIX_Process_FREEBSD.cxx" />
+    <Compile Include="Process\UNIX_Process_HPUX.cxx" />
+    <Compile Include="Process\UNIX_Process_LINUX.cxx" />
+    <Compile Include="Process\UNIX_Process_SOLARIS.cxx" />
+    <Compile Include="Process\UNIX_Process_STUB.cxx" />
+    <Compile Include="Process\UNIX_Process_TRU64.cxx" />
+    <Compile Include="Process\UNIX_Process_VMS.cxx" />
+    <Compile Include="Process\UNIX_Process_ZOS.cxx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CIMHelper.h" />
@@ -105,7 +117,6 @@
     <None Include="CIM_LogicalDiskBasedOnExtent.h" />
     <None Include="CIM_LogicalFile.h" />
     <None Include="CIM_Service.h" />
-    <None Include="CIM_SoftwareFeature.h" />
     <None Include="CIM_IPRoute.h" />
     <None Include="CIM_Component.h" />
     <None Include="CIM_System.h" />
@@ -290,11 +301,57 @@
     <None Include="SoftwareElement\UNIX_SoftwareElement_WIN32.hpp" />
     <None Include="SoftwareElement\UNIX_SoftwareElement_ZOS.hpp" />
     <None Include="SoftwareElement\UNIX_SoftwareElement_ZOS.hxx" />
+    <None Include="Process\UNIX_Process.h" />
+    <None Include="Process\UNIX_ProcessDeps.h" />
+    <None Include="Process\UNIX_ProcessDeps_AIX.h" />
+    <None Include="Process\UNIX_ProcessDeps_DARWIN.h" />
+    <None Include="Process\UNIX_ProcessDeps_FREEBSD.h" />
+    <None Include="Process\UNIX_ProcessDeps_HPUX.h" />
+    <None Include="Process\UNIX_ProcessDeps_LINUX.h" />
+    <None Include="Process\UNIX_ProcessDeps_SOLARIS.h" />
+    <None Include="Process\UNIX_ProcessDeps_STUB.h" />
+    <None Include="Process\UNIX_ProcessDeps_TRU64.h" />
+    <None Include="Process\UNIX_ProcessDeps_VMS.h" />
+    <None Include="Process\UNIX_ProcessDeps_ZOS.h" />
+    <None Include="Process\UNIX_ProcessPrivate.h" />
+    <None Include="Process\UNIX_ProcessPrivate_AIX.h" />
+    <None Include="Process\UNIX_ProcessPrivate_DARWIN.h" />
+    <None Include="Process\UNIX_ProcessPrivate_FREEBSD.h" />
+    <None Include="Process\UNIX_ProcessPrivate_HPUX.h" />
+    <None Include="Process\UNIX_ProcessPrivate_LINUX.h" />
+    <None Include="Process\UNIX_ProcessPrivate_SOLARIS.h" />
+    <None Include="Process\UNIX_ProcessPrivate_STUB.h" />
+    <None Include="Process\UNIX_ProcessPrivate_TRU64.h" />
+    <None Include="Process\UNIX_ProcessPrivate_VMS.h" />
+    <None Include="Process\UNIX_ProcessPrivate_ZOS.h" />
+    <None Include="Process\UNIX_ProcessProvider.h" />
+    <None Include="Process\UNIX_Process_AIX.hpp" />
+    <None Include="Process\UNIX_Process_AIX.hxx" />
+    <None Include="Process\UNIX_Process_DARWIN.hpp" />
+    <None Include="Process\UNIX_Process_DARWIN.hxx" />
+    <None Include="Process\UNIX_Process_FREEBSD.hpp" />
+    <None Include="Process\UNIX_Process_FREEBSD.hxx" />
+    <None Include="Process\UNIX_Process_HPUX.hpp" />
+    <None Include="Process\UNIX_Process_HPUX.hxx" />
+    <None Include="Process\UNIX_Process_LINUX.hpp" />
+    <None Include="Process\UNIX_Process_LINUX.hxx" />
+    <None Include="Process\UNIX_Process_SOLARIS.hpp" />
+    <None Include="Process\UNIX_Process_SOLARIS.hxx" />
+    <None Include="Process\UNIX_Process_STUB.hpp" />
+    <None Include="Process\UNIX_Process_STUB.hxx" />
+    <None Include="Process\UNIX_Process_TRU64.hpp" />
+    <None Include="Process\UNIX_Process_TRU64.hxx" />
+    <None Include="Process\UNIX_Process_VMS.hpp" />
+    <None Include="Process\UNIX_Process_VMS.hxx" />
+    <None Include="Process\UNIX_Process_WIN32.hpp" />
+    <None Include="Process\UNIX_Process_ZOS.hpp" />
+    <None Include="Process\UNIX_Process_ZOS.hxx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Account\" />
     <Folder Include="ComputerSystem\" />
     <Folder Include="OperatingSystem\" />
     <Folder Include="SoftwareElement\" />
+    <Folder Include="Process\" />
   </ItemGroup>
 </Project>

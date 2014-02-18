@@ -85,7 +85,7 @@ Array<CIMKeyBinding> UNIX_MemoryCapacityProvider::constructKeyBindings(const UNI
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MEMORY_TYPE,
-		_p.getMemoryType(),
+		CIMValue(_p.getMemoryType()).toString(),
 		CIMKeyBinding::NUMERIC));
 
 

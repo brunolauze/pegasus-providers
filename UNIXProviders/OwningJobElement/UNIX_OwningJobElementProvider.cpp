@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_OwningJobElementProvider::constructKeyBindings(const U
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_OWNING_ELEMENT,
-		_p.getOwningElement(),
+		CIMValue(_p.getOwningElement()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_OWNED_ELEMENT,
-		_p.getOwnedElement(),
+		CIMValue(_p.getOwnedElement()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

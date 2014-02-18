@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_ActsAsSpareProvider::constructKeyBindings(const UNIX_A
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP,
-		_p.getGroup(),
+		CIMValue(_p.getGroup()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SPARE,
-		_p.getSpare(),
+		CIMValue(_p.getSpare()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

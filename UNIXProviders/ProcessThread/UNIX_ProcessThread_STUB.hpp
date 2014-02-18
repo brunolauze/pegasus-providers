@@ -67,27 +67,27 @@ Boolean UNIX_ProcessThread::initialize()
 {
 	groupIndex = -1;
 	partIndex = 0;
-	group_UNIX_UnixProcess_Index = -1;
-	endOf_UNIX_UnixProcess_Group = false;
-	group_UNIX_UnixProcess_Component.initialize();
-	part_UNIX_UnixThread_Index = -1;
-	endOf_UNIX_UnixThread_Part = false;
+	group_UNIX_Process_Index = -1;
+	endOf_UNIX_Process_Group = false;
+	group_UNIX_Process_Component.initialize();
+	part_UNIX_Thread_Index = -1;
+	endOf_UNIX_Thread_Part = false;
 	return true;
 }
 
 Boolean UNIX_ProcessThread::load(int &pIndex)
 {
-	if (pIndex == 0 || (endOf_UNIX_UnixThread_Part))
+	if (pIndex == 0 || (endOf_UNIX_Thread_Part))
 	{
 		if (groupIndex == 0)
 		{
-			group_UNIX_UnixProcess_Index++;
-			endOf_UNIX_UnixProcess_Group = !group_UNIX_UnixProcess_Component.load(group_UNIX_UnixProcess_Index);
-			if (endOf_UNIX_UnixProcess_Group)
+			group_UNIX_Process_Index++;
+			endOf_UNIX_Process_Group = !group_UNIX_Process_Component.load(group_UNIX_Process_Index);
+			if (endOf_UNIX_Process_Group)
 			{
-				endOf_UNIX_UnixThread_Part = false;
-				part_UNIX_UnixThread_Component.setScope(CIMName("UNIX_UnixProcess"));
-				part_UNIX_UnixThread_Component.initialize();
+				endOf_UNIX_Thread_Part = false;
+				part_UNIX_Thread_Component.setScope(CIMName("UNIX_Process"));
+				part_UNIX_Thread_Component.initialize();
 				partIndex = 0;
 				groupIndex++;
 			}
@@ -95,24 +95,24 @@ Boolean UNIX_ProcessThread::load(int &pIndex)
 	}
 	if (partIndex == 0)
 	{
-		part_UNIX_UnixThread_Index++;
-	endOf_UNIX_UnixThread_Part = !part_UNIX_UnixThread_Component.load(part_UNIX_UnixThread_Index);
+		part_UNIX_Thread_Index++;
+	endOf_UNIX_Thread_Part = !part_UNIX_Thread_Component.load(part_UNIX_Thread_Index);
 	}
-	if (partIndex == 0 && endOf_UNIX_UnixThread_Part)
+	if (partIndex == 0 && endOf_UNIX_Thread_Part)
 	{
-		part_UNIX_UnixThread_Component.finalize();
+		part_UNIX_Thread_Component.finalize();
 		partIndex++;
 	}
 
-	if (endOf_UNIX_UnixProcess_Group &&
-		endOf_UNIX_UnixThread_Part)		return false;
+	if (endOf_UNIX_Process_Group &&
+		endOf_UNIX_Thread_Part)		return false;
 	return true;
 }
 
 Boolean UNIX_ProcessThread::finalize()
 {
-	group_UNIX_UnixProcess_Component.finalize();
-	part_UNIX_UnixThread_Component.finalize();
+	group_UNIX_Process_Component.finalize();
+	part_UNIX_Thread_Component.finalize();
 	return true;
 }
 

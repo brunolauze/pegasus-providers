@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_DiagnosticResultInPackageProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_PACKAGE_RESULT,
-		_p.getPackageResult(),
+		CIMValue(_p.getPackageResult()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_RESULT,
-		_p.getResult(),
+		CIMValue(_p.getResult()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_DiagnosticResultForMSEProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_RESULT,
-		_p.getResult(),
+		CIMValue(_p.getResult()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SYSTEM_ELEMENT,
-		_p.getSystemElement(),
+		CIMValue(_p.getSystemElement()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

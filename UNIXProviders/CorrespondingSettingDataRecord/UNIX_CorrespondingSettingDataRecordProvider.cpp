@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_CorrespondingSettingDataRecordProvider::constructKeyBi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_DATA_RECORD,
-		_p.getDataRecord(),
+		CIMValue(_p.getDataRecord()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SETTINGS_RECORD,
-		_p.getSettingsRecord(),
+		CIMValue(_p.getSettingsRecord()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -122,7 +122,7 @@ Array<CIMKeyBinding> UNIX_IRQProvider::constructKeyBindings(const UNIX_IRQ& _p)
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_I_R_Q_NUMBER,
-		_p.getIRQNumber(),
+		CIMValue(_p.getIRQNumber()).toString(),
 		CIMKeyBinding::NUMERIC));
 
 

@@ -80,11 +80,11 @@ Array<CIMKeyBinding> UNIX_SwitchableProvider::constructKeyBindings(const UNIX_Sw
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_ANTECEDENT,
-		_p.getAntecedent(),
+		CIMValue(_p.getAntecedent()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_DEPENDENT,
-		_p.getDependent(),
+		CIMValue(_p.getDependent()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

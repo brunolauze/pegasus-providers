@@ -103,7 +103,7 @@ Array<CIMKeyBinding> UNIX_LogRecordProvider::constructKeyBindings(const UNIX_Log
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MESSAGE_TIMESTAMP,
-		_p.getMessageTimestamp(),
+		CIMValue(_p.getMessageTimestamp()).toString(),
 		CIMKeyBinding::STRING));
 
 

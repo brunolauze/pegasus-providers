@@ -35,11 +35,6 @@
 
 #include "CIM_SystemComponent.h"
 #include <ComputerSystem/UNIX_ComputerSystem.h>
-#include <RemoteFileSystem/UNIX_RemoteFileSystem.h>
-#include <NFS/UNIX_NFS.h>
-#include <DatabaseStorageArea/UNIX_DatabaseStorageArea.h>
-#include <LocalFileSystem/UNIX_LocalFileSystem.h>
-#include <UnixLocalFileSystem/UNIX_UnixLocalFileSystem.h>
 
 #include "UNIX_HostedFileSystemDeps.h"
 
@@ -76,21 +71,6 @@ private:
 	UNIX_ComputerSystem group_UNIX_ComputerSystem_Component;
 	int group_UNIX_ComputerSystem_Index;
 	bool endOf_UNIX_ComputerSystem_Group;
-	UNIX_RemoteFileSystem part_UNIX_RemoteFileSystem_Component;
-	int part_UNIX_RemoteFileSystem_Index;
-	bool endOf_UNIX_RemoteFileSystem_Part;
-	UNIX_NFS part_UNIX_NFS_Component;
-	int part_UNIX_NFS_Index;
-	bool endOf_UNIX_NFS_Part;
-	UNIX_DatabaseStorageArea part_UNIX_DatabaseStorageArea_Component;
-	int part_UNIX_DatabaseStorageArea_Index;
-	bool endOf_UNIX_DatabaseStorageArea_Part;
-	UNIX_LocalFileSystem part_UNIX_LocalFileSystem_Component;
-	int part_UNIX_LocalFileSystem_Index;
-	bool endOf_UNIX_LocalFileSystem_Part;
-	UNIX_UnixLocalFileSystem part_UNIX_UnixLocalFileSystem_Component;
-	int part_UNIX_UnixLocalFileSystem_Index;
-	bool endOf_UNIX_UnixLocalFileSystem_Part;
 
 
 };

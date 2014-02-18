@@ -33,15 +33,21 @@
 #define __UNIX_DEVICEFILE_H
 
 
-#include "CIM_LogicalFile.h"
+#include "CIM_DeviceFile.h"
 
 #include "UNIX_DeviceFileDeps.h"
 
 
+#define PROPERTY_DEVICE_FILE_TYPE				"DeviceFileType"
+#define PROPERTY_OTHER_TYPE_DESCRIPTION				"OtherTypeDescription"
+#define PROPERTY_DEVICE_ID				"DeviceId"
+#define PROPERTY_DEVICE_DESCRIPTION				"DeviceDescription"
+#define PROPERTY_DEVICE_MAJOR				"DeviceMajor"
+#define PROPERTY_DEVICE_MINOR				"DeviceMinor"
 
 
 class UNIX_DeviceFile :
-	public CIM_LogicalFile
+	public CIM_DeviceFile
 {
 public:
 
@@ -113,6 +119,18 @@ public:
 	virtual String getEncryptionMethod() const;
 	virtual Boolean getInUseCount(CIMProperty&) const;
 	virtual Uint64 getInUseCount() const;
+	virtual Boolean getDeviceFileType(CIMProperty&) const;
+	virtual Uint16 getDeviceFileType() const;
+	virtual Boolean getOtherTypeDescription(CIMProperty&) const;
+	virtual String getOtherTypeDescription() const;
+	virtual Boolean getDeviceId(CIMProperty&) const;
+	virtual String getDeviceId() const;
+	virtual Boolean getDeviceDescription(CIMProperty&) const;
+	virtual String getDeviceDescription() const;
+	virtual Boolean getDeviceMajor(CIMProperty&) const;
+	virtual String getDeviceMajor() const;
+	virtual Boolean getDeviceMinor(CIMProperty&) const;
+	virtual String getDeviceMinor() const;
 
 private:
 	CIMName currentScope;

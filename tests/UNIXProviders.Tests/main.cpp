@@ -1023,14 +1023,14 @@
 //#include "UNIX_UnimodemFixture.h"
 //#include "UNIX_UninterruptiblePowerSupplyFixture.h"
 #include "UNIX_ComputerSystemFixture.h"
-//#include "UNIX_UnixDeviceFileFixture.h"
+//#include "UNIX_DeviceFileFixture.h"
 //#include "UNIX_UnixDirectoryFixture.h"
-//#include "UNIX_UnixFileFixture.h"
-//#include "UNIX_UnixLocalFileSystemFixture.h"
-//#include "UNIX_UnixProcessFixture.h"
-//#include "UNIX_UnixProcessStatisticalInformationFixture.h"
-//#include "UNIX_UnixProcessStatisticsFixture.h"
-//#include "UNIX_UnixThreadFixture.h"
+//#include "UNIX_FileFixture.h"
+//#include "UNIX_LocalFileSystemFixture.h"
+#include "UNIX_ProcessFixture.h"
+//#include "UNIX_ProcessStatisticalInformationFixture.h"
+//#include "UNIX_ProcessStatisticsFixture.h"
+//#include "UNIX_ThreadFixture.h"
 //#include "UNIX_UnsignedCredentialFixture.h"
 //#include "UNIX_UnsignedPublicKeyFixture.h"
 //#include "UNIX_USBConnectionFixture.h"
@@ -1106,7 +1106,9 @@
 //#include "UNIX_ZoneServiceFixture.h"
 //#include "UNIX_ZoneSetFixture.h"
 //#include "UNIX_ApplicationSystemFixture.h"
+//#include "UNIX_FileSystemFixture.h"
 //#include "UNIX_SoftwareElementFixture.h"
+//#include "UNIX_SoftwareFeatureFixture.h"
 
 #include <iostream>
 
@@ -2120,14 +2122,14 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_Unimodem")) { UNIX_UnimodemFixture unimodem; unimodem.Run(); }
 	//if (IsTarget(s, "UNIX_UninterruptiblePowerSupply")) { UNIX_UninterruptiblePowerSupplyFixture uninterruptiblePowerSupply; uninterruptiblePowerSupply.Run(); }
 	if (IsTarget(s, "UNIX_ComputerSystem")) { UNIX_ComputerSystemFixture computerSystem; computerSystem.Run(); }
-	//if (IsTarget(s, "UNIX_UnixDeviceFile")) { UNIX_UnixDeviceFileFixture unixDeviceFile; unixDeviceFile.Run(); }
+	//if (IsTarget(s, "UNIX_DeviceFile")) { UNIX_DeviceFileFixture deviceFile; deviceFile.Run(); }
 	//if (IsTarget(s, "UNIX_UnixDirectory")) { UNIX_UnixDirectoryFixture unixDirectory; unixDirectory.Run(); }
-	//if (IsTarget(s, "UNIX_UnixFile")) { UNIX_UnixFileFixture unixFile; unixFile.Run(); }
-	//if (IsTarget(s, "UNIX_UnixLocalFileSystem")) { UNIX_UnixLocalFileSystemFixture unixLocalFileSystem; unixLocalFileSystem.Run(); }
-	//if (IsTarget(s, "UNIX_UnixProcess")) { UNIX_UnixProcessFixture unixProcess; unixProcess.Run(); }
-	//if (IsTarget(s, "UNIX_UnixProcessStatisticalInformation")) { UNIX_UnixProcessStatisticalInformationFixture unixProcessStatisticalInformation; unixProcessStatisticalInformation.Run(); }
-	//if (IsTarget(s, "UNIX_UnixProcessStatistics")) { UNIX_UnixProcessStatisticsFixture unixProcessStatistics; unixProcessStatistics.Run(); }
-	//if (IsTarget(s, "UNIX_UnixThread")) { UNIX_UnixThreadFixture unixThread; unixThread.Run(); }
+	//if (IsTarget(s, "UNIX_File")) { UNIX_FileFixture file; file.Run(); }
+	//if (IsTarget(s, "UNIX_LocalFileSystem")) { UNIX_LocalFileSystemFixture localFileSystem; localFileSystem.Run(); }
+	if (IsTarget(s, "UNIX_Process")) { UNIX_ProcessFixture process; process.Run(); }
+	//if (IsTarget(s, "UNIX_ProcessStatisticalInformation")) { UNIX_ProcessStatisticalInformationFixture processStatisticalInformation; processStatisticalInformation.Run(); }
+	//if (IsTarget(s, "UNIX_ProcessStatistics")) { UNIX_ProcessStatisticsFixture processStatistics; processStatistics.Run(); }
+	//if (IsTarget(s, "UNIX_Thread")) { UNIX_ThreadFixture thread; thread.Run(); }
 	//if (IsTarget(s, "UNIX_UnsignedCredential")) { UNIX_UnsignedCredentialFixture unsignedCredential; unsignedCredential.Run(); }
 	//if (IsTarget(s, "UNIX_UnsignedPublicKey")) { UNIX_UnsignedPublicKeyFixture unsignedPublicKey; unsignedPublicKey.Run(); }
 	//if (IsTarget(s, "UNIX_USBConnection")) { UNIX_USBConnectionFixture uSBConnection; uSBConnection.Run(); }
@@ -2203,7 +2205,9 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_ZoneService")) { UNIX_ZoneServiceFixture zoneService; zoneService.Run(); }
 	//if (IsTarget(s, "UNIX_ZoneSet")) { UNIX_ZoneSetFixture zoneSet; zoneSet.Run(); }
 	//if (IsTarget(s, "UNIX_ApplicationSystem")) { UNIX_ApplicationSystemFixture applicationSystem; applicationSystem.Run(); }
+	//if (IsTarget(s, "UNIX_FileSystem")) { UNIX_FileSystemFixture fileSystem; fileSystem.Run(); }
 	//if (IsTarget(s, "UNIX_SoftwareElement")) { UNIX_SoftwareElementFixture softwareElement; softwareElement.Run(); }
-	return 0;
+	//if (IsTarget(s, "UNIX_SoftwareFeature")) { UNIX_SoftwareFeatureFixture softwareFeature; softwareFeature.Run(); }
+
 }
 

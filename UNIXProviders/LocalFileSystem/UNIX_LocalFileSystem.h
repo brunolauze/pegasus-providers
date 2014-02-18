@@ -33,15 +33,18 @@
 #define __UNIX_LOCALFILESYSTEM_H
 
 
-#include "CIM_FileSystem.h"
+#include "CIM_LocalFileSystem.h"
 
 #include "UNIX_LocalFileSystemDeps.h"
 
 
+#define PROPERTY_FREE_INODES				"FreeInodes"
+#define PROPERTY_TOTAL_INODES				"TotalInodes"
+#define PROPERTY_FS_RESERVED_CAPACITY				"FSReservedCapacity"
 
 
 class UNIX_LocalFileSystem :
-	public CIM_FileSystem
+	public CIM_LocalFileSystem
 {
 public:
 
@@ -135,6 +138,12 @@ public:
 	virtual String getOtherPersistenceType() const;
 	virtual Boolean getNumberOfFiles(CIMProperty&) const;
 	virtual Uint64 getNumberOfFiles() const;
+	virtual Boolean getFreeInodes(CIMProperty&) const;
+	virtual Uint64 getFreeInodes() const;
+	virtual Boolean getTotalInodes(CIMProperty&) const;
+	virtual Uint64 getTotalInodes() const;
+	virtual Boolean getFSReservedCapacity(CIMProperty&) const;
+	virtual Uint64 getFSReservedCapacity() const;
 
 private:
 	CIMName currentScope;

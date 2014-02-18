@@ -97,7 +97,7 @@ Array<CIMKeyBinding> UNIX_SoftwareElementVersionCheckProvider::constructKeyBindi
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_STATE,
-		_p.getSoftwareElementState(),
+		CIMValue(_p.getSoftwareElementState()).toString(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOFTWARE_ELEMENT_ID,
@@ -105,7 +105,7 @@ Array<CIMKeyBinding> UNIX_SoftwareElementVersionCheckProvider::constructKeyBindi
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_TARGET_OPERATING_SYSTEM,
-		_p.getTargetOperatingSystem(),
+		CIMValue(_p.getTargetOperatingSystem()).toString(),
 		CIMKeyBinding::NUMERIC));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CHECK_ID,

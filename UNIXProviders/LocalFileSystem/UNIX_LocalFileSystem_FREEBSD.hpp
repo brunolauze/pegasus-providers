@@ -517,6 +517,39 @@ Uint64 UNIX_LocalFileSystem::getNumberOfFiles() const
 	return Uint64(0);
 }
 
+Boolean UNIX_LocalFileSystem::getFreeInodes(CIMProperty &p) const
+{
+	p = CIMProperty(PROPERTY_FREE_INODES, getFreeInodes());
+	return true;
+}
+
+Uint64 UNIX_LocalFileSystem::getFreeInodes() const
+{
+	return Uint64(0);
+}
+
+Boolean UNIX_LocalFileSystem::getTotalInodes(CIMProperty &p) const
+{
+	p = CIMProperty(PROPERTY_TOTAL_INODES, getTotalInodes());
+	return true;
+}
+
+Uint64 UNIX_LocalFileSystem::getTotalInodes() const
+{
+	return Uint64(0);
+}
+
+Boolean UNIX_LocalFileSystem::getFSReservedCapacity(CIMProperty &p) const
+{
+	p = CIMProperty(PROPERTY_FS_RESERVED_CAPACITY, getFSReservedCapacity());
+	return true;
+}
+
+Uint64 UNIX_LocalFileSystem::getFSReservedCapacity() const
+{
+	return Uint64(0);
+}
+
 
 
 Boolean UNIX_LocalFileSystem::initialize()

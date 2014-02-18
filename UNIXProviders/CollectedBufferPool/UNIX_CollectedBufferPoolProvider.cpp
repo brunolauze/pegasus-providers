@@ -73,11 +73,11 @@ Array<CIMKeyBinding> UNIX_CollectedBufferPoolProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_COLLECTION,
-		_p.getCollection(),
+		CIMValue(_p.getCollection()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_MEMBER,
-		_p.getMember(),
+		CIMValue(_p.getMember()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -34,9 +34,6 @@
 
 
 #include "CIM_SystemComponent.h"
-#include <BIOSFeature/UNIX_BIOSFeature.h>
-#include <AGPSoftwareFeature/UNIX_AGPSoftwareFeature.h>
-#include <VideoBIOSFeature/UNIX_VideoBIOSFeature.h>
 
 #include "UNIX_ApplicationSystemSoftwareFeatureDeps.h"
 
@@ -70,15 +67,6 @@ private:
 
 	int groupIndex;
 	int partIndex;
-	UNIX_BIOSFeature part_UNIX_BIOSFeature_Component;
-	int part_UNIX_BIOSFeature_Index;
-	bool endOf_UNIX_BIOSFeature_Part;
-	UNIX_AGPSoftwareFeature part_UNIX_AGPSoftwareFeature_Component;
-	int part_UNIX_AGPSoftwareFeature_Index;
-	bool endOf_UNIX_AGPSoftwareFeature_Part;
-	UNIX_VideoBIOSFeature part_UNIX_VideoBIOSFeature_Component;
-	int part_UNIX_VideoBIOSFeature_Index;
-	bool endOf_UNIX_VideoBIOSFeature_Part;
 
 
 };

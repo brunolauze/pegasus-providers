@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_AuthorizedSubjectProvider::constructKeyBindings(const 
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_PRIVILEGE,
-		_p.getPrivilege(),
+		CIMValue(_p.getPrivilege()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PRIVILEGED_ELEMENT,
-		_p.getPrivilegedElement(),
+		CIMValue(_p.getPrivilegedElement()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

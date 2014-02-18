@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_FromDirectoryActionProvider::constructKeyBindings(cons
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SOURCE_DIRECTORY,
-		_p.getSourceDirectory(),
+		CIMValue(_p.getSourceDirectory()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_FILE_NAME,
-		_p.getFileName(),
+		CIMValue(_p.getFileName()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

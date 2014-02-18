@@ -74,11 +74,11 @@ Array<CIMKeyBinding> UNIX_ElementSettingDataProvider::constructKeyBindings(const
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_MANAGED_ELEMENT,
-		_p.getManagedElement(),
+		CIMValue(_p.getManagedElement()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SETTING_DATA,
-		_p.getSettingData(),
+		CIMValue(_p.getSettingData()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

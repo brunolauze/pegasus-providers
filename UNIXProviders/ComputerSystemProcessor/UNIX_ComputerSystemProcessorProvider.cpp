@@ -77,11 +77,11 @@ Array<CIMKeyBinding> UNIX_ComputerSystemProcessorProvider::constructKeyBindings(
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_GROUP_COMPONENT,
-		_p.getGroupComponent(),
+		CIMValue(_p.getGroupComponent()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_PART_COMPONENT,
-		_p.getPartComponent(),
+		CIMValue(_p.getPartComponent()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

@@ -76,8 +76,8 @@ Boolean UNIX_DatabaseFile::initialize()
 	endOf_UNIX_FIFOPipeFile_Part = false;
 	part_UNIX_DeviceFile_Index = -1;
 	endOf_UNIX_DeviceFile_Part = false;
-	part_UNIX_UnixDeviceFile_Index = -1;
-	endOf_UNIX_UnixDeviceFile_Part = false;
+	part_UNIX_DeviceFile_Index = -1;
+	endOf_UNIX_DeviceFile_Part = false;
 	part_UNIX_Directory_Index = -1;
 	endOf_UNIX_Directory_Part = false;
 	part_UNIX_UnixDirectory_Index = -1;
@@ -92,7 +92,7 @@ Boolean UNIX_DatabaseFile::load(int &pIndex)
 	if (pIndex == 0 || (endOf_UNIX_DataFile_Part &&
 			endOf_UNIX_FIFOPipeFile_Part &&
 			endOf_UNIX_DeviceFile_Part &&
-			endOf_UNIX_UnixDeviceFile_Part &&
+			endOf_UNIX_DeviceFile_Part &&
 			endOf_UNIX_Directory_Part &&
 			endOf_UNIX_UnixDirectory_Part &&
 			endOf_UNIX_SymbolicLink_Part))
@@ -112,9 +112,9 @@ Boolean UNIX_DatabaseFile::load(int &pIndex)
 				endOf_UNIX_DeviceFile_Part = false;
 				part_UNIX_DeviceFile_Component.setScope(CIMName("UNIX_CommonDatabase"));
 				part_UNIX_DeviceFile_Component.initialize();
-				endOf_UNIX_UnixDeviceFile_Part = false;
-				part_UNIX_UnixDeviceFile_Component.setScope(CIMName("UNIX_CommonDatabase"));
-				part_UNIX_UnixDeviceFile_Component.initialize();
+				endOf_UNIX_DeviceFile_Part = false;
+				part_UNIX_DeviceFile_Component.setScope(CIMName("UNIX_CommonDatabase"));
+				part_UNIX_DeviceFile_Component.initialize();
 				endOf_UNIX_Directory_Part = false;
 				part_UNIX_Directory_Component.setScope(CIMName("UNIX_CommonDatabase"));
 				part_UNIX_Directory_Component.initialize();
@@ -146,8 +146,8 @@ Boolean UNIX_DatabaseFile::load(int &pIndex)
 	}
 	if (partIndex == 3)
 	{
-		part_UNIX_UnixDeviceFile_Index++;
-	endOf_UNIX_UnixDeviceFile_Part = !part_UNIX_UnixDeviceFile_Component.load(part_UNIX_UnixDeviceFile_Index);
+		part_UNIX_DeviceFile_Index++;
+	endOf_UNIX_DeviceFile_Part = !part_UNIX_DeviceFile_Component.load(part_UNIX_DeviceFile_Index);
 	}
 	if (partIndex == 4)
 	{
@@ -179,9 +179,9 @@ Boolean UNIX_DatabaseFile::load(int &pIndex)
 		part_UNIX_DeviceFile_Component.finalize();
 		partIndex++;
 	}
-	if (partIndex == 3 && endOf_UNIX_UnixDeviceFile_Part)
+	if (partIndex == 3 && endOf_UNIX_DeviceFile_Part)
 	{
-		part_UNIX_UnixDeviceFile_Component.finalize();
+		part_UNIX_DeviceFile_Component.finalize();
 		partIndex++;
 	}
 	if (partIndex == 4 && endOf_UNIX_Directory_Part)
@@ -204,7 +204,7 @@ Boolean UNIX_DatabaseFile::load(int &pIndex)
 		endOf_UNIX_DataFile_Part &&
 		endOf_UNIX_FIFOPipeFile_Part &&
 		endOf_UNIX_DeviceFile_Part &&
-		endOf_UNIX_UnixDeviceFile_Part &&
+		endOf_UNIX_DeviceFile_Part &&
 		endOf_UNIX_Directory_Part &&
 		endOf_UNIX_UnixDirectory_Part &&
 		endOf_UNIX_SymbolicLink_Part)		return false;
@@ -217,7 +217,7 @@ Boolean UNIX_DatabaseFile::finalize()
 	part_UNIX_DataFile_Component.finalize();
 	part_UNIX_FIFOPipeFile_Component.finalize();
 	part_UNIX_DeviceFile_Component.finalize();
-	part_UNIX_UnixDeviceFile_Component.finalize();
+	part_UNIX_DeviceFile_Component.finalize();
 	part_UNIX_Directory_Component.finalize();
 	part_UNIX_UnixDirectory_Component.finalize();
 	part_UNIX_SymbolicLink_Component.finalize();

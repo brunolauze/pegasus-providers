@@ -70,14 +70,14 @@ Boolean UNIX_OSProcess::initialize()
 	group_UNIX_OperatingSystem_Index = -1;
 	endOf_UNIX_OperatingSystem_Group = false;
 	group_UNIX_OperatingSystem_Component.initialize();
-	part_UNIX_UnixProcess_Index = -1;
-	endOf_UNIX_UnixProcess_Part = false;
+	part_UNIX_Process_Index = -1;
+	endOf_UNIX_Process_Part = false;
 	return true;
 }
 
 Boolean UNIX_OSProcess::load(int &pIndex)
 {
-	if (pIndex == 0 || (endOf_UNIX_UnixProcess_Part))
+	if (pIndex == 0 || (endOf_UNIX_Process_Part))
 	{
 		if (groupIndex == 0)
 		{
@@ -85,9 +85,9 @@ Boolean UNIX_OSProcess::load(int &pIndex)
 			endOf_UNIX_OperatingSystem_Group = !group_UNIX_OperatingSystem_Component.load(group_UNIX_OperatingSystem_Index);
 			if (endOf_UNIX_OperatingSystem_Group)
 			{
-				endOf_UNIX_UnixProcess_Part = false;
-				part_UNIX_UnixProcess_Component.setScope(CIMName("UNIX_OperatingSystem"));
-				part_UNIX_UnixProcess_Component.initialize();
+				endOf_UNIX_Process_Part = false;
+				part_UNIX_Process_Component.setScope(CIMName("UNIX_OperatingSystem"));
+				part_UNIX_Process_Component.initialize();
 				partIndex = 0;
 				groupIndex++;
 			}
@@ -95,24 +95,24 @@ Boolean UNIX_OSProcess::load(int &pIndex)
 	}
 	if (partIndex == 0)
 	{
-		part_UNIX_UnixProcess_Index++;
-	endOf_UNIX_UnixProcess_Part = !part_UNIX_UnixProcess_Component.load(part_UNIX_UnixProcess_Index);
+		part_UNIX_Process_Index++;
+	endOf_UNIX_Process_Part = !part_UNIX_Process_Component.load(part_UNIX_Process_Index);
 	}
-	if (partIndex == 0 && endOf_UNIX_UnixProcess_Part)
+	if (partIndex == 0 && endOf_UNIX_Process_Part)
 	{
-		part_UNIX_UnixProcess_Component.finalize();
+		part_UNIX_Process_Component.finalize();
 		partIndex++;
 	}
 
 	if (endOf_UNIX_OperatingSystem_Group &&
-		endOf_UNIX_UnixProcess_Part)		return false;
+		endOf_UNIX_Process_Part)		return false;
 	return true;
 }
 
 Boolean UNIX_OSProcess::finalize()
 {
 	group_UNIX_OperatingSystem_Component.finalize();
-	part_UNIX_UnixProcess_Component.finalize();
+	part_UNIX_Process_Component.finalize();
 	return true;
 }
 

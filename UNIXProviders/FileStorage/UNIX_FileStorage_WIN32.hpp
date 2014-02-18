@@ -67,29 +67,14 @@ Boolean UNIX_FileStorage::initialize()
 {
 	groupIndex = -1;
 	partIndex = 0;
-	group_UNIX_RemoteFileSystem_Index = -1;
-	endOf_UNIX_RemoteFileSystem_Group = false;
-	group_UNIX_RemoteFileSystem_Component.initialize();
-	group_UNIX_NFS_Index = -1;
-	endOf_UNIX_NFS_Group = false;
-	group_UNIX_NFS_Component.initialize();
-	group_UNIX_DatabaseStorageArea_Index = -1;
-	endOf_UNIX_DatabaseStorageArea_Group = false;
-	group_UNIX_DatabaseStorageArea_Component.initialize();
-	group_UNIX_LocalFileSystem_Index = -1;
-	endOf_UNIX_LocalFileSystem_Group = false;
-	group_UNIX_LocalFileSystem_Component.initialize();
-	group_UNIX_UnixLocalFileSystem_Index = -1;
-	endOf_UNIX_UnixLocalFileSystem_Group = false;
-	group_UNIX_UnixLocalFileSystem_Component.initialize();
 	part_UNIX_DataFile_Index = -1;
 	endOf_UNIX_DataFile_Part = false;
 	part_UNIX_FIFOPipeFile_Index = -1;
 	endOf_UNIX_FIFOPipeFile_Part = false;
 	part_UNIX_DeviceFile_Index = -1;
 	endOf_UNIX_DeviceFile_Part = false;
-	part_UNIX_UnixDeviceFile_Index = -1;
-	endOf_UNIX_UnixDeviceFile_Part = false;
+	part_UNIX_DeviceFile_Index = -1;
+	endOf_UNIX_DeviceFile_Part = false;
 	part_UNIX_Directory_Index = -1;
 	endOf_UNIX_Directory_Part = false;
 	part_UNIX_UnixDirectory_Index = -1;
@@ -104,166 +89,11 @@ Boolean UNIX_FileStorage::load(int &pIndex)
 	if (pIndex == 0 || (endOf_UNIX_DataFile_Part &&
 			endOf_UNIX_FIFOPipeFile_Part &&
 			endOf_UNIX_DeviceFile_Part &&
-			endOf_UNIX_UnixDeviceFile_Part &&
+			endOf_UNIX_DeviceFile_Part &&
 			endOf_UNIX_Directory_Part &&
 			endOf_UNIX_UnixDirectory_Part &&
 			endOf_UNIX_SymbolicLink_Part))
 	{
-		if (groupIndex == 0)
-		{
-			group_UNIX_RemoteFileSystem_Index++;
-			endOf_UNIX_RemoteFileSystem_Group = !group_UNIX_RemoteFileSystem_Component.load(group_UNIX_RemoteFileSystem_Index);
-			if (endOf_UNIX_RemoteFileSystem_Group)
-			{
-				endOf_UNIX_DataFile_Part = false;
-				part_UNIX_DataFile_Component.setScope(CIMName("UNIX_RemoteFileSystem"));
-				part_UNIX_DataFile_Component.initialize();
-				endOf_UNIX_FIFOPipeFile_Part = false;
-				part_UNIX_FIFOPipeFile_Component.setScope(CIMName("UNIX_RemoteFileSystem"));
-				part_UNIX_FIFOPipeFile_Component.initialize();
-				endOf_UNIX_DeviceFile_Part = false;
-				part_UNIX_DeviceFile_Component.setScope(CIMName("UNIX_RemoteFileSystem"));
-				part_UNIX_DeviceFile_Component.initialize();
-				endOf_UNIX_UnixDeviceFile_Part = false;
-				part_UNIX_UnixDeviceFile_Component.setScope(CIMName("UNIX_RemoteFileSystem"));
-				part_UNIX_UnixDeviceFile_Component.initialize();
-				endOf_UNIX_Directory_Part = false;
-				part_UNIX_Directory_Component.setScope(CIMName("UNIX_RemoteFileSystem"));
-				part_UNIX_Directory_Component.initialize();
-				endOf_UNIX_UnixDirectory_Part = false;
-				part_UNIX_UnixDirectory_Component.setScope(CIMName("UNIX_RemoteFileSystem"));
-				part_UNIX_UnixDirectory_Component.initialize();
-				endOf_UNIX_SymbolicLink_Part = false;
-				part_UNIX_SymbolicLink_Component.setScope(CIMName("UNIX_RemoteFileSystem"));
-				part_UNIX_SymbolicLink_Component.initialize();
-				partIndex = 0;
-				groupIndex++;
-			}
-		}
-		else if (groupIndex == 1)
-		{
-			group_UNIX_NFS_Index++;
-			endOf_UNIX_NFS_Group = !group_UNIX_NFS_Component.load(group_UNIX_NFS_Index);
-			if (endOf_UNIX_NFS_Group)
-			{
-				endOf_UNIX_DataFile_Part = false;
-				part_UNIX_DataFile_Component.setScope(CIMName("UNIX_NFS"));
-				part_UNIX_DataFile_Component.initialize();
-				endOf_UNIX_FIFOPipeFile_Part = false;
-				part_UNIX_FIFOPipeFile_Component.setScope(CIMName("UNIX_NFS"));
-				part_UNIX_FIFOPipeFile_Component.initialize();
-				endOf_UNIX_DeviceFile_Part = false;
-				part_UNIX_DeviceFile_Component.setScope(CIMName("UNIX_NFS"));
-				part_UNIX_DeviceFile_Component.initialize();
-				endOf_UNIX_UnixDeviceFile_Part = false;
-				part_UNIX_UnixDeviceFile_Component.setScope(CIMName("UNIX_NFS"));
-				part_UNIX_UnixDeviceFile_Component.initialize();
-				endOf_UNIX_Directory_Part = false;
-				part_UNIX_Directory_Component.setScope(CIMName("UNIX_NFS"));
-				part_UNIX_Directory_Component.initialize();
-				endOf_UNIX_UnixDirectory_Part = false;
-				part_UNIX_UnixDirectory_Component.setScope(CIMName("UNIX_NFS"));
-				part_UNIX_UnixDirectory_Component.initialize();
-				endOf_UNIX_SymbolicLink_Part = false;
-				part_UNIX_SymbolicLink_Component.setScope(CIMName("UNIX_NFS"));
-				part_UNIX_SymbolicLink_Component.initialize();
-				partIndex = 0;
-				groupIndex++;
-			}
-		}
-		else if (groupIndex == 2)
-		{
-			group_UNIX_DatabaseStorageArea_Index++;
-			endOf_UNIX_DatabaseStorageArea_Group = !group_UNIX_DatabaseStorageArea_Component.load(group_UNIX_DatabaseStorageArea_Index);
-			if (endOf_UNIX_DatabaseStorageArea_Group)
-			{
-				endOf_UNIX_DataFile_Part = false;
-				part_UNIX_DataFile_Component.setScope(CIMName("UNIX_DatabaseStorageArea"));
-				part_UNIX_DataFile_Component.initialize();
-				endOf_UNIX_FIFOPipeFile_Part = false;
-				part_UNIX_FIFOPipeFile_Component.setScope(CIMName("UNIX_DatabaseStorageArea"));
-				part_UNIX_FIFOPipeFile_Component.initialize();
-				endOf_UNIX_DeviceFile_Part = false;
-				part_UNIX_DeviceFile_Component.setScope(CIMName("UNIX_DatabaseStorageArea"));
-				part_UNIX_DeviceFile_Component.initialize();
-				endOf_UNIX_UnixDeviceFile_Part = false;
-				part_UNIX_UnixDeviceFile_Component.setScope(CIMName("UNIX_DatabaseStorageArea"));
-				part_UNIX_UnixDeviceFile_Component.initialize();
-				endOf_UNIX_Directory_Part = false;
-				part_UNIX_Directory_Component.setScope(CIMName("UNIX_DatabaseStorageArea"));
-				part_UNIX_Directory_Component.initialize();
-				endOf_UNIX_UnixDirectory_Part = false;
-				part_UNIX_UnixDirectory_Component.setScope(CIMName("UNIX_DatabaseStorageArea"));
-				part_UNIX_UnixDirectory_Component.initialize();
-				endOf_UNIX_SymbolicLink_Part = false;
-				part_UNIX_SymbolicLink_Component.setScope(CIMName("UNIX_DatabaseStorageArea"));
-				part_UNIX_SymbolicLink_Component.initialize();
-				partIndex = 0;
-				groupIndex++;
-			}
-		}
-		else if (groupIndex == 3)
-		{
-			group_UNIX_LocalFileSystem_Index++;
-			endOf_UNIX_LocalFileSystem_Group = !group_UNIX_LocalFileSystem_Component.load(group_UNIX_LocalFileSystem_Index);
-			if (endOf_UNIX_LocalFileSystem_Group)
-			{
-				endOf_UNIX_DataFile_Part = false;
-				part_UNIX_DataFile_Component.setScope(CIMName("UNIX_LocalFileSystem"));
-				part_UNIX_DataFile_Component.initialize();
-				endOf_UNIX_FIFOPipeFile_Part = false;
-				part_UNIX_FIFOPipeFile_Component.setScope(CIMName("UNIX_LocalFileSystem"));
-				part_UNIX_FIFOPipeFile_Component.initialize();
-				endOf_UNIX_DeviceFile_Part = false;
-				part_UNIX_DeviceFile_Component.setScope(CIMName("UNIX_LocalFileSystem"));
-				part_UNIX_DeviceFile_Component.initialize();
-				endOf_UNIX_UnixDeviceFile_Part = false;
-				part_UNIX_UnixDeviceFile_Component.setScope(CIMName("UNIX_LocalFileSystem"));
-				part_UNIX_UnixDeviceFile_Component.initialize();
-				endOf_UNIX_Directory_Part = false;
-				part_UNIX_Directory_Component.setScope(CIMName("UNIX_LocalFileSystem"));
-				part_UNIX_Directory_Component.initialize();
-				endOf_UNIX_UnixDirectory_Part = false;
-				part_UNIX_UnixDirectory_Component.setScope(CIMName("UNIX_LocalFileSystem"));
-				part_UNIX_UnixDirectory_Component.initialize();
-				endOf_UNIX_SymbolicLink_Part = false;
-				part_UNIX_SymbolicLink_Component.setScope(CIMName("UNIX_LocalFileSystem"));
-				part_UNIX_SymbolicLink_Component.initialize();
-				partIndex = 0;
-				groupIndex++;
-			}
-		}
-		else if (groupIndex == 4)
-		{
-			group_UNIX_UnixLocalFileSystem_Index++;
-			endOf_UNIX_UnixLocalFileSystem_Group = !group_UNIX_UnixLocalFileSystem_Component.load(group_UNIX_UnixLocalFileSystem_Index);
-			if (endOf_UNIX_UnixLocalFileSystem_Group)
-			{
-				endOf_UNIX_DataFile_Part = false;
-				part_UNIX_DataFile_Component.setScope(CIMName("UNIX_UnixLocalFileSystem"));
-				part_UNIX_DataFile_Component.initialize();
-				endOf_UNIX_FIFOPipeFile_Part = false;
-				part_UNIX_FIFOPipeFile_Component.setScope(CIMName("UNIX_UnixLocalFileSystem"));
-				part_UNIX_FIFOPipeFile_Component.initialize();
-				endOf_UNIX_DeviceFile_Part = false;
-				part_UNIX_DeviceFile_Component.setScope(CIMName("UNIX_UnixLocalFileSystem"));
-				part_UNIX_DeviceFile_Component.initialize();
-				endOf_UNIX_UnixDeviceFile_Part = false;
-				part_UNIX_UnixDeviceFile_Component.setScope(CIMName("UNIX_UnixLocalFileSystem"));
-				part_UNIX_UnixDeviceFile_Component.initialize();
-				endOf_UNIX_Directory_Part = false;
-				part_UNIX_Directory_Component.setScope(CIMName("UNIX_UnixLocalFileSystem"));
-				part_UNIX_Directory_Component.initialize();
-				endOf_UNIX_UnixDirectory_Part = false;
-				part_UNIX_UnixDirectory_Component.setScope(CIMName("UNIX_UnixLocalFileSystem"));
-				part_UNIX_UnixDirectory_Component.initialize();
-				endOf_UNIX_SymbolicLink_Part = false;
-				part_UNIX_SymbolicLink_Component.setScope(CIMName("UNIX_UnixLocalFileSystem"));
-				part_UNIX_SymbolicLink_Component.initialize();
-				partIndex = 0;
-				groupIndex++;
-			}
-		}
 	}
 	if (partIndex == 0)
 	{
@@ -282,8 +112,8 @@ Boolean UNIX_FileStorage::load(int &pIndex)
 	}
 	if (partIndex == 3)
 	{
-		part_UNIX_UnixDeviceFile_Index++;
-	endOf_UNIX_UnixDeviceFile_Part = !part_UNIX_UnixDeviceFile_Component.load(part_UNIX_UnixDeviceFile_Index);
+		part_UNIX_DeviceFile_Index++;
+	endOf_UNIX_DeviceFile_Part = !part_UNIX_DeviceFile_Component.load(part_UNIX_DeviceFile_Index);
 	}
 	if (partIndex == 4)
 	{
@@ -315,9 +145,9 @@ Boolean UNIX_FileStorage::load(int &pIndex)
 		part_UNIX_DeviceFile_Component.finalize();
 		partIndex++;
 	}
-	if (partIndex == 3 && endOf_UNIX_UnixDeviceFile_Part)
+	if (partIndex == 3 && endOf_UNIX_DeviceFile_Part)
 	{
-		part_UNIX_UnixDeviceFile_Component.finalize();
+		part_UNIX_DeviceFile_Component.finalize();
 		partIndex++;
 	}
 	if (partIndex == 4 && endOf_UNIX_Directory_Part)
@@ -336,15 +166,10 @@ Boolean UNIX_FileStorage::load(int &pIndex)
 		partIndex++;
 	}
 
-	if (endOf_UNIX_RemoteFileSystem_Group &&
-		endOf_UNIX_NFS_Group &&
-		endOf_UNIX_DatabaseStorageArea_Group &&
-		endOf_UNIX_LocalFileSystem_Group &&
-		endOf_UNIX_UnixLocalFileSystem_Group &&
-		endOf_UNIX_DataFile_Part &&
+	if (endOf_UNIX_DataFile_Part &&
 		endOf_UNIX_FIFOPipeFile_Part &&
 		endOf_UNIX_DeviceFile_Part &&
-		endOf_UNIX_UnixDeviceFile_Part &&
+		endOf_UNIX_DeviceFile_Part &&
 		endOf_UNIX_Directory_Part &&
 		endOf_UNIX_UnixDirectory_Part &&
 		endOf_UNIX_SymbolicLink_Part)		return false;
@@ -353,15 +178,10 @@ Boolean UNIX_FileStorage::load(int &pIndex)
 
 Boolean UNIX_FileStorage::finalize()
 {
-	group_UNIX_RemoteFileSystem_Component.finalize();
-	group_UNIX_NFS_Component.finalize();
-	group_UNIX_DatabaseStorageArea_Component.finalize();
-	group_UNIX_LocalFileSystem_Component.finalize();
-	group_UNIX_UnixLocalFileSystem_Component.finalize();
 	part_UNIX_DataFile_Component.finalize();
 	part_UNIX_FIFOPipeFile_Component.finalize();
 	part_UNIX_DeviceFile_Component.finalize();
-	part_UNIX_UnixDeviceFile_Component.finalize();
+	part_UNIX_DeviceFile_Component.finalize();
 	part_UNIX_Directory_Component.finalize();
 	part_UNIX_UnixDirectory_Component.finalize();
 	part_UNIX_SymbolicLink_Component.finalize();

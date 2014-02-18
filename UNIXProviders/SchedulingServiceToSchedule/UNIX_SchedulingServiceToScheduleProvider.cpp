@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_SchedulingServiceToScheduleProvider::constructKeyBindi
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_SCHED_SERVICE,
-		_p.getSchedService(),
+		CIMValue(_p.getSchedService()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_SCHED_ELEMENT,
-		_p.getSchedElement(),
+		CIMValue(_p.getSchedElement()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

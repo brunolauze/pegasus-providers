@@ -81,7 +81,7 @@ Array<CIMKeyBinding> UNIX_BGPClusterProvider::constructKeyBindings(const UNIX_BG
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_CLUSTER_ID,
-		_p.getClusterID(),
+		CIMValue(_p.getClusterID()).toString(),
 		CIMKeyBinding::NUMERIC));
 
 

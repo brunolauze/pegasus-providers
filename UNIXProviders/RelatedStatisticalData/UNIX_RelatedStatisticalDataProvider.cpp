@@ -72,11 +72,11 @@ Array<CIMKeyBinding> UNIX_RelatedStatisticalDataProvider::constructKeyBindings(c
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_STATS,
-		_p.getStats(),
+		CIMValue(_p.getStats()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_RELATED_STATS,
-		_p.getRelatedStats(),
+		CIMValue(_p.getRelatedStats()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

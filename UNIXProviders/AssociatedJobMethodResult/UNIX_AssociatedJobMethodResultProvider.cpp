@@ -71,11 +71,11 @@ Array<CIMKeyBinding> UNIX_AssociatedJobMethodResultProvider::constructKeyBinding
 
 	keys.append(CIMKeyBinding(
 		PROPERTY_JOB,
-		_p.getJob(),
+		CIMValue(_p.getJob()).toString(),
 		CIMKeyBinding::REFERENCE));
 	keys.append(CIMKeyBinding(
 		PROPERTY_JOB_PARAMETERS,
-		_p.getJobParameters(),
+		CIMValue(_p.getJobParameters()).toString(),
 		CIMKeyBinding::REFERENCE));
 
 

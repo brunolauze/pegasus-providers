@@ -75,7 +75,7 @@ CIMInstance UNIX_BIOSFeatureProvider::constructInstance(
 
 	//CIM_LogicalElement Properties
 
-	//CIM_SoftwareFeature Properties
+	//UNIX_SoftwareFeature Properties
 	if (_p.getIdentifyingNumber(p)) inst.addProperty(p);
 	if (_p.getProductName(p)) inst.addProperty(p);
 	if (_p.getVendor(p)) inst.addProperty(p);

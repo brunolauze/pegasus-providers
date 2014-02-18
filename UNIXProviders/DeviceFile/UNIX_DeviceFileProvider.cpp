@@ -94,6 +94,14 @@ CIMInstance UNIX_DeviceFileProvider::constructInstance(
 
 	//CIM_DeviceFile Properties
 
+	//CIM_UnixDeviceFile Properties
+	if (_p.getDeviceFileType(p)) inst.addProperty(p);
+	if (_p.getOtherTypeDescription(p)) inst.addProperty(p);
+	if (_p.getDeviceId(p)) inst.addProperty(p);
+	if (_p.getDeviceDescription(p)) inst.addProperty(p);
+	if (_p.getDeviceMajor(p)) inst.addProperty(p);
+	if (_p.getDeviceMinor(p)) inst.addProperty(p);
+
 
 	return inst;
 }
@@ -139,7 +147,7 @@ Array<CIMKeyBinding> UNIX_DeviceFileProvider::constructKeyBindings(const UNIX_De
 #define UNIX_PROVIDER_NAME "UNIX_DeviceFileProvider"
 #define CLASS_IMPLEMENTATION UNIX_DeviceFile
 #define CLASS_IMPLEMENTATION_NAME "UNIX_DeviceFile"
-#define BASE_CLASS_NAME "CIM_DeviceFile"
+#define BASE_CLASS_NAME "CIM_UnixDeviceFile"
 #define NUMKEYS_CLASS_IMPLEMENTATION 0
 
 
