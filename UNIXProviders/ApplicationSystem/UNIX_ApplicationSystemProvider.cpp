@@ -43,7 +43,7 @@ UNIX_ApplicationSystemProvider::~UNIX_ApplicationSystemProvider()
 CIMInstance UNIX_ApplicationSystemProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_ApplicationSystem &_p)
+	const UNIX_ApplicationSystem &_p) const
 {
 	CIMProperty p;
 
@@ -103,8 +103,7 @@ CIMInstance UNIX_ApplicationSystemProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_ApplicationSystemProvider::constructKeyBindings(const UNIX_ApplicationSystem& _p)
-
+Array<CIMKeyBinding> UNIX_ApplicationSystemProvider::constructKeyBindings(const UNIX_ApplicationSystem& _p) const
 {
 
 	Array<CIMKeyBinding> keys;

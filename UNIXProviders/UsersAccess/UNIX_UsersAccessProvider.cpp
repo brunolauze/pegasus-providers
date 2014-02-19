@@ -43,7 +43,7 @@ UNIX_UsersAccessProvider::~UNIX_UsersAccessProvider()
 CIMInstance UNIX_UsersAccessProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_UsersAccess &_p)
+	const UNIX_UsersAccess &_p) const
 {
 	CIMProperty p;
 
@@ -75,8 +75,7 @@ CIMInstance UNIX_UsersAccessProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_UsersAccessProvider::constructKeyBindings(const UNIX_UsersAccess& _p)
-
+Array<CIMKeyBinding> UNIX_UsersAccessProvider::constructKeyBindings(const UNIX_UsersAccess& _p) const
 {
 
 	Array<CIMKeyBinding> keys;

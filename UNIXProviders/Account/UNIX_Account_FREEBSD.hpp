@@ -646,6 +646,24 @@ Uint32 UNIX_Account::getUserPasswordEncoding() const
 	return Uint32(5);
 }
 
+Boolean UNIX_Account::getByUserID(Uint32 userID)
+{
+	if ((user = getpwuid(userID)) != NULL)
+	{
+		return true;
+	}
+	return false;
+}
+
+Boolean UNIX_Account::getByName(String name)
+{
+	if ((user = getpwnam(name.getCString())) != NULL)
+	{
+		return true;
+	}
+	return false;
+}
+
 Boolean UNIX_Account::initialize()
 {
 	setpwent();

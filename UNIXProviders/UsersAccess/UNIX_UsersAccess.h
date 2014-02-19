@@ -34,7 +34,7 @@
 
 
 #include "CIM_UserEntity.h"
-
+#include <Account/UNIX_Account.h>
 #include "UNIX_UsersAccessDeps.h"
 
 
@@ -76,9 +76,12 @@ public:
 	virtual Boolean getBiometric(CIMProperty&) const;
 	virtual Array<Uint16> getBiometric() const;
 
+
+	virtual Boolean getByUserID(Uint32 userID);
+	virtual Boolean getByName(String name);
 private:
 	CIMName currentScope;
-
+	UNIX_Account account;
 #	include "UNIX_UsersAccessPrivate.h"
 
 

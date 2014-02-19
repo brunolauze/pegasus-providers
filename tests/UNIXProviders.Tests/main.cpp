@@ -1107,7 +1107,7 @@
 //#include "UNIX_ZoneSetFixture.h"
 //#include "UNIX_ApplicationSystemFixture.h"
 #include "UNIX_FileSystemFixture.h"
-//#include "UNIX_SoftwareElementFixture.h"
+#include "UNIX_SoftwareElementFixture.h"
 //#include "UNIX_SoftwareFeatureFixture.h"
 
 #include <iostream>
@@ -2206,7 +2206,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_ZoneSet")) { UNIX_ZoneSetFixture zoneSet; zoneSet.Run(); }
 	//if (IsTarget(s, "UNIX_ApplicationSystem")) { UNIX_ApplicationSystemFixture applicationSystem; applicationSystem.Run(); }
 	if (IsTarget(s, "UNIX_FileSystem")) { UNIX_FileSystemFixture fileSystem; fileSystem.Run(); }
-	//if (IsTarget(s, "UNIX_SoftwareElement")) { UNIX_SoftwareElementFixture softwareElement; softwareElement.Run(); }
+	if (IsTarget(s, "UNIX_SoftwareElement")) { UNIX_SoftwareElementFixture softwareElement; softwareElement.Run(); }
 	//if (IsTarget(s, "UNIX_SoftwareFeature")) { UNIX_SoftwareFeatureFixture softwareFeature; softwareFeature.Run(); }
 
 }

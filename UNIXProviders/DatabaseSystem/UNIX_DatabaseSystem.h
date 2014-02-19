@@ -33,7 +33,7 @@
 #define __UNIX_DATABASESYSTEM_H
 
 
-#include "CIM_ApplicationSystem.h"
+#include "ApplicationSystem/UNIX_ApplicationSystem.h"
 
 #include "UNIX_DatabaseSystemDeps.h"
 
@@ -41,7 +41,7 @@
 
 
 class UNIX_DatabaseSystem :
-	public CIM_ApplicationSystem
+	public UNIX_ApplicationSystem
 {
 public:
 

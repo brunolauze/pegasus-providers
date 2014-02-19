@@ -463,11 +463,17 @@ CIMDateTime UNIX_DatabaseSystem::getLastServingStatusUpdate() const
 
 Boolean UNIX_DatabaseSystem::initialize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_DatabaseSystem::load(int &pIndex)
 {
+	// check if postgresql is installed
+
+
+
+	// check if mysql is installed
+
 	return false;
 }
 

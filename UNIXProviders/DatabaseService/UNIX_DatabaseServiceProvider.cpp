@@ -43,7 +43,7 @@ UNIX_DatabaseServiceProvider::~UNIX_DatabaseServiceProvider()
 CIMInstance UNIX_DatabaseServiceProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_DatabaseService &_p)
+	const UNIX_DatabaseService &_p) const
 {
 	CIMProperty p;
 
@@ -102,8 +102,7 @@ CIMInstance UNIX_DatabaseServiceProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_DatabaseServiceProvider::constructKeyBindings(const UNIX_DatabaseService& _p)
-
+Array<CIMKeyBinding> UNIX_DatabaseServiceProvider::constructKeyBindings(const UNIX_DatabaseService& _p) const
 {
 
 	Array<CIMKeyBinding> keys;

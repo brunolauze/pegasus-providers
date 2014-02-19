@@ -38,7 +38,6 @@ UNIX_UsersAccess::~UNIX_UsersAccess(void)
 {
 }
 
-
 Boolean UNIX_UsersAccess::getInstanceID(CIMProperty &p) const
 {
 	p = CIMProperty(PROPERTY_INSTANCE_ID, getInstanceID());
@@ -125,17 +124,13 @@ Boolean UNIX_UsersAccess::getBiometric(CIMProperty &p) const
 Array<Uint16> UNIX_UsersAccess::getBiometric() const
 {
 	Array<Uint16> as;
-	
 
 	return as;
-
 }
-
-
 
 Boolean UNIX_UsersAccess::initialize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_UsersAccess::load(int &pIndex)
@@ -145,7 +140,7 @@ Boolean UNIX_UsersAccess::load(int &pIndex)
 
 Boolean UNIX_UsersAccess::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_UsersAccess::find(Array<CIMKeyBinding> &kbArray)

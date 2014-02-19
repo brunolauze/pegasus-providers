@@ -47,7 +47,7 @@ Boolean UNIX_UsersAccess::getInstanceID(CIMProperty &p) const
 
 String UNIX_UsersAccess::getInstanceID() const
 {
-	return String ("");
+	return account.getInstanceID();
 }
 
 Boolean UNIX_UsersAccess::getCaption(CIMProperty &p) const
@@ -58,7 +58,7 @@ Boolean UNIX_UsersAccess::getCaption(CIMProperty &p) const
 
 String UNIX_UsersAccess::getCaption() const
 {
-	return String ("");
+	return account.getCaption();
 }
 
 Boolean UNIX_UsersAccess::getDescription(CIMProperty &p) const
@@ -102,7 +102,7 @@ Boolean UNIX_UsersAccess::getName(CIMProperty &p) const
 
 String UNIX_UsersAccess::getName() const
 {
-	return String ("");
+	return account.getName();
 }
 
 Boolean UNIX_UsersAccess::getElementID(CIMProperty &p) const
@@ -113,7 +113,7 @@ Boolean UNIX_UsersAccess::getElementID(CIMProperty &p) const
 
 String UNIX_UsersAccess::getElementID() const
 {
-	return String ("");
+	return account.getUserID();
 }
 
 Boolean UNIX_UsersAccess::getBiometric(CIMProperty &p) const
@@ -125,17 +125,26 @@ Boolean UNIX_UsersAccess::getBiometric(CIMProperty &p) const
 Array<Uint16> UNIX_UsersAccess::getBiometric() const
 {
 	Array<Uint16> as;
-	
+	as.append(0);
 
 	return as;
 
 }
 
+Boolean UNIX_UsersAccess::getByUserID(Uint32 userID)
+{
+	return account.getByUserID(userID);
+}
 
+Boolean UNIX_UsersAccess::getByName(String name)
+{
+	return account.getByName(name);
+}
 
 Boolean UNIX_UsersAccess::initialize()
 {
-	return false;
+	account.initialize();
+	return true;
 }
 
 Boolean UNIX_UsersAccess::load(int &pIndex)
@@ -145,7 +154,8 @@ Boolean UNIX_UsersAccess::load(int &pIndex)
 
 Boolean UNIX_UsersAccess::finalize()
 {
-	return false;
+	account.finalize();
+	return true;
 }
 
 Boolean UNIX_UsersAccess::find(Array<CIMKeyBinding> &kbArray)

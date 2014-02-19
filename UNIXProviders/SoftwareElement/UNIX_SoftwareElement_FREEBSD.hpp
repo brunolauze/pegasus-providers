@@ -29,6 +29,135 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
+/* These are the fields of the Full output, in order */
+#define INFO_NAME               (1LL<<0)
+#define INFO_VERSION            (1LL<<1)
+#define INFO_ORIGIN             (1LL<<2)
+#define INFO_ARCH               (1LL<<3)
+#define INFO_PREFIX             (1LL<<4)
+#define INFO_REPOSITORY         (1LL<<5)
+#define INFO_CATEGORIES         (1LL<<6)
+#define INFO_LICENSES           (1LL<<7)
+#define INFO_MAINTAINER         (1LL<<8)
+#define INFO_WWW                (1LL<<9)
+#define INFO_COMMENT            (1LL<<10)
+#define INFO_OPTIONS            (1LL<<11)
+#define INFO_SHLIBS_REQUIRED    (1LL<<12)
+#define INFO_SHLIBS_PROVIDED    (1LL<<13)
+#define INFO_ANNOTATIONS        (1LL<<14)
+#define INFO_FLATSIZE           (1LL<<15)
+#define INFO_PKGSIZE            (1LL<<16)
+#define INFO_DESCR              (1LL<<17)
+
+/* Other fields not part of the Full output */
+#define INFO_MESSAGE            (1LL<<18)
+#define INFO_DEPS               (1LL<<19)
+#define INFO_RDEPS              (1LL<<20)
+#define INFO_FILES              (1LL<<21)
+#define INFO_DIRS               (1LL<<22)
+#define INFO_USERS              (1LL<<23)
+#define INFO_GROUPS             (1LL<<24)
+#define INFO_REPOURL            (1LL<<25)
+#define INFO_LOCKED             (1LL<<26)
+#define INFO_OPTION_DEFAULTS    (1LL<<27)
+#define INFO_OPTION_DESCRIPTIONS (1LL<<28)
+
+#define INFO_LASTFIELD  INFO_LOCKED
+#define INFO_ALL        (((INFO_LASTFIELD) << 1) - 1)
+
+/* Identifying tags */
+#define INFO_TAG_NAME           (1LL<<60)
+#define INFO_TAG_ORIGIN         (1LL<<61)
+#define INFO_TAG_NAMEVER        (1LL<<62)
+
+/* Output YAML format */
+#define INFO_RAW        (-1LL<<63)
+
+/* Everything in the 'full' package output */
+#define INFO_FULL       (INFO_NAME|INFO_VERSION|INFO_ORIGIN|INFO_ARCH|INFO_PREFIX| \
+                         INFO_REPOSITORY|INFO_CATEGORIES|INFO_LICENSES|  \
+                         INFO_MAINTAINER|INFO_WWW|INFO_COMMENT|          \
+                         INFO_OPTIONS|INFO_SHLIBS_REQUIRED|              \
+                         INFO_SHLIBS_PROVIDED|INFO_ANNOTATIONS|          \
+                         INFO_FLATSIZE|INFO_PKGSIZE|INFO_DESCR)
+
+/* Everything that can take more than one line to print */
+#define INFO_MULTILINE  (INFO_OPTIONS|INFO_SHLIBS_REQUIRED|            \
+                         INFO_SHLIBS_PROVIDED|INFO_ANNOTATIONS|        \
+                         INFO_DESCR|INFO_MESSAGE|INFO_DEPS|INFO_RDEPS| \
+                         INFO_FILES|INFO_DIRS)
+
+/* what the pkg needs to load in order to display the requested info */
+int UNIX_SoftwareElement::getPkgFlag(uint64_t opt, bool remote)
+{
+        int flags = PKG_LOAD_BASIC;
+
+        if (opt & INFO_CATEGORIES)
+                flags |= PKG_LOAD_CATEGORIES;
+        if (opt & INFO_LICENSES)
+                flags |= PKG_LOAD_LICENSES;
+        if (opt & (INFO_OPTIONS|INFO_OPTION_DEFAULTS|INFO_OPTION_DESCRIPTIONS))
+                flags |= PKG_LOAD_OPTIONS;
+        if (opt & INFO_SHLIBS_REQUIRED)
+                flags |= PKG_LOAD_SHLIBS_REQUIRED;
+        if (opt & INFO_SHLIBS_PROVIDED)
+                flags |= PKG_LOAD_SHLIBS_PROVIDED;
+        if (opt & INFO_ANNOTATIONS)
+                flags |= PKG_LOAD_ANNOTATIONS;
+        if (opt & INFO_DEPS)
+                flags |= PKG_LOAD_DEPS;
+        if (opt & INFO_RDEPS)
+                flags |= PKG_LOAD_RDEPS;
+        if (opt & INFO_FILES)
+                flags |= PKG_LOAD_FILES;
+        if (opt & INFO_DIRS)
+                flags |= PKG_LOAD_DIRS;
+        if (opt & INFO_USERS)
+                flags |= PKG_LOAD_USERS;
+        if (opt & INFO_GROUPS)
+                flags |= PKG_LOAD_GROUPS;
+        if (opt & INFO_RAW) {
+                flags |= PKG_LOAD_CATEGORIES      |
+                         PKG_LOAD_LICENSES        |
+                         PKG_LOAD_OPTIONS         |
+                         PKG_LOAD_SHLIBS_REQUIRED |
+                         PKG_LOAD_SHLIBS_PROVIDED |
+                         PKG_LOAD_ANNOTATIONS     |
+                        PKG_LOAD_DEPS;
+                if (!remote) {
+                        flags |= PKG_LOAD_FILES  |
+                                PKG_LOAD_DIRS    |
+                                PKG_LOAD_USERS   |
+                                PKG_LOAD_GROUPS  |
+                                PKG_LOAD_SCRIPTS;
+                }
+        }
+
+        return flags;
+}
+
+String UNIX_SoftwareElement::getPackageProperty(const char * name, ...) const
+{
+    int              count;
+    struct sbuf     *sbuf;
+    String val;
+    sbuf  = sbuf_new_auto();
+    if (sbuf)
+            sbuf = pkg_sbuf_printf(sbuf, name, pkg);
+    
+    if (sbuf && sbuf_len(sbuf) >= 0) {
+            sbuf_finish(sbuf);
+            char value[sbuf_len(sbuf)];
+            count = sprintf(value, "%s", sbuf_data(sbuf));
+            return val.assign(value);
+    } else {
+            count = -1;
+            val.assign("");
+    }
+	if (sbuf)
+		sbuf_delete(sbuf);
+	return val;
+}
 
 UNIX_SoftwareElement::UNIX_SoftwareElement(void)
 {
@@ -47,7 +176,10 @@ Boolean UNIX_SoftwareElement::getInstanceID(CIMProperty &p) const
 
 String UNIX_SoftwareElement::getInstanceID() const
 {
-	return String ("");
+	String s(getPackageProperty("%n"));
+	s.append("-");
+	s.append(getPackageProperty("%v"));
+	return s;
 }
 
 Boolean UNIX_SoftwareElement::getCaption(CIMProperty &p) const
@@ -58,7 +190,7 @@ Boolean UNIX_SoftwareElement::getCaption(CIMProperty &p) const
 
 String UNIX_SoftwareElement::getCaption() const
 {
-	return String ("");
+	return getInstanceID();
 }
 
 Boolean UNIX_SoftwareElement::getDescription(CIMProperty &p) const
@@ -69,7 +201,7 @@ Boolean UNIX_SoftwareElement::getDescription(CIMProperty &p) const
 
 String UNIX_SoftwareElement::getDescription() const
 {
-	return String ("");
+	return getPackageProperty ("%e");
 }
 
 Boolean UNIX_SoftwareElement::getElementName(CIMProperty &p) const
@@ -113,7 +245,7 @@ Boolean UNIX_SoftwareElement::getName(CIMProperty &p) const
 
 String UNIX_SoftwareElement::getName() const
 {
-	return String ("");
+	return getPackageProperty ("%n");
 }
 
 Boolean UNIX_SoftwareElement::getOperationalStatus(CIMProperty &p) const
@@ -128,7 +260,6 @@ Array<Uint16> UNIX_SoftwareElement::getOperationalStatus() const
 	
 
 	return as;
-
 }
 
 Boolean UNIX_SoftwareElement::getStatusDescriptions(CIMProperty &p) const
@@ -220,7 +351,7 @@ Boolean UNIX_SoftwareElement::getVersion(CIMProperty &p) const
 
 String UNIX_SoftwareElement::getVersion() const
 {
-	return String ("");
+	return getPackageProperty("%v");
 }
 
 Boolean UNIX_SoftwareElement::getSoftwareElementState(CIMProperty &p) const
@@ -253,7 +384,7 @@ Boolean UNIX_SoftwareElement::getTargetOperatingSystem(CIMProperty &p) const
 
 Uint16 UNIX_SoftwareElement::getTargetOperatingSystem() const
 {
-	return Uint16(0);
+	return Uint16(42);
 }
 
 Boolean UNIX_SoftwareElement::getOtherTargetOS(CIMProperty &p) const
@@ -275,7 +406,7 @@ Boolean UNIX_SoftwareElement::getManufacturer(CIMProperty &p) const
 
 String UNIX_SoftwareElement::getManufacturer() const
 {
-	return String ("");
+	return getPackageProperty ("%m");
 }
 
 Boolean UNIX_SoftwareElement::getBuildNumber(CIMProperty &p) const
@@ -308,7 +439,7 @@ Boolean UNIX_SoftwareElement::getCodeSet(CIMProperty &p) const
 
 String UNIX_SoftwareElement::getCodeSet() const
 {
-	return String ("");
+	return String ("UTF-8");
 }
 
 Boolean UNIX_SoftwareElement::getIdentificationCode(CIMProperty &p) const
@@ -319,7 +450,7 @@ Boolean UNIX_SoftwareElement::getIdentificationCode(CIMProperty &p) const
 
 String UNIX_SoftwareElement::getIdentificationCode() const
 {
-	return String ("");
+	return getInstanceID();
 }
 
 Boolean UNIX_SoftwareElement::getLanguageEdition(CIMProperty &p) const
@@ -330,24 +461,63 @@ Boolean UNIX_SoftwareElement::getLanguageEdition(CIMProperty &p) const
 
 String UNIX_SoftwareElement::getLanguageEdition() const
 {
-	return String ("");
+	return String ("Multilanguage");
 }
 
 
 
 Boolean UNIX_SoftwareElement::initialize()
 {
-	return false;
+	db = NULL;
+    it = NULL;
+    pkg = NULL;
+    int ret;
+    char *pkgname;
+    pkgname = NULL;
+	if (pkg_init(NULL, NULL) != EPKG_OK)
+		return false;
+	ret = pkgdb_access(PKGDB_MODE_READ, PKGDB_DB_LOCAL);
+	if (ret == EPKG_ENOACCESS) {
+	        //warnx("Insufficient privileges to query the package database");
+	        return false; /* (EX_NOPERM); */
+	} else if (ret == EPKG_ENODB) {
+	        //if (match == MATCH_ALL)
+	        //        return false; /* (EX_OK); */
+	        //if (origin_search)
+	        //        return false; /* (EX_OK); */
+	        
+	        return false; /* (EX_UNAVAILABLE); */
+	} else if (ret != EPKG_OK)
+	        return false; /* (EX_IOERR); */
+    
+	
+    ret = pkgdb_open(&db, PKGDB_DEFAULT);
+    if (ret != EPKG_OK)
+    	return false;
+	if ((it = pkgdb_query(db, pkgname, MATCH_ALL)) == NULL) {
+	        return false; //(EX_IOERR);
+	}
+	return true;
 }
 
 Boolean UNIX_SoftwareElement::load(int &pIndex)
 {
+	int ret;
+	query_flags = getPkgFlag(INFO_ALL, false);
+	if ((ret = pkgdb_it_next(it, &pkg, query_flags)) == EPKG_OK) {
+		return true;
+	}
 	return false;
 }
 
 Boolean UNIX_SoftwareElement::finalize()
 {
-	return false;
+	pkg_free(pkg);
+    pkgdb_close(db);
+    pkg = NULL;
+	db = NULL;
+    it = NULL;
+	return true;
 }
 
 Boolean UNIX_SoftwareElement::find(Array<CIMKeyBinding> &kbArray)
