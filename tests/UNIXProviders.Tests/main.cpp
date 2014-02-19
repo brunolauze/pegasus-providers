@@ -262,7 +262,7 @@
 //#include "UNIX_DatabaseServiceStatisticsFixture.h"
 //#include "UNIX_DatabaseStorageFixture.h"
 //#include "UNIX_DatabaseStorageAreaFixture.h"
-//#include "UNIX_DatabaseSystemFixture.h"
+#include "UNIX_DatabaseSystemFixture.h"
 //#include "UNIX_DataFileFixture.h"
 //#include "UNIX_DependencyContextFixture.h"
 //#include "UNIX_DesktopMonitorFixture.h"
@@ -1361,7 +1361,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_DatabaseServiceStatistics")) { UNIX_DatabaseServiceStatisticsFixture databaseServiceStatistics; databaseServiceStatistics.Run(); }
 	//if (IsTarget(s, "UNIX_DatabaseStorage")) { UNIX_DatabaseStorageFixture databaseStorage; databaseStorage.Run(); }
 	//if (IsTarget(s, "UNIX_DatabaseStorageArea")) { UNIX_DatabaseStorageAreaFixture databaseStorageArea; databaseStorageArea.Run(); }
-	//if (IsTarget(s, "UNIX_DatabaseSystem")) { UNIX_DatabaseSystemFixture databaseSystem; databaseSystem.Run(); }
+	if (IsTarget(s, "UNIX_DatabaseSystem")) { UNIX_DatabaseSystemFixture databaseSystem; databaseSystem.Run(); }
 	//if (IsTarget(s, "UNIX_DataFile")) { UNIX_DataFileFixture dataFile; dataFile.Run(); }
 	//if (IsTarget(s, "UNIX_DependencyContext")) { UNIX_DependencyContextFixture dependencyContext; dependencyContext.Run(); }
 	//if (IsTarget(s, "UNIX_DesktopMonitor")) { UNIX_DesktopMonitorFixture desktopMonitor; desktopMonitor.Run(); }

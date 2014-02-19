@@ -1,12 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/SoftwareElement/UNIX_SoftwareElement_FREEBSD.hpp">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/DatabaseSystem/UNIX_DatabaseSystem_FREEBSD.hpp">
     <Files>
-      <File FileName="UNIXProviders/DatabaseSystem/UNIX_DatabaseSystem_FREEBSD.hpp" Line="493" Column="3" />
-      <File FileName="UNIXProviders/SoftwareElement/UNIX_SoftwareElementPrivate_FREEBSD.h" Line="2" Column="50" />
-      <File FileName="UNIXProviders/SoftwareElement/UNIX_SoftwareElementDeps_FREEBSD.h" Line="4" Column="1" />
-      <File FileName="UNIXProviders/SoftwareElement/UNIX_SoftwareElement_FREEBSD.hpp" Line="142" Column="25" />
-      <File FileName="tests/UNIXProviders.Tests/main.cpp" Line="1112" Column="1" />
+      <File FileName="UNIXProviders/DatabaseSystem/UNIX_DatabaseSystem_FREEBSD.hpp" Line="565" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

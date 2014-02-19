@@ -107,7 +107,6 @@ CIMInstance UNIX_DatabaseSystemProvider::constructInstance(
 
 Array<CIMKeyBinding> UNIX_DatabaseSystemProvider::constructKeyBindings(const UNIX_DatabaseSystem& _p) const
 {
-
 	Array<CIMKeyBinding> keys;
 
 	keys.append(CIMKeyBinding(
@@ -123,13 +122,12 @@ Array<CIMKeyBinding> UNIX_DatabaseSystemProvider::constructKeyBindings(const UNI
 	return keys;
 }
 
-
-
 #define UNIX_PROVIDER UNIX_DatabaseSystemProvider
 #define UNIX_PROVIDER_NAME "UNIX_DatabaseSystemProvider"
 #define CLASS_IMPLEMENTATION UNIX_DatabaseSystem
 #define CLASS_IMPLEMENTATION_NAME "UNIX_DatabaseSystem"
 #define BASE_CLASS_NAME "CIM_DatabaseSystem"
+#define BASE_BASE_CLASS_NAME "CIM_ApplicationSystem"
 #define NUMKEYS_CLASS_IMPLEMENTATION 0
 
 

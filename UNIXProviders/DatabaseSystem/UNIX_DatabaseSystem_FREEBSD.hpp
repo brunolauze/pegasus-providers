@@ -47,7 +47,7 @@ Boolean UNIX_DatabaseSystem::getInstanceID(CIMProperty &p) const
 
 String UNIX_DatabaseSystem::getInstanceID() const
 {
-	return String ("");
+	return caption;
 }
 
 Boolean UNIX_DatabaseSystem::getCaption(CIMProperty &p) const
@@ -58,7 +58,7 @@ Boolean UNIX_DatabaseSystem::getCaption(CIMProperty &p) const
 
 String UNIX_DatabaseSystem::getCaption() const
 {
-	return String ("");
+	return getInstanceID();
 }
 
 Boolean UNIX_DatabaseSystem::getDescription(CIMProperty &p) const
@@ -69,7 +69,7 @@ Boolean UNIX_DatabaseSystem::getDescription(CIMProperty &p) const
 
 String UNIX_DatabaseSystem::getDescription() const
 {
-	return String ("");
+	return desc;
 }
 
 Boolean UNIX_DatabaseSystem::getElementName(CIMProperty &p) const
@@ -113,6 +113,24 @@ Boolean UNIX_DatabaseSystem::getName(CIMProperty &p) const
 
 String UNIX_DatabaseSystem::getName() const
 {
+	switch(currenttype)
+	{
+		case POSTGRESQL:
+			return String("PostgreSQL Database System");
+		case MYSQL:
+			return String("MySQL Database System");
+		case MARIADB:
+			return String("MariaDB Database System");
+		case SQLITE:
+			return String("Sqlite Engine");
+		case BDB:
+			return String("Berklay Database Engine");
+		case MONGODB:
+			return String("MongoDB Database System");
+		case MEMCACHED:
+			return String("Memory Object Cache System");
+	}
+
 	return String ("");
 }
 
@@ -357,7 +375,7 @@ Boolean UNIX_DatabaseSystem::getRoles(CIMProperty &p) const
 Array<String> UNIX_DatabaseSystem::getRoles() const
 {
 	Array<String> as;
-	
+	as.append("Database System");
 
 	return as;
 
@@ -401,7 +419,8 @@ Boolean UNIX_DatabaseSystem::getDistribution(CIMProperty &p) const
 
 Uint16 UNIX_DatabaseSystem::getDistribution() const
 {
-	return Uint16(0);
+	/* Check if we are a cluster */
+	return Uint16(3);
 }
 
 Boolean UNIX_DatabaseSystem::getStartupTime(CIMProperty &p) const
@@ -468,18 +487,117 @@ Boolean UNIX_DatabaseSystem::initialize()
 
 Boolean UNIX_DatabaseSystem::load(int &pIndex)
 {
+	UNIX_SoftwareElement softwareElement;
+
 	// check if postgresql is installed
-
-
+	if (pIndex == 0)
+	{
+		softwareElement.initialize();
+		if (softwareElement.get(String("postgresql*-server")))
+		{
+			caption = name = softwareElement.getInstanceID();
+			name = softwareElement.getName();
+			desc = softwareElement.getDescription();
+			currenttype = POSTGRESQL;
+			return true;
+		}
+		pIndex++;
+	}
 
 	// check if mysql is installed
+	if (pIndex == 1)
+	{
+		softwareElement.initialize();
+		if (softwareElement.get(String("mysql*-server")))
+		{
+			caption = name = softwareElement.getInstanceID();
+			name = softwareElement.getName();
+			desc = softwareElement.getDescription();
+			currenttype = MYSQL;
+			return true;
+		}
+		pIndex++;
+	}
 
+	// check if mariadb is installed
+	if (pIndex == 2)
+	{
+		softwareElement.initialize();
+		if (softwareElement.get(String("mariadb*-server")))
+		{
+			caption = name = softwareElement.getInstanceID();
+			name = softwareElement.getName();
+			desc = softwareElement.getDescription();
+			currenttype = MARIADB;
+			return true;
+		}
+		pIndex++;
+	}
+
+	//check for sqlite
+	if (pIndex == 3)
+	{
+		softwareElement.initialize();
+		if (softwareElement.get(String("sqlite")))
+		{
+			caption = name = softwareElement.getInstanceID();
+			name = softwareElement.getName();
+			desc = softwareElement.getDescription();
+			currenttype = SQLITE;
+			return true;
+		}
+		pIndex++;
+	}
+
+	//check for berkley db
+	if (pIndex == 4)
+	{
+		softwareElement.initialize();
+		if (softwareElement.get(String("db[0-9]")))
+		{
+			caption = name = softwareElement.getInstanceID();
+			name = softwareElement.getName();
+			desc = softwareElement.getDescription();
+			currenttype = BDB;
+			return true;
+		}
+		pIndex++;
+	}
+
+	//check for mongo db NoSQL
+	if (pIndex == 5)
+	{
+		softwareElement.initialize();
+		if (softwareElement.get(String("mongodb")))
+		{
+			caption = name = softwareElement.getInstanceID();
+			name = softwareElement.getName();
+			desc = softwareElement.getDescription();
+			currenttype = MONGODB;
+			return true;
+		}
+		pIndex++;
+	}
+
+	//check for memcached
+	if (pIndex == 6)
+	{
+		softwareElement.initialize();
+		if (softwareElement.get(String("memcached")))
+		{
+			caption = name = softwareElement.getInstanceID();
+			name = softwareElement.getName();
+			desc = softwareElement.getDescription();
+			currenttype = MEMCACHED;
+			return true;
+		}
+	}
 	return false;
 }
 
 Boolean UNIX_DatabaseSystem::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_DatabaseSystem::find(Array<CIMKeyBinding> &kbArray)
@@ -487,7 +605,6 @@ Boolean UNIX_DatabaseSystem::find(Array<CIMKeyBinding> &kbArray)
 	CIMKeyBinding kb;
 	String creationClassNameKey;
 	String nameKey;
-
 
 	for(Uint32 i = 0; i < kbArray.size(); i++)
 	{
@@ -497,9 +614,16 @@ Boolean UNIX_DatabaseSystem::find(Array<CIMKeyBinding> &kbArray)
 		else if (keyName.equal(PROPERTY_NAME)) nameKey = kb.getValue();
 	}
 
+	/* Execute find with extracted keys */
+	bool found = false;
+	for(int i = 0; load(i); i++)
+	{
+		if (String::equalNoCase(getName(),nameKey))
+		{
+			found = true;
+			break;
+		}
+	}
 
-
-/* EXecute find with extracted keys */
-
-	return false;
+	return found;
 }

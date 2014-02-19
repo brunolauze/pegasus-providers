@@ -117,6 +117,8 @@ public:
 	virtual Boolean getLanguageEdition(CIMProperty&) const;
 	virtual String getLanguageEdition() const;
 
+	virtual Boolean get(String packageName);
+
 private:
 	CIMName currentScope;
 

@@ -464,7 +464,29 @@ String UNIX_SoftwareElement::getLanguageEdition() const
 	return String ("Multilanguage");
 }
 
+Boolean UNIX_SoftwareElement::get(String packageName)
+{
+	String pkgName(packageName);
+	pkgName.append("*");
+	int ret;
+	if (db != NULL)
+	{
+		pkg_free(pkg);
+    	pkgdb_close(db);
+	}
 
+	ret = pkgdb_open(&db, PKGDB_DEFAULT);
+    if (ret != EPKG_OK)
+    	return false;
+	if ((it = pkgdb_query(db, pkgName.getCString(), MATCH_GLOB)) == NULL) {
+	        return false; //(EX_IOERR);
+	}
+	query_flags = getPkgFlag(INFO_ALL, false);
+	if ((ret = pkgdb_it_next(it, &pkg, query_flags)) == EPKG_OK) {
+		return true;
+	}
+	return false;
+}
 
 Boolean UNIX_SoftwareElement::initialize()
 {
@@ -472,10 +494,10 @@ Boolean UNIX_SoftwareElement::initialize()
     it = NULL;
     pkg = NULL;
     int ret;
-    char *pkgname;
-    pkgname = NULL;
-	if (pkg_init(NULL, NULL) != EPKG_OK)
-		return false;
+    if (!pkg_initialized())
+		if (pkg_init(NULL, NULL) != EPKG_OK)
+			return false;
+
 	ret = pkgdb_access(PKGDB_MODE_READ, PKGDB_DB_LOCAL);
 	if (ret == EPKG_ENOACCESS) {
 	        //warnx("Insufficient privileges to query the package database");
@@ -490,19 +512,23 @@ Boolean UNIX_SoftwareElement::initialize()
 	} else if (ret != EPKG_OK)
 	        return false; /* (EX_IOERR); */
     
-	
-    ret = pkgdb_open(&db, PKGDB_DEFAULT);
-    if (ret != EPKG_OK)
-    	return false;
-	if ((it = pkgdb_query(db, pkgname, MATCH_ALL)) == NULL) {
-	        return false; //(EX_IOERR);
-	}
 	return true;
 }
 
 Boolean UNIX_SoftwareElement::load(int &pIndex)
 {
 	int ret;
+	char *pkgname;
+	pkgname = NULL;
+	if (db == NULL)
+	{
+		ret = pkgdb_open(&db, PKGDB_DEFAULT);
+	    if (ret != EPKG_OK)
+	    	return false;
+		if ((it = pkgdb_query(db, pkgname, MATCH_ALL)) == NULL) {
+		        return false; //(EX_IOERR);
+		}
+	}
 	query_flags = getPkgFlag(INFO_ALL, false);
 	if ((ret = pkgdb_it_next(it, &pkg, query_flags)) == EPKG_OK) {
 		return true;

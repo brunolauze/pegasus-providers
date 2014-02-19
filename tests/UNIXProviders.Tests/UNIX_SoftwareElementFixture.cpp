@@ -45,6 +45,7 @@ void UNIX_SoftwareElementFixture::Run()
 	CIMName className("UNIX_SoftwareElement");
 	CIMNamespaceName nameSpace("root/cimv2");
 	UNIX_SoftwareElement _p;
+
 	UNIX_SoftwareElementProvider _provider;
 	Uint32 propertyCount;
 	CIMOMHandle omHandle;
@@ -68,6 +69,18 @@ void UNIX_SoftwareElementFixture::Run()
 		}
 		cout << "------------------------------------" << endl;
 		cout << endl;
+	}
+
+	_p.finalize();
+
+	_p.initialize();
+
+	if (_p.get(String("db[0-9]")))
+	{
+		cout << "FOUND " << _p.getName() << " with version " << _p.getVersion() << endl;
+	}
+	else {
+		cout << "gettext not found" << endl;
 	}
 
 	_p.finalize();
