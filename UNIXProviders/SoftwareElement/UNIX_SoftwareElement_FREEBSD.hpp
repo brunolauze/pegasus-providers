@@ -167,6 +167,12 @@ UNIX_SoftwareElement::~UNIX_SoftwareElement(void)
 {
 }
 
+String UNIX_SoftwareElement::getPrimaryOwnerName() const
+{
+	String s = getPackageProperty("%U");
+	if (s.size() == 0) return String("");
+	return s.subString(0, s.size() - 1);
+}
 
 Boolean UNIX_SoftwareElement::getInstanceID(CIMProperty &p) const
 {

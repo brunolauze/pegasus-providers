@@ -124,7 +124,7 @@ String CIMHelper::getTimeAsString()
 String CIMHelper::HostName(CIMHelper::getHostName());
 String CIMHelper::OSName(CIMHelper::getOSName());
 String CIMHelper::EmptyString(String::EMPTY);
-
+CIMDateTime CIMHelper::NullDate(0, false);
 #if defined(PEGASUS_OS_HPUX)
 
 #elif defined(PEGASUS_OS_LINUX)

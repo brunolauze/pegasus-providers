@@ -65,6 +65,7 @@ public:
 	static String HostName;
 	static String OSName;
 	static String EmptyString;
+	static CIMDateTime NullDate;
 
 #if defined(PEGASUS_OS_HPUX)
 

@@ -238,7 +238,9 @@ Boolean UNIX_DatabaseSystem::getEnabledState(CIMProperty &p) const
 
 Uint16 UNIX_DatabaseSystem::getEnabledState() const
 {
-	return Uint16(DEFAULT_ENABLED_STATE);
+	if (enabled)
+		return Uint16(2);
+	return Uint16(3); /* DISABLED */
 }
 
 Boolean UNIX_DatabaseSystem::getOtherEnabledState(CIMProperty &p) const
@@ -249,7 +251,9 @@ Boolean UNIX_DatabaseSystem::getOtherEnabledState(CIMProperty &p) const
 
 String UNIX_DatabaseSystem::getOtherEnabledState() const
 {
-	return String ("");
+	if (enabled)
+		return String ("");
+	return String("sysrc reporting system disabled or not activated");
 }
 
 Boolean UNIX_DatabaseSystem::getRequestedState(CIMProperty &p) const
@@ -282,18 +286,22 @@ Boolean UNIX_DatabaseSystem::getTimeOfLastStateChange(CIMProperty &p) const
 
 CIMDateTime UNIX_DatabaseSystem::getTimeOfLastStateChange() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	if (enabled)
+	{
+		struct tm* clock;			// create a time structure
+		time_t val = time(NULL);
+		clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
+		return CIMDateTime(
+			clock->tm_year + 1900,
+			clock->tm_mon + 1,
+			clock->tm_mday,
+			clock->tm_hour,
+			clock->tm_min,
+			clock->tm_sec,
+			0,0,
+			clock->tm_gmtoff);
+	}
+	return CIMHelper::NullDate;
 }
 
 Boolean UNIX_DatabaseSystem::getAvailableRequestedStates(CIMProperty &p) const
@@ -352,7 +360,7 @@ Boolean UNIX_DatabaseSystem::getPrimaryOwnerName(CIMProperty &p) const
 
 String UNIX_DatabaseSystem::getPrimaryOwnerName() const
 {
-	return String ("");
+	return owner;
 }
 
 Boolean UNIX_DatabaseSystem::getPrimaryOwnerContact(CIMProperty &p) const
@@ -375,7 +383,12 @@ Boolean UNIX_DatabaseSystem::getRoles(CIMProperty &p) const
 Array<String> UNIX_DatabaseSystem::getRoles() const
 {
 	Array<String> as;
-	as.append("Database System");
+	if (currenttype == POSTGRESQL ||
+		currenttype == MYSQL ||
+		currenttype == MARIADB ||
+		currenttype == MONGODB ||
+		currenttype == MEMCACHED)
+		as.append("Database System");
 
 	return as;
 
@@ -431,18 +444,22 @@ Boolean UNIX_DatabaseSystem::getStartupTime(CIMProperty &p) const
 
 CIMDateTime UNIX_DatabaseSystem::getStartupTime() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	if (enabled)
+	{
+		struct tm* clock;			// create a time structure
+		time_t val = time(NULL);
+		clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
+		return CIMDateTime(
+			clock->tm_year + 1900,
+			clock->tm_mon + 1,
+			clock->tm_mday,
+			clock->tm_hour,
+			clock->tm_min,
+			clock->tm_sec,
+			0,0,
+			clock->tm_gmtoff);
+	}
+	return CIMHelper::NullDate;
 }
 
 Boolean UNIX_DatabaseSystem::getServingStatus(CIMProperty &p) const
@@ -485,6 +502,47 @@ Boolean UNIX_DatabaseSystem::initialize()
 	return true;
 }
 
+Boolean UNIX_DatabaseSystem::isEnabled(DBTYPE type)
+{
+	const char *val;
+	val = NULL;
+
+	if (type == POSTGRESQL)
+		val = "postgresql_enable";
+	else if (type == MYSQL)
+		val = "mysql_enable";
+	else if (type == MARIADB)
+		val = "mariadb_enable";
+	else if (type == MEMCACHED)
+		val = "memcached_enable";
+	else 
+		val = NULL;
+
+	if (val == NULL) return Boolean(true); // All engine are "enabled" or kind of
+
+	char cmd[256];
+	char ret[256];
+	sprintf(cmd, "%s %s", "/usr/sbin/sysrc -i", val);
+	sprintf(ret, "%s: YES", val);
+	cout << "TESTING: " << cmd << endl;
+	FILE* pipe = popen(cmd, "r");
+    if (!pipe) return false;
+    char buffer[256];
+    bool isenabled = false;
+    while(!feof(pipe)) {
+    	if (fgets(buffer, 128, pipe) != NULL)
+    	{
+    		if (strstr(buffer, ret) != NULL)
+    		{
+    			isenabled = true;
+    		}
+    	}
+    	break;
+	}
+    pclose(pipe);
+   	return Boolean(isenabled);
+}
+
 Boolean UNIX_DatabaseSystem::load(int &pIndex)
 {
 	UNIX_SoftwareElement softwareElement;
@@ -498,7 +556,9 @@ Boolean UNIX_DatabaseSystem::load(int &pIndex)
 			caption = name = softwareElement.getInstanceID();
 			name = softwareElement.getName();
 			desc = softwareElement.getDescription();
+			owner = softwareElement.getPrimaryOwnerName();
 			currenttype = POSTGRESQL;
+			enabled = isEnabled(currenttype);
 			return true;
 		}
 		pIndex++;
@@ -513,7 +573,9 @@ Boolean UNIX_DatabaseSystem::load(int &pIndex)
 			caption = name = softwareElement.getInstanceID();
 			name = softwareElement.getName();
 			desc = softwareElement.getDescription();
+			owner = softwareElement.getPrimaryOwnerName();
 			currenttype = MYSQL;
+			enabled = isEnabled(currenttype);
 			return true;
 		}
 		pIndex++;
@@ -528,7 +590,9 @@ Boolean UNIX_DatabaseSystem::load(int &pIndex)
 			caption = name = softwareElement.getInstanceID();
 			name = softwareElement.getName();
 			desc = softwareElement.getDescription();
+			owner = softwareElement.getPrimaryOwnerName();
 			currenttype = MARIADB;
+			enabled = isEnabled(currenttype);
 			return true;
 		}
 		pIndex++;
@@ -543,7 +607,9 @@ Boolean UNIX_DatabaseSystem::load(int &pIndex)
 			caption = name = softwareElement.getInstanceID();
 			name = softwareElement.getName();
 			desc = softwareElement.getDescription();
+			owner = softwareElement.getPrimaryOwnerName();
 			currenttype = SQLITE;
+			enabled = isEnabled(currenttype);
 			return true;
 		}
 		pIndex++;
@@ -558,7 +624,9 @@ Boolean UNIX_DatabaseSystem::load(int &pIndex)
 			caption = name = softwareElement.getInstanceID();
 			name = softwareElement.getName();
 			desc = softwareElement.getDescription();
+			owner = softwareElement.getPrimaryOwnerName();
 			currenttype = BDB;
+			enabled = isEnabled(currenttype);
 			return true;
 		}
 		pIndex++;
@@ -573,7 +641,9 @@ Boolean UNIX_DatabaseSystem::load(int &pIndex)
 			caption = name = softwareElement.getInstanceID();
 			name = softwareElement.getName();
 			desc = softwareElement.getDescription();
+			owner = softwareElement.getPrimaryOwnerName();
 			currenttype = MONGODB;
+			enabled = isEnabled(currenttype);
 			return true;
 		}
 		pIndex++;
@@ -589,6 +659,7 @@ Boolean UNIX_DatabaseSystem::load(int &pIndex)
 			name = softwareElement.getName();
 			desc = softwareElement.getDescription();
 			currenttype = MEMCACHED;
+			enabled = isEnabled(currenttype);
 			return true;
 		}
 	}

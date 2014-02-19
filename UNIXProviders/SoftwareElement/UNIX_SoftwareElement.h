@@ -119,6 +119,30 @@ public:
 
 	virtual Boolean get(String packageName);
 
+#if defined(PEGASUS_OS_HPUX)
+
+#elif defined(PEGASUS_OS_LINUX)
+
+#elif defined(PEGASUS_OS_DARWIN)
+
+#elif defined(PEGASUS_OS_AIX)
+
+#elif defined(PEGASUS_OS_FREEBSD)
+	virtual String getPrimaryOwnerName() const;
+#elif defined(PEGASUS_OS_SOLARIS)
+
+#elif defined(PEGASUS_OS_ZOS)
+
+#elif defined(PEGASUS_OS_VMS)
+
+#elif defined(PEGASUS_OS_TRU64)
+
+#else
+
+#endif
+
+
+
 private:
 	CIMName currentScope;
 
