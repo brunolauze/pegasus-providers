@@ -1002,8 +1002,8 @@ Boolean UNIX_DiskDrive::initialize()
 					break;
 				
 				if (strcmp(periph_result->periph_name, "pass") == 0) continue;
-				struct disknode_t __unused *temp;
-				struct disknode_t __unused *nn=(struct  disknode_t*)malloc(sizeof(struct disknode_t));
+				struct disknode_t *temp;
+				struct disknode_t *nn=(struct  disknode_t*)malloc(sizeof(struct disknode_t));
 
 				sprintf(nn->desc, "%s", _desc);
 				sprintf(nn->vendor, "%s", _vendor);

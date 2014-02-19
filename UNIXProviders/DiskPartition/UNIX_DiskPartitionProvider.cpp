@@ -43,7 +43,7 @@ UNIX_DiskPartitionProvider::~UNIX_DiskPartitionProvider()
 CIMInstance UNIX_DiskPartitionProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_DiskPartition &_p)
+	const UNIX_DiskPartition &_p) const
 {
 	CIMProperty p;
 
@@ -141,8 +141,7 @@ CIMInstance UNIX_DiskPartitionProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_DiskPartitionProvider::constructKeyBindings(const UNIX_DiskPartition& _p)
-
+Array<CIMKeyBinding> UNIX_DiskPartitionProvider::constructKeyBindings(const UNIX_DiskPartition& _p) const
 {
 
 	Array<CIMKeyBinding> keys;

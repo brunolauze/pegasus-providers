@@ -297,7 +297,7 @@
 //#include "UNIX_DiagnosticTestForMSEFixture.h"
 //#include "UNIX_DiagnosticTestInPackageFixture.h"
 //#include "UNIX_DiagnosticTestSoftwareFixture.h"
-//#include "UNIX_DirectoryFixture.h"
+#include "UNIX_DirectoryFixture.h"
 //#include "UNIX_DirectoryContainsFileFixture.h"
 //#include "UNIX_DirectorySpecificationFixture.h"
 //#include "UNIX_DirectorySpecificationFileFixture.h"
@@ -305,7 +305,7 @@
 #include "UNIX_DiskDriveFixture.h"
 //#include "UNIX_DisketteDriveFixture.h"
 //#include "UNIX_DiskGroupFixture.h"
-//#include "UNIX_DiskPartitionFixture.h"
+#include "UNIX_DiskPartitionFixture.h"
 //#include "UNIX_DiskPartitionBasedOnVolumeFixture.h"
 //#include "UNIX_DiskSpaceCheckFixture.h"
 //#include "UNIX_DisplayControllerFixture.h"
@@ -591,7 +591,7 @@
 //#include "UNIX_MoreOrgUnitInfoFixture.h"
 //#include "UNIX_MorePersonInfoFixture.h"
 //#include "UNIX_MoreRoleInfoFixture.h"
-//#include "UNIX_MountFixture.h"
+#include "UNIX_MountFixture.h"
 //#include "UNIX_MultiStateSensorFixture.h"
 //#include "UNIX_NamedAddressCollectionFixture.h"
 //#include "UNIX_NamedCredentialFixture.h"
@@ -1106,7 +1106,7 @@
 //#include "UNIX_ZoneServiceFixture.h"
 //#include "UNIX_ZoneSetFixture.h"
 //#include "UNIX_ApplicationSystemFixture.h"
-//#include "UNIX_FileSystemFixture.h"
+#include "UNIX_FileSystemFixture.h"
 //#include "UNIX_SoftwareElementFixture.h"
 //#include "UNIX_SoftwareFeatureFixture.h"
 
@@ -1396,7 +1396,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_DiagnosticTestForMSE")) { UNIX_DiagnosticTestForMSEFixture diagnosticTestForMSE; diagnosticTestForMSE.Run(); }
 	//if (IsTarget(s, "UNIX_DiagnosticTestInPackage")) { UNIX_DiagnosticTestInPackageFixture diagnosticTestInPackage; diagnosticTestInPackage.Run(); }
 	//if (IsTarget(s, "UNIX_DiagnosticTestSoftware")) { UNIX_DiagnosticTestSoftwareFixture diagnosticTestSoftware; diagnosticTestSoftware.Run(); }
-	//if (IsTarget(s, "UNIX_Directory")) { UNIX_DirectoryFixture directory; directory.Run(); }
+	if (IsTarget(s, "UNIX_Directory")) { UNIX_DirectoryFixture directory; directory.Run(); }
 	//if (IsTarget(s, "UNIX_DirectoryContainsFile")) { UNIX_DirectoryContainsFileFixture directoryContainsFile; directoryContainsFile.Run(); }
 	//if (IsTarget(s, "UNIX_DirectorySpecification")) { UNIX_DirectorySpecificationFixture directorySpecification; directorySpecification.Run(); }
 	//if (IsTarget(s, "UNIX_DirectorySpecificationFile")) { UNIX_DirectorySpecificationFileFixture directorySpecificationFile; directorySpecificationFile.Run(); }
@@ -1404,7 +1404,7 @@ int main (int argc, char *argv[])
 	if (IsTarget(s, "UNIX_DiskDrive")) { UNIX_DiskDriveFixture diskDrive; diskDrive.Run(); }
 	//if (IsTarget(s, "UNIX_DisketteDrive")) { UNIX_DisketteDriveFixture disketteDrive; disketteDrive.Run(); }
 	//if (IsTarget(s, "UNIX_DiskGroup")) { UNIX_DiskGroupFixture diskGroup; diskGroup.Run(); }
-	//if (IsTarget(s, "UNIX_DiskPartition")) { UNIX_DiskPartitionFixture diskPartition; diskPartition.Run(); }
+	if (IsTarget(s, "UNIX_DiskPartition")) { UNIX_DiskPartitionFixture diskPartition; diskPartition.Run(); }
 	//if (IsTarget(s, "UNIX_DiskPartitionBasedOnVolume")) { UNIX_DiskPartitionBasedOnVolumeFixture diskPartitionBasedOnVolume; diskPartitionBasedOnVolume.Run(); }
 	//if (IsTarget(s, "UNIX_DiskSpaceCheck")) { UNIX_DiskSpaceCheckFixture diskSpaceCheck; diskSpaceCheck.Run(); }
 	//if (IsTarget(s, "UNIX_DisplayController")) { UNIX_DisplayControllerFixture displayController; displayController.Run(); }
@@ -1690,7 +1690,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_MoreOrgUnitInfo")) { UNIX_MoreOrgUnitInfoFixture moreOrgUnitInfo; moreOrgUnitInfo.Run(); }
 	//if (IsTarget(s, "UNIX_MorePersonInfo")) { UNIX_MorePersonInfoFixture morePersonInfo; morePersonInfo.Run(); }
 	//if (IsTarget(s, "UNIX_MoreRoleInfo")) { UNIX_MoreRoleInfoFixture moreRoleInfo; moreRoleInfo.Run(); }
-	//if (IsTarget(s, "UNIX_Mount")) { UNIX_MountFixture mount; mount.Run(); }
+	if (IsTarget(s, "UNIX_Mount")) { UNIX_MountFixture mount; mount.Run(); }
 	//if (IsTarget(s, "UNIX_MultiStateSensor")) { UNIX_MultiStateSensorFixture multiStateSensor; multiStateSensor.Run(); }
 	//if (IsTarget(s, "UNIX_NamedAddressCollection")) { UNIX_NamedAddressCollectionFixture namedAddressCollection; namedAddressCollection.Run(); }
 	//if (IsTarget(s, "UNIX_NamedCredential")) { UNIX_NamedCredentialFixture namedCredential; namedCredential.Run(); }
@@ -2205,7 +2205,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_ZoneService")) { UNIX_ZoneServiceFixture zoneService; zoneService.Run(); }
 	//if (IsTarget(s, "UNIX_ZoneSet")) { UNIX_ZoneSetFixture zoneSet; zoneSet.Run(); }
 	//if (IsTarget(s, "UNIX_ApplicationSystem")) { UNIX_ApplicationSystemFixture applicationSystem; applicationSystem.Run(); }
-	//if (IsTarget(s, "UNIX_FileSystem")) { UNIX_FileSystemFixture fileSystem; fileSystem.Run(); }
+	if (IsTarget(s, "UNIX_FileSystem")) { UNIX_FileSystemFixture fileSystem; fileSystem.Run(); }
 	//if (IsTarget(s, "UNIX_SoftwareElement")) { UNIX_SoftwareElementFixture softwareElement; softwareElement.Run(); }
 	//if (IsTarget(s, "UNIX_SoftwareFeature")) { UNIX_SoftwareFeatureFixture softwareFeature; softwareFeature.Run(); }
 

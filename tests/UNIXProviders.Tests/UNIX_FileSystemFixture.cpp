@@ -29,46 +29,47 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
-#ifndef __UNIX_MOUNT_H
-#define __UNIX_MOUNT_H
-
-
-#include "CIM_Dependency.h"
-
-#include "UNIX_MountDeps.h"
-
+#include "UNIX_FileSystemFixture.h"
 #include <FileSystem/UNIX_FileSystemProvider.h>
-#include <Directory/UNIX_DirectoryProvider.h>
 
-class UNIX_Mount :
-	public CIM_Dependency
+UNIX_FileSystemFixture::UNIX_FileSystemFixture()
 {
-public:
+}
 
-	UNIX_Mount();
-	~UNIX_Mount();
+UNIX_FileSystemFixture::~UNIX_FileSystemFixture()
+{
+}
 
-	virtual Boolean initialize();
-	virtual Boolean load(int&);
-	virtual Boolean finalize();
-	virtual Boolean find(Array<CIMKeyBinding>&);
-	virtual Boolean validateKey(CIMKeyBinding&) const;
-	virtual void setScope(CIMName);
+void UNIX_FileSystemFixture::Run()
+{
+	CIMName className("UNIX_FileSystem");
+	CIMNamespaceName nameSpace("root/cimv2");
+	UNIX_FileSystem _p;
+	UNIX_FileSystemProvider _provider;
+	Uint32 propertyCount;
+	CIMOMHandle omHandle;
+	_provider.initialize(omHandle);
+	_p.initialize();
 
-	virtual Boolean getAntecedent(CIMProperty&) const;
-	virtual CIMInstance getAntecedent() const;
-	virtual Boolean getDependent(CIMProperty&) const;
-	virtual CIMInstance getDependent() const;
+	for(int pIndex = 0; _p.load(pIndex); pIndex++)
+	{
+		CIMInstance instance = _provider.constructInstance(className,
+					nameSpace,
+					_p);
+		CIMObjectPath path = instance.getPath();
+		cout << path.toString() << endl;
+		propertyCount = instance.getPropertyCount();
+		for(Uint32 i = 0; i < propertyCount; i++)
+		{
 
-private:
-	CIMName currentScope;
-	UNIX_FileSystem fileSystem;
-	UNIX_Directory directory;
-	UNIX_FileSystemProvider fileSystemProvider;
-	UNIX_DirectoryProvider directoryProvider;
-#	include "UNIX_MountPrivate.h"
+			CIMProperty propertyItem = instance.getProperty(i);
+			cout << "	Name: " << propertyItem.getName().getString() << " - Value: " << propertyItem.getValue().toString() << endl;
 
+		}
+		cout << "------------------------------------" << endl;
+		cout << endl;
+	}
 
-};
+	_p.finalize();
+}
 
-#endif /* UNIX_MOUNT */

@@ -56,17 +56,36 @@ void UNIX_MountFixture::Run()
 		CIMInstance instance = _provider.constructInstance(className,
 					nameSpace,
 					_p);
+		
 		CIMObjectPath path = instance.getPath();
 		cout << path.toString() << endl;
 		propertyCount = instance.getPropertyCount();
 		for(Uint32 i = 0; i < propertyCount; i++)
 		{
-
 			CIMProperty propertyItem = instance.getProperty(i);
-			cout << "	Name: " << propertyItem.getName().getString() << " - Value: " << propertyItem.getValue().toString() << endl;
 
+			if (propertyItem.getName().equal("Antecedent") ||
+				propertyItem.getName().equal("Dependent"))
+			{
+				CIMValue subValue = propertyItem.getValue();
+				CIMInstance subInstance;
+				subValue.get(subInstance);
+				CIMObjectPath subPath = subInstance.getPath();
+				cout << "\tName: " << propertyItem.getName().getString() << ": " << subPath.toString() << endl;
+				Uint32 subPropertyCount = subInstance.getPropertyCount();
+				for(Uint32 j = 0; j < subPropertyCount; j++)
+				{
+					CIMProperty subPropertyItem = subInstance.getProperty(j);
+					cout << "\t\tName: " << subPropertyItem.getName().getString() << " - Value: " << subPropertyItem.getValue().toString() << endl;
+				}
+			}
+			else 
+				cout << "\tName: " << propertyItem.getName().getString() << " - Value: " << propertyItem.getValue().toString() << endl;
+			
 		}
+
 		cout << "------------------------------------" << endl;
+
 		cout << endl;
 	}
 

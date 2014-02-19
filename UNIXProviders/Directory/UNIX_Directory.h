@@ -52,6 +52,7 @@ public:
 	virtual Boolean load(int&);
 	virtual Boolean finalize();
 	virtual Boolean find(Array<CIMKeyBinding>&);
+	virtual Boolean get(const char* dir);
 	virtual Boolean validateKey(CIMKeyBinding&) const;
 	virtual void setScope(CIMName);
 

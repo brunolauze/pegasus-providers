@@ -43,7 +43,7 @@ UNIX_LogicalDiskProvider::~UNIX_LogicalDiskProvider()
 CIMInstance UNIX_LogicalDiskProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_LogicalDisk &_p)
+	const UNIX_LogicalDisk &_p) const
 {
 	CIMProperty p;
 
@@ -130,8 +130,7 @@ CIMInstance UNIX_LogicalDiskProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_LogicalDiskProvider::constructKeyBindings(const UNIX_LogicalDisk& _p)
-
+Array<CIMKeyBinding> UNIX_LogicalDiskProvider::constructKeyBindings(const UNIX_LogicalDisk& _p) const
 {
 
 	Array<CIMKeyBinding> keys;

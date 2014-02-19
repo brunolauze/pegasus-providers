@@ -29,46 +29,14 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
-#ifndef __UNIX_MOUNT_H
-#define __UNIX_MOUNT_H
+#include "CIMFixtureBase.h"
 
-
-#include "CIM_Dependency.h"
-
-#include "UNIX_MountDeps.h"
-
-#include <FileSystem/UNIX_FileSystemProvider.h>
-#include <Directory/UNIX_DirectoryProvider.h>
-
-class UNIX_Mount :
-	public CIM_Dependency
+class UNIX_FileSystemFixture :
+	public CIMFixtureBase
 {
 public:
-
-	UNIX_Mount();
-	~UNIX_Mount();
-
-	virtual Boolean initialize();
-	virtual Boolean load(int&);
-	virtual Boolean finalize();
-	virtual Boolean find(Array<CIMKeyBinding>&);
-	virtual Boolean validateKey(CIMKeyBinding&) const;
-	virtual void setScope(CIMName);
-
-	virtual Boolean getAntecedent(CIMProperty&) const;
-	virtual CIMInstance getAntecedent() const;
-	virtual Boolean getDependent(CIMProperty&) const;
-	virtual CIMInstance getDependent() const;
-
-private:
-	CIMName currentScope;
-	UNIX_FileSystem fileSystem;
-	UNIX_Directory directory;
-	UNIX_FileSystemProvider fileSystemProvider;
-	UNIX_DirectoryProvider directoryProvider;
-#	include "UNIX_MountPrivate.h"
-
+	UNIX_FileSystemFixture();
+	~UNIX_FileSystemFixture();
+	virtual void Run();
 
 };
-
-#endif /* UNIX_MOUNT */

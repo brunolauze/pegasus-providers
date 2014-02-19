@@ -47,7 +47,7 @@ Boolean UNIX_Directory::getInstanceID(CIMProperty &p) const
 
 String UNIX_Directory::getInstanceID() const
 {
-	return String ("");
+	return String (entryPath);
 }
 
 Boolean UNIX_Directory::getCaption(CIMProperty &p) const
@@ -58,7 +58,7 @@ Boolean UNIX_Directory::getCaption(CIMProperty &p) const
 
 String UNIX_Directory::getCaption() const
 {
-	return String ("");
+	return String (entryPath);
 }
 
 Boolean UNIX_Directory::getDescription(CIMProperty &p) const
@@ -113,7 +113,7 @@ Boolean UNIX_Directory::getName(CIMProperty &p) const
 
 String UNIX_Directory::getName() const
 {
-	return String ("");
+	return String (entryPath);
 }
 
 Boolean UNIX_Directory::getOperationalStatus(CIMProperty &p) const
@@ -407,14 +407,16 @@ Boolean UNIX_Directory::getInUseCount(CIMProperty &p) const
 
 Uint64 UNIX_Directory::getInUseCount() const
 {
-	return Uint64(0);
+	return Uint64(1);
 }
 
 
 
 Boolean UNIX_Directory::initialize()
 {
-	return false;
+	entry = NULL;
+	sprintf(entryPath, "%s", "/");
+	return true;
 }
 
 Boolean UNIX_Directory::load(int &pIndex)
@@ -424,7 +426,25 @@ Boolean UNIX_Directory::load(int &pIndex)
 
 Boolean UNIX_Directory::finalize()
 {
-	return false;
+	entry = NULL;
+	if (dir)
+		closedir(dir);
+	return true;
+}
+
+Boolean UNIX_Directory::get(const char* path)
+{
+	dir = opendir(path);
+	if (!dir) return false;
+	while ((entry = readdir(dir)) != NULL)
+	{
+		if (entry->d_name[0] == '.')
+		{
+			break;
+		}
+	}
+	sprintf(entryPath, "%s", path);
+	return true;
 }
 
 Boolean UNIX_Directory::find(Array<CIMKeyBinding> &kbArray)
@@ -452,7 +472,7 @@ Boolean UNIX_Directory::find(Array<CIMKeyBinding> &kbArray)
 
 
 
-/* EXecute find with extracted keys */
+	/* EXecute find with extracted keys */
 
-	return false;
+	return get(nameKey.getCString());
 }

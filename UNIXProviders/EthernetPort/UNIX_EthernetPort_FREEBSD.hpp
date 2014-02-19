@@ -710,10 +710,6 @@ Boolean UNIX_EthernetPort::getFullDuplex(CIMProperty &p) const
 
 Boolean UNIX_EthernetPort::getFullDuplex() const
 {
-	struct ifmediareq *ifmr = (struct ifmediareq *)arg;
-	if (ioctl(s, SIOCSIFMEDIA, (caddr_t)&ifr) < 0)
-			err(1, "SIOCSIFMEDIA (media)");
-
 	return Boolean(false);
 }
 

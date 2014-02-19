@@ -43,7 +43,7 @@ UNIX_LogEntryProvider::~UNIX_LogEntryProvider()
 CIMInstance UNIX_LogEntryProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_LogEntry &_p)
+	const UNIX_LogEntry &_p) const
 {
 	CIMProperty p;
 
@@ -81,8 +81,7 @@ CIMInstance UNIX_LogEntryProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_LogEntryProvider::constructKeyBindings(const UNIX_LogEntry& _p)
-
+Array<CIMKeyBinding> UNIX_LogEntryProvider::constructKeyBindings(const UNIX_LogEntry& _p) const
 {
 
 	Array<CIMKeyBinding> keys;

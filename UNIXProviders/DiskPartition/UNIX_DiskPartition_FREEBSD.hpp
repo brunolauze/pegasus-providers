@@ -29,7 +29,6 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
-
 UNIX_DiskPartition::UNIX_DiskPartition(void)
 {
 }
@@ -47,7 +46,7 @@ Boolean UNIX_DiskPartition::getInstanceID(CIMProperty &p) const
 
 String UNIX_DiskPartition::getInstanceID() const
 {
-	return String ("");
+	return String (tree->providerName);
 }
 
 Boolean UNIX_DiskPartition::getCaption(CIMProperty &p) const
@@ -58,7 +57,7 @@ Boolean UNIX_DiskPartition::getCaption(CIMProperty &p) const
 
 String UNIX_DiskPartition::getCaption() const
 {
-	return String ("");
+	 return String(tree->providerName);
 }
 
 Boolean UNIX_DiskPartition::getDescription(CIMProperty &p) const
@@ -69,7 +68,7 @@ Boolean UNIX_DiskPartition::getDescription(CIMProperty &p) const
 
 String UNIX_DiskPartition::getDescription() const
 {
-	return String ("");
+	return String (tree->type);
 }
 
 Boolean UNIX_DiskPartition::getElementName(CIMProperty &p) const
@@ -91,18 +90,7 @@ Boolean UNIX_DiskPartition::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_DiskPartition::getInstallDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return CIMHelper::getInstallDate();
 }
 
 Boolean UNIX_DiskPartition::getName(CIMProperty &p) const
@@ -113,7 +101,7 @@ Boolean UNIX_DiskPartition::getName(CIMProperty &p) const
 
 String UNIX_DiskPartition::getName() const
 {
-	return String ("");
+	return String (tree->name);
 }
 
 Boolean UNIX_DiskPartition::getOperationalStatus(CIMProperty &p) const
@@ -125,7 +113,7 @@ Boolean UNIX_DiskPartition::getOperationalStatus(CIMProperty &p) const
 Array<Uint16> UNIX_DiskPartition::getOperationalStatus() const
 {
 	Array<Uint16> as;
-	
+	as.append(2); //OK
 
 	return as;
 
@@ -345,7 +333,7 @@ Boolean UNIX_DiskPartition::getDeviceID(CIMProperty &p) const
 
 String UNIX_DiskPartition::getDeviceID() const
 {
-	return String ("");
+	return String (tree->providerName);
 }
 
 Boolean UNIX_DiskPartition::getPowerManagementSupported(CIMProperty &p) const
@@ -438,10 +426,10 @@ Boolean UNIX_DiskPartition::getOtherIdentifyingInfo(CIMProperty &p) const
 Array<String> UNIX_DiskPartition::getOtherIdentifyingInfo() const
 {
 	Array<String> as;
-	
-
+	as.append(String("RawType: ")+tree->rawtype);
+	as.append(String("Label: ")+tree->label);
+	as.append(String("Provider Name: ")+tree->providerName);
 	return as;
-
 }
 
 Boolean UNIX_DiskPartition::getPowerOnHours(CIMProperty &p) const
@@ -475,7 +463,7 @@ Boolean UNIX_DiskPartition::getIdentifyingDescriptions(CIMProperty &p) const
 Array<String> UNIX_DiskPartition::getIdentifyingDescriptions() const
 {
 	Array<String> as;
-	
+
 
 	return as;
 
@@ -526,7 +514,7 @@ Boolean UNIX_DiskPartition::getPurpose(CIMProperty &p) const
 
 String UNIX_DiskPartition::getPurpose() const
 {
-	return String ("");
+	return String (tree->type);
 }
 
 Boolean UNIX_DiskPartition::getAccess(CIMProperty &p) const
@@ -559,7 +547,7 @@ Boolean UNIX_DiskPartition::getBlockSize(CIMProperty &p) const
 
 Uint64 UNIX_DiskPartition::getBlockSize() const
 {
-	return Uint64(0);
+	return Uint64(512);
 }
 
 Boolean UNIX_DiskPartition::getNumberOfBlocks(CIMProperty &p) const
@@ -570,7 +558,7 @@ Boolean UNIX_DiskPartition::getNumberOfBlocks(CIMProperty &p) const
 
 Uint64 UNIX_DiskPartition::getNumberOfBlocks() const
 {
-	return Uint64(0);
+	return Uint64(tree->size);
 }
 
 Boolean UNIX_DiskPartition::getConsumableBlocks(CIMProperty &p) const
@@ -581,7 +569,7 @@ Boolean UNIX_DiskPartition::getConsumableBlocks(CIMProperty &p) const
 
 Uint64 UNIX_DiskPartition::getConsumableBlocks() const
 {
-	return Uint64(0);
+	return Uint64(tree->size);
 }
 
 Boolean UNIX_DiskPartition::getIsBasedOnUnderlyingRedundancy(CIMProperty &p) const
@@ -794,7 +782,7 @@ Boolean UNIX_DiskPartition::getPrimaryPartition(CIMProperty &p) const
 
 Boolean UNIX_DiskPartition::getPrimaryPartition() const
 {
-	return Boolean(false);
+	return Boolean(true);
 }
 
 Boolean UNIX_DiskPartition::getPartitionType(CIMProperty &p) const
@@ -805,7 +793,7 @@ Boolean UNIX_DiskPartition::getPartitionType(CIMProperty &p) const
 
 Uint16 UNIX_DiskPartition::getPartitionType() const
 {
-	return Uint16(0);
+	return Uint16(1);
 }
 
 Boolean UNIX_DiskPartition::getPartitionSubtype(CIMProperty &p) const
@@ -816,24 +804,32 @@ Boolean UNIX_DiskPartition::getPartitionSubtype(CIMProperty &p) const
 
 Uint16 UNIX_DiskPartition::getPartitionSubtype() const
 {
-	return Uint16(0);
+	return Uint16(65535);
 }
 
 
 
 Boolean UNIX_DiskPartition::initialize()
 {
-	return false;
+	tree = NULL;
+	tree = GeomHelper::getGeomTree(tree);
+	return true;
 }
 
 Boolean UNIX_DiskPartition::load(int &pIndex)
 {
+	if (pIndex > 0) tree = tree->next;
+	if (tree != NULL)
+	{
+		return true;
+	}
 	return false;
 }
 
 Boolean UNIX_DiskPartition::finalize()
 {
-	return false;
+	tree = NULL;
+	return true;
 }
 
 Boolean UNIX_DiskPartition::find(Array<CIMKeyBinding> &kbArray)

@@ -43,7 +43,7 @@ UNIX_MessageLogProvider::~UNIX_MessageLogProvider()
 CIMInstance UNIX_MessageLogProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_MessageLog &_p)
+	const UNIX_MessageLog &_p) const
 {
 	CIMProperty p;
 
@@ -113,8 +113,7 @@ CIMInstance UNIX_MessageLogProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_MessageLogProvider::constructKeyBindings(const UNIX_MessageLog& _p)
-
+Array<CIMKeyBinding> UNIX_MessageLogProvider::constructKeyBindings(const UNIX_MessageLog& _p)  const
 {
 
 	Array<CIMKeyBinding> keys;

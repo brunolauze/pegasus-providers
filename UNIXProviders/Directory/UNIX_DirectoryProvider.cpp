@@ -43,7 +43,7 @@ UNIX_DirectoryProvider::~UNIX_DirectoryProvider()
 CIMInstance UNIX_DirectoryProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_Directory &_p)
+	const UNIX_Directory &_p) const
 {
 	CIMProperty p;
 
@@ -98,8 +98,7 @@ CIMInstance UNIX_DirectoryProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_DirectoryProvider::constructKeyBindings(const UNIX_Directory& _p)
-
+Array<CIMKeyBinding> UNIX_DirectoryProvider::constructKeyBindings(const UNIX_Directory& _p) const
 {
 
 	Array<CIMKeyBinding> keys;

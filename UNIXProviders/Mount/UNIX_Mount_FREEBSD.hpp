@@ -47,7 +47,11 @@ Boolean UNIX_Mount::getAntecedent(CIMProperty &p) const
 
 CIMInstance UNIX_Mount::getAntecedent() const
 {
-	return CIMInstance(CIMName("CIM_Dependency"));
+	CIMInstance instance = directoryProvider.constructInstance(
+		CIMName("UNIX_Directory"),
+		CIMNamespaceName("root/cimv2"),
+		directory);
+	return instance;
 }
 
 Boolean UNIX_Mount::getDependent(CIMProperty &p) const
@@ -58,24 +62,39 @@ Boolean UNIX_Mount::getDependent(CIMProperty &p) const
 
 CIMInstance UNIX_Mount::getDependent() const
 {
-	return CIMInstance(CIMName("CIM_Dependency"));
+	CIMInstance instance = fileSystemProvider.constructInstance(
+		CIMName("UNIX_FileSystem"),
+		CIMNamespaceName("root/cimv2"),
+		fileSystem);
+	return instance;
 }
 
 
 
 Boolean UNIX_Mount::initialize()
 {
-	return false;
+	fileSystem.initialize();
+	return true;
 }
 
 Boolean UNIX_Mount::load(int &pIndex)
 {
+	if (fileSystem.load(pIndex))
+	{
+		if (pIndex > 0) directory.finalize();
+		if (directory.get(fileSystem.getRoot().getCString()))
+		{
+			return true;
+		}
+	}
 	return false;
 }
 
 Boolean UNIX_Mount::finalize()
 {
-	return false;
+	fileSystem.finalize();
+	directory.finalize();
+	return true;
 }
 
 Boolean UNIX_Mount::find(Array<CIMKeyBinding> &kbArray)
@@ -93,9 +112,7 @@ Boolean UNIX_Mount::find(Array<CIMKeyBinding> &kbArray)
 		else if (keyName.equal(PROPERTY_DEPENDENT)) dependentKey = kb.getValue();
 	}
 
-
-
-/* EXecute find with extracted keys */
+	/* Execute find with extracted keys */
 
 	return false;
 }

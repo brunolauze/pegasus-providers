@@ -36,7 +36,7 @@
         <Variable name="LD_LIBRARY_PATH" value="/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/bin/Debug:/usr/local/lib/pegasus/lib:/usr/local/lib:/usr/lib:/lib" />
       </EnvironmentVariables>
     </EnvironmentVariables>
-    <Commandlineparameters>UNIX_EthernetPort</Commandlineparameters>
+    <Commandlineparameters>UNIX_Mount</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release</OutputPath>
@@ -58,6 +58,10 @@
     <Compile Include="UNIX_DiskDriveFixture.cpp" />
     <Compile Include="UNIX_DeviceFileFixture.cpp" />
     <Compile Include="UNIX_EthernetPortFixture.cpp" />
+    <Compile Include="UNIX_DiskPartitionFixture.cpp" />
+    <Compile Include="UNIX_FileSystemFixture.cpp" />
+    <Compile Include="UNIX_MountFixture.cpp" />
+    <Compile Include="UNIX_DirectoryFixture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CIMFixtureBase.h" />
@@ -71,5 +75,9 @@
     <None Include="UNIX_DiskDriveFixture.h" />
     <None Include="UNIX_DeviceFileFixture.h" />
     <None Include="UNIX_EthernetPortFixture.h" />
+    <None Include="UNIX_DiskPartitionFixture.h" />
+    <None Include="UNIX_FileSystemFixture.h" />
+    <None Include="UNIX_MountFixture.h" />
+    <None Include="UNIX_DirectoryFixture.h" />
   </ItemGroup>
 </Project>

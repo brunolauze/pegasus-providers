@@ -47,7 +47,7 @@ Boolean UNIX_FileSystem::getInstanceID(CIMProperty &p) const
 
 String UNIX_FileSystem::getInstanceID() const
 {
-	return String ("");
+	return String (fs->f_mntfromname);
 }
 
 Boolean UNIX_FileSystem::getCaption(CIMProperty &p) const
@@ -58,7 +58,7 @@ Boolean UNIX_FileSystem::getCaption(CIMProperty &p) const
 
 String UNIX_FileSystem::getCaption() const
 {
-	return String ("");
+	return String (fs->f_mntfromname);
 }
 
 Boolean UNIX_FileSystem::getDescription(CIMProperty &p) const
@@ -69,7 +69,7 @@ Boolean UNIX_FileSystem::getDescription(CIMProperty &p) const
 
 String UNIX_FileSystem::getDescription() const
 {
-	return String ("");
+	return String (fs->f_mntfromname);
 }
 
 Boolean UNIX_FileSystem::getElementName(CIMProperty &p) const
@@ -113,7 +113,7 @@ Boolean UNIX_FileSystem::getName(CIMProperty &p) const
 
 String UNIX_FileSystem::getName() const
 {
-	return String ("");
+	return String ();
 }
 
 Boolean UNIX_FileSystem::getOperationalStatus(CIMProperty &p) const
@@ -125,7 +125,7 @@ Boolean UNIX_FileSystem::getOperationalStatus(CIMProperty &p) const
 Array<Uint16> UNIX_FileSystem::getOperationalStatus() const
 {
 	Array<Uint16> as;
-	
+	as.append(2); //OK
 
 	return as;
 
@@ -345,7 +345,7 @@ Boolean UNIX_FileSystem::getRoot(CIMProperty &p) const
 
 String UNIX_FileSystem::getRoot() const
 {
-	return String ("");
+	return String (fs->f_mntonname);
 }
 
 Boolean UNIX_FileSystem::getBlockSize(CIMProperty &p) const
@@ -356,7 +356,7 @@ Boolean UNIX_FileSystem::getBlockSize(CIMProperty &p) const
 
 Uint64 UNIX_FileSystem::getBlockSize() const
 {
-	return Uint64(0);
+	return Uint64(fs->f_bsize);
 }
 
 Boolean UNIX_FileSystem::getFileSystemSize(CIMProperty &p) const
@@ -481,7 +481,7 @@ Boolean UNIX_FileSystem::getFileSystemType(CIMProperty &p) const
 
 String UNIX_FileSystem::getFileSystemType() const
 {
-	return String ("");
+	return String (fs->f_fstypename);
 }
 
 Boolean UNIX_FileSystem::getPersistenceType(CIMProperty &p) const
@@ -521,12 +521,18 @@ Uint64 UNIX_FileSystem::getNumberOfFiles() const
 
 Boolean UNIX_FileSystem::initialize()
 {
+	if ((mntsize = getmntinfo(&mntbuf, MNT_NOWAIT)) != 0)
+	{
+		return true;
+	}
 	return false;
 }
 
 Boolean UNIX_FileSystem::load(int &pIndex)
 {
-	return false;
+	if (mntsize <= pIndex) return false;
+	fs = &(mntbuf[pIndex]);
+	return true;
 }
 
 Boolean UNIX_FileSystem::finalize()
