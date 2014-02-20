@@ -120,6 +120,8 @@ public:
 	virtual Boolean getLastServingStatusUpdate(CIMProperty&) const;
 	virtual CIMDateTime getLastServingStatusUpdate() const;
 
+
+	virtual String getIdentificationCode() const;
 private:
 	CIMName currentScope;
 

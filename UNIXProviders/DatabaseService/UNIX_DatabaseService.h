@@ -34,9 +34,8 @@
 
 
 #include "CIM_Service.h"
-
+#include <DatabaseSystem/UNIX_DatabaseSystem.h>
 #include "UNIX_DatabaseServiceDeps.h"
-
 
 #define PROPERTY_STARTUP_TIME				"StartupTime"
 #define PROPERTY_LAST_STATUS_CHANGE_TIME				"LastStatusChangeTime"
@@ -123,6 +122,7 @@ public:
 
 private:
 	CIMName currentScope;
+	UNIX_DatabaseSystem databaseSystem;
 
 #	include "UNIX_DatabaseServicePrivate.h"
 

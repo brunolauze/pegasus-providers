@@ -143,8 +143,10 @@ Boolean UNIX_DatabaseSystem::getOperationalStatus(CIMProperty &p) const
 Array<Uint16> UNIX_DatabaseSystem::getOperationalStatus() const
 {
 	Array<Uint16> as;
-	
-
+	if (enabled) 
+		as.append(2); //OK
+	else
+		as.append(1); //Not Available
 	return as;
 
 }
@@ -194,7 +196,7 @@ Boolean UNIX_DatabaseSystem::getCommunicationStatus(CIMProperty &p) const
 
 Uint16 UNIX_DatabaseSystem::getCommunicationStatus() const
 {
-	return Uint16(0);
+	return Uint16(DEFAULT_COMMUNICATION_STATUS);
 }
 
 Boolean UNIX_DatabaseSystem::getDetailedStatus(CIMProperty &p) const
@@ -481,21 +483,35 @@ Boolean UNIX_DatabaseSystem::getLastServingStatusUpdate(CIMProperty &p) const
 
 CIMDateTime UNIX_DatabaseSystem::getLastServingStatusUpdate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	if (enabled)
+	{
+		struct tm* clock;			// create a time structure
+		time_t val = time(NULL);
+		clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
+		return CIMDateTime(
+			clock->tm_year + 1900,
+			clock->tm_mon + 1,
+			clock->tm_mday,
+			clock->tm_hour,
+			clock->tm_min,
+			clock->tm_sec,
+			0,0,
+			clock->tm_gmtoff);
+	}
+	return CIMHelper::NullDate;
 }
 
-
+String UNIX_DatabaseSystem::getIdentificationCode() const
+{
+	if (type == POSTGRESQL) return String("POSTGRESQL");
+	else if (type == MYSQL) return String("MYSQL");
+	else if (type == MARIADB) return String("MARIADB");
+	else if (type == SQLITE) return String("SQLITE");
+	else if (type == BDB) return String("BDB");
+	else if (type == MANGODB) return String("MANGODB");
+	else if (type == MEMCACHED) return String("MEMCACHED");
+	return String("");
+}
 
 Boolean UNIX_DatabaseSystem::initialize()
 {

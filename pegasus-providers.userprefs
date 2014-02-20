@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/DatabaseSystem/UNIX_DatabaseSystem_FREEBSD.hpp">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/DatabaseService/UNIX_DatabaseService_FREEBSD.hpp">
     <Files>
-      <File FileName="UNIXProviders/DatabaseSystem/UNIX_DatabaseSystem_FREEBSD.hpp" Line="565" Column="2" />
+      <File FileName="UNIXProviders/AccountManagementCapabilities/UNIX_AccountManagementCapabilities.h" Line="71" Column="10" />
+      <File FileName="UNIXProviders/DatabaseService/UNIX_DatabaseService_FREEBSD.hpp" Line="361" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -47,7 +47,7 @@ Boolean UNIX_DatabaseService::getInstanceID(CIMProperty &p) const
 
 String UNIX_DatabaseService::getInstanceID() const
 {
-	return String ("");
+	return databaseSystem.getInstanceID();
 }
 
 Boolean UNIX_DatabaseService::getCaption(CIMProperty &p) const
@@ -58,7 +58,7 @@ Boolean UNIX_DatabaseService::getCaption(CIMProperty &p) const
 
 String UNIX_DatabaseService::getCaption() const
 {
-	return String ("");
+	return databaseSystem.getCaption();
 }
 
 Boolean UNIX_DatabaseService::getDescription(CIMProperty &p) const
@@ -69,7 +69,7 @@ Boolean UNIX_DatabaseService::getDescription(CIMProperty &p) const
 
 String UNIX_DatabaseService::getDescription() const
 {
-	return String ("");
+	return databaseSystem.getDescription();
 }
 
 Boolean UNIX_DatabaseService::getElementName(CIMProperty &p) const
@@ -113,7 +113,7 @@ Boolean UNIX_DatabaseService::getName(CIMProperty &p) const
 
 String UNIX_DatabaseService::getName() const
 {
-	return String ("");
+	return databaseSystem.getName();
 }
 
 Boolean UNIX_DatabaseService::getOperationalStatus(CIMProperty &p) const
@@ -124,11 +124,7 @@ Boolean UNIX_DatabaseService::getOperationalStatus(CIMProperty &p) const
 
 Array<Uint16> UNIX_DatabaseService::getOperationalStatus() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
-
+	return databaseSystem.getOperationalStatus();
 }
 
 Boolean UNIX_DatabaseService::getStatusDescriptions(CIMProperty &p) const
@@ -139,11 +135,7 @@ Boolean UNIX_DatabaseService::getStatusDescriptions(CIMProperty &p) const
 
 Array<String> UNIX_DatabaseService::getStatusDescriptions() const
 {
-	Array<String> as;
-	
-
-	return as;
-
+	return databaseSystem.getStatusDescriptions();
 }
 
 Boolean UNIX_DatabaseService::getStatus(CIMProperty &p) const
@@ -154,7 +146,7 @@ Boolean UNIX_DatabaseService::getStatus(CIMProperty &p) const
 
 String UNIX_DatabaseService::getStatus() const
 {
-	return String(DEFAULT_STATUS);
+	return databaseSystem.getStatus();
 }
 
 Boolean UNIX_DatabaseService::getHealthState(CIMProperty &p) const
@@ -165,7 +157,7 @@ Boolean UNIX_DatabaseService::getHealthState(CIMProperty &p) const
 
 Uint16 UNIX_DatabaseService::getHealthState() const
 {
-	return Uint16(DEFAULT_HEALTH_STATE);
+	return databaseSystem.getHealthState();
 }
 
 Boolean UNIX_DatabaseService::getCommunicationStatus(CIMProperty &p) const
@@ -345,7 +337,7 @@ Boolean UNIX_DatabaseService::getPrimaryOwnerName(CIMProperty &p) const
 
 String UNIX_DatabaseService::getPrimaryOwnerName() const
 {
-	return String ("");
+	return databaseSystem.getPrimaryOwnerName();
 }
 
 Boolean UNIX_DatabaseService::getPrimaryOwnerContact(CIMProperty &p) const
@@ -440,17 +432,32 @@ Uint32 UNIX_DatabaseService::getConnectionLimit() const
 
 Boolean UNIX_DatabaseService::initialize()
 {
-	return false;
+	return databaseSystem.initialize();
 }
 
 Boolean UNIX_DatabaseService::load(int &pIndex)
 {
-	return false;
+	bool found = false;
+	while(databaseSystem.load(pIndex))
+	{
+		String code = databaseSystem.getIdentificationCode();
+		if (String::equal(code, "POSTGRESQL") || 
+			String::equal(code, "MYSQL") || 
+			String::equal(code, "MANGODB") || 
+			String::equal(code, "MARIADB") || 
+			String::equal(code, "MEMCACHED"))
+		{
+			found = true;
+			break;	
+		}
+		pIndex++;
+	}
+	return found;
 }
 
 Boolean UNIX_DatabaseService::finalize()
 {
-	return false;
+	return databaseSystem.initialize();
 }
 
 Boolean UNIX_DatabaseService::find(Array<CIMKeyBinding> &kbArray)
