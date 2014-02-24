@@ -430,7 +430,6 @@ Array<String> UNIX_ComputerSystem::getRoles() const
     		{
     			as.append("Desktop System");
     		}
-
     	}
     }
     pclose(pipe);

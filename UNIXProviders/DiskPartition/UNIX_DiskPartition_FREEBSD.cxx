@@ -294,10 +294,10 @@ struct geomnode_t * GeomHelper::gpart_add_item(
 	}
 	else
 	{
-	   temp=tree;
-	   while(temp->next!=NULL)
-	     temp=temp->next;
-	   temp->next=nn;
+		   temp=tree;
+		   while(temp->next!=NULL)
+		     temp=temp->next;
+		   temp->next=nn;
 	}
 	return tree;
 }
