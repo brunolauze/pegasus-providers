@@ -1,0 +1,28 @@
+instance of PG_Provider
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	Name = "UNIX_MetricDefForMEProvider";
+};
+
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	ProviderName = "UNIX_MetricDefForMEProvider";
+	ClassName = "CIM_MetricDefForME";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	ProviderName = "UNIX_MetricDefForMEProvider";
+	ClassName = "UNIX_MetricDefForME";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+

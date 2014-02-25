@@ -1,0 +1,39 @@
+instance of PG_Provider
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	Name = "UNIX_ComputerSystemProvider";
+};
+
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	ProviderName = "UNIX_ComputerSystemProvider";
+	ClassName = "CIM_ComputerSystem";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	ProviderName = "UNIX_ComputerSystemProvider";
+	ClassName = "CIM_UnitaryComputerSystem";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	ProviderName = "UNIX_ComputerSystemProvider";
+	ClassName = "UNIX_ComputerSystem";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+

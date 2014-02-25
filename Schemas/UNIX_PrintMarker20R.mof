@@ -1,0 +1,28 @@
+instance of PG_Provider
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	Name = "UNIX_PrintMarkerProvider";
+};
+
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	ProviderName = "UNIX_PrintMarkerProvider";
+	ClassName = "CIM_PrintMarker";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	ProviderName = "UNIX_PrintMarkerProvider";
+	ClassName = "UNIX_PrintMarker";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+

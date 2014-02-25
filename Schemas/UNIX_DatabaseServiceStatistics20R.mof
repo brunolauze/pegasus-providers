@@ -1,0 +1,28 @@
+instance of PG_Provider
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	Name = "UNIX_DatabaseServiceStatisticsProvider";
+};
+
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	ProviderName = "UNIX_DatabaseServiceStatisticsProvider";
+	ClassName = "CIM_DatabaseServiceStatistics";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	ProviderName = "UNIX_DatabaseServiceStatisticsProvider";
+	ClassName = "UNIX_DatabaseServiceStatistics";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+

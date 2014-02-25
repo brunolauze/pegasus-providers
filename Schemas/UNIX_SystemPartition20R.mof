@@ -1,0 +1,28 @@
+instance of PG_Provider
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	Name = "UNIX_SystemPartitionProvider";
+};
+
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	ProviderName = "UNIX_SystemPartitionProvider";
+	ClassName = "CIM_SystemPartition";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIXProvidersModule";
+	ProviderName = "UNIX_SystemPartitionProvider";
+	ClassName = "UNIX_SystemPartition";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+
