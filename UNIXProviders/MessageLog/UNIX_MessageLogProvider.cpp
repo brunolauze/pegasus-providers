@@ -46,14 +46,13 @@ CIMInstance UNIX_MessageLogProvider::constructInstance(
 	const UNIX_MessageLog &_p) const
 {
 	CIMProperty p;
-
 	CIMInstance inst(className);
 
 	// Set path
 	inst.setPath(CIMObjectPath(String(""), // hostname
 			nameSpace,
-			CIMName("UNIX_MessageLog"),
-			constructKeyBindings(_p)));
+			className,
+			constructKeyBindings(_p)));	
 
 	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
@@ -113,11 +112,9 @@ CIMInstance UNIX_MessageLogProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_MessageLogProvider::constructKeyBindings(const UNIX_MessageLog& _p)  const
+Array<CIMKeyBinding> UNIX_MessageLogProvider::constructKeyBindings(const UNIX_MessageLog& _p) const
 {
-
 	Array<CIMKeyBinding> keys;
-
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
 		_p.getCreationClassName(),
@@ -126,8 +123,6 @@ Array<CIMKeyBinding> UNIX_MessageLogProvider::constructKeyBindings(const UNIX_Me
 		PROPERTY_NAME,
 		_p.getName(),
 		CIMKeyBinding::STRING));
-
-
 	return keys;
 }
 

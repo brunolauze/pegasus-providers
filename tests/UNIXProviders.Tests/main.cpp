@@ -573,7 +573,7 @@
 //#include "UNIX_MemoryOnCardFixture.h"
 //#include "UNIX_MemoryResourceFixture.h"
 //#include "UNIX_MemoryWithMediaFixture.h"
-//#include "UNIX_MessageLogFixture.h"
+#include "UNIX_MessageLogFixture.h"
 //#include "UNIX_MethodActionFixture.h"
 //#include "UNIX_MethodParametersFixture.h"
 //#include "UNIX_MethodResultFixture.h"
@@ -1672,7 +1672,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_MemoryOnCard")) { UNIX_MemoryOnCardFixture memoryOnCard; memoryOnCard.Run(); }
 	//if (IsTarget(s, "UNIX_MemoryResource")) { UNIX_MemoryResourceFixture memoryResource; memoryResource.Run(); }
 	//if (IsTarget(s, "UNIX_MemoryWithMedia")) { UNIX_MemoryWithMediaFixture memoryWithMedia; memoryWithMedia.Run(); }
-	//if (IsTarget(s, "UNIX_MessageLog")) { UNIX_MessageLogFixture messageLog; messageLog.Run(); }
+	if (IsTarget(s, "UNIX_MessageLog")) { UNIX_MessageLogFixture messageLog; messageLog.Run(); }
 	//if (IsTarget(s, "UNIX_MethodAction")) { UNIX_MethodActionFixture methodAction; methodAction.Run(); }
 	//if (IsTarget(s, "UNIX_MethodParameters")) { UNIX_MethodParametersFixture methodParameters; methodParameters.Run(); }
 	//if (IsTarget(s, "UNIX_MethodResult")) { UNIX_MethodResultFixture methodResult; methodResult.Run(); }

@@ -52,7 +52,7 @@ CIMInstance UNIX_UsersAccessProvider::constructInstance(
 	// Set path
 	inst.setPath(CIMObjectPath(String(""), // hostname
 			nameSpace,
-			CIMName("UNIX_UsersAccess"),
+			className,
 			constructKeyBindings(_p)));
 
 	//CIM_ManagedElement Properties

@@ -136,7 +136,7 @@ Array<CIMKeyBinding> UNIX_ComputerSystemProvider::constructKeyBindings(const UNI
 #define CLASS_IMPLEMENTATION UNIX_ComputerSystem
 #define CLASS_IMPLEMENTATION_NAME "UNIX_ComputerSystem"
 #define BASE_CLASS_NAME "CIM_UnitaryComputerSystem"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 2
 
 
 #include "UNIXProviderBase.hpp"

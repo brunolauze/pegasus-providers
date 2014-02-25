@@ -410,7 +410,16 @@ Uint64 UNIX_Directory::getInUseCount() const
 	return Uint64(1);
 }
 
+Boolean UNIX_Directory::getFileSizeBits(CIMProperty &p) const
+{
+	p = CIMProperty(PROPERTY_FILE_SIZE_BITS, getFileSizeBits());
+	return true;
+}
 
+Uint64 UNIX_Directory::getFileSizeBits() const
+{
+	return Uint64(0);
+}
 
 Boolean UNIX_Directory::initialize()
 {

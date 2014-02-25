@@ -32,6 +32,7 @@
 #ifndef __UNIX_DIRECTORY_H
 #define __UNIX_DIRECTORY_H
 
+#define PROPERTY_FILE_SIZE_BITS "FileSizeBits"
 
 #include "CIM_LogicalFile.h"
 
@@ -114,6 +115,8 @@ public:
 	virtual String getEncryptionMethod() const;
 	virtual Boolean getInUseCount(CIMProperty&) const;
 	virtual Uint64 getInUseCount() const;
+	virtual Boolean getFileSizeBits(CIMProperty&) const;
+	virtual Uint64 getFileSizeBits() const;
 
 private:
 	CIMName currentScope;

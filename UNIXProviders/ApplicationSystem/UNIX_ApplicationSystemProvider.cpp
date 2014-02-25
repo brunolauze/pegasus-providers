@@ -128,7 +128,7 @@ Array<CIMKeyBinding> UNIX_ApplicationSystemProvider::constructKeyBindings(const 
 #define CLASS_IMPLEMENTATION UNIX_ApplicationSystem
 #define CLASS_IMPLEMENTATION_NAME "UNIX_ApplicationSystem"
 #define BASE_CLASS_NAME "UNIX_ApplicationSystem"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 2
 
 
 #include "UNIXProviderBase.hpp"

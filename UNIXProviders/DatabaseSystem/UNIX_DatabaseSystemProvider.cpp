@@ -52,7 +52,7 @@ CIMInstance UNIX_DatabaseSystemProvider::constructInstance(
 	// Set path
 	inst.setPath(CIMObjectPath(String(""), // hostname
 			nameSpace,
-			CIMName("UNIX_DatabaseSystem"),
+			className,
 			constructKeyBindings(_p)));
 
 	//CIM_ManagedElement Properties
@@ -99,6 +99,10 @@ CIMInstance UNIX_DatabaseSystemProvider::constructInstance(
 	if (_p.getServingStatus(p)) inst.addProperty(p);
 	if (_p.getLastServingStatusUpdate(p)) inst.addProperty(p);
 
+	if (className.equal("UNIX_ApplicationSystem") ||
+		className.equal("UNIX_ApplicationSystem")) 
+		return inst;
+
 	//CIM_DatabaseSystem Properties
 
 
@@ -128,7 +132,7 @@ Array<CIMKeyBinding> UNIX_DatabaseSystemProvider::constructKeyBindings(const UNI
 #define CLASS_IMPLEMENTATION_NAME "UNIX_DatabaseSystem"
 #define BASE_CLASS_NAME "CIM_DatabaseSystem"
 #define BASE_BASE_CLASS_NAME "CIM_ApplicationSystem"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 2
 
 
 #include "UNIXProviderBase.hpp"

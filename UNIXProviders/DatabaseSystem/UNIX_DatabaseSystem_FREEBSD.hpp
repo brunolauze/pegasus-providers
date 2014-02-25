@@ -503,13 +503,13 @@ CIMDateTime UNIX_DatabaseSystem::getLastServingStatusUpdate() const
 
 String UNIX_DatabaseSystem::getIdentificationCode() const
 {
-	if (type == POSTGRESQL) return String("POSTGRESQL");
-	else if (type == MYSQL) return String("MYSQL");
-	else if (type == MARIADB) return String("MARIADB");
-	else if (type == SQLITE) return String("SQLITE");
-	else if (type == BDB) return String("BDB");
-	else if (type == MANGODB) return String("MANGODB");
-	else if (type == MEMCACHED) return String("MEMCACHED");
+	if (currenttype == POSTGRESQL) return String("POSTGRESQL");
+	else if (currenttype == MYSQL) return String("MYSQL");
+	else if (currenttype == MARIADB) return String("MARIADB");
+	else if (currenttype == SQLITE) return String("SQLITE");
+	else if (currenttype == BDB) return String("BDB");
+	else if (currenttype == MONGODB) return String("MONGODB");
+	else if (currenttype == MEMCACHED) return String("MEMCACHED");
 	return String("");
 }
 
@@ -529,6 +529,8 @@ Boolean UNIX_DatabaseSystem::isEnabled(DBTYPE type)
 		val = "mysql_enable";
 	else if (type == MARIADB)
 		val = "mariadb_enable";
+	else if (type == MONGODB)
+		val = "mongodb_enable";
 	else if (type == MEMCACHED)
 		val = "memcached_enable";
 	else 

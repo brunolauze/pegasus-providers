@@ -52,7 +52,7 @@ CIMInstance UNIX_DeviceFileProvider::constructInstance(
 	// Set path
 	inst.setPath(CIMObjectPath(String(""), // hostname
 			nameSpace,
-			CIMName("UNIX_DeviceFile"),
+			className,
 			constructKeyBindings(_p)));
 
 	//CIM_ManagedElement Properties
@@ -93,6 +93,8 @@ CIMInstance UNIX_DeviceFileProvider::constructInstance(
 	if (_p.getInUseCount(p)) inst.addProperty(p);
 
 	//CIM_DeviceFile Properties
+
+	if (className.equal("UNIX_DeviceFile")) return inst;
 
 	//CIM_UnixDeviceFile Properties
 	if (_p.getDeviceFileType(p)) inst.addProperty(p);
@@ -148,7 +150,8 @@ Array<CIMKeyBinding> UNIX_DeviceFileProvider::constructKeyBindings(const UNIX_De
 #define CLASS_IMPLEMENTATION UNIX_DeviceFile
 #define CLASS_IMPLEMENTATION_NAME "UNIX_DeviceFile"
 #define BASE_CLASS_NAME "CIM_UnixDeviceFile"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define BASE_BASE_CLASS_NAME "CIM_DeviceFile"
+#define NUMKEYS_CLASS_IMPLEMENTATION 6
 
 
 #include "UNIXProviderBase.hpp"

@@ -1,6 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/MessageLog/UNIX_MessageLog_FREEBSD.hpp">
+    <Files>
+      <File FileName="tests/UNIXProviders.Tests/UNIX_AccountFixture.cpp" Line="55" Column="3" />
+      <File FileName="tests/UNIXProviders.Tests/UNIX_MessageLogFixture.cpp" Line="67" Column="4" />
+      <File FileName="UNIXProviders/MessageLog/UNIX_MessageLog_FREEBSD.hpp" Line="1118" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/InstalledOS/UNIX_InstalledOS_FREEBSD.hpp" line="46" column="1" />

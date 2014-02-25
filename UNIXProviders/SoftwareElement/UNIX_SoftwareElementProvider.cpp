@@ -52,7 +52,7 @@ CIMInstance UNIX_SoftwareElementProvider::constructInstance(
 	// Set path
 	inst.setPath(CIMObjectPath(String(""), // hostname
 			nameSpace,
-			CIMName("UNIX_SoftwareElement"),
+			className,
 			constructKeyBindings(_p)));
 
 	//CIM_ManagedElement Properties

@@ -35,9 +35,8 @@
 #define UNIX_PROVIDER UNIX_DirectoryProvider
 #define CLASS_IMPLEMENTATION UNIX_Directory
 #define CLASS_IMPLEMENTATION_NAME "UNIX_Directory"
-#define BASE_CLASS_NAME "CIM_Directory"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
-
+#define BASE_CLASS_NAME "CIM_UnixDirectory"
+#define NUMKEYS_CLASS_IMPLEMENTATION 6
 
 #include "UNIXProviderBase.h"
 

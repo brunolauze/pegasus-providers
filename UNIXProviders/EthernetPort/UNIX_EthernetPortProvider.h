@@ -36,7 +36,7 @@
 #define CLASS_IMPLEMENTATION UNIX_EthernetPort
 #define CLASS_IMPLEMENTATION_NAME "UNIX_EthernetPort"
 #define BASE_CLASS_NAME "CIM_EthernetPort"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 4
 
 
 #include "UNIXProviderBase.h"

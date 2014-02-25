@@ -172,7 +172,7 @@ Array<CIMKeyBinding> UNIX_EthernetAdapterProvider::constructKeyBindings(const UN
 #define CLASS_IMPLEMENTATION_NAME "UNIX_EthernetAdapter"
 #define BASE_CLASS_NAME "CIM_EthernetAdapter"
 #define BASE_BASE_CLASS_CIM_NAME "CIM_NetworkAdapter"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 4
 
 #include "UNIXProviderBase.hpp"
 

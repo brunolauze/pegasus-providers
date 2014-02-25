@@ -167,7 +167,7 @@ Array<CIMKeyBinding> UNIX_DiskDriveProvider::constructKeyBindings(const UNIX_Dis
 #define CLASS_IMPLEMENTATION UNIX_DiskDrive
 #define CLASS_IMPLEMENTATION_NAME "UNIX_DiskDrive"
 #define BASE_CLASS_NAME "CIM_DiskDrive"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 4
 
 
 #include "UNIXProviderBase.hpp"

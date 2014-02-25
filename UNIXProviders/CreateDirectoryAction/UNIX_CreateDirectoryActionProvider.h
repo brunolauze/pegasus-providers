@@ -36,7 +36,7 @@
 #define CLASS_IMPLEMENTATION UNIX_CreateDirectoryAction
 #define CLASS_IMPLEMENTATION_NAME "UNIX_CreateDirectoryAction"
 #define BASE_CLASS_NAME "CIM_CreateDirectoryAction"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 6
 
 
 #include "UNIXProviderBase.h"

@@ -52,7 +52,7 @@ CIMInstance UNIX_ProcessProvider::constructInstance(
 	// Set path
 	inst.setPath(CIMObjectPath(String(""), // hostname
 			nameSpace,
-			CIMName("UNIX_Process"),
+			className,
 			constructKeyBindings(_p)));
 
 	//CIM_ManagedElement Properties
@@ -99,6 +99,8 @@ CIMInstance UNIX_ProcessProvider::constructInstance(
 	if (_p.getKernelModeTime(p)) inst.addProperty(p);
 	if (_p.getUserModeTime(p)) inst.addProperty(p);
 	if (_p.getWorkingSetSize(p)) inst.addProperty(p);
+
+	if (className.equal("CIM_Process")) return inst;
 
 	//CIM_UnixProcess Properties
 	if (_p.getParentProcessID(p)) inst.addProperty(p);
@@ -156,7 +158,8 @@ Array<CIMKeyBinding> UNIX_ProcessProvider::constructKeyBindings(const UNIX_Proce
 #define CLASS_IMPLEMENTATION UNIX_Process
 #define CLASS_IMPLEMENTATION_NAME "UNIX_Process"
 #define BASE_CLASS_NAME "CIM_UnixProcess"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define BASE_BASE_CLASS_NAME "CIM_Process"
+#define NUMKEYS_CLASS_IMPLEMENTATION 6
 
 
 #include "UNIXProviderBase.hpp"

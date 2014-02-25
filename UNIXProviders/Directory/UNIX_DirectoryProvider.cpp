@@ -93,7 +93,11 @@ CIMInstance UNIX_DirectoryProvider::constructInstance(
 	if (_p.getInUseCount(p)) inst.addProperty(p);
 
 	//CIM_Directory Properties
+	if (className.equal("CIM_Directory")) return inst;
 
+
+	//CIM_UnixDirectory Properties
+	if (_p.getFileSizeBits(p)) inst.addProperty(p);
 
 	return inst;
 }
@@ -138,8 +142,9 @@ Array<CIMKeyBinding> UNIX_DirectoryProvider::constructKeyBindings(const UNIX_Dir
 #define UNIX_PROVIDER_NAME "UNIX_DirectoryProvider"
 #define CLASS_IMPLEMENTATION UNIX_Directory
 #define CLASS_IMPLEMENTATION_NAME "UNIX_Directory"
-#define BASE_CLASS_NAME "CIM_Directory"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define BASE_CLASS_NAME "CIM_UnixDirectory"
+#define BASE_BASE_CLASS_NAME "CIM_Directory"
+#define NUMKEYS_CLASS_IMPLEMENTATION 6
 
 
 #include "UNIXProviderBase.hpp"

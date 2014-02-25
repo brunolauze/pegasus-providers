@@ -1,4 +1,4 @@
-//%LICENSE////////////////////////////////////////////////////////////////
+﻿//%LICENSE////////////////////////////////////////////////////////////////
 //
 // Licensed to The Open Group (TOG) under one or more contributor license
 // agreements.  Refer to the OpenPegasusNOTICE.txt file distributed with
@@ -26,23 +26,13 @@
 // SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 //////////////////////////////////////////////////////////////////////////
-//
-//%/////////////////////////////////////////////////////////////////////////
 
-
-#include "UNIX_UnixDirectory.h"
-
-#define UNIX_PROVIDER UNIX_UnixDirectoryProvider
-#define CLASS_IMPLEMENTATION UNIX_UnixDirectory
-#define CLASS_IMPLEMENTATION_NAME "UNIX_UnixDirectory"
-#define BASE_CLASS_NAME "CIM_UnixDirectory"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
-
-
-#include "UNIXProviderBase.h"
-
-#undef UNIX_PROVIDER
-#undef CLASS_IMPLEMENTATION
-#undef CLASS_IMPLEMENTATION_NAME
-#undef BASE_CLASS_NAME
-#undef NUMKEYS_CLASS_IMPLEMENTATION
+instance of PG_ProviderModule 
+{
+   Name = "UNIXProvidersModule";
+   Location = "UNIXProviders";
+   Vendor = "OpenPegasus";
+   Version = "2.4.0";
+   InterfaceType = "C++Default";
+   InterfaceVersion = "2.1.0";
+};

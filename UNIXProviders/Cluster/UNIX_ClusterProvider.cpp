@@ -136,7 +136,7 @@ Array<CIMKeyBinding> UNIX_ClusterProvider::constructKeyBindings(const UNIX_Clust
 #define CLASS_IMPLEMENTATION UNIX_Cluster
 #define CLASS_IMPLEMENTATION_NAME "UNIX_Cluster"
 #define BASE_CLASS_NAME "CIM_Cluster"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 2
 
 
 #include "UNIXProviderBase.hpp"

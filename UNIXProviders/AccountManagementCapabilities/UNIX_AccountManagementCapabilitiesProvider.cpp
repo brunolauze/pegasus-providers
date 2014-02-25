@@ -103,7 +103,7 @@ Array<CIMKeyBinding> UNIX_AccountManagementCapabilitiesProvider::constructKeyBin
 #define CLASS_IMPLEMENTATION UNIX_AccountManagementCapabilities
 #define CLASS_IMPLEMENTATION_NAME "UNIX_AccountManagementCapabilities"
 #define BASE_CLASS_NAME "CIM_AccountManagementCapabilities"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 1
 
 
 #include "UNIXProviderBase.hpp"
