@@ -120,7 +120,16 @@ public:
         
 	Array<CIMKeyBinding> constructKeyBindings(const CLASS_IMPLEMENTATION&) const;
 
+#ifdef __PROVIDER_PREPARE
+	__PROVIDER_PREPARE
+#endif
+
+#ifdef EXTRA_PROVIDER_DEFINES
+	EXTRA_PROVIDER_DEFINES
+#endif
+
 private:
+	CLASS_IMPLEMENTATION _p;
 	// private member to store handle passed by initialize()
     CIMOMHandle _cimomHandle;
     // checks the class passed by the cimom and throws
@@ -131,3 +140,5 @@ private:
 
 #undef UNIX_PROVIDER
 #undef CLASS_IMPLEMENTATION
+#undef __PROVIDER_PREPARE
+#undef EXTRA_PROVIDER_DEFINES

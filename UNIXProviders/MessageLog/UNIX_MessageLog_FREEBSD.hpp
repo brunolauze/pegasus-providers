@@ -111,6 +111,17 @@ Boolean UNIX_MessageLog::getInstanceID(CIMProperty &p) const
 
 String UNIX_MessageLog::getInstanceID() const
 {
+	return String(f->f_fullname);
+}
+
+Boolean UNIX_MessageLog::getCaption(CIMProperty &p) const
+{
+	p = CIMProperty(PROPERTY_CAPTION, getCaption());
+	return true;
+}
+
+String UNIX_MessageLog::getCaption() const
+{
 	if (f->f_filename != NULL)
 		return String (f->f_filename);
 	if (f->f_program != NULL)
@@ -122,19 +133,6 @@ String UNIX_MessageLog::getInstanceID() const
 	return String(typeName);
 }
 
-Boolean UNIX_MessageLog::getCaption(CIMProperty &p) const
-{
-	p = CIMProperty(PROPERTY_CAPTION, getCaption());
-	return true;
-}
-
-String UNIX_MessageLog::getCaption() const
-{
-	if (f->f_facility != NULL)
-		return String(f->f_facility);
-	return getInstanceID();
-}
-
 Boolean UNIX_MessageLog::getDescription(CIMProperty &p) const
 {
 	p = CIMProperty(PROPERTY_DESCRIPTION, getDescription());
@@ -143,6 +141,14 @@ Boolean UNIX_MessageLog::getDescription(CIMProperty &p) const
 
 String UNIX_MessageLog::getDescription() const
 {
+	String s;
+	s.append(f->f_facility);
+	s.append(" logs will be saved in ");
+	if (f->f_filename != NULL)
+		s.append(f->f_filename);
+	else 
+		s.append("<unknown>");
+
 	return String ("");
 }
 
@@ -512,7 +518,7 @@ Boolean UNIX_MessageLog::getHeaderFormat(CIMProperty &p) const
 
 String UNIX_MessageLog::getHeaderFormat() const
 {
-	return String ("");
+	return String ("[DATE] - [MESSAGE]");
 }
 
 Boolean UNIX_MessageLog::getMaxRecordSize(CIMProperty &p) const
@@ -545,7 +551,7 @@ Boolean UNIX_MessageLog::getRecordHeaderFormat(CIMProperty &p) const
 
 String UNIX_MessageLog::getRecordHeaderFormat() const
 {
-	return String ("");
+	return String ("[DATE] [MESSAGE]");
 }
 
 Boolean UNIX_MessageLog::getOtherPolicyDescription(CIMProperty &p) const
@@ -589,7 +595,7 @@ Boolean UNIX_MessageLog::getPercentageNearFull(CIMProperty &p) const
 
 Uint8 UNIX_MessageLog::getPercentageNearFull() const
 {
-	return Uint8(0);
+	return Uint8(100);
 }
 
 Boolean UNIX_MessageLog::getLastChange(CIMProperty &p) const
@@ -611,18 +617,7 @@ Boolean UNIX_MessageLog::getTimeOfLastChange(CIMProperty &p) const
 
 CIMDateTime UNIX_MessageLog::getTimeOfLastChange() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return getTimeOfLastStateChange();
 }
 
 Boolean UNIX_MessageLog::getRecordLastChanged(CIMProperty &p) const
@@ -705,6 +700,8 @@ void UNIX_MessageLog::cfline(const char *line, const char *prog, const char *hos
 
 	/* clear out file entry */
 	memset(f, 0, sizeof(*f));
+
+	f->f_fullname = line;
 
 	for (i = 0; i <= LOG_NFACILITIES; i++)
 		f->f_pmask[i] = INTERNAL_NOPRI;
@@ -929,7 +926,7 @@ void UNIX_MessageLog::cfline(const char *line, const char *prog, const char *hos
 
 	case '*':
 		f->f_type = F_WALL;
-		f->f_program = "system";
+		strcpy(f->f_program, "system");
 		break;
 
 	default:

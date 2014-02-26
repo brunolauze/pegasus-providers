@@ -353,6 +353,8 @@
     <Compile Include="ApplicationSystem\UNIX_ApplicationSystem_TRU64.cxx" />
     <Compile Include="ApplicationSystem\UNIX_ApplicationSystem_VMS.cxx" />
     <Compile Include="ApplicationSystem\UNIX_ApplicationSystem_ZOS.cxx" />
+    <Compile Include="Meta_Class\Meta_ClassProvider.cpp" />
+    <Compile Include="Meta_Class\Meta_Class.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CIMHelper.h" />
@@ -1547,6 +1549,9 @@
     <None Include="ApplicationSystem\UNIX_ApplicationSystem_WIN32.hpp" />
     <None Include="ApplicationSystem\UNIX_ApplicationSystem_ZOS.hpp" />
     <None Include="ApplicationSystem\UNIX_ApplicationSystem_ZOS.hxx" />
+    <None Include="Makefile" />
+    <None Include="Meta_Class\Meta_ClassProvider.h" />
+    <None Include="Meta_Class\Meta_Class.h" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Account\" />
@@ -1576,5 +1581,6 @@
     <Folder Include="DatabaseSystem\" />
     <Folder Include="DatabaseService\" />
     <Folder Include="ApplicationSystem\" />
+    <Folder Include="Meta_Class\" />
   </ItemGroup>
 </Project>

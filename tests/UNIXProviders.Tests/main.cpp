@@ -31,6 +31,7 @@
 
 #include <UNIX_Common.h>
 
+#include "Meta_ClassFixture.h"
 //#include "UNIX_AbstractIndicationSubscriptionFixture.h"
 //#include "UNIX_AcceptCredentialFromFixture.h"
 //#include "UNIX_AccessControlInformationFixture.h"
@@ -1129,6 +1130,9 @@ int main (int argc, char *argv[])
 		s.assign(CIMHelper::EmptyString);
 	else
 		s.assign(argv[1]);
+
+
+	if (IsTarget(s, "Meta_Class")) { Meta_ClassFixture meta_Class; meta_Class.Run(); }
 
 	//if (IsTarget(s, "UNIX_AbstractIndicationSubscription")) { UNIX_AbstractIndicationSubscriptionFixture abstractIndicationSubscription; abstractIndicationSubscription.Run(); }
 	//if (IsTarget(s, "UNIX_AcceptCredentialFrom")) { UNIX_AcceptCredentialFromFixture acceptCredentialFrom; acceptCredentialFrom.Run(); }

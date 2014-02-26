@@ -9,7 +9,7 @@
 #define MAXUNAMES       20      /* maximum number of user names */
 
 struct filed {
-        struct  filed *f_next;          /* next in linked list */
+        const char	*f_fullname;				/* full log entry name */
         short   f_type;                 /* entry type, see below */
         short   f_file;                 /* file descriptor */
         char    *f_filename;            /* target filename */
