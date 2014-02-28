@@ -63,6 +63,7 @@ public:
 	static char * ltrim(char *s);
 	static char * rtrim(char *s);
 	static char * trim(char *s);
+	static std::string encode(std::string str);
 	static String getHostName();
 	static String getOSName();
 	static String HostName;
@@ -94,7 +95,7 @@ public:
 
 
 private:
-
+	static std::string gethex( unsigned int c );
 };
 
 #endif

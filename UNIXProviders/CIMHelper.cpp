@@ -35,6 +35,7 @@
 #include <sys/utsname.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <sstream>
 
 String CIMHelper::getHostName()
 {
@@ -144,6 +145,33 @@ char * CIMHelper::trim(char *s)
 {
     return rtrim(ltrim(s));
 }
+
+std::string CIMHelper::gethex( unsigned int c )
+{
+    std::ostringstream stm ;
+    stm << '%' << std::hex << std::nouppercase << c ;
+    return stm.str();
+}
+
+/* Encode string to UTF-8 : OpenPegasus doesn't support non UTF-8 Characters */
+std::string CIMHelper::encode(std::string str)
+{
+	static std::string unreserved = " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_.,;:~+'`><}{|][!@#$%^&*()?\"/\\\t\n\r";
+	std::string r;
+	size_t neg = -1;
+    for (size_t i = 0; i < str.length(); i++ )
+    {
+      	char c = str.at(i);
+      	if (unreserved.find(c) != neg)
+        	r+=c;
+    	else
+        	r+=gethex(c);
+    }
+
+	return r;
+}
+
+
 
 #if defined(PEGASUS_OS_HPUX)
 

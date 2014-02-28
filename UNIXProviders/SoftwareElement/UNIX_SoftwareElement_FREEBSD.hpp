@@ -182,10 +182,26 @@ String UNIX_SoftwareElement::getPackageProperty(const char * name, ...) const
             sbuf = pkg_sbuf_printf(sbuf, name, pkg);
     if (sbuf && sbuf_len(sbuf) >= 0) {
             sbuf_finish(sbuf);
-            //cout << sbuf_data(sbuf) << endl;
-            char value[sbuf_len(sbuf)];
-            count = sprintf(value, "%s", sbuf_data(sbuf));
-        	val.assign(sbuf_data(sbuf));
+            if (strcmp(name, "%e") == 0)
+            {
+            	std::string tmp = CIMHelper::encode(sbuf_data(sbuf));
+            	val.assign(tmp.c_str());
+        	}
+            else 
+            {
+				val.assign(sbuf_data(sbuf));
+			}
+			/*
+            try 
+			{
+        		val.assign(value);
+        	}
+        	catch(Exception &e)
+        	{
+        		cout << e.getMessage() << endl;
+        		exit(0);
+        	}
+        	*/
     } else {
             count = -1;
             val.assign("");
@@ -243,7 +259,7 @@ Boolean UNIX_SoftwareElement::getDescription(CIMProperty &p) const
 
 String UNIX_SoftwareElement::getDescription() const
 {
-	if (remote) return String(""); //CRASHING...
+	//if (remote) return String(""); //CRASHING...
 	return getPackageProperty ("%e");
 }
 

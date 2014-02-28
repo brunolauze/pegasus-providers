@@ -47,22 +47,19 @@ void UNIX_SoftwareElementFixture::Run()
 	UNIX_SoftwareElement _p;
 
 	UNIX_SoftwareElementProvider _provider;
-	//Uint32 propertyCount;
+	Uint32 propertyCount;
 	CIMOMHandle omHandle;
 	_provider.initialize(omHandle);
 	_p.initialize();
 
 	for(int pIndex = 0; _p.load(pIndex); pIndex++)
 	{
-		/*
 		CIMInstance instance = _provider.constructInstance(className,
 					nameSpace,
 					_p);
 		
 		CIMObjectPath path = instance.getPath();
 		cout << path.toString() << endl;
-		*/
-		/*
 		propertyCount = instance.getPropertyCount();
 		for(Uint32 i = 0; i < propertyCount; i++)
 		{
@@ -73,7 +70,7 @@ void UNIX_SoftwareElementFixture::Run()
 		}
 		cout << "------------------------------------" << endl;
 		cout << endl;
-		*/
+
 	}
 
 	_p.finalize();
