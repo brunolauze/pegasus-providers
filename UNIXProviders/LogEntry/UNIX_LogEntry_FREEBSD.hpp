@@ -29,6 +29,7 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
+#include <sys/stat.h>
 
 UNIX_LogEntry::UNIX_LogEntry(void)
 {
@@ -47,7 +48,11 @@ Boolean UNIX_LogEntry::getInstanceID(CIMProperty &p) const
 
 String UNIX_LogEntry::getInstanceID() const
 {
-	return String ("");
+	String s;
+	s.append(getLogName());
+	s.append("_");
+	s.append("A");
+	return s;
 }
 
 Boolean UNIX_LogEntry::getCaption(CIMProperty &p) const
@@ -58,7 +63,7 @@ Boolean UNIX_LogEntry::getCaption(CIMProperty &p) const
 
 String UNIX_LogEntry::getCaption() const
 {
-	return String ("");
+	return msg;
 }
 
 Boolean UNIX_LogEntry::getDescription(CIMProperty &p) const
@@ -91,7 +96,7 @@ Boolean UNIX_LogEntry::getRecordFormat(CIMProperty &p) const
 
 String UNIX_LogEntry::getRecordFormat() const
 {
-	return String ("");
+	return String ("[DATE] [MESSAGE]");
 }
 
 Boolean UNIX_LogEntry::getRecordData(CIMProperty &p) const
@@ -102,7 +107,7 @@ Boolean UNIX_LogEntry::getRecordData(CIMProperty &p) const
 
 String UNIX_LogEntry::getRecordData() const
 {
-	return String ("");
+	return data;
 }
 
 Boolean UNIX_LogEntry::getLocale(CIMProperty &p) const
@@ -113,7 +118,7 @@ Boolean UNIX_LogEntry::getLocale(CIMProperty &p) const
 
 String UNIX_LogEntry::getLocale() const
 {
-	return String ("");
+	return String ("en-US");
 }
 
 Boolean UNIX_LogEntry::getPerceivedSeverity(CIMProperty &p) const
@@ -135,7 +140,7 @@ Boolean UNIX_LogEntry::getLogInstanceID(CIMProperty &p) const
 
 String UNIX_LogEntry::getLogInstanceID() const
 {
-	return String ("");
+	return logs.getInstanceID();
 }
 
 Boolean UNIX_LogEntry::getLogName(CIMProperty &p) const
@@ -146,7 +151,7 @@ Boolean UNIX_LogEntry::getLogName(CIMProperty &p) const
 
 String UNIX_LogEntry::getLogName() const
 {
-	return String ("");
+	return logs.getName();
 }
 
 Boolean UNIX_LogEntry::getRecordID(CIMProperty &p) const
@@ -168,18 +173,7 @@ Boolean UNIX_LogEntry::getCreationTimeStamp(CIMProperty &p) const
 
 CIMDateTime UNIX_LogEntry::getCreationTimeStamp() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return logDate;
 }
 
 Boolean UNIX_LogEntry::getMessageID(CIMProperty &p) const
@@ -201,7 +195,7 @@ Boolean UNIX_LogEntry::getMessage(CIMProperty &p) const
 
 String UNIX_LogEntry::getMessage() const
 {
-	return String ("");
+	return msg;
 }
 
 Boolean UNIX_LogEntry::getMessageArguments(CIMProperty &p) const
@@ -234,16 +228,80 @@ String UNIX_LogEntry::getOwningEntity() const
 
 Boolean UNIX_LogEntry::initialize()
 {
+	fp = NULL;
+	logs.initialize();
+	logIndex = 0;
 	return false;
 }
 
 Boolean UNIX_LogEntry::load(int &pIndex)
 {
-	return false;
+	if (fp == NULL)
+	{
+		if (logs.load(logIndex))
+		{
+			logIndex++;
+		}
+		else {
+			return false;
+		}
+	}
+	if (fp == NULL)
+	{
+		if (logs.getFileName(fileName))
+		{
+			if ((fp = fopen(fileName.getCString(), "r")) == NULL)
+			{
+				fileName.assign("");
+				fp = NULL;
+				return load(++pIndex);
+			}
+			else {
+				/* Since syslog doesn't store year in logs will use the year of the file */
+				/* Hopfully syslog change the file when it changes year */
+				struct tm* clock;			// create a time structure
+				struct stat attrib;			// create a file attribute structure
+				stat(fileName.getCString(), &attrib);		// get the attributes mnt
+				clock = gmtime(&(attrib.st_mtime));	// Get the last modified time and put it into the time structure
+				currentYear = clock->tm_year + 1900;
+			}
+		}
+		else {
+			fp == NULL;
+			return load(++pIndex);
+		}
+	}
+	char val[512];
+	if (fgets(val, sizeof(val), fp) != NULL)
+	{
+		//Parse Date from syslog
+		struct tm clock;
+		char *retc = strptime(val, "%b %d %H:%M:%S", &clock);
+		logDate = CIMDateTime(
+		currentYear,
+		clock.tm_mon + 1,
+		clock.tm_mday,
+		clock.tm_hour,
+		clock.tm_min,
+		clock.tm_sec,
+		0,0,
+		0);
+		data = String(val);
+		msg.assign(CIMHelper::trim(retc));
+		return true;
+	}
+	else 
+	{
+		fclose(fp);
+		fp = NULL;
+		return load(++pIndex);
+	}
 }
 
 Boolean UNIX_LogEntry::finalize()
 {
+	logIndex = 0;
+	logs.finalize();
 	return false;
 }
 

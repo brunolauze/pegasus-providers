@@ -1,14 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/SoftwareElement/UNIX_SoftwareElement_FREEBSD.hpp">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/MessageLog/UNIX_MessageLog_FREEBSD.hpp">
     <Files>
-      <File FileName="UNIXProviders/SoftwareElement/UNIX_SoftwareElement_FREEBSD.hpp" Line="546" Column="18" />
-      <File FileName="tests/UNIXProviders.Tests/UNIX_SoftwareElementFixture.cpp" Line="64" Column="5" />
-      <File FileName="tests/UNIXProviders.Tests/UNIX_SoftwareElementFixture.h" Line="1" Column="1" />
-      <File FileName="UNIXProviders/SoftwareElement/UNIX_SoftwareElementProvider.cpp" Line="51" Column="2" />
-      <File FileName="UNIXProviders/SoftwareElement/UNIX_SoftwareElementPrivate_FREEBSD.h" Line="8" Column="21" />
-      <File FileName="tests/UNIXProviders.Tests/UNIX_InstalledSoftwareElementFixture.cpp" Line="50" Column="23" />
-      <File FileName="UNIXProviders/InstalledSoftwareElement/UNIX_InstalledSoftwareElement_FREEBSD.hpp" Line="81" Column="16" />
+      <File FileName="UNIXProviders/LogEntry/UNIX_LogEntry_FREEBSD.hpp" Line="91" Column="34" />
+      <File FileName="tests/UNIXProviders.Tests/UNIX_LogEntryFixture.cpp" Line="59" Column="28" />
+      <File FileName="UNIXProviders/MessageLog/UNIX_MessageLog_FREEBSD.hpp" Line="716" Column="2" />
+      <File FileName="UNIXProviders/LogEntry/UNIX_LogEntryProvider.cpp" Line="59" Column="18" />
+      <File FileName="UNIXProviders/MessageLog/UNIX_MessageLogProvider.cpp" Line="64" Column="41" />
+      <File FileName="UNIXProviders/MessageLog/UNIX_MessageLogDeps_FREEBSD.h" Line="12" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

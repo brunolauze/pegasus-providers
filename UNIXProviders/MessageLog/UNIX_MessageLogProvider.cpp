@@ -47,13 +47,12 @@ CIMInstance UNIX_MessageLogProvider::constructInstance(
 {
 	CIMProperty p;
 	CIMInstance inst(className);
-
 	// Set path
 	inst.setPath(CIMObjectPath(String(""), // hostname
 			nameSpace,
 			className,
 			constructKeyBindings(_p)));	
-
+	
 	//CIM_ManagedElement Properties
 	if (_p.getInstanceID(p)) inst.addProperty(p);
 	if (_p.getCaption(p)) inst.addProperty(p);

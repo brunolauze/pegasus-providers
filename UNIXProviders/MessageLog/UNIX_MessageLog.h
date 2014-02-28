@@ -157,6 +157,10 @@ public:
 	virtual Boolean getCharacterSet(CIMProperty&) const;
 	virtual Uint16 getCharacterSet() const;
 
+#if defined(PEGASUS_OS_FREEBSD)
+	virtual Boolean getFileName(String&) const;
+#endif
+
 private:
 	CIMName currentScope;
 

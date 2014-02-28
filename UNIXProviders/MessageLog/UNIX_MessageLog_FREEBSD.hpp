@@ -111,7 +111,11 @@ Boolean UNIX_MessageLog::getInstanceID(CIMProperty &p) const
 
 String UNIX_MessageLog::getInstanceID() const
 {
-	return String(f->f_fullname);
+	if (f->f_fullname != NULL) 
+	{
+		return String(f->f_fullname);
+	}
+	return getCaption();
 }
 
 Boolean UNIX_MessageLog::getCaption(CIMProperty &p) const
@@ -415,7 +419,6 @@ Uint64 UNIX_MessageLog::getCurrentNumberOfRecords() const
 	FILE *fp;
 	long linecount = 0;
 	char val[512];
-	cout << "GOING TO COUNT: " << f->f_filename << endl;
 	if ((fp = fopen(f->f_filename, "r")) != NULL)
 	{
 		while (fgets(val, sizeof(val), fp) != NULL)
@@ -653,6 +656,17 @@ Uint16 UNIX_MessageLog::getCharacterSet() const
 	return Uint16(0);
 }
 
+Boolean UNIX_MessageLog::getFileName(String &s) const
+{
+	if (f->f_filename == NULL) return false;
+	//cout << "WOULD HAVE LOAD: " << f->f_filename << endl;
+	if (strcmp(f->f_filename, "*") == 0) return false;
+	if (strcmp(f->f_filename, _PATH_CONSOLE) == 0) return false;
+	if (access(f->f_filename, R_OK) != 0) return false;
+	s.assign(f->f_filename);
+	return true;
+}
+
 void  UNIX_MessageLog::logerror(const char *msg)
 {
 	//cout << msg << endl;
@@ -701,7 +715,7 @@ void UNIX_MessageLog::cfline(const char *line, const char *prog, const char *hos
 	/* clear out file entry */
 	memset(f, 0, sizeof(*f));
 
-	f->f_fullname = line;
+	snprintf(f->f_fullname, sizeof(f->f_fullname), "%s", line);
 
 	for (i = 0; i <= LOG_NFACILITIES; i++)
 		f->f_pmask[i] = INTERNAL_NOPRI;
@@ -926,6 +940,7 @@ void UNIX_MessageLog::cfline(const char *line, const char *prog, const char *hos
 
 	case '*':
 		f->f_type = F_WALL;
+		f->f_program = (char*)malloc(sizeof(char) * 8);
 		strcpy(f->f_program, "system");
 		break;
 
@@ -988,7 +1003,6 @@ Boolean UNIX_MessageLog::load(int &pIndex)
     char cline[LINE_MAX];
     char prog[NAME_MAX+1];
     char host[MAXHOSTNAMELEN];
-
 	f->f_filename = NULL;
 	/*
 	 *  Foreach line in the conf table, open that file.
@@ -997,6 +1011,7 @@ Boolean UNIX_MessageLog::load(int &pIndex)
 	(void)strlcpy(host, "*", sizeof(host));
 	(void)strlcpy(prog, "*", sizeof(prog));
 	if (fgets(cline, sizeof(cline), cf) != NULL) {
+
 		/*
 		 * check for end-of-section, comments, strip off trailing
 		 * spaces and newline character. #!prog is treated specially:
@@ -1061,7 +1076,7 @@ Boolean UNIX_MessageLog::load(int &pIndex)
 		}
 		for (i = strlen(cline) - 1; i >= 0 && isspace(cline[i]); i--)
 			cline[i] = '\0';
-
+		
 		cfline(cline, prog, host);
 		/*
 		if (f->f_program != NULL)

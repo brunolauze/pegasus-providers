@@ -37,7 +37,7 @@
         <Variable name="LD_LIBRARY_PATH" value="/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/bin/Debug:/usr/local/lib/pegasus/lib:/usr/local/lib:/usr/lib:/lib" />
       </EnvironmentVariables>
     </EnvironmentVariables>
-    <Commandlineparameters>UNIX_SoftwareElement</Commandlineparameters>
+    <Commandlineparameters>UNIX_LogEntry</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release</OutputPath>
@@ -74,6 +74,8 @@
     <Compile Include="UNIX_GroupFixture.cpp" />
     <Compile Include="UNIX_InstalledSoftwareElementFixture.cpp" />
     <Compile Include="UNIX_SystemBIOSFixture.cpp" />
+    <Compile Include="UNIX_LogEntryFixture.cpp" />
+    <Compile Include="UNIX_LogicalDiskFixture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CIMFixtureBase.h" />
@@ -102,5 +104,7 @@
     <None Include="UNIX_GroupFixture.h" />
     <None Include="UNIX_InstalledSoftwareElementFixture.h" />
     <None Include="UNIX_SystemBIOSFixture.h" />
+    <None Include="UNIX_LogEntryFixture.h" />
+    <None Include="UNIX_LogicalDiskFixture.h" />
   </ItemGroup>
 </Project>

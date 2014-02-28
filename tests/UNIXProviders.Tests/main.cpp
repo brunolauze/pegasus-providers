@@ -541,8 +541,8 @@
 //#include "UNIX_LocalizationCapabilitiesFixture.h"
 //#include "UNIX_LocallyManagedPublicKeyFixture.h"
 //#include "UNIX_LocationFixture.h"
-//#include "UNIX_LogEntryFixture.h"
-//#include "UNIX_LogicalDiskFixture.h"
+#include "UNIX_LogEntryFixture.h"
+#include "UNIX_LogicalDiskFixture.h"
 //#include "UNIX_LogicalDiskBasedOnPartitionFixture.h"
 //#include "UNIX_LogicalDiskBasedOnVolumeFixture.h"
 //#include "UNIX_LogicalDiskBasedOnVolumeSetFixture.h"
@@ -1643,8 +1643,8 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_LocalizationCapabilities")) { UNIX_LocalizationCapabilitiesFixture localizationCapabilities; localizationCapabilities.Run(); }
 	//if (IsTarget(s, "UNIX_LocallyManagedPublicKey")) { UNIX_LocallyManagedPublicKeyFixture locallyManagedPublicKey; locallyManagedPublicKey.Run(); }
 	//if (IsTarget(s, "UNIX_Location")) { UNIX_LocationFixture location; location.Run(); }
-	//if (IsTarget(s, "UNIX_LogEntry")) { UNIX_LogEntryFixture logEntry; logEntry.Run(); }
-	//if (IsTarget(s, "UNIX_LogicalDisk")) { UNIX_LogicalDiskFixture logicalDisk; logicalDisk.Run(); }
+	if (IsTarget(s, "UNIX_LogEntry")) { UNIX_LogEntryFixture logEntry; logEntry.Run(); }
+	if (IsTarget(s, "UNIX_LogicalDisk")) { UNIX_LogicalDiskFixture logicalDisk; logicalDisk.Run(); }
 	//if (IsTarget(s, "UNIX_LogicalDiskBasedOnPartition")) { UNIX_LogicalDiskBasedOnPartitionFixture logicalDiskBasedOnPartition; logicalDiskBasedOnPartition.Run(); }
 	//if (IsTarget(s, "UNIX_LogicalDiskBasedOnVolume")) { UNIX_LogicalDiskBasedOnVolumeFixture logicalDiskBasedOnVolume; logicalDiskBasedOnVolume.Run(); }
 	//if (IsTarget(s, "UNIX_LogicalDiskBasedOnVolumeSet")) { UNIX_LogicalDiskBasedOnVolumeSetFixture logicalDiskBasedOnVolumeSet; logicalDiskBasedOnVolumeSet.Run(); }

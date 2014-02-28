@@ -64,7 +64,6 @@ void UNIX_LogEntryFixture::Run()
 
 			CIMProperty propertyItem = instance.getProperty(i);
 			cout << "	Name: " << propertyItem.getName().getString() << " - Value: " << propertyItem.getValue().toString() << endl;
-
 		}
 		cout << "------------------------------------" << endl;
 		cout << endl;
