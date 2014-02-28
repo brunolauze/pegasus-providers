@@ -537,7 +537,7 @@
 //#include "UNIX_ListsInRoutingPolicyFixture.h"
 //#include "UNIX_LLDPEthernetPortFixture.h"
 //#include "UNIX_LLDPEthernetPortStatisticsFixture.h"
-//#include "UNIX_LocalFileSystemFixture.h"
+#include "UNIX_LocalFileSystemFixture.h"
 //#include "UNIX_LocalizationCapabilitiesFixture.h"
 //#include "UNIX_LocallyManagedPublicKeyFixture.h"
 //#include "UNIX_LocationFixture.h"
@@ -614,7 +614,7 @@
 //#include "UNIX_NextHopRouteFixture.h"
 //#include "UNIX_NextServiceFixture.h"
 //#include "UNIX_NextServiceAfterMeterFixture.h"
-//#include "UNIX_NFSFixture.h"
+#include "UNIX_NFSFixture.h"
 //#include "UNIX_NonVolatileStorageFixture.h"
 //#include "UNIX_NonWorkConservingSchedulingServiceFixture.h"
 //#include "UNIX_NotaryFixture.h"
@@ -835,7 +835,7 @@
 //#include "UNIX_RelatedStatisticsFixture.h"
 //#include "UNIX_RelatedTransparentBridgingServiceFixture.h"
 //#include "UNIX_RemoteAccessAvailableToElementFixture.h"
-//#include "UNIX_RemoteFileSystemFixture.h"
+#include "UNIX_RemoteFileSystemFixture.h"
 //#include "UNIX_RemotePortFixture.h"
 //#include "UNIX_RemoveDirectoryActionFixture.h"
 //#include "UNIX_RemoveFileActionFixture.h"
@@ -1027,7 +1027,6 @@
 #include "UNIX_DeviceFileFixture.h"
 //#include "UNIX_UnixDirectoryFixture.h"
 //#include "UNIX_FileFixture.h"
-//#include "UNIX_LocalFileSystemFixture.h"
 #include "UNIX_ProcessFixture.h"
 //#include "UNIX_ProcessStatisticalInformationFixture.h"
 //#include "UNIX_ProcessStatisticsFixture.h"
@@ -1639,7 +1638,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_ListsInRoutingPolicy")) { UNIX_ListsInRoutingPolicyFixture listsInRoutingPolicy; listsInRoutingPolicy.Run(); }
 	//if (IsTarget(s, "UNIX_LLDPEthernetPort")) { UNIX_LLDPEthernetPortFixture lLDPEthernetPort; lLDPEthernetPort.Run(); }
 	//if (IsTarget(s, "UNIX_LLDPEthernetPortStatistics")) { UNIX_LLDPEthernetPortStatisticsFixture lLDPEthernetPortStatistics; lLDPEthernetPortStatistics.Run(); }
-	//if (IsTarget(s, "UNIX_LocalFileSystem")) { UNIX_LocalFileSystemFixture localFileSystem; localFileSystem.Run(); }
+	if (IsTarget(s, "UNIX_LocalFileSystem")) { UNIX_LocalFileSystemFixture localFileSystem; localFileSystem.Run(); }
 	//if (IsTarget(s, "UNIX_LocalizationCapabilities")) { UNIX_LocalizationCapabilitiesFixture localizationCapabilities; localizationCapabilities.Run(); }
 	//if (IsTarget(s, "UNIX_LocallyManagedPublicKey")) { UNIX_LocallyManagedPublicKeyFixture locallyManagedPublicKey; locallyManagedPublicKey.Run(); }
 	//if (IsTarget(s, "UNIX_Location")) { UNIX_LocationFixture location; location.Run(); }
@@ -1716,7 +1715,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_NextHopRoute")) { UNIX_NextHopRouteFixture nextHopRoute; nextHopRoute.Run(); }
 	//if (IsTarget(s, "UNIX_NextService")) { UNIX_NextServiceFixture nextService; nextService.Run(); }
 	//if (IsTarget(s, "UNIX_NextServiceAfterMeter")) { UNIX_NextServiceAfterMeterFixture nextServiceAfterMeter; nextServiceAfterMeter.Run(); }
-	//if (IsTarget(s, "UNIX_NFS")) { UNIX_NFSFixture nFS; nFS.Run(); }
+	if (IsTarget(s, "UNIX_NFS")) { UNIX_NFSFixture nFS; nFS.Run(); }
 	//if (IsTarget(s, "UNIX_NonVolatileStorage")) { UNIX_NonVolatileStorageFixture nonVolatileStorage; nonVolatileStorage.Run(); }
 	//if (IsTarget(s, "UNIX_NonWorkConservingSchedulingService")) { UNIX_NonWorkConservingSchedulingServiceFixture nonWorkConservingSchedulingService; nonWorkConservingSchedulingService.Run(); }
 	//if (IsTarget(s, "UNIX_Notary")) { UNIX_NotaryFixture notary; notary.Run(); }
@@ -1937,7 +1936,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_RelatedStatistics")) { UNIX_RelatedStatisticsFixture relatedStatistics; relatedStatistics.Run(); }
 	//if (IsTarget(s, "UNIX_RelatedTransparentBridgingService")) { UNIX_RelatedTransparentBridgingServiceFixture relatedTransparentBridgingService; relatedTransparentBridgingService.Run(); }
 	//if (IsTarget(s, "UNIX_RemoteAccessAvailableToElement")) { UNIX_RemoteAccessAvailableToElementFixture remoteAccessAvailableToElement; remoteAccessAvailableToElement.Run(); }
-	//if (IsTarget(s, "UNIX_RemoteFileSystem")) { UNIX_RemoteFileSystemFixture remoteFileSystem; remoteFileSystem.Run(); }
+	if (IsTarget(s, "UNIX_RemoteFileSystem")) { UNIX_RemoteFileSystemFixture remoteFileSystem; remoteFileSystem.Run(); }
 	//if (IsTarget(s, "UNIX_RemotePort")) { UNIX_RemotePortFixture remotePort; remotePort.Run(); }
 	//if (IsTarget(s, "UNIX_RemoveDirectoryAction")) { UNIX_RemoveDirectoryActionFixture removeDirectoryAction; removeDirectoryAction.Run(); }
 	//if (IsTarget(s, "UNIX_RemoveFileAction")) { UNIX_RemoveFileActionFixture removeFileAction; removeFileAction.Run(); }
@@ -2129,7 +2128,6 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_DeviceFile")) { UNIX_DeviceFileFixture deviceFile; deviceFile.Run(); }
 	//if (IsTarget(s, "UNIX_UnixDirectory")) { UNIX_UnixDirectoryFixture unixDirectory; unixDirectory.Run(); }
 	//if (IsTarget(s, "UNIX_File")) { UNIX_FileFixture file; file.Run(); }
-	//if (IsTarget(s, "UNIX_LocalFileSystem")) { UNIX_LocalFileSystemFixture localFileSystem; localFileSystem.Run(); }
 	if (IsTarget(s, "UNIX_Process")) { UNIX_ProcessFixture process; process.Run(); }
 	//if (IsTarget(s, "UNIX_ProcessStatisticalInformation")) { UNIX_ProcessStatisticalInformationFixture processStatisticalInformation; processStatisticalInformation.Run(); }
 	//if (IsTarget(s, "UNIX_ProcessStatistics")) { UNIX_ProcessStatisticsFixture processStatistics; processStatistics.Run(); }

@@ -43,7 +43,7 @@ UNIX_RemoteFileSystemProvider::~UNIX_RemoteFileSystemProvider()
 CIMInstance UNIX_RemoteFileSystemProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_RemoteFileSystem &_p)
+	const UNIX_RemoteFileSystem &_p) const
 {
 	CIMProperty p;
 
@@ -111,7 +111,7 @@ CIMInstance UNIX_RemoteFileSystemProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_RemoteFileSystemProvider::constructKeyBindings(const UNIX_RemoteFileSystem& _p)
+Array<CIMKeyBinding> UNIX_RemoteFileSystemProvider::constructKeyBindings(const UNIX_RemoteFileSystem& _p) const
 
 {
 
@@ -145,7 +145,7 @@ Array<CIMKeyBinding> UNIX_RemoteFileSystemProvider::constructKeyBindings(const U
 #define CLASS_IMPLEMENTATION UNIX_RemoteFileSystem
 #define CLASS_IMPLEMENTATION_NAME "UNIX_RemoteFileSystem"
 #define BASE_CLASS_NAME "CIM_RemoteFileSystem"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 4
 
 
 #include "UNIXProviderBase.hpp"

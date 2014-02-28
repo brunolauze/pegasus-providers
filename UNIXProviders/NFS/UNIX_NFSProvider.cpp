@@ -43,7 +43,7 @@ UNIX_NFSProvider::~UNIX_NFSProvider()
 CIMInstance UNIX_NFSProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_NFS &_p)
+	const UNIX_NFS &_p) const
 {
 	CIMProperty p;
 
@@ -127,7 +127,7 @@ CIMInstance UNIX_NFSProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_NFSProvider::constructKeyBindings(const UNIX_NFS& _p)
+Array<CIMKeyBinding> UNIX_NFSProvider::constructKeyBindings(const UNIX_NFS& _p) const
 
 {
 
@@ -161,7 +161,7 @@ Array<CIMKeyBinding> UNIX_NFSProvider::constructKeyBindings(const UNIX_NFS& _p)
 #define CLASS_IMPLEMENTATION UNIX_NFS
 #define CLASS_IMPLEMENTATION_NAME "UNIX_NFS"
 #define BASE_CLASS_NAME "CIM_NFS"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 4
 
 
 #include "UNIXProviderBase.hpp"

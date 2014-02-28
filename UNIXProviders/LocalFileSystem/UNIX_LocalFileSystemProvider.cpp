@@ -43,7 +43,7 @@ UNIX_LocalFileSystemProvider::~UNIX_LocalFileSystemProvider()
 CIMInstance UNIX_LocalFileSystemProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_LocalFileSystem &_p)
+	const UNIX_LocalFileSystem &_p) const
 {
 	CIMProperty p;
 
@@ -116,7 +116,7 @@ CIMInstance UNIX_LocalFileSystemProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_LocalFileSystemProvider::constructKeyBindings(const UNIX_LocalFileSystem& _p)
+Array<CIMKeyBinding> UNIX_LocalFileSystemProvider::constructKeyBindings(const UNIX_LocalFileSystem& _p) const
 
 {
 
@@ -150,7 +150,7 @@ Array<CIMKeyBinding> UNIX_LocalFileSystemProvider::constructKeyBindings(const UN
 #define CLASS_IMPLEMENTATION UNIX_LocalFileSystem
 #define CLASS_IMPLEMENTATION_NAME "UNIX_LocalFileSystem"
 #define BASE_CLASS_NAME "CIM_UnixLocalFileSystem"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 4
 
 
 #include "UNIXProviderBase.hpp"

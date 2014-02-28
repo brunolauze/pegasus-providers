@@ -33,7 +33,7 @@
 #define __UNIX_REMOTEFILESYSTEM_H
 
 
-#include "CIM_FileSystem.h"
+#include "FileSystem/UNIX_FileSystem.h"
 
 #include "UNIX_RemoteFileSystemDeps.h"
 
@@ -41,7 +41,7 @@
 
 
 class UNIX_RemoteFileSystem :
-	public CIM_FileSystem
+	public UNIX_FileSystem
 {
 public:
 

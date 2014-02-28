@@ -537,7 +537,7 @@ Boolean UNIX_FileSystem::load(int &pIndex)
 
 Boolean UNIX_FileSystem::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_FileSystem::find(Array<CIMKeyBinding> &kbArray)

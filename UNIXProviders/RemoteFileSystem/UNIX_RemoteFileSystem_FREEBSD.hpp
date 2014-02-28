@@ -47,7 +47,7 @@ Boolean UNIX_RemoteFileSystem::getInstanceID(CIMProperty &p) const
 
 String UNIX_RemoteFileSystem::getInstanceID() const
 {
-	return String ("");
+	return UNIX_FileSystem::getInstanceID();
 }
 
 Boolean UNIX_RemoteFileSystem::getCaption(CIMProperty &p) const
@@ -58,7 +58,7 @@ Boolean UNIX_RemoteFileSystem::getCaption(CIMProperty &p) const
 
 String UNIX_RemoteFileSystem::getCaption() const
 {
-	return String ("");
+	return UNIX_FileSystem::getCaption();
 }
 
 Boolean UNIX_RemoteFileSystem::getDescription(CIMProperty &p) const
@@ -69,7 +69,7 @@ Boolean UNIX_RemoteFileSystem::getDescription(CIMProperty &p) const
 
 String UNIX_RemoteFileSystem::getDescription() const
 {
-	return String ("");
+	return UNIX_FileSystem::getDescription();
 }
 
 Boolean UNIX_RemoteFileSystem::getElementName(CIMProperty &p) const
@@ -91,18 +91,7 @@ Boolean UNIX_RemoteFileSystem::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_RemoteFileSystem::getInstallDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return UNIX_FileSystem::getInstallDate();
 }
 
 Boolean UNIX_RemoteFileSystem::getName(CIMProperty &p) const
@@ -113,7 +102,7 @@ Boolean UNIX_RemoteFileSystem::getName(CIMProperty &p) const
 
 String UNIX_RemoteFileSystem::getName() const
 {
-	return String ("");
+	return UNIX_FileSystem::getName();
 }
 
 Boolean UNIX_RemoteFileSystem::getOperationalStatus(CIMProperty &p) const
@@ -124,10 +113,7 @@ Boolean UNIX_RemoteFileSystem::getOperationalStatus(CIMProperty &p) const
 
 Array<Uint16> UNIX_RemoteFileSystem::getOperationalStatus() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
+	return UNIX_FileSystem::getOperationalStatus();
 
 }
 
@@ -139,10 +125,7 @@ Boolean UNIX_RemoteFileSystem::getStatusDescriptions(CIMProperty &p) const
 
 Array<String> UNIX_RemoteFileSystem::getStatusDescriptions() const
 {
-	Array<String> as;
-	
-
-	return as;
+	return UNIX_FileSystem::getStatusDescriptions();
 
 }
 
@@ -154,7 +137,7 @@ Boolean UNIX_RemoteFileSystem::getStatus(CIMProperty &p) const
 
 String UNIX_RemoteFileSystem::getStatus() const
 {
-	return String(DEFAULT_STATUS);
+	return UNIX_FileSystem::getStatus();
 }
 
 Boolean UNIX_RemoteFileSystem::getHealthState(CIMProperty &p) const
@@ -165,7 +148,7 @@ Boolean UNIX_RemoteFileSystem::getHealthState(CIMProperty &p) const
 
 Uint16 UNIX_RemoteFileSystem::getHealthState() const
 {
-	return Uint16(DEFAULT_HEALTH_STATE);
+	return UNIX_FileSystem::getHealthState();
 }
 
 Boolean UNIX_RemoteFileSystem::getCommunicationStatus(CIMProperty &p) const
@@ -176,7 +159,7 @@ Boolean UNIX_RemoteFileSystem::getCommunicationStatus(CIMProperty &p) const
 
 Uint16 UNIX_RemoteFileSystem::getCommunicationStatus() const
 {
-	return Uint16(0);
+	return UNIX_FileSystem::getCommunicationStatus();
 }
 
 Boolean UNIX_RemoteFileSystem::getDetailedStatus(CIMProperty &p) const
@@ -187,7 +170,7 @@ Boolean UNIX_RemoteFileSystem::getDetailedStatus(CIMProperty &p) const
 
 Uint16 UNIX_RemoteFileSystem::getDetailedStatus() const
 {
-	return Uint16(0);
+	return UNIX_FileSystem::getDetailedStatus();
 }
 
 Boolean UNIX_RemoteFileSystem::getOperatingStatus(CIMProperty &p) const
@@ -198,7 +181,7 @@ Boolean UNIX_RemoteFileSystem::getOperatingStatus(CIMProperty &p) const
 
 Uint16 UNIX_RemoteFileSystem::getOperatingStatus() const
 {
-	return Uint16(DEFAULT_OPERATING_STATUS);
+	return UNIX_FileSystem::getOperatingStatus();
 }
 
 Boolean UNIX_RemoteFileSystem::getPrimaryStatus(CIMProperty &p) const
@@ -209,7 +192,7 @@ Boolean UNIX_RemoteFileSystem::getPrimaryStatus(CIMProperty &p) const
 
 Uint16 UNIX_RemoteFileSystem::getPrimaryStatus() const
 {
-	return Uint16(DEFAULT_PRIMARY_STATUS);
+	return UNIX_FileSystem::getPrimaryStatus();
 }
 
 Boolean UNIX_RemoteFileSystem::getEnabledState(CIMProperty &p) const
@@ -220,7 +203,7 @@ Boolean UNIX_RemoteFileSystem::getEnabledState(CIMProperty &p) const
 
 Uint16 UNIX_RemoteFileSystem::getEnabledState() const
 {
-	return Uint16(DEFAULT_ENABLED_STATE);
+	return UNIX_FileSystem::getEnabledState();
 }
 
 Boolean UNIX_RemoteFileSystem::getOtherEnabledState(CIMProperty &p) const
@@ -231,7 +214,7 @@ Boolean UNIX_RemoteFileSystem::getOtherEnabledState(CIMProperty &p) const
 
 String UNIX_RemoteFileSystem::getOtherEnabledState() const
 {
-	return String ("");
+	return UNIX_FileSystem::getOtherEnabledState();
 }
 
 Boolean UNIX_RemoteFileSystem::getRequestedState(CIMProperty &p) const
@@ -242,7 +225,7 @@ Boolean UNIX_RemoteFileSystem::getRequestedState(CIMProperty &p) const
 
 Uint16 UNIX_RemoteFileSystem::getRequestedState() const
 {
-	return Uint16(0);
+	return UNIX_FileSystem::getRequestedState();
 }
 
 Boolean UNIX_RemoteFileSystem::getEnabledDefault(CIMProperty &p) const
@@ -253,7 +236,7 @@ Boolean UNIX_RemoteFileSystem::getEnabledDefault(CIMProperty &p) const
 
 Uint16 UNIX_RemoteFileSystem::getEnabledDefault() const
 {
-	return Uint16(0);
+	return UNIX_FileSystem::getEnabledDefault();
 }
 
 Boolean UNIX_RemoteFileSystem::getTimeOfLastStateChange(CIMProperty &p) const
@@ -264,18 +247,7 @@ Boolean UNIX_RemoteFileSystem::getTimeOfLastStateChange(CIMProperty &p) const
 
 CIMDateTime UNIX_RemoteFileSystem::getTimeOfLastStateChange() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return UNIX_FileSystem::getTimeOfLastStateChange();
 }
 
 Boolean UNIX_RemoteFileSystem::getAvailableRequestedStates(CIMProperty &p) const
@@ -286,11 +258,7 @@ Boolean UNIX_RemoteFileSystem::getAvailableRequestedStates(CIMProperty &p) const
 
 Array<Uint16> UNIX_RemoteFileSystem::getAvailableRequestedStates() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
-
+	return UNIX_FileSystem::getAvailableRequestedStates();
 }
 
 Boolean UNIX_RemoteFileSystem::getTransitioningToState(CIMProperty &p) const
@@ -301,7 +269,7 @@ Boolean UNIX_RemoteFileSystem::getTransitioningToState(CIMProperty &p) const
 
 Uint16 UNIX_RemoteFileSystem::getTransitioningToState() const
 {
-	return Uint16(0);
+	return UNIX_FileSystem::getTransitioningToState();
 }
 
 Boolean UNIX_RemoteFileSystem::getCSCreationClassName(CIMProperty &p) const
@@ -345,7 +313,7 @@ Boolean UNIX_RemoteFileSystem::getRoot(CIMProperty &p) const
 
 String UNIX_RemoteFileSystem::getRoot() const
 {
-	return String ("");
+	return UNIX_FileSystem::getRoot();
 }
 
 Boolean UNIX_RemoteFileSystem::getBlockSize(CIMProperty &p) const
@@ -356,7 +324,7 @@ Boolean UNIX_RemoteFileSystem::getBlockSize(CIMProperty &p) const
 
 Uint64 UNIX_RemoteFileSystem::getBlockSize() const
 {
-	return Uint64(0);
+	return UNIX_FileSystem::getBlockSize();
 }
 
 Boolean UNIX_RemoteFileSystem::getFileSystemSize(CIMProperty &p) const
@@ -367,7 +335,7 @@ Boolean UNIX_RemoteFileSystem::getFileSystemSize(CIMProperty &p) const
 
 Uint64 UNIX_RemoteFileSystem::getFileSystemSize() const
 {
-	return Uint64(0);
+	return UNIX_FileSystem::getFileSystemSize();
 }
 
 Boolean UNIX_RemoteFileSystem::getAvailableSpace(CIMProperty &p) const
@@ -378,7 +346,7 @@ Boolean UNIX_RemoteFileSystem::getAvailableSpace(CIMProperty &p) const
 
 Uint64 UNIX_RemoteFileSystem::getAvailableSpace() const
 {
-	return Uint64(0);
+	return UNIX_FileSystem::getAvailableSpace();
 }
 
 Boolean UNIX_RemoteFileSystem::getReadOnly(CIMProperty &p) const
@@ -389,7 +357,7 @@ Boolean UNIX_RemoteFileSystem::getReadOnly(CIMProperty &p) const
 
 Boolean UNIX_RemoteFileSystem::getReadOnly() const
 {
-	return Boolean(false);
+	return UNIX_FileSystem::getReadOnly();
 }
 
 Boolean UNIX_RemoteFileSystem::getEncryptionMethod(CIMProperty &p) const
@@ -400,7 +368,7 @@ Boolean UNIX_RemoteFileSystem::getEncryptionMethod(CIMProperty &p) const
 
 String UNIX_RemoteFileSystem::getEncryptionMethod() const
 {
-	return String ("");
+	return UNIX_FileSystem::getEncryptionMethod();
 }
 
 Boolean UNIX_RemoteFileSystem::getCompressionMethod(CIMProperty &p) const
@@ -411,7 +379,7 @@ Boolean UNIX_RemoteFileSystem::getCompressionMethod(CIMProperty &p) const
 
 String UNIX_RemoteFileSystem::getCompressionMethod() const
 {
-	return String ("");
+	return UNIX_FileSystem::getCompressionMethod();
 }
 
 Boolean UNIX_RemoteFileSystem::getCaseSensitive(CIMProperty &p) const
@@ -422,7 +390,7 @@ Boolean UNIX_RemoteFileSystem::getCaseSensitive(CIMProperty &p) const
 
 Boolean UNIX_RemoteFileSystem::getCaseSensitive() const
 {
-	return Boolean(false);
+	return UNIX_FileSystem::getCaseSensitive();
 }
 
 Boolean UNIX_RemoteFileSystem::getCasePreserved(CIMProperty &p) const
@@ -433,7 +401,7 @@ Boolean UNIX_RemoteFileSystem::getCasePreserved(CIMProperty &p) const
 
 Boolean UNIX_RemoteFileSystem::getCasePreserved() const
 {
-	return Boolean(false);
+	return UNIX_FileSystem::getCasePreserved();
 }
 
 Boolean UNIX_RemoteFileSystem::getCodeSet(CIMProperty &p) const
@@ -444,10 +412,7 @@ Boolean UNIX_RemoteFileSystem::getCodeSet(CIMProperty &p) const
 
 Array<Uint16> UNIX_RemoteFileSystem::getCodeSet() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
+	return UNIX_FileSystem::getCodeSet();
 
 }
 
@@ -459,7 +424,7 @@ Boolean UNIX_RemoteFileSystem::getMaxFileNameLength(CIMProperty &p) const
 
 Uint32 UNIX_RemoteFileSystem::getMaxFileNameLength() const
 {
-	return Uint32(0);
+	return UNIX_FileSystem::getMaxFileNameLength();
 }
 
 Boolean UNIX_RemoteFileSystem::getClusterSize(CIMProperty &p) const
@@ -470,7 +435,7 @@ Boolean UNIX_RemoteFileSystem::getClusterSize(CIMProperty &p) const
 
 Uint32 UNIX_RemoteFileSystem::getClusterSize() const
 {
-	return Uint32(0);
+	return UNIX_FileSystem::getClusterSize();
 }
 
 Boolean UNIX_RemoteFileSystem::getFileSystemType(CIMProperty &p) const
@@ -481,7 +446,7 @@ Boolean UNIX_RemoteFileSystem::getFileSystemType(CIMProperty &p) const
 
 String UNIX_RemoteFileSystem::getFileSystemType() const
 {
-	return String ("");
+	return UNIX_FileSystem::getFileSystemType();
 }
 
 Boolean UNIX_RemoteFileSystem::getPersistenceType(CIMProperty &p) const
@@ -492,7 +457,7 @@ Boolean UNIX_RemoteFileSystem::getPersistenceType(CIMProperty &p) const
 
 Uint16 UNIX_RemoteFileSystem::getPersistenceType() const
 {
-	return Uint16(0);
+	return UNIX_FileSystem::getPersistenceType();
 }
 
 Boolean UNIX_RemoteFileSystem::getOtherPersistenceType(CIMProperty &p) const
@@ -503,7 +468,7 @@ Boolean UNIX_RemoteFileSystem::getOtherPersistenceType(CIMProperty &p) const
 
 String UNIX_RemoteFileSystem::getOtherPersistenceType() const
 {
-	return String ("");
+	return UNIX_FileSystem::getOtherPersistenceType();
 }
 
 Boolean UNIX_RemoteFileSystem::getNumberOfFiles(CIMProperty &p) const
@@ -514,24 +479,32 @@ Boolean UNIX_RemoteFileSystem::getNumberOfFiles(CIMProperty &p) const
 
 Uint64 UNIX_RemoteFileSystem::getNumberOfFiles() const
 {
-	return Uint64(0);
+	return UNIX_FileSystem::getNumberOfFiles();
 }
 
 
 
 Boolean UNIX_RemoteFileSystem::initialize()
 {
-	return false;
+	return UNIX_FileSystem::initialize();
 }
 
 Boolean UNIX_RemoteFileSystem::load(int &pIndex)
 {
+	if (UNIX_FileSystem::load(pIndex))
+	{
+		if (String::equalNoCase(getFileSystemType(), "nfs"))
+		{
+			return true;
+		}
+		else { return load(++pIndex); }
+	}
 	return false;
 }
 
 Boolean UNIX_RemoteFileSystem::finalize()
 {
-	return false;
+	return UNIX_FileSystem::finalize();
 }
 
 Boolean UNIX_RemoteFileSystem::find(Array<CIMKeyBinding> &kbArray)

@@ -47,7 +47,7 @@ Boolean UNIX_NFS::getInstanceID(CIMProperty &p) const
 
 String UNIX_NFS::getInstanceID() const
 {
-	return String ("");
+	return UNIX_RemoteFileSystem::getInstanceID();
 }
 
 Boolean UNIX_NFS::getCaption(CIMProperty &p) const
@@ -58,7 +58,7 @@ Boolean UNIX_NFS::getCaption(CIMProperty &p) const
 
 String UNIX_NFS::getCaption() const
 {
-	return String ("");
+	return UNIX_RemoteFileSystem::getCaption();
 }
 
 Boolean UNIX_NFS::getDescription(CIMProperty &p) const
@@ -69,7 +69,7 @@ Boolean UNIX_NFS::getDescription(CIMProperty &p) const
 
 String UNIX_NFS::getDescription() const
 {
-	return String ("");
+	return UNIX_RemoteFileSystem::getDescription();
 }
 
 Boolean UNIX_NFS::getElementName(CIMProperty &p) const
@@ -80,7 +80,7 @@ Boolean UNIX_NFS::getElementName(CIMProperty &p) const
 
 String UNIX_NFS::getElementName() const
 {
-	return String("NFS");
+	return String("RemoteFileSystem");
 }
 
 Boolean UNIX_NFS::getInstallDate(CIMProperty &p) const
@@ -91,18 +91,7 @@ Boolean UNIX_NFS::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_NFS::getInstallDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return UNIX_RemoteFileSystem::getInstallDate();
 }
 
 Boolean UNIX_NFS::getName(CIMProperty &p) const
@@ -113,7 +102,7 @@ Boolean UNIX_NFS::getName(CIMProperty &p) const
 
 String UNIX_NFS::getName() const
 {
-	return String ("");
+	return UNIX_RemoteFileSystem::getName();
 }
 
 Boolean UNIX_NFS::getOperationalStatus(CIMProperty &p) const
@@ -124,10 +113,7 @@ Boolean UNIX_NFS::getOperationalStatus(CIMProperty &p) const
 
 Array<Uint16> UNIX_NFS::getOperationalStatus() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
+	return UNIX_RemoteFileSystem::getOperationalStatus();
 
 }
 
@@ -139,10 +125,7 @@ Boolean UNIX_NFS::getStatusDescriptions(CIMProperty &p) const
 
 Array<String> UNIX_NFS::getStatusDescriptions() const
 {
-	Array<String> as;
-	
-
-	return as;
+	return UNIX_RemoteFileSystem::getStatusDescriptions();
 
 }
 
@@ -154,7 +137,7 @@ Boolean UNIX_NFS::getStatus(CIMProperty &p) const
 
 String UNIX_NFS::getStatus() const
 {
-	return String(DEFAULT_STATUS);
+	return UNIX_RemoteFileSystem::getStatus();
 }
 
 Boolean UNIX_NFS::getHealthState(CIMProperty &p) const
@@ -165,7 +148,7 @@ Boolean UNIX_NFS::getHealthState(CIMProperty &p) const
 
 Uint16 UNIX_NFS::getHealthState() const
 {
-	return Uint16(DEFAULT_HEALTH_STATE);
+	return UNIX_RemoteFileSystem::getHealthState();
 }
 
 Boolean UNIX_NFS::getCommunicationStatus(CIMProperty &p) const
@@ -176,7 +159,7 @@ Boolean UNIX_NFS::getCommunicationStatus(CIMProperty &p) const
 
 Uint16 UNIX_NFS::getCommunicationStatus() const
 {
-	return Uint16(0);
+	return UNIX_RemoteFileSystem::getCommunicationStatus();
 }
 
 Boolean UNIX_NFS::getDetailedStatus(CIMProperty &p) const
@@ -187,7 +170,7 @@ Boolean UNIX_NFS::getDetailedStatus(CIMProperty &p) const
 
 Uint16 UNIX_NFS::getDetailedStatus() const
 {
-	return Uint16(0);
+	return UNIX_RemoteFileSystem::getDetailedStatus();
 }
 
 Boolean UNIX_NFS::getOperatingStatus(CIMProperty &p) const
@@ -198,7 +181,7 @@ Boolean UNIX_NFS::getOperatingStatus(CIMProperty &p) const
 
 Uint16 UNIX_NFS::getOperatingStatus() const
 {
-	return Uint16(DEFAULT_OPERATING_STATUS);
+	return UNIX_RemoteFileSystem::getOperatingStatus();
 }
 
 Boolean UNIX_NFS::getPrimaryStatus(CIMProperty &p) const
@@ -209,7 +192,7 @@ Boolean UNIX_NFS::getPrimaryStatus(CIMProperty &p) const
 
 Uint16 UNIX_NFS::getPrimaryStatus() const
 {
-	return Uint16(DEFAULT_PRIMARY_STATUS);
+	return UNIX_RemoteFileSystem::getPrimaryStatus();
 }
 
 Boolean UNIX_NFS::getEnabledState(CIMProperty &p) const
@@ -220,7 +203,7 @@ Boolean UNIX_NFS::getEnabledState(CIMProperty &p) const
 
 Uint16 UNIX_NFS::getEnabledState() const
 {
-	return Uint16(DEFAULT_ENABLED_STATE);
+	return UNIX_RemoteFileSystem::getEnabledState();
 }
 
 Boolean UNIX_NFS::getOtherEnabledState(CIMProperty &p) const
@@ -231,7 +214,7 @@ Boolean UNIX_NFS::getOtherEnabledState(CIMProperty &p) const
 
 String UNIX_NFS::getOtherEnabledState() const
 {
-	return String ("");
+	return UNIX_RemoteFileSystem::getOtherEnabledState();
 }
 
 Boolean UNIX_NFS::getRequestedState(CIMProperty &p) const
@@ -242,7 +225,7 @@ Boolean UNIX_NFS::getRequestedState(CIMProperty &p) const
 
 Uint16 UNIX_NFS::getRequestedState() const
 {
-	return Uint16(0);
+	return UNIX_RemoteFileSystem::getRequestedState();
 }
 
 Boolean UNIX_NFS::getEnabledDefault(CIMProperty &p) const
@@ -253,7 +236,7 @@ Boolean UNIX_NFS::getEnabledDefault(CIMProperty &p) const
 
 Uint16 UNIX_NFS::getEnabledDefault() const
 {
-	return Uint16(0);
+	return UNIX_RemoteFileSystem::getEnabledDefault();
 }
 
 Boolean UNIX_NFS::getTimeOfLastStateChange(CIMProperty &p) const
@@ -264,18 +247,7 @@ Boolean UNIX_NFS::getTimeOfLastStateChange(CIMProperty &p) const
 
 CIMDateTime UNIX_NFS::getTimeOfLastStateChange() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return UNIX_RemoteFileSystem::getTimeOfLastStateChange();
 }
 
 Boolean UNIX_NFS::getAvailableRequestedStates(CIMProperty &p) const
@@ -286,11 +258,7 @@ Boolean UNIX_NFS::getAvailableRequestedStates(CIMProperty &p) const
 
 Array<Uint16> UNIX_NFS::getAvailableRequestedStates() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
-
+	return UNIX_RemoteFileSystem::getAvailableRequestedStates();
 }
 
 Boolean UNIX_NFS::getTransitioningToState(CIMProperty &p) const
@@ -301,7 +269,7 @@ Boolean UNIX_NFS::getTransitioningToState(CIMProperty &p) const
 
 Uint16 UNIX_NFS::getTransitioningToState() const
 {
-	return Uint16(0);
+	return UNIX_RemoteFileSystem::getTransitioningToState();
 }
 
 Boolean UNIX_NFS::getCSCreationClassName(CIMProperty &p) const
@@ -345,7 +313,7 @@ Boolean UNIX_NFS::getRoot(CIMProperty &p) const
 
 String UNIX_NFS::getRoot() const
 {
-	return String ("");
+	return UNIX_RemoteFileSystem::getRoot();
 }
 
 Boolean UNIX_NFS::getBlockSize(CIMProperty &p) const
@@ -356,7 +324,7 @@ Boolean UNIX_NFS::getBlockSize(CIMProperty &p) const
 
 Uint64 UNIX_NFS::getBlockSize() const
 {
-	return Uint64(0);
+	return UNIX_RemoteFileSystem::getBlockSize();
 }
 
 Boolean UNIX_NFS::getFileSystemSize(CIMProperty &p) const
@@ -367,7 +335,7 @@ Boolean UNIX_NFS::getFileSystemSize(CIMProperty &p) const
 
 Uint64 UNIX_NFS::getFileSystemSize() const
 {
-	return Uint64(0);
+	return UNIX_RemoteFileSystem::getFileSystemSize();
 }
 
 Boolean UNIX_NFS::getAvailableSpace(CIMProperty &p) const
@@ -378,7 +346,7 @@ Boolean UNIX_NFS::getAvailableSpace(CIMProperty &p) const
 
 Uint64 UNIX_NFS::getAvailableSpace() const
 {
-	return Uint64(0);
+	return UNIX_RemoteFileSystem::getAvailableSpace();
 }
 
 Boolean UNIX_NFS::getReadOnly(CIMProperty &p) const
@@ -389,7 +357,7 @@ Boolean UNIX_NFS::getReadOnly(CIMProperty &p) const
 
 Boolean UNIX_NFS::getReadOnly() const
 {
-	return Boolean(false);
+	return UNIX_RemoteFileSystem::getReadOnly();
 }
 
 Boolean UNIX_NFS::getEncryptionMethod(CIMProperty &p) const
@@ -400,7 +368,7 @@ Boolean UNIX_NFS::getEncryptionMethod(CIMProperty &p) const
 
 String UNIX_NFS::getEncryptionMethod() const
 {
-	return String ("");
+	return UNIX_RemoteFileSystem::getEncryptionMethod();
 }
 
 Boolean UNIX_NFS::getCompressionMethod(CIMProperty &p) const
@@ -411,7 +379,7 @@ Boolean UNIX_NFS::getCompressionMethod(CIMProperty &p) const
 
 String UNIX_NFS::getCompressionMethod() const
 {
-	return String ("");
+	return UNIX_RemoteFileSystem::getCompressionMethod();
 }
 
 Boolean UNIX_NFS::getCaseSensitive(CIMProperty &p) const
@@ -422,7 +390,7 @@ Boolean UNIX_NFS::getCaseSensitive(CIMProperty &p) const
 
 Boolean UNIX_NFS::getCaseSensitive() const
 {
-	return Boolean(false);
+	return UNIX_RemoteFileSystem::getCaseSensitive();
 }
 
 Boolean UNIX_NFS::getCasePreserved(CIMProperty &p) const
@@ -433,7 +401,7 @@ Boolean UNIX_NFS::getCasePreserved(CIMProperty &p) const
 
 Boolean UNIX_NFS::getCasePreserved() const
 {
-	return Boolean(false);
+	return UNIX_RemoteFileSystem::getCasePreserved();
 }
 
 Boolean UNIX_NFS::getCodeSet(CIMProperty &p) const
@@ -444,10 +412,7 @@ Boolean UNIX_NFS::getCodeSet(CIMProperty &p) const
 
 Array<Uint16> UNIX_NFS::getCodeSet() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
+	return UNIX_RemoteFileSystem::getCodeSet();
 
 }
 
@@ -459,7 +424,7 @@ Boolean UNIX_NFS::getMaxFileNameLength(CIMProperty &p) const
 
 Uint32 UNIX_NFS::getMaxFileNameLength() const
 {
-	return Uint32(0);
+	return UNIX_RemoteFileSystem::getMaxFileNameLength();
 }
 
 Boolean UNIX_NFS::getClusterSize(CIMProperty &p) const
@@ -470,7 +435,7 @@ Boolean UNIX_NFS::getClusterSize(CIMProperty &p) const
 
 Uint32 UNIX_NFS::getClusterSize() const
 {
-	return Uint32(0);
+	return UNIX_RemoteFileSystem::getClusterSize();
 }
 
 Boolean UNIX_NFS::getFileSystemType(CIMProperty &p) const
@@ -481,7 +446,7 @@ Boolean UNIX_NFS::getFileSystemType(CIMProperty &p) const
 
 String UNIX_NFS::getFileSystemType() const
 {
-	return String ("");
+	return UNIX_RemoteFileSystem::getFileSystemType();
 }
 
 Boolean UNIX_NFS::getPersistenceType(CIMProperty &p) const
@@ -492,7 +457,7 @@ Boolean UNIX_NFS::getPersistenceType(CIMProperty &p) const
 
 Uint16 UNIX_NFS::getPersistenceType() const
 {
-	return Uint16(0);
+	return UNIX_RemoteFileSystem::getPersistenceType();
 }
 
 Boolean UNIX_NFS::getOtherPersistenceType(CIMProperty &p) const
@@ -503,7 +468,7 @@ Boolean UNIX_NFS::getOtherPersistenceType(CIMProperty &p) const
 
 String UNIX_NFS::getOtherPersistenceType() const
 {
-	return String ("");
+	return UNIX_RemoteFileSystem::getOtherPersistenceType();
 }
 
 Boolean UNIX_NFS::getNumberOfFiles(CIMProperty &p) const
@@ -514,7 +479,7 @@ Boolean UNIX_NFS::getNumberOfFiles(CIMProperty &p) const
 
 Uint64 UNIX_NFS::getNumberOfFiles() const
 {
-	return Uint64(0);
+	return UNIX_RemoteFileSystem::getNumberOfFiles();
 }
 
 Boolean UNIX_NFS::getHardMount(CIMProperty &p) const
@@ -672,20 +637,27 @@ Uint16 UNIX_NFS::getAttributeCachingForDirectoriesMax() const
 }
 
 
-
 Boolean UNIX_NFS::initialize()
 {
-	return false;
+	return UNIX_RemoteFileSystem::initialize();
 }
 
 Boolean UNIX_NFS::load(int &pIndex)
 {
+	if (UNIX_RemoteFileSystem::load(pIndex))
+	{
+		if (String::equalNoCase(getFileSystemType(), "nfs"))
+		{
+			return true;
+		}
+		else { return load(++pIndex); }
+	}
 	return false;
 }
 
 Boolean UNIX_NFS::finalize()
 {
-	return false;
+	return UNIX_RemoteFileSystem::finalize();
 }
 
 Boolean UNIX_NFS::find(Array<CIMKeyBinding> &kbArray)

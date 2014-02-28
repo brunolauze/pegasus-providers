@@ -47,7 +47,7 @@ Boolean UNIX_LocalFileSystem::getInstanceID(CIMProperty &p) const
 
 String UNIX_LocalFileSystem::getInstanceID() const
 {
-	return String ("");
+	return UNIX_FileSystem::getInstanceID();
 }
 
 Boolean UNIX_LocalFileSystem::getCaption(CIMProperty &p) const
@@ -58,7 +58,7 @@ Boolean UNIX_LocalFileSystem::getCaption(CIMProperty &p) const
 
 String UNIX_LocalFileSystem::getCaption() const
 {
-	return String ("");
+	return UNIX_FileSystem::getCaption();
 }
 
 Boolean UNIX_LocalFileSystem::getDescription(CIMProperty &p) const
@@ -69,7 +69,7 @@ Boolean UNIX_LocalFileSystem::getDescription(CIMProperty &p) const
 
 String UNIX_LocalFileSystem::getDescription() const
 {
-	return String ("");
+	return UNIX_FileSystem::getDescription();
 }
 
 Boolean UNIX_LocalFileSystem::getElementName(CIMProperty &p) const
@@ -80,7 +80,7 @@ Boolean UNIX_LocalFileSystem::getElementName(CIMProperty &p) const
 
 String UNIX_LocalFileSystem::getElementName() const
 {
-	return String("LocalFileSystem");
+	return String("RemoteFileSystem");
 }
 
 Boolean UNIX_LocalFileSystem::getInstallDate(CIMProperty &p) const
@@ -91,18 +91,7 @@ Boolean UNIX_LocalFileSystem::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_LocalFileSystem::getInstallDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return UNIX_FileSystem::getInstallDate();
 }
 
 Boolean UNIX_LocalFileSystem::getName(CIMProperty &p) const
@@ -113,7 +102,7 @@ Boolean UNIX_LocalFileSystem::getName(CIMProperty &p) const
 
 String UNIX_LocalFileSystem::getName() const
 {
-	return String ("");
+	return UNIX_FileSystem::getName();
 }
 
 Boolean UNIX_LocalFileSystem::getOperationalStatus(CIMProperty &p) const
@@ -124,10 +113,7 @@ Boolean UNIX_LocalFileSystem::getOperationalStatus(CIMProperty &p) const
 
 Array<Uint16> UNIX_LocalFileSystem::getOperationalStatus() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
+	return UNIX_FileSystem::getOperationalStatus();
 
 }
 
@@ -139,10 +125,7 @@ Boolean UNIX_LocalFileSystem::getStatusDescriptions(CIMProperty &p) const
 
 Array<String> UNIX_LocalFileSystem::getStatusDescriptions() const
 {
-	Array<String> as;
-	
-
-	return as;
+	return UNIX_FileSystem::getStatusDescriptions();
 
 }
 
@@ -154,7 +137,7 @@ Boolean UNIX_LocalFileSystem::getStatus(CIMProperty &p) const
 
 String UNIX_LocalFileSystem::getStatus() const
 {
-	return String(DEFAULT_STATUS);
+	return UNIX_FileSystem::getStatus();
 }
 
 Boolean UNIX_LocalFileSystem::getHealthState(CIMProperty &p) const
@@ -165,7 +148,7 @@ Boolean UNIX_LocalFileSystem::getHealthState(CIMProperty &p) const
 
 Uint16 UNIX_LocalFileSystem::getHealthState() const
 {
-	return Uint16(DEFAULT_HEALTH_STATE);
+	return UNIX_FileSystem::getHealthState();
 }
 
 Boolean UNIX_LocalFileSystem::getCommunicationStatus(CIMProperty &p) const
@@ -176,7 +159,7 @@ Boolean UNIX_LocalFileSystem::getCommunicationStatus(CIMProperty &p) const
 
 Uint16 UNIX_LocalFileSystem::getCommunicationStatus() const
 {
-	return Uint16(0);
+	return UNIX_FileSystem::getCommunicationStatus();
 }
 
 Boolean UNIX_LocalFileSystem::getDetailedStatus(CIMProperty &p) const
@@ -187,7 +170,7 @@ Boolean UNIX_LocalFileSystem::getDetailedStatus(CIMProperty &p) const
 
 Uint16 UNIX_LocalFileSystem::getDetailedStatus() const
 {
-	return Uint16(0);
+	return UNIX_FileSystem::getDetailedStatus();
 }
 
 Boolean UNIX_LocalFileSystem::getOperatingStatus(CIMProperty &p) const
@@ -198,7 +181,7 @@ Boolean UNIX_LocalFileSystem::getOperatingStatus(CIMProperty &p) const
 
 Uint16 UNIX_LocalFileSystem::getOperatingStatus() const
 {
-	return Uint16(DEFAULT_OPERATING_STATUS);
+	return UNIX_FileSystem::getOperatingStatus();
 }
 
 Boolean UNIX_LocalFileSystem::getPrimaryStatus(CIMProperty &p) const
@@ -209,7 +192,7 @@ Boolean UNIX_LocalFileSystem::getPrimaryStatus(CIMProperty &p) const
 
 Uint16 UNIX_LocalFileSystem::getPrimaryStatus() const
 {
-	return Uint16(DEFAULT_PRIMARY_STATUS);
+	return UNIX_FileSystem::getPrimaryStatus();
 }
 
 Boolean UNIX_LocalFileSystem::getEnabledState(CIMProperty &p) const
@@ -220,7 +203,7 @@ Boolean UNIX_LocalFileSystem::getEnabledState(CIMProperty &p) const
 
 Uint16 UNIX_LocalFileSystem::getEnabledState() const
 {
-	return Uint16(DEFAULT_ENABLED_STATE);
+	return UNIX_FileSystem::getEnabledState();
 }
 
 Boolean UNIX_LocalFileSystem::getOtherEnabledState(CIMProperty &p) const
@@ -231,7 +214,7 @@ Boolean UNIX_LocalFileSystem::getOtherEnabledState(CIMProperty &p) const
 
 String UNIX_LocalFileSystem::getOtherEnabledState() const
 {
-	return String ("");
+	return UNIX_FileSystem::getOtherEnabledState();
 }
 
 Boolean UNIX_LocalFileSystem::getRequestedState(CIMProperty &p) const
@@ -242,7 +225,7 @@ Boolean UNIX_LocalFileSystem::getRequestedState(CIMProperty &p) const
 
 Uint16 UNIX_LocalFileSystem::getRequestedState() const
 {
-	return Uint16(0);
+	return UNIX_FileSystem::getRequestedState();
 }
 
 Boolean UNIX_LocalFileSystem::getEnabledDefault(CIMProperty &p) const
@@ -253,7 +236,7 @@ Boolean UNIX_LocalFileSystem::getEnabledDefault(CIMProperty &p) const
 
 Uint16 UNIX_LocalFileSystem::getEnabledDefault() const
 {
-	return Uint16(0);
+	return UNIX_FileSystem::getEnabledDefault();
 }
 
 Boolean UNIX_LocalFileSystem::getTimeOfLastStateChange(CIMProperty &p) const
@@ -264,18 +247,7 @@ Boolean UNIX_LocalFileSystem::getTimeOfLastStateChange(CIMProperty &p) const
 
 CIMDateTime UNIX_LocalFileSystem::getTimeOfLastStateChange() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return UNIX_FileSystem::getTimeOfLastStateChange();
 }
 
 Boolean UNIX_LocalFileSystem::getAvailableRequestedStates(CIMProperty &p) const
@@ -286,11 +258,7 @@ Boolean UNIX_LocalFileSystem::getAvailableRequestedStates(CIMProperty &p) const
 
 Array<Uint16> UNIX_LocalFileSystem::getAvailableRequestedStates() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
-
+	return UNIX_FileSystem::getAvailableRequestedStates();
 }
 
 Boolean UNIX_LocalFileSystem::getTransitioningToState(CIMProperty &p) const
@@ -301,7 +269,7 @@ Boolean UNIX_LocalFileSystem::getTransitioningToState(CIMProperty &p) const
 
 Uint16 UNIX_LocalFileSystem::getTransitioningToState() const
 {
-	return Uint16(0);
+	return UNIX_FileSystem::getTransitioningToState();
 }
 
 Boolean UNIX_LocalFileSystem::getCSCreationClassName(CIMProperty &p) const
@@ -345,7 +313,7 @@ Boolean UNIX_LocalFileSystem::getRoot(CIMProperty &p) const
 
 String UNIX_LocalFileSystem::getRoot() const
 {
-	return String ("");
+	return UNIX_FileSystem::getRoot();
 }
 
 Boolean UNIX_LocalFileSystem::getBlockSize(CIMProperty &p) const
@@ -356,7 +324,7 @@ Boolean UNIX_LocalFileSystem::getBlockSize(CIMProperty &p) const
 
 Uint64 UNIX_LocalFileSystem::getBlockSize() const
 {
-	return Uint64(0);
+	return UNIX_FileSystem::getBlockSize();
 }
 
 Boolean UNIX_LocalFileSystem::getFileSystemSize(CIMProperty &p) const
@@ -367,7 +335,7 @@ Boolean UNIX_LocalFileSystem::getFileSystemSize(CIMProperty &p) const
 
 Uint64 UNIX_LocalFileSystem::getFileSystemSize() const
 {
-	return Uint64(0);
+	return UNIX_FileSystem::getFileSystemSize();
 }
 
 Boolean UNIX_LocalFileSystem::getAvailableSpace(CIMProperty &p) const
@@ -378,7 +346,7 @@ Boolean UNIX_LocalFileSystem::getAvailableSpace(CIMProperty &p) const
 
 Uint64 UNIX_LocalFileSystem::getAvailableSpace() const
 {
-	return Uint64(0);
+	return UNIX_FileSystem::getAvailableSpace();
 }
 
 Boolean UNIX_LocalFileSystem::getReadOnly(CIMProperty &p) const
@@ -389,7 +357,7 @@ Boolean UNIX_LocalFileSystem::getReadOnly(CIMProperty &p) const
 
 Boolean UNIX_LocalFileSystem::getReadOnly() const
 {
-	return Boolean(false);
+	return UNIX_FileSystem::getReadOnly();
 }
 
 Boolean UNIX_LocalFileSystem::getEncryptionMethod(CIMProperty &p) const
@@ -400,7 +368,7 @@ Boolean UNIX_LocalFileSystem::getEncryptionMethod(CIMProperty &p) const
 
 String UNIX_LocalFileSystem::getEncryptionMethod() const
 {
-	return String ("");
+	return UNIX_FileSystem::getEncryptionMethod();
 }
 
 Boolean UNIX_LocalFileSystem::getCompressionMethod(CIMProperty &p) const
@@ -411,7 +379,7 @@ Boolean UNIX_LocalFileSystem::getCompressionMethod(CIMProperty &p) const
 
 String UNIX_LocalFileSystem::getCompressionMethod() const
 {
-	return String ("");
+	return UNIX_FileSystem::getCompressionMethod();
 }
 
 Boolean UNIX_LocalFileSystem::getCaseSensitive(CIMProperty &p) const
@@ -422,7 +390,7 @@ Boolean UNIX_LocalFileSystem::getCaseSensitive(CIMProperty &p) const
 
 Boolean UNIX_LocalFileSystem::getCaseSensitive() const
 {
-	return Boolean(false);
+	return UNIX_FileSystem::getCaseSensitive();
 }
 
 Boolean UNIX_LocalFileSystem::getCasePreserved(CIMProperty &p) const
@@ -433,7 +401,7 @@ Boolean UNIX_LocalFileSystem::getCasePreserved(CIMProperty &p) const
 
 Boolean UNIX_LocalFileSystem::getCasePreserved() const
 {
-	return Boolean(false);
+	return UNIX_FileSystem::getCasePreserved();
 }
 
 Boolean UNIX_LocalFileSystem::getCodeSet(CIMProperty &p) const
@@ -444,10 +412,7 @@ Boolean UNIX_LocalFileSystem::getCodeSet(CIMProperty &p) const
 
 Array<Uint16> UNIX_LocalFileSystem::getCodeSet() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
+	return UNIX_FileSystem::getCodeSet();
 
 }
 
@@ -459,7 +424,7 @@ Boolean UNIX_LocalFileSystem::getMaxFileNameLength(CIMProperty &p) const
 
 Uint32 UNIX_LocalFileSystem::getMaxFileNameLength() const
 {
-	return Uint32(0);
+	return UNIX_FileSystem::getMaxFileNameLength();
 }
 
 Boolean UNIX_LocalFileSystem::getClusterSize(CIMProperty &p) const
@@ -470,7 +435,7 @@ Boolean UNIX_LocalFileSystem::getClusterSize(CIMProperty &p) const
 
 Uint32 UNIX_LocalFileSystem::getClusterSize() const
 {
-	return Uint32(0);
+	return UNIX_FileSystem::getClusterSize();
 }
 
 Boolean UNIX_LocalFileSystem::getFileSystemType(CIMProperty &p) const
@@ -481,7 +446,7 @@ Boolean UNIX_LocalFileSystem::getFileSystemType(CIMProperty &p) const
 
 String UNIX_LocalFileSystem::getFileSystemType() const
 {
-	return String ("");
+	return UNIX_FileSystem::getFileSystemType();
 }
 
 Boolean UNIX_LocalFileSystem::getPersistenceType(CIMProperty &p) const
@@ -492,7 +457,7 @@ Boolean UNIX_LocalFileSystem::getPersistenceType(CIMProperty &p) const
 
 Uint16 UNIX_LocalFileSystem::getPersistenceType() const
 {
-	return Uint16(0);
+	return UNIX_FileSystem::getPersistenceType();
 }
 
 Boolean UNIX_LocalFileSystem::getOtherPersistenceType(CIMProperty &p) const
@@ -503,7 +468,7 @@ Boolean UNIX_LocalFileSystem::getOtherPersistenceType(CIMProperty &p) const
 
 String UNIX_LocalFileSystem::getOtherPersistenceType() const
 {
-	return String ("");
+	return UNIX_FileSystem::getOtherPersistenceType();
 }
 
 Boolean UNIX_LocalFileSystem::getNumberOfFiles(CIMProperty &p) const
@@ -514,7 +479,7 @@ Boolean UNIX_LocalFileSystem::getNumberOfFiles(CIMProperty &p) const
 
 Uint64 UNIX_LocalFileSystem::getNumberOfFiles() const
 {
-	return Uint64(0);
+	return UNIX_FileSystem::getNumberOfFiles();
 }
 
 Boolean UNIX_LocalFileSystem::getFreeInodes(CIMProperty &p) const
@@ -551,20 +516,28 @@ Uint64 UNIX_LocalFileSystem::getFSReservedCapacity() const
 }
 
 
-
 Boolean UNIX_LocalFileSystem::initialize()
 {
-	return false;
+	return UNIX_FileSystem::initialize();
 }
 
 Boolean UNIX_LocalFileSystem::load(int &pIndex)
 {
+	if (UNIX_FileSystem::load(pIndex))
+	{
+		/* TODO: Filter all local or exclude remotes??? */
+		if (!String::equalNoCase(getFileSystemType(), "nfs"))
+		{
+			return true;
+		}
+		else { return load(++pIndex); }
+	}
 	return false;
 }
 
 Boolean UNIX_LocalFileSystem::finalize()
 {
-	return false;
+	return UNIX_FileSystem::finalize();
 }
 
 Boolean UNIX_LocalFileSystem::find(Array<CIMKeyBinding> &kbArray)

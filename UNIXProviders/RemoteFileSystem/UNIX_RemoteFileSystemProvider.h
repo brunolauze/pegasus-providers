@@ -36,7 +36,7 @@
 #define CLASS_IMPLEMENTATION UNIX_RemoteFileSystem
 #define CLASS_IMPLEMENTATION_NAME "UNIX_RemoteFileSystem"
 #define BASE_CLASS_NAME "CIM_RemoteFileSystem"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 4
 
 
 #include "UNIXProviderBase.h"

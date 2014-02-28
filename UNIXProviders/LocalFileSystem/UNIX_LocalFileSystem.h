@@ -33,7 +33,7 @@
 #define __UNIX_LOCALFILESYSTEM_H
 
 
-#include "CIM_LocalFileSystem.h"
+#include "FileSystem/UNIX_FileSystem.h"
 
 #include "UNIX_LocalFileSystemDeps.h"
 
@@ -44,7 +44,7 @@
 
 
 class UNIX_LocalFileSystem :
-	public CIM_LocalFileSystem
+	public UNIX_FileSystem
 {
 public:
 

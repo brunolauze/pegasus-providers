@@ -33,7 +33,7 @@
 #define __UNIX_NFS_H
 
 
-#include "CIM_RemoteFileSystem.h"
+#include "RemoteFileSystem/UNIX_RemoteFileSystem.h"
 
 #include "UNIX_NFSDeps.h"
 
@@ -55,7 +55,7 @@
 
 
 class UNIX_NFS :
-	public CIM_RemoteFileSystem
+	public UNIX_RemoteFileSystem
 {
 public:
 
