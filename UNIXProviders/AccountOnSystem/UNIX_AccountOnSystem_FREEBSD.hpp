@@ -47,7 +47,13 @@ Boolean UNIX_AccountOnSystem::getGroupComponent(CIMProperty &p) const
 
 CIMInstance UNIX_AccountOnSystem::getGroupComponent() const
 {
-	return CIMInstance(CIMName("CIM_Component"));
+	CIMInstance instance = group_UNIX_ComputerSystem_ComponentProvider.constructInstance(
+		CIMName("UNIX_ComputerSystem"),
+		CIMNamespaceName("root/cimv2"),
+		group_UNIX_ComputerSystem_Component
+	);
+		
+	return instance;
 }
 
 Boolean UNIX_AccountOnSystem::getPartComponent(CIMProperty &p) const
@@ -58,20 +64,26 @@ Boolean UNIX_AccountOnSystem::getPartComponent(CIMProperty &p) const
 
 CIMInstance UNIX_AccountOnSystem::getPartComponent() const
 {
-	return CIMInstance(CIMName("CIM_Component"));
+	CIMInstance instance = part_UNIX_Account_ComponentProvider.constructInstance(
+		CIMName("UNIX_Account"),
+		CIMNamespaceName("root/cimv2"),
+		part_UNIX_Account_Component
+	);
+
+	return instance;
 }
 
 
 
 Boolean UNIX_AccountOnSystem::initialize()
 {
-	groupIndex = -1;
+	groupIndex = 0;
 	partIndex = 0;
 	group_UNIX_ComputerSystem_Index = -1;
-	endOf_UNIX_ComputerSystem_Group = false;
-	group_UNIX_ComputerSystem_Component.initialize();
+	endOf_UNIX_ComputerSystem_Group = !group_UNIX_ComputerSystem_Component.initialize();
 	part_UNIX_Account_Index = -1;
-	endOf_UNIX_Account_Part = false;
+	part_UNIX_Account_Component.setScope(CIMName("UNIX_ComputerSystem"));
+	endOf_UNIX_Account_Part = !part_UNIX_Account_Component.initialize();
 	return true;
 }
 
@@ -85,23 +97,22 @@ Boolean UNIX_AccountOnSystem::load(int &pIndex)
 			endOf_UNIX_ComputerSystem_Group = !group_UNIX_ComputerSystem_Component.load(group_UNIX_ComputerSystem_Index);
 			if (endOf_UNIX_ComputerSystem_Group)
 			{
-				endOf_UNIX_Account_Part = false;
-				part_UNIX_Account_Component.setScope(CIMName("UNIX_ComputerSystem"));
-				part_UNIX_Account_Component.initialize();
-				partIndex = 0;
-				groupIndex++;
+				return false;
 			}
 		}
 	}
-	if (partIndex == 0)
+
+	if (partIndex == 0 && !endOf_UNIX_Account_Part)
 	{
 		part_UNIX_Account_Index++;
-	endOf_UNIX_Account_Part = !part_UNIX_Account_Component.load(part_UNIX_Account_Index);
+		endOf_UNIX_Account_Part = !part_UNIX_Account_Component.load(part_UNIX_Account_Index);
 	}
 	if (partIndex == 0 && endOf_UNIX_Account_Part)
 	{
 		part_UNIX_Account_Component.finalize();
 		partIndex++;
+		pIndex++;
+		return load(pIndex);
 	}
 
 	if (endOf_UNIX_ComputerSystem_Group &&

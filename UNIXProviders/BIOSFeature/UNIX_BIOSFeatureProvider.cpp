@@ -43,7 +43,7 @@ UNIX_BIOSFeatureProvider::~UNIX_BIOSFeatureProvider()
 CIMInstance UNIX_BIOSFeatureProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_BIOSFeature &_p)
+	const UNIX_BIOSFeature &_p) const
 {
 	CIMProperty p;
 
@@ -89,7 +89,7 @@ CIMInstance UNIX_BIOSFeatureProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_BIOSFeatureProvider::constructKeyBindings(const UNIX_BIOSFeature& _p)
+Array<CIMKeyBinding> UNIX_BIOSFeatureProvider::constructKeyBindings(const UNIX_BIOSFeature& _p) const
 
 {
 

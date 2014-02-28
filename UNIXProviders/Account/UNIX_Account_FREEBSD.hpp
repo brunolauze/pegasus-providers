@@ -704,15 +704,17 @@ Boolean UNIX_Account::find(Array<CIMKeyBinding> &kbArray)
 		else if (keyName.equal(PROPERTY_NAME)) nameKey = kb.getValue();
 	}
 
-	/* EXecute find with extracted keys */
+	/* Execute find with extracted keys */
 	bool found = false;	
-
-	for(int i = 0; i < load(i); i++)
+	if (String::equalNoCase(systemNameKey, CIMHelper::HostName))
 	{
-		if (String::equal(nameKey, getName()))
+		for(int i = 0; i < load(i); i++)
 		{
-			found = true;
-			break;
+			if (String::equal(nameKey, getName()))
+			{
+				found = true;
+				break;
+			}
 		}
 	}
 

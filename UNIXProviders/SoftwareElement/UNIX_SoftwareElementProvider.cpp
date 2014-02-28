@@ -64,6 +64,7 @@ CIMInstance UNIX_SoftwareElementProvider::constructInstance(
 	//CIM_ManagedSystemElement Properties
 	if (_p.getInstallDate(p)) inst.addProperty(p);
 	if (_p.getName(p)) inst.addProperty(p);
+
 	if (_p.getOperationalStatus(p)) inst.addProperty(p);
 	if (_p.getStatusDescriptions(p)) inst.addProperty(p);
 	if (_p.getStatus(p)) inst.addProperty(p);

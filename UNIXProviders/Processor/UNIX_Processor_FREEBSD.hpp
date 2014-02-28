@@ -29,6 +29,9 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
+#include <sys/sysctl.h>
+
+using namespace smbios;
 
 UNIX_Processor::UNIX_Processor(void)
 {
@@ -38,7 +41,6 @@ UNIX_Processor::~UNIX_Processor(void)
 {
 }
 
-
 Boolean UNIX_Processor::getInstanceID(CIMProperty &p) const
 {
 	p = CIMProperty(PROPERTY_INSTANCE_ID, getInstanceID());
@@ -47,7 +49,7 @@ Boolean UNIX_Processor::getInstanceID(CIMProperty &p) const
 
 String UNIX_Processor::getInstanceID() const
 {
-	return String ("");
+	return String (strings[1]);
 }
 
 Boolean UNIX_Processor::getCaption(CIMProperty &p) const
@@ -58,7 +60,8 @@ Boolean UNIX_Processor::getCaption(CIMProperty &p) const
 
 String UNIX_Processor::getCaption() const
 {
-	return String ("");
+	char *x = strings[3];
+	return String (CIMHelper::ltrim(x));
 }
 
 Boolean UNIX_Processor::getDescription(CIMProperty &p) const
@@ -69,7 +72,13 @@ Boolean UNIX_Processor::getDescription(CIMProperty &p) const
 
 String UNIX_Processor::getDescription() const
 {
-	return String ("");
+	String s;
+	s.append(getCaption());
+	s.append(" ");
+	s.append(getInstanceID());
+	s.append(" ");
+	s.append(strings[2]);
+	return s;
 }
 
 Boolean UNIX_Processor::getElementName(CIMProperty &p) const
@@ -91,18 +100,7 @@ Boolean UNIX_Processor::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_Processor::getInstallDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return CIMHelper::getInstallDate();
 }
 
 Boolean UNIX_Processor::getName(CIMProperty &p) const
@@ -113,7 +111,7 @@ Boolean UNIX_Processor::getName(CIMProperty &p) const
 
 String UNIX_Processor::getName() const
 {
-	return String ("");
+	return getInstanceID();
 }
 
 Boolean UNIX_Processor::getOperationalStatus(CIMProperty &p) const
@@ -125,7 +123,6 @@ Boolean UNIX_Processor::getOperationalStatus(CIMProperty &p) const
 Array<Uint16> UNIX_Processor::getOperationalStatus() const
 {
 	Array<Uint16> as;
-	
 
 	return as;
 
@@ -345,7 +342,9 @@ Boolean UNIX_Processor::getDeviceID(CIMProperty &p) const
 
 String UNIX_Processor::getDeviceID() const
 {
-	return String ("");
+	char val[21];
+	sprintf(val, "%llu", p->id);
+	return String (val);
 }
 
 Boolean UNIX_Processor::getPowerManagementSupported(CIMProperty &p) const
@@ -452,7 +451,14 @@ Boolean UNIX_Processor::getPowerOnHours(CIMProperty &p) const
 
 Uint64 UNIX_Processor::getPowerOnHours() const
 {
-	return Uint64(0);
+	int mib[2] = { CTL_KERN, KERN_BOOTTIME };
+    struct timeval   tv;
+    size_t len = sizeof(tv);
+    if (sysctl(mib, 2, &tv, &len, NULL, 0) == -1)
+    {
+        return Uint64(0);
+    }
+	return Uint64((tv.tv_sec / 60) / 60);
 }
 
 Boolean UNIX_Processor::getTotalPowerOnHours(CIMProperty &p) const
@@ -463,7 +469,9 @@ Boolean UNIX_Processor::getTotalPowerOnHours(CIMProperty &p) const
 
 Uint64 UNIX_Processor::getTotalPowerOnHours() const
 {
-	return Uint64(0);
+	//We don't have a functionality to get cumulated power on hours;
+	//We will return just current uptime
+	return getPowerOnHours();
 }
 
 Boolean UNIX_Processor::getIdentifyingDescriptions(CIMProperty &p) const
@@ -515,7 +523,7 @@ Boolean UNIX_Processor::getRole(CIMProperty &p) const
 
 String UNIX_Processor::getRole() const
 {
-	return String ("");
+	return String ("Central Processor");
 }
 
 Boolean UNIX_Processor::getFamily(CIMProperty &p) const
@@ -526,7 +534,7 @@ Boolean UNIX_Processor::getFamily(CIMProperty &p) const
 
 Uint16 UNIX_Processor::getFamily() const
 {
-	return Uint16(0);
+	return Uint16(p->family);
 }
 
 Boolean UNIX_Processor::getOtherFamilyDescription(CIMProperty &p) const
@@ -548,7 +556,7 @@ Boolean UNIX_Processor::getUpgradeMethod(CIMProperty &p) const
 
 Uint16 UNIX_Processor::getUpgradeMethod() const
 {
-	return Uint16(0);
+	return Uint16(p->upgrade);
 }
 
 Boolean UNIX_Processor::getMaxClockSpeed(CIMProperty &p) const
@@ -559,7 +567,7 @@ Boolean UNIX_Processor::getMaxClockSpeed(CIMProperty &p) const
 
 Uint32 UNIX_Processor::getMaxClockSpeed() const
 {
-	return Uint32(0);
+	return Uint32(p->speed_max / 1000);
 }
 
 Boolean UNIX_Processor::getCurrentClockSpeed(CIMProperty &p) const
@@ -570,7 +578,7 @@ Boolean UNIX_Processor::getCurrentClockSpeed(CIMProperty &p) const
 
 Uint32 UNIX_Processor::getCurrentClockSpeed() const
 {
-	return Uint32(0);
+	return Uint32(p->speed_cur / 1000);
 }
 
 Boolean UNIX_Processor::getDataWidth(CIMProperty &p) const
@@ -625,7 +633,7 @@ Boolean UNIX_Processor::getUniqueID(CIMProperty &p) const
 
 String UNIX_Processor::getUniqueID() const
 {
-	return String ("");
+	return getInstanceID();
 }
 
 Boolean UNIX_Processor::getCPUStatus(CIMProperty &p) const
@@ -647,7 +655,7 @@ Boolean UNIX_Processor::getExternalBusClockSpeed(CIMProperty &p) const
 
 Uint32 UNIX_Processor::getExternalBusClockSpeed() const
 {
-	return Uint32(0);
+	return Uint32(p->clock);
 }
 
 Boolean UNIX_Processor::getCharacteristics(CIMProperty &p) const
@@ -674,10 +682,8 @@ Boolean UNIX_Processor::getEnabledProcessorCharacteristics(CIMProperty &p) const
 Array<Uint16> UNIX_Processor::getEnabledProcessorCharacteristics() const
 {
 	Array<Uint16> as;
-	
 
 	return as;
-
 }
 
 Boolean UNIX_Processor::getNumberOfEnabledCores(CIMProperty &p) const
@@ -691,21 +697,37 @@ Uint16 UNIX_Processor::getNumberOfEnabledCores() const
 	return Uint16(0);
 }
 
-
-
 Boolean UNIX_Processor::initialize()
 {
-	return false;
+	buff = nullptr;
+	buff_size = 0;
+	int count = meta.init(buff, buff_size);
+	if (count < 1) return false;
+	it = meta.headers.begin();
+	return true;
 }
 
 Boolean UNIX_Processor::load(int &pIndex)
 {
-	return false;
+	while (it != meta.headers.end())
+    {
+    	if ((*it)->type == types::processor_info)
+    	{
+    		p = static_cast<proc_info *>(*it);
+			if (p->id == 0) { ++it; continue; }
+			parser::extract_strings(*it, strings);
+			++it;
+    		return true;
+    	}
+    	++it;
+    }
+    return false;
 }
 
 Boolean UNIX_Processor::finalize()
 {
-	return false;
+	meta.clear(buff);
+	return true;
 }
 
 Boolean UNIX_Processor::find(Array<CIMKeyBinding> &kbArray)

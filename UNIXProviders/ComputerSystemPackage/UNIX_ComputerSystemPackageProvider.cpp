@@ -43,7 +43,7 @@ UNIX_ComputerSystemPackageProvider::~UNIX_ComputerSystemPackageProvider()
 CIMInstance UNIX_ComputerSystemPackageProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_ComputerSystemPackage &_p)
+	const UNIX_ComputerSystemPackage &_p) const
 {
 	CIMProperty p;
 
@@ -52,7 +52,7 @@ CIMInstance UNIX_ComputerSystemPackageProvider::constructInstance(
 	// Set path
 	inst.setPath(CIMObjectPath(String(""), // hostname
 			nameSpace,
-			CIMName("UNIX_ComputerSystemPackage"),
+			className,
 			constructKeyBindings(_p)));
 
 	//CIM_Dependency Properties
@@ -68,7 +68,7 @@ CIMInstance UNIX_ComputerSystemPackageProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_ComputerSystemPackageProvider::constructKeyBindings(const UNIX_ComputerSystemPackage& _p)
+Array<CIMKeyBinding> UNIX_ComputerSystemPackageProvider::constructKeyBindings(const UNIX_ComputerSystemPackage& _p) const
 
 {
 
@@ -94,7 +94,7 @@ Array<CIMKeyBinding> UNIX_ComputerSystemPackageProvider::constructKeyBindings(co
 #define CLASS_IMPLEMENTATION UNIX_ComputerSystemPackage
 #define CLASS_IMPLEMENTATION_NAME "UNIX_ComputerSystemPackage"
 #define BASE_CLASS_NAME "CIM_ComputerSystemPackage"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 2
 
 
 #include "UNIXProviderBase.hpp"

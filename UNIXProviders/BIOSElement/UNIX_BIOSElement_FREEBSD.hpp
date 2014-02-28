@@ -29,6 +29,16 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
+using namespace smbios;
+
+
+static unsigned int dmi_bios_runtime_size(unsigned int code)
+{
+        if (code & 0x000003FF)
+                return code;
+        else
+                return code >> 10;
+}
 
 UNIX_BIOSElement::UNIX_BIOSElement(void)
 {
@@ -47,7 +57,7 @@ Boolean UNIX_BIOSElement::getInstanceID(CIMProperty &p) const
 
 String UNIX_BIOSElement::getInstanceID() const
 {
-	return String ("");
+	return String ("BIOS Information");
 }
 
 Boolean UNIX_BIOSElement::getCaption(CIMProperty &p) const
@@ -58,7 +68,7 @@ Boolean UNIX_BIOSElement::getCaption(CIMProperty &p) const
 
 String UNIX_BIOSElement::getCaption() const
 {
-	return String ("");
+	return getInstanceID();
 }
 
 Boolean UNIX_BIOSElement::getDescription(CIMProperty &p) const
@@ -91,18 +101,7 @@ Boolean UNIX_BIOSElement::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_BIOSElement::getInstallDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return getReleaseDate();
 }
 
 Boolean UNIX_BIOSElement::getName(CIMProperty &p) const
@@ -113,7 +112,13 @@ Boolean UNIX_BIOSElement::getName(CIMProperty &p) const
 
 String UNIX_BIOSElement::getName() const
 {
-	return String ("");
+	String s;
+	s.append(getManufacturer());
+	s.append(" ");
+	s.append(getVersion());
+	s.append(" Revision ");
+	s.append(getBuildNumber());
+	return s;
 }
 
 Boolean UNIX_BIOSElement::getOperationalStatus(CIMProperty &p) const
@@ -220,7 +225,7 @@ Boolean UNIX_BIOSElement::getVersion(CIMProperty &p) const
 
 String UNIX_BIOSElement::getVersion() const
 {
-	return String ("");
+	return String (strings[2]);
 }
 
 Boolean UNIX_BIOSElement::getSoftwareElementState(CIMProperty &p) const
@@ -231,7 +236,7 @@ Boolean UNIX_BIOSElement::getSoftwareElementState(CIMProperty &p) const
 
 Uint16 UNIX_BIOSElement::getSoftwareElementState() const
 {
-	return Uint16(0);
+	return Uint16(3);
 }
 
 Boolean UNIX_BIOSElement::getSoftwareElementID(CIMProperty &p) const
@@ -253,7 +258,7 @@ Boolean UNIX_BIOSElement::getTargetOperatingSystem(CIMProperty &p) const
 
 Uint16 UNIX_BIOSElement::getTargetOperatingSystem() const
 {
-	return Uint16(0);
+	return Uint16(42);
 }
 
 Boolean UNIX_BIOSElement::getOtherTargetOS(CIMProperty &p) const
@@ -264,7 +269,7 @@ Boolean UNIX_BIOSElement::getOtherTargetOS(CIMProperty &p) const
 
 String UNIX_BIOSElement::getOtherTargetOS() const
 {
-	return String ("");
+	return CIMHelper::OSName;
 }
 
 Boolean UNIX_BIOSElement::getManufacturer(CIMProperty &p) const
@@ -275,7 +280,7 @@ Boolean UNIX_BIOSElement::getManufacturer(CIMProperty &p) const
 
 String UNIX_BIOSElement::getManufacturer() const
 {
-	return String ("");
+	return String (strings[1]);
 }
 
 Boolean UNIX_BIOSElement::getBuildNumber(CIMProperty &p) const
@@ -286,7 +291,9 @@ Boolean UNIX_BIOSElement::getBuildNumber(CIMProperty &p) const
 
 String UNIX_BIOSElement::getBuildNumber() const
 {
-	return String ("");
+	char val[21];
+	sprintf(val, "%u.%u", p->buildnumber, p->revision);
+	return String (val);
 }
 
 Boolean UNIX_BIOSElement::getSerialNumber(CIMProperty &p) const
@@ -308,7 +315,7 @@ Boolean UNIX_BIOSElement::getCodeSet(CIMProperty &p) const
 
 String UNIX_BIOSElement::getCodeSet() const
 {
-	return String ("");
+	return String ("UTF-8");
 }
 
 Boolean UNIX_BIOSElement::getIdentificationCode(CIMProperty &p) const
@@ -330,7 +337,7 @@ Boolean UNIX_BIOSElement::getLanguageEdition(CIMProperty &p) const
 
 String UNIX_BIOSElement::getLanguageEdition() const
 {
-	return String ("");
+	return String ("en-US");
 }
 
 Boolean UNIX_BIOSElement::getPrimaryBIOS(CIMProperty &p) const
@@ -341,7 +348,7 @@ Boolean UNIX_BIOSElement::getPrimaryBIOS(CIMProperty &p) const
 
 Boolean UNIX_BIOSElement::getPrimaryBIOS() const
 {
-	return Boolean(false);
+	return Boolean(true);
 }
 
 Boolean UNIX_BIOSElement::getListOfLanguages(CIMProperty &p) const
@@ -367,7 +374,7 @@ Boolean UNIX_BIOSElement::getCurrentLanguage(CIMProperty &p) const
 
 String UNIX_BIOSElement::getCurrentLanguage() const
 {
-	return String ("");
+	return String ("en-US");
 }
 
 Boolean UNIX_BIOSElement::getLoadedStartingAddress(CIMProperty &p) const
@@ -378,7 +385,7 @@ Boolean UNIX_BIOSElement::getLoadedStartingAddress(CIMProperty &p) const
 
 Uint64 UNIX_BIOSElement::getLoadedStartingAddress() const
 {
-	return Uint64(0);
+	return Uint64(p->starting_address);
 }
 
 Boolean UNIX_BIOSElement::getLoadedEndingAddress(CIMProperty &p) const
@@ -389,7 +396,7 @@ Boolean UNIX_BIOSElement::getLoadedEndingAddress(CIMProperty &p) const
 
 Uint64 UNIX_BIOSElement::getLoadedEndingAddress() const
 {
-	return Uint64(0);
+	return Uint64(p->ending_address);
 }
 
 Boolean UNIX_BIOSElement::getLoadUtilityInformation(CIMProperty &p) const
@@ -411,18 +418,20 @@ Boolean UNIX_BIOSElement::getReleaseDate(CIMProperty &p) const
 
 CIMDateTime UNIX_BIOSElement::getReleaseDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
+	struct tm clock;			// create a time structure
+	sscanf(strings[3],"%d/%d/%d",
+	     &clock.tm_mon,
+	     &clock.tm_mday,
+	     &clock.tm_year);
 	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
+		clock.tm_year,
+		clock.tm_mon,
+		clock.tm_mday,
+		0,
+		0,
+		0,
 		0,0,
-		clock->tm_gmtoff);
+		0);
 }
 
 Boolean UNIX_BIOSElement::getRegistryURIs(CIMProperty &p) const
@@ -437,24 +446,47 @@ Array<String> UNIX_BIOSElement::getRegistryURIs() const
 	
 
 	return as;
-
 }
 
 
 
 Boolean UNIX_BIOSElement::initialize()
 {
-	return false;
+	buff = nullptr;
+	buff_size = 0;
+	int count = meta.init(buff, buff_size);
+	if (count < 1) return false;
+	it = meta.headers.begin();
+	return true;
 }
 
 Boolean UNIX_BIOSElement::load(int &pIndex)
 {
-	return false;
+	while (it != meta.headers.end())
+    {
+    	if ((*it)->type == types::bios_info)
+    	{
+    		p = (bios_info*)malloc(sizeof(struct bios_info*)); //static_cast<bios_info *>(*it);
+			parser::extract_strings(*it, strings);
+			byte_t *data = (byte_t*)*it;
+			p->romsize = (data[0x09] + 1) << 6;
+			p->runtimesize = dmi_bios_runtime_size((0x10000 - WORD(data + 0x06)) << 4);
+			p->buildnumber = data[0x14];
+			p->revision = data[0x15];
+			p->starting_address = 0x10000;
+			p->ending_address = WORD(data + 0x06);
+			++it;
+    		return true;
+    	}
+    	++it;
+    }
+    return false;
 }
 
 Boolean UNIX_BIOSElement::finalize()
 {
-	return false;
+    meta.clear(buff);
+	return true;
 }
 
 Boolean UNIX_BIOSElement::find(Array<CIMKeyBinding> &kbArray)

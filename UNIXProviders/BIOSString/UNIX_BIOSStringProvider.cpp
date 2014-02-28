@@ -43,7 +43,7 @@ UNIX_BIOSStringProvider::~UNIX_BIOSStringProvider()
 CIMInstance UNIX_BIOSStringProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_BIOSString &_p)
+	const UNIX_BIOSString &_p) const
 {
 	CIMProperty p;
 
@@ -79,7 +79,7 @@ CIMInstance UNIX_BIOSStringProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_BIOSStringProvider::constructKeyBindings(const UNIX_BIOSString& _p)
+Array<CIMKeyBinding> UNIX_BIOSStringProvider::constructKeyBindings(const UNIX_BIOSString& _p) const
 
 {
 

@@ -60,6 +60,9 @@ public:
 	static String getTimeAsString();
 	static CIMDateTime getCurrentTime();
 	static CIMDateTime getInstallDate();
+	static char * ltrim(char *s);
+	static char * rtrim(char *s);
+	static char * trim(char *s);
 	static String getHostName();
 	static String getOSName();
 	static String HostName;

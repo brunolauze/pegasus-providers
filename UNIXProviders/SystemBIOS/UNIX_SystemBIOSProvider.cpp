@@ -43,7 +43,7 @@ UNIX_SystemBIOSProvider::~UNIX_SystemBIOSProvider()
 CIMInstance UNIX_SystemBIOSProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_SystemBIOS &_p)
+	const UNIX_SystemBIOS &_p) const
 {
 	CIMProperty p;
 
@@ -52,7 +52,7 @@ CIMInstance UNIX_SystemBIOSProvider::constructInstance(
 	// Set path
 	inst.setPath(CIMObjectPath(String(""), // hostname
 			nameSpace,
-			CIMName("UNIX_SystemBIOS"),
+			className,
 			constructKeyBindings(_p)));
 
 	//CIM_Component Properties
@@ -67,20 +67,23 @@ CIMInstance UNIX_SystemBIOSProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_SystemBIOSProvider::constructKeyBindings(const UNIX_SystemBIOS& _p)
+Array<CIMKeyBinding> UNIX_SystemBIOSProvider::constructKeyBindings(const UNIX_SystemBIOS& _p) const
 
 {
 
 	Array<CIMKeyBinding> keys;
 
-	keys.append(CIMKeyBinding(
+	CIMKeyBinding k1(
 		PROPERTY_GROUP_COMPONENT,
-		CIMValue(_p.getGroupComponent()).toString(),
-		CIMKeyBinding::REFERENCE));
-	keys.append(CIMKeyBinding(
+		CIMValue(_p.getGroupComponent().getPath()));
+	k1.setType(CIMKeyBinding::REFERENCE);
+	CIMKeyBinding k2(
 		PROPERTY_PART_COMPONENT,
-		CIMValue(_p.getPartComponent()).toString(),
-		CIMKeyBinding::REFERENCE));
+		CIMValue(_p.getPartComponent().getPath()));
+	k2.setType(CIMKeyBinding::REFERENCE);
+
+	keys.append(k1);
+	keys.append(k2);
 
 
 	return keys;
@@ -93,7 +96,7 @@ Array<CIMKeyBinding> UNIX_SystemBIOSProvider::constructKeyBindings(const UNIX_Sy
 #define CLASS_IMPLEMENTATION UNIX_SystemBIOS
 #define CLASS_IMPLEMENTATION_NAME "UNIX_SystemBIOS"
 #define BASE_CLASS_NAME "CIM_SystemBIOS"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 2
 
 
 #include "UNIXProviderBase.hpp"

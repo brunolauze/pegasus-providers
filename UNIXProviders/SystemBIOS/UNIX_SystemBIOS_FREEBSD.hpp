@@ -47,7 +47,32 @@ Boolean UNIX_SystemBIOS::getGroupComponent(CIMProperty &p) const
 
 CIMInstance UNIX_SystemBIOS::getGroupComponent() const
 {
-	return CIMInstance(CIMName("CIM_Component"));
+	CIMInstance instance;
+	if (groupIndex == 0)
+	{
+		instance = group_UNIX_VirtualComputerSystem_ComponentProvider.constructInstance(
+			CIMName("UNIX_VirtualComputerSystem"),
+			CIMNamespaceName("root/cimv2"),
+			group_UNIX_VirtualComputerSystem_Component
+		);
+	}
+	else if (groupIndex == 1)
+	{
+		instance = group_UNIX_ComputerSystem_ComponentProvider.constructInstance(
+			CIMName("UNIX_ComputerSystem"),
+			CIMNamespaceName("root/cimv2"),
+			group_UNIX_ComputerSystem_Component
+		);
+	}
+	else if (groupIndex == 2)
+	{
+		instance = group_UNIX_Cluster_ComponentProvider.constructInstance(
+			CIMName("UNIX_Cluster"),
+			CIMNamespaceName("root/cimv2"),
+			group_UNIX_Cluster_Component
+		);
+	}
+	return instance;
 }
 
 Boolean UNIX_SystemBIOS::getPartComponent(CIMProperty &p) const
@@ -58,26 +83,30 @@ Boolean UNIX_SystemBIOS::getPartComponent(CIMProperty &p) const
 
 CIMInstance UNIX_SystemBIOS::getPartComponent() const
 {
-	return CIMInstance(CIMName("CIM_Component"));
+	CIMInstance instance = part_UNIX_BIOSElement_ComponentProvider.constructInstance(
+		CIMName("UNIX_BIOSElement"),
+		CIMNamespaceName("root/cimv2"),
+		part_UNIX_BIOSElement_Component
+	);
+		
+	return instance;
 }
 
 
 
 Boolean UNIX_SystemBIOS::initialize()
 {
-	groupIndex = -1;
+	groupIndex = 0;
 	partIndex = 0;
 	group_UNIX_VirtualComputerSystem_Index = -1;
-	endOf_UNIX_VirtualComputerSystem_Group = false;
-	group_UNIX_VirtualComputerSystem_Component.initialize();
+	endOf_UNIX_VirtualComputerSystem_Group = !group_UNIX_VirtualComputerSystem_Component.initialize();
 	group_UNIX_ComputerSystem_Index = -1;
-	endOf_UNIX_ComputerSystem_Group = false;
-	group_UNIX_ComputerSystem_Component.initialize();
+	endOf_UNIX_ComputerSystem_Group = !group_UNIX_ComputerSystem_Component.initialize();
 	group_UNIX_Cluster_Index = -1;
-	endOf_UNIX_Cluster_Group = false;
-	group_UNIX_Cluster_Component.initialize();
+	endOf_UNIX_Cluster_Group = !group_UNIX_Cluster_Component.initialize();
+	part_UNIX_BIOSElement_Component.setScope(CIMName("UNIX_VirtualComputerSystem"));
 	part_UNIX_BIOSElement_Index = -1;
-	endOf_UNIX_BIOSElement_Part = false;
+	endOf_UNIX_BIOSElement_Part = !part_UNIX_BIOSElement_Component.initialize();
 	return true;
 }
 
@@ -92,10 +121,14 @@ Boolean UNIX_SystemBIOS::load(int &pIndex)
 			if (endOf_UNIX_VirtualComputerSystem_Group)
 			{
 				endOf_UNIX_BIOSElement_Part = false;
-				part_UNIX_BIOSElement_Component.setScope(CIMName("UNIX_VirtualComputerSystem"));
+				part_UNIX_BIOSElement_Component.finalize();
+				part_UNIX_BIOSElement_Component.setScope(CIMName("UNIX_ComputerSystem"));
 				part_UNIX_BIOSElement_Component.initialize();
 				partIndex = 0;
 				groupIndex++;
+				pIndex++;
+				int tmp = 0;
+				return load(tmp);
 			}
 		}
 		else if (groupIndex == 1)
@@ -105,10 +138,14 @@ Boolean UNIX_SystemBIOS::load(int &pIndex)
 			if (endOf_UNIX_ComputerSystem_Group)
 			{
 				endOf_UNIX_BIOSElement_Part = false;
-				part_UNIX_BIOSElement_Component.setScope(CIMName("UNIX_ComputerSystem"));
+				part_UNIX_BIOSElement_Component.finalize();
+				part_UNIX_BIOSElement_Component.setScope(CIMName("UNIX_Cluster"));
 				part_UNIX_BIOSElement_Component.initialize();
 				partIndex = 0;
 				groupIndex++;
+				pIndex++;
+				int tmp = 0;
+				return load(tmp);
 			}
 		}
 		else if (groupIndex == 2)
@@ -117,23 +154,22 @@ Boolean UNIX_SystemBIOS::load(int &pIndex)
 			endOf_UNIX_Cluster_Group = !group_UNIX_Cluster_Component.load(group_UNIX_Cluster_Index);
 			if (endOf_UNIX_Cluster_Group)
 			{
-				endOf_UNIX_BIOSElement_Part = false;
-				part_UNIX_BIOSElement_Component.setScope(CIMName("UNIX_Cluster"));
-				part_UNIX_BIOSElement_Component.initialize();
-				partIndex = 0;
-				groupIndex++;
+				return false;
 			}
 		}
 	}
-	if (partIndex == 0)
+		
+	if (partIndex == 0 && !endOf_UNIX_BIOSElement_Part)
 	{
 		part_UNIX_BIOSElement_Index++;
-	endOf_UNIX_BIOSElement_Part = !part_UNIX_BIOSElement_Component.load(part_UNIX_BIOSElement_Index);
+		endOf_UNIX_BIOSElement_Part = !part_UNIX_BIOSElement_Component.load(part_UNIX_BIOSElement_Index);
 	}
 	if (partIndex == 0 && endOf_UNIX_BIOSElement_Part)
 	{
 		part_UNIX_BIOSElement_Component.finalize();
 		partIndex++;
+		pIndex++;
+		return load(pIndex);
 	}
 
 	if (endOf_UNIX_VirtualComputerSystem_Group &&

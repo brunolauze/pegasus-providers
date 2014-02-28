@@ -43,7 +43,7 @@ UNIX_AccountOnSystemProvider::~UNIX_AccountOnSystemProvider()
 CIMInstance UNIX_AccountOnSystemProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_AccountOnSystem &_p)
+	const UNIX_AccountOnSystem &_p) const
 {
 	CIMProperty p;
 
@@ -67,20 +67,23 @@ CIMInstance UNIX_AccountOnSystemProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_AccountOnSystemProvider::constructKeyBindings(const UNIX_AccountOnSystem& _p)
+Array<CIMKeyBinding> UNIX_AccountOnSystemProvider::constructKeyBindings(const UNIX_AccountOnSystem& _p) const
 
 {
 
 	Array<CIMKeyBinding> keys;
 
-	keys.append(CIMKeyBinding(
+	CIMKeyBinding k1(
 		PROPERTY_GROUP_COMPONENT,
-		CIMValue(_p.getGroupComponent()).toString(),
-		CIMKeyBinding::REFERENCE));
-	keys.append(CIMKeyBinding(
+		CIMValue(_p.getGroupComponent().getPath()));
+	k1.setType(CIMKeyBinding::REFERENCE);
+	CIMKeyBinding k2(
 		PROPERTY_PART_COMPONENT,
-		CIMValue(_p.getPartComponent()).toString(),
-		CIMKeyBinding::REFERENCE));
+		CIMValue(_p.getPartComponent().getPath()));
+	k2.setType(CIMKeyBinding::REFERENCE);
+
+	keys.append(k1);
+	keys.append(k2);
 
 
 	return keys;
@@ -93,7 +96,7 @@ Array<CIMKeyBinding> UNIX_AccountOnSystemProvider::constructKeyBindings(const UN
 #define CLASS_IMPLEMENTATION UNIX_AccountOnSystem
 #define CLASS_IMPLEMENTATION_NAME "UNIX_AccountOnSystem"
 #define BASE_CLASS_NAME "CIM_AccountOnSystem"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 2
 
 
 #include "UNIXProviderBase.hpp"

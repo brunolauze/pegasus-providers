@@ -33,17 +33,16 @@
 #define __UNIX_BIOSFEATURE_H
 
 
-#include "CIM_SoftwareFeature.h"
-
+#include <SoftwareFeature/UNIX_SoftwareFeature.h>
+#include <BIOSElement/UNIX_BIOSElement.h>
 #include "UNIX_BIOSFeatureDeps.h"
 
 
-#define PROPERTY_CHARACTERISTICS				"Characteristics"
+#define PROPERTY_CHARACTERISTICS							"Characteristics"
 #define PROPERTY_CHARACTERISTIC_DESCRIPTIONS				"CharacteristicDescriptions"
 
-
 class UNIX_BIOSFeature :
-	public CIM_SoftwareFeature
+	public UNIX_SoftwareFeature
 {
 public:
 

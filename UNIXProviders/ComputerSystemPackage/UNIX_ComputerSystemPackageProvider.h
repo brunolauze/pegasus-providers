@@ -36,7 +36,7 @@
 #define CLASS_IMPLEMENTATION UNIX_ComputerSystemPackage
 #define CLASS_IMPLEMENTATION_NAME "UNIX_ComputerSystemPackage"
 #define BASE_CLASS_NAME "CIM_ComputerSystemPackage"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 2
 
 
 #include "UNIXProviderBase.h"

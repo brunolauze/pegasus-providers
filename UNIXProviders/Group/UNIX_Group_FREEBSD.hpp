@@ -47,7 +47,11 @@ Boolean UNIX_Group::getInstanceID(CIMProperty &p) const
 
 String UNIX_Group::getInstanceID() const
 {
-	return String ("");
+	String s;
+	s.append(CIMHelper::HostName);
+	s.append(".");
+	s.append(getName());
+	return s;
 }
 
 Boolean UNIX_Group::getCaption(CIMProperty &p) const
@@ -58,7 +62,7 @@ Boolean UNIX_Group::getCaption(CIMProperty &p) const
 
 String UNIX_Group::getCaption() const
 {
-	return String ("");
+	return getName();
 }
 
 Boolean UNIX_Group::getDescription(CIMProperty &p) const
@@ -102,7 +106,7 @@ Boolean UNIX_Group::getName(CIMProperty &p) const
 
 String UNIX_Group::getName() const
 {
-	return String ("");
+	return getCommonName();
 }
 
 Boolean UNIX_Group::getBusinessCategory(CIMProperty &p) const
@@ -124,24 +128,41 @@ Boolean UNIX_Group::getCommonName(CIMProperty &p) const
 
 String UNIX_Group::getCommonName() const
 {
-	return String ("");
+	return String (grp->gr_name);
 }
 
+Boolean UNIX_Group::getGroupID(CIMProperty &p) const
+{
+	p = CIMProperty(PROPERTY_GROUP_ID, getGroupID());
+	return true;
+}
 
+String UNIX_Group::getGroupID() const
+{
+	char val[256];
+	sprintf(val, "%d", grp->gr_gid);
+	return String (val);
+}
 
 Boolean UNIX_Group::initialize()
 {
-	return false;
+	setgrent();
+	return true;
 }
 
 Boolean UNIX_Group::load(int &pIndex)
 {
+	if ((grp = getgrent()) != NULL)
+	{
+		return true;
+	}
 	return false;
 }
 
 Boolean UNIX_Group::finalize()
 {
-	return false;
+	endgrent();
+	return true;
 }
 
 Boolean UNIX_Group::find(Array<CIMKeyBinding> &kbArray)
@@ -161,7 +182,17 @@ Boolean UNIX_Group::find(Array<CIMKeyBinding> &kbArray)
 
 
 
-/* EXecute find with extracted keys */
+	/* Execute find with extracted keys */
+	bool found = false;	
+
+	for(int i = 0; i < load(i); i++)
+	{
+		if (String::equal(nameKey, getName()))
+		{
+			found = true;
+			break;
+		}
+	}
 
 	return false;
 }

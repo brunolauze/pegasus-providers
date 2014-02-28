@@ -34,8 +34,8 @@
 
 
 #include "CIM_SystemComponent.h"
-#include <ComputerSystem/UNIX_ComputerSystem.h>
-#include <Account/UNIX_Account.h>
+#include <ComputerSystem/UNIX_ComputerSystemProvider.h>
+#include <Account/UNIX_AccountProvider.h>
 
 #include "UNIX_AccountOnSystemDeps.h"
 
@@ -70,9 +70,11 @@ private:
 	int groupIndex;
 	int partIndex;
 	UNIX_ComputerSystem group_UNIX_ComputerSystem_Component;
+	UNIX_ComputerSystemProvider group_UNIX_ComputerSystem_ComponentProvider;
 	int group_UNIX_ComputerSystem_Index;
 	bool endOf_UNIX_ComputerSystem_Group;
 	UNIX_Account part_UNIX_Account_Component;
+	UNIX_AccountProvider part_UNIX_Account_ComponentProvider;
 	int part_UNIX_Account_Index;
 	bool endOf_UNIX_Account_Part;
 

@@ -37,7 +37,7 @@
         <Variable name="LD_LIBRARY_PATH" value="/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/bin/Debug:/usr/local/lib/pegasus/lib:/usr/local/lib:/usr/lib:/lib" />
       </EnvironmentVariables>
     </EnvironmentVariables>
-    <Commandlineparameters>Meta_Class</Commandlineparameters>
+    <Commandlineparameters>UNIX_InstalledSoftwareElement</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release</OutputPath>
@@ -67,6 +67,13 @@
     <Compile Include="UNIX_DatabaseSystemFixture.cpp" />
     <Compile Include="UNIX_MessageLogFixture.cpp" />
     <Compile Include="Meta_ClassFixture.cpp" />
+    <Compile Include="UNIX_ProcessorFixture.cpp" />
+    <Compile Include="UNIX_BIOSElementFixture.cpp" />
+    <Compile Include="UNIX_BIOSFeatureFixture.cpp" />
+    <Compile Include="UNIX_AccountOnSystemFixture.cpp" />
+    <Compile Include="UNIX_GroupFixture.cpp" />
+    <Compile Include="UNIX_InstalledSoftwareElementFixture.cpp" />
+    <Compile Include="UNIX_SystemBIOSFixture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CIMFixtureBase.h" />
@@ -88,5 +95,12 @@
     <None Include="UNIX_DatabaseSystemFixture.h" />
     <None Include="UNIX_MessageLogFixture.h" />
     <None Include="Meta_ClassFixture.h" />
+    <None Include="UNIX_ProcessorFixture.h" />
+    <None Include="UNIX_BIOSElementFixture.h" />
+    <None Include="UNIX_BIOSFeatureFixture.h" />
+    <None Include="UNIX_AccountOnSystemFixture.h" />
+    <None Include="UNIX_GroupFixture.h" />
+    <None Include="UNIX_InstalledSoftwareElementFixture.h" />
+    <None Include="UNIX_SystemBIOSFixture.h" />
   </ItemGroup>
 </Project>

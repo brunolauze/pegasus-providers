@@ -127,6 +127,16 @@ String UNIX_Group::getCommonName() const
 	return String ("");
 }
 
+Boolean UNIX_Group::getGroupID(CIMProperty &p) const
+{
+	p = CIMProperty(PROPERTY_GROUP_ID, getGroupID());
+	return true;
+}
+
+String UNIX_Group::getGroupID() const
+{
+	return String("");
+}
 
 
 Boolean UNIX_Group::initialize()

@@ -1,20 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/Meta_Class/Meta_Class.cpp">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/SoftwareElement/UNIX_SoftwareElement_FREEBSD.hpp">
     <Files>
-      <File FileName="UNIXProviders/Meta_Class/Meta_ClassProvider.cpp" Line="123" Column="2" />
-      <File FileName="UNIXProviders/Meta_Class/Meta_ClassProvider.h" Line="41" Column="27" />
-      <File FileName="UNIXProviders/UNIXProviderBase.h" Line="136" Column="5" />
-      <File FileName="UNIXProviders/Meta_Class/Meta_Class.h" Line="81" Column="1" />
-      <File FileName="UNIXProviders/Meta_Class/Meta_Class.cpp" Line="176" Column="13" />
-      <File FileName="UNIXProviders/Cluster/UNIX_Cluster_FREEBSD.hpp" Line="20" Column="35" />
-      <File FileName="UNIXProviders/Cluster/UNIX_Cluster.cpp" Line="66" Column="1" />
+      <File FileName="UNIXProviders/SoftwareElement/UNIX_SoftwareElement_FREEBSD.hpp" Line="571" Column="10" />
+      <File FileName="tests/UNIXProviders.Tests/UNIX_SoftwareElementFixture.cpp" Line="64" Column="5" />
+      <File FileName="tests/UNIXProviders.Tests/UNIX_SoftwareElementFixture.h" Line="1" Column="1" />
+      <File FileName="UNIXProviders/SoftwareElement/UNIX_SoftwareElementProvider.cpp" Line="51" Column="2" />
+      <File FileName="UNIXProviders/SoftwareElement/UNIX_SoftwareElementPrivate_FREEBSD.h" Line="8" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/InstalledOS/UNIX_InstalledOS_FREEBSD.hpp" line="46" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

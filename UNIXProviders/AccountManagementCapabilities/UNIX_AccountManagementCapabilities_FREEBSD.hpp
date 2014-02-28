@@ -47,7 +47,7 @@ Boolean UNIX_AccountManagementCapabilities::getInstanceID(CIMProperty &p) const
 
 String UNIX_AccountManagementCapabilities::getInstanceID() const
 {
-	return String ("");
+	return CIMHelper::HostName;
 }
 
 Boolean UNIX_AccountManagementCapabilities::getCaption(CIMProperty &p) const
@@ -58,7 +58,7 @@ Boolean UNIX_AccountManagementCapabilities::getCaption(CIMProperty &p) const
 
 String UNIX_AccountManagementCapabilities::getCaption() const
 {
-	return String ("");
+	return String ("System Management Capabilities");
 }
 
 Boolean UNIX_AccountManagementCapabilities::getDescription(CIMProperty &p) const
@@ -102,7 +102,7 @@ Boolean UNIX_AccountManagementCapabilities::getMaxElementNameLen(CIMProperty &p)
 
 Uint16 UNIX_AccountManagementCapabilities::getMaxElementNameLen() const
 {
-	return Uint16(0);
+	return Uint16(255);
 }
 
 Boolean UNIX_AccountManagementCapabilities::getRequestedStatesSupported(CIMProperty &p) const
@@ -140,8 +140,10 @@ Boolean UNIX_AccountManagementCapabilities::getOperationsSupported(CIMProperty &
 Array<Uint16> UNIX_AccountManagementCapabilities::getOperationsSupported() const
 {
 	Array<Uint16> as;
-	
-
+	as.append(2); //CREATE
+	as.append(3); //MODIFY
+	as.append(4); //DELETE
+	as.append(9); //GET
 	return as;
 
 }
@@ -155,7 +157,8 @@ Boolean UNIX_AccountManagementCapabilities::getOtherSupportedUserPasswordEncrypt
 Array<String> UNIX_AccountManagementCapabilities::getOtherSupportedUserPasswordEncryptionAlgorithms() const
 {
 	Array<String> as;
-	
+	as.append("SHA1");
+	as.append("blowfish");
 
 	return as;
 
@@ -170,7 +173,7 @@ Boolean UNIX_AccountManagementCapabilities::getSupportedUserPasswordEncryptionAl
 Array<Uint16> UNIX_AccountManagementCapabilities::getSupportedUserPasswordEncryptionAlgorithms() const
 {
 	Array<Uint16> as;
-	
+	as.append(1);
 
 	return as;
 
@@ -195,7 +198,7 @@ Boolean UNIX_AccountManagementCapabilities::getMaximumAccountsSupported(CIMPrope
 
 Uint16 UNIX_AccountManagementCapabilities::getMaximumAccountsSupported() const
 {
-	return Uint16(0);
+	return Uint16(4294967296);
 }
 
 Boolean UNIX_AccountManagementCapabilities::getSupportedUserPasswordEncodings(CIMProperty &p) const
@@ -207,7 +210,7 @@ Boolean UNIX_AccountManagementCapabilities::getSupportedUserPasswordEncodings(CI
 Array<Uint32> UNIX_AccountManagementCapabilities::getSupportedUserPasswordEncodings() const
 {
 	Array<Uint32> as;
-	
+	as.append(5); //UTF-8
 
 	return as;
 
@@ -217,17 +220,18 @@ Array<Uint32> UNIX_AccountManagementCapabilities::getSupportedUserPasswordEncodi
 
 Boolean UNIX_AccountManagementCapabilities::initialize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_AccountManagementCapabilities::load(int &pIndex)
 {
+	if (pIndex == 0) return true;
 	return false;
 }
 
 Boolean UNIX_AccountManagementCapabilities::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_AccountManagementCapabilities::find(Array<CIMKeyBinding> &kbArray)

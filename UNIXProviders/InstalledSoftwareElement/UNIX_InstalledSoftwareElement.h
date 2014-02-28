@@ -36,9 +36,10 @@
 #include "CIM_ClassBase.h"
 
 #include "UNIX_InstalledSoftwareElementDeps.h"
+#include <ComputerSystem/UNIX_ComputerSystemProvider.h>
+#include <SoftwareElement/UNIX_SoftwareElementProvider.h>
 
-
-#define PROPERTY_SOFTWARE				"Software"
+#define PROPERTY_SOFTWARE			"Software"
 #define PROPERTY_SYSTEM				"System"
 
 
@@ -64,6 +65,17 @@ public:
 
 private:
 	CIMName currentScope;
+
+	int groupIndex;
+	int partIndex;
+	UNIX_SoftwareElement group_UNIX_SoftwareElement_Component;
+	UNIX_SoftwareElementProvider group_UNIX_SoftwareElement_ComponentProvider;
+	int group_UNIX_SoftwareElement_Index;
+	bool endOf_UNIX_SoftwareElement_Group;
+	UNIX_ComputerSystem part_UNIX_ComputerSystem_Component;
+	UNIX_ComputerSystemProvider part_UNIX_ComputerSystem_ComponentProvider;
+	int part_UNIX_ComputerSystem_Index;
+	bool endOf_UNIX_ComputerSystem_Part;
 
 #	include "UNIX_InstalledSoftwareElementPrivate.h"
 

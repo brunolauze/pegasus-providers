@@ -5,4 +5,5 @@
         struct pkgdb_it *it;
         int query_flags;
         struct pkg *pkg;
+        bool remote;
 #endif

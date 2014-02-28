@@ -125,6 +125,26 @@ String CIMHelper::HostName(CIMHelper::getHostName());
 String CIMHelper::OSName(CIMHelper::getOSName());
 String CIMHelper::EmptyString(String::EMPTY);
 CIMDateTime CIMHelper::NullDate(0, false);
+
+char * CIMHelper::ltrim(char *s)
+{
+    while(*s == ' ') s++;
+    return s;
+}
+
+char * CIMHelper::rtrim(char *s)
+{
+    char* back = s + strlen(s);
+    while((*--back) == ' ');
+    *(back+1) = '\0';
+    return s;
+}
+
+char * CIMHelper::trim(char *s)
+{
+    return rtrim(ltrim(s));
+}
+
 #if defined(PEGASUS_OS_HPUX)
 
 #elif defined(PEGASUS_OS_LINUX)

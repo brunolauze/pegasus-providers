@@ -43,7 +43,7 @@ UNIX_GroupProvider::~UNIX_GroupProvider()
 CIMInstance UNIX_GroupProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_Group &_p)
+	const UNIX_Group &_p) const
 {
 	CIMProperty p;
 
@@ -52,7 +52,7 @@ CIMInstance UNIX_GroupProvider::constructInstance(
 	// Set path
 	inst.setPath(CIMObjectPath(String(""), // hostname
 			nameSpace,
-			CIMName("UNIX_Group"),
+			className,
 			constructKeyBindings(_p)));
 
 	//CIM_ManagedElement Properties
@@ -69,11 +69,14 @@ CIMInstance UNIX_GroupProvider::constructInstance(
 	if (_p.getBusinessCategory(p)) inst.addProperty(p);
 	if (_p.getCommonName(p)) inst.addProperty(p);
 
+	if (className.equal(String("CIM_Group"))) return inst;
+
+	if (_p.getGroupID(p)) inst.addProperty(p);
 
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_GroupProvider::constructKeyBindings(const UNIX_Group& _p)
+Array<CIMKeyBinding> UNIX_GroupProvider::constructKeyBindings(const UNIX_Group& _p) const
 
 {
 

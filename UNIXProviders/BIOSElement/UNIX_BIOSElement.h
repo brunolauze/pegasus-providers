@@ -33,7 +33,7 @@
 #define __UNIX_BIOSELEMENT_H
 
 
-#include "CIM_SoftwareElement.h"
+#include <SoftwareElement/UNIX_SoftwareElement.h>
 
 #include "UNIX_BIOSElementDeps.h"
 
@@ -49,7 +49,7 @@
 
 
 class UNIX_BIOSElement :
-	public CIM_SoftwareElement
+	public UNIX_SoftwareElement
 {
 public:
 

@@ -87,6 +87,42 @@
                          INFO_DESCR|INFO_MESSAGE|INFO_DEPS|INFO_RDEPS| \
                          INFO_FILES|INFO_DIRS)
 
+
+/**
+ * Fetch repository calalogues.
+ */
+static int
+pkgcli_update(bool force) {
+        int retcode = EPKG_FATAL;
+        struct pkg_repo *r = NULL;
+
+        /* Only auto update if the user has write access. */
+        if (pkgdb_access(PKGDB_MODE_READ|PKGDB_MODE_WRITE|PKGDB_MODE_CREATE,
+            PKGDB_DB_REPO) == EPKG_ENOACCESS)
+                return (EPKG_OK);
+
+        //if (!quiet)
+                //printf("Updating repository catalogue\n");
+
+        while (pkg_repos(&r) == EPKG_OK) {
+                if (!pkg_repo_enabled(r))
+                        continue;
+                retcode = pkg_update(r, force);
+                if (retcode == EPKG_UPTODATE) {
+                        //if (!quiet)
+                        //        printf("%s repository catalogue is "
+                        //             "up-to-date, no need to fetch "
+                        //             "fresh copy\n", pkg_repo_ident(r));
+                                retcode = EPKG_OK;
+                }
+                if (retcode != EPKG_OK)
+                        break;
+        }
+
+        return (retcode);
+}
+
+
 /* what the pkg needs to load in order to display the requested info */
 int UNIX_SoftwareElement::getPkgFlag(uint64_t opt, bool remote)
 {
@@ -144,12 +180,12 @@ String UNIX_SoftwareElement::getPackageProperty(const char * name, ...) const
     sbuf  = sbuf_new_auto();
     if (sbuf)
             sbuf = pkg_sbuf_printf(sbuf, name, pkg);
-    
     if (sbuf && sbuf_len(sbuf) >= 0) {
             sbuf_finish(sbuf);
+            //cout << sbuf_data(sbuf) << endl;
             char value[sbuf_len(sbuf)];
             count = sprintf(value, "%s", sbuf_data(sbuf));
-            return val.assign(value);
+        	val.assign(sbuf_data(sbuf));
     } else {
             count = -1;
             val.assign("");
@@ -207,6 +243,7 @@ Boolean UNIX_SoftwareElement::getDescription(CIMProperty &p) const
 
 String UNIX_SoftwareElement::getDescription() const
 {
+	if (remote) return String(""); //CRASHING...
 	return getPackageProperty ("%e");
 }
 
@@ -503,8 +540,16 @@ Boolean UNIX_SoftwareElement::initialize()
     if (!pkg_initialized())
 		if (pkg_init(NULL, NULL) != EPKG_OK)
 			return false;
-
-	ret = pkgdb_access(PKGDB_MODE_READ, PKGDB_DB_LOCAL);
+		
+	if (currentScope.equal(String("UNIX_ComputerSystem")))
+	{
+		remote = false;
+		ret = pkgdb_access(PKGDB_MODE_READ, PKGDB_DB_LOCAL);
+	}
+	else {
+		remote = true;
+		ret = pkgdb_access(PKGDB_MODE_READ, PKGDB_DB_REPO);
+	}
 	if (ret == EPKG_ENOACCESS) {
 	        //warnx("Insufficient privileges to query the package database");
 	        return false; /* (EX_NOPERM); */
@@ -518,24 +563,40 @@ Boolean UNIX_SoftwareElement::initialize()
 	} else if (ret != EPKG_OK)
 	        return false; /* (EX_IOERR); */
     
-	return true;
+	return false;
 }
 
 Boolean UNIX_SoftwareElement::load(int &pIndex)
 {
 	int ret;
 	char *pkgname;
+	const char *reponame = NULL;
 	pkgname = NULL;
 	if (db == NULL)
 	{
-		ret = pkgdb_open(&db, PKGDB_DEFAULT);
-	    if (ret != EPKG_OK)
+		if (!remote)
+		{
+			ret = pkgdb_open(&db, PKGDB_DEFAULT);
+			if (ret != EPKG_OK)
 	    	return false;
-		if ((it = pkgdb_query(db, pkgname, MATCH_ALL)) == NULL) {
-		        return false; //(EX_IOERR);
+			if ((it = pkgdb_query(db, pkgname, MATCH_ALL)) == NULL) {
+			        return false; //(EX_IOERR);
+			}
+			query_flags = getPkgFlag(INFO_ALL, false);
+		}
+		else {
+			bool auto_update = true; // TODO: Review
+			if (auto_update && (ret = pkgcli_update(false)) != EPKG_OK)
+                return false;
+			ret = pkgdb_open(&db, PKGDB_REMOTE);	
+			if (ret != EPKG_OK)
+	    		return false;
+			if ((it = pkgdb_rquery(db, pkgname, MATCH_ALL, reponame)) == NULL) {
+			        return false; //(EX_IOERR);
+			}
+			query_flags = PKG_LOAD_BASIC; //getPkgFlag(INFO_ALL, true);
 		}
 	}
-	query_flags = getPkgFlag(INFO_ALL, false);
 	if ((ret = pkgdb_it_next(it, &pkg, query_flags)) == EPKG_OK) {
 		return true;
 	}
@@ -544,6 +605,7 @@ Boolean UNIX_SoftwareElement::load(int &pIndex)
 
 Boolean UNIX_SoftwareElement::finalize()
 {
+	pkgdb_it_free(it);
 	pkg_free(pkg);
     pkgdb_close(db);
     pkg = NULL;

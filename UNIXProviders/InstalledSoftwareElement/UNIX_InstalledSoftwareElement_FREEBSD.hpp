@@ -47,7 +47,13 @@ Boolean UNIX_InstalledSoftwareElement::getSoftware(CIMProperty &p) const
 
 CIMInstance UNIX_InstalledSoftwareElement::getSoftware() const
 {
-	return CIMInstance(CIMName("CIM_ManagedElement"));
+	CIMInstance instance = group_UNIX_SoftwareElement_ComponentProvider.constructInstance(
+		CIMName("UNIX_AccountSystem"),
+		CIMNamespaceName("root/cimv2"),
+		group_UNIX_SoftwareElement_Component
+	);
+
+	return instance;
 }
 
 Boolean UNIX_InstalledSoftwareElement::getSystem(CIMProperty &p) const
@@ -58,24 +64,68 @@ Boolean UNIX_InstalledSoftwareElement::getSystem(CIMProperty &p) const
 
 CIMInstance UNIX_InstalledSoftwareElement::getSystem() const
 {
-	return CIMInstance(CIMName("CIM_ManagedElement"));
+	CIMInstance instance = part_UNIX_ComputerSystem_ComponentProvider.constructInstance(
+		CIMName("UNIX_ComputerSystem"),
+		CIMNamespaceName("root/cimv2"),
+		part_UNIX_ComputerSystem_Component
+	);
+		
+	return instance;
 }
 
 
 
 Boolean UNIX_InstalledSoftwareElement::initialize()
 {
-	return false;
+	groupIndex = 0;
+	partIndex = 0;
+	group_UNIX_SoftwareElement_Index = -1;
+	group_UNIX_SoftwareElement_Component.setScope(CIMName("UNIX_ComputerSystem"));
+	endOf_UNIX_SoftwareElement_Group = !group_UNIX_SoftwareElement_Component.initialize();
+	part_UNIX_ComputerSystem_Index = -1;
+	part_UNIX_ComputerSystem_Component.setScope(CIMName("UNIX_SoftwareElement"));
+	endOf_UNIX_ComputerSystem_Part = !part_UNIX_ComputerSystem_Component.initialize();
+	return true;
 }
 
 Boolean UNIX_InstalledSoftwareElement::load(int &pIndex)
 {
-	return false;
+	if (pIndex == 0 || (endOf_UNIX_ComputerSystem_Part))
+	{
+		if (groupIndex == 0)
+		{
+			group_UNIX_SoftwareElement_Index++;
+			endOf_UNIX_SoftwareElement_Group = !group_UNIX_SoftwareElement_Component.load(group_UNIX_SoftwareElement_Index);
+			if (endOf_UNIX_SoftwareElement_Group)
+			{
+				return false;
+			}
+		}
+	}
+
+	if (partIndex == 0 && !endOf_UNIX_ComputerSystem_Part)
+	{
+		part_UNIX_ComputerSystem_Index++;
+		endOf_UNIX_ComputerSystem_Part = !part_UNIX_ComputerSystem_Component.load(part_UNIX_ComputerSystem_Index);
+	}
+	if (partIndex == 0 && endOf_UNIX_ComputerSystem_Part)
+	{
+		part_UNIX_ComputerSystem_Component.finalize();
+		partIndex++;
+		pIndex++;
+		return load(pIndex);
+	}
+
+	if (endOf_UNIX_SoftwareElement_Group &&
+		endOf_UNIX_ComputerSystem_Part)		return false;
+	return true;
 }
 
 Boolean UNIX_InstalledSoftwareElement::finalize()
 {
-	return false;
+	group_UNIX_SoftwareElement_Component.finalize();
+	part_UNIX_ComputerSystem_Component.finalize();
+	return true;
 }
 
 Boolean UNIX_InstalledSoftwareElement::find(Array<CIMKeyBinding> &kbArray)

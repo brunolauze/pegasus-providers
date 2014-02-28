@@ -69,14 +69,18 @@ Array<CIMKeyBinding> UNIX_InstalledSoftwareElementProvider::constructKeyBindings
 
 	Array<CIMKeyBinding> keys;
 
-	keys.append(CIMKeyBinding(
+
+	CIMKeyBinding k1(
 		PROPERTY_SOFTWARE,
-		CIMValue(_p.getSoftware()).toString(),
-		CIMKeyBinding::REFERENCE));
-	keys.append(CIMKeyBinding(
+		CIMValue(_p.getSoftware().getPath()));
+	k1.setType(CIMKeyBinding::REFERENCE);
+	CIMKeyBinding k2(
 		PROPERTY_SYSTEM,
-		CIMValue(_p.getSystem()).toString(),
-		CIMKeyBinding::REFERENCE));
+		CIMValue(_p.getSystem().getPath()));
+	k2.setType(CIMKeyBinding::REFERENCE);
+
+	keys.append(k1);
+	keys.append(k2);
 
 
 	return keys;

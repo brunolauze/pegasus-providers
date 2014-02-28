@@ -42,7 +42,7 @@
 //#include "UNIX_AccountManagementCapabilitiesFixture.h"
 //#include "UNIX_AccountManagementServiceFixture.h"
 //#include "UNIX_AccountMapsToAccountFixture.h"
-//#include "UNIX_AccountOnSystemFixture.h"
+#include "UNIX_AccountOnSystemFixture.h"
 //#include "UNIX_AccountSettingDataFixture.h"
 //#include "UNIX_ActionSequenceFixture.h"
 //#include "UNIX_ActiveConnectionFixture.h"
@@ -132,9 +132,9 @@
 //#include "UNIX_BGPStatisticsFixture.h"
 //#include "UNIX_BinarySensorFixture.h"
 //#include "UNIX_BiometricAuthenticationFixture.h"
-//#include "UNIX_BIOSElementFixture.h"
+#include "UNIX_BIOSElementFixture.h"
 //#include "UNIX_BIOSEnumerationFixture.h"
-//#include "UNIX_BIOSFeatureFixture.h"
+#include "UNIX_BIOSFeatureFixture.h"
 //#include "UNIX_BIOSFeatureBIOSElementsFixture.h"
 //#include "UNIX_BIOSIntegerFixture.h"
 //#include "UNIX_BIOSLoadedInNVFixture.h"
@@ -405,7 +405,7 @@
 //#include "UNIX_FRUIncludesSoftwareFeatureFixture.h"
 //#include "UNIX_FRUPhysicalElementsFixture.h"
 //#include "UNIX_GatewayPathIDFixture.h"
-//#include "UNIX_GroupFixture.h"
+#include "UNIX_GroupFixture.h"
 //#include "UNIX_HardwareThreadFixture.h"
 //#include "UNIX_Hdr8021FilterFixture.h"
 //#include "UNIX_Hdr8021PServiceFixture.h"
@@ -466,7 +466,7 @@
 #include "UNIX_InstalledOSFixture.h"
 //#include "UNIX_InstalledProductFixture.h"
 //#include "UNIX_InstalledProductImageFixture.h"
-//#include "UNIX_InstalledSoftwareElementFixture.h"
+#include "UNIX_InstalledSoftwareElementFixture.h"
 //#include "UNIX_InstalledSoftwareIdentityFixture.h"
 //#include "UNIX_InstCreationFixture.h"
 //#include "UNIX_InstDeletionFixture.h"
@@ -766,7 +766,7 @@
 //#include "UNIX_PrivilegeManagementServiceFixture.h"
 //#include "UNIX_ProcessExecutableFixture.h"
 //#include "UNIX_ProcessOfJobFixture.h"
-//#include "UNIX_ProcessorFixture.h"
+#include "UNIX_ProcessorFixture.h"
 //#include "UNIX_ProcessorAllocationSettingDataFixture.h"
 //#include "UNIX_ProcessorCapabilitiesFixture.h"
 //#include "UNIX_ProcessorCoreFixture.h"
@@ -984,7 +984,7 @@
 //#include "UNIX_SystemAdministratorFixture.h"
 //#include "UNIX_SystemAdministratorGroupFixture.h"
 //#include "UNIX_SystemAdministratorRoleFixture.h"
-//#include "UNIX_SystemBIOSFixture.h"
+#include "UNIX_SystemBIOSFixture.h"
 //#include "UNIX_SystemBusCardFixture.h"
 //#include "UNIX_SystemConfigurationFixture.h"
 //#include "UNIX_SystemIdentificationFixture.h"
@@ -1144,7 +1144,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_AccountManagementCapabilities")) { UNIX_AccountManagementCapabilitiesFixture accountManagementCapabilities; accountManagementCapabilities.Run(); }
 	//if (IsTarget(s, "UNIX_AccountManagementService")) { UNIX_AccountManagementServiceFixture accountManagementService; accountManagementService.Run(); }
 	//if (IsTarget(s, "UNIX_AccountMapsToAccount")) { UNIX_AccountMapsToAccountFixture accountMapsToAccount; accountMapsToAccount.Run(); }
-	//if (IsTarget(s, "UNIX_AccountOnSystem")) { UNIX_AccountOnSystemFixture accountOnSystem; accountOnSystem.Run(); }
+	if (IsTarget(s, "UNIX_AccountOnSystem")) { UNIX_AccountOnSystemFixture accountOnSystem; accountOnSystem.Run(); }
 	//if (IsTarget(s, "UNIX_AccountSettingData")) { UNIX_AccountSettingDataFixture accountSettingData; accountSettingData.Run(); }
 	//if (IsTarget(s, "UNIX_ActionSequence")) { UNIX_ActionSequenceFixture actionSequence; actionSequence.Run(); }
 	//if (IsTarget(s, "UNIX_ActiveConnection")) { UNIX_ActiveConnectionFixture activeConnection; activeConnection.Run(); }
@@ -1234,9 +1234,9 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_BGPStatistics")) { UNIX_BGPStatisticsFixture bGPStatistics; bGPStatistics.Run(); }
 	//if (IsTarget(s, "UNIX_BinarySensor")) { UNIX_BinarySensorFixture binarySensor; binarySensor.Run(); }
 	//if (IsTarget(s, "UNIX_BiometricAuthentication")) { UNIX_BiometricAuthenticationFixture biometricAuthentication; biometricAuthentication.Run(); }
-	//if (IsTarget(s, "UNIX_BIOSElement")) { UNIX_BIOSElementFixture bIOSElement; bIOSElement.Run(); }
+	if (IsTarget(s, "UNIX_BIOSElement")) { UNIX_BIOSElementFixture bIOSElement; bIOSElement.Run(); }
 	//if (IsTarget(s, "UNIX_BIOSEnumeration")) { UNIX_BIOSEnumerationFixture bIOSEnumeration; bIOSEnumeration.Run(); }
-	//if (IsTarget(s, "UNIX_BIOSFeature")) { UNIX_BIOSFeatureFixture bIOSFeature; bIOSFeature.Run(); }
+	if (IsTarget(s, "UNIX_BIOSFeature")) { UNIX_BIOSFeatureFixture bIOSFeature; bIOSFeature.Run(); }
 	//if (IsTarget(s, "UNIX_BIOSFeatureBIOSElements")) { UNIX_BIOSFeatureBIOSElementsFixture bIOSFeatureBIOSElements; bIOSFeatureBIOSElements.Run(); }
 	//if (IsTarget(s, "UNIX_BIOSInteger")) { UNIX_BIOSIntegerFixture bIOSInteger; bIOSInteger.Run(); }
 	//if (IsTarget(s, "UNIX_BIOSLoadedInNV")) { UNIX_BIOSLoadedInNVFixture bIOSLoadedInNV; bIOSLoadedInNV.Run(); }
@@ -1507,7 +1507,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_FRUIncludesSoftwareFeature")) { UNIX_FRUIncludesSoftwareFeatureFixture fRUIncludesSoftwareFeature; fRUIncludesSoftwareFeature.Run(); }
 	//if (IsTarget(s, "UNIX_FRUPhysicalElements")) { UNIX_FRUPhysicalElementsFixture fRUPhysicalElements; fRUPhysicalElements.Run(); }
 	//if (IsTarget(s, "UNIX_GatewayPathID")) { UNIX_GatewayPathIDFixture gatewayPathID; gatewayPathID.Run(); }
-	//if (IsTarget(s, "UNIX_Group")) { UNIX_GroupFixture group; group.Run(); }
+	if (IsTarget(s, "UNIX_Group")) { UNIX_GroupFixture group; group.Run(); }
 	//if (IsTarget(s, "UNIX_HardwareThread")) { UNIX_HardwareThreadFixture hardwareThread; hardwareThread.Run(); }
 	//if (IsTarget(s, "UNIX_Hdr8021Filter")) { UNIX_Hdr8021FilterFixture hdr8021Filter; hdr8021Filter.Run(); }
 	//if (IsTarget(s, "UNIX_Hdr8021PService")) { UNIX_Hdr8021PServiceFixture hdr8021PService; hdr8021PService.Run(); }
@@ -1568,7 +1568,7 @@ int main (int argc, char *argv[])
 	if (IsTarget(s, "UNIX_InstalledOS")) { UNIX_InstalledOSFixture installedOS; installedOS.Run(); }
 	//if (IsTarget(s, "UNIX_InstalledProduct")) { UNIX_InstalledProductFixture installedProduct; installedProduct.Run(); }
 	//if (IsTarget(s, "UNIX_InstalledProductImage")) { UNIX_InstalledProductImageFixture installedProductImage; installedProductImage.Run(); }
-	//if (IsTarget(s, "UNIX_InstalledSoftwareElement")) { UNIX_InstalledSoftwareElementFixture installedSoftwareElement; installedSoftwareElement.Run(); }
+	if (IsTarget(s, "UNIX_InstalledSoftwareElement")) { UNIX_InstalledSoftwareElementFixture installedSoftwareElement; installedSoftwareElement.Run(); }
 	//if (IsTarget(s, "UNIX_InstalledSoftwareIdentity")) { UNIX_InstalledSoftwareIdentityFixture installedSoftwareIdentity; installedSoftwareIdentity.Run(); }
 	//if (IsTarget(s, "UNIX_InstCreation")) { UNIX_InstCreationFixture instCreation; instCreation.Run(); }
 	//if (IsTarget(s, "UNIX_InstDeletion")) { UNIX_InstDeletionFixture instDeletion; instDeletion.Run(); }
@@ -1868,7 +1868,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_PrivilegeManagementService")) { UNIX_PrivilegeManagementServiceFixture privilegeManagementService; privilegeManagementService.Run(); }
 	//if (IsTarget(s, "UNIX_ProcessExecutable")) { UNIX_ProcessExecutableFixture processExecutable; processExecutable.Run(); }
 	//if (IsTarget(s, "UNIX_ProcessOfJob")) { UNIX_ProcessOfJobFixture processOfJob; processOfJob.Run(); }
-	//if (IsTarget(s, "UNIX_Processor")) { UNIX_ProcessorFixture processor; processor.Run(); }
+	if (IsTarget(s, "UNIX_Processor")) { UNIX_ProcessorFixture processor; processor.Run(); }
 	//if (IsTarget(s, "UNIX_ProcessorAllocationSettingData")) { UNIX_ProcessorAllocationSettingDataFixture processorAllocationSettingData; processorAllocationSettingData.Run(); }
 	//if (IsTarget(s, "UNIX_ProcessorCapabilities")) { UNIX_ProcessorCapabilitiesFixture processorCapabilities; processorCapabilities.Run(); }
 	//if (IsTarget(s, "UNIX_ProcessorCore")) { UNIX_ProcessorCoreFixture processorCore; processorCore.Run(); }
@@ -2086,7 +2086,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_SystemAdministrator")) { UNIX_SystemAdministratorFixture systemAdministrator; systemAdministrator.Run(); }
 	//if (IsTarget(s, "UNIX_SystemAdministratorGroup")) { UNIX_SystemAdministratorGroupFixture systemAdministratorGroup; systemAdministratorGroup.Run(); }
 	//if (IsTarget(s, "UNIX_SystemAdministratorRole")) { UNIX_SystemAdministratorRoleFixture systemAdministratorRole; systemAdministratorRole.Run(); }
-	//if (IsTarget(s, "UNIX_SystemBIOS")) { UNIX_SystemBIOSFixture systemBIOS; systemBIOS.Run(); }
+	if (IsTarget(s, "UNIX_SystemBIOS")) { UNIX_SystemBIOSFixture systemBIOS; systemBIOS.Run(); }
 	//if (IsTarget(s, "UNIX_SystemBusCard")) { UNIX_SystemBusCardFixture systemBusCard; systemBusCard.Run(); }
 	//if (IsTarget(s, "UNIX_SystemConfiguration")) { UNIX_SystemConfigurationFixture systemConfiguration; systemConfiguration.Run(); }
 	//if (IsTarget(s, "UNIX_SystemIdentification")) { UNIX_SystemIdentificationFixture systemIdentification; systemIdentification.Run(); }

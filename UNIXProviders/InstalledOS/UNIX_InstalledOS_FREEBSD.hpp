@@ -114,6 +114,7 @@ Boolean UNIX_InstalledOS::initialize()
 	group_UNIX_ComputerSystem_Index = -1;
 	endOf_UNIX_ComputerSystem_Group = !group_UNIX_ComputerSystem_Component.initialize();
 	group_UNIX_Cluster_Index = -1;
+	part_UNIX_OperatingSystem_Component.setScope(CIMName("UNIX_VirtualComputerSystem"));
 	endOf_UNIX_Cluster_Group = !group_UNIX_Cluster_Component.initialize();
 	part_UNIX_OperatingSystem_Index = -1;
 	endOf_UNIX_OperatingSystem_Part = !part_UNIX_OperatingSystem_Component.initialize();
@@ -131,12 +132,14 @@ Boolean UNIX_InstalledOS::load(int &pIndex)
 			if (endOf_UNIX_VirtualComputerSystem_Group)
 			{
 				endOf_UNIX_OperatingSystem_Part = false;
-				part_UNIX_OperatingSystem_Component.setScope(CIMName("UNIX_VirtualComputerSystem"));
+				part_UNIX_OperatingSystem_Component.finalize();
+				part_UNIX_OperatingSystem_Component.setScope(CIMName("UNIX_ComputerSystem"));
 				part_UNIX_OperatingSystem_Component.initialize();
 				partIndex = 0;
 				groupIndex++;
 				pIndex++;
-				return load(pIndex);
+				int tmp = 0;
+				return load(tmp);
 			}
 		}
 		else if (groupIndex == 1)
@@ -146,12 +149,14 @@ Boolean UNIX_InstalledOS::load(int &pIndex)
 			if (endOf_UNIX_ComputerSystem_Group)
 			{
 				endOf_UNIX_OperatingSystem_Part = false;
-				part_UNIX_OperatingSystem_Component.setScope(CIMName("UNIX_ComputerSystem"));
+				part_UNIX_OperatingSystem_Component.finalize();
+				part_UNIX_OperatingSystem_Component.setScope(CIMName("UNIX_Cluster"));
 				part_UNIX_OperatingSystem_Component.initialize();
 				partIndex = 0;
 				groupIndex++;
 				pIndex++;
-				return load(pIndex);
+				int tmp = 0;
+				return load(tmp);
 			}
 		}
 		else if (groupIndex == 2)
@@ -164,6 +169,7 @@ Boolean UNIX_InstalledOS::load(int &pIndex)
 			}
 		}
 	}
+		
 	if (partIndex == 0 && !endOf_UNIX_OperatingSystem_Part)
 	{
 		part_UNIX_OperatingSystem_Index++;

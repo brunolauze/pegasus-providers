@@ -63,7 +63,23 @@ void UNIX_SystemBIOSFixture::Run()
 		{
 
 			CIMProperty propertyItem = instance.getProperty(i);
-			cout << "	Name: " << propertyItem.getName().getString() << " - Value: " << propertyItem.getValue().toString() << endl;
+			if (propertyItem.getName().equal("GroupComponent") ||
+				propertyItem.getName().equal("PartComponent"))
+			{
+				CIMValue subValue = propertyItem.getValue();
+				CIMInstance subInstance;
+				subValue.get(subInstance);
+				CIMObjectPath subPath = subInstance.getPath();
+				cout << "\tName: " << propertyItem.getName().getString() << ": " << subPath.toString() << endl;
+				Uint32 subPropertyCount = subInstance.getPropertyCount();
+				for(Uint32 j = 0; j < subPropertyCount; j++)
+				{
+					CIMProperty subPropertyItem = subInstance.getProperty(j);
+					cout << "\t\tName: " << subPropertyItem.getName().getString() << " - Value: " << subPropertyItem.getValue().toString() << endl;
+				}
+			}
+			else 
+				cout << "\tName: " << propertyItem.getName().getString() << " - Value: " << propertyItem.getValue().toString() << endl;
 
 		}
 		cout << "------------------------------------" << endl;

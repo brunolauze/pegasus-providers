@@ -38,11 +38,13 @@
 #include "UNIX_GroupDeps.h"
 
 
-#define PROPERTY_CREATION_CLASS_NAME				"CreationClassName"
-#define PROPERTY_NAME				"Name"
-#define PROPERTY_BUSINESS_CATEGORY				"BusinessCategory"
+#define PROPERTY_CREATION_CLASS_NAME		"CreationClassName"
+#define PROPERTY_NAME						"Name"
+#define PROPERTY_BUSINESS_CATEGORY			"BusinessCategory"
 #define PROPERTY_COMMON_NAME				"CommonName"
 
+/* Custom Properties */
+#define PROPERTY_GROUP_ID					"GroupID"
 
 class UNIX_Group :
 	public CIM_Collection
@@ -75,6 +77,8 @@ public:
 	virtual String getBusinessCategory() const;
 	virtual Boolean getCommonName(CIMProperty&) const;
 	virtual String getCommonName() const;
+	virtual Boolean getGroupID(CIMProperty&) const;
+	virtual String getGroupID() const;
 
 private:
 	CIMName currentScope;

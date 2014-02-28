@@ -43,7 +43,7 @@ UNIX_SoftwareFeatureProvider::~UNIX_SoftwareFeatureProvider()
 CIMInstance UNIX_SoftwareFeatureProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_SoftwareFeature &_p)
+	const UNIX_SoftwareFeature &_p) const
 {
 	CIMProperty p;
 
@@ -85,7 +85,7 @@ CIMInstance UNIX_SoftwareFeatureProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_SoftwareFeatureProvider::constructKeyBindings(const UNIX_SoftwareFeature& _p)
+Array<CIMKeyBinding> UNIX_SoftwareFeatureProvider::constructKeyBindings(const UNIX_SoftwareFeature& _p) const
 
 {
 

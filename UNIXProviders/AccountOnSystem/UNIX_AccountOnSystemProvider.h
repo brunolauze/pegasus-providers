@@ -36,7 +36,7 @@
 #define CLASS_IMPLEMENTATION UNIX_AccountOnSystem
 #define CLASS_IMPLEMENTATION_NAME "UNIX_AccountOnSystem"
 #define BASE_CLASS_NAME "CIM_AccountOnSystem"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 2
 
 
 #include "UNIXProviderBase.h"

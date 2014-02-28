@@ -52,7 +52,7 @@ CIMInstance UNIX_InstalledOSProvider::constructInstance(
 	// Set path
 	inst.setPath(CIMObjectPath(String(""), // hostname
 			nameSpace,
-			CIMName("UNIX_InstalledOS"),
+			className,
 			constructKeyBindings(_p)));
 
 	//CIM_Component Properties
@@ -95,7 +95,7 @@ Array<CIMKeyBinding> UNIX_InstalledOSProvider::constructKeyBindings(const UNIX_I
 #define CLASS_IMPLEMENTATION UNIX_InstalledOS
 #define CLASS_IMPLEMENTATION_NAME "UNIX_InstalledOS"
 #define BASE_CLASS_NAME "CIM_InstalledOS"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 2
 
 
 #include "UNIXProviderBase.hpp"
