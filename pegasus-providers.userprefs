@@ -1,16 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="tests/UNIXProviders.Tests/main.cpp">
-    <Files>
-      <File FileName="UNIXProviders/LocalFileSystem/UNIX_LocalFileSystem_FREEBSD.hpp" Line="528" Column="12" />
-      <File FileName="UNIXProviders/RemoteFileSystem/UNIX_RemoteFileSystem.h" Line="57" Column="1" />
-      <File FileName="UNIXProviders/LocalFileSystem/UNIX_LocalFileSystem.h" Line="146" Column="47" />
-      <File FileName="UNIXProviders/RemoteFileSystem/UNIX_RemoteFileSystem_FREEBSD.hpp" Line="488" Column="2" />
-      <File FileName="UNIXProviders/LocalFileSystem/UNIX_LocalFileSystemProvider.cpp" Line="119" Column="1" />
-      <File FileName="UNIXProviders/LocalFileSystem/UNIX_LocalFileSystemProvider.h" Line="39" Column="39" />
-      <File FileName="tests/UNIXProviders.Tests/main.cpp" Line="1642" Column="2" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
