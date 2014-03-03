@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ExtendedStaticIPAssignmentSettingDataModule";
-	Location = "UNIX_ExtendedStaticIPAssignmentSettingData";
+	Location = "UNIX_ExtendedStaticIPAssignmentSettingDataProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

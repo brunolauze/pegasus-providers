@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IPsecTunnelAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IPsecTunnelAction
+LIBRARY = UNIX_IPsecTunnelActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

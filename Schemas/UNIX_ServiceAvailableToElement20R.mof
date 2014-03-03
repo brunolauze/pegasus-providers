@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ServiceAvailableToElementModule";
-	Location = "UNIX_ServiceAvailableToElement";
+	Location = "UNIX_ServiceAvailableToElementProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

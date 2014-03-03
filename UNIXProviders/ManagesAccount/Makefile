@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ManagesAccount
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ManagesAccount
+LIBRARY = UNIX_ManagesAccountProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

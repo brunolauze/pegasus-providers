@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_LANConnectivitySegmentModule";
-	Location = "UNIX_LANConnectivitySegment";
+	Location = "UNIX_LANConnectivitySegmentProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

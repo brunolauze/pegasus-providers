@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ProtocolControllerMaskingCapabilitie
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ProtocolControllerMaskingCapabilities
+LIBRARY = UNIX_ProtocolControllerMaskingCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

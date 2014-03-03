@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_VLANEndpointSettingDataModule";
-	Location = "UNIX_VLANEndpointSettingData";
+	Location = "UNIX_VLANEndpointSettingDataProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

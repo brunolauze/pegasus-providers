@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AggregateRedundancyComponent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AggregateRedundancyComponent
+LIBRARY = UNIX_AggregateRedundancyComponentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

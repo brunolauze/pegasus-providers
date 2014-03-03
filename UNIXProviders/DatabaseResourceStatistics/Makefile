@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DatabaseResourceStatistics
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DatabaseResourceStatistics
+LIBRARY = UNIX_DatabaseResourceStatisticsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

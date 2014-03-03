@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VideoHeadResolution
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VideoHeadResolution
+LIBRARY = UNIX_VideoHeadResolutionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

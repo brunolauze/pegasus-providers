@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TextRedirectionSAP
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TextRedirectionSAP
+LIBRARY = UNIX_TextRedirectionSAPProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

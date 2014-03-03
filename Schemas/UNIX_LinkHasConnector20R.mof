@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_LinkHasConnectorModule";
-	Location = "UNIX_LinkHasConnector";
+	Location = "UNIX_LinkHasConnectorProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_LibraryExchangeModule";
-	Location = "UNIX_LibraryExchange";
+	Location = "UNIX_LibraryExchangeProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

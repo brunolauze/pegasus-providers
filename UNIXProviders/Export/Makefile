@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Export
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Export
+LIBRARY = UNIX_ExportProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

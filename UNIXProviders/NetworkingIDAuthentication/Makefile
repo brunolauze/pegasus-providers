@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NetworkingIDAuthentication
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NetworkingIDAuthentication
+LIBRARY = UNIX_NetworkingIDAuthenticationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

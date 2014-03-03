@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_PrintMarkerModule";
-	Location = "UNIX_PrintMarker";
+	Location = "UNIX_PrintMarkerProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

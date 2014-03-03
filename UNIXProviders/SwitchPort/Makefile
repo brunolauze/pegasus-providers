@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SwitchPort
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SwitchPort
+LIBRARY = UNIX_SwitchPortProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

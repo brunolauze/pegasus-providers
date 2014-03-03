@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AuthenticationRequirement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AuthenticationRequirement
+LIBRARY = UNIX_AuthenticationRequirementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AreaOfConfiguration
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AreaOfConfiguration
+LIBRARY = UNIX_AreaOfConfigurationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SourceRoutingService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SourceRoutingService
+LIBRARY = UNIX_SourceRoutingServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

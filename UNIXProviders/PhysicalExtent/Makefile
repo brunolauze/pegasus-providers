@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PhysicalExtent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PhysicalExtent
+LIBRARY = UNIX_PhysicalExtentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

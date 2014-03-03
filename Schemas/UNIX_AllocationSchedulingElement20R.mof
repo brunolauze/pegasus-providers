@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_AllocationSchedulingElementModule";
-	Location = "UNIX_AllocationSchedulingElement";
+	Location = "UNIX_AllocationSchedulingElementProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

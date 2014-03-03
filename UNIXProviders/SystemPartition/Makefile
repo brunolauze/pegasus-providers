@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SystemPartition
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SystemPartition
+LIBRARY = UNIX_SystemPartitionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AHTransform
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AHTransform
+LIBRARY = UNIX_AHTransformProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

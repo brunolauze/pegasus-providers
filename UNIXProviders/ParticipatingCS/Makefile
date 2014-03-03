@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ParticipatingCS
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ParticipatingCS
+LIBRARY = UNIX_ParticipatingCSProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

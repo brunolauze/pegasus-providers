@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/iSCSIProtocolEndpoint
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_iSCSIProtocolEndpoint
+LIBRARY = UNIX_iSCSIProtocolEndpointProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

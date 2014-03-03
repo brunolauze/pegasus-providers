@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OSPFAreaConfiguration
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OSPFAreaConfiguration
+LIBRARY = UNIX_OSPFAreaConfigurationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

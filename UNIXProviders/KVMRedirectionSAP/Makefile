@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/KVMRedirectionSAP
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_KVMRedirectionSAP
+LIBRARY = UNIX_KVMRedirectionSAPProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

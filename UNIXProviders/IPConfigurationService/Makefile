@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IPConfigurationService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IPConfigurationService
+LIBRARY = UNIX_IPConfigurationServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

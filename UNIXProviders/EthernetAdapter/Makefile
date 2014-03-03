@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/EthernetAdapter
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_EthernetAdapter
+LIBRARY = UNIX_EthernetAdapterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
@@ -94,7 +94,7 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_EthernetPort \
+	-lUNIX_EthernetPortProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

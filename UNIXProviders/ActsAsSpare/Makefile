@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ActsAsSpare
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ActsAsSpare
+LIBRARY = UNIX_ActsAsSpareProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

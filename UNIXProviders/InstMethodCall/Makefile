@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/InstMethodCall
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_InstMethodCall
+LIBRARY = UNIX_InstMethodCallProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

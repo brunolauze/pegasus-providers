@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ConditioningServiceOnEndpoint
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ConditioningServiceOnEndpoint
+LIBRARY = UNIX_ConditioningServiceOnEndpointProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

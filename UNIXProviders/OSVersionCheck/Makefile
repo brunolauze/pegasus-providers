@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OSVersionCheck
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OSVersionCheck
+LIBRARY = UNIX_OSVersionCheckProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

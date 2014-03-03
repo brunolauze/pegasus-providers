@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Priority8021QMarkerService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Priority8021QMarkerService
+LIBRARY = UNIX_Priority8021QMarkerServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

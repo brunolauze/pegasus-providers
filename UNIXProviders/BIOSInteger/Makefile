@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BIOSInteger
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BIOSInteger
+LIBRARY = UNIX_BIOSIntegerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

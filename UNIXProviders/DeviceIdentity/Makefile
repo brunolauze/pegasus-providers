@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DeviceIdentity
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DeviceIdentity
+LIBRARY = UNIX_DeviceIdentityProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

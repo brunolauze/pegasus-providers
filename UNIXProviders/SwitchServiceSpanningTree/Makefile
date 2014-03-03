@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SwitchServiceSpanningTree
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SwitchServiceSpanningTree
+LIBRARY = UNIX_SwitchServiceSpanningTreeProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SAPStatistics
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SAPStatistics
+LIBRARY = UNIX_SAPStatisticsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

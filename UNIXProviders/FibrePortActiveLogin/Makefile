@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FibrePortActiveLogin
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FibrePortActiveLogin
+LIBRARY = UNIX_FibrePortActiveLoginProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

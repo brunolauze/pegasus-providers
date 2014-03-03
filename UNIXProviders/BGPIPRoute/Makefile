@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BGPIPRoute
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BGPIPRoute
+LIBRARY = UNIX_BGPIPRouteProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

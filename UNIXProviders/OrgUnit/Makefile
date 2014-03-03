@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OrgUnit
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OrgUnit
+LIBRARY = UNIX_OrgUnitProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

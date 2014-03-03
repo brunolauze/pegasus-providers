@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LimitedAccessPort
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LimitedAccessPort
+LIBRARY = UNIX_LimitedAccessPortProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

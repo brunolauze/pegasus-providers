@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PacketConditionInSARule
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PacketConditionInSARule
+LIBRARY = UNIX_PacketConditionInSARuleProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

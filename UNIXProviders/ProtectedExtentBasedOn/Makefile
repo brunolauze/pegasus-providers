@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ProtectedExtentBasedOn
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ProtectedExtentBasedOn
+LIBRARY = UNIX_ProtectedExtentBasedOnProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

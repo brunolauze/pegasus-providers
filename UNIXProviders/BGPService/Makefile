@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BGPService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BGPService
+LIBRARY = UNIX_BGPServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

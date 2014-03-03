@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_TransparentBridgingStatisticsModule";
-	Location = "UNIX_TransparentBridgingStatistics";
+	Location = "UNIX_TransparentBridgingStatisticsProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

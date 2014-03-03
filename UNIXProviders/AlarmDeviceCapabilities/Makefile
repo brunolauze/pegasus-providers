@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AlarmDeviceCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AlarmDeviceCapabilities
+LIBRARY = UNIX_AlarmDeviceCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

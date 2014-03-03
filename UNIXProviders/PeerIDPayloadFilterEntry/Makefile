@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PeerIDPayloadFilterEntry
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PeerIDPayloadFilterEntry
+LIBRARY = UNIX_PeerIDPayloadFilterEntryProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BGPAdminDistance
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BGPAdminDistance
+LIBRARY = UNIX_BGPAdminDistanceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ComputerSystemMemory
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ComputerSystemMemory
+LIBRARY = UNIX_ComputerSystemMemoryProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ClusteringSAP
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ClusteringSAP
+LIBRARY = UNIX_ClusteringSAPProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

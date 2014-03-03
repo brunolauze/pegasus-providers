@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AutonomousSystem
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AutonomousSystem
+LIBRARY = UNIX_AutonomousSystemProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

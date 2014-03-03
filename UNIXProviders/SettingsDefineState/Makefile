@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SettingsDefineState
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SettingsDefineState
+LIBRARY = UNIX_SettingsDefineStateProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IEEE8021xCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IEEE8021xCapabilities
+LIBRARY = UNIX_IEEE8021xCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

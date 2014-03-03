@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DiscreteSensor
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DiscreteSensor
+LIBRARY = UNIX_DiscreteSensorProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

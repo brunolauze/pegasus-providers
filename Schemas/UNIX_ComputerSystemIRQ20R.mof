@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ComputerSystemIRQModule";
-	Location = "UNIX_ComputerSystemIRQ";
+	Location = "UNIX_ComputerSystemIRQProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

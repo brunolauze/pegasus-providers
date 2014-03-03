@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BIOSServiceCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BIOSServiceCapabilities
+LIBRARY = UNIX_BIOSServiceCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

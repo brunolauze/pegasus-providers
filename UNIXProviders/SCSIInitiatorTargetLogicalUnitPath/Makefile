@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SCSIInitiatorTargetLogicalUnitPath
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SCSIInitiatorTargetLogicalUnitPath
+LIBRARY = UNIX_SCSIInitiatorTargetLogicalUnitPathProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

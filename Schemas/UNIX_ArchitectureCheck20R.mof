@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ArchitectureCheckModule";
-	Location = "UNIX_ArchitectureCheck";
+	Location = "UNIX_ArchitectureCheckProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

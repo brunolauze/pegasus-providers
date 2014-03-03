@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/InterLibraryPort
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_InterLibraryPort
+LIBRARY = UNIX_InterLibraryPortProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

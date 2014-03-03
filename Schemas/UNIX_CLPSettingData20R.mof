@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_CLPSettingDataModule";
-	Location = "UNIX_CLPSettingData";
+	Location = "UNIX_CLPSettingDataProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

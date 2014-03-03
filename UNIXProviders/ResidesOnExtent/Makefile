@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ResidesOnExtent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ResidesOnExtent
+LIBRARY = UNIX_ResidesOnExtentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

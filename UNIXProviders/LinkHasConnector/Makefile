@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LinkHasConnector
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LinkHasConnector
+LIBRARY = UNIX_LinkHasConnectorProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ProductParentChild
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ProductParentChild
+LIBRARY = UNIX_ProductParentChildProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

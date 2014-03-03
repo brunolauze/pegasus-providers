@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HostedClusterService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HostedClusterService
+LIBRARY = UNIX_HostedClusterServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

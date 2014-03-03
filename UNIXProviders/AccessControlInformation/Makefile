@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AccessControlInformation
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AccessControlInformation
+LIBRARY = UNIX_AccessControlInformationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

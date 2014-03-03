@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NetworkServicesInAdminDomain
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NetworkServicesInAdminDomain
+LIBRARY = UNIX_NetworkServicesInAdminDomainProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SCSIMultipathSettings
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SCSIMultipathSettings
+LIBRARY = UNIX_SCSIMultipathSettingsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PrintMarker
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PrintMarker
+LIBRARY = UNIX_PrintMarkerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

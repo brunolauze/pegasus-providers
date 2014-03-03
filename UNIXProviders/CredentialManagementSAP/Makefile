@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CredentialManagementSAP
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CredentialManagementSAP
+LIBRARY = UNIX_CredentialManagementSAPProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

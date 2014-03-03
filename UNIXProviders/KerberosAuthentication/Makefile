@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/KerberosAuthentication
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_KerberosAuthentication
+LIBRARY = UNIX_KerberosAuthenticationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

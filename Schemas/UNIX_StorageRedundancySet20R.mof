@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_StorageRedundancySetModule";
-	Location = "UNIX_StorageRedundancySet";
+	Location = "UNIX_StorageRedundancySetProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

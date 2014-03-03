@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_HostedClusterServiceModule";
-	Location = "UNIX_HostedClusterService";
+	Location = "UNIX_HostedClusterServiceProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

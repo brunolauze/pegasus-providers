@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BIOSPassword
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BIOSPassword
+LIBRARY = UNIX_BIOSPasswordProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

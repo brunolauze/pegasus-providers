@@ -37,42 +37,42 @@ include $(ROOT)/mak/config.mak
 DIRS = \
 	ComputerSystem \
 	Process \
-	CreateDirectoryAction \
-	DeviceFile \
-	Directory \
-	FileSystem \
-	RemoteFileSystem \
-	NFS \
-	LocalFileSystem \
-	ApplicationSystem \
-	DatabaseSystem \
 	VirtualComputerSystem \
 	Cluster \
-	MessageLog \
+	ApplicationSystem \
+	DatabaseSystem \
 	OperatingSystem \
-	Account \
+	MessageLog \
+	DatabaseService \
+	Processor \
 	EthernetPort \
 	DiskDrive \
+	EthernetAdapter \
 	LogicalDisk \
 	DiskPartition \
-	Processor \
-	EthernetAdapter \
-	DatabaseService \
+	FileSystem \
+	LocalFileSystem \
+	NFS \
+	Process \
+	Account \
+	UsersAccess \
 	SoftwareElement \
 	BIOSElement \
 	SoftwareFeature \
 	BIOSFeature \
-	Group \
+	Directory \
+	DeviceFile \
 	BIOSString \
-	UsersAccess \
+	CreateDirectoryAction \
 	LogEntry \
+	Group \
 	AccountManagementCapabilities \
 	AccountOnSystem \
 	InstalledOS \
 	SystemBIOS \
 	OSProcess \
-	Mount \
 	ComputerSystemPackage \
+	Mount \
 	InstalledSoftwareElement \
 	Meta_Class
 

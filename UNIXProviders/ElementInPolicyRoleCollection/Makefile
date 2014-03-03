@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ElementInPolicyRoleCollection
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ElementInPolicyRoleCollection
+LIBRARY = UNIX_ElementInPolicyRoleCollectionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ControllerConfigurationServiceModule";
-	Location = "UNIX_ControllerConfigurationService";
+	Location = "UNIX_ControllerConfigurationServiceProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

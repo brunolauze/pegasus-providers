@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_QueueForPrintServiceModule";
-	Location = "UNIX_QueueForPrintService";
+	Location = "UNIX_QueueForPrintServiceProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

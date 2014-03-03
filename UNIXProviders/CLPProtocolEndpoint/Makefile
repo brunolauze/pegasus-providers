@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CLPProtocolEndpoint
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CLPProtocolEndpoint
+LIBRARY = UNIX_CLPProtocolEndpointProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

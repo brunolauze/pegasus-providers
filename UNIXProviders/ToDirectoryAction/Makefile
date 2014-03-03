@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ToDirectoryAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ToDirectoryAction
+LIBRARY = UNIX_ToDirectoryActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

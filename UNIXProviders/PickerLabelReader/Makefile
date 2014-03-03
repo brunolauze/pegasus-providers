@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PickerLabelReader
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PickerLabelReader
+LIBRARY = UNIX_PickerLabelReaderProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

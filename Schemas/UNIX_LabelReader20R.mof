@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_LabelReaderModule";
-	Location = "UNIX_LabelReader";
+	Location = "UNIX_LabelReaderProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

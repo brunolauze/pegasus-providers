@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HostedBGPAttributes
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HostedBGPAttributes
+LIBRARY = UNIX_HostedBGPAttributesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LastAppliedSnapshot
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LastAppliedSnapshot
+LIBRARY = UNIX_LastAppliedSnapshotProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

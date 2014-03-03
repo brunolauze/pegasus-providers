@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BiometricAuthentication
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BiometricAuthentication
+LIBRARY = UNIX_BiometricAuthenticationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

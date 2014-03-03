@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TokenRingPortStatistics
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TokenRingPortStatistics
+LIBRARY = UNIX_TokenRingPortStatisticsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

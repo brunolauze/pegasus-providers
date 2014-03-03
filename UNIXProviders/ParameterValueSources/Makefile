@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ParameterValueSources
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ParameterValueSources
+LIBRARY = UNIX_ParameterValueSourcesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

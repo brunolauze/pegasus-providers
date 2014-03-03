@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ThresholdIndication
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ThresholdIndication
+LIBRARY = UNIX_ThresholdIndicationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

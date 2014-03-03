@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_LogRecordModule";
-	Location = "UNIX_LogRecord";
+	Location = "UNIX_LogRecordProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IPNetworkIdentity
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IPNetworkIdentity
+LIBRARY = UNIX_IPNetworkIdentityProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

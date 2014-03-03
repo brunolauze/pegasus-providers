@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HostedBootSAP
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HostedBootSAP
+LIBRARY = UNIX_HostedBootSAPProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

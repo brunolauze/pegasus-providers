@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HostedACI
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HostedACI
+LIBRARY = UNIX_HostedACIProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

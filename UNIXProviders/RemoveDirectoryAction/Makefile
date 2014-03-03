@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RemoveDirectoryAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RemoveDirectoryAction
+LIBRARY = UNIX_RemoveDirectoryActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

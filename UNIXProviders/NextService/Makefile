@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NextService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NextService
+LIBRARY = UNIX_NextServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_iSCSISessionSettingsModule";
-	Location = "UNIX_iSCSISessionSettings";
+	Location = "UNIX_iSCSISessionSettingsProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

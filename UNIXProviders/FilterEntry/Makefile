@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FilterEntry
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FilterEntry
+LIBRARY = UNIX_FilterEntryProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

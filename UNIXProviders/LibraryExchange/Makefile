@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LibraryExchange
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LibraryExchange
+LIBRARY = UNIX_LibraryExchangeProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

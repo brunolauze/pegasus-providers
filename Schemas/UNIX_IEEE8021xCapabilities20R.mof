@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_IEEE8021xCapabilitiesModule";
-	Location = "UNIX_IEEE8021xCapabilities";
+	Location = "UNIX_IEEE8021xCapabilitiesProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PolicyTimePeriodCondition
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PolicyTimePeriodCondition
+LIBRARY = UNIX_PolicyTimePeriodConditionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

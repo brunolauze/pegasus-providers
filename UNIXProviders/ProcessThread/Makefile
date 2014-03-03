@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ProcessThread
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ProcessThread
+LIBRARY = UNIX_ProcessThreadProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

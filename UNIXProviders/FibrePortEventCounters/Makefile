@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FibrePortEventCounters
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FibrePortEventCounters
+LIBRARY = UNIX_FibrePortEventCountersProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SpanningTreeService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SpanningTreeService
+LIBRARY = UNIX_SpanningTreeServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

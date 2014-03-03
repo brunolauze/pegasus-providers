@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TokenBucketMeterService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TokenBucketMeterService
+LIBRARY = UNIX_TokenBucketMeterServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

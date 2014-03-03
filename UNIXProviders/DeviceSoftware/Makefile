@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DeviceSoftware
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DeviceSoftware
+LIBRARY = UNIX_DeviceSoftwareProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

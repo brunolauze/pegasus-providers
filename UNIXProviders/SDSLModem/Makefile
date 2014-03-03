@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SDSLModem
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SDSLModem
+LIBRARY = UNIX_SDSLModemProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

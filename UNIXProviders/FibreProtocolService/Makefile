@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FibreProtocolService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FibreProtocolService
+LIBRARY = UNIX_FibreProtocolServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

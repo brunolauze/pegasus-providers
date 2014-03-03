@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BIOSFeature
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BIOSFeature
+LIBRARY = UNIX_BIOSFeatureProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
@@ -95,7 +95,7 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_SoftwareFeature \
+	-lUNIX_SoftwareFeatureProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

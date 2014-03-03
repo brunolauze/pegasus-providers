@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CopyFileAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CopyFileAction
+LIBRARY = UNIX_CopyFileActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

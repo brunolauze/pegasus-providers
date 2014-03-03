@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/JobQueue
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_JobQueue
+LIBRARY = UNIX_JobQueueProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

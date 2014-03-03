@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_BGPProtocolEndpointModule";
-	Location = "UNIX_BGPProtocolEndpoint";
+	Location = "UNIX_BGPProtocolEndpointProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

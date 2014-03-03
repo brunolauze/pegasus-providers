@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_VideoBIOSFeatureVideoBIOSElementsModule";
-	Location = "UNIX_VideoBIOSFeatureVideoBIOSElements";
+	Location = "UNIX_VideoBIOSFeatureVideoBIOSElementsProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

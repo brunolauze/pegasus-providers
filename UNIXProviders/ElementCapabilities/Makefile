@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ElementCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ElementCapabilities
+LIBRARY = UNIX_ElementCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

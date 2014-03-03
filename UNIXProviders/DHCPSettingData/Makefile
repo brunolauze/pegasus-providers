@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DHCPSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DHCPSettingData
+LIBRARY = UNIX_DHCPSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

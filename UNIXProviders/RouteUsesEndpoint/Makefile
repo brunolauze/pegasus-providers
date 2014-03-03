@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RouteUsesEndpoint
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RouteUsesEndpoint
+LIBRARY = UNIX_RouteUsesEndpointProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

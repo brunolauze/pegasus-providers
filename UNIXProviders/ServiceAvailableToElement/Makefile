@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ServiceAvailableToElement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ServiceAvailableToElement
+LIBRARY = UNIX_ServiceAvailableToElementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

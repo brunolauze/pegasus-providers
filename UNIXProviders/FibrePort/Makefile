@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FibrePort
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FibrePort
+LIBRARY = UNIX_FibrePortProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

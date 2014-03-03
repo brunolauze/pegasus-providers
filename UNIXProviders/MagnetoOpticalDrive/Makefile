@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MagnetoOpticalDrive
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MagnetoOpticalDrive
+LIBRARY = UNIX_MagnetoOpticalDriveProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OutboundVLAN
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OutboundVLAN
+LIBRARY = UNIX_OutboundVLANProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

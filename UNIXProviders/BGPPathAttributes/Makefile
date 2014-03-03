@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BGPPathAttributes
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BGPPathAttributes
+LIBRARY = UNIX_BGPPathAttributesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

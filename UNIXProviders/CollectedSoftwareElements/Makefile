@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CollectedSoftwareElements
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CollectedSoftwareElements
+LIBRARY = UNIX_CollectedSoftwareElementsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ContainedTransform
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ContainedTransform
+LIBRARY = UNIX_ContainedTransformProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

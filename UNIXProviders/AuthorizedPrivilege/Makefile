@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AuthorizedPrivilege
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AuthorizedPrivilege
+LIBRARY = UNIX_AuthorizedPrivilegeProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

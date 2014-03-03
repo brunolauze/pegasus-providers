@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PolicyRuleValidityPeriod
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PolicyRuleValidityPeriod
+LIBRARY = UNIX_PolicyRuleValidityPeriodProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AggregationMetricValue
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AggregationMetricValue
+LIBRARY = UNIX_AggregationMetricValueProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

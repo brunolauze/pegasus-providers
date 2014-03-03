@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_HostedRoutingServicesModule";
-	Location = "UNIX_HostedRoutingServices";
+	Location = "UNIX_HostedRoutingServicesProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

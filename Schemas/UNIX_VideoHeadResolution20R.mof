@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_VideoHeadResolutionModule";
-	Location = "UNIX_VideoHeadResolution";
+	Location = "UNIX_VideoHeadResolutionProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

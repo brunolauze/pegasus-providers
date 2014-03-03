@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CurrentSensor
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CurrentSensor
+LIBRARY = UNIX_CurrentSensorProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

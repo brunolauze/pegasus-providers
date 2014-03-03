@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CIMOMStatisticalData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CIMOMStatisticalData
+LIBRARY = UNIX_CIMOMStatisticalDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BootConfigSetting
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BootConfigSetting
+LIBRARY = UNIX_BootConfigSettingProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

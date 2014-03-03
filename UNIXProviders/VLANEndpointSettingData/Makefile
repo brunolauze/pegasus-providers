@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VLANEndpointSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VLANEndpointSettingData
+LIBRARY = UNIX_VLANEndpointSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

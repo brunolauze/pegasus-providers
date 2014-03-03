@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TemperatureSensor
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TemperatureSensor
+LIBRARY = UNIX_TemperatureSensorProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

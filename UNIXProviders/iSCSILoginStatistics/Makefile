@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/iSCSILoginStatistics
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_iSCSILoginStatistics
+LIBRARY = UNIX_iSCSILoginStatisticsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

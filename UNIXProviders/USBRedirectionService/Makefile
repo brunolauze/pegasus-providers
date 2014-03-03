@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/USBRedirectionService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_USBRedirectionService
+LIBRARY = UNIX_USBRedirectionServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

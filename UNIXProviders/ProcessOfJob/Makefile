@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ProcessOfJob
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ProcessOfJob
+LIBRARY = UNIX_ProcessOfJobProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

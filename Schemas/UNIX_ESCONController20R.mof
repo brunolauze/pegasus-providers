@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ESCONControllerModule";
-	Location = "UNIX_ESCONController";
+	Location = "UNIX_ESCONControllerProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

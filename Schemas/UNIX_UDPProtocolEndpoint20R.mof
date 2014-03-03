@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_UDPProtocolEndpointModule";
-	Location = "UNIX_UDPProtocolEndpoint";
+	Location = "UNIX_UDPProtocolEndpointProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

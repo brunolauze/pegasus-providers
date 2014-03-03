@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TapePartitionOnSurface
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TapePartitionOnSurface
+LIBRARY = UNIX_TapePartitionOnSurfaceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

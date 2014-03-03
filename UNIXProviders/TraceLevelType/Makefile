@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TraceLevelType
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TraceLevelType
+LIBRARY = UNIX_TraceLevelTypeProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

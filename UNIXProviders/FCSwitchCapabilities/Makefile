@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FCSwitchCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FCSwitchCapabilities
+LIBRARY = UNIX_FCSwitchCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

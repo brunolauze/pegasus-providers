@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CertificateAuthority
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CertificateAuthority
+LIBRARY = UNIX_CertificateAuthorityProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

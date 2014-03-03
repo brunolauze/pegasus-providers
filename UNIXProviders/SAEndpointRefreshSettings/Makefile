@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SAEndpointRefreshSettings
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SAEndpointRefreshSettings
+LIBRARY = UNIX_SAEndpointRefreshSettingsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

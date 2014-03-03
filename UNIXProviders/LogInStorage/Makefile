@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LogInStorage
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LogInStorage
+LIBRARY = UNIX_LogInStorageProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

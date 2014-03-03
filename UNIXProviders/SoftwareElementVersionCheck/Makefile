@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SoftwareElementVersionCheck
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SoftwareElementVersionCheck
+LIBRARY = UNIX_SoftwareElementVersionCheckProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

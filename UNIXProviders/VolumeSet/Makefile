@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VolumeSet
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VolumeSet
+LIBRARY = UNIX_VolumeSetProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

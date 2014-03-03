@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_OutboundVLANModule";
-	Location = "UNIX_OutboundVLAN";
+	Location = "UNIX_OutboundVLANProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

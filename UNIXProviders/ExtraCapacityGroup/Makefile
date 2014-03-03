@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ExtraCapacityGroup
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ExtraCapacityGroup
+LIBRARY = UNIX_ExtraCapacityGroupProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

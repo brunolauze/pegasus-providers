@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/EWMAMeterService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_EWMAMeterService
+LIBRARY = UNIX_EWMAMeterServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ProcessStatistics
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ProcessStatistics
+LIBRARY = UNIX_ProcessStatisticsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

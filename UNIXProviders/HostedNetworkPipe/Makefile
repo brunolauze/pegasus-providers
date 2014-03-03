@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HostedNetworkPipe
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HostedNetworkPipe
+LIBRARY = UNIX_HostedNetworkPipeProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

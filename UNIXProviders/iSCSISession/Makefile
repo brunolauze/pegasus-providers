@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/iSCSISession
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_iSCSISession
+LIBRARY = UNIX_iSCSISessionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

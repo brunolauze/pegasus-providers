@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/X509CredentialFilterEntry
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_X509CredentialFilterEntry
+LIBRARY = UNIX_X509CredentialFilterEntryProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

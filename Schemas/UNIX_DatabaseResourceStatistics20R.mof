@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_DatabaseResourceStatisticsModule";
-	Location = "UNIX_DatabaseResourceStatistics";
+	Location = "UNIX_DatabaseResourceStatisticsProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

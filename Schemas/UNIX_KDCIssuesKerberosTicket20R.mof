@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_KDCIssuesKerberosTicketModule";
-	Location = "UNIX_KDCIssuesKerberosTicket";
+	Location = "UNIX_KDCIssuesKerberosTicketProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

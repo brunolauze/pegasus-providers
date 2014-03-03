@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/USBControllerHasHub
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_USBControllerHasHub
+LIBRARY = UNIX_USBControllerHasHubProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

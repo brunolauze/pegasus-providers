@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RoutesBGP
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RoutesBGP
+LIBRARY = UNIX_RoutesBGPProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

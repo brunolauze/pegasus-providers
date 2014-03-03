@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_LocallyManagedPublicKeyModule";
-	Location = "UNIX_LocallyManagedPublicKey";
+	Location = "UNIX_LocallyManagedPublicKeyProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

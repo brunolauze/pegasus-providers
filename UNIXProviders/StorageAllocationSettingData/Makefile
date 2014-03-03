@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/StorageAllocationSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_StorageAllocationSettingData
+LIBRARY = UNIX_StorageAllocationSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

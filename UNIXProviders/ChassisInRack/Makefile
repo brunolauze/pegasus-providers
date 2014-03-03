@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ChassisInRack
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ChassisInRack
+LIBRARY = UNIX_ChassisInRackProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

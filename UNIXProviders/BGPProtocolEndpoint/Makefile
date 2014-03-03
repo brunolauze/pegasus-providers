@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BGPProtocolEndpoint
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BGPProtocolEndpoint
+LIBRARY = UNIX_BGPProtocolEndpointProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

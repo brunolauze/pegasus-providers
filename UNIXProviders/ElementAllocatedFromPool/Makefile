@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ElementAllocatedFromPool
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ElementAllocatedFromPool
+LIBRARY = UNIX_ElementAllocatedFromPoolProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_MediaPhysicalStatInfoModule";
-	Location = "UNIX_MediaPhysicalStatInfo";
+	Location = "UNIX_MediaPhysicalStatInfoProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

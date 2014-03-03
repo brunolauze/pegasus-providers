@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_RangeOfIPAddressesModule";
-	Location = "UNIX_RangeOfIPAddresses";
+	Location = "UNIX_RangeOfIPAddressesProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

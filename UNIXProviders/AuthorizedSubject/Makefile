@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AuthorizedSubject
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AuthorizedSubject
+LIBRARY = UNIX_AuthorizedSubjectProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

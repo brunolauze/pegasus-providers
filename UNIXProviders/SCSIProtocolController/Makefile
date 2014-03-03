@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SCSIProtocolController
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SCSIProtocolController
+LIBRARY = UNIX_SCSIProtocolControllerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CDROMDrive
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CDROMDrive
+LIBRARY = UNIX_CDROMDriveProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

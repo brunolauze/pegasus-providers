@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BGPEndpointStatistics
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BGPEndpointStatistics
+LIBRARY = UNIX_BGPEndpointStatisticsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

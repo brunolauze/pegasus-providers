@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SAPAvailableForElement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SAPAvailableForElement
+LIBRARY = UNIX_SAPAvailableForElementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

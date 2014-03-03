@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_DiagnosticResultForTestModule";
-	Location = "UNIX_DiagnosticResultForTest";
+	Location = "UNIX_DiagnosticResultForTestProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

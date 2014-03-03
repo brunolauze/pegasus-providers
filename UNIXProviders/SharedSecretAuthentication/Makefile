@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SharedSecretAuthentication
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SharedSecretAuthentication
+LIBRARY = UNIX_SharedSecretAuthenticationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

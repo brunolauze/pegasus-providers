@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OperatingSystemSoftwareFeature
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OperatingSystemSoftwareFeature
+LIBRARY = UNIX_OperatingSystemSoftwareFeatureProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

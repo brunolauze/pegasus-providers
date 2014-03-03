@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ResourceAllocationFromPoolModule";
-	Location = "UNIX_ResourceAllocationFromPool";
+	Location = "UNIX_ResourceAllocationFromPoolProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LogicalPortSettings
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LogicalPortSettings
+LIBRARY = UNIX_LogicalPortSettingsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

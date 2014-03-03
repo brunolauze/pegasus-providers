@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Fan
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Fan
+LIBRARY = UNIX_FanProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

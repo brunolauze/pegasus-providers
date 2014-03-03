@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TransparentBridgingStaticForwarding
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TransparentBridgingStaticForwarding
+LIBRARY = UNIX_TransparentBridgingStaticForwardingProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

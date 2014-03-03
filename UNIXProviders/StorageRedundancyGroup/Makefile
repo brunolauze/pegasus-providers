@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/StorageRedundancyGroup
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_StorageRedundancyGroup
+LIBRARY = UNIX_StorageRedundancyGroupProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

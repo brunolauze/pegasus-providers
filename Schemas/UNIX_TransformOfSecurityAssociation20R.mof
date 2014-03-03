@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_TransformOfSecurityAssociationModule";
-	Location = "UNIX_TransformOfSecurityAssociation";
+	Location = "UNIX_TransformOfSecurityAssociationProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

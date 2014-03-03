@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ManagementController
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ManagementController
+LIBRARY = UNIX_ManagementControllerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/WakeUpServiceOnModem
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_WakeUpServiceOnModem
+LIBRARY = UNIX_WakeUpServiceOnModemProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

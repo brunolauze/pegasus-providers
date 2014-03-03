@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_USBRedirectionSAPModule";
-	Location = "UNIX_USBRedirectionSAP";
+	Location = "UNIX_USBRedirectionSAPProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

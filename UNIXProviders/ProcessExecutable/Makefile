@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ProcessExecutable
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ProcessExecutable
+LIBRARY = UNIX_ProcessExecutableProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

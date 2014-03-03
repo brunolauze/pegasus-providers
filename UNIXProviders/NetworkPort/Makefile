@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NetworkPort
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NetworkPort
+LIBRARY = UNIX_NetworkPortProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

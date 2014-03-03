@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SwitchPortSpanningTree
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SwitchPortSpanningTree
+LIBRARY = UNIX_SwitchPortSpanningTreeProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

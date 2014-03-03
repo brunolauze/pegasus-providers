@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DSCPMarkerService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DSCPMarkerService
+LIBRARY = UNIX_DSCPMarkerServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

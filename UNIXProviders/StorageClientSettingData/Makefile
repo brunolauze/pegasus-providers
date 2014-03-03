@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/StorageClientSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_StorageClientSettingData
+LIBRARY = UNIX_StorageClientSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

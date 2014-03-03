@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SerialInterface
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SerialInterface
+LIBRARY = UNIX_SerialInterfaceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

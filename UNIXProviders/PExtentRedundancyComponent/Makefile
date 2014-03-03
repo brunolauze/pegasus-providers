@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PExtentRedundancyComponent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PExtentRedundancyComponent
+LIBRARY = UNIX_PExtentRedundancyComponentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

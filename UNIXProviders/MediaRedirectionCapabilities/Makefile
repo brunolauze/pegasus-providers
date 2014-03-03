@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MediaRedirectionCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MediaRedirectionCapabilities
+LIBRARY = UNIX_MediaRedirectionCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

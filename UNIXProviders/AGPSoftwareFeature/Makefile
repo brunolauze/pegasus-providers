@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AGPSoftwareFeature
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AGPSoftwareFeature
+LIBRARY = UNIX_AGPSoftwareFeatureProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

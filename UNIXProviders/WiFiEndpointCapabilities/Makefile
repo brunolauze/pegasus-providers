@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/WiFiEndpointCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_WiFiEndpointCapabilities
+LIBRARY = UNIX_WiFiEndpointCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

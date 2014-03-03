@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MessageLog
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MessageLog
+LIBRARY = UNIX_MessageLogProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

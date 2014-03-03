@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MemoryResource
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MemoryResource
+LIBRARY = UNIX_MemoryResourceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Specific802dot1QVLANService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Specific802dot1QVLANService
+LIBRARY = UNIX_Specific802dot1QVLANServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

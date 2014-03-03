@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Synchronized
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Synchronized
+LIBRARY = UNIX_SynchronizedProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

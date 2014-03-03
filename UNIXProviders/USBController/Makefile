@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/USBController
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_USBController
+LIBRARY = UNIX_USBControllerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LogInDeviceFile
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LogInDeviceFile
+LIBRARY = UNIX_LogInDeviceFileProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

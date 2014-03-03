@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AssociatedIndicatorLED
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AssociatedIndicatorLED
+LIBRARY = UNIX_AssociatedIndicatorLEDProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

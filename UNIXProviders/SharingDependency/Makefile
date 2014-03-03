@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SharingDependency
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SharingDependency
+LIBRARY = UNIX_SharingDependencyProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

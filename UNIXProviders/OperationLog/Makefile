@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OperationLog
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OperationLog
+LIBRARY = UNIX_OperationLogProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

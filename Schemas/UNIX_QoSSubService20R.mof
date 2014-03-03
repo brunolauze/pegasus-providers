@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_QoSSubServiceModule";
-	Location = "UNIX_QoSSubService";
+	Location = "UNIX_QoSSubServiceProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

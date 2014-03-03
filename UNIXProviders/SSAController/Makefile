@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SSAController
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SSAController
+LIBRARY = UNIX_SSAControllerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

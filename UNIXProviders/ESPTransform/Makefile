@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ESPTransform
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ESPTransform
+LIBRARY = UNIX_ESPTransformProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

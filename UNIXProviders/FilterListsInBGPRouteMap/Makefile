@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FilterListsInBGPRouteMap
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FilterListsInBGPRouteMap
+LIBRARY = UNIX_FilterListsInBGPRouteMapProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

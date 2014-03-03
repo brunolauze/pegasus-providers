@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_LimitedAccessPortModule";
-	Location = "UNIX_LimitedAccessPort";
+	Location = "UNIX_LimitedAccessPortProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

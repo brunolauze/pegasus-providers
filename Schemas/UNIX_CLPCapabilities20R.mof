@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_CLPCapabilitiesModule";
-	Location = "UNIX_CLPCapabilities";
+	Location = "UNIX_CLPCapabilitiesProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

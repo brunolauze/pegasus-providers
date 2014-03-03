@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ZoneMembershipSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ZoneMembershipSettingData
+LIBRARY = UNIX_ZoneMembershipSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

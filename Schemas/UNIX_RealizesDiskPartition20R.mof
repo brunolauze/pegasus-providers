@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_RealizesDiskPartitionModule";
-	Location = "UNIX_RealizesDiskPartition";
+	Location = "UNIX_RealizesDiskPartitionProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

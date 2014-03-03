@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NamedSharedIKESecret
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NamedSharedIKESecret
+LIBRARY = UNIX_NamedSharedIKESecretProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

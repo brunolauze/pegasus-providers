@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_AHTransformModule";
-	Location = "UNIX_AHTransform";
+	Location = "UNIX_AHTransformProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_SCSIMultipathConfigurationCapabilitiesModule";
-	Location = "UNIX_SCSIMultipathConfigurationCapabilities";
+	Location = "UNIX_SCSIMultipathConfigurationCapabilitiesProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FCPort
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FCPort
+LIBRARY = UNIX_FCPortProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

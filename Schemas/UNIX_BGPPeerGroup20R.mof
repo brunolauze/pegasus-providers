@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_BGPPeerGroupModule";
-	Location = "UNIX_BGPPeerGroup";
+	Location = "UNIX_BGPPeerGroupProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

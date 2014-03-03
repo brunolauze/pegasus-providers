@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/StorageSettingsAssociatedToCapabilit
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_StorageSettingsAssociatedToCapabilities
+LIBRARY = UNIX_StorageSettingsAssociatedToCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PortImplementsEndpoint
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PortImplementsEndpoint
+LIBRARY = UNIX_PortImplementsEndpointProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

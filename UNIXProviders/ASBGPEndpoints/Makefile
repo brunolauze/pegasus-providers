@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ASBGPEndpoints
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ASBGPEndpoints
+LIBRARY = UNIX_ASBGPEndpointsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

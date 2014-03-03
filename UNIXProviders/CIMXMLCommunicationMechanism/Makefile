@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CIMXMLCommunicationMechanism
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CIMXMLCommunicationMechanism
+LIBRARY = UNIX_CIMXMLCommunicationMechanismProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

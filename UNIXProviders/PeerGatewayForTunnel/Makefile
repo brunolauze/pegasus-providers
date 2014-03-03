@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PeerGatewayForTunnel
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PeerGatewayForTunnel
+LIBRARY = UNIX_PeerGatewayForTunnelProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

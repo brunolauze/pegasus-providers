@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PackageAlarm
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PackageAlarm
+LIBRARY = UNIX_PackageAlarmProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

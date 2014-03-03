@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SettingsDefineCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SettingsDefineCapabilities
+LIBRARY = UNIX_SettingsDefineCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

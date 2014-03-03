@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ConcreteIdentity
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ConcreteIdentity
+LIBRARY = UNIX_ConcreteIdentityProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

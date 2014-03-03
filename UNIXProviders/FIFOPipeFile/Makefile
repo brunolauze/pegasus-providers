@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FIFOPipeFile
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FIFOPipeFile
+LIBRARY = UNIX_FIFOPipeFileProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

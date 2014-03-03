@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PCIeSwitch
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PCIeSwitch
+LIBRARY = UNIX_PCIeSwitchProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

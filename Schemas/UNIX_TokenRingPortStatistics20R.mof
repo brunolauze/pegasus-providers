@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_TokenRingPortStatisticsModule";
-	Location = "UNIX_TokenRingPortStatistics";
+	Location = "UNIX_TokenRingPortStatisticsProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

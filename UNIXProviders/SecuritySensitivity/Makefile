@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SecuritySensitivity
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SecuritySensitivity
+LIBRARY = UNIX_SecuritySensitivityProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

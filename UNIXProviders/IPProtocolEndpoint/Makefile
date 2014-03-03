@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IPProtocolEndpoint
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IPProtocolEndpoint
+LIBRARY = UNIX_IPProtocolEndpointProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

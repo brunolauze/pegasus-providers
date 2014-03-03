@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VendorPolicyAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VendorPolicyAction
+LIBRARY = UNIX_VendorPolicyActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

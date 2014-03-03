@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_OpaqueManagementDataServiceModule";
-	Location = "UNIX_OpaqueManagementDataService";
+	Location = "UNIX_OpaqueManagementDataServiceProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

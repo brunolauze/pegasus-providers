@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DoorAccessToDevice
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DoorAccessToDevice
+LIBRARY = UNIX_DoorAccessToDeviceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

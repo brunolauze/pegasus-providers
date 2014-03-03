@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/InBGPPeerGroup
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_InBGPPeerGroup
+LIBRARY = UNIX_InBGPPeerGroupProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

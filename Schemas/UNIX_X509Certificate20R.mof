@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_X509CertificateModule";
-	Location = "UNIX_X509Certificate";
+	Location = "UNIX_X509CertificateProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

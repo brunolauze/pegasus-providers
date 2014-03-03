@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DeviceStatistics
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DeviceStatistics
+LIBRARY = UNIX_DeviceStatisticsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AssociatedNextHop
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AssociatedNextHop
+LIBRARY = UNIX_AssociatedNextHopProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

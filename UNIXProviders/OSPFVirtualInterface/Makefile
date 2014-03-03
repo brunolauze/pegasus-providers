@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OSPFVirtualInterface
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OSPFVirtualInterface
+LIBRARY = UNIX_OSPFVirtualInterfaceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

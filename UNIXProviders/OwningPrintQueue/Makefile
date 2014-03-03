@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OwningPrintQueue
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OwningPrintQueue
+LIBRARY = UNIX_OwningPrintQueueProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

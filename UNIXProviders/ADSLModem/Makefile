@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ADSLModem
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ADSLModem
+LIBRARY = UNIX_ADSLModemProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PowerManagementCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PowerManagementCapabilities
+LIBRARY = UNIX_PowerManagementCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

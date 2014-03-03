@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DeviceSharingCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DeviceSharingCapabilities
+LIBRARY = UNIX_DeviceSharingCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

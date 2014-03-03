@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ElementsLinked
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ElementsLinked
+LIBRARY = UNIX_ElementsLinkedProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

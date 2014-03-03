@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FibrePortOnFCAdapter
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FibrePortOnFCAdapter
+LIBRARY = UNIX_FibrePortOnFCAdapterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FCAdapterEventCounters
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FCAdapterEventCounters
+LIBRARY = UNIX_FCAdapterEventCountersProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_iSCSIProtocolEndpointModule";
-	Location = "UNIX_iSCSIProtocolEndpoint";
+	Location = "UNIX_iSCSIProtocolEndpointProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

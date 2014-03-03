@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TapeDrive
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TapeDrive
+LIBRARY = UNIX_TapeDriveProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

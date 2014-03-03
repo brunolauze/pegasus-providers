@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IPsecPolicyForSystem
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IPsecPolicyForSystem
+LIBRARY = UNIX_IPsecPolicyForSystemProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

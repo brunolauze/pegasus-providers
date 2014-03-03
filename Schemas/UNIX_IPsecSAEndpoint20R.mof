@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_IPsecSAEndpointModule";
-	Location = "UNIX_IPsecSAEndpoint";
+	Location = "UNIX_IPsecSAEndpointProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

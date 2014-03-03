@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AFService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AFService
+LIBRARY = UNIX_AFServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

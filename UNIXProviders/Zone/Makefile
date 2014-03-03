@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Zone
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Zone
+LIBRARY = UNIX_ZoneProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

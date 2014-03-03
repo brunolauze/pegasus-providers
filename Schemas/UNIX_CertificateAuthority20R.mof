@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_CertificateAuthorityModule";
-	Location = "UNIX_CertificateAuthority";
+	Location = "UNIX_CertificateAuthorityProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

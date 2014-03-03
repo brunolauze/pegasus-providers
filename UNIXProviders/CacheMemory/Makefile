@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CacheMemory
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CacheMemory
+LIBRARY = UNIX_CacheMemoryProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

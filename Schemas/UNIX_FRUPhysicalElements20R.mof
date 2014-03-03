@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_FRUPhysicalElementsModule";
-	Location = "UNIX_FRUPhysicalElements";
+	Location = "UNIX_FRUPhysicalElementsProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

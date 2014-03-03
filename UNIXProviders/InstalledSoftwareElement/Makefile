@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/InstalledSoftwareElement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_InstalledSoftwareElement
+LIBRARY = UNIX_InstalledSoftwareElementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
@@ -95,10 +95,10 @@ EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
 	-L/usr/local/lib -lpkg \
-	-lUNIX_VirtualComputerSystem \
-	-lUNIX_ComputerSystem \
-	-lUNIX_Cluster \
-	-lUNIX_SoftwareElement \
+	-lUNIX_VirtualComputerSystemProvider \
+	-lUNIX_ComputerSystemProvider \
+	-lUNIX_ClusterProvider \
+	-lUNIX_SoftwareElementProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PortActiveConnection
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PortActiveConnection
+LIBRARY = UNIX_PortActiveConnectionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

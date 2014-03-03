@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SwitchesAmong
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SwitchesAmong
+LIBRARY = UNIX_SwitchesAmongProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

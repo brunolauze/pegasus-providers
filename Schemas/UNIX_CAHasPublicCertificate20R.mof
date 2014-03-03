@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_CAHasPublicCertificateModule";
-	Location = "UNIX_CAHasPublicCertificate";
+	Location = "UNIX_CAHasPublicCertificateProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

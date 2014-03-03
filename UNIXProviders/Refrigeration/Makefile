@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Refrigeration
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Refrigeration
+LIBRARY = UNIX_RefrigerationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

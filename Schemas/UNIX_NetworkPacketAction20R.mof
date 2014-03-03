@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_NetworkPacketActionModule";
-	Location = "UNIX_NetworkPacketAction";
+	Location = "UNIX_NetworkPacketActionProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

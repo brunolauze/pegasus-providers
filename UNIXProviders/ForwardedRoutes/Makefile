@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ForwardedRoutes
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ForwardedRoutes
+LIBRARY = UNIX_ForwardedRoutesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

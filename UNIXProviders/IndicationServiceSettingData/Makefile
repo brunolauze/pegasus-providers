@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IndicationServiceSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IndicationServiceSettingData
+LIBRARY = UNIX_IndicationServiceSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

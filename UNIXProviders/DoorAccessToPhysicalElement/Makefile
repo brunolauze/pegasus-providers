@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DoorAccessToPhysicalElement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DoorAccessToPhysicalElement
+LIBRARY = UNIX_DoorAccessToPhysicalElementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

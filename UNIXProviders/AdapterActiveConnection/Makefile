@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AdapterActiveConnection
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AdapterActiveConnection
+LIBRARY = UNIX_AdapterActiveConnectionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

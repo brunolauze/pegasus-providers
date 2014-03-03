@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SharedSecretService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SharedSecretService
+LIBRARY = UNIX_SharedSecretServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

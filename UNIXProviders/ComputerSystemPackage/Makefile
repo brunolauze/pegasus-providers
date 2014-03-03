@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ComputerSystemPackage
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ComputerSystemPackage
+LIBRARY = UNIX_ComputerSystemPackageProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
@@ -94,7 +94,7 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_ComputerSystem \
+	-lUNIX_ComputerSystemProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

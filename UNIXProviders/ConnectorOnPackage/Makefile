@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ConnectorOnPackage
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ConnectorOnPackage
+LIBRARY = UNIX_ConnectorOnPackageProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/X509CRL
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_X509CRL
+LIBRARY = UNIX_X509CRLProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

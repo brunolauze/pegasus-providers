@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IKERule
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IKERule
+LIBRARY = UNIX_IKERuleProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

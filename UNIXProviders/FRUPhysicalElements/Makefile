@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FRUPhysicalElements
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FRUPhysicalElements
+LIBRARY = UNIX_FRUPhysicalElementsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

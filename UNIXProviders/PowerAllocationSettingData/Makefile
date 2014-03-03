@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PowerAllocationSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PowerAllocationSettingData
+LIBRARY = UNIX_PowerAllocationSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

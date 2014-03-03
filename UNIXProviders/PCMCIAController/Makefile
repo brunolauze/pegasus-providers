@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PCMCIAController
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PCMCIAController
+LIBRARY = UNIX_PCMCIAControllerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FlatPanel
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FlatPanel
+LIBRARY = UNIX_FlatPanelProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

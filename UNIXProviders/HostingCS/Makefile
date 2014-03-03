@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HostingCS
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HostingCS
+LIBRARY = UNIX_HostingCSProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

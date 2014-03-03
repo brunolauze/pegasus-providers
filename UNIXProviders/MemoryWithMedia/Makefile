@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MemoryWithMedia
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MemoryWithMedia
+LIBRARY = UNIX_MemoryWithMediaProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

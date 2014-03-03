@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HDSLModem
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HDSLModem
+LIBRARY = UNIX_HDSLModemProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

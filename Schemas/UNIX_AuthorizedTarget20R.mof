@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_AuthorizedTargetModule";
-	Location = "UNIX_AuthorizedTarget";
+	Location = "UNIX_AuthorizedTargetProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

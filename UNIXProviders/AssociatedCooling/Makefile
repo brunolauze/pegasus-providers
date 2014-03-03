@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AssociatedCooling
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AssociatedCooling
+LIBRARY = UNIX_AssociatedCoolingProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AssociatedAlarm
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AssociatedAlarm
+LIBRARY = UNIX_AssociatedAlarmProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

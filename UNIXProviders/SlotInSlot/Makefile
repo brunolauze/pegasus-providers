@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SlotInSlot
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SlotInSlot
+LIBRARY = UNIX_SlotInSlotProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

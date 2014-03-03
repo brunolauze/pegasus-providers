@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_InstCreationModule";
-	Location = "UNIX_InstCreation";
+	Location = "UNIX_InstCreationProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

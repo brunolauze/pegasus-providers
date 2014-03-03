@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/InstalledOS
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_InstalledOS
+LIBRARY = UNIX_InstalledOSProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
@@ -94,10 +94,10 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_VirtualComputerSystem \
-	-lUNIX_ComputerSystem \
-	-lUNIX_Cluster \
-	-lUNIX_OperatingSystem \
+	-lUNIX_VirtualComputerSystemProvider \
+	-lUNIX_ComputerSystemProvider \
+	-lUNIX_ClusterProvider \
+	-lUNIX_OperatingSystemProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

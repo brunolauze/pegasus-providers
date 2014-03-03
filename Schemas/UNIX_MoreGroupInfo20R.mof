@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_MoreGroupInfoModule";
-	Location = "UNIX_MoreGroupInfo";
+	Location = "UNIX_MoreGroupInfoProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

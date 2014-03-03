@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IKEAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IKEAction
+LIBRARY = UNIX_IKEActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

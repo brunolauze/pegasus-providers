@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SuppliesPower
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SuppliesPower
+LIBRARY = UNIX_SuppliesPowerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

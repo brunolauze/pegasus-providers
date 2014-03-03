@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_CardOnCardModule";
-	Location = "UNIX_CardOnCard";
+	Location = "UNIX_CardOnCardProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

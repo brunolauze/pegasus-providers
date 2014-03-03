@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DiagnosticCompletionRecord
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DiagnosticCompletionRecord
+LIBRARY = UNIX_DiagnosticCompletionRecordProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

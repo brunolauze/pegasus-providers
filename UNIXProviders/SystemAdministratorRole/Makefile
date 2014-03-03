@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SystemAdministratorRole
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SystemAdministratorRole
+LIBRARY = UNIX_SystemAdministratorRoleProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

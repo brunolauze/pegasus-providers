@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PublicPrivateKeyAuthentication
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PublicPrivateKeyAuthentication
+LIBRARY = UNIX_PublicPrivateKeyAuthenticationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

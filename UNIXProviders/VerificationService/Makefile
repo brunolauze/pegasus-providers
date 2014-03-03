@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VerificationService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VerificationService
+LIBRARY = UNIX_VerificationServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ListenerDestinationWSManagement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ListenerDestinationWSManagement
+LIBRARY = UNIX_ListenerDestinationWSManagementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

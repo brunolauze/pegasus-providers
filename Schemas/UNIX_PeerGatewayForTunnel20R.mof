@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_PeerGatewayForTunnelModule";
-	Location = "UNIX_PeerGatewayForTunnel";
+	Location = "UNIX_PeerGatewayForTunnelProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

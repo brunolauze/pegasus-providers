@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_DNSGeneralSettingDataModule";
-	Location = "UNIX_DNSGeneralSettingData";
+	Location = "UNIX_DNSGeneralSettingDataProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

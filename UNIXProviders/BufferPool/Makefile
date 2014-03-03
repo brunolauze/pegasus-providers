@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BufferPool
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BufferPool
+LIBRARY = UNIX_BufferPoolProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

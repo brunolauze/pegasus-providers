@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_DeviceFileModule";
-	Location = "UNIX_DeviceFile";
+	Location = "UNIX_DeviceFileProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

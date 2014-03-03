@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/QueueHierarchy
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_QueueHierarchy
+LIBRARY = UNIX_QueueHierarchyProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

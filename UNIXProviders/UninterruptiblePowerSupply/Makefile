@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/UninterruptiblePowerSupply
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_UninterruptiblePowerSupply
+LIBRARY = UNIX_UninterruptiblePowerSupplyProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

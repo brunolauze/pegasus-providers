@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LocallyManagedPublicKey
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LocallyManagedPublicKey
+LIBRARY = UNIX_LocallyManagedPublicKeyProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

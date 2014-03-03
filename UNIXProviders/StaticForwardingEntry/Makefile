@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/StaticForwardingEntry
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_StaticForwardingEntry
+LIBRARY = UNIX_StaticForwardingEntryProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

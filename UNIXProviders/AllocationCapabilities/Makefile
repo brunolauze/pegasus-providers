@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AllocationCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AllocationCapabilities
+LIBRARY = UNIX_AllocationCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

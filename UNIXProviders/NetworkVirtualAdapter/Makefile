@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NetworkVirtualAdapter
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NetworkVirtualAdapter
+LIBRARY = UNIX_NetworkVirtualAdapterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ElementView
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ElementView
+LIBRARY = UNIX_ElementViewProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

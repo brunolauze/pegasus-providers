@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AllocationSchedulingElement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AllocationSchedulingElement
+LIBRARY = UNIX_AllocationSchedulingElementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

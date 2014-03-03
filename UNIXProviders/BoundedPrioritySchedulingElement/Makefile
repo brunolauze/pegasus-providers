@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BoundedPrioritySchedulingElement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BoundedPrioritySchedulingElement
+LIBRARY = UNIX_BoundedPrioritySchedulingElementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

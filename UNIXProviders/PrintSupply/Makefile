@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PrintSupply
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PrintSupply
+LIBRARY = UNIX_PrintSupplyProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

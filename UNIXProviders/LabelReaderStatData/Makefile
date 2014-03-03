@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LabelReaderStatData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LabelReaderStatData
+LIBRARY = UNIX_LabelReaderStatDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

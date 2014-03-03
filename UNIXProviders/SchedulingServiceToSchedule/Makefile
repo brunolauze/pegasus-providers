@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SchedulingServiceToSchedule
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SchedulingServiceToSchedule
+LIBRARY = UNIX_SchedulingServiceToScheduleProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ISDNModem
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ISDNModem
+LIBRARY = UNIX_ISDNModemProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

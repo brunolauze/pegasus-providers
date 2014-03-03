@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Tachometer
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Tachometer
+LIBRARY = UNIX_TachometerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

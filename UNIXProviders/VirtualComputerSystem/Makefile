@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VirtualComputerSystem
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VirtualComputerSystem
+LIBRARY = UNIX_VirtualComputerSystemProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

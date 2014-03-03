@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NFS
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NFS
+LIBRARY = UNIX_NFSProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
@@ -94,8 +94,8 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_FileSystem \
-	-lUNIX_RemoteFileSystem \
+	-lUNIX_FileSystemProvider \
+	-lUNIX_RemoteFileSystemProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

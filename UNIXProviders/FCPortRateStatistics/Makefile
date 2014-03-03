@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FCPortRateStatistics
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FCPortRateStatistics
+LIBRARY = UNIX_FCPortRateStatisticsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

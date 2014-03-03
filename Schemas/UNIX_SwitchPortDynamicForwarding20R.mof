@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_SwitchPortDynamicForwardingModule";
-	Location = "UNIX_SwitchPortDynamicForwarding";
+	Location = "UNIX_SwitchPortDynamicForwardingProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

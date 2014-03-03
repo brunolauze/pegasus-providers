@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Snapshot
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Snapshot
+LIBRARY = UNIX_SnapshotProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

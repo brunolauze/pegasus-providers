@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HomeForMedia
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HomeForMedia
+LIBRARY = UNIX_HomeForMediaProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

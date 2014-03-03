@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AGPVideoController
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AGPVideoController
+LIBRARY = UNIX_AGPVideoControllerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

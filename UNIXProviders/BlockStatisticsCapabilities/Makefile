@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BlockStatisticsCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BlockStatisticsCapabilities
+LIBRARY = UNIX_BlockStatisticsCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

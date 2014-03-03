@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SwitchServiceSourceRouting
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SwitchServiceSourceRouting
+LIBRARY = UNIX_SwitchServiceSourceRoutingProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

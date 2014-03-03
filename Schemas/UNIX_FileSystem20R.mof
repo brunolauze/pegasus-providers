@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_FileSystemModule";
-	Location = "UNIX_FileSystem";
+	Location = "UNIX_FileSystemProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

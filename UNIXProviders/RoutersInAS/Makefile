@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RoutersInAS
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RoutersInAS
+LIBRARY = UNIX_RoutersInASProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

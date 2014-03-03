@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IPVersionSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IPVersionSettingData
+LIBRARY = UNIX_IPVersionSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

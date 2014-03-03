@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LogicalNetworkService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LogicalNetworkService
+LIBRARY = UNIX_LogicalNetworkServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

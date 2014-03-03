@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AssociatedRemainingExtent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AssociatedRemainingExtent
+LIBRARY = UNIX_AssociatedRemainingExtentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

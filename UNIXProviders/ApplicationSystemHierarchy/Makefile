@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ApplicationSystemHierarchy
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ApplicationSystemHierarchy
+LIBRARY = UNIX_ApplicationSystemHierarchyProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

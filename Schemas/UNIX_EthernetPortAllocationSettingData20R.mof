@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_EthernetPortAllocationSettingDataModule";
-	Location = "UNIX_EthernetPortAllocationSettingData";
+	Location = "UNIX_EthernetPortAllocationSettingDataProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

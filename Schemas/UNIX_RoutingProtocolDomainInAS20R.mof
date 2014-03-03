@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_RoutingProtocolDomainInASModule";
-	Location = "UNIX_RoutingProtocolDomainInAS";
+	Location = "UNIX_RoutingProtocolDomainInASProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

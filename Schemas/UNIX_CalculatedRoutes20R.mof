@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_CalculatedRoutesModule";
-	Location = "UNIX_CalculatedRoutes";
+	Location = "UNIX_CalculatedRoutesProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

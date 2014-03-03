@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RelatedSpanningTree
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RelatedSpanningTree
+LIBRARY = UNIX_RelatedSpanningTreeProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

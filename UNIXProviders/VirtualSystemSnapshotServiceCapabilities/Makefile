@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VirtualSystemSnapshotServiceCapabili
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VirtualSystemSnapshotServiceCapabilities
+LIBRARY = UNIX_VirtualSystemSnapshotServiceCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

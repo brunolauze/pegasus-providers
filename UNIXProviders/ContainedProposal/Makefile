@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ContainedProposal
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ContainedProposal
+LIBRARY = UNIX_ContainedProposalProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OtherGroupInformation
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OtherGroupInformation
+LIBRARY = UNIX_OtherGroupInformationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

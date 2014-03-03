@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_IBSubnetManagerModule";
-	Location = "UNIX_IBSubnetManager";
+	Location = "UNIX_IBSubnetManagerProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

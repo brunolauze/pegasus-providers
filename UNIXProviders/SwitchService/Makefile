@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SwitchService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SwitchService
+LIBRARY = UNIX_SwitchServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

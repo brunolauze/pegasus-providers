@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_DynamicForwardingEntryModule";
-	Location = "UNIX_DynamicForwardingEntry";
+	Location = "UNIX_DynamicForwardingEntryProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

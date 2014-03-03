@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OrderedMemberOfCollection
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OrderedMemberOfCollection
+LIBRARY = UNIX_OrderedMemberOfCollectionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

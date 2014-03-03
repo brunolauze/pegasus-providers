@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RemoteAccessAvailableToElement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RemoteAccessAvailableToElement
+LIBRARY = UNIX_RemoteAccessAvailableToElementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

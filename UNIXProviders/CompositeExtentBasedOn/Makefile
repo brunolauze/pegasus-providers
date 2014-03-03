@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CompositeExtentBasedOn
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CompositeExtentBasedOn
+LIBRARY = UNIX_CompositeExtentBasedOnProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

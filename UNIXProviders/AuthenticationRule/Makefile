@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AuthenticationRule
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AuthenticationRule
+LIBRARY = UNIX_AuthenticationRuleProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

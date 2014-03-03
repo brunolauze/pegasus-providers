@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ProcessorAllocationSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ProcessorAllocationSettingData
+LIBRARY = UNIX_ProcessorAllocationSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

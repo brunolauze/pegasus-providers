@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LANSegment
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LANSegment
+LIBRARY = UNIX_LANSegmentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

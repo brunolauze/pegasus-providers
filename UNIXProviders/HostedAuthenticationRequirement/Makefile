@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HostedAuthenticationRequirement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HostedAuthenticationRequirement
+LIBRARY = UNIX_HostedAuthenticationRequirementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

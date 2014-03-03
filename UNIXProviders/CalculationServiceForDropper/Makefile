@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CalculationServiceForDropper
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CalculationServiceForDropper
+LIBRARY = UNIX_CalculationServiceForDropperProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

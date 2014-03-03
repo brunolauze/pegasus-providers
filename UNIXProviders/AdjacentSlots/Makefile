@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AdjacentSlots
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AdjacentSlots
+LIBRARY = UNIX_AdjacentSlotsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

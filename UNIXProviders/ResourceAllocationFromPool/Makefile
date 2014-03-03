@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ResourceAllocationFromPool
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ResourceAllocationFromPool
+LIBRARY = UNIX_ResourceAllocationFromPoolProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IPNetworkConnection
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IPNetworkConnection
+LIBRARY = UNIX_IPNetworkConnectionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

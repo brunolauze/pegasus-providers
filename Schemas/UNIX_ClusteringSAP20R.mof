@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ClusteringSAPModule";
-	Location = "UNIX_ClusteringSAP";
+	Location = "UNIX_ClusteringSAPProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

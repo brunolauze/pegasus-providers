@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IPSOFilterEntry
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IPSOFilterEntry
+LIBRARY = UNIX_IPSOFilterEntryProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

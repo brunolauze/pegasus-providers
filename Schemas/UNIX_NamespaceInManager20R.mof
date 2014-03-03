@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_NamespaceInManagerModule";
-	Location = "UNIX_NamespaceInManager";
+	Location = "UNIX_NamespaceInManagerProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

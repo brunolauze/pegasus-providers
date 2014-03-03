@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_IPSOFilterEntryModule";
-	Location = "UNIX_IPSOFilterEntry";
+	Location = "UNIX_IPSOFilterEntryProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

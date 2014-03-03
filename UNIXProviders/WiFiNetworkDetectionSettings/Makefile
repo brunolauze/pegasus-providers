@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/WiFiNetworkDetectionSettings
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_WiFiNetworkDetectionSettings
+LIBRARY = UNIX_WiFiNetworkDetectionSettingsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

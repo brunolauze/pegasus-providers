@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PhysicalLink
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PhysicalLink
+LIBRARY = UNIX_PhysicalLinkProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ClassDeletionModule";
-	Location = "UNIX_ClassDeletion";
+	Location = "UNIX_ClassDeletionProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

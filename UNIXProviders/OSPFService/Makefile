@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OSPFService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OSPFService
+LIBRARY = UNIX_OSPFServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

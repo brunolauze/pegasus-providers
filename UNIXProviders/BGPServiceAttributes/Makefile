@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BGPServiceAttributes
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BGPServiceAttributes
+LIBRARY = UNIX_BGPServiceAttributesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

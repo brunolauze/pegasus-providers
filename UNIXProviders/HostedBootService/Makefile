@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HostedBootService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HostedBootService
+LIBRARY = UNIX_HostedBootServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

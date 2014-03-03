@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DatabaseSystem
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DatabaseSystem
+LIBRARY = UNIX_DatabaseSystemProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
@@ -94,7 +94,7 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_ApplicationSystem \
+	-lUNIX_ApplicationSystemProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PeerOfSAEndpoint
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PeerOfSAEndpoint
+LIBRARY = UNIX_PeerOfSAEndpointProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

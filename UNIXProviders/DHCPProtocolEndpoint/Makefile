@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DHCPProtocolEndpoint
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DHCPProtocolEndpoint
+LIBRARY = UNIX_DHCPProtocolEndpointProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

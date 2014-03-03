@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IsSpare
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IsSpare
+LIBRARY = UNIX_IsSpareProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

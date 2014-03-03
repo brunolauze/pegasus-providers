@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_WiFiPortModule";
-	Location = "UNIX_WiFiPort";
+	Location = "UNIX_WiFiPortProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

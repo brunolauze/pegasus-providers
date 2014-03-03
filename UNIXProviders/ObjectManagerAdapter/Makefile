@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ObjectManagerAdapter
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ObjectManagerAdapter
+LIBRARY = UNIX_ObjectManagerAdapterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

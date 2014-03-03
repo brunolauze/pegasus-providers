@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_TapeDriveModule";
-	Location = "UNIX_TapeDrive";
+	Location = "UNIX_TapeDriveProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

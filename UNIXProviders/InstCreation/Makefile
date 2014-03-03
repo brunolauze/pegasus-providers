@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/InstCreation
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_InstCreation
+LIBRARY = UNIX_InstCreationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RegisteredSubProfile
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RegisteredSubProfile
+LIBRARY = UNIX_RegisteredSubProfileProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

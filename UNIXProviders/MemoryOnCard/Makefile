@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MemoryOnCard
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MemoryOnCard
+LIBRARY = UNIX_MemoryOnCardProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

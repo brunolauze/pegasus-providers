@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_BIOSServiceCapabilitiesModule";
-	Location = "UNIX_BIOSServiceCapabilities";
+	Location = "UNIX_BIOSServiceCapabilitiesProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

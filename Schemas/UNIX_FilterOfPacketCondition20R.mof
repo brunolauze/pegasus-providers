@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_FilterOfPacketConditionModule";
-	Location = "UNIX_FilterOfPacketCondition";
+	Location = "UNIX_FilterOfPacketConditionProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

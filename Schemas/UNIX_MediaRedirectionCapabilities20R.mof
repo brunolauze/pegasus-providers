@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_MediaRedirectionCapabilitiesModule";
-	Location = "UNIX_MediaRedirectionCapabilities";
+	Location = "UNIX_MediaRedirectionCapabilitiesProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

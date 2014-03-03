@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SystemSetting
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SystemSetting
+LIBRARY = UNIX_SystemSettingProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BGPRouteMapsInRoutingPolicy
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BGPRouteMapsInRoutingPolicy
+LIBRARY = UNIX_BGPRouteMapsInRoutingPolicyProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

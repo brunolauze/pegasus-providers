@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ParallelController
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ParallelController
+LIBRARY = UNIX_ParallelControllerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_Hdr8021FilterModule";
-	Location = "UNIX_Hdr8021Filter";
+	Location = "UNIX_Hdr8021FilterProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CardOnCard
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CardOnCard
+LIBRARY = UNIX_CardOnCardProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

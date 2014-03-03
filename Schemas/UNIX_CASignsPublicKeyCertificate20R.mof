@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_CASignsPublicKeyCertificateModule";
-	Location = "UNIX_CASignsPublicKeyCertificate";
+	Location = "UNIX_CASignsPublicKeyCertificateProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

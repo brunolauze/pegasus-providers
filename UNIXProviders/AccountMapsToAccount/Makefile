@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AccountMapsToAccount
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AccountMapsToAccount
+LIBRARY = UNIX_AccountMapsToAccountProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

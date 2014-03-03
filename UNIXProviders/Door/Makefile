@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Door
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Door
+LIBRARY = UNIX_DoorProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

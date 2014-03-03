@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/UnsignedCredential
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_UnsignedCredential
+LIBRARY = UNIX_UnsignedCredentialProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Spared
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Spared
+LIBRARY = UNIX_SparedProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IBSubnetManager
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IBSubnetManager
+LIBRARY = UNIX_IBSubnetManagerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

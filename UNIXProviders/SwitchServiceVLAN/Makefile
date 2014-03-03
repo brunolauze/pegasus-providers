@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SwitchServiceVLAN
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SwitchServiceVLAN
+LIBRARY = UNIX_SwitchServiceVLANProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CalculationBasedOnQueue
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CalculationBasedOnQueue
+LIBRARY = UNIX_CalculationBasedOnQueueProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

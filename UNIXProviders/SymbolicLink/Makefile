@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SymbolicLink
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SymbolicLink
+LIBRARY = UNIX_SymbolicLinkProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

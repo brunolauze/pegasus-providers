@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SupportAccess
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SupportAccess
+LIBRARY = UNIX_SupportAccessProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

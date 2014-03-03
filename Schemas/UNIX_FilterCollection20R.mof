@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_FilterCollectionModule";
-	Location = "UNIX_FilterCollection";
+	Location = "UNIX_FilterCollectionProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

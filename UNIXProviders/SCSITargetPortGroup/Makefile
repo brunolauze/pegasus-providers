@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SCSITargetPortGroup
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SCSITargetPortGroup
+LIBRARY = UNIX_SCSITargetPortGroupProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

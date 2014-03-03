@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PrintJob
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PrintJob
+LIBRARY = UNIX_PrintJobProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CLPCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CLPCapabilities
+LIBRARY = UNIX_CLPCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

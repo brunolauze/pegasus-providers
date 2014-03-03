@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CASignsPublicKeyCertificate
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CASignsPublicKeyCertificate
+LIBRARY = UNIX_CASignsPublicKeyCertificateProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

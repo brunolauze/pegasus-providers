@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AdministrativeDistance
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AdministrativeDistance
+LIBRARY = UNIX_AdministrativeDistanceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

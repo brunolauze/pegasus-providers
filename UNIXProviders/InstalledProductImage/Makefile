@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/InstalledProductImage
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_InstalledProductImage
+LIBRARY = UNIX_InstalledProductImageProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

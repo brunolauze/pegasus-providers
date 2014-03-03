@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HostedJobDestination
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HostedJobDestination
+LIBRARY = UNIX_HostedJobDestinationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

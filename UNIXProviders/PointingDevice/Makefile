@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PointingDevice
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PointingDevice
+LIBRARY = UNIX_PointingDeviceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

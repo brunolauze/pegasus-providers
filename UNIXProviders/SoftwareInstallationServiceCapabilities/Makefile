@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SoftwareInstallationServiceCapabilit
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SoftwareInstallationServiceCapabilities
+LIBRARY = UNIX_SoftwareInstallationServiceCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

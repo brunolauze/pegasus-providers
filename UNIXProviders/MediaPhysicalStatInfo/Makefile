@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MediaPhysicalStatInfo
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MediaPhysicalStatInfo
+LIBRARY = UNIX_MediaPhysicalStatInfoProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

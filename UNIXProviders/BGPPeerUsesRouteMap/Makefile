@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BGPPeerUsesRouteMap
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BGPPeerUsesRouteMap
+LIBRARY = UNIX_BGPPeerUsesRouteMapProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PreconfiguredTunnelAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PreconfiguredTunnelAction
+LIBRARY = UNIX_PreconfiguredTunnelActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

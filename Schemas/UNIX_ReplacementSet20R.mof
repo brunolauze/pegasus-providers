@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ReplacementSetModule";
-	Location = "UNIX_ReplacementSet";
+	Location = "UNIX_ReplacementSetProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

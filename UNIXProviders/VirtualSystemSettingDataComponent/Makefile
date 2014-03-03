@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VirtualSystemSettingDataComponent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VirtualSystemSettingDataComponent
+LIBRARY = UNIX_VirtualSystemSettingDataComponentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

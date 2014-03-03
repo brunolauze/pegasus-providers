@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_BootConfigSettingModule";
-	Location = "UNIX_BootConfigSetting";
+	Location = "UNIX_BootConfigSettingProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

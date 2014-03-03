@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MemoryError
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MemoryError
+LIBRARY = UNIX_MemoryErrorProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/InSegment
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_InSegment
+LIBRARY = UNIX_InSegmentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

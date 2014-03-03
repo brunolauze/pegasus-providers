@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Thread
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Thread
+LIBRARY = UNIX_ThreadProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ComputerSystemMappedIO
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ComputerSystemMappedIO
+LIBRARY = UNIX_ComputerSystemMappedIOProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PhysicalMediaInLocation
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PhysicalMediaInLocation
+LIBRARY = UNIX_PhysicalMediaInLocationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

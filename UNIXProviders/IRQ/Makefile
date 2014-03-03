@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IRQ
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IRQ
+LIBRARY = UNIX_IRQProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

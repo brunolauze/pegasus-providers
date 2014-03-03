@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/EndpointOfNetworkPipe
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_EndpointOfNetworkPipe
+LIBRARY = UNIX_EndpointOfNetworkPipeProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/WeightedREDDropperService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_WeightedREDDropperService
+LIBRARY = UNIX_WeightedREDDropperServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

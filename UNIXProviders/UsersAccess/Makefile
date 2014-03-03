@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/UsersAccess
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_UsersAccess
+LIBRARY = UNIX_UsersAccessProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
@@ -94,7 +94,7 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_Account \
+	-lUNIX_AccountProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

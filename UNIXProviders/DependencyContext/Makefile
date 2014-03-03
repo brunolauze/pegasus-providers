@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DependencyContext
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DependencyContext
+LIBRARY = UNIX_DependencyContextProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

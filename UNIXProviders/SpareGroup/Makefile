@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SpareGroup
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SpareGroup
+LIBRARY = UNIX_SpareGroupProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

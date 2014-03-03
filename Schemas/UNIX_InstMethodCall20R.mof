@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_InstMethodCallModule";
-	Location = "UNIX_InstMethodCall";
+	Location = "UNIX_InstMethodCallProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

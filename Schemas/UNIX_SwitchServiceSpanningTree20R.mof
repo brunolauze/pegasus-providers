@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_SwitchServiceSpanningTreeModule";
-	Location = "UNIX_SwitchServiceSpanningTree";
+	Location = "UNIX_SwitchServiceSpanningTreeProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SchedulerUsed
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SchedulerUsed
+LIBRARY = UNIX_SchedulerUsedProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

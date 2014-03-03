@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BIOSString
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BIOSString
+LIBRARY = UNIX_BIOSStringProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

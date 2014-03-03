@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_RoleLimitedToTargetModule";
-	Location = "UNIX_RoleLimitedToTarget";
+	Location = "UNIX_RoleLimitedToTargetProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

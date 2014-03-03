@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SwitchPortStaticForwarding
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SwitchPortStaticForwarding
+LIBRARY = UNIX_SwitchPortStaticForwardingProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

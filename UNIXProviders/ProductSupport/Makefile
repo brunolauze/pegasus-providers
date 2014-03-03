@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ProductSupport
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ProductSupport
+LIBRARY = UNIX_ProductSupportProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

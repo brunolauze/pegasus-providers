@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SoftwareElementServiceImplementation
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SoftwareElementServiceImplementation
+LIBRARY = UNIX_SoftwareElementServiceImplementationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

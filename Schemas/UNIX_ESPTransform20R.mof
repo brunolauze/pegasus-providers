@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ESPTransformModule";
-	Location = "UNIX_ESPTransform";
+	Location = "UNIX_ESPTransformProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

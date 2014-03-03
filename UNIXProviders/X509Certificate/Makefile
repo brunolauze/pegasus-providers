@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/X509Certificate
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_X509Certificate
+LIBRARY = UNIX_X509CertificateProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

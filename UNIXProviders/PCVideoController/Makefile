@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PCVideoController
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PCVideoController
+LIBRARY = UNIX_PCVideoControllerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/REDDropperService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_REDDropperService
+LIBRARY = UNIX_REDDropperServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

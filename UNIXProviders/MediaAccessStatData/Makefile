@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MediaAccessStatData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MediaAccessStatData
+LIBRARY = UNIX_MediaAccessStatDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

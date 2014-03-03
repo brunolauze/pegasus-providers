@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LLDPEthernetPort
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LLDPEthernetPort
+LIBRARY = UNIX_LLDPEthernetPortProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

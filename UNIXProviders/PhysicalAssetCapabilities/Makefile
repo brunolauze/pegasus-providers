@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PhysicalAssetCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PhysicalAssetCapabilities
+LIBRARY = UNIX_PhysicalAssetCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

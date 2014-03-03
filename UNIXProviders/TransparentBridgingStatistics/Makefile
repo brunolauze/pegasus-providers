@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TransparentBridgingStatistics
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TransparentBridgingStatistics
+LIBRARY = UNIX_TransparentBridgingStatisticsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

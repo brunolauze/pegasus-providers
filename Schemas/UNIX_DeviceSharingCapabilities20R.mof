@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_DeviceSharingCapabilitiesModule";
-	Location = "UNIX_DeviceSharingCapabilities";
+	Location = "UNIX_DeviceSharingCapabilitiesProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

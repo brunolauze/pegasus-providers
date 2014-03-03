@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ProductPhysicalComponent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ProductPhysicalComponent
+LIBRARY = UNIX_ProductPhysicalComponentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/USBConnection
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_USBConnection
+LIBRARY = UNIX_USBConnectionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

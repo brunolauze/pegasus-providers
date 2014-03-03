@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/GatewayPathID
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_GatewayPathID
+LIBRARY = UNIX_GatewayPathIDProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

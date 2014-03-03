@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FibreChannelAdapter
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FibreChannelAdapter
+LIBRARY = UNIX_FibreChannelAdapterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

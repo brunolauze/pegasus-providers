@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_SecuritySensitivityModule";
-	Location = "UNIX_SecuritySensitivity";
+	Location = "UNIX_SecuritySensitivityProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

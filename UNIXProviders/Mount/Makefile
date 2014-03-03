@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Mount
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Mount
+LIBRARY = UNIX_MountProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
@@ -94,8 +94,8 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_FileSystem \
-	-lUNIX_Directory \
+	-lUNIX_FileSystemProvider \
+	-lUNIX_DirectoryProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

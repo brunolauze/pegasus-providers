@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MemoryCheck
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MemoryCheck
+LIBRARY = UNIX_MemoryCheckProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

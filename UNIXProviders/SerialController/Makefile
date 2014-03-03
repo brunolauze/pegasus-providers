@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SerialController
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SerialController
+LIBRARY = UNIX_SerialControllerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

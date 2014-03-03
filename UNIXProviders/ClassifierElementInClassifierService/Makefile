@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ClassifierElementInClassifierService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ClassifierElementInClassifierService
+LIBRARY = UNIX_ClassifierElementInClassifierServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

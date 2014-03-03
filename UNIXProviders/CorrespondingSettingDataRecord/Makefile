@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CorrespondingSettingDataRecord
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CorrespondingSettingDataRecord
+LIBRARY = UNIX_CorrespondingSettingDataRecordProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

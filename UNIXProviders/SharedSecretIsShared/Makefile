@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SharedSecretIsShared
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SharedSecretIsShared
+LIBRARY = UNIX_SharedSecretIsSharedProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CalculatesAmong
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CalculatesAmong
+LIBRARY = UNIX_CalculatesAmongProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

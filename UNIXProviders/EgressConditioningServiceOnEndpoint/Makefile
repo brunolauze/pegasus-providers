@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/EgressConditioningServiceOnEndpoint
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_EgressConditioningServiceOnEndpoint
+LIBRARY = UNIX_EgressConditioningServiceOnEndpointProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

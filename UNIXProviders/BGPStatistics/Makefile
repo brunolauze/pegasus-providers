@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BGPStatistics
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BGPStatistics
+LIBRARY = UNIX_BGPStatisticsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

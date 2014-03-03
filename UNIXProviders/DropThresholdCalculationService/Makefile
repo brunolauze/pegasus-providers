@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DropThresholdCalculationService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DropThresholdCalculationService
+LIBRARY = UNIX_DropThresholdCalculationServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ComputerSystemDMA
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ComputerSystemDMA
+LIBRARY = UNIX_ComputerSystemDMAProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ScopedSetting
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ScopedSetting
+LIBRARY = UNIX_ScopedSettingProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

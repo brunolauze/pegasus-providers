@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DiagnosticResultInPackage
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DiagnosticResultInPackage
+LIBRARY = UNIX_DiagnosticResultInPackageProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

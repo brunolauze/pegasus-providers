@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/iSCSICapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_iSCSICapabilities
+LIBRARY = UNIX_iSCSICapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

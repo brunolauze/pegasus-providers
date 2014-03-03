@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LocalizationCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LocalizationCapabilities
+LIBRARY = UNIX_LocalizationCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

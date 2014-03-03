@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AssociatedBattery
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AssociatedBattery
+LIBRARY = UNIX_AssociatedBatteryProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

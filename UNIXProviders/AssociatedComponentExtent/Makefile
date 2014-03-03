@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AssociatedComponentExtent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AssociatedComponentExtent
+LIBRARY = UNIX_AssociatedComponentExtentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

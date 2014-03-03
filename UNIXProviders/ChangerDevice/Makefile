@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ChangerDevice
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ChangerDevice
+LIBRARY = UNIX_ChangerDeviceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

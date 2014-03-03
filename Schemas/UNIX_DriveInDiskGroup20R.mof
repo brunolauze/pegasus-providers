@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_DriveInDiskGroupModule";
-	Location = "UNIX_DriveInDiskGroup";
+	Location = "UNIX_DriveInDiskGroupProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

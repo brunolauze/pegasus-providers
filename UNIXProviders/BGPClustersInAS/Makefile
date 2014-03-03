@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BGPClustersInAS
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BGPClustersInAS
+LIBRARY = UNIX_BGPClustersInASProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

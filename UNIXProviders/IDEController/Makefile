@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IDEController
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IDEController
+LIBRARY = UNIX_IDEControllerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_PickerForChangerModule";
-	Location = "UNIX_PickerForChanger";
+	Location = "UNIX_PickerForChangerProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

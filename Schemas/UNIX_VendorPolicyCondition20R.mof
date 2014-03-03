@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_VendorPolicyConditionModule";
-	Location = "UNIX_VendorPolicyCondition";
+	Location = "UNIX_VendorPolicyConditionProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

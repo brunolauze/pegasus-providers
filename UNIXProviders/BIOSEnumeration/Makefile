@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BIOSEnumeration
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BIOSEnumeration
+LIBRARY = UNIX_BIOSEnumerationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

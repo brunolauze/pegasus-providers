@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_USBConnectionModule";
-	Location = "UNIX_USBConnection";
+	Location = "UNIX_USBConnectionProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

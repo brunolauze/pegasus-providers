@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TrustHierarchy
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TrustHierarchy
+LIBRARY = UNIX_TrustHierarchyProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

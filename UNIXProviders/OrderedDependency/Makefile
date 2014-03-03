@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OrderedDependency
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OrderedDependency
+LIBRARY = UNIX_OrderedDependencyProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

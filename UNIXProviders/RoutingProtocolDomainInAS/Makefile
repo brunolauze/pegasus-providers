@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RoutingProtocolDomainInAS
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RoutingProtocolDomainInAS
+LIBRARY = UNIX_RoutingProtocolDomainInASProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

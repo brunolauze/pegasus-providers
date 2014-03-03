@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ActionSequence
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ActionSequence
+LIBRARY = UNIX_ActionSequenceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

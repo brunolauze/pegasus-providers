@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PSExtentBasedOnPExtent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PSExtentBasedOnPExtent
+LIBRARY = UNIX_PSExtentBasedOnPExtentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

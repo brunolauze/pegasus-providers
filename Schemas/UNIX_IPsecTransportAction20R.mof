@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_IPsecTransportActionModule";
-	Location = "UNIX_IPsecTransportAction";
+	Location = "UNIX_IPsecTransportActionProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

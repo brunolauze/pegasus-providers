@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PortResource
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PortResource
+LIBRARY = UNIX_PortResourceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

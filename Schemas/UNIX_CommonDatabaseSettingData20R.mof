@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_CommonDatabaseSettingDataModule";
-	Location = "UNIX_CommonDatabaseSettingData";
+	Location = "UNIX_CommonDatabaseSettingDataProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

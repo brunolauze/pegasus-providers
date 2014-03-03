@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OwningJobElement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OwningJobElement
+LIBRARY = UNIX_OwningJobElementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

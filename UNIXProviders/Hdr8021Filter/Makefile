@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Hdr8021Filter
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Hdr8021Filter
+LIBRARY = UNIX_Hdr8021FilterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

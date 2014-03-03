@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DatabaseStorage
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DatabaseStorage
+LIBRARY = UNIX_DatabaseStorageProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

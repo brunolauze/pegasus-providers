@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ProtocolAdapterModule";
-	Location = "UNIX_ProtocolAdapter";
+	Location = "UNIX_ProtocolAdapterProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

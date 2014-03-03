@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_MethodResultModule";
-	Location = "UNIX_MethodResult";
+	Location = "UNIX_MethodResultProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

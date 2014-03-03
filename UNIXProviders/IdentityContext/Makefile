@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IdentityContext
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IdentityContext
+LIBRARY = UNIX_IdentityContextProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

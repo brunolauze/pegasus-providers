@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_HardwareThreadModule";
-	Location = "UNIX_HardwareThread";
+	Location = "UNIX_HardwareThreadProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

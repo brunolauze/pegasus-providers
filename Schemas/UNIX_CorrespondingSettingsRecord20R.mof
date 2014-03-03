@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_CorrespondingSettingsRecordModule";
-	Location = "UNIX_CorrespondingSettingsRecord";
+	Location = "UNIX_CorrespondingSettingsRecordProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

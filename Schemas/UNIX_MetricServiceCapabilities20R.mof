@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_MetricServiceCapabilitiesModule";
-	Location = "UNIX_MetricServiceCapabilities";
+	Location = "UNIX_MetricServiceCapabilitiesProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ContainedLocation
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ContainedLocation
+LIBRARY = UNIX_ContainedLocationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

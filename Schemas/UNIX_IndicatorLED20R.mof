@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_IndicatorLEDModule";
-	Location = "UNIX_IndicatorLED";
+	Location = "UNIX_IndicatorLEDProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

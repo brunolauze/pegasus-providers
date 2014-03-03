@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/iSCSIConnectionSettings
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_iSCSIConnectionSettings
+LIBRARY = UNIX_iSCSIConnectionSettingsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

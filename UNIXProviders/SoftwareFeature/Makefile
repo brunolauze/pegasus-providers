@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SoftwareFeature
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SoftwareFeature
+LIBRARY = UNIX_SoftwareFeatureProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

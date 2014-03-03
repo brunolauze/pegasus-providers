@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_AssociatedCoolingModule";
-	Location = "UNIX_AssociatedCooling";
+	Location = "UNIX_AssociatedCoolingProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

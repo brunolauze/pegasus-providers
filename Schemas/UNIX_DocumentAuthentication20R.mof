@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_DocumentAuthenticationModule";
-	Location = "UNIX_DocumentAuthentication";
+	Location = "UNIX_DocumentAuthenticationProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

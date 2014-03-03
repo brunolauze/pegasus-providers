@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_RealizesAggregatePExtentModule";
-	Location = "UNIX_RealizesAggregatePExtent";
+	Location = "UNIX_RealizesAggregatePExtentProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

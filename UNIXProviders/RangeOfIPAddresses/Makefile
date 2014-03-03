@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RangeOfIPAddresses
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RangeOfIPAddresses
+LIBRARY = UNIX_RangeOfIPAddressesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

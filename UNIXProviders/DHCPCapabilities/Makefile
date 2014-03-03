@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DHCPCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DHCPCapabilities
+LIBRARY = UNIX_DHCPCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

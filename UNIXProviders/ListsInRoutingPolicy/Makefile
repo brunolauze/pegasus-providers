@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ListsInRoutingPolicy
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ListsInRoutingPolicy
+LIBRARY = UNIX_ListsInRoutingPolicyProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

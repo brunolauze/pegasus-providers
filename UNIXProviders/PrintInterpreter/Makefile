@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PrintInterpreter
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PrintInterpreter
+LIBRARY = UNIX_PrintInterpreterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

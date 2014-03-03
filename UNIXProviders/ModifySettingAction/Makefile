@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ModifySettingAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ModifySettingAction
+LIBRARY = UNIX_ModifySettingActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

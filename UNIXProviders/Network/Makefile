@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Network
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Network
+LIBRARY = UNIX_NetworkProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

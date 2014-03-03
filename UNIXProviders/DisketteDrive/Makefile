@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DisketteDrive
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DisketteDrive
+LIBRARY = UNIX_DisketteDriveProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SystemBusCard
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SystemBusCard
+LIBRARY = UNIX_SystemBusCardProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

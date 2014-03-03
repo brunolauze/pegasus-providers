@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/QueueForwardsToPrintSAP
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_QueueForwardsToPrintSAP
+LIBRARY = UNIX_QueueForwardsToPrintSAPProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

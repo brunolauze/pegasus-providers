@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/EFService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_EFService
+LIBRARY = UNIX_EFServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ESCONController
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ESCONController
+LIBRARY = UNIX_ESCONControllerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

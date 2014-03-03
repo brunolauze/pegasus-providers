@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IndicationService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IndicationService
+LIBRARY = UNIX_IndicationServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

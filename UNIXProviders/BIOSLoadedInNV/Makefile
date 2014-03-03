@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BIOSLoadedInNV
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BIOSLoadedInNV
+LIBRARY = UNIX_BIOSLoadedInNVProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

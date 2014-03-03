@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ArchitectureCheck
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ArchitectureCheck
+LIBRARY = UNIX_ArchitectureCheckProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

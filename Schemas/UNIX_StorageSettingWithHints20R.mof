@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_StorageSettingWithHintsModule";
-	Location = "UNIX_StorageSettingWithHints";
+	Location = "UNIX_StorageSettingWithHintsProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

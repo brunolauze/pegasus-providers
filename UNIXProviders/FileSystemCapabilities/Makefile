@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FileSystemCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FileSystemCapabilities
+LIBRARY = UNIX_FileSystemCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

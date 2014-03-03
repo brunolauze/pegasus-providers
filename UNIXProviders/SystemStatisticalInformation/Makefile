@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SystemStatisticalInformation
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SystemStatisticalInformation
+LIBRARY = UNIX_SystemStatisticalInformationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

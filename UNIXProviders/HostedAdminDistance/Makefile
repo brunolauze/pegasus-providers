@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HostedAdminDistance
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HostedAdminDistance
+LIBRARY = UNIX_HostedAdminDistanceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

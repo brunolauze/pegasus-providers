@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/USBRedirectionSAP
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_USBRedirectionSAP
+LIBRARY = UNIX_USBRedirectionSAPProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PickerElement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PickerElement
+LIBRARY = UNIX_PickerElementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

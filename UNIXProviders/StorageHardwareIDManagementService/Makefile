@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/StorageHardwareIDManagementService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_StorageHardwareIDManagementService
+LIBRARY = UNIX_StorageHardwareIDManagementServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

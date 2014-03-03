@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PackageTempSensor
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PackageTempSensor
+LIBRARY = UNIX_PackageTempSensorProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

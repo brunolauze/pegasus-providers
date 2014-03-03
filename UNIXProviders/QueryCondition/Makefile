@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/QueryCondition
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_QueryCondition
+LIBRARY = UNIX_QueryConditionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

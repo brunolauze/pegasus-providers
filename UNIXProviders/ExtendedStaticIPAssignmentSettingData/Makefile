@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ExtendedStaticIPAssignmentSettingDat
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ExtendedStaticIPAssignmentSettingData
+LIBRARY = UNIX_ExtendedStaticIPAssignmentSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

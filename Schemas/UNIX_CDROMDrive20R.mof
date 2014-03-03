@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_CDROMDriveModule";
-	Location = "UNIX_CDROMDrive";
+	Location = "UNIX_CDROMDriveProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

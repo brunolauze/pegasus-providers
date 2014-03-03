@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/WRRSchedulingElement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_WRRSchedulingElement
+LIBRARY = UNIX_WRRSchedulingElementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

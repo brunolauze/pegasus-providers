@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/QueryCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_QueryCapabilities
+LIBRARY = UNIX_QueryCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

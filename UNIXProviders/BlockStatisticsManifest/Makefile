@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BlockStatisticsManifest
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BlockStatisticsManifest
+LIBRARY = UNIX_BlockStatisticsManifestProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

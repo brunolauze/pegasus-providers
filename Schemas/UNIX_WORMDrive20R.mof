@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_WORMDriveModule";
-	Location = "UNIX_WORMDrive";
+	Location = "UNIX_WORMDriveProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

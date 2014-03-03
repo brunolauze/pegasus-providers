@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HostedRoute
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HostedRoute
+LIBRARY = UNIX_HostedRouteProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

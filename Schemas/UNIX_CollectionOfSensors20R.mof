@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_CollectionOfSensorsModule";
-	Location = "UNIX_CollectionOfSensors";
+	Location = "UNIX_CollectionOfSensorsProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

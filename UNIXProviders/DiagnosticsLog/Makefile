@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DiagnosticsLog
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DiagnosticsLog
+LIBRARY = UNIX_DiagnosticsLogProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

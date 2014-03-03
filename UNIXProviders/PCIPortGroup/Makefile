@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PCIPortGroup
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PCIPortGroup
+LIBRARY = UNIX_PCIPortGroupProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

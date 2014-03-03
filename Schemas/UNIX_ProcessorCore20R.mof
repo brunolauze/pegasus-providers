@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ProcessorCoreModule";
-	Location = "UNIX_ProcessorCore";
+	Location = "UNIX_ProcessorCoreProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

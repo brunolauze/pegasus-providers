@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DisplayController
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DisplayController
+LIBRARY = UNIX_DisplayControllerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

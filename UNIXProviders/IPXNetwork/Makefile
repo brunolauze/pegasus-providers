@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IPXNetwork
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IPXNetwork
+LIBRARY = UNIX_IPXNetworkProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

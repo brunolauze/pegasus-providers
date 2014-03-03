@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DirectorySpecification
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DirectorySpecification
+LIBRARY = UNIX_DirectorySpecificationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

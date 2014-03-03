@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HostedForwardingServices
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HostedForwardingServices
+LIBRARY = UNIX_HostedForwardingServicesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

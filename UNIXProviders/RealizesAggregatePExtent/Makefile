@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RealizesAggregatePExtent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RealizesAggregatePExtent
+LIBRARY = UNIX_RealizesAggregatePExtentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

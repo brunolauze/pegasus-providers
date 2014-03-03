@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_PolicySetAppliesToElementModule";
-	Location = "UNIX_PolicySetAppliesToElement";
+	Location = "UNIX_PolicySetAppliesToElementProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

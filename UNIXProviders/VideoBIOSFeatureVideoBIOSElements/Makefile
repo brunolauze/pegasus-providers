@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VideoBIOSFeatureVideoBIOSElements
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VideoBIOSFeatureVideoBIOSElements
+LIBRARY = UNIX_VideoBIOSFeatureVideoBIOSElementsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

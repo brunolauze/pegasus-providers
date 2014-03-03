@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_SCSIPathConfigurationServiceModule";
-	Location = "UNIX_SCSIPathConfigurationService";
+	Location = "UNIX_SCSIPathConfigurationServiceProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

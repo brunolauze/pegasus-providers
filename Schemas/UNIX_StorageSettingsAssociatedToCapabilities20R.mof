@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_StorageSettingsAssociatedToCapabilitiesModule";
-	Location = "UNIX_StorageSettingsAssociatedToCapabilities";
+	Location = "UNIX_StorageSettingsAssociatedToCapabilitiesProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

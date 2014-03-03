@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_PacketConditionInSARuleModule";
-	Location = "UNIX_PacketConditionInSARule";
+	Location = "UNIX_PacketConditionInSARuleProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

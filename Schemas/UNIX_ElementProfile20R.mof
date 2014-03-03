@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ElementProfileModule";
-	Location = "UNIX_ElementProfile";
+	Location = "UNIX_ElementProfileProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

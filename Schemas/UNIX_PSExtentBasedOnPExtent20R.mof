@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_PSExtentBasedOnPExtentModule";
-	Location = "UNIX_PSExtentBasedOnPExtent";
+	Location = "UNIX_PSExtentBasedOnPExtentProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

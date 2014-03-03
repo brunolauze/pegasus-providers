@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/UDPProtocolEndpoint
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_UDPProtocolEndpoint
+LIBRARY = UNIX_UDPProtocolEndpointProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

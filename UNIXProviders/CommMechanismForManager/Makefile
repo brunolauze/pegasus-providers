@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CommMechanismForManager
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CommMechanismForManager
+LIBRARY = UNIX_CommMechanismForManagerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

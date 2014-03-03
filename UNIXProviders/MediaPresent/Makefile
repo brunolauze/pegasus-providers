@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MediaPresent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MediaPresent
+LIBRARY = UNIX_MediaPresentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MonitorResolution
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MonitorResolution
+LIBRARY = UNIX_MonitorResolutionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

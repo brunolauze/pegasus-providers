@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AverageRateMeterService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AverageRateMeterService
+LIBRARY = UNIX_AverageRateMeterServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

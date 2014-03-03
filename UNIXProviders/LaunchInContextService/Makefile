@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LaunchInContextService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LaunchInContextService
+LIBRARY = UNIX_LaunchInContextServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

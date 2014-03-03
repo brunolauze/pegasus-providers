@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IndicationHandlerCIMXML
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IndicationHandlerCIMXML
+LIBRARY = UNIX_IndicationHandlerCIMXMLProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NamespaceInManager
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NamespaceInManager
+LIBRARY = UNIX_NamespaceInManagerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

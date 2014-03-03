@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HostedBGPRouteMap
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HostedBGPRouteMap
+LIBRARY = UNIX_HostedBGPRouteMapProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

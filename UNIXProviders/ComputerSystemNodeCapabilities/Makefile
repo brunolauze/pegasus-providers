@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ComputerSystemNodeCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ComputerSystemNodeCapabilities
+LIBRARY = UNIX_ComputerSystemNodeCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

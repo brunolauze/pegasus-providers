@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CAHasPublicCertificate
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CAHasPublicCertificate
+LIBRARY = UNIX_CAHasPublicCertificateProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

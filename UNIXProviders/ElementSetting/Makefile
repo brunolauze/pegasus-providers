@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ElementSetting
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ElementSetting
+LIBRARY = UNIX_ElementSettingProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

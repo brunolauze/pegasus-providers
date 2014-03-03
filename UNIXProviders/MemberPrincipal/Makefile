@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MemberPrincipal
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MemberPrincipal
+LIBRARY = UNIX_MemberPrincipalProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

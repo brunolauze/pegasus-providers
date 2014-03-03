@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BootServiceAccessBySAP
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BootServiceAccessBySAP
+LIBRARY = UNIX_BootServiceAccessBySAPProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

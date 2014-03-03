@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/USBHub
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_USBHub
+LIBRARY = UNIX_USBHubProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

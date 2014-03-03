@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IPCOMPTransform
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IPCOMPTransform
+LIBRARY = UNIX_IPCOMPTransformProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

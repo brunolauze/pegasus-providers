@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FilterOfSecurityAssociation
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FilterOfSecurityAssociation
+LIBRARY = UNIX_FilterOfSecurityAssociationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

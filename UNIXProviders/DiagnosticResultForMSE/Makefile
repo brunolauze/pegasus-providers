@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DiagnosticResultForMSE
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DiagnosticResultForMSE
+LIBRARY = UNIX_DiagnosticResultForMSEProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

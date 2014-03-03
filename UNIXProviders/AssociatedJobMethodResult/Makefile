@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AssociatedJobMethodResult
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AssociatedJobMethodResult
+LIBRARY = UNIX_AssociatedJobMethodResultProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

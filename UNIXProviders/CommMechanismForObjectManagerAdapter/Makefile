@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CommMechanismForObjectManagerAdapter
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CommMechanismForObjectManagerAdapter
+LIBRARY = UNIX_CommMechanismForObjectManagerAdapterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

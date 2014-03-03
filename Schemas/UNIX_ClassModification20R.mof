@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ClassModificationModule";
-	Location = "UNIX_ClassModification";
+	Location = "UNIX_ClassModificationProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

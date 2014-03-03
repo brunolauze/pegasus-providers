@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SoftwareFeatureSAPImplementation
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SoftwareFeatureSAPImplementation
+LIBRARY = UNIX_SoftwareFeatureSAPImplementationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PreconfiguredTransportAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PreconfiguredTransportAction
+LIBRARY = UNIX_PreconfiguredTransportActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_AuthenticationRequirementModule";
-	Location = "UNIX_AuthenticationRequirement";
+	Location = "UNIX_AuthenticationRequirementProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

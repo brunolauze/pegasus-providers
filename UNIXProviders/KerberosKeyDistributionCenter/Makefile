@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/KerberosKeyDistributionCenter
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_KerberosKeyDistributionCenter
+LIBRARY = UNIX_KerberosKeyDistributionCenterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

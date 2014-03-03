@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VersionCompatibilityCheck
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VersionCompatibilityCheck
+LIBRARY = UNIX_VersionCompatibilityCheckProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

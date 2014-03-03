@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OwningCollectionElement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OwningCollectionElement
+LIBRARY = UNIX_OwningCollectionElementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

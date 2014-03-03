@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NetworkAdapterRedundancyComponent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NetworkAdapterRedundancyComponent
+LIBRARY = UNIX_NetworkAdapterRedundancyComponentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

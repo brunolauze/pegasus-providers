@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VoltageSensor
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VoltageSensor
+LIBRARY = UNIX_VoltageSensorProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

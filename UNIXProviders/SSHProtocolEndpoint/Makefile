@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SSHProtocolEndpoint
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SSHProtocolEndpoint
+LIBRARY = UNIX_SSHProtocolEndpointProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ListenerDestinationCIMXML
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ListenerDestinationCIMXML
+LIBRARY = UNIX_ListenerDestinationCIMXMLProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

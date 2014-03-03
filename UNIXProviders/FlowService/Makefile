@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FlowService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FlowService
+LIBRARY = UNIX_FlowServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

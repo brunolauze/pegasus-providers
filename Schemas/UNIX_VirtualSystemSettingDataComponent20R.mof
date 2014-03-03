@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_VirtualSystemSettingDataComponentModule";
-	Location = "UNIX_VirtualSystemSettingDataComponent";
+	Location = "UNIX_VirtualSystemSettingDataComponentProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

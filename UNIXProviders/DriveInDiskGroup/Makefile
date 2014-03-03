@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DriveInDiskGroup
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DriveInDiskGroup
+LIBRARY = UNIX_DriveInDiskGroupProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LaunchInContextCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LaunchInContextCapabilities
+LIBRARY = UNIX_LaunchInContextCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

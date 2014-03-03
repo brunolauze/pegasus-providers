@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ElementInSchedulingService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ElementInSchedulingService
+LIBRARY = UNIX_ElementInSchedulingServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

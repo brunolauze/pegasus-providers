@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VolumeSetBasedOnPSExtent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VolumeSetBasedOnPSExtent
+LIBRARY = UNIX_VolumeSetBasedOnPSExtentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

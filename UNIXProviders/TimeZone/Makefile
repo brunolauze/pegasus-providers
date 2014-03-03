@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TimeZone
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TimeZone
+LIBRARY = UNIX_TimeZoneProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

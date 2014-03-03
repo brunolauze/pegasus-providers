@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/QueuingService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_QueuingService
+LIBRARY = UNIX_QueuingServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RealizesPExtent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RealizesPExtent
+LIBRARY = UNIX_RealizesPExtentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

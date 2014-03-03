@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TimeService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TimeService
+LIBRARY = UNIX_TimeServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ReflectorClientServiceModule";
-	Location = "UNIX_ReflectorClientService";
+	Location = "UNIX_ReflectorClientServiceProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

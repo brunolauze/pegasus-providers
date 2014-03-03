@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DocumentAuthentication
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DocumentAuthentication
+LIBRARY = UNIX_DocumentAuthenticationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

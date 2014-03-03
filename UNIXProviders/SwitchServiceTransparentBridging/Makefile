@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SwitchServiceTransparentBridging
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SwitchServiceTransparentBridging
+LIBRARY = UNIX_SwitchServiceTransparentBridgingProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

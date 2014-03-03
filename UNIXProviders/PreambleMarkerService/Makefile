@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PreambleMarkerService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PreambleMarkerService
+LIBRARY = UNIX_PreambleMarkerServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

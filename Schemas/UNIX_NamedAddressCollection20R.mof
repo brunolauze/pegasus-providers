@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_NamedAddressCollectionModule";
-	Location = "UNIX_NamedAddressCollection";
+	Location = "UNIX_NamedAddressCollectionProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

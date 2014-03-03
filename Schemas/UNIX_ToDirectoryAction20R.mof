@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ToDirectoryActionModule";
-	Location = "UNIX_ToDirectoryAction";
+	Location = "UNIX_ToDirectoryActionProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

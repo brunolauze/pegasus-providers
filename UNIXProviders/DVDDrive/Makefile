@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DVDDrive
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DVDDrive
+LIBRARY = UNIX_DVDDriveProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

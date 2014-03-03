@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_Phase1SAUsedForPhase2Module";
-	Location = "UNIX_Phase1SAUsedForPhase2";
+	Location = "UNIX_Phase1SAUsedForPhase2Provider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

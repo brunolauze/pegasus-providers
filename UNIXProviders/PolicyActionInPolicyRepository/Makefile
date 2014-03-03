@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PolicyActionInPolicyRepository
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PolicyActionInPolicyRepository
+LIBRARY = UNIX_PolicyActionInPolicyRepositoryProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

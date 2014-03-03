@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_DHCPSettingDataModule";
-	Location = "UNIX_DHCPSettingData";
+	Location = "UNIX_DHCPSettingDataProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

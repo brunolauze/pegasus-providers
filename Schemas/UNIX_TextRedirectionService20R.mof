@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_TextRedirectionServiceModule";
-	Location = "UNIX_TextRedirectionService";
+	Location = "UNIX_TextRedirectionServiceProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

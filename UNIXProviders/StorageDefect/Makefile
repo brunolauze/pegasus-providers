@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/StorageDefect
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_StorageDefect
+LIBRARY = UNIX_StorageDefectProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

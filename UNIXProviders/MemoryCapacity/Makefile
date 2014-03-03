@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MemoryCapacity
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MemoryCapacity
+LIBRARY = UNIX_MemoryCapacityProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

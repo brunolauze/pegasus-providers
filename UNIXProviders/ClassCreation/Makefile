@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ClassCreation
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ClassCreation
+LIBRARY = UNIX_ClassCreationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HeadTailDropper
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HeadTailDropper
+LIBRARY = UNIX_HeadTailDropperProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

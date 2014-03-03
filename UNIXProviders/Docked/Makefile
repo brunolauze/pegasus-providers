@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Docked
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Docked
+LIBRARY = UNIX_DockedProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

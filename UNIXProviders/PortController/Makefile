@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PortController
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PortController
+LIBRARY = UNIX_PortControllerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MorePersonInfo
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MorePersonInfo
+LIBRARY = UNIX_MorePersonInfoProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

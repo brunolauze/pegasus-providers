@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Person
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Person
+LIBRARY = UNIX_PersonProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

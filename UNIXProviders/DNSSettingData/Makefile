@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DNSSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DNSSettingData
+LIBRARY = UNIX_DNSSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

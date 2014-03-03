@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ServiceUsesSecurityService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ServiceUsesSecurityService
+LIBRARY = UNIX_ServiceUsesSecurityServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

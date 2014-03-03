@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_PCIeSwitchModule";
-	Location = "UNIX_PCIeSwitch";
+	Location = "UNIX_PCIeSwitchProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

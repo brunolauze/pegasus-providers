@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ClassDeletion
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ClassDeletion
+LIBRARY = UNIX_ClassDeletionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ConfigurationReportingServiceModule";
-	Location = "UNIX_ConfigurationReportingService";
+	Location = "UNIX_ConfigurationReportingServiceProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

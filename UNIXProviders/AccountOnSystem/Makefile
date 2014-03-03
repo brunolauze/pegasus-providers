@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AccountOnSystem
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AccountOnSystem
+LIBRARY = UNIX_AccountOnSystemProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
@@ -94,8 +94,8 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_ComputerSystem \
-	-lUNIX_Account \
+	-lUNIX_ComputerSystemProvider \
+	-lUNIX_AccountProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

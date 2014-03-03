@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Location
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Location
+LIBRARY = UNIX_LocationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

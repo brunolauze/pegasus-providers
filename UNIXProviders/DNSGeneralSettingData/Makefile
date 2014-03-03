@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DNSGeneralSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DNSGeneralSettingData
+LIBRARY = UNIX_DNSGeneralSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

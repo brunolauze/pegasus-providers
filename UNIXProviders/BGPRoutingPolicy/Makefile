@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BGPRoutingPolicy
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BGPRoutingPolicy
+LIBRARY = UNIX_BGPRoutingPolicyProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

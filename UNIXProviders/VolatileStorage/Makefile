@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VolatileStorage
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VolatileStorage
+LIBRARY = UNIX_VolatileStorageProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

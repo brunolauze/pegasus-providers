@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CommonDatabase
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CommonDatabase
+LIBRARY = UNIX_CommonDatabaseProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ElementStatisticalData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ElementStatisticalData
+LIBRARY = UNIX_ElementStatisticalDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

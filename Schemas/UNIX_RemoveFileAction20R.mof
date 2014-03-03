@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_RemoveFileActionModule";
-	Location = "UNIX_RemoveFileAction";
+	Location = "UNIX_RemoveFileActionProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RecordInLog
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RecordInLog
+LIBRARY = UNIX_RecordInLogProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

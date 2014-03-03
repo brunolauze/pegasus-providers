@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_PowerManagementServiceModule";
-	Location = "UNIX_PowerManagementService";
+	Location = "UNIX_PowerManagementServiceProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

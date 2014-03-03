@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MultiStateSensor
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MultiStateSensor
+LIBRARY = UNIX_MultiStateSensorProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

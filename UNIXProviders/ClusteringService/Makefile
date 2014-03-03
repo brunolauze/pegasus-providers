@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ClusteringService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ClusteringService
+LIBRARY = UNIX_ClusteringServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

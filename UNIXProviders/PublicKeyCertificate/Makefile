@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PublicKeyCertificate
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PublicKeyCertificate
+LIBRARY = UNIX_PublicKeyCertificateProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

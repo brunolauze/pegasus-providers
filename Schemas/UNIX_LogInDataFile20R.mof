@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_LogInDataFileModule";
-	Location = "UNIX_LogInDataFile";
+	Location = "UNIX_LogInDataFileProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

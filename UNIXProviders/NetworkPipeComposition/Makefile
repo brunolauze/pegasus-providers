@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NetworkPipeComposition
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NetworkPipeComposition
+LIBRARY = UNIX_NetworkPipeCompositionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

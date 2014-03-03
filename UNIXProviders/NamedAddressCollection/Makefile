@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NamedAddressCollection
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NamedAddressCollection
+LIBRARY = UNIX_NamedAddressCollectionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

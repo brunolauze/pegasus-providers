@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Unimodem
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Unimodem
+LIBRARY = UNIX_UnimodemProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

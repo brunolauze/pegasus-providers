@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SpanningTreeStatistics
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SpanningTreeStatistics
+LIBRARY = UNIX_SpanningTreeStatisticsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PrintInputTray
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PrintInputTray
+LIBRARY = UNIX_PrintInputTrayProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SCSIPathConfigurationService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SCSIPathConfigurationService
+LIBRARY = UNIX_SCSIPathConfigurationServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

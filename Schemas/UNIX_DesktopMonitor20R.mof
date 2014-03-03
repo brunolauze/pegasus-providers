@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_DesktopMonitorModule";
-	Location = "UNIX_DesktopMonitor";
+	Location = "UNIX_DesktopMonitorProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

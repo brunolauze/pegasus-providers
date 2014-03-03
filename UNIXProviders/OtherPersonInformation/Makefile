@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OtherPersonInformation
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OtherPersonInformation
+LIBRARY = UNIX_OtherPersonInformationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

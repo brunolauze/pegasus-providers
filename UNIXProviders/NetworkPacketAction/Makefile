@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NetworkPacketAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NetworkPacketAction
+LIBRARY = UNIX_NetworkPacketActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

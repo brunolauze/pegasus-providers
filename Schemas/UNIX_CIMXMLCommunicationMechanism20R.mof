@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_CIMXMLCommunicationMechanismModule";
-	Location = "UNIX_CIMXMLCommunicationMechanism";
+	Location = "UNIX_CIMXMLCommunicationMechanismProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ControllerConfigurationService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ControllerConfigurationService
+LIBRARY = UNIX_ControllerConfigurationServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

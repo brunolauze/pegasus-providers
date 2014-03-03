@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/KDCIssuesKerberosTicket
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_KDCIssuesKerberosTicket
+LIBRARY = UNIX_KDCIssuesKerberosTicketProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

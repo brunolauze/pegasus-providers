@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_InfraredControllerModule";
-	Location = "UNIX_InfraredController";
+	Location = "UNIX_InfraredControllerProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

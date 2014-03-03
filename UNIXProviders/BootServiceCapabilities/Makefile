@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BootServiceCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BootServiceCapabilities
+LIBRARY = UNIX_BootServiceCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

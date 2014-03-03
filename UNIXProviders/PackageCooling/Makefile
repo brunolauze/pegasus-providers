@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PackageCooling
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PackageCooling
+LIBRARY = UNIX_PackageCoolingProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

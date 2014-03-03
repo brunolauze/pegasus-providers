@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ZoneCapabilitiesModule";
-	Location = "UNIX_ZoneCapabilities";
+	Location = "UNIX_ZoneCapabilitiesProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

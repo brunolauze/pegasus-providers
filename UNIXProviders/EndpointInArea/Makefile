@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/EndpointInArea
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_EndpointInArea
+LIBRARY = UNIX_EndpointInAreaProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SSHCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SSHCapabilities
+LIBRARY = UNIX_SSHCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

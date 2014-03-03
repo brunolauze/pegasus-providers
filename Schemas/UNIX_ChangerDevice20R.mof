@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ChangerDeviceModule";
-	Location = "UNIX_ChangerDevice";
+	Location = "UNIX_ChangerDeviceProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

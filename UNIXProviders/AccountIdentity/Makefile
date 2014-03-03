@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AccountIdentity
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AccountIdentity
+LIBRARY = UNIX_AccountIdentityProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

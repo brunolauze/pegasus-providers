@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/WiFiPort
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_WiFiPort
+LIBRARY = UNIX_WiFiPortProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PowerUtilizationManagementService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PowerUtilizationManagementService
+LIBRARY = UNIX_PowerUtilizationManagementServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

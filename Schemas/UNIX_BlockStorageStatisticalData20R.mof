@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_BlockStorageStatisticalDataModule";
-	Location = "UNIX_BlockStorageStatisticalData";
+	Location = "UNIX_BlockStorageStatisticalDataProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

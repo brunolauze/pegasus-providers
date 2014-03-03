@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Phase1SAUsedForPhase2
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Phase1SAUsedForPhase2
+LIBRARY = UNIX_Phase1SAUsedForPhase2Provider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

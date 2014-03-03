@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Profile
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Profile
+LIBRARY = UNIX_ProfileProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

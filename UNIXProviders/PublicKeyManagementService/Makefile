@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PublicKeyManagementService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PublicKeyManagementService
+LIBRARY = UNIX_PublicKeyManagementServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

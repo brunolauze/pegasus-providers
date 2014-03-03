@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/InstDeletion
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_InstDeletion
+LIBRARY = UNIX_InstDeletionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

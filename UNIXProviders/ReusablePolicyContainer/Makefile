@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ReusablePolicyContainer
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ReusablePolicyContainer
+LIBRARY = UNIX_ReusablePolicyContainerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

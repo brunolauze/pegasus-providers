@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BGPAttributesForRoute
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BGPAttributesForRoute
+LIBRARY = UNIX_BGPAttributesForRouteProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

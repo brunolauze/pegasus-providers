@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AccountSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AccountSettingData
+LIBRARY = UNIX_AccountSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

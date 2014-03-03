@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_PrintJobModule";
-	Location = "UNIX_PrintJob";
+	Location = "UNIX_PrintJobProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

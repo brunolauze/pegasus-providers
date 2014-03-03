@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Processor
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Processor
+LIBRARY = UNIX_ProcessorProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

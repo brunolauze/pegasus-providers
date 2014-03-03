@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DiagnosticServiceCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DiagnosticServiceCapabilities
+LIBRARY = UNIX_DiagnosticServiceCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

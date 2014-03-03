@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CardInSlot
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CardInSlot
+LIBRARY = UNIX_CardInSlotProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

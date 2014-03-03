@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ParametersForMethod
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ParametersForMethod
+LIBRARY = UNIX_ParametersForMethodProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

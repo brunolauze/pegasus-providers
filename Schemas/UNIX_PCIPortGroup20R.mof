@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_PCIPortGroupModule";
-	Location = "UNIX_PCIPortGroup";
+	Location = "UNIX_PCIPortGroupProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ToSMarkerService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ToSMarkerService
+LIBRARY = UNIX_ToSMarkerServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

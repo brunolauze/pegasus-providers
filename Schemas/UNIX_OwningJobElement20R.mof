@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_OwningJobElementModule";
-	Location = "UNIX_OwningJobElement";
+	Location = "UNIX_OwningJobElementProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

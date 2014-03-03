@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_OOBAlertServiceOnNetworkPortModule";
-	Location = "UNIX_OOBAlertServiceOnNetworkPort";
+	Location = "UNIX_OOBAlertServiceOnNetworkPortProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

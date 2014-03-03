@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PublicPrivateKeyPair
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PublicPrivateKeyPair
+LIBRARY = UNIX_PublicPrivateKeyPairProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

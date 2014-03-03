@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VirtualSystemManagementCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VirtualSystemManagementCapabilities
+LIBRARY = UNIX_VirtualSystemManagementCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

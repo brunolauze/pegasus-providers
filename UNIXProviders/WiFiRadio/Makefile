@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/WiFiRadio
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_WiFiRadio
+LIBRARY = UNIX_WiFiRadioProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

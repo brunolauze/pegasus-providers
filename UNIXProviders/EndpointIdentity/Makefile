@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/EndpointIdentity
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_EndpointIdentity
+LIBRARY = UNIX_EndpointIdentityProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

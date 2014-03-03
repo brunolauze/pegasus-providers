@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/EndpointInLink
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_EndpointInLink
+LIBRARY = UNIX_EndpointInLinkProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

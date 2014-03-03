@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ProtocolAdapter
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ProtocolAdapter
+LIBRARY = UNIX_ProtocolAdapterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

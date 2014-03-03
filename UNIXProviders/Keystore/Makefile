@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Keystore
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Keystore
+LIBRARY = UNIX_KeystoreProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

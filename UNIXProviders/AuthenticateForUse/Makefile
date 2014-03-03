@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AuthenticateForUse
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AuthenticateForUse
+LIBRARY = UNIX_AuthenticateForUseProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

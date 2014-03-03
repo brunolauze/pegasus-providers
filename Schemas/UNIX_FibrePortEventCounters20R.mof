@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_FibrePortEventCountersModule";
-	Location = "UNIX_FibrePortEventCounters";
+	Location = "UNIX_FibrePortEventCountersProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

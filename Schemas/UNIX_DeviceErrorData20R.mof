@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_DeviceErrorDataModule";
-	Location = "UNIX_DeviceErrorData";
+	Location = "UNIX_DeviceErrorDataProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

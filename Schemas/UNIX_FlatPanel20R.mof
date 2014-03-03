@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_FlatPanelModule";
-	Location = "UNIX_FlatPanel";
+	Location = "UNIX_FlatPanelProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_CompositeExtentModule";
-	Location = "UNIX_CompositeExtent";
+	Location = "UNIX_CompositeExtentProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

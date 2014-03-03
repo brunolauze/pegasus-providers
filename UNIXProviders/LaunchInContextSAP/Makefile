@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LaunchInContextSAP
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LaunchInContextSAP
+LIBRARY = UNIX_LaunchInContextSAPProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Magazine
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Magazine
+LIBRARY = UNIX_MagazineProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

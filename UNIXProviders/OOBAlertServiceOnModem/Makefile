@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OOBAlertServiceOnModem
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OOBAlertServiceOnModem
+LIBRARY = UNIX_OOBAlertServiceOnModemProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

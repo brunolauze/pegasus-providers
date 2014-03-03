@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SystemBIOS
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SystemBIOS
+LIBRARY = UNIX_SystemBIOSProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
@@ -94,10 +94,10 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_VirtualComputerSystem \
-	-lUNIX_ComputerSystem \
-	-lUNIX_Cluster \
-	-lUNIX_BIOSElement \
+	-lUNIX_VirtualComputerSystemProvider \
+	-lUNIX_ComputerSystemProvider \
+	-lUNIX_ClusterProvider \
+	-lUNIX_BIOSElementProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

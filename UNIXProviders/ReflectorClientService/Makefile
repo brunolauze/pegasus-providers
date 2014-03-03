@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ReflectorClientService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ReflectorClientService
+LIBRARY = UNIX_ReflectorClientServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

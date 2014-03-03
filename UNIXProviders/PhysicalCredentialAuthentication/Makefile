@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PhysicalCredentialAuthentication
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PhysicalCredentialAuthentication
+LIBRARY = UNIX_PhysicalCredentialAuthenticationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Switchable
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Switchable
+LIBRARY = UNIX_SwitchableProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

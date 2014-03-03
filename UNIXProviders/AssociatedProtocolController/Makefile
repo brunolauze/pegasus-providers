@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AssociatedProtocolController
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AssociatedProtocolController
+LIBRARY = UNIX_AssociatedProtocolControllerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AbstractIndicationSubscription
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AbstractIndicationSubscription
+LIBRARY = UNIX_AbstractIndicationSubscriptionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

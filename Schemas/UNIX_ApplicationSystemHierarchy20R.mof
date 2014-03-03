@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ApplicationSystemHierarchyModule";
-	Location = "UNIX_ApplicationSystemHierarchy";
+	Location = "UNIX_ApplicationSystemHierarchyProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

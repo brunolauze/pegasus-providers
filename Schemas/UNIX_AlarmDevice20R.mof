@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_AlarmDeviceModule";
-	Location = "UNIX_AlarmDevice";
+	Location = "UNIX_AlarmDeviceProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/StorageSettingWithHints
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_StorageSettingWithHints
+LIBRARY = UNIX_StorageSettingWithHintsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

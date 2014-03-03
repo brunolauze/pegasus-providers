@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/QoSSubService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_QoSSubService
+LIBRARY = UNIX_QoSSubServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

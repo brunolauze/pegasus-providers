@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OpaqueManagementDataService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OpaqueManagementDataService
+LIBRARY = UNIX_OpaqueManagementDataServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

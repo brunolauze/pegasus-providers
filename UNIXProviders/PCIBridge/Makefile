@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PCIBridge
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PCIBridge
+LIBRARY = UNIX_PCIBridgeProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

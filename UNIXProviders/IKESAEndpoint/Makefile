@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IKESAEndpoint
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IKESAEndpoint
+LIBRARY = UNIX_IKESAEndpointProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ReplacementSet
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ReplacementSet
+LIBRARY = UNIX_ReplacementSetProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

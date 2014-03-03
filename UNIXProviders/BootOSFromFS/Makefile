@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BootOSFromFS
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BootOSFromFS
+LIBRARY = UNIX_BootOSFromFSProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ConcreteDependency
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ConcreteDependency
+LIBRARY = UNIX_ConcreteDependencyProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

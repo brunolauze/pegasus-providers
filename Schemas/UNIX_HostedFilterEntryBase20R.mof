@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_HostedFilterEntryBaseModule";
-	Location = "UNIX_HostedFilterEntryBase";
+	Location = "UNIX_HostedFilterEntryBaseProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

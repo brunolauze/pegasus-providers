@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AssociatedSupplyCurrentSensor
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AssociatedSupplyCurrentSensor
+LIBRARY = UNIX_AssociatedSupplyCurrentSensorProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

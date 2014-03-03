@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MethodAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MethodAction
+LIBRARY = UNIX_MethodActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

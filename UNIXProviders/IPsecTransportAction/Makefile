@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IPsecTransportAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IPsecTransportAction
+LIBRARY = UNIX_IPsecTransportActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

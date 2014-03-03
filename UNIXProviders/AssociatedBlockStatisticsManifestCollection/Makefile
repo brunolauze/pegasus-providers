@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AssociatedBlockStatisticsManifestCol
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AssociatedBlockStatisticsManifestCollection
+LIBRARY = UNIX_AssociatedBlockStatisticsManifestCollectionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

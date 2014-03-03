@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OSPFLink
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OSPFLink
+LIBRARY = UNIX_OSPFLinkProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

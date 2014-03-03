@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CollectedBufferPool
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CollectedBufferPool
+LIBRARY = UNIX_CollectedBufferPoolProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

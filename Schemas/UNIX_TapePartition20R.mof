@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_TapePartitionModule";
-	Location = "UNIX_TapePartition";
+	Location = "UNIX_TapePartitionProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

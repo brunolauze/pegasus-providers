@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/WakeUpServiceOnNetworkAdapter
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_WakeUpServiceOnNetworkAdapter
+LIBRARY = UNIX_WakeUpServiceOnNetworkAdapterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

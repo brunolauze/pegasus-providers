@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_PhysicalMediaInLocationModule";
-	Location = "UNIX_PhysicalMediaInLocation";
+	Location = "UNIX_PhysicalMediaInLocationProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

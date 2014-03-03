@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IPHeadersFilter
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IPHeadersFilter
+LIBRARY = UNIX_IPHeadersFilterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

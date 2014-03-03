@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SwitchPortSourceRouting
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SwitchPortSourceRouting
+LIBRARY = UNIX_SwitchPortSourceRoutingProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DatabaseSegment
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DatabaseSegment
+LIBRARY = UNIX_DatabaseSegmentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

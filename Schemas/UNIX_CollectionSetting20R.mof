@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_CollectionSettingModule";
-	Location = "UNIX_CollectionSetting";
+	Location = "UNIX_CollectionSettingProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

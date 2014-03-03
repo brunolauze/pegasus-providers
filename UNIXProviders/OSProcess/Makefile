@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OSProcess
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OSProcess
+LIBRARY = UNIX_OSProcessProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
@@ -94,8 +94,8 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_OperatingSystem \
-	-lUNIX_Process \
+	-lUNIX_OperatingSystemProvider \
+	-lUNIX_ProcessProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

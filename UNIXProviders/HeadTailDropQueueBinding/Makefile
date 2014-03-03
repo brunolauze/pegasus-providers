@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HeadTailDropQueueBinding
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HeadTailDropQueueBinding
+LIBRARY = UNIX_HeadTailDropQueueBindingProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

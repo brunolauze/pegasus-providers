@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HeatPipe
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HeatPipe
+LIBRARY = UNIX_HeatPipeProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

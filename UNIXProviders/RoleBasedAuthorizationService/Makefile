@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RoleBasedAuthorizationService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RoleBasedAuthorizationService
+LIBRARY = UNIX_RoleBasedAuthorizationServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

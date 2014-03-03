@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RecordLogCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RecordLogCapabilities
+LIBRARY = UNIX_RecordLogCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

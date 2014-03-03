@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PassThroughModule
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PassThroughModule
+LIBRARY = UNIX_PassThroughModuleProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

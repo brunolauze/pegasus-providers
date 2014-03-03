@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OSPFProtocolEndpoint
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OSPFProtocolEndpoint
+LIBRARY = UNIX_OSPFProtocolEndpointProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

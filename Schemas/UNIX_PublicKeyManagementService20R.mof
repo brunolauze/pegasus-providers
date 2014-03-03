@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_PublicKeyManagementServiceModule";
-	Location = "UNIX_PublicKeyManagementService";
+	Location = "UNIX_PublicKeyManagementServiceProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_RoleBasedAuthorizationServiceModule";
-	Location = "UNIX_RoleBasedAuthorizationService";
+	Location = "UNIX_RoleBasedAuthorizationServiceProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

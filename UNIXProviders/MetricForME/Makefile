@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MetricForME
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MetricForME
+LIBRARY = UNIX_MetricForMEProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

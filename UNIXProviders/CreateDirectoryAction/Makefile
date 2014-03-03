@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CreateDirectoryAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CreateDirectoryAction
+LIBRARY = UNIX_CreateDirectoryActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

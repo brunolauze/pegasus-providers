@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TextRedirectionService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TextRedirectionService
+LIBRARY = UNIX_TextRedirectionServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

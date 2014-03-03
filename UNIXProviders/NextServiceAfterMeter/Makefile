@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NextServiceAfterMeter
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NextServiceAfterMeter
+LIBRARY = UNIX_NextServiceAfterMeterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SSHSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SSHSettingData
+LIBRARY = UNIX_SSHSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

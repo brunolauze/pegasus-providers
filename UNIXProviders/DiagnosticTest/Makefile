@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DiagnosticTest
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DiagnosticTest
+LIBRARY = UNIX_DiagnosticTestProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

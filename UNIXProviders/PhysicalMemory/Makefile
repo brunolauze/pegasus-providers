@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PhysicalMemory
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PhysicalMemory
+LIBRARY = UNIX_PhysicalMemoryProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

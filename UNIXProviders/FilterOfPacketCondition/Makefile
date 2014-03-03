@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FilterOfPacketCondition
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FilterOfPacketCondition
+LIBRARY = UNIX_FilterOfPacketConditionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

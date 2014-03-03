@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DynamicForwardingEntry
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DynamicForwardingEntry
+LIBRARY = UNIX_DynamicForwardingEntryProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

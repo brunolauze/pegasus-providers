@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AuthorizationTarget
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AuthorizationTarget
+LIBRARY = UNIX_AuthorizationTargetProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

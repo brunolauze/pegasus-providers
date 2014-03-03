@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FilteredBGPAttributes
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FilteredBGPAttributes
+LIBRARY = UNIX_FilteredBGPAttributesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

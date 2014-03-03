@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PowerSource
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PowerSource
+LIBRARY = UNIX_PowerSourceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

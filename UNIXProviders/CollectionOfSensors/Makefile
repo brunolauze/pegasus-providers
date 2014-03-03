@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CollectionOfSensors
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CollectionOfSensors
+LIBRARY = UNIX_CollectionOfSensorsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

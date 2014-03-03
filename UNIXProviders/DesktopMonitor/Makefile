@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DesktopMonitor
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DesktopMonitor
+LIBRARY = UNIX_DesktopMonitorProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

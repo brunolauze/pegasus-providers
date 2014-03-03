@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CableModem
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CableModem
+LIBRARY = UNIX_CableModemProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

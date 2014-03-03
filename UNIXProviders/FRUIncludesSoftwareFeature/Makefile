@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/FRUIncludesSoftwareFeature
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_FRUIncludesSoftwareFeature
+LIBRARY = UNIX_FRUIncludesSoftwareFeatureProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

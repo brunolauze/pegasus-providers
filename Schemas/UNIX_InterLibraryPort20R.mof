@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_InterLibraryPortModule";
-	Location = "UNIX_InterLibraryPort";
+	Location = "UNIX_InterLibraryPortProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

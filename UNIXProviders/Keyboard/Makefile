@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Keyboard
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Keyboard
+LIBRARY = UNIX_KeyboardProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

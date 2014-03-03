@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_SystemSettingModule";
-	Location = "UNIX_SystemSetting";
+	Location = "UNIX_SystemSettingProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

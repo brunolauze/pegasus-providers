@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CertificateManagementService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CertificateManagementService
+LIBRARY = UNIX_CertificateManagementServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

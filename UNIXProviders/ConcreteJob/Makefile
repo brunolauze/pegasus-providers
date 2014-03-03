@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ConcreteJob
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ConcreteJob
+LIBRARY = UNIX_ConcreteJobProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

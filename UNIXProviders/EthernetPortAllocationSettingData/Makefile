@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/EthernetPortAllocationSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_EthernetPortAllocationSettingData
+LIBRARY = UNIX_EthernetPortAllocationSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

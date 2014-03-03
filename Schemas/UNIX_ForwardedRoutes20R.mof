@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ForwardedRoutesModule";
-	Location = "UNIX_ForwardedRoutes";
+	Location = "UNIX_ForwardedRoutesProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

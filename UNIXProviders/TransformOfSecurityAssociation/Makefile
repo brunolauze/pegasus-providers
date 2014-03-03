@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TransformOfSecurityAssociation
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TransformOfSecurityAssociation
+LIBRARY = UNIX_TransformOfSecurityAssociationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VDSLModem
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VDSLModem
+LIBRARY = UNIX_VDSLModemProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

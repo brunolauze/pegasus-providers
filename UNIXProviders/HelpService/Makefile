@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/HelpService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_HelpService
+LIBRARY = UNIX_HelpServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

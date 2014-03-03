@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/QueueAllocation
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_QueueAllocation
+LIBRARY = UNIX_QueueAllocationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

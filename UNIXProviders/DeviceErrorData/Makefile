@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DeviceErrorData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DeviceErrorData
+LIBRARY = UNIX_DeviceErrorDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

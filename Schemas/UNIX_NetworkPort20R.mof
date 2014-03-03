@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_NetworkPortModule";
-	Location = "UNIX_NetworkPort";
+	Location = "UNIX_NetworkPortProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

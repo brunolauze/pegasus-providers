@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ProtectedSpaceExtentModule";
-	Location = "UNIX_ProtectedSpaceExtent";
+	Location = "UNIX_ProtectedSpaceExtentProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

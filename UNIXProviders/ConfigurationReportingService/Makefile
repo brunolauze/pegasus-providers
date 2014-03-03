@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ConfigurationReportingService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ConfigurationReportingService
+LIBRARY = UNIX_ConfigurationReportingServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

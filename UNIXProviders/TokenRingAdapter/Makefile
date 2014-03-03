@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TokenRingAdapter
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TokenRingAdapter
+LIBRARY = UNIX_TokenRingAdapterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

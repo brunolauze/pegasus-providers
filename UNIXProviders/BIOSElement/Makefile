@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BIOSElement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BIOSElement
+LIBRARY = UNIX_BIOSElementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
@@ -95,6 +95,7 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
+	-lUNIX_SoftwareElementProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

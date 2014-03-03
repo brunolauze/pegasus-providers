@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_FibreChannelAdapterModule";
-	Location = "UNIX_FibreChannelAdapter";
+	Location = "UNIX_FibreChannelAdapterProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

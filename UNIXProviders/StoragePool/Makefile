@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/StoragePool
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_StoragePool
+LIBRARY = UNIX_StoragePoolProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

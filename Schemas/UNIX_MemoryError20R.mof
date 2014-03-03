@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_MemoryErrorModule";
-	Location = "UNIX_MemoryError";
+	Location = "UNIX_MemoryErrorProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

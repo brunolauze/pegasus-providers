@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RebootAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RebootAction
+LIBRARY = UNIX_RebootActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

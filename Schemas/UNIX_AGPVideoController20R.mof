@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_AGPVideoControllerModule";
-	Location = "UNIX_AGPVideoController";
+	Location = "UNIX_AGPVideoControllerProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

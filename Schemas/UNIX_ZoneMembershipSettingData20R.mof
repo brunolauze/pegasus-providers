@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ZoneMembershipSettingDataModule";
-	Location = "UNIX_ZoneMembershipSettingData";
+	Location = "UNIX_ZoneMembershipSettingDataProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

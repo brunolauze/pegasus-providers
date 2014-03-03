@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VirtualSystemMigrationSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VirtualSystemMigrationSettingData
+LIBRARY = UNIX_VirtualSystemMigrationSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

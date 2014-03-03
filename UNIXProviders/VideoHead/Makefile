@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VideoHead
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VideoHead
+LIBRARY = UNIX_VideoHeadProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

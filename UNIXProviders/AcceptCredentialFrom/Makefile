@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AcceptCredentialFrom
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AcceptCredentialFrom
+LIBRARY = UNIX_AcceptCredentialFromProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

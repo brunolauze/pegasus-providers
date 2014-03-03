@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/JobSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_JobSettingData
+LIBRARY = UNIX_JobSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

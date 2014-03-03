@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PrecedenceService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PrecedenceService
+LIBRARY = UNIX_PrecedenceServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

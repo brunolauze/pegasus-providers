@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PickerForChanger
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PickerForChanger
+LIBRARY = UNIX_PickerForChangerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

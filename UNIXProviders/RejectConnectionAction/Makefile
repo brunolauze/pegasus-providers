@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RejectConnectionAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RejectConnectionAction
+LIBRARY = UNIX_RejectConnectionActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/EthernetPort
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_EthernetPort
+LIBRARY = UNIX_EthernetPortProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_LLDPEthernetPortModule";
-	Location = "UNIX_LLDPEthernetPort";
+	Location = "UNIX_LLDPEthernetPortProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

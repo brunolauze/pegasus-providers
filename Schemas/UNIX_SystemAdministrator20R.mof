@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_SystemAdministratorModule";
-	Location = "UNIX_SystemAdministrator";
+	Location = "UNIX_SystemAdministratorProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

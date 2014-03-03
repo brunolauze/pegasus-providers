@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ModulePort
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ModulePort
+LIBRARY = UNIX_ModulePortProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

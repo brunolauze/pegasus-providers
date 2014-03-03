@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/QueueToSchedule
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_QueueToSchedule
+LIBRARY = UNIX_QueueToScheduleProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

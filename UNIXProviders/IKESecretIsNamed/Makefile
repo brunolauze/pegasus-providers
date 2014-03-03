@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/IKESecretIsNamed
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_IKESecretIsNamed
+LIBRARY = UNIX_IKESecretIsNamedProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_IndicationHandlerCIMXMLModule";
-	Location = "UNIX_IndicationHandlerCIMXML";
+	Location = "UNIX_IndicationHandlerCIMXMLProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

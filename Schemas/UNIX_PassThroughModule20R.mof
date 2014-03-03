@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_PassThroughModuleModule";
-	Location = "UNIX_PassThroughModule";
+	Location = "UNIX_PassThroughModuleProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

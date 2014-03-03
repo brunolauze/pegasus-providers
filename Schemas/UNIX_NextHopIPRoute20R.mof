@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_NextHopIPRouteModule";
-	Location = "UNIX_NextHopIPRoute";
+	Location = "UNIX_NextHopIPRouteProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MetricDefinition
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MetricDefinition
+LIBRARY = UNIX_MetricDefinitionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_NonWorkConservingSchedulingServiceModule";
-	Location = "UNIX_NonWorkConservingSchedulingService";
+	Location = "UNIX_NonWorkConservingSchedulingServiceProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

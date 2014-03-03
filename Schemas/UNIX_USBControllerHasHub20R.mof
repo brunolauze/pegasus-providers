@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_USBControllerHasHubModule";
-	Location = "UNIX_USBControllerHasHub";
+	Location = "UNIX_USBControllerHasHubProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

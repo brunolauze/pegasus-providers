@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_SSHProtocolEndpointModule";
-	Location = "UNIX_SSHProtocolEndpoint";
+	Location = "UNIX_SSHProtocolEndpointProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

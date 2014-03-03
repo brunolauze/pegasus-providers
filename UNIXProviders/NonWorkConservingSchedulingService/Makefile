@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NonWorkConservingSchedulingService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NonWorkConservingSchedulingService
+LIBRARY = UNIX_NonWorkConservingSchedulingServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

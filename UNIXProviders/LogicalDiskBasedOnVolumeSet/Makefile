@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LogicalDiskBasedOnVolumeSet
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LogicalDiskBasedOnVolumeSet
+LIBRARY = UNIX_LogicalDiskBasedOnVolumeSetProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

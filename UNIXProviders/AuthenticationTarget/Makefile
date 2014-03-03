@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/AuthenticationTarget
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_AuthenticationTarget
+LIBRARY = UNIX_AuthenticationTargetProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

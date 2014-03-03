@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PickerStatInfo
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PickerStatInfo
+LIBRARY = UNIX_PickerStatInfoProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

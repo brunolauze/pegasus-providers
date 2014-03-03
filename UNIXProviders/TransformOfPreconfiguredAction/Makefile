@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/TransformOfPreconfiguredAction
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_TransformOfPreconfiguredAction
+LIBRARY = UNIX_TransformOfPreconfiguredActionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

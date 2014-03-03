@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CredentialContext
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CredentialContext
+LIBRARY = UNIX_CredentialContextProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

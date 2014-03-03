@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/PlatformWatchdogServiceCapabilities
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_PlatformWatchdogServiceCapabilities
+LIBRARY = UNIX_PlatformWatchdogServiceCapabilitiesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

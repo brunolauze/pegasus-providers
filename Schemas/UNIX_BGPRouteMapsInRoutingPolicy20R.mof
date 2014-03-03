@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_BGPRouteMapsInRoutingPolicyModule";
-	Location = "UNIX_BGPRouteMapsInRoutingPolicy";
+	Location = "UNIX_BGPRouteMapsInRoutingPolicyProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

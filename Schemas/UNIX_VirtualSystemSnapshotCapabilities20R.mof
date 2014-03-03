@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_VirtualSystemSnapshotCapabilitiesModule";
-	Location = "UNIX_VirtualSystemSnapshotCapabilities";
+	Location = "UNIX_VirtualSystemSnapshotCapabilitiesProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

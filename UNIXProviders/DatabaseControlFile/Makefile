@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DatabaseControlFile
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DatabaseControlFile
+LIBRARY = UNIX_DatabaseControlFileProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

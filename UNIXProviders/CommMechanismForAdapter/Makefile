@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CommMechanismForAdapter
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CommMechanismForAdapter
+LIBRARY = UNIX_CommMechanismForAdapterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

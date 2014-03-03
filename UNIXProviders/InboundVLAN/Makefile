@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/InboundVLAN
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_InboundVLAN
+LIBRARY = UNIX_InboundVLANProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

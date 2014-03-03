@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/WORMDrive
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_WORMDrive
+LIBRARY = UNIX_WORMDriveProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

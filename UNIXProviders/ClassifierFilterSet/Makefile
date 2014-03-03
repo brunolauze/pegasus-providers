@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ClassifierFilterSet
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ClassifierFilterSet
+LIBRARY = UNIX_ClassifierFilterSetProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

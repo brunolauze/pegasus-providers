@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Error
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Error
+LIBRARY = UNIX_ErrorProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

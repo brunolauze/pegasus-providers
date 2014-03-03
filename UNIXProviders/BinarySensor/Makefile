@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/BinarySensor
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_BinarySensor
+LIBRARY = UNIX_BinarySensorProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

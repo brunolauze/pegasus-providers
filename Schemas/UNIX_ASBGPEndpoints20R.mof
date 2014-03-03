@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_ASBGPEndpointsModule";
-	Location = "UNIX_ASBGPEndpoints";
+	Location = "UNIX_ASBGPEndpointsProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

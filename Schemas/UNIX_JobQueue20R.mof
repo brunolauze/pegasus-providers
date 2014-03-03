@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_JobQueueModule";
-	Location = "UNIX_JobQueue";
+	Location = "UNIX_JobQueueProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SystemIdentification
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SystemIdentification
+LIBRARY = UNIX_SystemIdentificationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

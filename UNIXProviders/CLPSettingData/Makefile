@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CLPSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CLPSettingData
+LIBRARY = UNIX_CLPSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

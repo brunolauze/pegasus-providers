@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VideoControllerResolution
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VideoControllerResolution
+LIBRARY = UNIX_VideoControllerResolutionProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RelatedTransparentBridgingService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RelatedTransparentBridgingService
+LIBRARY = UNIX_RelatedTransparentBridgingServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

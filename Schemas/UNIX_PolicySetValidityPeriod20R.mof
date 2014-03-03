@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "UNIX_PolicySetValidityPeriodModule";
-	Location = "UNIX_PolicySetValidityPeriod";
+	Location = "UNIX_PolicySetValidityPeriodProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";

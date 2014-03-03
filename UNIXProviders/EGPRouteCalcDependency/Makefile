@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/EGPRouteCalcDependency
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_EGPRouteCalcDependency
+LIBRARY = UNIX_EGPRouteCalcDependencyProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

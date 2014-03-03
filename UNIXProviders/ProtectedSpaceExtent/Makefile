@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ProtectedSpaceExtent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ProtectedSpaceExtent
+LIBRARY = UNIX_ProtectedSpaceExtentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

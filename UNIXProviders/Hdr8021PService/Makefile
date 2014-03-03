@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Hdr8021PService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Hdr8021PService
+LIBRARY = UNIX_Hdr8021PServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

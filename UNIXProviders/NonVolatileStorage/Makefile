@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NonVolatileStorage
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NonVolatileStorage
+LIBRARY = UNIX_NonVolatileStorageProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

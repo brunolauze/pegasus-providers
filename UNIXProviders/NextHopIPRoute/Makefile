@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NextHopIPRoute
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NextHopIPRoute
+LIBRARY = UNIX_NextHopIPRouteProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

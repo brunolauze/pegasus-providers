@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/CalculatedRoutes
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_CalculatedRoutes
+LIBRARY = UNIX_CalculatedRoutesProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

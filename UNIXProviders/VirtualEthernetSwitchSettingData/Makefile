@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/VirtualEthernetSwitchSettingData
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_VirtualEthernetSwitchSettingData
+LIBRARY = UNIX_VirtualEthernetSwitchSettingDataProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

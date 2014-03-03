@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ProtocolService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ProtocolService
+LIBRARY = UNIX_ProtocolServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

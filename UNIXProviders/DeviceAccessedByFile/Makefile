@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/DeviceAccessedByFile
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_DeviceAccessedByFile
+LIBRARY = UNIX_DeviceAccessedByFileProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

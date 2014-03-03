@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/InfraredController
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_InfraredController
+LIBRARY = UNIX_InfraredControllerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

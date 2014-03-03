@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ResourcePoolConfigurationService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ResourcePoolConfigurationService
+LIBRARY = UNIX_ResourcePoolConfigurationServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

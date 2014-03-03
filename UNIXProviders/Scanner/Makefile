@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Scanner
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Scanner
+LIBRARY = UNIX_ScannerProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

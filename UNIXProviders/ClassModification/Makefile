@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ClassModification
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ClassModification
+LIBRARY = UNIX_ClassModificationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

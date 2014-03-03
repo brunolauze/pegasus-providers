@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/OOBAlertService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_OOBAlertService
+LIBRARY = UNIX_OOBAlertServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

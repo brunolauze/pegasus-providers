@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/Confederation
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_Confederation
+LIBRARY = UNIX_ConfederationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

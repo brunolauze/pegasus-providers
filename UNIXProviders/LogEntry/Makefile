@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/LogEntry
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_LogEntry
+LIBRARY = UNIX_LogEntryProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
@@ -94,7 +94,7 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_MessageLog \
+	-lUNIX_MessageLogProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

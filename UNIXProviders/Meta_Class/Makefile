@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/UsersAccess
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_UsersAccess
+LIBRARY = Meta_ClassProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

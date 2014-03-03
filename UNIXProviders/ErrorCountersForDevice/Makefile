@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ErrorCountersForDevice
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ErrorCountersForDevice
+LIBRARY = UNIX_ErrorCountersForDeviceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

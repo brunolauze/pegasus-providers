@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SAEndpointConnectionStatistics
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SAEndpointConnectionStatistics
+LIBRARY = UNIX_SAEndpointConnectionStatisticsProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/NotaryVerifiesBiometric
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_NotaryVerifiesBiometric
+LIBRARY = UNIX_NotaryVerifiesBiometricProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

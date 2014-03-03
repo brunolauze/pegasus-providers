@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SharedDeviceManagementService
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SharedDeviceManagementService
+LIBRARY = UNIX_SharedDeviceManagementServiceProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

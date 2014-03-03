@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/MethodResult
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_MethodResult
+LIBRARY = UNIX_MethodResultProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

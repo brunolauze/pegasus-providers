@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ServiceAffectsElement
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ServiceAffectsElement
+LIBRARY = UNIX_ServiceAffectsElementProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

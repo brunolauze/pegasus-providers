@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/SnapshotOfExtent
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_SnapshotOfExtent
+LIBRARY = UNIX_SnapshotOfExtentProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

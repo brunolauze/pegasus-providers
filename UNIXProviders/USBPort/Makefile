@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/USBPort
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_USBPort
+LIBRARY = UNIX_USBPortProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

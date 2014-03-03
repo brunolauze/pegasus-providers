@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/InstModification
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_InstModification
+LIBRARY = UNIX_InstModificationProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

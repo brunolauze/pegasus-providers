@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ElementCapacity
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ElementCapacity
+LIBRARY = UNIX_ElementCapacityProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

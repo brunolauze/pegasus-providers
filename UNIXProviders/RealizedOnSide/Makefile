@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RealizedOnSide
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RealizedOnSide
+LIBRARY = UNIX_RealizedOnSideProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

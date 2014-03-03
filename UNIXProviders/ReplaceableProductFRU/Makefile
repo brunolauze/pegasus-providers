@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/ReplaceableProductFRU
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_ReplaceableProductFRU
+LIBRARY = UNIX_ReplaceableProductFRUProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 

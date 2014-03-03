@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RoutersInBGPCluster
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RoutersInBGPCluster
+LIBRARY = UNIX_RoutersInBGPClusterProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
