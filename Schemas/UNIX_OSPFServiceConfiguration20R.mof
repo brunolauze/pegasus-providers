@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_OSPFServiceConfigurationModule";
 	ProviderName = "UNIX_OSPFServiceConfigurationProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_OSPFServiceConfiguration";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_OSPFServiceConfigurationModule";
 	ProviderName = "UNIX_OSPFServiceConfigurationProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_OSPFServiceConfiguration";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

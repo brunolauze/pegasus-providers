@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_PolicySetInRoleCollectionModule";
 	ProviderName = "UNIX_PolicySetInRoleCollectionProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_PolicySetInRoleCollection";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_PolicySetInRoleCollectionModule";
 	ProviderName = "UNIX_PolicySetInRoleCollectionProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_PolicySetInRoleCollection";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_IPXConnectivityNetworkModule";
 	ProviderName = "UNIX_IPXConnectivityNetworkProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_IPXConnectivityNetwork";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_IPXConnectivityNetworkModule";
 	ProviderName = "UNIX_IPXConnectivityNetworkProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_IPXConnectivityNetwork";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

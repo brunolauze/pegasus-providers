@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_IPsecPolicyForEndpointModule";
 	ProviderName = "UNIX_IPsecPolicyForEndpointProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_IPsecPolicyForEndpoint";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_IPsecPolicyForEndpointModule";
 	ProviderName = "UNIX_IPsecPolicyForEndpointProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_IPsecPolicyForEndpoint";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

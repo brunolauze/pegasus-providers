@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ChangerDeviceModule";
 	ProviderName = "UNIX_ChangerDeviceProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_ChangerDevice";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ChangerDeviceModule";
 	ProviderName = "UNIX_ChangerDeviceProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_ChangerDevice";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_HDSLModemModule";
 	ProviderName = "UNIX_HDSLModemProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_HDSLModem";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_HDSLModemModule";
 	ProviderName = "UNIX_HDSLModemProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_HDSLModem";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

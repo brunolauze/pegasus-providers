@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_HostedNetworkPipeModule";
 	ProviderName = "UNIX_HostedNetworkPipeProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_HostedNetworkPipe";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_HostedNetworkPipeModule";
 	ProviderName = "UNIX_HostedNetworkPipeProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_HostedNetworkPipe";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

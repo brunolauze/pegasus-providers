@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_AssociatedBlockStatisticsManifestCollectionModule";
 	ProviderName = "UNIX_AssociatedBlockStatisticsManifestCollectionProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_AssociatedBlockStatisticsManifestCollection";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_AssociatedBlockStatisticsManifestCollectionModule";
 	ProviderName = "UNIX_AssociatedBlockStatisticsManifestCollectionProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_AssociatedBlockStatisticsManifestCollection";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

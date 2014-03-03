@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_StorageHardwareIDManagementServiceModule";
 	ProviderName = "UNIX_StorageHardwareIDManagementServiceProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_StorageHardwareIDManagementService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_StorageHardwareIDManagementServiceModule";
 	ProviderName = "UNIX_StorageHardwareIDManagementServiceProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_StorageHardwareIDManagementService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

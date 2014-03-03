@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_OutboundVLANModule";
 	ProviderName = "UNIX_OutboundVLANProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_OutboundVLAN";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_OutboundVLANModule";
 	ProviderName = "UNIX_OutboundVLANProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_OutboundVLAN";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_AggregatePExtentModule";
 	ProviderName = "UNIX_AggregatePExtentProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_AggregatePExtent";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_AggregatePExtentModule";
 	ProviderName = "UNIX_AggregatePExtentProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_AggregatePExtent";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

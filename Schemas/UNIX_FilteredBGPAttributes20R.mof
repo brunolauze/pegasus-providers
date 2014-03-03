@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_FilteredBGPAttributesModule";
 	ProviderName = "UNIX_FilteredBGPAttributesProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_FilteredBGPAttributes";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_FilteredBGPAttributesModule";
 	ProviderName = "UNIX_FilteredBGPAttributesProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_FilteredBGPAttributes";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

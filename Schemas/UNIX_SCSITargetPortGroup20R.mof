@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_SCSITargetPortGroupModule";
 	ProviderName = "UNIX_SCSITargetPortGroupProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_SCSITargetPortGroup";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_SCSITargetPortGroupModule";
 	ProviderName = "UNIX_SCSITargetPortGroupProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_SCSITargetPortGroup";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

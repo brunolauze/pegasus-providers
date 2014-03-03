@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ParametersForMethodModule";
 	ProviderName = "UNIX_ParametersForMethodProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_ParametersForMethod";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ParametersForMethodModule";
 	ProviderName = "UNIX_ParametersForMethodProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_ParametersForMethod";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

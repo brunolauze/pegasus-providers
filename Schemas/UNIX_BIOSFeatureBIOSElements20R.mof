@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_BIOSFeatureBIOSElementsModule";
 	ProviderName = "UNIX_BIOSFeatureBIOSElementsProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_BIOSFeatureBIOSElements";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_BIOSFeatureBIOSElementsModule";
 	ProviderName = "UNIX_BIOSFeatureBIOSElementsProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_BIOSFeatureBIOSElements";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_DSCPMarkerServiceModule";
 	ProviderName = "UNIX_DSCPMarkerServiceProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_DSCPMarkerService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_DSCPMarkerServiceModule";
 	ProviderName = "UNIX_DSCPMarkerServiceProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_DSCPMarkerService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_CompositeExtentBasedOnModule";
 	ProviderName = "UNIX_CompositeExtentBasedOnProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_CompositeExtentBasedOn";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_CompositeExtentBasedOnModule";
 	ProviderName = "UNIX_CompositeExtentBasedOnProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_CompositeExtentBasedOn";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

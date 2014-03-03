@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_LLDPEthernetPortModule";
 	ProviderName = "UNIX_LLDPEthernetPortProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_EthernetPort";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_LLDPEthernetPortModule";
 	ProviderName = "UNIX_LLDPEthernetPortProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_EthernetPort";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -72,6 +74,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_LLDPEthernetPortModule";
 	ProviderName = "UNIX_LLDPEthernetPortProvider";
+	CapabilityID = "3";
 	ClassName = "CIM_LLDPEthernetPort";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -83,6 +86,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_LLDPEthernetPortModule";
 	ProviderName = "UNIX_LLDPEthernetPortProvider";
+	CapabilityID = "4";
 	ClassName = "UNIX_LLDPEthernetPort";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_iSCSISessionSettingsModule";
 	ProviderName = "UNIX_iSCSISessionSettingsProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_iSCSISessionSettings";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_iSCSISessionSettingsModule";
 	ProviderName = "UNIX_iSCSISessionSettingsProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_iSCSISessionSettings";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

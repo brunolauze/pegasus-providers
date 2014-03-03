@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_NetworksInAdminDomainModule";
 	ProviderName = "UNIX_NetworksInAdminDomainProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_NetworksInAdminDomain";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_NetworksInAdminDomainModule";
 	ProviderName = "UNIX_NetworksInAdminDomainProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_NetworksInAdminDomain";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

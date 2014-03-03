@@ -37,8 +37,11 @@
 #define BASE_CLASS_CIM_NAME CIMName(BASE_CLASS_NAME)
 #endif
 
-
-
+#ifdef BASE_BASE_CLASS_NAME
+#ifndef BASE_BASE_CLASS_CIM_NAME
+#define BASE_BASE_CLASS_CIM_NAME CIMName(BASE_BASE_CLASS_NAME)
+#endif
+#endif
 
 #ifndef __checkClass_H
 /*
@@ -55,6 +58,9 @@ NOTES             :
 void UNIX_PROVIDER::_checkClass(CIMName& className)
 {
   if (!className.equal (CLASS_IMPLEMENTATION_CIM_NAME) &&
+#ifdef BASE_BASE_CLASS_CIM_NAME
+  	&& !className.equal (BASE_BASE_CLASS_CIM_NAME)
+#endif
       !className.equal (BASE_CLASS_CIM_NAME))
     throw CIMNotSupportedException(className.getString() +
         ": Class not supported");
@@ -349,6 +355,9 @@ void UNIX_PROVIDER::execQuery(
 	    // enumerate - if we return instances on enumerate of our superclass,
 	    // there would be dups
 	    if (className.equal (CLASS_IMPLEMENTATION_CIM_NAME) ||
+#ifdef BASE_BASE_CLASS_CIM_NAME
+  	&& !className.equal (BASE_BASE_CLASS_CIM_NAME)
+#endif
 	    	className.equal(BASE_CLASS_CIM_NAME))
 	    {
 	        handler.processing();
@@ -417,6 +426,9 @@ void UNIX_PROVIDER::enumerateInstanceNames(const OperationContext &ctx,
 	    // We are only going to respond to enumeration requests on
 	    // CLASS_IMPLEMENTATION_CIM_NAME or BASE_CLASS_CIM_NAME
 	    if (className.equal (BASE_CLASS_CIM_NAME)
+#ifdef BASE_BASE_CLASS_CIM_NAME
+	    className.equal (BASE_BASE_CLASS_CIM_NAME)
+#endif
 	    || className.equal(CLASS_IMPLEMENTATION_CIM_NAME))
 	    {
 

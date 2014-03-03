@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_HostedFilterEntryBaseModule";
 	ProviderName = "UNIX_HostedFilterEntryBaseProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_HostedFilterEntryBase";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_HostedFilterEntryBaseModule";
 	ProviderName = "UNIX_HostedFilterEntryBaseProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_HostedFilterEntryBase";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

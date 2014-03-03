@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ClassDeletionModule";
 	ProviderName = "UNIX_ClassDeletionProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_ClassDeletion";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ClassDeletionModule";
 	ProviderName = "UNIX_ClassDeletionProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_ClassDeletion";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

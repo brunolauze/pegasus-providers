@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ConcreteJobModule";
 	ProviderName = "UNIX_ConcreteJobProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_ConcreteJob";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ConcreteJobModule";
 	ProviderName = "UNIX_ConcreteJobProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_ConcreteJob";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

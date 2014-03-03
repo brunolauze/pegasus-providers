@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_BoundedPrioritySchedulingElementModule";
 	ProviderName = "UNIX_BoundedPrioritySchedulingElementProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_BoundedPrioritySchedulingElement";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_BoundedPrioritySchedulingElementModule";
 	ProviderName = "UNIX_BoundedPrioritySchedulingElementProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_BoundedPrioritySchedulingElement";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

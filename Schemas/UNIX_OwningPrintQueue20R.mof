@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_OwningPrintQueueModule";
 	ProviderName = "UNIX_OwningPrintQueueProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_OwningPrintQueue";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_OwningPrintQueueModule";
 	ProviderName = "UNIX_OwningPrintQueueProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_OwningPrintQueue";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

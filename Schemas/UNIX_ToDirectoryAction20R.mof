@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ToDirectoryActionModule";
 	ProviderName = "UNIX_ToDirectoryActionProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_ToDirectoryAction";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ToDirectoryActionModule";
 	ProviderName = "UNIX_ToDirectoryActionProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_ToDirectoryAction";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

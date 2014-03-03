@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_PowerUtilizationManagementServiceModule";
 	ProviderName = "UNIX_PowerUtilizationManagementServiceProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_PowerUtilizationManagementService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_PowerUtilizationManagementServiceModule";
 	ProviderName = "UNIX_PowerUtilizationManagementServiceProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_PowerUtilizationManagementService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

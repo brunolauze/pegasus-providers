@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_CIMOMStatisticalDataModule";
 	ProviderName = "UNIX_CIMOMStatisticalDataProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_CIMOMStatisticalData";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_CIMOMStatisticalDataModule";
 	ProviderName = "UNIX_CIMOMStatisticalDataProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_CIMOMStatisticalData";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

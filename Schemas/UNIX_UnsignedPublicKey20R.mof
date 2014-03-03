@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_UnsignedPublicKeyModule";
 	ProviderName = "UNIX_UnsignedPublicKeyProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_UnsignedPublicKey";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_UnsignedPublicKeyModule";
 	ProviderName = "UNIX_UnsignedPublicKeyProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_UnsignedPublicKey";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_EthernetAdapterModule";
 	ProviderName = "UNIX_EthernetAdapterProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_EthernetAdapter";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_EthernetAdapterModule";
 	ProviderName = "UNIX_EthernetAdapterProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_EthernetAdapter";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

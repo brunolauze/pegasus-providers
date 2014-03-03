@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_LogManagesRecordModule";
 	ProviderName = "UNIX_LogManagesRecordProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_LogManagesRecord";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_LogManagesRecordModule";
 	ProviderName = "UNIX_LogManagesRecordProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_LogManagesRecord";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

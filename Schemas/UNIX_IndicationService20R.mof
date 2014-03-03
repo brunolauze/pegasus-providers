@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_IndicationServiceModule";
 	ProviderName = "UNIX_IndicationServiceProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_IndicationService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_IndicationServiceModule";
 	ProviderName = "UNIX_IndicationServiceProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_IndicationService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

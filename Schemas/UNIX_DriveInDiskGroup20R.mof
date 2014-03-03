@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_DriveInDiskGroupModule";
 	ProviderName = "UNIX_DriveInDiskGroupProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_DriveInDiskGroup";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_DriveInDiskGroupModule";
 	ProviderName = "UNIX_DriveInDiskGroupProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_DriveInDiskGroup";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

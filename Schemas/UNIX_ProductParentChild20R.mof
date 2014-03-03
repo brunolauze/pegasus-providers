@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ProductParentChildModule";
 	ProviderName = "UNIX_ProductParentChildProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_ProductParentChild";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ProductParentChildModule";
 	ProviderName = "UNIX_ProductParentChildProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_ProductParentChild";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

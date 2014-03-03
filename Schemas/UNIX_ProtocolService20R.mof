@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ProtocolServiceModule";
 	ProviderName = "UNIX_ProtocolServiceProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_ProtocolService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ProtocolServiceModule";
 	ProviderName = "UNIX_ProtocolServiceProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_ProtocolService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

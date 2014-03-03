@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ISDNModemModule";
 	ProviderName = "UNIX_ISDNModemProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_ISDNModem";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ISDNModemModule";
 	ProviderName = "UNIX_ISDNModemProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_ISDNModem";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

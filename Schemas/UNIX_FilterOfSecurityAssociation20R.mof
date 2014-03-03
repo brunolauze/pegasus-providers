@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_FilterOfSecurityAssociationModule";
 	ProviderName = "UNIX_FilterOfSecurityAssociationProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_FilterOfSecurityAssociation";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_FilterOfSecurityAssociationModule";
 	ProviderName = "UNIX_FilterOfSecurityAssociationProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_FilterOfSecurityAssociation";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

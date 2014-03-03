@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_DisplayControllerModule";
 	ProviderName = "UNIX_DisplayControllerProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_DisplayController";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_DisplayControllerModule";
 	ProviderName = "UNIX_DisplayControllerProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_DisplayController";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

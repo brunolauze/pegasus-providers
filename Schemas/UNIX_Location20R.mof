@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_LocationModule";
 	ProviderName = "UNIX_LocationProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_Location";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_LocationModule";
 	ProviderName = "UNIX_LocationProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_Location";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ExecuteProgramModule";
 	ProviderName = "UNIX_ExecuteProgramProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_ExecuteProgram";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ExecuteProgramModule";
 	ProviderName = "UNIX_ExecuteProgramProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_ExecuteProgram";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

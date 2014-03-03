@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_SCSIMultipathConfigurationCapabilitiesModule";
 	ProviderName = "UNIX_SCSIMultipathConfigurationCapabilitiesProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_SCSIMultipathConfigurationCapabilities";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_SCSIMultipathConfigurationCapabilitiesModule";
 	ProviderName = "UNIX_SCSIMultipathConfigurationCapabilitiesProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_SCSIMultipathConfigurationCapabilities";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ProcessThreadModule";
 	ProviderName = "UNIX_ProcessThreadProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_ProcessThread";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ProcessThreadModule";
 	ProviderName = "UNIX_ProcessThreadProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_ProcessThread";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

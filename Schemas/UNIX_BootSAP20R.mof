@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_BootSAPModule";
 	ProviderName = "UNIX_BootSAPProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_BootSAP";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_BootSAPModule";
 	ProviderName = "UNIX_BootSAPProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_BootSAP";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

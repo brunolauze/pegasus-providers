@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_HelpServiceModule";
 	ProviderName = "UNIX_HelpServiceProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_HelpService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_HelpServiceModule";
 	ProviderName = "UNIX_HelpServiceProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_HelpService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_NotaryVerifiesBiometricModule";
 	ProviderName = "UNIX_NotaryVerifiesBiometricProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_NotaryVerifiesBiometric";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_NotaryVerifiesBiometricModule";
 	ProviderName = "UNIX_NotaryVerifiesBiometricProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_NotaryVerifiesBiometric";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

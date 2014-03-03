@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_CASignsPublicKeyCertificateModule";
 	ProviderName = "UNIX_CASignsPublicKeyCertificateProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_CASignsPublicKeyCertificate";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_CASignsPublicKeyCertificateModule";
 	ProviderName = "UNIX_CASignsPublicKeyCertificateProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_CASignsPublicKeyCertificate";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

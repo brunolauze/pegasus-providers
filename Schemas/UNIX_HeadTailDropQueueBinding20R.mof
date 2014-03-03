@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_HeadTailDropQueueBindingModule";
 	ProviderName = "UNIX_HeadTailDropQueueBindingProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_HeadTailDropQueueBinding";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_HeadTailDropQueueBindingModule";
 	ProviderName = "UNIX_HeadTailDropQueueBindingProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_HeadTailDropQueueBinding";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

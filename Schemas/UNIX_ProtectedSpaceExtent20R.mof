@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ProtectedSpaceExtentModule";
 	ProviderName = "UNIX_ProtectedSpaceExtentProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_ProtectedSpaceExtent";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ProtectedSpaceExtentModule";
 	ProviderName = "UNIX_ProtectedSpaceExtentProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_ProtectedSpaceExtent";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

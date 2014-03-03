@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_BGPServiceStatisticsModule";
 	ProviderName = "UNIX_BGPServiceStatisticsProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_BGPServiceStatistics";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_BGPServiceStatisticsModule";
 	ProviderName = "UNIX_BGPServiceStatisticsProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_BGPServiceStatistics";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

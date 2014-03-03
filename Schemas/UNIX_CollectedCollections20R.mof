@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_CollectedCollectionsModule";
 	ProviderName = "UNIX_CollectedCollectionsProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_CollectedCollections";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_CollectedCollectionsModule";
 	ProviderName = "UNIX_CollectedCollectionsProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_CollectedCollections";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

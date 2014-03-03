@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_Specific802dot1QVLANServiceModule";
 	ProviderName = "UNIX_Specific802dot1QVLANServiceProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_Specific802dot1QVLANService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_Specific802dot1QVLANServiceModule";
 	ProviderName = "UNIX_Specific802dot1QVLANServiceProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_Specific802dot1QVLANService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

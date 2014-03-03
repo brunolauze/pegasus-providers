@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_OpaqueManagementDataServiceModule";
 	ProviderName = "UNIX_OpaqueManagementDataServiceProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_OpaqueManagementDataService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_OpaqueManagementDataServiceModule";
 	ProviderName = "UNIX_OpaqueManagementDataServiceProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_OpaqueManagementDataService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

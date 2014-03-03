@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_DatabaseStorageModule";
 	ProviderName = "UNIX_DatabaseStorageProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_DatabaseStorage";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_DatabaseStorageModule";
 	ProviderName = "UNIX_DatabaseStorageProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_DatabaseStorage";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

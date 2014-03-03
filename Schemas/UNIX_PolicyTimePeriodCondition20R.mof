@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_PolicyTimePeriodConditionModule";
 	ProviderName = "UNIX_PolicyTimePeriodConditionProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_PolicyTimePeriodCondition";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_PolicyTimePeriodConditionModule";
 	ProviderName = "UNIX_PolicyTimePeriodConditionProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_PolicyTimePeriodCondition";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

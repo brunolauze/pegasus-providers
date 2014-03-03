@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_WiFiEndpointModule";
 	ProviderName = "UNIX_WiFiEndpointProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_WiFiEndpoint";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_WiFiEndpointModule";
 	ProviderName = "UNIX_WiFiEndpointProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_WiFiEndpoint";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

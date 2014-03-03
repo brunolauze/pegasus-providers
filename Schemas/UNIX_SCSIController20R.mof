@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_SCSIControllerModule";
 	ProviderName = "UNIX_SCSIControllerProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_SCSIController";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_SCSIControllerModule";
 	ProviderName = "UNIX_SCSIControllerProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_SCSIController";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ResourcePoolConfigurationServiceModule";
 	ProviderName = "UNIX_ResourcePoolConfigurationServiceProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_ResourcePoolConfigurationService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ResourcePoolConfigurationServiceModule";
 	ProviderName = "UNIX_ResourcePoolConfigurationServiceProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_ResourcePoolConfigurationService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

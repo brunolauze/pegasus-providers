@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_AggregationMetricDefinitionModule";
 	ProviderName = "UNIX_AggregationMetricDefinitionProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_AggregationMetricDefinition";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_AggregationMetricDefinitionModule";
 	ProviderName = "UNIX_AggregationMetricDefinitionProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_AggregationMetricDefinition";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ConnectorOnPackageModule";
 	ProviderName = "UNIX_ConnectorOnPackageProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_ConnectorOnPackage";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_ConnectorOnPackageModule";
 	ProviderName = "UNIX_ConnectorOnPackageProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_ConnectorOnPackage";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

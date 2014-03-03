@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_SSHProtocolEndpointModule";
 	ProviderName = "UNIX_SSHProtocolEndpointProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_SSHProtocolEndpoint";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_SSHProtocolEndpointModule";
 	ProviderName = "UNIX_SSHProtocolEndpointProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_SSHProtocolEndpoint";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

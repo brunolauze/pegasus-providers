@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_PortControllerModule";
 	ProviderName = "UNIX_PortControllerProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_PortController";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_PortControllerModule";
 	ProviderName = "UNIX_PortControllerProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_PortController";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

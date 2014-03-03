@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_TokenRingPortModule";
 	ProviderName = "UNIX_TokenRingPortProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_NetworkPort";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_TokenRingPortModule";
 	ProviderName = "UNIX_TokenRingPortProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_NetworkPort";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -72,6 +74,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_TokenRingPortModule";
 	ProviderName = "UNIX_TokenRingPortProvider";
+	CapabilityID = "3";
 	ClassName = "CIM_TokenRingPort";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -83,6 +86,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_TokenRingPortModule";
 	ProviderName = "UNIX_TokenRingPortProvider";
+	CapabilityID = "4";
 	ClassName = "UNIX_TokenRingPort";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

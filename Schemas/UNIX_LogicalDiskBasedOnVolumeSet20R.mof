@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_LogicalDiskBasedOnVolumeSetModule";
 	ProviderName = "UNIX_LogicalDiskBasedOnVolumeSetProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_LogicalDiskBasedOnVolumeSet";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_LogicalDiskBasedOnVolumeSetModule";
 	ProviderName = "UNIX_LogicalDiskBasedOnVolumeSetProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_LogicalDiskBasedOnVolumeSet";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

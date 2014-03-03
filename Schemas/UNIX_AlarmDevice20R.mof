@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_AlarmDeviceModule";
 	ProviderName = "UNIX_AlarmDeviceProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_AlarmDevice";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_AlarmDeviceModule";
 	ProviderName = "UNIX_AlarmDeviceProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_AlarmDevice";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

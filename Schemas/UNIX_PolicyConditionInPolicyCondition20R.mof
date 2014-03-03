@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_PolicyConditionInPolicyConditionModule";
 	ProviderName = "UNIX_PolicyConditionInPolicyConditionProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_PolicyConditionInPolicyCondition";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_PolicyConditionInPolicyConditionModule";
 	ProviderName = "UNIX_PolicyConditionInPolicyConditionProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_PolicyConditionInPolicyCondition";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };

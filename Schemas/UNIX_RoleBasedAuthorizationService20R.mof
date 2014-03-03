@@ -50,6 +50,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_RoleBasedAuthorizationServiceModule";
 	ProviderName = "UNIX_RoleBasedAuthorizationServiceProvider";
+	CapabilityID = "1";
 	ClassName = "CIM_RoleBasedAuthorizationService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
@@ -61,6 +62,7 @@ instance of PG_ProviderCapabilities
 {
 	ProviderModuleName = "UNIX_RoleBasedAuthorizationServiceModule";
 	ProviderName = "UNIX_RoleBasedAuthorizationServiceProvider";
+	CapabilityID = "2";
 	ClassName = "UNIX_RoleBasedAuthorizationService";
 	Namespaces = {"root/cimv2"};
 	ProviderType = { 2,5,7 };
