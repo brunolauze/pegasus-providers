@@ -1315,6 +1315,6 @@ class CIM_NetworkPort : CIM_LogicalPort {
 class UNIX_NetworkPort : CIM_NetworkPort
 {
 
-}
+};
 
 

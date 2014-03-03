@@ -2,7 +2,14 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/Makefile">
     <Files>
-      <File FileName="UNIXProviders/Makefile" Line="1" Column="1" />
+      <File FileName="UNIXProviders/DatabaseSystem/Makefile" Line="98" Column="10" />
+      <File FileName="UNIXProviders/DatabaseSystem/UNIX_DatabaseSystem_FREEBSD.hpp" Line="93" Column="2" />
+      <File FileName="UNIXProviders/InstalledSoftwareElement/Makefile" Line="102" Column="10" />
+      <File FileName="UNIXProviders/InstalledSoftwareElement/UNIX_InstalledSoftwareElement_FREEBSD.cxx" Line="1" Column="1" />
+      <File FileName="UNIXProviders/InstalledSoftwareElement/UNIX_InstalledSoftwareElement_FREEBSD.hpp" Line="92" Column="2" />
+      <File FileName="UNIXProviders/InstalledSoftwareElement/UNIX_InstalledSoftwareElementProvider.cpp" Line="61" Column="2" />
+      <File FileName="UNIXProviders/UNIXProviderBase.hpp" Line="34" Column="7" />
+      <File FileName="UNIXProviders/Makefile" Line="51" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

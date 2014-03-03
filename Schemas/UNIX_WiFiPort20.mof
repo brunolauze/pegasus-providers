@@ -1315,7 +1315,7 @@ class CIM_NetworkPort : CIM_LogicalPort {
 class CIM_WiFiPort : CIM_WiFiPort
 {
 
-}
+};
 
 // Copyright (c) 2009 DMTF.  All rights reserved.
    [Version ( "2.22.0" ), 

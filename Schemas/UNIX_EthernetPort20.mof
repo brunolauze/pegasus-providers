@@ -1315,7 +1315,7 @@ class CIM_NetworkPort : CIM_LogicalPort {
 class UNIX_EthernetPort : CIM_EthernetPort
 {
 
-}
+};
 
 // Copyright (c) 2012 DMTF.  All rights reserved.
    [Version ( "2.35.0" ), 
@@ -1471,6 +1471,6 @@ class CIM_EthernetPort : CIM_NetworkPort {
 class UNIX_EthernetPort : CIM_EthernetPort
 {
 
-}
+};
 
 

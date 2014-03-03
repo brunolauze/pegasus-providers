@@ -538,6 +538,6 @@ class CIM_SoftwareFeature : CIM_LogicalElement {
 class UNIX_SoftwareFeature : CIM_SoftwareFeature
 {
 
-}
+};
 
 

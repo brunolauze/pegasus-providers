@@ -683,7 +683,7 @@ class CIM_SoftwareElement : CIM_LogicalElement {
 class CIM_VideoBIOSElement : CIM_VideoBIOSElement
 {
 
-}
+};
 
 // Copyright (c) 2005 DMTF.  All rights reserved.
    [Version ( "2.6.0" ), 

@@ -96,5 +96,5 @@ class UNIX_CurrentTime : CIM_CurrentTime
 class UNIX_LocalTime : UNIX_CurrentTime
 {
 
-}
+};
 

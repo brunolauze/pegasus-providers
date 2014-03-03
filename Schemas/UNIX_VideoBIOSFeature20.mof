@@ -538,7 +538,7 @@ class CIM_SoftwareFeature : CIM_LogicalElement {
 class CIM_VideoBIOSFeature : CIM_VideoBIOSFeature
 {
 
-}
+};
 
 // Copyright (c) 2005 DMTF.  All rights reserved.
    [Version ( "2.6.0" ), 

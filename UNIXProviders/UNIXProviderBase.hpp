@@ -282,44 +282,50 @@ void UNIX_PROVIDER::enumerateInstances(
     const CIMPropertyList& propertyList,
     InstanceResponseHandler& handler)
 {
-    CIMName className;
-    CIMInstance instance;
-    CIMObjectPath newref;
-    className = ref.getClassName();
-    CIMNamespaceName nameSpace = ref.getNameSpace();
-    int pIndex;
-    // only return instances when enumerate on our subclass, CIMOM
-    // will call us as natural part of recursing through subtree on
-    // enumerate - if we return instances on enumerate of our superclass,
-    // there would be dups
+    try {
+	    CIMName className;
+	    CIMInstance instance;
+	    CIMObjectPath newref;
+	    className = ref.getClassName();
+	    CIMNamespaceName nameSpace = ref.getNameSpace();
+	    int pIndex;
+	    // only return instances when enumerate on our subclass, CIMOM
+	    // will call us as natural part of recursing through subtree on
+	    // enumerate - if we return instances on enumerate of our superclass,
+	    // there would be dups
 
-    if (className.equal (BASE_CLASS_CIM_NAME) ||
-#ifdef BASE_BASE_CLASS_CIM_NAME
-    	className.equal(BASE_BASE_CLASS_CIM_NAME) ||
-#endif
-    	className.equal(CLASS_IMPLEMENTATION_CIM_NAME))
-    {
-        handler.processing();
-#ifdef __PROVIDER_PREPARE
-        __PROVIDER_PREPARE(
-        context, nameSpace, includeQualifiers, includeClassOrigin, _p);
-#endif    
-        if (_p.initialize())
-        {
-	        for (pIndex = 0; _p.load(pIndex); pIndex++)
-	        handler.deliver(constructInstance(className,
-	                                           nameSpace,
-	                                           _p));
+	    if (className.equal (BASE_CLASS_CIM_NAME) ||
+	#ifdef BASE_BASE_CLASS_CIM_NAME
+	    	className.equal(BASE_BASE_CLASS_CIM_NAME) ||
+	#endif
+	    	className.equal(CLASS_IMPLEMENTATION_CIM_NAME))
+	    {
+	        handler.processing();
+	#ifdef __PROVIDER_PREPARE
+	        __PROVIDER_PREPARE(
+	        context, nameSpace, includeQualifiers, includeClassOrigin, _p);
+	#endif    
+	        if (_p.initialize())
+	        {
+		        for (pIndex = 0; _p.load(pIndex); pIndex++)
+		        handler.deliver(constructInstance(className,
+		                                           nameSpace,
+		                                           _p));
 
-		}
-		_p.finalize();
-        handler.complete();
-    }
-    else
-    {
-        throw CIMNotSupportedException(CLASS_IMPLEMENTATION_NAME  
-                "does not support class " + className.getString());
-    }
+			}
+			_p.finalize();
+	        handler.complete();
+	    }
+	    else
+	    {
+	        throw CIMNotSupportedException(CLASS_IMPLEMENTATION_NAME  
+	                "does not support class " + className.getString());
+	    }
+	}
+	catch(Exception &e)
+	{
+		cout << "Error: " << UNIX_PROVIDER_NAME << " Msg: " << e.getMessage() << endl;
+	}
     return;
 }
 #endif
@@ -332,45 +338,51 @@ void UNIX_PROVIDER::execQuery(
        const QueryExpression& query,
        InstanceResponseHandler& handler)
 {
-	CIMName className;
-    className = objectPath.getClassName();
-    CIMNamespaceName nameSpace = objectPath.getNameSpace();
-    int pIndex;
+    try {
+		CIMName className;
+	    className = objectPath.getClassName();
+	    CIMNamespaceName nameSpace = objectPath.getNameSpace();
+	    int pIndex;
 
-    // only return instances when enumerate on our subclass, CIMOM
-    // will call us as natural part of recursing through subtree on
-    // enumerate - if we return instances on enumerate of our superclass,
-    // there would be dups
-    if (className.equal (CLASS_IMPLEMENTATION_CIM_NAME) ||
-    	className.equal(BASE_CLASS_CIM_NAME))
-    {
-        handler.processing();
-        #ifdef __PROVIDER_PREPARE
-        __PROVIDER_PREPARE(
-        context, nameSpace, true, true, _p);
+	    // only return instances when enumerate on our subclass, CIMOM
+	    // will call us as natural part of recursing through subtree on
+	    // enumerate - if we return instances on enumerate of our superclass,
+	    // there would be dups
+	    if (className.equal (CLASS_IMPLEMENTATION_CIM_NAME) ||
+	    	className.equal(BASE_CLASS_CIM_NAME))
+	    {
+	        handler.processing();
+	        #ifdef __PROVIDER_PREPARE
+	        __PROVIDER_PREPARE(
+	        context, nameSpace, true, true, _p);
 
-		#endif       
-        if (_p.initialize())
-        {
-	        for (pIndex = 0; _p.load(pIndex); pIndex++)
+			#endif       
+	        if (_p.initialize())
 	        {
-	        	CIMInstance ci = constructInstance(className,
-	                                           nameSpace,
-	                                           _p);
-	        	if (query.evaluate(ci))
+		        for (pIndex = 0; _p.load(pIndex); pIndex++)
 		        {
-		        	handler.deliver(ci);
-		        }
+		        	CIMInstance ci = constructInstance(className,
+		                                           nameSpace,
+		                                           _p);
+		        	if (query.evaluate(ci))
+			        {
+			        	handler.deliver(ci);
+			        }
+				}
 			}
-		}
-		_p.finalize();
-        handler.complete();
-    }
-    else
-    {
-        throw CIMNotSupportedException(UNIX_PROVIDER_NAME
-                "does not support class " + className.getString());
-    }
+			_p.finalize();
+	        handler.complete();
+	    }
+	    else
+	    {
+	        throw CIMNotSupportedException(UNIX_PROVIDER_NAME
+	                "does not support class " + className.getString());
+	    }
+	}
+	catch(Exception &e)
+	{
+		cout << "Error: " << UNIX_PROVIDER_NAME << " Msg: " << e.getMessage() << endl;
+	}
     return;
 }
 #endif 
@@ -392,46 +404,52 @@ void UNIX_PROVIDER::enumerateInstanceNames(const OperationContext &ctx,
                             const CIMObjectPath &ref,
                             ObjectPathResponseHandler &handler)
 {
-    int pIndex;
-    CIMName className = ref.getClassName();
-    CIMNamespaceName nameSpace = ref.getNameSpace();
+	try {
+	    int pIndex;
+	    CIMName className = ref.getClassName();
+	    CIMNamespaceName nameSpace = ref.getNameSpace();
 
-    // Validate the classname
-    _checkClass(className);
+	    // Validate the classname
+	    _checkClass(className);
 
-    // Notify processing is starting
-    handler.processing();
-    // We are only going to respond to enumeration requests on
-    // CLASS_IMPLEMENTATION_CIM_NAME or BASE_CLASS_CIM_NAME
-    if (className.equal (BASE_CLASS_CIM_NAME)
-    || className.equal(CLASS_IMPLEMENTATION_CIM_NAME))
-    {
+	    // Notify processing is starting
+	    handler.processing();
+	    // We are only going to respond to enumeration requests on
+	    // CLASS_IMPLEMENTATION_CIM_NAME or BASE_CLASS_CIM_NAME
+	    if (className.equal (BASE_CLASS_CIM_NAME)
+	    || className.equal(CLASS_IMPLEMENTATION_CIM_NAME))
+	    {
 
-    #ifdef __PROVIDER_PREPARE
-        __PROVIDER_PREPARE(
-        ctx, nameSpace, true, true, _p);
-	#endif  
-      // Get the process information and deliver an ObjectPath for
-      // each process
-      // Note that loadProcessInfo modifies pIndex to point to the
-      // next process structure before the loop increments it!
-      if (_p.initialize())
-      {
-	      for (pIndex = 0; _p.load(pIndex); pIndex++)
+	    #ifdef __PROVIDER_PREPARE
+	        __PROVIDER_PREPARE(
+	        ctx, nameSpace, true, true, _p);
+		#endif  
+	      // Get the process information and deliver an ObjectPath for
+	      // each process
+	      // Note that loadProcessInfo modifies pIndex to point to the
+	      // next process structure before the loop increments it!
+	      if (_p.initialize())
 	      {
-	        // Deliver the names
-	        handler.deliver(CIMObjectPath(String(""), // hostname
-	                                      nameSpace,
-	                                      className,
-	                                      constructKeyBindings(_p)));
+		      for (pIndex = 0; _p.load(pIndex); pIndex++)
+		      {
+		        // Deliver the names
+		        handler.deliver(CIMObjectPath(String(""), // hostname
+		                                      nameSpace,
+		                                      className,
+		                                      constructKeyBindings(_p)));
 
-	      }
-	  }
-	  _p.finalize();
-    }
+		      }
+		  }
+		  _p.finalize();
+	    }
 
-    // Notify processing is complete
-    handler.complete();
+	    // Notify processing is complete
+	    handler.complete();
+	}
+	catch(Exception &e)
+	{
+		cout << "Error: " << UNIX_PROVIDER_NAME << " Msg: " << e.getMessage() << endl;
+	}
     return;
 
 }  // enumerateInstanceNames

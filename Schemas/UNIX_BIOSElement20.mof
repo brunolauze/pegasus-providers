@@ -683,7 +683,7 @@ class CIM_SoftwareElement : CIM_LogicalElement {
 class CIM_BIOSElement : CIM_BIOSElement
 {
 
-}
+};
 
 // Copyright (c) 2007 DMTF.  All Rights Reserved.
    [Version ( "2.17.0" ), 

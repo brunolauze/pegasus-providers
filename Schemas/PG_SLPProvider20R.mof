@@ -26,44 +26,34 @@
 // SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 //////////////////////////////////////////////////////////////////////////
-//
-//%/////////////////////////////////////////////////////////////////////////
 
-
-instance of PG_ProviderModule
+#pragma locale ("en_US")
+instance of PG_ProviderModule 
 {
-	Name = "Meta_ClassModule";
-	Location = "Meta_Class";
-	Vendor = "OpenPegasus";
-	Version = "2.4.0";
-	InterfaceType = "C++Default";
-	InterfaceVersion = "2.1.0";
+    Description = "Instance Provider for the InterOp classes";
+    Caption = "Instance Provider for the InterOp classes";
+    Name = "SLPProviderModule";
+    Vendor = "OpenPegasus";
+    Version = "2.0.0";
+    InterfaceType = "C++Default";
+    InterfaceVersion = "2.1.0";
+    Location = "SLPProvider";
 };
 
 instance of PG_Provider
 {
-	ProviderModuleName = "Meta_ClassModule";
-	Name = "Meta_ClassProvider";
+    ProviderModuleName = "SLPProviderModule";
+    Name = "SLPProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "Meta_ClassModule";
-	ProviderName = "Meta_ClassProvider";
-	ClassName = "CIM_Class";
-	Namespaces = {"root/cimv2"};
-	ProviderType = { 2,5,7 };
-	SupportedProperties = NULL; // All properties
-	SupportedMethods = NULL; // All methods
-};
-
-instance of PG_ProviderCapabilities
-{
-	ProviderModuleName = "Meta_ClassModule";
-	ProviderName = "Meta_ClassProvider";
-	ClassName = "Meta_Class";
-	Namespaces = {"root/cimv2"};
-	ProviderType = { 2,5,7 };
-	SupportedProperties = NULL; // All properties
-	SupportedMethods = NULL; // All methods
+    ProviderModuleName = "SLPProviderModule";
+    ProviderName = "SLPProvider";
+    CapabilityID = "1";
+    ClassName = "PG_WBEMSLPTemplate";
+    Namespaces = { "root/PG_Internal" };
+    ProviderType = { 2, 5 };  // instance and method
+    SupportedProperties = NULL;
+    SupportedMethods = NULL;
 };

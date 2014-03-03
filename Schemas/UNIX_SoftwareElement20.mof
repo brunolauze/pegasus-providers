@@ -683,6 +683,6 @@ class CIM_SoftwareElement : CIM_LogicalElement {
 class UNIX_SoftwareElement : CIM_SoftwareElement
 {
 
-}
+};
 
 

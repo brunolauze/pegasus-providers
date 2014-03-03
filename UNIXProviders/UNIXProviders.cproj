@@ -500,7 +500,6 @@
     <Compile Include="LocalFileSystem\UNIX_LocalFileSystem_TRU64.cxx" />
     <Compile Include="LocalFileSystem\UNIX_LocalFileSystem_VMS.cxx" />
     <Compile Include="LocalFileSystem\UNIX_LocalFileSystem_ZOS.cxx" />
-    <Compile Include="smbios.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CIMHelper.h" />
@@ -2301,6 +2300,8 @@
     <None Include="smbios.h" />
     <None Include="Meta_Class\Makefile" />
     <None Include="Meta_Class\Meta_ClassMain.cpp" />
+    <None Include="DatabaseSystem\Makefile" />
+    <None Include="smbios.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Account\" />

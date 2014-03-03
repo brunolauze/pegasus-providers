@@ -1058,6 +1058,6 @@ class CIM_ApplicationSystem : CIM_System {
 class UNIX_ApplicationSystem : CIM_ApplicationSystem
 {
 
-}
+};
 
 
