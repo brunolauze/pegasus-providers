@@ -76,5 +76,5 @@ class CIM_ActionSequence {
 class UNIX_ActionSequence : CIM_ActionSequence
 {
 
-}
+};
 

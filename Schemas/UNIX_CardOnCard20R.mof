@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_CardOnCardModule";
+	Location = "UNIX_CardOnCard";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CardOnCardModule";
 	Name = "UNIX_CardOnCardProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CardOnCardModule";
 	ProviderName = "UNIX_CardOnCardProvider";
 	ClassName = "CIM_CardOnCard";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CardOnCardModule";
 	ProviderName = "UNIX_CardOnCardProvider";
 	ClassName = "UNIX_CardOnCard";
 	Namespaces = {"root/cimv2"};

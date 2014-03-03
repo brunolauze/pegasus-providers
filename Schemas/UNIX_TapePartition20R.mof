@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_TapePartitionModule";
+	Location = "UNIX_TapePartition";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_TapePartitionModule";
 	Name = "UNIX_TapePartitionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_TapePartitionModule";
 	ProviderName = "UNIX_TapePartitionProvider";
 	ClassName = "CIM_TapePartition";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_TapePartitionModule";
 	ProviderName = "UNIX_TapePartitionProvider";
 	ClassName = "UNIX_TapePartition";
 	Namespaces = {"root/cimv2"};

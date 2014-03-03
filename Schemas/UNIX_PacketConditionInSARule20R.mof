@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_PacketConditionInSARuleModule";
+	Location = "UNIX_PacketConditionInSARule";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PacketConditionInSARuleModule";
 	Name = "UNIX_PacketConditionInSARuleProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PacketConditionInSARuleModule";
 	ProviderName = "UNIX_PacketConditionInSARuleProvider";
 	ClassName = "CIM_PacketConditionInSARule";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PacketConditionInSARuleModule";
 	ProviderName = "UNIX_PacketConditionInSARuleProvider";
 	ClassName = "UNIX_PacketConditionInSARule";
 	Namespaces = {"root/cimv2"};

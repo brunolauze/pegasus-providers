@@ -390,5 +390,5 @@ class CIM_PreconfiguredTunnelAction : CIM_PreconfiguredSAAction {
 class UNIX_PreconfiguredTunnelAction : CIM_PreconfiguredTunnelAction
 {
 
-}
+};
 

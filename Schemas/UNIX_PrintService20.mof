@@ -1046,5 +1046,5 @@ class CIM_PrintService : CIM_Service {
 class UNIX_PrintService : CIM_PrintService
 {
 
-}
+};
 

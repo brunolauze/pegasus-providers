@@ -1164,5 +1164,5 @@ class CIM_VLANEndpoint : CIM_ProtocolEndpoint {
 class UNIX_VLANEndpoint : CIM_VLANEndpoint
 {
 
-}
+};
 

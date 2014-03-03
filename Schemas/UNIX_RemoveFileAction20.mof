@@ -310,5 +310,5 @@ class CIM_RemoveFileAction : CIM_FileAction {
 class UNIX_RemoveFileAction : CIM_RemoveFileAction
 {
 
-}
+};
 

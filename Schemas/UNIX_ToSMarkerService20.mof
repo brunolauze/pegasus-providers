@@ -964,5 +964,5 @@ class CIM_ToSMarkerService : CIM_MarkerService {
 class UNIX_ToSMarkerService : CIM_ToSMarkerService
 {
 
-}
+};
 

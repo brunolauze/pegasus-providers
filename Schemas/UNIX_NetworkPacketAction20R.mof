@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_NetworkPacketActionModule";
+	Location = "UNIX_NetworkPacketAction";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NetworkPacketActionModule";
 	Name = "UNIX_NetworkPacketActionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NetworkPacketActionModule";
 	ProviderName = "UNIX_NetworkPacketActionProvider";
 	ClassName = "CIM_NetworkPacketAction";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NetworkPacketActionModule";
 	ProviderName = "UNIX_NetworkPacketActionProvider";
 	ClassName = "UNIX_NetworkPacketAction";
 	Namespaces = {"root/cimv2"};

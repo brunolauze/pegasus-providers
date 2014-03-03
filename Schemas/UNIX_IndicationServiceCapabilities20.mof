@@ -255,5 +255,5 @@ class CIM_IndicationServiceCapabilities : CIM_Capabilities {
 class UNIX_IndicationServiceCapabilities : CIM_IndicationServiceCapabilities
 {
 
-}
+};
 

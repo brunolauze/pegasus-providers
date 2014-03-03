@@ -282,5 +282,5 @@ class CIM_VendorPolicyAction : CIM_PolicyAction {
 class UNIX_VendorPolicyAction : CIM_VendorPolicyAction
 {
 
-}
+};
 

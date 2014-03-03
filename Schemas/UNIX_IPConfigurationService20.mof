@@ -1051,5 +1051,5 @@ class CIM_IPConfigurationService : CIM_Service {
 class UNIX_IPConfigurationService : CIM_IPConfigurationService
 {
 
-}
+};
 

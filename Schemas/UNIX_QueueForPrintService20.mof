@@ -83,5 +83,5 @@ class CIM_QueueForPrintService : CIM_Dependency {
 class UNIX_QueueForPrintService : CIM_QueueForPrintService
 {
 
-}
+};
 

@@ -1071,5 +1071,5 @@ class CIM_BlockStatisticsService : CIM_StatisticsService {
 class UNIX_BlockStatisticsService : CIM_BlockStatisticsService
 {
 
-}
+};
 

@@ -222,5 +222,5 @@ class CIM_ResourcePoolConfigurationCapabilities : CIM_Capabilities {
 class UNIX_ResourcePoolConfigurationCapabilities : CIM_ResourcePoolConfigurationCapabilities
 {
 
-}
+};
 

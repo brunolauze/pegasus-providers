@@ -974,5 +974,5 @@ class CIM_DiagnosticSetting : CIM_Setting {
 class UNIX_DiagnosticSetting : CIM_DiagnosticSetting
 {
 
-}
+};
 

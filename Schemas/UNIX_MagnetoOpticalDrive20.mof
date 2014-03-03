@@ -1415,5 +1415,5 @@ class CIM_MagnetoOpticalDrive : CIM_MediaAccessDevice {
 class UNIX_MagnetoOpticalDrive : CIM_MagnetoOpticalDrive
 {
 
-}
+};
 

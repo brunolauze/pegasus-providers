@@ -88,5 +88,5 @@ class CIM_HomeForMedia : CIM_Dependency {
 class UNIX_HomeForMedia : CIM_HomeForMedia
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_BGPAttributesForRouteModule";
+	Location = "UNIX_BGPAttributesForRoute";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BGPAttributesForRouteModule";
 	Name = "UNIX_BGPAttributesForRouteProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BGPAttributesForRouteModule";
 	ProviderName = "UNIX_BGPAttributesForRouteProvider";
 	ClassName = "CIM_BGPAttributesForRoute";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BGPAttributesForRouteModule";
 	ProviderName = "UNIX_BGPAttributesForRouteProvider";
 	ClassName = "UNIX_BGPAttributesForRoute";
 	Namespaces = {"root/cimv2"};

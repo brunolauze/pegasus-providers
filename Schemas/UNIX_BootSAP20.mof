@@ -775,5 +775,5 @@ class CIM_BootSAP : CIM_ServiceAccessPoint {
 class UNIX_BootSAP : CIM_BootSAP
 {
 
-}
+};
 

@@ -79,5 +79,5 @@ class CIM_ResourceAllocationFromPool : CIM_Dependency {
 class UNIX_ResourceAllocationFromPool : CIM_ResourceAllocationFromPool
 {
 
-}
+};
 

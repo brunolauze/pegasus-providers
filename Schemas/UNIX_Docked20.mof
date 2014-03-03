@@ -81,5 +81,5 @@ class CIM_Docked : CIM_Dependency {
 class UNIX_Docked : CIM_Docked
 {
 
-}
+};
 

@@ -282,5 +282,5 @@ class CIM_NetworkingIDAuthentication : CIM_AuthenticationCondition {
 class UNIX_NetworkingIDAuthentication : CIM_NetworkingIDAuthentication
 {
 
-}
+};
 

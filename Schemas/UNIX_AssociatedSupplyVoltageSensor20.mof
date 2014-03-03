@@ -117,5 +117,5 @@ class CIM_AssociatedSupplyVoltageSensor : CIM_AssociatedSensor {
 class UNIX_AssociatedSupplyVoltageSensor : CIM_AssociatedSupplyVoltageSensor
 {
 
-}
+};
 

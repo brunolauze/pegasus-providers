@@ -78,5 +78,5 @@ class CIM_FilteredBGPAttributes : CIM_Component {
 class UNIX_FilteredBGPAttributes : CIM_FilteredBGPAttributes
 {
 
-}
+};
 

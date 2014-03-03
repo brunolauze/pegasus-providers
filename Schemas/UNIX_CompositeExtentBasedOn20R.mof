@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_CompositeExtentBasedOnModule";
+	Location = "UNIX_CompositeExtentBasedOn";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CompositeExtentBasedOnModule";
 	Name = "UNIX_CompositeExtentBasedOnProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CompositeExtentBasedOnModule";
 	ProviderName = "UNIX_CompositeExtentBasedOnProvider";
 	ClassName = "CIM_CompositeExtentBasedOn";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CompositeExtentBasedOnModule";
 	ProviderName = "UNIX_CompositeExtentBasedOnProvider";
 	ClassName = "UNIX_CompositeExtentBasedOn";
 	Namespaces = {"root/cimv2"};

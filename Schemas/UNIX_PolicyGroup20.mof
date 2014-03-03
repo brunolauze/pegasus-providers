@@ -280,5 +280,5 @@ class CIM_PolicyGroup : CIM_PolicySet {
 class UNIX_PolicyGroup : CIM_PolicyGroup
 {
 
-}
+};
 

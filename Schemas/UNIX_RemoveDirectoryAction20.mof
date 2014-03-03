@@ -319,5 +319,5 @@ class CIM_RemoveDirectoryAction : CIM_DirectoryAction {
 class UNIX_RemoveDirectoryAction : CIM_RemoveDirectoryAction
 {
 
-}
+};
 

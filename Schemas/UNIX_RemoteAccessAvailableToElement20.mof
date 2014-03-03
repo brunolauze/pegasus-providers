@@ -94,5 +94,5 @@ class CIM_RemoteAccessAvailableToElement : CIM_Dependency {
 class UNIX_RemoteAccessAvailableToElement : CIM_RemoteAccessAvailableToElement
 {
 
-}
+};
 

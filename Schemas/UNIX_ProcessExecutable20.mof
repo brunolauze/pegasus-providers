@@ -78,5 +78,5 @@ class CIM_ProcessExecutable : CIM_Dependency {
 class UNIX_ProcessExecutable : CIM_ProcessExecutable
 {
 
-}
+};
 

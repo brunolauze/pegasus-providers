@@ -293,5 +293,5 @@ class CIM_BGPEndpointStatistics : CIM_StatisticalData {
 class UNIX_BGPEndpointStatistics : CIM_BGPEndpointStatistics
 {
 
-}
+};
 

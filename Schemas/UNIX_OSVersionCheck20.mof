@@ -341,5 +341,5 @@ class CIM_OSVersionCheck : CIM_Check {
 class UNIX_OSVersionCheck : CIM_OSVersionCheck
 {
 
-}
+};
 

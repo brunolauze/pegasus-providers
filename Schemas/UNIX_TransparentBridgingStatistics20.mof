@@ -206,5 +206,5 @@ class CIM_TransparentBridgingStatistics : CIM_ServiceStatisticalInformation {
 class UNIX_TransparentBridgingStatistics : CIM_TransparentBridgingStatistics
 {
 
-}
+};
 

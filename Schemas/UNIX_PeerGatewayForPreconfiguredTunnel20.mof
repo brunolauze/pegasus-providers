@@ -87,5 +87,5 @@ class CIM_PeerGatewayForPreconfiguredTunnel : CIM_Dependency {
 class UNIX_PeerGatewayForPreconfiguredTunnel : CIM_PeerGatewayForPreconfiguredTunnel
 {
 
-}
+};
 

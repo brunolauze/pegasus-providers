@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ProcessorCoreModule";
+	Location = "UNIX_ProcessorCore";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ProcessorCoreModule";
 	Name = "UNIX_ProcessorCoreProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ProcessorCoreModule";
 	ProviderName = "UNIX_ProcessorCoreProvider";
 	ClassName = "CIM_ProcessorCore";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ProcessorCoreModule";
 	ProviderName = "UNIX_ProcessorCoreProvider";
 	ClassName = "UNIX_ProcessorCore";
 	Namespaces = {"root/cimv2"};

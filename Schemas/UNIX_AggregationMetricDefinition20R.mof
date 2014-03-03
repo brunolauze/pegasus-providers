@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_AggregationMetricDefinitionModule";
+	Location = "UNIX_AggregationMetricDefinition";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AggregationMetricDefinitionModule";
 	Name = "UNIX_AggregationMetricDefinitionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AggregationMetricDefinitionModule";
 	ProviderName = "UNIX_AggregationMetricDefinitionProvider";
 	ClassName = "CIM_AggregationMetricDefinition";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AggregationMetricDefinitionModule";
 	ProviderName = "UNIX_AggregationMetricDefinitionProvider";
 	ClassName = "UNIX_AggregationMetricDefinition";
 	Namespaces = {"root/cimv2"};

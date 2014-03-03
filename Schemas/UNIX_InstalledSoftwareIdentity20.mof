@@ -57,5 +57,5 @@ class CIM_InstalledSoftwareIdentity {
 class UNIX_InstalledSoftwareIdentity : CIM_InstalledSoftwareIdentity
 {
 
-}
+};
 

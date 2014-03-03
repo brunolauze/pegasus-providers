@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_MediaRedirectionCapabilitiesModule";
+	Location = "UNIX_MediaRedirectionCapabilities";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MediaRedirectionCapabilitiesModule";
 	Name = "UNIX_MediaRedirectionCapabilitiesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MediaRedirectionCapabilitiesModule";
 	ProviderName = "UNIX_MediaRedirectionCapabilitiesProvider";
 	ClassName = "CIM_MediaRedirectionCapabilities";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MediaRedirectionCapabilitiesModule";
 	ProviderName = "UNIX_MediaRedirectionCapabilitiesProvider";
 	ClassName = "UNIX_MediaRedirectionCapabilities";
 	Namespaces = {"root/cimv2"};

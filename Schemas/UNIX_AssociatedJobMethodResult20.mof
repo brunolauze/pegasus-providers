@@ -56,5 +56,5 @@ class CIM_AssociatedJobMethodResult {
 class UNIX_AssociatedJobMethodResult : CIM_AssociatedJobMethodResult
 {
 
-}
+};
 

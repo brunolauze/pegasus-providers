@@ -456,5 +456,5 @@ class CIM_IPsecTunnelAction : CIM_IPsecAction {
 class UNIX_IPsecTunnelAction : CIM_IPsecTunnelAction
 {
 
-}
+};
 

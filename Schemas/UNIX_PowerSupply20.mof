@@ -1260,5 +1260,5 @@ class CIM_PowerSupply : CIM_LogicalDevice {
 class UNIX_PowerSupply : CIM_PowerSupply
 {
 
-}
+};
 

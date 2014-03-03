@@ -481,5 +481,5 @@ class CIM_VirtualSystemSettingData : CIM_SettingData {
 class UNIX_VirtualSystemSettingData : CIM_VirtualSystemSettingData
 {
 
-}
+};
 

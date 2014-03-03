@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ElementSecuritySensitivityModule";
+	Location = "UNIX_ElementSecuritySensitivity";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ElementSecuritySensitivityModule";
 	Name = "UNIX_ElementSecuritySensitivityProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ElementSecuritySensitivityModule";
 	ProviderName = "UNIX_ElementSecuritySensitivityProvider";
 	ClassName = "CIM_ElementSecuritySensitivity";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ElementSecuritySensitivityModule";
 	ProviderName = "UNIX_ElementSecuritySensitivityProvider";
 	ClassName = "UNIX_ElementSecuritySensitivity";
 	Namespaces = {"root/cimv2"};

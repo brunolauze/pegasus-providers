@@ -200,5 +200,5 @@ class CIM_Profile : CIM_Collection {
 class UNIX_Profile : CIM_Profile
 {
 
-}
+};
 

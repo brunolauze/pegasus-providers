@@ -95,5 +95,5 @@ class CIM_ProductComponent : CIM_Component {
 class UNIX_ProductComponent : CIM_ProductComponent
 {
 
-}
+};
 

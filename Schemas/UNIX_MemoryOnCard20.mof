@@ -142,5 +142,5 @@ class CIM_MemoryOnCard : CIM_PackagedComponent {
 class UNIX_MemoryOnCard : CIM_MemoryOnCard
 {
 
-}
+};
 

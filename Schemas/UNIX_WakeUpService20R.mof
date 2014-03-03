@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_WakeUpServiceModule";
+	Location = "UNIX_WakeUpService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_WakeUpServiceModule";
 	Name = "UNIX_WakeUpServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_WakeUpServiceModule";
 	ProviderName = "UNIX_WakeUpServiceProvider";
 	ClassName = "CIM_WakeUpService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_WakeUpServiceModule";
 	ProviderName = "UNIX_WakeUpServiceProvider";
 	ClassName = "UNIX_WakeUpService";
 	Namespaces = {"root/cimv2"};

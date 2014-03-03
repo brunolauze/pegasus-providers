@@ -87,5 +87,5 @@ class CIM_ClassifierElementUsesFilterList : CIM_Dependency {
 class UNIX_ClassifierElementUsesFilterList : CIM_ClassifierElementUsesFilterList
 {
 
-}
+};
 

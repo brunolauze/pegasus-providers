@@ -332,5 +332,5 @@ class CIM_SCSIMultipathSettings : CIM_SettingData {
 class UNIX_SCSIMultipathSettings : CIM_SCSIMultipathSettings
 {
 
-}
+};
 

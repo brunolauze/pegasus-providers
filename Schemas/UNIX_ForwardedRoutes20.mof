@@ -129,5 +129,5 @@ class CIM_ForwardedRoutes : CIM_RouteForwardedByService {
 class UNIX_ForwardedRoutes : CIM_ForwardedRoutes
 {
 
-}
+};
 

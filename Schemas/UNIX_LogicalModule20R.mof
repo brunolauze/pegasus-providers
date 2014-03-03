@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_LogicalModuleModule";
+	Location = "UNIX_LogicalModule";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_LogicalModuleModule";
 	Name = "UNIX_LogicalModuleProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_LogicalModuleModule";
 	ProviderName = "UNIX_LogicalModuleProvider";
 	ClassName = "CIM_LogicalModule";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_LogicalModuleModule";
 	ProviderName = "UNIX_LogicalModuleProvider";
 	ClassName = "UNIX_LogicalModule";
 	Namespaces = {"root/cimv2"};

@@ -298,5 +298,5 @@ class CIM_IPSubnet : CIM_LogicalNetwork {
 class UNIX_IPSubnet : CIM_IPSubnet
 {
 
-}
+};
 

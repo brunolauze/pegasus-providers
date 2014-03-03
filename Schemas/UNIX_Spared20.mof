@@ -83,5 +83,5 @@ class CIM_Spared : CIM_Dependency {
 class UNIX_Spared : CIM_Spared
 {
 
-}
+};
 

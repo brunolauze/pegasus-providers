@@ -1270,5 +1270,5 @@ class CIM_ParallelController : CIM_Controller {
 class UNIX_ParallelController : CIM_ParallelController
 {
 
-}
+};
 

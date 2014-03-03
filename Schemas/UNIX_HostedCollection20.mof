@@ -103,5 +103,5 @@ class CIM_HostedCollection : CIM_HostedDependency {
 class UNIX_HostedCollection : CIM_HostedCollection
 {
 
-}
+};
 

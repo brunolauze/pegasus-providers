@@ -1432,5 +1432,5 @@ class CIM_DVDDrive : CIM_MediaAccessDevice {
 class UNIX_DVDDrive : CIM_DVDDrive
 {
 
-}
+};
 

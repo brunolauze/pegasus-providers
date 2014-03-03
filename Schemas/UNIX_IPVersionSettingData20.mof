@@ -251,5 +251,5 @@ class CIM_IPVersionSettingData : CIM_SettingData {
 class UNIX_IPVersionSettingData : CIM_IPVersionSettingData
 {
 
-}
+};
 

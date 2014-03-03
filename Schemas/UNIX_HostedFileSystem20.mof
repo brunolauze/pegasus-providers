@@ -114,5 +114,5 @@ class CIM_HostedFileSystem : CIM_SystemComponent {
 class UNIX_HostedFileSystem : CIM_HostedFileSystem
 {
 
-}
+};
 

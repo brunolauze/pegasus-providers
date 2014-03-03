@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_MethodResultModule";
+	Location = "UNIX_MethodResult";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MethodResultModule";
 	Name = "UNIX_MethodResultProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MethodResultModule";
 	ProviderName = "UNIX_MethodResultProvider";
 	ClassName = "CIM_MethodResult";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MethodResultModule";
 	ProviderName = "UNIX_MethodResultProvider";
 	ClassName = "UNIX_MethodResult";
 	Namespaces = {"root/cimv2"};

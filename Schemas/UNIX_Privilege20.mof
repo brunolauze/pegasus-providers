@@ -288,5 +288,5 @@ class CIM_Privilege : CIM_ManagedElement {
 class UNIX_Privilege : CIM_Privilege
 {
 
-}
+};
 

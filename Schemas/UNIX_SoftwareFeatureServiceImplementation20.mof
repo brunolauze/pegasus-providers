@@ -85,5 +85,5 @@ class CIM_SoftwareFeatureServiceImplementation : CIM_Dependency {
 class UNIX_SoftwareFeatureServiceImplementation : CIM_SoftwareFeatureServiceImplementation
 {
 
-}
+};
 

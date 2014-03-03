@@ -197,5 +197,5 @@ class CIM_OtherGroupInformation : CIM_ManagedElement {
 class UNIX_OtherGroupInformation : CIM_OtherGroupInformation
 {
 
-}
+};
 

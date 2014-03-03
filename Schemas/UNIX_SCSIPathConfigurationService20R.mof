@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SCSIPathConfigurationServiceModule";
+	Location = "UNIX_SCSIPathConfigurationService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SCSIPathConfigurationServiceModule";
 	Name = "UNIX_SCSIPathConfigurationServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SCSIPathConfigurationServiceModule";
 	ProviderName = "UNIX_SCSIPathConfigurationServiceProvider";
 	ClassName = "CIM_SCSIPathConfigurationService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SCSIPathConfigurationServiceModule";
 	ProviderName = "UNIX_SCSIPathConfigurationServiceProvider";
 	ClassName = "UNIX_SCSIPathConfigurationService";
 	Namespaces = {"root/cimv2"};

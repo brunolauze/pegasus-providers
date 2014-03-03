@@ -588,5 +588,5 @@ class CIM_VideoBIOSFeature : CIM_SoftwareFeature {
 class UNIX_VideoBIOSFeature : CIM_VideoBIOSFeature
 {
 
-}
+};
 

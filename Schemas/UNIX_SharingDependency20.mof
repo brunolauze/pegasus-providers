@@ -160,5 +160,5 @@ class CIM_SharingDependency : CIM_HostedDependency {
 class UNIX_SharingDependency : CIM_SharingDependency
 {
 
-}
+};
 

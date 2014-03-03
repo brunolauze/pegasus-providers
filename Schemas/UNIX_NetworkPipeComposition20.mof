@@ -112,5 +112,5 @@ class CIM_NetworkPipeComposition : CIM_Component {
 class UNIX_NetworkPipeComposition : CIM_NetworkPipeComposition
 {
 
-}
+};
 

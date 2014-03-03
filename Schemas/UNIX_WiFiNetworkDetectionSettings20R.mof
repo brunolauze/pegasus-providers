@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_WiFiNetworkDetectionSettingsModule";
+	Location = "UNIX_WiFiNetworkDetectionSettings";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_WiFiNetworkDetectionSettingsModule";
 	Name = "UNIX_WiFiNetworkDetectionSettingsProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_WiFiNetworkDetectionSettingsModule";
 	ProviderName = "UNIX_WiFiNetworkDetectionSettingsProvider";
 	ClassName = "CIM_WiFiNetworkDetectionSettings";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_WiFiNetworkDetectionSettingsModule";
 	ProviderName = "UNIX_WiFiNetworkDetectionSettingsProvider";
 	ClassName = "UNIX_WiFiNetworkDetectionSettings";
 	Namespaces = {"root/cimv2"};

@@ -1279,5 +1279,5 @@ class CIM_SerialController : CIM_Controller {
 class UNIX_SerialController : CIM_SerialController
 {
 
-}
+};
 

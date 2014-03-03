@@ -1521,5 +1521,5 @@ class CIM_DatabaseSegment : CIM_StorageExtent {
 class UNIX_DatabaseSegment : CIM_DatabaseSegment
 {
 
-}
+};
 

@@ -1014,5 +1014,5 @@ class CIM_EWMAMeterService : CIM_MeterService {
 class UNIX_EWMAMeterService : CIM_EWMAMeterService
 {
 
-}
+};
 

@@ -1266,5 +1266,5 @@ class CIM_MultiStateSensor : CIM_Sensor {
 class UNIX_MultiStateSensor : CIM_MultiStateSensor
 {
 
-}
+};
 

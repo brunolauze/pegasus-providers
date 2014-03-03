@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_NamedAddressCollectionModule";
+	Location = "UNIX_NamedAddressCollection";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NamedAddressCollectionModule";
 	Name = "UNIX_NamedAddressCollectionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NamedAddressCollectionModule";
 	ProviderName = "UNIX_NamedAddressCollectionProvider";
 	ClassName = "CIM_NamedAddressCollection";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NamedAddressCollectionModule";
 	ProviderName = "UNIX_NamedAddressCollectionProvider";
 	ClassName = "UNIX_NamedAddressCollection";
 	Namespaces = {"root/cimv2"};

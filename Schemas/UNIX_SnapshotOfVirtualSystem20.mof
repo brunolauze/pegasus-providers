@@ -86,5 +86,5 @@ class CIM_SnapshotOfVirtualSystem : CIM_Dependency {
 class UNIX_SnapshotOfVirtualSystem : CIM_SnapshotOfVirtualSystem
 {
 
-}
+};
 

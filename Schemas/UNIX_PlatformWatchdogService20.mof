@@ -986,5 +986,5 @@ class CIM_PlatformWatchdogService : CIM_Service {
 class UNIX_PlatformWatchdogService : CIM_PlatformWatchdogService
 {
 
-}
+};
 

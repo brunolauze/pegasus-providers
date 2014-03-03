@@ -415,5 +415,5 @@ class CIM_WiFiEndpointSettings : CIM_SettingData {
 class UNIX_WiFiEndpointSettings : CIM_WiFiEndpointSettings
 {
 
-}
+};
 

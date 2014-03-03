@@ -74,5 +74,5 @@ class CIM_FRUIncludesSoftwareFeature {
 class UNIX_FRUIncludesSoftwareFeature : CIM_FRUIncludesSoftwareFeature
 {
 
-}
+};
 

@@ -110,5 +110,5 @@ class CIM_NetworkServicesInAdminDomain : CIM_HostedDependency {
 class UNIX_NetworkServicesInAdminDomain : CIM_NetworkServicesInAdminDomain
 {
 
-}
+};
 

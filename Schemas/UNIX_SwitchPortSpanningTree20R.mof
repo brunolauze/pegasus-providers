@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SwitchPortSpanningTreeModule";
+	Location = "UNIX_SwitchPortSpanningTree";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SwitchPortSpanningTreeModule";
 	Name = "UNIX_SwitchPortSpanningTreeProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SwitchPortSpanningTreeModule";
 	ProviderName = "UNIX_SwitchPortSpanningTreeProvider";
 	ClassName = "CIM_SwitchPortSpanningTree";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SwitchPortSpanningTreeModule";
 	ProviderName = "UNIX_SwitchPortSpanningTreeProvider";
 	ClassName = "UNIX_SwitchPortSpanningTree";
 	Namespaces = {"root/cimv2"};

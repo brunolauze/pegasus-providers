@@ -54,5 +54,5 @@ class CIM_ProductSoftwareFeatures {
 class UNIX_ProductSoftwareFeatures : CIM_ProductSoftwareFeatures
 {
 
-}
+};
 

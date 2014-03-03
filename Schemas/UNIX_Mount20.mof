@@ -91,5 +91,5 @@ class CIM_Mount : CIM_Dependency {
 class UNIX_Mount : CIM_Mount
 {
 
-}
+};
 

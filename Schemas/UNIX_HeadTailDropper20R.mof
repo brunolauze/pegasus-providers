@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_HeadTailDropperModule";
+	Location = "UNIX_HeadTailDropper";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HeadTailDropperModule";
 	Name = "UNIX_HeadTailDropperProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HeadTailDropperModule";
 	ProviderName = "UNIX_HeadTailDropperProvider";
 	ClassName = "CIM_HeadTailDropper";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HeadTailDropperModule";
 	ProviderName = "UNIX_HeadTailDropperProvider";
 	ClassName = "UNIX_HeadTailDropper";
 	Namespaces = {"root/cimv2"};

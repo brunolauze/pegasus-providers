@@ -294,5 +294,5 @@ class CIM_RoleBasedManagementCapabilities : CIM_PrivilegeManagementCapabilities 
 class UNIX_RoleBasedManagementCapabilities : CIM_RoleBasedManagementCapabilities
 {
 
-}
+};
 

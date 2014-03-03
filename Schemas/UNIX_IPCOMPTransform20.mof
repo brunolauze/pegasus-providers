@@ -367,5 +367,5 @@ class CIM_IPCOMPTransform : CIM_SATransform {
 class UNIX_IPCOMPTransform : CIM_IPCOMPTransform
 {
 
-}
+};
 

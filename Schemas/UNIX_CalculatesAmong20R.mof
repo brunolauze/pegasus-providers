@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_CalculatesAmongModule";
+	Location = "UNIX_CalculatesAmong";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CalculatesAmongModule";
 	Name = "UNIX_CalculatesAmongProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CalculatesAmongModule";
 	ProviderName = "UNIX_CalculatesAmongProvider";
 	ClassName = "CIM_CalculatesAmong";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CalculatesAmongModule";
 	ProviderName = "UNIX_CalculatesAmongProvider";
 	ClassName = "UNIX_CalculatesAmong";
 	Namespaces = {"root/cimv2"};

@@ -961,5 +961,5 @@ class CIM_PacketSchedulingService : CIM_ConditioningService {
 class UNIX_PacketSchedulingService : CIM_PacketSchedulingService
 {
 
-}
+};
 

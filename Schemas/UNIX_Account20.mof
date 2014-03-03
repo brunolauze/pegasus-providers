@@ -1025,5 +1025,5 @@ class CIM_Account : CIM_EnabledLogicalElement {
 class UNIX_Account : CIM_Account
 {
 
-}
+};
 

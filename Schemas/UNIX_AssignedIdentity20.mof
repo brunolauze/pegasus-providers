@@ -56,5 +56,5 @@ class CIM_AssignedIdentity {
 class UNIX_AssignedIdentity : CIM_AssignedIdentity
 {
 
-}
+};
 

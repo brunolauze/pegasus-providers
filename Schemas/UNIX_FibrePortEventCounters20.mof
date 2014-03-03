@@ -293,5 +293,5 @@ class CIM_FibrePortEventCounters : CIM_DeviceStatisticalInformation {
 class UNIX_FibrePortEventCounters : CIM_FibrePortEventCounters
 {
 
-}
+};
 

@@ -1035,5 +1035,5 @@ class CIM_BGPService : CIM_RouteCalculationService {
 class UNIX_BGPService : CIM_BGPService
 {
 
-}
+};
 

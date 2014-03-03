@@ -99,5 +99,5 @@ class CIM_PhysicalMediaInLocation : CIM_Dependency {
 class UNIX_PhysicalMediaInLocation : CIM_PhysicalMediaInLocation
 {
 
-}
+};
 

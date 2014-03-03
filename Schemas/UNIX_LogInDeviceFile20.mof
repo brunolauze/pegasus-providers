@@ -81,5 +81,5 @@ class CIM_LogInDeviceFile : CIM_Dependency {
 class UNIX_LogInDeviceFile : CIM_LogInDeviceFile
 {
 
-}
+};
 

@@ -495,5 +495,5 @@ class CIM_X509Certificate : CIM_X509Infrastructure {
 class UNIX_X509Certificate : CIM_X509Certificate
 {
 
-}
+};
 

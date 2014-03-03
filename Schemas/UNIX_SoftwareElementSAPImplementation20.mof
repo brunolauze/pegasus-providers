@@ -110,5 +110,5 @@ class CIM_SoftwareElementSAPImplementation : CIM_Dependency {
 class UNIX_SoftwareElementSAPImplementation : CIM_SoftwareElementSAPImplementation
 {
 
-}
+};
 

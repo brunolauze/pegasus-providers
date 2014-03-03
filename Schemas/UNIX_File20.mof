@@ -633,5 +633,5 @@ class CIM_UnixFile : CIM_LogicalElement {
 class UNIX_File : CIM_UnixFile
 {
 
-}
+};
 

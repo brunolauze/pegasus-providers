@@ -325,5 +325,5 @@ class CIM_VersionCompatibilityCheck : CIM_Check {
 class UNIX_VersionCompatibilityCheck : CIM_VersionCompatibilityCheck
 {
 
-}
+};
 

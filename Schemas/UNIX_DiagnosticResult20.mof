@@ -333,5 +333,5 @@ class CIM_DiagnosticResult {
 class UNIX_DiagnosticResult : CIM_DiagnosticResult
 {
 
-}
+};
 

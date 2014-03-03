@@ -94,5 +94,5 @@ class CIM_AdapterActiveConnection : CIM_Dependency {
 class UNIX_AdapterActiveConnection : CIM_AdapterActiveConnection
 {
 
-}
+};
 

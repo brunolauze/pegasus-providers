@@ -1194,5 +1194,5 @@ class CIM_Keyboard : CIM_UserDevice {
 class UNIX_Keyboard : CIM_Keyboard
 {
 
-}
+};
 

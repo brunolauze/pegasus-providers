@@ -1719,5 +1719,5 @@ class CIM_TemperatureSensor : CIM_NumericSensor {
 class UNIX_TemperatureSensor : CIM_TemperatureSensor
 {
 
-}
+};
 

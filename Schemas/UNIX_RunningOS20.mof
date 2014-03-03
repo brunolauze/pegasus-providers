@@ -83,5 +83,5 @@ class CIM_RunningOS : CIM_Dependency {
 class UNIX_RunningOS : CIM_RunningOS
 {
 
-}
+};
 

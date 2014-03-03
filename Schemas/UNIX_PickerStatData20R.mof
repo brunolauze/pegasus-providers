@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_PickerStatDataModule";
+	Location = "UNIX_PickerStatData";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PickerStatDataModule";
 	Name = "UNIX_PickerStatDataProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PickerStatDataModule";
 	ProviderName = "UNIX_PickerStatDataProvider";
 	ClassName = "CIM_PickerStatData";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PickerStatDataModule";
 	ProviderName = "UNIX_PickerStatDataProvider";
 	ClassName = "UNIX_PickerStatData";
 	Namespaces = {"root/cimv2"};

@@ -316,5 +316,5 @@ class CIM_OtherOrganizationInformation : CIM_ManagedElement {
 class UNIX_OtherOrganizationInformation : CIM_OtherOrganizationInformation
 {
 
-}
+};
 

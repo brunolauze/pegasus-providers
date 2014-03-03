@@ -173,5 +173,5 @@ class CIM_Switchable : CIM_BindsToLANEndpoint {
 class UNIX_Switchable : CIM_Switchable
 {
 
-}
+};
 

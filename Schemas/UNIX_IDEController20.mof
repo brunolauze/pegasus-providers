@@ -1227,5 +1227,5 @@ class CIM_IDEController : CIM_Controller {
 class UNIX_IDEController : CIM_IDEController
 {
 
-}
+};
 

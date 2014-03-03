@@ -317,5 +317,5 @@ class CIM_ListenerDestinationWSManagement : CIM_ListenerDestination {
 class UNIX_ListenerDestinationWSManagement : CIM_ListenerDestinationWSManagement
 {
 
-}
+};
 

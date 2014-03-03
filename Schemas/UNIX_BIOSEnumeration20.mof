@@ -251,5 +251,5 @@ class CIM_BIOSEnumeration : CIM_BIOSAttribute {
 class UNIX_BIOSEnumeration : CIM_BIOSEnumeration
 {
 
-}
+};
 

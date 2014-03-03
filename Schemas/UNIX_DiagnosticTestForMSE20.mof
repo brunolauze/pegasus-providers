@@ -162,5 +162,5 @@ class CIM_DiagnosticTestForMSE : CIM_ProvidesServiceToElement {
 class UNIX_DiagnosticTestForMSE : CIM_DiagnosticTestForMSE
 {
 
-}
+};
 

@@ -115,5 +115,5 @@ class CIM_PolicyContainerInPolicyContainer : CIM_SystemComponent {
 class UNIX_PolicyContainerInPolicyContainer : CIM_PolicyContainerInPolicyContainer
 {
 
-}
+};
 

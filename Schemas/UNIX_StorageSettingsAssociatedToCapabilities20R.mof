@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_StorageSettingsAssociatedToCapabilitiesModule";
+	Location = "UNIX_StorageSettingsAssociatedToCapabilities";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_StorageSettingsAssociatedToCapabilitiesModule";
 	Name = "UNIX_StorageSettingsAssociatedToCapabilitiesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_StorageSettingsAssociatedToCapabilitiesModule";
 	ProviderName = "UNIX_StorageSettingsAssociatedToCapabilitiesProvider";
 	ClassName = "CIM_StorageSettingsAssociatedToCapabilities";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_StorageSettingsAssociatedToCapabilitiesModule";
 	ProviderName = "UNIX_StorageSettingsAssociatedToCapabilitiesProvider";
 	ClassName = "UNIX_StorageSettingsAssociatedToCapabilities";
 	Namespaces = {"root/cimv2"};

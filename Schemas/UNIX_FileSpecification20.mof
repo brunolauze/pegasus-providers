@@ -357,5 +357,5 @@ class CIM_FileSpecification : CIM_Check {
 class UNIX_FileSpecification : CIM_FileSpecification
 {
 
-}
+};
 

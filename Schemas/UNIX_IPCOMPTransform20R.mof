@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_IPCOMPTransformModule";
+	Location = "UNIX_IPCOMPTransform";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IPCOMPTransformModule";
 	Name = "UNIX_IPCOMPTransformProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IPCOMPTransformModule";
 	ProviderName = "UNIX_IPCOMPTransformProvider";
 	ClassName = "CIM_IPCOMPTransform";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IPCOMPTransformModule";
 	ProviderName = "UNIX_IPCOMPTransformProvider";
 	ClassName = "UNIX_IPCOMPTransform";
 	Namespaces = {"root/cimv2"};

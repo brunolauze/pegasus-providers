@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_StatisticsCapabilitiesModule";
+	Location = "UNIX_StatisticsCapabilities";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_StatisticsCapabilitiesModule";
 	Name = "UNIX_StatisticsCapabilitiesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_StatisticsCapabilitiesModule";
 	ProviderName = "UNIX_StatisticsCapabilitiesProvider";
 	ClassName = "CIM_StatisticsCapabilities";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_StatisticsCapabilitiesModule";
 	ProviderName = "UNIX_StatisticsCapabilitiesProvider";
 	ClassName = "UNIX_StatisticsCapabilities";
 	Namespaces = {"root/cimv2"};

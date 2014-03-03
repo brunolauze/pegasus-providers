@@ -104,5 +104,5 @@ class CIM_MemberPrincipal : CIM_MemberOfCollection {
 class UNIX_MemberPrincipal : CIM_MemberPrincipal
 {
 
-}
+};
 

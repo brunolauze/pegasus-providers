@@ -109,5 +109,5 @@ class CIM_OOBAlertServiceOnNetworkPort : CIM_DeviceServiceImplementation {
 class UNIX_OOBAlertServiceOnNetworkPort : CIM_OOBAlertServiceOnNetworkPort
 {
 
-}
+};
 

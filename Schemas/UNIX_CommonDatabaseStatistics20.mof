@@ -234,5 +234,5 @@ class CIM_CommonDatabaseStatistics : CIM_StatisticalData {
 class UNIX_CommonDatabaseStatistics : CIM_CommonDatabaseStatistics
 {
 
-}
+};
 

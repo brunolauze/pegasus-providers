@@ -210,5 +210,5 @@ class CIM_DeviceSharingCapabilities : CIM_Capabilities {
 class UNIX_DeviceSharingCapabilities : CIM_DeviceSharingCapabilities
 {
 
-}
+};
 

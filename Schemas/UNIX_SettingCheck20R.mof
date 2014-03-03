@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SettingCheckModule";
+	Location = "UNIX_SettingCheck";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SettingCheckModule";
 	Name = "UNIX_SettingCheckProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SettingCheckModule";
 	ProviderName = "UNIX_SettingCheckProvider";
 	ClassName = "CIM_SettingCheck";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SettingCheckModule";
 	ProviderName = "UNIX_SettingCheckProvider";
 	ClassName = "UNIX_SettingCheck";
 	Namespaces = {"root/cimv2"};

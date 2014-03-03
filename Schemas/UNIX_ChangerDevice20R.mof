@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ChangerDeviceModule";
+	Location = "UNIX_ChangerDevice";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ChangerDeviceModule";
 	Name = "UNIX_ChangerDeviceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ChangerDeviceModule";
 	ProviderName = "UNIX_ChangerDeviceProvider";
 	ClassName = "CIM_ChangerDevice";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ChangerDeviceModule";
 	ProviderName = "UNIX_ChangerDeviceProvider";
 	ClassName = "UNIX_ChangerDevice";
 	Namespaces = {"root/cimv2"};

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SwitchServiceTransparentBridgingModule";
+	Location = "UNIX_SwitchServiceTransparentBridging";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SwitchServiceTransparentBridgingModule";
 	Name = "UNIX_SwitchServiceTransparentBridgingProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SwitchServiceTransparentBridgingModule";
 	ProviderName = "UNIX_SwitchServiceTransparentBridgingProvider";
 	ClassName = "CIM_SwitchServiceTransparentBridging";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SwitchServiceTransparentBridgingModule";
 	ProviderName = "UNIX_SwitchServiceTransparentBridgingProvider";
 	ClassName = "UNIX_SwitchServiceTransparentBridging";
 	Namespaces = {"root/cimv2"};

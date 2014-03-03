@@ -79,5 +79,5 @@ class CIM_NextServiceAfterMeter {
 class UNIX_NextServiceAfterMeter : CIM_NextServiceAfterMeter
 {
 
-}
+};
 

@@ -627,5 +627,5 @@ class CIM_BGPPathAttributes : CIM_LogicalElement {
 class UNIX_BGPPathAttributes : CIM_BGPPathAttributes
 {
 
-}
+};
 

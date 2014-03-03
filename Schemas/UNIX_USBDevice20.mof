@@ -1340,5 +1340,5 @@ class CIM_USBDevice : CIM_LogicalDevice {
 class UNIX_USBDevice : CIM_USBDevice
 {
 
-}
+};
 

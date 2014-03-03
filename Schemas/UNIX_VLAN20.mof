@@ -827,5 +827,5 @@ class CIM_VLAN : CIM_ServiceAccessPoint {
 class UNIX_VLAN : CIM_VLAN
 {
 
-}
+};
 

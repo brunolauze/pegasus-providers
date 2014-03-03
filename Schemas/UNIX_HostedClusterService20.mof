@@ -134,5 +134,5 @@ class CIM_HostedClusterService : CIM_HostedService {
 class UNIX_HostedClusterService : CIM_HostedClusterService
 {
 
-}
+};
 

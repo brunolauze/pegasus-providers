@@ -172,5 +172,5 @@ class CIM_SystemPartition : CIM_ComponentCS {
 class UNIX_SystemPartition : CIM_SystemPartition
 {
 
-}
+};
 

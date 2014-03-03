@@ -258,5 +258,5 @@ class CIM_PolicyRoleCollection : CIM_SystemSpecificCollection {
 class UNIX_PolicyRoleCollection : CIM_PolicyRoleCollection
 {
 
-}
+};
 

@@ -97,5 +97,5 @@ class CIM_SwitchServiceTransparentBridging : CIM_ServiceComponent {
 class UNIX_SwitchServiceTransparentBridging : CIM_SwitchServiceTransparentBridging
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_MethodParametersModule";
+	Location = "UNIX_MethodParameters";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MethodParametersModule";
 	Name = "UNIX_MethodParametersProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MethodParametersModule";
 	ProviderName = "UNIX_MethodParametersProvider";
 	ClassName = "CIM_MethodParameters";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MethodParametersModule";
 	ProviderName = "UNIX_MethodParametersProvider";
 	ClassName = "UNIX_MethodParameters";
 	Namespaces = {"root/cimv2"};

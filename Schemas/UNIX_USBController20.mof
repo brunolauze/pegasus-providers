@@ -1255,5 +1255,5 @@ class CIM_USBController : CIM_Controller {
 class UNIX_USBController : CIM_USBController
 {
 
-}
+};
 

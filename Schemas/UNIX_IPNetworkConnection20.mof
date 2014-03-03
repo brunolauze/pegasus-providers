@@ -786,5 +786,5 @@ class CIM_IPNetworkConnection : CIM_ServiceAccessPoint {
 class UNIX_IPNetworkConnection : CIM_IPNetworkConnection
 {
 
-}
+};
 

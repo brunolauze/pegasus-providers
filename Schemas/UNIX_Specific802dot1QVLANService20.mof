@@ -897,5 +897,5 @@ class CIM_Specific802dot1QVLANService : CIM_VLANService {
 class UNIX_Specific802dot1QVLANService : CIM_Specific802dot1QVLANService
 {
 
-}
+};
 

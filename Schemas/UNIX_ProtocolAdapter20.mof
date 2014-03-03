@@ -928,5 +928,5 @@ class CIM_ProtocolAdapter : CIM_WBEMService {
 class UNIX_ProtocolAdapter : CIM_ProtocolAdapter
 {
 
-}
+};
 

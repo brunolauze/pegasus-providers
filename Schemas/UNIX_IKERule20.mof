@@ -498,5 +498,5 @@ class CIM_IKERule : CIM_SARule {
 class UNIX_IKERule : CIM_IKERule
 {
 
-}
+};
 

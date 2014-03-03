@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_InterLibraryPortModule";
+	Location = "UNIX_InterLibraryPort";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_InterLibraryPortModule";
 	Name = "UNIX_InterLibraryPortProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_InterLibraryPortModule";
 	ProviderName = "UNIX_InterLibraryPortProvider";
 	ClassName = "CIM_InterLibraryPort";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_InterLibraryPortModule";
 	ProviderName = "UNIX_InterLibraryPortProvider";
 	ClassName = "UNIX_InterLibraryPort";
 	Namespaces = {"root/cimv2"};

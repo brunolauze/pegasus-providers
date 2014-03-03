@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_VDSLModemModule";
+	Location = "UNIX_VDSLModem";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_VDSLModemModule";
 	Name = "UNIX_VDSLModemProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_VDSLModemModule";
 	ProviderName = "UNIX_VDSLModemProvider";
 	ClassName = "CIM_VDSLModem";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_VDSLModemModule";
 	ProviderName = "UNIX_VDSLModemProvider";
 	ClassName = "UNIX_VDSLModem";
 	Namespaces = {"root/cimv2"};

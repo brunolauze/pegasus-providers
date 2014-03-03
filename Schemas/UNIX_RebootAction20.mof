@@ -295,5 +295,5 @@ class CIM_RebootAction : CIM_Action {
 class UNIX_RebootAction : CIM_RebootAction
 {
 
-}
+};
 

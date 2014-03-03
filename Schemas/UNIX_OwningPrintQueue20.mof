@@ -115,5 +115,5 @@ class CIM_OwningPrintQueue : CIM_JobDestinationJobs {
 class UNIX_OwningPrintQueue : CIM_OwningPrintQueue
 {
 
-}
+};
 

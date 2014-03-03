@@ -211,5 +211,5 @@ class CIM_SpanningTreeStatistics : CIM_ServiceStatisticalInformation {
 class UNIX_SpanningTreeStatistics : CIM_SpanningTreeStatistics
 {
 
-}
+};
 

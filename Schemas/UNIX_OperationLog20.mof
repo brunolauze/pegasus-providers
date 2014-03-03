@@ -132,5 +132,5 @@ class CIM_OperationLog : CIM_UseOfMessageLog {
 class UNIX_OperationLog : CIM_OperationLog
 {
 
-}
+};
 

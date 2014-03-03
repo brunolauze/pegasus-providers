@@ -975,5 +975,5 @@ class CIM_EFService : CIM_DiffServService {
 class UNIX_EFService : CIM_EFService
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_LaunchInContextServiceModule";
+	Location = "UNIX_LaunchInContextService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_LaunchInContextServiceModule";
 	Name = "UNIX_LaunchInContextServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_LaunchInContextServiceModule";
 	ProviderName = "UNIX_LaunchInContextServiceProvider";
 	ClassName = "CIM_LaunchInContextService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_LaunchInContextServiceModule";
 	ProviderName = "UNIX_LaunchInContextServiceProvider";
 	ClassName = "UNIX_LaunchInContextService";
 	Namespaces = {"root/cimv2"};

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ComputerSystemIRQModule";
+	Location = "UNIX_ComputerSystemIRQ";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ComputerSystemIRQModule";
 	Name = "UNIX_ComputerSystemIRQProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ComputerSystemIRQModule";
 	ProviderName = "UNIX_ComputerSystemIRQProvider";
 	ClassName = "CIM_ComputerSystemIRQ";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ComputerSystemIRQModule";
 	ProviderName = "UNIX_ComputerSystemIRQProvider";
 	ClassName = "UNIX_ComputerSystemIRQ";
 	Namespaces = {"root/cimv2"};

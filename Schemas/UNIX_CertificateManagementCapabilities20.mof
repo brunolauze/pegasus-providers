@@ -399,5 +399,5 @@ class CIM_CertificateManagementCapabilities : CIM_CredentialManagementCapabiliti
 class UNIX_CertificateManagementCapabilities : CIM_CertificateManagementCapabilities
 {
 
-}
+};
 

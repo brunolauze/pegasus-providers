@@ -129,5 +129,5 @@ class CIM_CardOnCard : CIM_Container {
 class UNIX_CardOnCard : CIM_CardOnCard
 {
 
-}
+};
 

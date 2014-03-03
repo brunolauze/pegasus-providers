@@ -1208,5 +1208,5 @@ class CIM_VDSLModem : CIM_DSLModem {
 class UNIX_VDSLModem : CIM_VDSLModem
 {
 
-}
+};
 

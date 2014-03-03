@@ -175,5 +175,5 @@ class CIM_MethodParameters : CIM_ManagedElement {
 class UNIX_MethodParameters : CIM_MethodParameters
 {
 
-}
+};
 

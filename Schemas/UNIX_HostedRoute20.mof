@@ -101,5 +101,5 @@ class CIM_HostedRoute : CIM_HostedDependency {
 class UNIX_HostedRoute : CIM_HostedRoute
 {
 
-}
+};
 

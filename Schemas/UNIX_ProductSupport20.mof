@@ -56,5 +56,5 @@ class CIM_ProductSupport {
 class UNIX_ProductSupport : CIM_ProductSupport
 {
 
-}
+};
 

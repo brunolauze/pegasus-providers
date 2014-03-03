@@ -708,5 +708,5 @@ class CIM_StoragePool : CIM_LogicalElement {
 class UNIX_StoragePool : CIM_StoragePool
 {
 
-}
+};
 

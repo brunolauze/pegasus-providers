@@ -901,5 +901,5 @@ class CIM_VerificationService : CIM_AuthenticationService {
 class UNIX_VerificationService : CIM_VerificationService
 {
 
-}
+};
 

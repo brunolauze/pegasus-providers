@@ -86,5 +86,5 @@ class CIM_DatabaseAdministrator : CIM_Dependency {
 class UNIX_DatabaseAdministrator : CIM_DatabaseAdministrator
 {
 
-}
+};
 

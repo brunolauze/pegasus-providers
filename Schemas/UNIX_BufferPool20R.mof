@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_BufferPoolModule";
+	Location = "UNIX_BufferPool";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BufferPoolModule";
 	Name = "UNIX_BufferPoolProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BufferPoolModule";
 	ProviderName = "UNIX_BufferPoolProvider";
 	ClassName = "CIM_BufferPool";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BufferPoolModule";
 	ProviderName = "UNIX_BufferPoolProvider";
 	ClassName = "UNIX_BufferPool";
 	Namespaces = {"root/cimv2"};

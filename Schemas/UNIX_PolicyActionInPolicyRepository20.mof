@@ -155,5 +155,5 @@ class CIM_PolicyActionInPolicyRepository : CIM_PolicyInSystem {
 class UNIX_PolicyActionInPolicyRepository : CIM_PolicyActionInPolicyRepository
 {
 
-}
+};
 

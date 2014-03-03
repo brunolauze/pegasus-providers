@@ -202,5 +202,5 @@ class CIM_NamedAddressCollection : CIM_SystemSpecificCollection {
 class UNIX_NamedAddressCollection : CIM_NamedAddressCollection
 {
 
-}
+};
 

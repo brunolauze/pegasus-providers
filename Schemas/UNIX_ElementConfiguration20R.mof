@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ElementConfigurationModule";
+	Location = "UNIX_ElementConfiguration";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ElementConfigurationModule";
 	Name = "UNIX_ElementConfigurationProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ElementConfigurationModule";
 	ProviderName = "UNIX_ElementConfigurationProvider";
 	ClassName = "CIM_ElementConfiguration";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ElementConfigurationModule";
 	ProviderName = "UNIX_ElementConfigurationProvider";
 	ClassName = "UNIX_ElementConfiguration";
 	Namespaces = {"root/cimv2"};

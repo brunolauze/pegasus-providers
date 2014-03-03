@@ -249,5 +249,5 @@ class CIM_BaseMetricValue : CIM_ManagedElement {
 class UNIX_BaseMetricValue : CIM_BaseMetricValue
 {
 
-}
+};
 

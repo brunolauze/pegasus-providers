@@ -260,5 +260,5 @@ class CIM_BIOSInteger : CIM_BIOSAttribute {
 class UNIX_BIOSInteger : CIM_BIOSInteger
 {
 
-}
+};
 

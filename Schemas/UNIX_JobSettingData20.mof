@@ -288,5 +288,5 @@ class CIM_JobSettingData : CIM_SettingData {
 class UNIX_JobSettingData : CIM_JobSettingData
 {
 
-}
+};
 

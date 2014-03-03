@@ -123,5 +123,5 @@ class CIM_InstalledOS : CIM_SystemComponent {
 class UNIX_InstalledOS : CIM_InstalledOS
 {
 
-}
+};
 

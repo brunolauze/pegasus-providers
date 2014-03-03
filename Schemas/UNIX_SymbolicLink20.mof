@@ -611,5 +611,5 @@ class CIM_SymbolicLink : CIM_LogicalFile {
 class UNIX_SymbolicLink : CIM_SymbolicLink
 {
 
-}
+};
 

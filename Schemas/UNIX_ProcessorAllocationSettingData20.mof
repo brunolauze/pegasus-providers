@@ -831,5 +831,5 @@ class CIM_ProcessorAllocationSettingData : CIM_ResourceAllocationSettingData {
 class UNIX_ProcessorAllocationSettingData : CIM_ProcessorAllocationSettingData
 {
 
-}
+};
 

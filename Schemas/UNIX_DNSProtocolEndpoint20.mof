@@ -1065,5 +1065,5 @@ class CIM_DNSProtocolEndpoint : CIM_ProtocolEndpoint {
 class UNIX_DNSProtocolEndpoint : CIM_DNSProtocolEndpoint
 {
 
-}
+};
 

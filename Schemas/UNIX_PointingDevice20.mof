@@ -1206,5 +1206,5 @@ class CIM_PointingDevice : CIM_UserDevice {
 class UNIX_PointingDevice : CIM_PointingDevice
 {
 
-}
+};
 

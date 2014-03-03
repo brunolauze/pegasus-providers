@@ -97,5 +97,5 @@ class CIM_BIOSFeatureBIOSElements : CIM_SoftwareFeatureSoftwareElements {
 class UNIX_BIOSFeatureBIOSElements : CIM_BIOSFeatureBIOSElements
 {
 
-}
+};
 

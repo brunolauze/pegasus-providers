@@ -342,5 +342,5 @@ class CIM_VirtualSystemMigrationSettingData : CIM_SettingData {
 class UNIX_VirtualSystemMigrationSettingData : CIM_VirtualSystemMigrationSettingData
 {
 
-}
+};
 

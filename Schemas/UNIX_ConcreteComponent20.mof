@@ -88,5 +88,5 @@ class CIM_ConcreteComponent : CIM_Component {
 class UNIX_ConcreteComponent : CIM_ConcreteComponent
 {
 
-}
+};
 

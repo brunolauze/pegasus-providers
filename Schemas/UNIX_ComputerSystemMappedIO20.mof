@@ -159,5 +159,5 @@ class CIM_ComputerSystemMappedIO : CIM_ComputerSystemResource {
 class UNIX_ComputerSystemMappedIO : CIM_ComputerSystemMappedIO
 {
 
-}
+};
 

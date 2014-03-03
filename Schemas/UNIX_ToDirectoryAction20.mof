@@ -57,5 +57,5 @@ class CIM_ToDirectoryAction {
 class UNIX_ToDirectoryAction : CIM_ToDirectoryAction
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_AdministrativeDistanceModule";
+	Location = "UNIX_AdministrativeDistance";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AdministrativeDistanceModule";
 	Name = "UNIX_AdministrativeDistanceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AdministrativeDistanceModule";
 	ProviderName = "UNIX_AdministrativeDistanceProvider";
 	ClassName = "CIM_AdministrativeDistance";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AdministrativeDistanceModule";
 	ProviderName = "UNIX_AdministrativeDistanceProvider";
 	ClassName = "UNIX_AdministrativeDistance";
 	Namespaces = {"root/cimv2"};

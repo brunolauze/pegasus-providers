@@ -281,5 +281,5 @@ class CIM_LogRecord : CIM_RecordForLog {
 class UNIX_LogRecord : CIM_LogRecord
 {
 
-}
+};
 

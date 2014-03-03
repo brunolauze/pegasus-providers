@@ -969,5 +969,5 @@ class CIM_StorageMediaLocation : CIM_PackageLocation {
 class UNIX_StorageMediaLocation : CIM_StorageMediaLocation
 {
 
-}
+};
 

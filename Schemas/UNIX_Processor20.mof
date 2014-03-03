@@ -1338,5 +1338,5 @@ class CIM_Processor : CIM_LogicalDevice {
 class UNIX_Processor : CIM_Processor
 {
 
-}
+};
 

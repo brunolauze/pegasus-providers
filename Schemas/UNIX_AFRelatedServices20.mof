@@ -63,5 +63,5 @@ class CIM_AFRelatedServices {
 class UNIX_AFRelatedServices : CIM_AFRelatedServices
 {
 
-}
+};
 

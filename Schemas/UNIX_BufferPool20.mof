@@ -251,5 +251,5 @@ class CIM_BufferPool : CIM_CollectionOfMSEs {
 class UNIX_BufferPool : CIM_BufferPool
 {
 
-}
+};
 

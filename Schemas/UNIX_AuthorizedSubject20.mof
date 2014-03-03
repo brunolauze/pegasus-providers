@@ -64,5 +64,5 @@ class CIM_AuthorizedSubject {
 class UNIX_AuthorizedSubject : CIM_AuthorizedSubject
 {
 
-}
+};
 

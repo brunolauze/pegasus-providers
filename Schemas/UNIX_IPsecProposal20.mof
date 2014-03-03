@@ -289,5 +289,5 @@ class CIM_IPsecProposal : CIM_SAProposal {
 class UNIX_IPsecProposal : CIM_IPsecProposal
 {
 
-}
+};
 

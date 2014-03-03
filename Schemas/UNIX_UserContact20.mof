@@ -221,5 +221,5 @@ class CIM_UserContact : CIM_UserEntity {
 class UNIX_UserContact : CIM_UserContact
 {
 
-}
+};
 

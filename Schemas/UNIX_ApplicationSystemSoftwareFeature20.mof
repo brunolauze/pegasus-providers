@@ -112,5 +112,5 @@ class CIM_ApplicationSystemSoftwareFeature : CIM_SystemComponent {
 class UNIX_ApplicationSystemSoftwareFeature : CIM_ApplicationSystemSoftwareFeature
 {
 
-}
+};
 

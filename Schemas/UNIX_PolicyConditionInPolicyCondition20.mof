@@ -162,5 +162,5 @@ class CIM_PolicyConditionInPolicyCondition : CIM_PolicyConditionStructure {
 class UNIX_PolicyConditionInPolicyCondition : CIM_PolicyConditionInPolicyCondition
 {
 
-}
+};
 

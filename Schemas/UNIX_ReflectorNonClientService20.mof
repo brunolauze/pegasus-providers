@@ -81,5 +81,5 @@ class CIM_ReflectorNonClientService : CIM_Dependency {
 class UNIX_ReflectorNonClientService : CIM_ReflectorNonClientService
 {
 
-}
+};
 

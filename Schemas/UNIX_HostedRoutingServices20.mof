@@ -137,5 +137,5 @@ class CIM_HostedRoutingServices : CIM_HostedService {
 class UNIX_HostedRoutingServices : CIM_HostedRoutingServices
 {
 
-}
+};
 

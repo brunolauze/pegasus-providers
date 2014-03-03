@@ -1198,5 +1198,5 @@ class CIM_ChangerDevice : CIM_MediaTransferDevice {
 class UNIX_ChangerDevice : CIM_ChangerDevice
 {
 
-}
+};
 

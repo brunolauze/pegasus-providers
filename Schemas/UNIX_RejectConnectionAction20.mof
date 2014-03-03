@@ -262,5 +262,5 @@ class CIM_RejectConnectionAction : CIM_PolicyAction {
 class UNIX_RejectConnectionAction : CIM_RejectConnectionAction
 {
 
-}
+};
 

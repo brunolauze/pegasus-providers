@@ -968,5 +968,5 @@ class CIM_SystemBusCard : CIM_Card {
 class UNIX_SystemBusCard : CIM_SystemBusCard
 {
 
-}
+};
 

@@ -346,5 +346,5 @@ class CIM_SSHSettingData : CIM_SettingData {
 class UNIX_SSHSettingData : CIM_SSHSettingData
 {
 
-}
+};
 

@@ -1171,5 +1171,5 @@ class CIM_HeatPipe : CIM_CoolingDevice {
 class UNIX_HeatPipe : CIM_HeatPipe
 {
 
-}
+};
 

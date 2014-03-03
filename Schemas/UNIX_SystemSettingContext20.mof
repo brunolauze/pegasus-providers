@@ -67,5 +67,5 @@ class CIM_SystemSettingContext {
 class UNIX_SystemSettingContext : CIM_SystemSettingContext
 {
 
-}
+};
 

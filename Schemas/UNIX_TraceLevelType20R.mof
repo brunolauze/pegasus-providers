@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_TraceLevelTypeModule";
+	Location = "UNIX_TraceLevelType";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_TraceLevelTypeModule";
 	Name = "UNIX_TraceLevelTypeProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_TraceLevelTypeModule";
 	ProviderName = "UNIX_TraceLevelTypeProvider";
 	ClassName = "CIM_TraceLevelType";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_TraceLevelTypeModule";
 	ProviderName = "UNIX_TraceLevelTypeProvider";
 	ClassName = "UNIX_TraceLevelType";
 	Namespaces = {"root/cimv2"};

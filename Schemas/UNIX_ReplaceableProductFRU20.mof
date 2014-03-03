@@ -56,5 +56,5 @@ class CIM_ReplaceableProductFRU {
 class UNIX_ReplaceableProductFRU : CIM_ReplaceableProductFRU
 {
 
-}
+};
 

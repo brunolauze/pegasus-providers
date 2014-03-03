@@ -84,5 +84,5 @@ class CIM_AuthenticateForUse : CIM_Dependency {
 class UNIX_AuthenticateForUse : CIM_AuthenticateForUse
 {
 
-}
+};
 

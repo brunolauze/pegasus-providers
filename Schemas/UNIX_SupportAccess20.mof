@@ -164,5 +164,5 @@ class CIM_SupportAccess : CIM_ManagedElement {
 class UNIX_SupportAccess : CIM_SupportAccess
 {
 
-}
+};
 

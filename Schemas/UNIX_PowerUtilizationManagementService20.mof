@@ -925,5 +925,5 @@ class CIM_PowerUtilizationManagementService : CIM_Service {
 class UNIX_PowerUtilizationManagementService : CIM_PowerUtilizationManagementService
 {
 
-}
+};
 

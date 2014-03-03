@@ -107,5 +107,5 @@ class CIM_BGPServiceStatistics : CIM_ServiceStatistics {
 class UNIX_BGPServiceStatistics : CIM_BGPServiceStatistics
 {
 
-}
+};
 

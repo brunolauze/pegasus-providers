@@ -97,5 +97,5 @@ class CIM_InBGPPeerGroup : CIM_CollectedMSEs {
 class UNIX_InBGPPeerGroup : CIM_InBGPPeerGroup
 {
 
-}
+};
 

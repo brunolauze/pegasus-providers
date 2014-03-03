@@ -300,5 +300,5 @@ class CIM_FCPortCapabilities : CIM_LogicalPortCapabilities {
 class UNIX_FCPortCapabilities : CIM_FCPortCapabilities
 {
 
-}
+};
 

@@ -380,5 +380,5 @@ class CIM_StorageRedundancySet : CIM_RedundancySet {
 class UNIX_StorageRedundancySet : CIM_StorageRedundancySet
 {
 
-}
+};
 

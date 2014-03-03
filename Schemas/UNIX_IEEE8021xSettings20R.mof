@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_IEEE8021xSettingsModule";
+	Location = "UNIX_IEEE8021xSettings";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IEEE8021xSettingsModule";
 	Name = "UNIX_IEEE8021xSettingsProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IEEE8021xSettingsModule";
 	ProviderName = "UNIX_IEEE8021xSettingsProvider";
 	ClassName = "CIM_IEEE8021xSettings";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IEEE8021xSettingsModule";
 	ProviderName = "UNIX_IEEE8021xSettingsProvider";
 	ClassName = "UNIX_IEEE8021xSettings";
 	Namespaces = {"root/cimv2"};

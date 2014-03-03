@@ -173,5 +173,5 @@ class CIM_LogicalDiskBasedOnPartition : CIM_LogicalDiskBasedOnExtent {
 class UNIX_LogicalDiskBasedOnPartition : CIM_LogicalDiskBasedOnPartition
 {
 
-}
+};
 

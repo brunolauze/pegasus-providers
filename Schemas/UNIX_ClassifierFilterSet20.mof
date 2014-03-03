@@ -108,5 +108,5 @@ class CIM_ClassifierFilterSet : CIM_Dependency {
 class UNIX_ClassifierFilterSet : CIM_ClassifierFilterSet
 {
 
-}
+};
 

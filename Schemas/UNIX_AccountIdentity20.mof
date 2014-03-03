@@ -104,5 +104,5 @@ class CIM_AccountIdentity : CIM_LogicalIdentity {
 class UNIX_AccountIdentity : CIM_AccountIdentity
 {
 
-}
+};
 

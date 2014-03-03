@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ASBGPEndpointsModule";
+	Location = "UNIX_ASBGPEndpoints";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ASBGPEndpointsModule";
 	Name = "UNIX_ASBGPEndpointsProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ASBGPEndpointsModule";
 	ProviderName = "UNIX_ASBGPEndpointsProvider";
 	ClassName = "CIM_ASBGPEndpoints";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ASBGPEndpointsModule";
 	ProviderName = "UNIX_ASBGPEndpointsProvider";
 	ClassName = "UNIX_ASBGPEndpoints";
 	Namespaces = {"root/cimv2"};

@@ -321,5 +321,5 @@ class CIM_DiskSpaceCheck : CIM_Check {
 class UNIX_DiskSpaceCheck : CIM_DiskSpaceCheck
 {
 
-}
+};
 

@@ -189,5 +189,5 @@ class CIM_PacketConditionInSARule : CIM_PolicyConditionInPolicyRule {
 class UNIX_PacketConditionInSARule : CIM_PacketConditionInSARule
 {
 
-}
+};
 

@@ -295,5 +295,5 @@ class CIM_PublicKeyCertificate : CIM_SignedCredential {
 class UNIX_PublicKeyCertificate : CIM_PublicKeyCertificate
 {
 
-}
+};
 

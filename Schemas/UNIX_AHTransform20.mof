@@ -368,5 +368,5 @@ class CIM_AHTransform : CIM_SATransform {
 class UNIX_AHTransform : CIM_AHTransform
 {
 
-}
+};
 

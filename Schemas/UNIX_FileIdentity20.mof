@@ -105,5 +105,5 @@ class CIM_FileIdentity : CIM_LogicalIdentity {
 class UNIX_FileIdentity : CIM_FileIdentity
 {
 
-}
+};
 

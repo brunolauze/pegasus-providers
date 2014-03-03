@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_OSPFAreaModule";
+	Location = "UNIX_OSPFArea";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OSPFAreaModule";
 	Name = "UNIX_OSPFAreaProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OSPFAreaModule";
 	ProviderName = "UNIX_OSPFAreaProvider";
 	ClassName = "CIM_OSPFArea";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OSPFAreaModule";
 	ProviderName = "UNIX_OSPFAreaProvider";
 	ClassName = "UNIX_OSPFArea";
 	Namespaces = {"root/cimv2"};

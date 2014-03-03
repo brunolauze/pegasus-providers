@@ -65,5 +65,5 @@ class CIM_SettingsDefineState {
 class UNIX_SettingsDefineState : CIM_SettingsDefineState
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_DiskPartitionModule";
+	Location = "UNIX_DiskPartition";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DiskPartitionModule";
 	Name = "UNIX_DiskPartitionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DiskPartitionModule";
 	ProviderName = "UNIX_DiskPartitionProvider";
 	ClassName = "CIM_DiskPartition";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DiskPartitionModule";
 	ProviderName = "UNIX_DiskPartitionProvider";
 	ClassName = "UNIX_DiskPartition";
 	Namespaces = {"root/cimv2"};

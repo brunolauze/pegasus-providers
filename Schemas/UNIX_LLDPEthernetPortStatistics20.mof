@@ -563,5 +563,5 @@ class CIM_LLDPEthernetPortStatistics : CIM_EthernetPortStatistics {
 class UNIX_LLDPEthernetPortStatistics : CIM_LLDPEthernetPortStatistics
 {
 
-}
+};
 

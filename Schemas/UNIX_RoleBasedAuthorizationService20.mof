@@ -1355,5 +1355,5 @@ class CIM_RoleBasedAuthorizationService : CIM_PrivilegeManagementService {
 class UNIX_RoleBasedAuthorizationService : CIM_RoleBasedAuthorizationService
 {
 
-}
+};
 

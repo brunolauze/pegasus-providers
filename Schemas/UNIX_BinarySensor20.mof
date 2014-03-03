@@ -1295,5 +1295,5 @@ class CIM_BinarySensor : CIM_Sensor {
 class UNIX_BinarySensor : CIM_BinarySensor
 {
 
-}
+};
 

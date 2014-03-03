@@ -909,5 +909,5 @@ class CIM_PhysicalTape : CIM_PhysicalMedia {
 class UNIX_PhysicalTape : CIM_PhysicalTape
 {
 
-}
+};
 

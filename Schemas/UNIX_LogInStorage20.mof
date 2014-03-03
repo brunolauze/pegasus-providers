@@ -87,5 +87,5 @@ class CIM_LogInStorage : CIM_Dependency {
 class UNIX_LogInStorage : CIM_LogInStorage
 {
 
-}
+};
 

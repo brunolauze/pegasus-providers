@@ -54,5 +54,5 @@ class CIM_ParticipatesInSet {
 class UNIX_ParticipatesInSet : CIM_ParticipatesInSet
 {
 
-}
+};
 

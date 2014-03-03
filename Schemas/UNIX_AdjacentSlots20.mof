@@ -69,5 +69,5 @@ class CIM_AdjacentSlots {
 class UNIX_AdjacentSlots : CIM_AdjacentSlots
 {
 
-}
+};
 

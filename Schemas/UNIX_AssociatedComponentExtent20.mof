@@ -82,5 +82,5 @@ class CIM_AssociatedComponentExtent : CIM_Component {
 class UNIX_AssociatedComponentExtent : CIM_AssociatedComponentExtent
 {
 
-}
+};
 

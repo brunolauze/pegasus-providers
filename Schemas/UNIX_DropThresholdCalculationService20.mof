@@ -905,5 +905,5 @@ class CIM_DropThresholdCalculationService : CIM_Service {
 class UNIX_DropThresholdCalculationService : CIM_DropThresholdCalculationService
 {
 
-}
+};
 

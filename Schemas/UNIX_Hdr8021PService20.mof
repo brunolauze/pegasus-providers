@@ -933,5 +933,5 @@ class CIM_Hdr8021PService : CIM_QoSService {
 class UNIX_Hdr8021PService : CIM_Hdr8021PService
 {
 
-}
+};
 

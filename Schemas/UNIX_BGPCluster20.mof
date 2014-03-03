@@ -197,5 +197,5 @@ class CIM_BGPCluster : CIM_CollectionOfMSEs {
 class UNIX_BGPCluster : CIM_BGPCluster
 {
 
-}
+};
 

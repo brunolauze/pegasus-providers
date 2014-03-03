@@ -1415,5 +1415,5 @@ class CIM_WORMDrive : CIM_MediaAccessDevice {
 class UNIX_WORMDrive : CIM_WORMDrive
 {
 
-}
+};
 

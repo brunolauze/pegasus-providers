@@ -200,5 +200,5 @@ class CIM_UsersAccess : CIM_UserEntity {
 class UNIX_UsersAccess : CIM_UsersAccess
 {
 
-}
+};
 

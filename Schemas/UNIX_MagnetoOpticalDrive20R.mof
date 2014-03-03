@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_MagnetoOpticalDriveModule";
+	Location = "UNIX_MagnetoOpticalDrive";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MagnetoOpticalDriveModule";
 	Name = "UNIX_MagnetoOpticalDriveProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MagnetoOpticalDriveModule";
 	ProviderName = "UNIX_MagnetoOpticalDriveProvider";
 	ClassName = "CIM_MagnetoOpticalDrive";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MagnetoOpticalDriveModule";
 	ProviderName = "UNIX_MagnetoOpticalDriveProvider";
 	ClassName = "UNIX_MagnetoOpticalDrive";
 	Namespaces = {"root/cimv2"};

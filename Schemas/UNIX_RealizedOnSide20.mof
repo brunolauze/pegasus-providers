@@ -147,5 +147,5 @@ class CIM_RealizedOnSide : CIM_RealizesExtent {
 class UNIX_RealizedOnSide : CIM_RealizedOnSide
 {
 
-}
+};
 

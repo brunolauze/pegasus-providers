@@ -185,5 +185,5 @@ class CIM_PolicyActionInPolicyRule : CIM_PolicyActionStructure {
 class UNIX_PolicyActionInPolicyRule : CIM_PolicyActionInPolicyRule
 {
 
-}
+};
 

@@ -291,5 +291,5 @@ class CIM_AssociatedPrivilege {
 class UNIX_AssociatedPrivilege : CIM_AssociatedPrivilege
 {
 
-}
+};
 

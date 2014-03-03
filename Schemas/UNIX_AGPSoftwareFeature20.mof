@@ -582,5 +582,5 @@ class CIM_AGPSoftwareFeature : CIM_SoftwareFeature {
 class UNIX_AGPSoftwareFeature : CIM_AGPSoftwareFeature
 {
 
-}
+};
 

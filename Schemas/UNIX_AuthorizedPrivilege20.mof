@@ -309,5 +309,5 @@ class CIM_AuthorizedPrivilege : CIM_Privilege {
 class UNIX_AuthorizedPrivilege : CIM_AuthorizedPrivilege
 {
 
-}
+};
 

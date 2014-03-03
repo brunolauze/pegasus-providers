@@ -935,5 +935,5 @@ class CIM_IndicationService : CIM_Service {
 class UNIX_IndicationService : CIM_IndicationService
 {
 
-}
+};
 

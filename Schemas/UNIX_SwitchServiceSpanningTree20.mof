@@ -97,5 +97,5 @@ class CIM_SwitchServiceSpanningTree : CIM_ServiceComponent {
 class UNIX_SwitchServiceSpanningTree : CIM_SwitchServiceSpanningTree
 {
 
-}
+};
 

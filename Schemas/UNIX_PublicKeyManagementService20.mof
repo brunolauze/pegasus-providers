@@ -925,5 +925,5 @@ class CIM_PublicKeyManagementService : CIM_LocalCredentialManagementService {
 class UNIX_PublicKeyManagementService : CIM_PublicKeyManagementService
 {
 
-}
+};
 

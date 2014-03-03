@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "Meta_ClassModule";
+	Location = "Meta_Class";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "Meta_ClassModule";
 	Name = "Meta_ClassProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "Meta_ClassModule";
 	ProviderName = "Meta_ClassProvider";
 	ClassName = "CIM_Class";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "Meta_ClassModule";
 	ProviderName = "Meta_ClassProvider";
 	ClassName = "Meta_Class";
 	Namespaces = {"root/cimv2"};
@@ -57,4 +67,3 @@ instance of PG_ProviderCapabilities
 	SupportedProperties = NULL; // All properties
 	SupportedMethods = NULL; // All methods
 };
-

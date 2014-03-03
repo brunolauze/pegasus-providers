@@ -329,5 +329,5 @@ class CIM_Person : CIM_UserContact {
 class UNIX_Person : CIM_Person
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_BootSettingDataModule";
+	Location = "UNIX_BootSettingData";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BootSettingDataModule";
 	Name = "UNIX_BootSettingDataProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BootSettingDataModule";
 	ProviderName = "UNIX_BootSettingDataProvider";
 	ClassName = "CIM_BootSettingData";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BootSettingDataModule";
 	ProviderName = "UNIX_BootSettingDataProvider";
 	ClassName = "UNIX_BootSettingData";
 	Namespaces = {"root/cimv2"};

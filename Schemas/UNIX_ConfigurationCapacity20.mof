@@ -269,5 +269,5 @@ class CIM_ConfigurationCapacity : CIM_PhysicalCapacity {
 class UNIX_ConfigurationCapacity : CIM_ConfigurationCapacity
 {
 
-}
+};
 

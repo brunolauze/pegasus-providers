@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_BGPClusterModule";
+	Location = "UNIX_BGPCluster";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BGPClusterModule";
 	Name = "UNIX_BGPClusterProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BGPClusterModule";
 	ProviderName = "UNIX_BGPClusterProvider";
 	ClassName = "CIM_BGPCluster";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BGPClusterModule";
 	ProviderName = "UNIX_BGPClusterProvider";
 	ClassName = "UNIX_BGPCluster";
 	Namespaces = {"root/cimv2"};

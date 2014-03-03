@@ -74,5 +74,5 @@ class CIM_EndpointInLink : CIM_MemberOfCollection {
 class UNIX_EndpointInLink : CIM_EndpointInLink
 {
 
-}
+};
 

@@ -69,5 +69,5 @@ class CIM_LogicalNetworkService {
 class UNIX_LogicalNetworkService : CIM_LogicalNetworkService
 {
 
-}
+};
 

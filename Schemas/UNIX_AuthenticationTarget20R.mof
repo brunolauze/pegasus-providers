@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_AuthenticationTargetModule";
+	Location = "UNIX_AuthenticationTarget";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AuthenticationTargetModule";
 	Name = "UNIX_AuthenticationTargetProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AuthenticationTargetModule";
 	ProviderName = "UNIX_AuthenticationTargetProvider";
 	ClassName = "CIM_AuthenticationTarget";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AuthenticationTargetModule";
 	ProviderName = "UNIX_AuthenticationTargetProvider";
 	ClassName = "UNIX_AuthenticationTarget";
 	Namespaces = {"root/cimv2"};

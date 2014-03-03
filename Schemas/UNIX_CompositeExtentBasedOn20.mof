@@ -221,5 +221,5 @@ class CIM_CompositeExtentBasedOn : CIM_BasedOn {
 class UNIX_CompositeExtentBasedOn : CIM_CompositeExtentBasedOn
 {
 
-}
+};
 

@@ -969,5 +969,5 @@ class CIM_Slot : CIM_PhysicalConnector {
 class UNIX_Slot : CIM_Slot
 {
 
-}
+};
 

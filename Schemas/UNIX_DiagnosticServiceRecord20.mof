@@ -391,5 +391,5 @@ class CIM_DiagnosticServiceRecord : CIM_DiagnosticRecord {
 class UNIX_DiagnosticServiceRecord : CIM_DiagnosticServiceRecord
 {
 
-}
+};
 

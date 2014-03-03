@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ObjectManagerModule";
+	Location = "UNIX_ObjectManager";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ObjectManagerModule";
 	Name = "UNIX_ObjectManagerProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ObjectManagerModule";
 	ProviderName = "UNIX_ObjectManagerProvider";
 	ClassName = "CIM_ObjectManager";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ObjectManagerModule";
 	ProviderName = "UNIX_ObjectManagerProvider";
 	ClassName = "UNIX_ObjectManager";
 	Namespaces = {"root/cimv2"};

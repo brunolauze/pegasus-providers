@@ -266,5 +266,5 @@ class CIM_BIOSString : CIM_BIOSAttribute {
 class UNIX_BIOSString : CIM_BIOSString
 {
 
-}
+};
 

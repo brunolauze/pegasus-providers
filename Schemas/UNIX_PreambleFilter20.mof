@@ -585,5 +585,5 @@ class CIM_PreambleFilter : CIM_FilterEntryBase {
 class UNIX_PreambleFilter : CIM_PreambleFilter
 {
 
-}
+};
 

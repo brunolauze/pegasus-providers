@@ -1329,5 +1329,5 @@ class CIM_Battery : CIM_LogicalDevice {
 class UNIX_Battery : CIM_Battery
 {
 
-}
+};
 

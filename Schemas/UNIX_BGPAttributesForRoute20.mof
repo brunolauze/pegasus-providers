@@ -109,5 +109,5 @@ class CIM_BGPAttributesForRoute : CIM_Dependency {
 class UNIX_BGPAttributesForRoute : CIM_BGPAttributesForRoute
 {
 
-}
+};
 

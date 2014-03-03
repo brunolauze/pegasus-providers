@@ -76,5 +76,5 @@ class CIM_ProductElementComponent : CIM_Component {
 class UNIX_ProductElementComponent : CIM_ProductElementComponent
 {
 
-}
+};
 

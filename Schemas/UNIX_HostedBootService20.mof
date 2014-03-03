@@ -131,5 +131,5 @@ class CIM_HostedBootService : CIM_HostedService {
 class UNIX_HostedBootService : CIM_HostedBootService
 {
 
-}
+};
 

@@ -767,5 +767,5 @@ class CIM_BIOSElement : CIM_SoftwareElement {
 class UNIX_BIOSElement : CIM_BIOSElement
 {
 
-}
+};
 

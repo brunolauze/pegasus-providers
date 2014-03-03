@@ -80,5 +80,5 @@ class CIM_LogInDataFile : CIM_Dependency {
 class UNIX_LogInDataFile : CIM_LogInDataFile
 {
 
-}
+};
 

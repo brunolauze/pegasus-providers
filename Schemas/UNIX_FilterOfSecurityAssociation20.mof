@@ -81,5 +81,5 @@ class CIM_FilterOfSecurityAssociation : CIM_Dependency {
 class UNIX_FilterOfSecurityAssociation : CIM_FilterOfSecurityAssociation
 {
 
-}
+};
 

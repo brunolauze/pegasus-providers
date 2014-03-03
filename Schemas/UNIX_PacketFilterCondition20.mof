@@ -276,5 +276,5 @@ class CIM_PacketFilterCondition : CIM_PolicyCondition {
 class UNIX_PacketFilterCondition : CIM_PacketFilterCondition
 {
 
-}
+};
 

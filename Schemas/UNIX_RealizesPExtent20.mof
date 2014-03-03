@@ -140,5 +140,5 @@ class CIM_RealizesPExtent : CIM_RealizesExtent {
 class UNIX_RealizesPExtent : CIM_RealizesPExtent
 {
 
-}
+};
 

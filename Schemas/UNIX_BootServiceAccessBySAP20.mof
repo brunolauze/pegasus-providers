@@ -101,5 +101,5 @@ class CIM_BootServiceAccessBySAP : CIM_ServiceAccessBySAP {
 class UNIX_BootServiceAccessBySAP : CIM_BootServiceAccessBySAP
 {
 
-}
+};
 

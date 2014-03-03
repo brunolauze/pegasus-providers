@@ -1166,5 +1166,5 @@ class CIM_USBRedirectionService : CIM_RedirectionService {
 class UNIX_USBRedirectionService : CIM_USBRedirectionService
 {
 
-}
+};
 

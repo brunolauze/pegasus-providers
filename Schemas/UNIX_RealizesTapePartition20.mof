@@ -135,5 +135,5 @@ class CIM_RealizesTapePartition : CIM_RealizesExtent {
 class UNIX_RealizesTapePartition : CIM_RealizesTapePartition
 {
 
-}
+};
 

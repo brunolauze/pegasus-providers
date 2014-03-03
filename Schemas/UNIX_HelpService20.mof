@@ -984,5 +984,5 @@ class CIM_HelpService : CIM_Service {
 class UNIX_HelpService : CIM_HelpService
 {
 
-}
+};
 

@@ -101,5 +101,5 @@ class CIM_QoSConditioningSubService : CIM_ServiceComponent {
 class UNIX_QoSConditioningSubService : CIM_QoSConditioningSubService
 {
 
-}
+};
 

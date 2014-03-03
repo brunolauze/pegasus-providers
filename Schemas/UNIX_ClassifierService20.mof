@@ -939,5 +939,5 @@ class CIM_ClassifierService : CIM_ConditioningService {
 class UNIX_ClassifierService : CIM_ClassifierService
 {
 
-}
+};
 

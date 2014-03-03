@@ -600,5 +600,5 @@ class CIM_PeerIDPayloadFilterEntry : CIM_FilterEntryBase {
 class UNIX_PeerIDPayloadFilterEntry : CIM_PeerIDPayloadFilterEntry
 {
 
-}
+};
 

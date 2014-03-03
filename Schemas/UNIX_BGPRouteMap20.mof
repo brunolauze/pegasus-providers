@@ -578,5 +578,5 @@ class CIM_BGPRouteMap : CIM_LogicalElement {
 class UNIX_BGPRouteMap : CIM_BGPRouteMap
 {
 
-}
+};
 

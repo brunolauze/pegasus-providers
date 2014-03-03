@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_BIOSServiceCapabilitiesModule";
+	Location = "UNIX_BIOSServiceCapabilities";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BIOSServiceCapabilitiesModule";
 	Name = "UNIX_BIOSServiceCapabilitiesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BIOSServiceCapabilitiesModule";
 	ProviderName = "UNIX_BIOSServiceCapabilitiesProvider";
 	ClassName = "CIM_BIOSServiceCapabilities";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BIOSServiceCapabilitiesModule";
 	ProviderName = "UNIX_BIOSServiceCapabilitiesProvider";
 	ClassName = "UNIX_BIOSServiceCapabilities";
 	Namespaces = {"root/cimv2"};

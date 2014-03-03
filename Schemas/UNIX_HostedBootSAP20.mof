@@ -133,5 +133,5 @@ class CIM_HostedBootSAP : CIM_HostedAccessPoint {
 class UNIX_HostedBootSAP : CIM_HostedBootSAP
 {
 
-}
+};
 

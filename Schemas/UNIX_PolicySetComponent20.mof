@@ -120,5 +120,5 @@ class CIM_PolicySetComponent : CIM_PolicyComponent {
 class UNIX_PolicySetComponent : CIM_PolicySetComponent
 {
 
-}
+};
 

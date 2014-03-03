@@ -1075,5 +1075,5 @@ class CIM_OSPFVirtualInterface : CIM_OSPFProtocolEndpointBase {
 class UNIX_OSPFVirtualInterface : CIM_OSPFVirtualInterface
 {
 
-}
+};
 

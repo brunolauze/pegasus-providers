@@ -84,5 +84,5 @@ class CIM_AffectedJobElement {
 class UNIX_AffectedJobElement : CIM_AffectedJobElement
 {
 
-}
+};
 

@@ -209,5 +209,5 @@ class CIM_TraceLevelType : CIM_ManagedElement {
 class UNIX_TraceLevelType : CIM_TraceLevelType
 {
 
-}
+};
 

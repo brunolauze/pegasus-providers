@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SymbolicLinkModule";
+	Location = "UNIX_SymbolicLink";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SymbolicLinkModule";
 	Name = "UNIX_SymbolicLinkProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SymbolicLinkModule";
 	ProviderName = "UNIX_SymbolicLinkProvider";
 	ClassName = "CIM_SymbolicLink";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SymbolicLinkModule";
 	ProviderName = "UNIX_SymbolicLinkProvider";
 	ClassName = "UNIX_SymbolicLink";
 	Namespaces = {"root/cimv2"};

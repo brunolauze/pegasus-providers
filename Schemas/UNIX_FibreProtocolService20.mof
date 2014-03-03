@@ -874,5 +874,5 @@ class CIM_FibreProtocolService : CIM_Service {
 class UNIX_FibreProtocolService : CIM_FibreProtocolService
 {
 
-}
+};
 

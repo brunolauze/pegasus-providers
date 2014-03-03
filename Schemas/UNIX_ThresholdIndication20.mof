@@ -617,5 +617,5 @@ class CIM_ThresholdIndication : CIM_AlertIndication {
 class UNIX_ThresholdIndication : CIM_ThresholdIndication
 {
 
-}
+};
 

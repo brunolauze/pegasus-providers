@@ -278,5 +278,5 @@ class CIM_FCSwitchSettings : CIM_SettingData {
 class UNIX_FCSwitchSettings : CIM_FCSwitchSettings
 {
 
-}
+};
 

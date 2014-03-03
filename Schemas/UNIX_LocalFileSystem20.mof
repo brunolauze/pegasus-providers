@@ -992,5 +992,5 @@ class CIM_UnixLocalFileSystem : CIM_LocalFileSystem {
 class UNIX_LocalFileSystem : CIM_UnixLocalFileSystem
 {
 
-}
+};
 

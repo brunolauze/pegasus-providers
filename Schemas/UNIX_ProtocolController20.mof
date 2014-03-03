@@ -1164,5 +1164,5 @@ class CIM_ProtocolController : CIM_LogicalDevice {
 class UNIX_ProtocolController : CIM_ProtocolController
 {
 
-}
+};
 

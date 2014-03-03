@@ -57,5 +57,5 @@ class CIM_BGPClustersInAS {
 class UNIX_BGPClustersInAS : CIM_BGPClustersInAS
 {
 
-}
+};
 

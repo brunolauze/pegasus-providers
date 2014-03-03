@@ -77,5 +77,5 @@ class CIM_JobDestinationJobs : CIM_Dependency {
 class UNIX_JobDestinationJobs : CIM_JobDestinationJobs
 {
 
-}
+};
 

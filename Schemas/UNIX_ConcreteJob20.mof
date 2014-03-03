@@ -973,5 +973,5 @@ class CIM_ConcreteJob : CIM_Job {
 class UNIX_ConcreteJob : CIM_ConcreteJob
 {
 
-}
+};
 

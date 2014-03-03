@@ -307,5 +307,5 @@ class CIM_IndicationServiceSettingData : CIM_SettingData {
 class UNIX_IndicationServiceSettingData : CIM_IndicationServiceSettingData
 {
 
-}
+};
 

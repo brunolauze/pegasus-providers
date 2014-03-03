@@ -114,5 +114,5 @@ class CIM_HostedResourcePool : CIM_SystemComponent {
 class UNIX_HostedResourcePool : CIM_HostedResourcePool
 {
 
-}
+};
 

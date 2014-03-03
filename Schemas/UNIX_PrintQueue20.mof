@@ -939,5 +939,5 @@ class CIM_PrintQueue : CIM_JobDestination {
 class UNIX_PrintQueue : CIM_PrintQueue
 {
 
-}
+};
 

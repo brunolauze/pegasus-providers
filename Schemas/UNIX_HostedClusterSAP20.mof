@@ -133,5 +133,5 @@ class CIM_HostedClusterSAP : CIM_HostedAccessPoint {
 class UNIX_HostedClusterSAP : CIM_HostedClusterSAP
 {
 
-}
+};
 

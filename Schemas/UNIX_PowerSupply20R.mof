@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_PowerSupplyModule";
+	Location = "UNIX_PowerSupply";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PowerSupplyModule";
 	Name = "UNIX_PowerSupplyProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PowerSupplyModule";
 	ProviderName = "UNIX_PowerSupplyProvider";
 	ClassName = "CIM_PowerSupply";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PowerSupplyModule";
 	ProviderName = "UNIX_PowerSupplyProvider";
 	ClassName = "UNIX_PowerSupply";
 	Namespaces = {"root/cimv2"};

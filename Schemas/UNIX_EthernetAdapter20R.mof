@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_EthernetAdapterModule";
+	Location = "UNIX_EthernetAdapter";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_EthernetAdapterModule";
 	Name = "UNIX_EthernetAdapterProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_EthernetAdapterModule";
 	ProviderName = "UNIX_EthernetAdapterProvider";
 	ClassName = "CIM_EthernetAdapter";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_EthernetAdapterModule";
 	ProviderName = "UNIX_EthernetAdapterProvider";
 	ClassName = "UNIX_EthernetAdapter";
 	Namespaces = {"root/cimv2"};

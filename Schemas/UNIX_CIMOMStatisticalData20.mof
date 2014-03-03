@@ -343,5 +343,5 @@ class CIM_CIMOMStatisticalData : CIM_StatisticalData {
 class UNIX_CIMOMStatisticalData : CIM_CIMOMStatisticalData
 {
 
-}
+};
 

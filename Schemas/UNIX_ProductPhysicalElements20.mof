@@ -63,5 +63,5 @@ class CIM_ProductPhysicalElements {
 class UNIX_ProductPhysicalElements : CIM_ProductPhysicalElements
 {
 
-}
+};
 

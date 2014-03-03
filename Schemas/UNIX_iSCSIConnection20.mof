@@ -951,5 +951,5 @@ class CIM_iSCSIConnection : CIM_NetworkPipe {
 class UNIX_iSCSIConnection : CIM_iSCSIConnection
 {
 
-}
+};
 

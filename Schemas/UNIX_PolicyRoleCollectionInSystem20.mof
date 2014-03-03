@@ -127,5 +127,5 @@ class CIM_PolicyRoleCollectionInSystem : CIM_HostedCollection {
 class UNIX_PolicyRoleCollectionInSystem : CIM_PolicyRoleCollectionInSystem
 {
 
-}
+};
 

@@ -968,5 +968,5 @@ class CIM_DatabaseStorageArea : CIM_FileSystem {
 class UNIX_DatabaseStorageArea : CIM_DatabaseStorageArea
 {
 
-}
+};
 

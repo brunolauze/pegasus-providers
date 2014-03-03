@@ -74,5 +74,5 @@ class CIM_EndpointInArea : CIM_Component {
 class UNIX_EndpointInArea : CIM_EndpointInArea
 {
 
-}
+};
 

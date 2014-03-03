@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_BGPPathAttributesModule";
+	Location = "UNIX_BGPPathAttributes";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BGPPathAttributesModule";
 	Name = "UNIX_BGPPathAttributesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BGPPathAttributesModule";
 	ProviderName = "UNIX_BGPPathAttributesProvider";
 	ClassName = "CIM_BGPPathAttributes";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BGPPathAttributesModule";
 	ProviderName = "UNIX_BGPPathAttributesProvider";
 	ClassName = "UNIX_BGPPathAttributes";
 	Namespaces = {"root/cimv2"};

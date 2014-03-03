@@ -225,5 +225,5 @@ class CIM_FileSystemCapabilities : CIM_Capabilities {
 class UNIX_FileSystemCapabilities : CIM_FileSystemCapabilities
 {
 
-}
+};
 

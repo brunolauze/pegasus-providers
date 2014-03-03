@@ -88,5 +88,5 @@ class CIM_BGPServiceAttributes : CIM_Component {
 class UNIX_BGPServiceAttributes : CIM_BGPServiceAttributes
 {
 
-}
+};
 

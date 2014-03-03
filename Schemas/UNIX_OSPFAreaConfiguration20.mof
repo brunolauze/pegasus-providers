@@ -566,5 +566,5 @@ class CIM_OSPFAreaConfiguration : CIM_LogicalElement {
 class UNIX_OSPFAreaConfiguration : CIM_OSPFAreaConfiguration
 {
 
-}
+};
 

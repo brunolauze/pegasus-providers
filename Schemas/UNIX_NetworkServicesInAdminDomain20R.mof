@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_NetworkServicesInAdminDomainModule";
+	Location = "UNIX_NetworkServicesInAdminDomain";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NetworkServicesInAdminDomainModule";
 	Name = "UNIX_NetworkServicesInAdminDomainProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NetworkServicesInAdminDomainModule";
 	ProviderName = "UNIX_NetworkServicesInAdminDomainProvider";
 	ClassName = "CIM_NetworkServicesInAdminDomain";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NetworkServicesInAdminDomainModule";
 	ProviderName = "UNIX_NetworkServicesInAdminDomainProvider";
 	ClassName = "UNIX_NetworkServicesInAdminDomain";
 	Namespaces = {"root/cimv2"};

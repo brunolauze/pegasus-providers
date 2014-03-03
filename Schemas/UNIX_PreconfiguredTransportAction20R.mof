@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_PreconfiguredTransportActionModule";
+	Location = "UNIX_PreconfiguredTransportAction";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PreconfiguredTransportActionModule";
 	Name = "UNIX_PreconfiguredTransportActionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PreconfiguredTransportActionModule";
 	ProviderName = "UNIX_PreconfiguredTransportActionProvider";
 	ClassName = "CIM_PreconfiguredTransportAction";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PreconfiguredTransportActionModule";
 	ProviderName = "UNIX_PreconfiguredTransportActionProvider";
 	ClassName = "UNIX_PreconfiguredTransportAction";
 	Namespaces = {"root/cimv2"};

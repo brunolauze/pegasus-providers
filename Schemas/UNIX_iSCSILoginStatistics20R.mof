@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_iSCSILoginStatisticsModule";
+	Location = "UNIX_iSCSILoginStatistics";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_iSCSILoginStatisticsModule";
 	Name = "UNIX_iSCSILoginStatisticsProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_iSCSILoginStatisticsModule";
 	ProviderName = "UNIX_iSCSILoginStatisticsProvider";
 	ClassName = "CIM_iSCSILoginStatistics";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_iSCSILoginStatisticsModule";
 	ProviderName = "UNIX_iSCSILoginStatisticsProvider";
 	ClassName = "UNIX_iSCSILoginStatistics";
 	Namespaces = {"root/cimv2"};

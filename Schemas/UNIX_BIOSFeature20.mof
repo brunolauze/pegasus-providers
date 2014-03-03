@@ -597,5 +597,5 @@ class CIM_BIOSFeature : CIM_SoftwareFeature {
 class UNIX_BIOSFeature : CIM_BIOSFeature
 {
 
-}
+};
 

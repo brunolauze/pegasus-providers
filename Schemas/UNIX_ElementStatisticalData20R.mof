@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ElementStatisticalDataModule";
+	Location = "UNIX_ElementStatisticalData";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ElementStatisticalDataModule";
 	Name = "UNIX_ElementStatisticalDataProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ElementStatisticalDataModule";
 	ProviderName = "UNIX_ElementStatisticalDataProvider";
 	ClassName = "CIM_ElementStatisticalData";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ElementStatisticalDataModule";
 	ProviderName = "UNIX_ElementStatisticalDataProvider";
 	ClassName = "UNIX_ElementStatisticalData";
 	Namespaces = {"root/cimv2"};

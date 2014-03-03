@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_PreambleMarkerServiceModule";
+	Location = "UNIX_PreambleMarkerService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PreambleMarkerServiceModule";
 	Name = "UNIX_PreambleMarkerServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PreambleMarkerServiceModule";
 	ProviderName = "UNIX_PreambleMarkerServiceProvider";
 	ClassName = "CIM_PreambleMarkerService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PreambleMarkerServiceModule";
 	ProviderName = "UNIX_PreambleMarkerServiceProvider";
 	ClassName = "UNIX_PreambleMarkerService";
 	Namespaces = {"root/cimv2"};

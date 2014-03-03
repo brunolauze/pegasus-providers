@@ -62,5 +62,5 @@ class CIM_ElementConformsToProfile {
 class UNIX_ElementConformsToProfile : CIM_ElementConformsToProfile
 {
 
-}
+};
 

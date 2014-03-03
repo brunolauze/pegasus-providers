@@ -261,5 +261,5 @@ class CIM_DatabaseResourceStatistics : CIM_StatisticalData {
 class UNIX_DatabaseResourceStatistics : CIM_DatabaseResourceStatistics
 {
 
-}
+};
 

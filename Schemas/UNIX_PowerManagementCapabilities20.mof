@@ -403,5 +403,5 @@ class CIM_PowerManagementCapabilities : CIM_Capabilities {
 class UNIX_PowerManagementCapabilities : CIM_PowerManagementCapabilities
 {
 
-}
+};
 

@@ -95,5 +95,5 @@ class CIM_ElementAsUser : CIM_Dependency {
 class UNIX_ElementAsUser : CIM_ElementAsUser
 {
 
-}
+};
 

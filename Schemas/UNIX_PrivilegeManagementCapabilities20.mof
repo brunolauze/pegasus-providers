@@ -264,5 +264,5 @@ class CIM_PrivilegeManagementCapabilities : CIM_Capabilities {
 class UNIX_PrivilegeManagementCapabilities : CIM_PrivilegeManagementCapabilities
 {
 
-}
+};
 

@@ -882,5 +882,5 @@ class CIM_AuthorizationService : CIM_SecurityService {
 class UNIX_AuthorizationService : CIM_AuthorizationService
 {
 
-}
+};
 

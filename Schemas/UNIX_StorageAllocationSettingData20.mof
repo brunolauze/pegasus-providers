@@ -769,5 +769,5 @@ class CIM_StorageAllocationSettingData : CIM_ResourceAllocationSettingData {
 class UNIX_StorageAllocationSettingData : CIM_StorageAllocationSettingData
 {
 
-}
+};
 

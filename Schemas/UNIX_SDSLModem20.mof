@@ -1208,5 +1208,5 @@ class CIM_SDSLModem : CIM_DSLModem {
 class UNIX_SDSLModem : CIM_SDSLModem
 {
 
-}
+};
 

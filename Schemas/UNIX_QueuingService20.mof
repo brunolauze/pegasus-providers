@@ -935,5 +935,5 @@ class CIM_QueuingService : CIM_ConditioningService {
 class UNIX_QueuingService : CIM_QueuingService
 {
 
-}
+};
 

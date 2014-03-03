@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ClassifierElementModule";
+	Location = "UNIX_ClassifierElement";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ClassifierElementModule";
 	Name = "UNIX_ClassifierElementProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ClassifierElementModule";
 	ProviderName = "UNIX_ClassifierElementProvider";
 	ClassName = "CIM_ClassifierElement";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ClassifierElementModule";
 	ProviderName = "UNIX_ClassifierElementProvider";
 	ClassName = "UNIX_ClassifierElement";
 	Namespaces = {"root/cimv2"};

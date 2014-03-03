@@ -85,5 +85,5 @@ class CIM_ServiceProcess {
 class UNIX_ServiceProcess : CIM_ServiceProcess
 {
 
-}
+};
 

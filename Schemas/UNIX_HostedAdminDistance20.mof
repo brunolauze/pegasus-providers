@@ -103,5 +103,5 @@ class CIM_HostedAdminDistance : CIM_HostedDependency {
 class UNIX_HostedAdminDistance : CIM_HostedAdminDistance
 {
 
-}
+};
 

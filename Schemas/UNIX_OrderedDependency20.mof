@@ -106,5 +106,5 @@ class CIM_OrderedDependency : CIM_Dependency {
 class UNIX_OrderedDependency : CIM_OrderedDependency
 {
 
-}
+};
 

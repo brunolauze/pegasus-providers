@@ -1543,5 +1543,5 @@ class CIM_POTSModem : CIM_CallBasedModem {
 class UNIX_POTSModem : CIM_POTSModem
 {
 
-}
+};
 

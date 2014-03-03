@@ -82,5 +82,5 @@ class CIM_AssociatedRemainingExtent : CIM_Component {
 class UNIX_AssociatedRemainingExtent : CIM_AssociatedRemainingExtent
 {
 
-}
+};
 

@@ -302,5 +302,5 @@ class CIM_KerberosTicket : CIM_KerberosCredential {
 class UNIX_KerberosTicket : CIM_KerberosTicket
 {
 
-}
+};
 

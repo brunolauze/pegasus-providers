@@ -186,5 +186,5 @@ class CIM_CalculationServiceForDropper : CIM_ServiceServiceDependency {
 class UNIX_CalculationServiceForDropper : CIM_CalculationServiceForDropper
 {
 
-}
+};
 

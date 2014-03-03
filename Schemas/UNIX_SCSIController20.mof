@@ -1288,5 +1288,5 @@ class CIM_SCSIController : CIM_Controller {
 class UNIX_SCSIController : CIM_SCSIController
 {
 
-}
+};
 

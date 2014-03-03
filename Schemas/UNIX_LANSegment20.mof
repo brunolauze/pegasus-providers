@@ -297,5 +297,5 @@ class CIM_LANSegment : CIM_LogicalNetwork {
 class UNIX_LANSegment : CIM_LANSegment
 {
 
-}
+};
 

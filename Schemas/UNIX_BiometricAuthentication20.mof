@@ -299,5 +299,5 @@ class CIM_BiometricAuthentication : CIM_AuthenticationCondition {
 class UNIX_BiometricAuthentication : CIM_BiometricAuthentication
 {
 
-}
+};
 

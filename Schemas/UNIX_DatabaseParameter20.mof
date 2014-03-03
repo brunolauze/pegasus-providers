@@ -283,5 +283,5 @@ class CIM_DatabaseParameter : CIM_ScopedSettingData {
 class UNIX_DatabaseParameter : CIM_DatabaseParameter
 {
 
-}
+};
 

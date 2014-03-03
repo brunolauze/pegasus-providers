@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_PCIBridgeModule";
+	Location = "UNIX_PCIBridge";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PCIBridgeModule";
 	Name = "UNIX_PCIBridgeProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PCIBridgeModule";
 	ProviderName = "UNIX_PCIBridgeProvider";
 	ClassName = "CIM_PCIBridge";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PCIBridgeModule";
 	ProviderName = "UNIX_PCIBridgeProvider";
 	ClassName = "UNIX_PCIBridge";
 	Namespaces = {"root/cimv2"};

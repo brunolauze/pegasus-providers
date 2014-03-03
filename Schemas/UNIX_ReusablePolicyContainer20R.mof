@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ReusablePolicyContainerModule";
+	Location = "UNIX_ReusablePolicyContainer";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ReusablePolicyContainerModule";
 	Name = "UNIX_ReusablePolicyContainerProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ReusablePolicyContainerModule";
 	ProviderName = "UNIX_ReusablePolicyContainerProvider";
 	ClassName = "CIM_ReusablePolicyContainer";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ReusablePolicyContainerModule";
 	ProviderName = "UNIX_ReusablePolicyContainerProvider";
 	ClassName = "UNIX_ReusablePolicyContainer";
 	Namespaces = {"root/cimv2"};

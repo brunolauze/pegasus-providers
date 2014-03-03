@@ -1199,5 +1199,5 @@ class CIM_Door : CIM_LogicalDevice {
 class UNIX_Door : CIM_Door
 {
 
-}
+};
 

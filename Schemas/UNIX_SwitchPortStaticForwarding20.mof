@@ -77,5 +77,5 @@ class CIM_SwitchPortStaticForwarding : CIM_Dependency {
 class UNIX_SwitchPortStaticForwarding : CIM_SwitchPortStaticForwarding
 {
 
-}
+};
 

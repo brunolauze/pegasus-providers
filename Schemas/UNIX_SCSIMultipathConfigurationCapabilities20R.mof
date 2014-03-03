@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SCSIMultipathConfigurationCapabilitiesModule";
+	Location = "UNIX_SCSIMultipathConfigurationCapabilities";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SCSIMultipathConfigurationCapabilitiesModule";
 	Name = "UNIX_SCSIMultipathConfigurationCapabilitiesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SCSIMultipathConfigurationCapabilitiesModule";
 	ProviderName = "UNIX_SCSIMultipathConfigurationCapabilitiesProvider";
 	ClassName = "CIM_SCSIMultipathConfigurationCapabilities";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SCSIMultipathConfigurationCapabilitiesModule";
 	ProviderName = "UNIX_SCSIMultipathConfigurationCapabilitiesProvider";
 	ClassName = "UNIX_SCSIMultipathConfigurationCapabilities";
 	Namespaces = {"root/cimv2"};

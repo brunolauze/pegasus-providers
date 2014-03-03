@@ -229,5 +229,5 @@ class CIM_BIOSServiceCapabilities : CIM_Capabilities {
 class UNIX_BIOSServiceCapabilities : CIM_BIOSServiceCapabilities
 {
 
-}
+};
 

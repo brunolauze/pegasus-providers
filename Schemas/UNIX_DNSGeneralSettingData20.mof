@@ -354,5 +354,5 @@ class CIM_DNSGeneralSettingData : CIM_IPAssignmentSettingData {
 class UNIX_DNSGeneralSettingData : CIM_DNSGeneralSettingData
 {
 
-}
+};
 

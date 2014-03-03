@@ -651,5 +651,5 @@ class CIM_UnixDeviceFile : CIM_DeviceFile {
 class UNIX_DeviceFile : CIM_UnixDeviceFile
 {
 
-}
+};
 

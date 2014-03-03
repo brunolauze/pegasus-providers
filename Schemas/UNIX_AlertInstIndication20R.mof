@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_AlertInstIndicationModule";
+	Location = "UNIX_AlertInstIndication";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AlertInstIndicationModule";
 	Name = "UNIX_AlertInstIndicationProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AlertInstIndicationModule";
 	ProviderName = "UNIX_AlertInstIndicationProvider";
 	ClassName = "CIM_AlertInstIndication";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AlertInstIndicationModule";
 	ProviderName = "UNIX_AlertInstIndicationProvider";
 	ClassName = "UNIX_AlertInstIndication";
 	Namespaces = {"root/cimv2"};

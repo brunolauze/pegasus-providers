@@ -80,5 +80,5 @@ class CIM_RecordAppliesToElement : CIM_Dependency {
 class UNIX_RecordAppliesToElement : CIM_RecordAppliesToElement
 {
 
-}
+};
 

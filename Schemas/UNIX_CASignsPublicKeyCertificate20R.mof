@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_CASignsPublicKeyCertificateModule";
+	Location = "UNIX_CASignsPublicKeyCertificate";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CASignsPublicKeyCertificateModule";
 	Name = "UNIX_CASignsPublicKeyCertificateProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CASignsPublicKeyCertificateModule";
 	ProviderName = "UNIX_CASignsPublicKeyCertificateProvider";
 	ClassName = "CIM_CASignsPublicKeyCertificate";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CASignsPublicKeyCertificateModule";
 	ProviderName = "UNIX_CASignsPublicKeyCertificateProvider";
 	ClassName = "UNIX_CASignsPublicKeyCertificate";
 	Namespaces = {"root/cimv2"};

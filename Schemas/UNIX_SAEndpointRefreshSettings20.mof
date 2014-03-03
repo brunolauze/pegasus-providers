@@ -264,5 +264,5 @@ class CIM_SAEndpointRefreshSettings : CIM_SettingData {
 class UNIX_SAEndpointRefreshSettings : CIM_SAEndpointRefreshSettings
 {
 
-}
+};
 

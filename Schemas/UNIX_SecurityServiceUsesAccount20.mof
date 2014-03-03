@@ -76,5 +76,5 @@ class CIM_SecurityServiceUsesAccount : CIM_Dependency {
 class UNIX_SecurityServiceUsesAccount : CIM_SecurityServiceUsesAccount
 {
 
-}
+};
 

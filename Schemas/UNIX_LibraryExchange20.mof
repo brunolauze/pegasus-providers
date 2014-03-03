@@ -85,5 +85,5 @@ class CIM_LibraryExchange : CIM_Dependency {
 class UNIX_LibraryExchange : CIM_LibraryExchange
 {
 
-}
+};
 

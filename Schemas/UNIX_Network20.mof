@@ -894,5 +894,5 @@ class CIM_Network : CIM_AdminDomain {
 class UNIX_Network : CIM_Network
 {
 
-}
+};
 

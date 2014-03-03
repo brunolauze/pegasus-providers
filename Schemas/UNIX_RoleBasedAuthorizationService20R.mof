@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_RoleBasedAuthorizationServiceModule";
+	Location = "UNIX_RoleBasedAuthorizationService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RoleBasedAuthorizationServiceModule";
 	Name = "UNIX_RoleBasedAuthorizationServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RoleBasedAuthorizationServiceModule";
 	ProviderName = "UNIX_RoleBasedAuthorizationServiceProvider";
 	ClassName = "CIM_RoleBasedAuthorizationService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RoleBasedAuthorizationServiceModule";
 	ProviderName = "UNIX_RoleBasedAuthorizationServiceProvider";
 	ClassName = "UNIX_RoleBasedAuthorizationService";
 	Namespaces = {"root/cimv2"};

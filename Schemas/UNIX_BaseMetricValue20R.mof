@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_BaseMetricValueModule";
+	Location = "UNIX_BaseMetricValue";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BaseMetricValueModule";
 	Name = "UNIX_BaseMetricValueProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BaseMetricValueModule";
 	ProviderName = "UNIX_BaseMetricValueProvider";
 	ClassName = "CIM_BaseMetricValue";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BaseMetricValueModule";
 	ProviderName = "UNIX_BaseMetricValueProvider";
 	ClassName = "UNIX_BaseMetricValue";
 	Namespaces = {"root/cimv2"};

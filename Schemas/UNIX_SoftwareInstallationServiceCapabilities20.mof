@@ -360,5 +360,5 @@ class CIM_SoftwareInstallationServiceCapabilities : CIM_Capabilities {
 class UNIX_SoftwareInstallationServiceCapabilities : CIM_SoftwareInstallationServiceCapabilities
 {
 
-}
+};
 

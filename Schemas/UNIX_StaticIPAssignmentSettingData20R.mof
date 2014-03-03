@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_StaticIPAssignmentSettingDataModule";
+	Location = "UNIX_StaticIPAssignmentSettingData";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_StaticIPAssignmentSettingDataModule";
 	Name = "UNIX_StaticIPAssignmentSettingDataProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_StaticIPAssignmentSettingDataModule";
 	ProviderName = "UNIX_StaticIPAssignmentSettingDataProvider";
 	ClassName = "CIM_StaticIPAssignmentSettingData";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_StaticIPAssignmentSettingDataModule";
 	ProviderName = "UNIX_StaticIPAssignmentSettingDataProvider";
 	ClassName = "UNIX_StaticIPAssignmentSettingData";
 	Namespaces = {"root/cimv2"};

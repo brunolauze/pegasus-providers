@@ -379,5 +379,5 @@ class CIM_PreconfiguredTransportAction : CIM_PreconfiguredSAAction {
 class UNIX_PreconfiguredTransportAction : CIM_PreconfiguredTransportAction
 {
 
-}
+};
 

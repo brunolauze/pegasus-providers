@@ -154,5 +154,5 @@ class CIM_ManagesAccountOnSystem : CIM_SecurityServiceForSystem {
 class UNIX_ManagesAccountOnSystem : CIM_ManagesAccountOnSystem
 {
 
-}
+};
 

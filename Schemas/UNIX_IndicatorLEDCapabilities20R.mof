@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_IndicatorLEDCapabilitiesModule";
+	Location = "UNIX_IndicatorLEDCapabilities";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IndicatorLEDCapabilitiesModule";
 	Name = "UNIX_IndicatorLEDCapabilitiesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IndicatorLEDCapabilitiesModule";
 	ProviderName = "UNIX_IndicatorLEDCapabilitiesProvider";
 	ClassName = "CIM_IndicatorLEDCapabilities";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IndicatorLEDCapabilitiesModule";
 	ProviderName = "UNIX_IndicatorLEDCapabilitiesProvider";
 	ClassName = "UNIX_IndicatorLEDCapabilities";
 	Namespaces = {"root/cimv2"};

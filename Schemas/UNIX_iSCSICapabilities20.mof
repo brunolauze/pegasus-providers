@@ -235,5 +235,5 @@ class CIM_iSCSICapabilities : CIM_Capabilities {
 class UNIX_iSCSICapabilities : CIM_iSCSICapabilities
 {
 
-}
+};
 

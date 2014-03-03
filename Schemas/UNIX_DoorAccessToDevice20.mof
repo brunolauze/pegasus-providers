@@ -81,5 +81,5 @@ class CIM_DoorAccessToDevice : CIM_Dependency {
 class UNIX_DoorAccessToDevice : CIM_DoorAccessToDevice
 {
 
-}
+};
 

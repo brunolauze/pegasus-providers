@@ -563,5 +563,5 @@ class CIM_ExtraCapacityGroup : CIM_RedundancyGroup {
 class UNIX_ExtraCapacityGroup : CIM_ExtraCapacityGroup
 {
 
-}
+};
 

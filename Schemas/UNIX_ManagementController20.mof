@@ -1229,5 +1229,5 @@ class CIM_ManagementController : CIM_Controller {
 class UNIX_ManagementController : CIM_ManagementController
 {
 
-}
+};
 

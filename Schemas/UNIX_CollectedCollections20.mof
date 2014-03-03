@@ -55,5 +55,5 @@ class CIM_CollectedCollections {
 class UNIX_CollectedCollections : CIM_CollectedCollections
 {
 
-}
+};
 

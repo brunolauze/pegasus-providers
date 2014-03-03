@@ -553,5 +553,5 @@ class CIM_FCPortStatistics : CIM_NetworkPortStatistics {
 class UNIX_FCPortStatistics : CIM_FCPortStatistics
 {
 
-}
+};
 

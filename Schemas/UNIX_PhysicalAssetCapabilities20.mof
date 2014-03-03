@@ -203,5 +203,5 @@ class CIM_PhysicalAssetCapabilities : CIM_Capabilities {
 class UNIX_PhysicalAssetCapabilities : CIM_PhysicalAssetCapabilities
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_HostedFilterListModule";
+	Location = "UNIX_HostedFilterList";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HostedFilterListModule";
 	Name = "UNIX_HostedFilterListProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HostedFilterListModule";
 	ProviderName = "UNIX_HostedFilterListProvider";
 	ClassName = "CIM_HostedFilterList";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HostedFilterListModule";
 	ProviderName = "UNIX_HostedFilterListProvider";
 	ClassName = "UNIX_HostedFilterList";
 	Namespaces = {"root/cimv2"};

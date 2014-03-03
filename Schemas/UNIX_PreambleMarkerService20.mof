@@ -978,5 +978,5 @@ class CIM_PreambleMarkerService : CIM_MarkerService {
 class UNIX_PreambleMarkerService : CIM_PreambleMarkerService
 {
 
-}
+};
 

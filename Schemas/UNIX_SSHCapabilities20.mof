@@ -331,5 +331,5 @@ class CIM_SSHCapabilities : CIM_ProtocolServiceCapabilities {
 class UNIX_SSHCapabilities : CIM_SSHCapabilities
 {
 
-}
+};
 

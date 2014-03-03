@@ -1845,5 +1845,5 @@ class CIM_Unimodem : CIM_POTSModem {
 class UNIX_Unimodem : CIM_Unimodem
 {
 
-}
+};
 

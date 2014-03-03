@@ -546,5 +546,5 @@ class CIM_StaticForwardingEntry : CIM_LogicalElement {
 class UNIX_StaticForwardingEntry : CIM_StaticForwardingEntry
 {
 
-}
+};
 

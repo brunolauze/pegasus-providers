@@ -78,5 +78,5 @@ class CIM_ReferencedProfile : CIM_Dependency {
 class UNIX_ReferencedProfile : CIM_ReferencedProfile
 {
 
-}
+};
 

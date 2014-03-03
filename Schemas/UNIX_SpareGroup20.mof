@@ -588,5 +588,5 @@ class CIM_SpareGroup : CIM_RedundancyGroup {
 class UNIX_SpareGroup : CIM_SpareGroup
 {
 
-}
+};
 

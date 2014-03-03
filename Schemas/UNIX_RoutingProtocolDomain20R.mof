@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_RoutingProtocolDomainModule";
+	Location = "UNIX_RoutingProtocolDomain";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RoutingProtocolDomainModule";
 	Name = "UNIX_RoutingProtocolDomainProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RoutingProtocolDomainModule";
 	ProviderName = "UNIX_RoutingProtocolDomainProvider";
 	ClassName = "CIM_RoutingProtocolDomain";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RoutingProtocolDomainModule";
 	ProviderName = "UNIX_RoutingProtocolDomainProvider";
 	ClassName = "UNIX_RoutingProtocolDomain";
 	Namespaces = {"root/cimv2"};

@@ -864,5 +864,5 @@ class CIM_PrintInputTray : CIM_PrinterElement {
 class UNIX_PrintInputTray : CIM_PrintInputTray
 {
 
-}
+};
 

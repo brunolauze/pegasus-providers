@@ -833,5 +833,5 @@ class CIM_IRQ : CIM_SystemResource {
 class UNIX_IRQ : CIM_IRQ
 {
 
-}
+};
 

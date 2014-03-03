@@ -1066,5 +1066,5 @@ class CIM_SCSIProtocolEndpoint : CIM_ProtocolEndpoint {
 class UNIX_SCSIProtocolEndpoint : CIM_SCSIProtocolEndpoint
 {
 
-}
+};
 

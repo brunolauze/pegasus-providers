@@ -1624,5 +1624,5 @@ class CIM_DiskPartition : CIM_MediaPartition {
 class UNIX_DiskPartition : CIM_DiskPartition
 {
 
-}
+};
 

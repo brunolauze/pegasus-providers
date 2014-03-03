@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_StorageRedundancySetModule";
+	Location = "UNIX_StorageRedundancySet";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_StorageRedundancySetModule";
 	Name = "UNIX_StorageRedundancySetProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_StorageRedundancySetModule";
 	ProviderName = "UNIX_StorageRedundancySetProvider";
 	ClassName = "CIM_StorageRedundancySet";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_StorageRedundancySetModule";
 	ProviderName = "UNIX_StorageRedundancySetProvider";
 	ClassName = "UNIX_StorageRedundancySet";
 	Namespaces = {"root/cimv2"};

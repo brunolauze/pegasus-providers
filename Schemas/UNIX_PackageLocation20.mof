@@ -846,5 +846,5 @@ class CIM_PackageLocation : CIM_PhysicalPackage {
 class UNIX_PackageLocation : CIM_PackageLocation
 {
 
-}
+};
 

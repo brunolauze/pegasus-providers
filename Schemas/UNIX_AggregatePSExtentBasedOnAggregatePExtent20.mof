@@ -143,5 +143,5 @@ class CIM_AggregatePSExtentBasedOnAggregatePExtent : CIM_BasedOn {
 class UNIX_AggregatePSExtentBasedOnAggregatePExtent : CIM_AggregatePSExtentBasedOnAggregatePExtent
 {
 
-}
+};
 

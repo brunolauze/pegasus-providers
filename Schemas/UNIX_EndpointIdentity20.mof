@@ -107,5 +107,5 @@ class CIM_EndpointIdentity : CIM_LogicalIdentity {
 class UNIX_EndpointIdentity : CIM_EndpointIdentity
 {
 
-}
+};
 

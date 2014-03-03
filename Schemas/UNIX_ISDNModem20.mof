@@ -1406,5 +1406,5 @@ class CIM_ISDNModem : CIM_CallBasedModem {
 class UNIX_ISDNModem : CIM_ISDNModem
 {
 
-}
+};
 

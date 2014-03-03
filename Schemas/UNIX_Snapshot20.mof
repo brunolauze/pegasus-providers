@@ -1509,5 +1509,5 @@ class CIM_Snapshot : CIM_StorageExtent {
 class UNIX_Snapshot : CIM_Snapshot
 {
 
-}
+};
 

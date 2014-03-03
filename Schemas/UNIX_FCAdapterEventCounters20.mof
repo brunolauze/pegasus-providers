@@ -319,5 +319,5 @@ class CIM_FCAdapterEventCounters : CIM_DeviceStatisticalInformation {
 class UNIX_FCAdapterEventCounters : CIM_FCAdapterEventCounters
 {
 
-}
+};
 

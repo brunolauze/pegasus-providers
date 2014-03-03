@@ -76,5 +76,5 @@ class CIM_DirectoryContainsFile : CIM_Component {
 class UNIX_DirectoryContainsFile : CIM_DirectoryContainsFile
 {
 
-}
+};
 

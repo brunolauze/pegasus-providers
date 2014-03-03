@@ -114,5 +114,5 @@ class CIM_ASBGPEndpoints : CIM_SystemComponent {
 class UNIX_ASBGPEndpoints : CIM_ASBGPEndpoints
 {
 
-}
+};
 

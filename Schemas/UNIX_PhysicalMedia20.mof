@@ -883,5 +883,5 @@ class CIM_PhysicalMedia : CIM_PhysicalComponent {
 class UNIX_PhysicalMedia : CIM_PhysicalMedia
 {
 
-}
+};
 

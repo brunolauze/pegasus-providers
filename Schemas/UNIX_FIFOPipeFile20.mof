@@ -612,5 +612,5 @@ class CIM_FIFOPipeFile : CIM_LogicalFile {
 class UNIX_FIFOPipeFile : CIM_FIFOPipeFile
 {
 
-}
+};
 

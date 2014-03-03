@@ -117,5 +117,5 @@ class CIM_AssociatedSupplyCurrentSensor : CIM_AssociatedSensor {
 class UNIX_AssociatedSupplyCurrentSensor : CIM_AssociatedSupplyCurrentSensor
 {
 
-}
+};
 

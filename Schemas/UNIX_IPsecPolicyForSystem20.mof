@@ -91,5 +91,5 @@ class CIM_IPsecPolicyForSystem : CIM_Dependency {
 class UNIX_IPsecPolicyForSystem : CIM_IPsecPolicyForSystem
 {
 
-}
+};
 

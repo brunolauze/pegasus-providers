@@ -343,5 +343,5 @@ class CIM_CLPSettingData : CIM_SettingData {
 class UNIX_CLPSettingData : CIM_CLPSettingData
 {
 
-}
+};
 

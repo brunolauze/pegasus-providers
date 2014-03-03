@@ -107,5 +107,5 @@ class CIM_IsSpare : CIM_Dependency {
 class UNIX_IsSpare : CIM_IsSpare
 {
 
-}
+};
 

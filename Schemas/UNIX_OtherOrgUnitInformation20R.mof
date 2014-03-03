@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_OtherOrgUnitInformationModule";
+	Location = "UNIX_OtherOrgUnitInformation";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OtherOrgUnitInformationModule";
 	Name = "UNIX_OtherOrgUnitInformationProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OtherOrgUnitInformationModule";
 	ProviderName = "UNIX_OtherOrgUnitInformationProvider";
 	ClassName = "CIM_OtherOrgUnitInformation";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OtherOrgUnitInformationModule";
 	ProviderName = "UNIX_OtherOrgUnitInformationProvider";
 	ClassName = "UNIX_OtherOrgUnitInformation";
 	Namespaces = {"root/cimv2"};

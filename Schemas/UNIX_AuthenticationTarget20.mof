@@ -90,5 +90,5 @@ class CIM_AuthenticationTarget : CIM_Dependency {
 class UNIX_AuthenticationTarget : CIM_AuthenticationTarget
 {
 
-}
+};
 

@@ -255,5 +255,5 @@ class CIM_IPConnectivitySubnet : CIM_ConnectivityCollection {
 class UNIX_IPConnectivitySubnet : CIM_IPConnectivitySubnet
 {
 
-}
+};
 

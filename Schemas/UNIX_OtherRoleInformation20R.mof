@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_OtherRoleInformationModule";
+	Location = "UNIX_OtherRoleInformation";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OtherRoleInformationModule";
 	Name = "UNIX_OtherRoleInformationProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OtherRoleInformationModule";
 	ProviderName = "UNIX_OtherRoleInformationProvider";
 	ClassName = "CIM_OtherRoleInformation";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OtherRoleInformationModule";
 	ProviderName = "UNIX_OtherRoleInformationProvider";
 	ClassName = "UNIX_OtherRoleInformation";
 	Namespaces = {"root/cimv2"};

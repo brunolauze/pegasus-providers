@@ -191,5 +191,5 @@ class CIM_FibrePortActiveLogin {
 class UNIX_FibrePortActiveLogin : CIM_FibrePortActiveLogin
 {
 
-}
+};
 

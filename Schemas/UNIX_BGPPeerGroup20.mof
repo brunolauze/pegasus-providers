@@ -260,5 +260,5 @@ class CIM_BGPPeerGroup : CIM_CollectionOfMSEs {
 class UNIX_BGPPeerGroup : CIM_BGPPeerGroup
 {
 
-}
+};
 

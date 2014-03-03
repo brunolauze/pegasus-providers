@@ -1294,5 +1294,5 @@ class CIM_WiFiEndpoint : CIM_LANEndpoint {
 class UNIX_WiFiEndpoint : CIM_WiFiEndpoint
 {
 
-}
+};
 

@@ -311,5 +311,5 @@ class CIM_VideoHeadResolution : CIM_SettingData {
 class UNIX_VideoHeadResolution : CIM_VideoHeadResolution
 {
 
-}
+};
 

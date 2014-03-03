@@ -106,5 +106,5 @@ class CIM_PackageTempSensor : CIM_PackageDependency {
 class UNIX_PackageTempSensor : CIM_PackageTempSensor
 {
 
-}
+};
 

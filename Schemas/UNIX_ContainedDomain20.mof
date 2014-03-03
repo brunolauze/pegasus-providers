@@ -112,5 +112,5 @@ class CIM_ContainedDomain : CIM_SystemComponent {
 class UNIX_ContainedDomain : CIM_ContainedDomain
 {
 
-}
+};
 

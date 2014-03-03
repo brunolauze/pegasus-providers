@@ -904,5 +904,5 @@ class CIM_Card : CIM_PhysicalPackage {
 class UNIX_Card : CIM_Card
 {
 
-}
+};
 

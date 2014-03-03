@@ -212,5 +212,5 @@ class CIM_SwitchPortStatistics : CIM_SAPStatisticalInformation {
 class UNIX_SwitchPortStatistics : CIM_SwitchPortStatistics
 {
 
-}
+};
 

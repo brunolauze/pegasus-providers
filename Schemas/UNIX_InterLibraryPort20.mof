@@ -1202,5 +1202,5 @@ class CIM_InterLibraryPort : CIM_MediaTransferDevice {
 class UNIX_InterLibraryPort : CIM_InterLibraryPort
 {
 
-}
+};
 

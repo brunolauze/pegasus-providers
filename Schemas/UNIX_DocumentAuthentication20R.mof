@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_DocumentAuthenticationModule";
+	Location = "UNIX_DocumentAuthentication";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DocumentAuthenticationModule";
 	Name = "UNIX_DocumentAuthenticationProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DocumentAuthenticationModule";
 	ProviderName = "UNIX_DocumentAuthenticationProvider";
 	ClassName = "CIM_DocumentAuthentication";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DocumentAuthenticationModule";
 	ProviderName = "UNIX_DocumentAuthenticationProvider";
 	ClassName = "UNIX_DocumentAuthentication";
 	Namespaces = {"root/cimv2"};

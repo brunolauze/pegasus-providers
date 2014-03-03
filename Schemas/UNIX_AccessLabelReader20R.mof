@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_AccessLabelReaderModule";
+	Location = "UNIX_AccessLabelReader";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AccessLabelReaderModule";
 	Name = "UNIX_AccessLabelReaderProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AccessLabelReaderModule";
 	ProviderName = "UNIX_AccessLabelReaderProvider";
 	ClassName = "CIM_AccessLabelReader";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AccessLabelReaderModule";
 	ProviderName = "UNIX_AccessLabelReaderProvider";
 	ClassName = "UNIX_AccessLabelReader";
 	Namespaces = {"root/cimv2"};

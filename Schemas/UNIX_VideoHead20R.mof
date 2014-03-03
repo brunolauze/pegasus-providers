@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_VideoHeadModule";
+	Location = "UNIX_VideoHead";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_VideoHeadModule";
 	Name = "UNIX_VideoHeadProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_VideoHeadModule";
 	ProviderName = "UNIX_VideoHeadProvider";
 	ClassName = "CIM_VideoHead";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_VideoHeadModule";
 	ProviderName = "UNIX_VideoHeadProvider";
 	ClassName = "UNIX_VideoHead";
 	Namespaces = {"root/cimv2"};

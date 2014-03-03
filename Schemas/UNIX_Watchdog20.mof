@@ -1234,5 +1234,5 @@ class CIM_Watchdog : CIM_LogicalDevice {
 class UNIX_Watchdog : CIM_Watchdog
 {
 
-}
+};
 

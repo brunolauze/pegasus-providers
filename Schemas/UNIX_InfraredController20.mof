@@ -1228,5 +1228,5 @@ class CIM_InfraredController : CIM_Controller {
 class UNIX_InfraredController : CIM_InfraredController
 {
 
-}
+};
 

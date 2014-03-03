@@ -182,5 +182,5 @@ class CIM_ServiceUsesSecurityService : CIM_ServiceServiceDependency {
 class UNIX_ServiceUsesSecurityService : CIM_ServiceUsesSecurityService
 {
 
-}
+};
 

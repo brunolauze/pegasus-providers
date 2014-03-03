@@ -170,5 +170,5 @@ class CIM_SwitchPortSourceRouting : CIM_ServiceSAPDependency {
 class UNIX_SwitchPortSourceRouting : CIM_SwitchPortSourceRouting
 {
 
-}
+};
 

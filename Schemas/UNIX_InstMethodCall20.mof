@@ -317,5 +317,5 @@ class CIM_InstMethodCall : CIM_InstIndication {
 class UNIX_InstMethodCall : CIM_InstMethodCall
 {
 
-}
+};
 

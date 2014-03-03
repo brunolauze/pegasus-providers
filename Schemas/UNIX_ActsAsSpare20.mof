@@ -67,5 +67,5 @@ class CIM_ActsAsSpare {
 class UNIX_ActsAsSpare : CIM_ActsAsSpare
 {
 
-}
+};
 

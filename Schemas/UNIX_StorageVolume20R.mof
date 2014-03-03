@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_StorageVolumeModule";
+	Location = "UNIX_StorageVolume";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_StorageVolumeModule";
 	Name = "UNIX_StorageVolumeProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_StorageVolumeModule";
 	ProviderName = "UNIX_StorageVolumeProvider";
 	ClassName = "CIM_StorageVolume";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_StorageVolumeModule";
 	ProviderName = "UNIX_StorageVolumeProvider";
 	ClassName = "UNIX_StorageVolume";
 	Namespaces = {"root/cimv2"};

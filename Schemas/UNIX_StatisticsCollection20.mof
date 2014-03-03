@@ -211,5 +211,5 @@ class CIM_StatisticsCollection : CIM_SystemSpecificCollection {
 class UNIX_StatisticsCollection : CIM_StatisticsCollection
 {
 
-}
+};
 

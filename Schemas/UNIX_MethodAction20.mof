@@ -363,5 +363,5 @@ class CIM_MethodAction : CIM_PolicyAction {
 class UNIX_MethodAction : CIM_MethodAction
 {
 
-}
+};
 

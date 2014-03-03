@@ -1227,5 +1227,5 @@ class CIM_PCMCIAController : CIM_Controller {
 class UNIX_PCMCIAController : CIM_PCMCIAController
 {
 
-}
+};
 

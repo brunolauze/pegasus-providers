@@ -144,5 +144,5 @@ class CIM_ComputerSystemMemory : CIM_SystemDevice {
 class UNIX_ComputerSystemMemory : CIM_ComputerSystemMemory
 {
 
-}
+};
 

@@ -115,5 +115,5 @@ class CIM_PolicyRuleValidityPeriod : CIM_PolicyComponent {
 class UNIX_PolicyRuleValidityPeriod : CIM_PolicyRuleValidityPeriod
 {
 
-}
+};
 

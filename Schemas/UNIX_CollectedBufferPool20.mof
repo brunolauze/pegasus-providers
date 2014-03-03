@@ -74,5 +74,5 @@ class CIM_CollectedBufferPool : CIM_MemberOfCollection {
 class UNIX_CollectedBufferPool : CIM_CollectedBufferPool
 {
 
-}
+};
 

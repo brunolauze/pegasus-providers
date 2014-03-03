@@ -441,5 +441,5 @@ class CIM_EthernetPortStatistics : CIM_NetworkPortStatistics {
 class UNIX_EthernetPortStatistics : CIM_EthernetPortStatistics
 {
 
-}
+};
 

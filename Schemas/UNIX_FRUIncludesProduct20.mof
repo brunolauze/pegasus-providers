@@ -60,5 +60,5 @@ class CIM_FRUIncludesProduct {
 class UNIX_FRUIncludesProduct : CIM_FRUIncludesProduct
 {
 
-}
+};
 

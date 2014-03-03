@@ -197,5 +197,5 @@ class CIM_SchedulerUsed : CIM_ServiceServiceDependency {
 class UNIX_SchedulerUsed : CIM_SchedulerUsed
 {
 
-}
+};
 

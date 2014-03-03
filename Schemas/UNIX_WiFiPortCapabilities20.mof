@@ -344,5 +344,5 @@ class CIM_WiFiPortCapabilities : CIM_NetworkPortCapabilities {
 class UNIX_WiFiPortCapabilities : CIM_WiFiPortCapabilities
 {
 
-}
+};
 

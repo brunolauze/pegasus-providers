@@ -263,5 +263,5 @@ class CIM_MediaAccessStatInfo : CIM_DeviceStatisticalInformation {
 class UNIX_MediaAccessStatInfo : CIM_MediaAccessStatInfo
 {
 
-}
+};
 

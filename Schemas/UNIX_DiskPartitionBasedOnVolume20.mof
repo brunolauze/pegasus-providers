@@ -139,5 +139,5 @@ class CIM_DiskPartitionBasedOnVolume : CIM_BasedOn {
 class UNIX_DiskPartitionBasedOnVolume : CIM_DiskPartitionBasedOnVolume
 {
 
-}
+};
 

@@ -99,5 +99,5 @@ class CIM_NamespaceInManager : CIM_HostedDependency {
 class UNIX_NamespaceInManager : CIM_NamespaceInManager
 {
 
-}
+};
 

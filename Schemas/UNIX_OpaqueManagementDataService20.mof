@@ -1312,5 +1312,5 @@ class CIM_OpaqueManagementDataService : CIM_Service {
 class UNIX_OpaqueManagementDataService : CIM_OpaqueManagementDataService
 {
 
-}
+};
 

@@ -108,5 +108,5 @@ class CIM_ComputerSystemPackage : CIM_SystemPackaging {
 class UNIX_ComputerSystemPackage : CIM_ComputerSystemPackage
 {
 
-}
+};
 

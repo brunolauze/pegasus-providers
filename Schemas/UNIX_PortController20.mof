@@ -1253,5 +1253,5 @@ class CIM_PortController : CIM_Controller {
 class UNIX_PortController : CIM_PortController
 {
 
-}
+};
 

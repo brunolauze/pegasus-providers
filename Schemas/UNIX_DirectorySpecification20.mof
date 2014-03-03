@@ -334,5 +334,5 @@ class CIM_DirectorySpecification : CIM_Check {
 class UNIX_DirectorySpecification : CIM_DirectorySpecification
 {
 
-}
+};
 

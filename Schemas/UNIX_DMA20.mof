@@ -869,5 +869,5 @@ class CIM_DMA : CIM_SystemResource {
 class UNIX_DMA : CIM_DMA
 {
 
-}
+};
 

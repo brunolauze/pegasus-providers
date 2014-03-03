@@ -1605,5 +1605,5 @@ class CIM_FibreChannelAdapter : CIM_NetworkAdapter {
 class UNIX_FibreChannelAdapter : CIM_FibreChannelAdapter
 {
 
-}
+};
 

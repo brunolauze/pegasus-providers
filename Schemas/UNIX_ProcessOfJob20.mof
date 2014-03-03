@@ -82,5 +82,5 @@ class CIM_ProcessOfJob : CIM_Component {
 class UNIX_ProcessOfJob : CIM_ProcessOfJob
 {
 
-}
+};
 

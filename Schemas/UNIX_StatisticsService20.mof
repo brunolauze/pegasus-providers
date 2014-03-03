@@ -875,5 +875,5 @@ class CIM_StatisticsService : CIM_Service {
 class UNIX_StatisticsService : CIM_StatisticsService
 {
 
-}
+};
 

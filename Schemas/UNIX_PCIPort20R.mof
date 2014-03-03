@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_PCIPortModule";
+	Location = "UNIX_PCIPort";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PCIPortModule";
 	Name = "UNIX_PCIPortProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PCIPortModule";
 	ProviderName = "UNIX_PCIPortProvider";
 	ClassName = "CIM_PCIPort";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PCIPortModule";
 	ProviderName = "UNIX_PCIPortProvider";
 	ClassName = "UNIX_PCIPort";
 	Namespaces = {"root/cimv2"};

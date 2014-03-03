@@ -76,5 +76,5 @@ class CIM_ServiceStatistics : CIM_Statistics {
 class UNIX_ServiceStatistics : CIM_ServiceStatistics
 {
 
-}
+};
 

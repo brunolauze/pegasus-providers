@@ -226,5 +226,5 @@ class CIM_ListenerDestinationCIMXML : CIM_ListenerDestination {
 class UNIX_ListenerDestinationCIMXML : CIM_ListenerDestinationCIMXML
 {
 
-}
+};
 

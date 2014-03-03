@@ -389,5 +389,5 @@ class CIM_BlockStorageStatisticalData : CIM_StatisticalData {
 class UNIX_BlockStorageStatisticalData : CIM_BlockStorageStatisticalData
 {
 
-}
+};
 

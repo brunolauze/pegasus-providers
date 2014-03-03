@@ -1321,5 +1321,5 @@ class CIM_IndicatorLED : CIM_LogicalDevice {
 class UNIX_IndicatorLED : CIM_IndicatorLED
 {
 
-}
+};
 

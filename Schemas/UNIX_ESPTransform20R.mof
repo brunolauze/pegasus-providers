@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ESPTransformModule";
+	Location = "UNIX_ESPTransform";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ESPTransformModule";
 	Name = "UNIX_ESPTransformProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ESPTransformModule";
 	ProviderName = "UNIX_ESPTransformProvider";
 	ClassName = "CIM_ESPTransform";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ESPTransformModule";
 	ProviderName = "UNIX_ESPTransformProvider";
 	ClassName = "UNIX_ESPTransform";
 	Namespaces = {"root/cimv2"};

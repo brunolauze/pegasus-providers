@@ -329,5 +329,5 @@ class CIM_ModifySettingAction : CIM_Action {
 class UNIX_ModifySettingAction : CIM_ModifySettingAction
 {
 
-}
+};
 

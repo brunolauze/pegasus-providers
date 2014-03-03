@@ -285,5 +285,5 @@ class CIM_InstDeletion : CIM_InstIndication {
 class UNIX_InstDeletion : CIM_InstDeletion
 {
 
-}
+};
 

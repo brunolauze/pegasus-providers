@@ -62,5 +62,5 @@ class CIM_OwningJobElement {
 class UNIX_OwningJobElement : CIM_OwningJobElement
 {
 
-}
+};
 

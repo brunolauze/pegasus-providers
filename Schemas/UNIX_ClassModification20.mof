@@ -282,5 +282,5 @@ class CIM_ClassModification : CIM_ClassIndication {
 class UNIX_ClassModification : CIM_ClassModification
 {
 
-}
+};
 

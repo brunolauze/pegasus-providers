@@ -115,5 +115,5 @@ class CIM_DeviceSoftware : CIM_Dependency {
 class UNIX_DeviceSoftware : CIM_DeviceSoftware
 {
 
-}
+};
 

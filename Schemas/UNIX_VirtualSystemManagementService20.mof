@@ -1088,5 +1088,5 @@ class CIM_VirtualSystemManagementService : CIM_Service {
 class UNIX_VirtualSystemManagementService : CIM_VirtualSystemManagementService
 {
 
-}
+};
 

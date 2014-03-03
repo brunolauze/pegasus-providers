@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ErrorCountersForDeviceModule";
+	Location = "UNIX_ErrorCountersForDevice";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ErrorCountersForDeviceModule";
 	Name = "UNIX_ErrorCountersForDeviceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ErrorCountersForDeviceModule";
 	ProviderName = "UNIX_ErrorCountersForDeviceProvider";
 	ClassName = "CIM_ErrorCountersForDevice";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ErrorCountersForDeviceModule";
 	ProviderName = "UNIX_ErrorCountersForDeviceProvider";
 	ClassName = "UNIX_ErrorCountersForDevice";
 	Namespaces = {"root/cimv2"};

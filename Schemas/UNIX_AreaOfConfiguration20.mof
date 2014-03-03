@@ -90,5 +90,5 @@ class CIM_AreaOfConfiguration : CIM_Dependency {
 class UNIX_AreaOfConfiguration : CIM_AreaOfConfiguration
 {
 
-}
+};
 

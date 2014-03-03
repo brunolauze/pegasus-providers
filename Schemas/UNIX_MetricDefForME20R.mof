@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_MetricDefForMEModule";
+	Location = "UNIX_MetricDefForME";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MetricDefForMEModule";
 	Name = "UNIX_MetricDefForMEProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MetricDefForMEModule";
 	ProviderName = "UNIX_MetricDefForMEProvider";
 	ClassName = "CIM_MetricDefForME";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MetricDefForMEModule";
 	ProviderName = "UNIX_MetricDefForMEProvider";
 	ClassName = "UNIX_MetricDefForME";
 	Namespaces = {"root/cimv2"};

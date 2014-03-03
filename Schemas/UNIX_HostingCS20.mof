@@ -98,5 +98,5 @@ class CIM_HostingCS : CIM_HostedDependency {
 class UNIX_HostingCS : CIM_HostingCS
 {
 
-}
+};
 

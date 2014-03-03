@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ParameterValueSourcesModule";
+	Location = "UNIX_ParameterValueSources";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ParameterValueSourcesModule";
 	Name = "UNIX_ParameterValueSourcesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ParameterValueSourcesModule";
 	ProviderName = "UNIX_ParameterValueSourcesProvider";
 	ClassName = "CIM_ParameterValueSources";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ParameterValueSourcesModule";
 	ProviderName = "UNIX_ParameterValueSourcesProvider";
 	ClassName = "UNIX_ParameterValueSources";
 	Namespaces = {"root/cimv2"};

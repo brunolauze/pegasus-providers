@@ -196,5 +196,5 @@ class CIM_MemoryCapacity : CIM_PhysicalCapacity {
 class UNIX_MemoryCapacity : CIM_MemoryCapacity
 {
 
-}
+};
 

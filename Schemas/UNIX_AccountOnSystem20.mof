@@ -115,5 +115,5 @@ class CIM_AccountOnSystem : CIM_SystemComponent {
 class UNIX_AccountOnSystem : CIM_AccountOnSystem
 {
 
-}
+};
 

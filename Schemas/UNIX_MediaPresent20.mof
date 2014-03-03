@@ -84,5 +84,5 @@ class CIM_MediaPresent : CIM_Dependency {
 class UNIX_MediaPresent : CIM_MediaPresent
 {
 
-}
+};
 

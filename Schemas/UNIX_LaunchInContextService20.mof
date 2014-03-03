@@ -1044,5 +1044,5 @@ class CIM_LaunchInContextService : CIM_Service {
 class UNIX_LaunchInContextService : CIM_LaunchInContextService
 {
 
-}
+};
 

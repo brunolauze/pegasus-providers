@@ -117,5 +117,5 @@ class CIM_ConcreteIdentity : CIM_LogicalIdentity {
 class UNIX_ConcreteIdentity : CIM_ConcreteIdentity
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_FCPortRateStatisticsModule";
+	Location = "UNIX_FCPortRateStatistics";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_FCPortRateStatisticsModule";
 	Name = "UNIX_FCPortRateStatisticsProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_FCPortRateStatisticsModule";
 	ProviderName = "UNIX_FCPortRateStatisticsProvider";
 	ClassName = "CIM_FCPortRateStatistics";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_FCPortRateStatisticsModule";
 	ProviderName = "UNIX_FCPortRateStatisticsProvider";
 	ClassName = "UNIX_FCPortRateStatistics";
 	Namespaces = {"root/cimv2"};

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_CommMechanismForManagerModule";
+	Location = "UNIX_CommMechanismForManager";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CommMechanismForManagerModule";
 	Name = "UNIX_CommMechanismForManagerProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CommMechanismForManagerModule";
 	ProviderName = "UNIX_CommMechanismForManagerProvider";
 	ClassName = "CIM_CommMechanismForManager";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CommMechanismForManagerModule";
 	ProviderName = "UNIX_CommMechanismForManagerProvider";
 	ClassName = "UNIX_CommMechanismForManager";
 	Namespaces = {"root/cimv2"};

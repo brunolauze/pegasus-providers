@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_HostedRoutingPolicyModule";
+	Location = "UNIX_HostedRoutingPolicy";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HostedRoutingPolicyModule";
 	Name = "UNIX_HostedRoutingPolicyProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HostedRoutingPolicyModule";
 	ProviderName = "UNIX_HostedRoutingPolicyProvider";
 	ClassName = "CIM_HostedRoutingPolicy";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HostedRoutingPolicyModule";
 	ProviderName = "UNIX_HostedRoutingPolicyProvider";
 	ClassName = "UNIX_HostedRoutingPolicy";
 	Namespaces = {"root/cimv2"};

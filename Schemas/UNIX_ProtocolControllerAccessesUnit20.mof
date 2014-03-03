@@ -144,5 +144,5 @@ class CIM_ProtocolControllerAccessesUnit : CIM_ProtocolControllerForDevice {
 class UNIX_ProtocolControllerAccessesUnit : CIM_ProtocolControllerAccessesUnit
 {
 
-}
+};
 

@@ -54,5 +54,5 @@ class CIM_DirectorySpecificationFile {
 class UNIX_DirectorySpecificationFile : CIM_DirectorySpecificationFile
 {
 
-}
+};
 

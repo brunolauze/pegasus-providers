@@ -1098,5 +1098,5 @@ class CIM_CLPProtocolEndpoint : CIM_ProtocolEndpoint {
 class UNIX_CLPProtocolEndpoint : CIM_CLPProtocolEndpoint
 {
 
-}
+};
 

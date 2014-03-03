@@ -953,5 +953,5 @@ class CIM_RemoteFileSystem : CIM_FileSystem {
 class UNIX_RemoteFileSystem : CIM_RemoteFileSystem
 {
 
-}
+};
 

@@ -1267,5 +1267,5 @@ class CIM_AlarmDevice : CIM_LogicalDevice {
 class UNIX_AlarmDevice : CIM_AlarmDevice
 {
 
-}
+};
 

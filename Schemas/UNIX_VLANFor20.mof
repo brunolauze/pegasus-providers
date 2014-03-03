@@ -103,5 +103,5 @@ class CIM_VLANFor : CIM_ServiceSAPDependency {
 class UNIX_VLANFor : CIM_VLANFor
 {
 
-}
+};
 

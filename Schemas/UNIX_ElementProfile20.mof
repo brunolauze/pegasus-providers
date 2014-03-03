@@ -72,5 +72,5 @@ class CIM_ElementProfile {
 class UNIX_ElementProfile : CIM_ElementProfile
 {
 
-}
+};
 

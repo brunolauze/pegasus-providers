@@ -90,5 +90,5 @@ class CIM_SnapshotOfExtent : CIM_Dependency {
 class UNIX_SnapshotOfExtent : CIM_SnapshotOfExtent
 {
 
-}
+};
 

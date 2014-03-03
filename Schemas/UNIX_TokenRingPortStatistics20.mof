@@ -415,5 +415,5 @@ class CIM_TokenRingPortStatistics : CIM_NetworkPortStatistics {
 class UNIX_TokenRingPortStatistics : CIM_TokenRingPortStatistics
 {
 
-}
+};
 

@@ -287,5 +287,5 @@ class CIM_SCSIInterface : CIM_ControlledBy {
 class UNIX_SCSIInterface : CIM_SCSIInterface
 {
 
-}
+};
 

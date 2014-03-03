@@ -164,5 +164,5 @@ class CIM_LogicalDiskBasedOnVolume : CIM_LogicalDiskBasedOnExtent {
 class UNIX_LogicalDiskBasedOnVolume : CIM_LogicalDiskBasedOnVolume
 {
 
-}
+};
 

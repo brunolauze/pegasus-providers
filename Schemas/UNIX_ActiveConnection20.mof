@@ -157,5 +157,5 @@ class CIM_ActiveConnection : CIM_SAPSAPDependency {
 class UNIX_ActiveConnection : CIM_ActiveConnection
 {
 
-}
+};
 

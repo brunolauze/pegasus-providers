@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_NamespaceModule";
+	Location = "UNIX_Namespace";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NamespaceModule";
 	Name = "UNIX_NamespaceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NamespaceModule";
 	ProviderName = "UNIX_NamespaceProvider";
 	ClassName = "CIM_Namespace";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NamespaceModule";
 	ProviderName = "UNIX_NamespaceProvider";
 	ClassName = "UNIX_Namespace";
 	Namespaces = {"root/cimv2"};

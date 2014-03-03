@@ -254,5 +254,5 @@ class CIM_LANConnectivitySegment : CIM_ConnectivityCollection {
 class UNIX_LANConnectivitySegment : CIM_LANConnectivitySegment
 {
 
-}
+};
 

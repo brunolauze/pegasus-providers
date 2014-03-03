@@ -321,5 +321,5 @@ class CIM_SwapSpaceCheck : CIM_Check {
 class UNIX_SwapSpaceCheck : CIM_SwapSpaceCheck
 {
 
-}
+};
 

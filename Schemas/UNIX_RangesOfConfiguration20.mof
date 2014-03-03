@@ -90,5 +90,5 @@ class CIM_RangesOfConfiguration : CIM_Dependency {
 class UNIX_RangesOfConfiguration : CIM_RangesOfConfiguration
 {
 
-}
+};
 

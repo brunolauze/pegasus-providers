@@ -178,10 +178,6 @@ class CIM_Group : CIM_Collection {
 
 class UNIX_Group : CIM_Group
 {
-		[Description ( 
-          "A Group ID is a (possibly ambiguous) id string by which "
-          "the group is commonly known in some limited scope (such "
-          "as an UNIX-like group file)." )]
-   string GroupID;
-}
+
+};
 

@@ -109,5 +109,5 @@ class CIM_QoSSubService : CIM_ServiceComponent {
 class UNIX_QoSSubService : CIM_QoSSubService
 {
 
-}
+};
 

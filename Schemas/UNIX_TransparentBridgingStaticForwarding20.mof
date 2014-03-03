@@ -80,5 +80,5 @@ class CIM_TransparentBridgingStaticForwarding : CIM_Dependency {
 class UNIX_TransparentBridgingStaticForwarding : CIM_TransparentBridgingStaticForwarding
 {
 
-}
+};
 

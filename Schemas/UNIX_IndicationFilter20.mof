@@ -289,5 +289,5 @@ class CIM_IndicationFilter : CIM_ManagedElement {
 class UNIX_IndicationFilter : CIM_IndicationFilter
 {
 
-}
+};
 

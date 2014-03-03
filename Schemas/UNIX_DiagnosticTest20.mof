@@ -1321,5 +1321,5 @@ class CIM_DiagnosticTest : CIM_DiagnosticService {
 class UNIX_DiagnosticTest : CIM_DiagnosticTest
 {
 
-}
+};
 

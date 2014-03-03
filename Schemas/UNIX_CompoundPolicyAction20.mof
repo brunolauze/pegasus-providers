@@ -296,5 +296,5 @@ class CIM_CompoundPolicyAction : CIM_PolicyAction {
 class UNIX_CompoundPolicyAction : CIM_CompoundPolicyAction
 {
 
-}
+};
 

@@ -801,5 +801,5 @@ class CIM_PrintSAP : CIM_ServiceAccessPoint {
 class UNIX_PrintSAP : CIM_PrintSAP
 {
 
-}
+};
 

@@ -254,5 +254,5 @@ class CIM_PickerStatData : CIM_StatisticalData {
 class UNIX_PickerStatData : CIM_PickerStatData
 {
 
-}
+};
 

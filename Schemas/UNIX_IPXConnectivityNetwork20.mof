@@ -230,5 +230,5 @@ class CIM_IPXConnectivityNetwork : CIM_ConnectivityCollection {
 class UNIX_IPXConnectivityNetwork : CIM_IPXConnectivityNetwork
 {
 
-}
+};
 

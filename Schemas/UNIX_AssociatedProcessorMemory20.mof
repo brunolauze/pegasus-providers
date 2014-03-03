@@ -102,5 +102,5 @@ class CIM_AssociatedProcessorMemory : CIM_AssociatedMemory {
 class UNIX_AssociatedProcessorMemory : CIM_AssociatedProcessorMemory
 {
 
-}
+};
 

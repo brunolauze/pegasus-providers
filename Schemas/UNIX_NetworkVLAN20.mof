@@ -270,5 +270,5 @@ class CIM_NetworkVLAN : CIM_ConnectivityCollection {
 class UNIX_NetworkVLAN : CIM_NetworkVLAN
 {
 
-}
+};
 

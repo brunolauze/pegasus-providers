@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_RemoteFileSystemModule";
+	Location = "UNIX_RemoteFileSystem";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RemoteFileSystemModule";
 	Name = "UNIX_RemoteFileSystemProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RemoteFileSystemModule";
 	ProviderName = "UNIX_RemoteFileSystemProvider";
 	ClassName = "CIM_FileSystem";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RemoteFileSystemModule";
 	ProviderName = "UNIX_RemoteFileSystemProvider";
 	ClassName = "UNIX_FileSystem";
 	Namespaces = {"root/cimv2"};
@@ -60,7 +70,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RemoteFileSystemModule";
 	ProviderName = "UNIX_RemoteFileSystemProvider";
 	ClassName = "CIM_RemoteFileSystem";
 	Namespaces = {"root/cimv2"};
@@ -71,7 +81,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RemoteFileSystemModule";
 	ProviderName = "UNIX_RemoteFileSystemProvider";
 	ClassName = "UNIX_RemoteFileSystem";
 	Namespaces = {"root/cimv2"};

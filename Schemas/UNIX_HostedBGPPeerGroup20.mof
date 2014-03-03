@@ -102,5 +102,5 @@ class CIM_HostedBGPPeerGroup : CIM_HostedDependency {
 class UNIX_HostedBGPPeerGroup : CIM_HostedBGPPeerGroup
 {
 
-}
+};
 

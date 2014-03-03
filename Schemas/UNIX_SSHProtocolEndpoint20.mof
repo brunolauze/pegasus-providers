@@ -1112,5 +1112,5 @@ class CIM_SSHProtocolEndpoint : CIM_ProtocolEndpoint {
 class UNIX_SSHProtocolEndpoint : CIM_SSHProtocolEndpoint
 {
 
-}
+};
 

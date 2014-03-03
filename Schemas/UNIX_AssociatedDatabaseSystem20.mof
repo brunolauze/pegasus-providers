@@ -78,5 +78,5 @@ class CIM_AssociatedDatabaseSystem : CIM_Dependency {
 class UNIX_AssociatedDatabaseSystem : CIM_AssociatedDatabaseSystem
 {
 
-}
+};
 

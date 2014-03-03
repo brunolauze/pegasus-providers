@@ -284,5 +284,5 @@ class CIM_AccountAuthentication : CIM_AuthenticationCondition {
 class UNIX_AccountAuthentication : CIM_AccountAuthentication
 {
 
-}
+};
 

@@ -78,5 +78,5 @@ class CIM_OSProcess : CIM_Component {
 class UNIX_OSProcess : CIM_OSProcess
 {
 
-}
+};
 

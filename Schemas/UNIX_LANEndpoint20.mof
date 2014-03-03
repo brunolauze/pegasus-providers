@@ -1064,5 +1064,5 @@ class CIM_LANEndpoint : CIM_ProtocolEndpoint {
 class UNIX_LANEndpoint : CIM_LANEndpoint
 {
 
-}
+};
 

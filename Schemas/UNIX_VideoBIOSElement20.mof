@@ -720,5 +720,5 @@ class CIM_VideoBIOSElement : CIM_SoftwareElement {
 class UNIX_VideoBIOSElement : CIM_VideoBIOSElement
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ForwardedRoutesModule";
+	Location = "UNIX_ForwardedRoutes";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ForwardedRoutesModule";
 	Name = "UNIX_ForwardedRoutesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ForwardedRoutesModule";
 	ProviderName = "UNIX_ForwardedRoutesProvider";
 	ClassName = "CIM_ForwardedRoutes";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ForwardedRoutesModule";
 	ProviderName = "UNIX_ForwardedRoutesProvider";
 	ClassName = "UNIX_ForwardedRoutes";
 	Namespaces = {"root/cimv2"};

@@ -1026,5 +1026,5 @@ class CIM_Magazine : CIM_StorageMediaLocation {
 class UNIX_Magazine : CIM_Magazine
 {
 
-}
+};
 

@@ -168,5 +168,5 @@ class CIM_SystemConfiguration : CIM_ManagedElement {
 class UNIX_SystemConfiguration : CIM_SystemConfiguration
 {
 
-}
+};
 

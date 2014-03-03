@@ -948,5 +948,5 @@ class CIM_StorageLibrary : CIM_System {
 class UNIX_StorageLibrary : CIM_StorageLibrary
 {
 
-}
+};
 

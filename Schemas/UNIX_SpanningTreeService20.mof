@@ -1110,5 +1110,5 @@ class CIM_SpanningTreeService : CIM_ForwardingService {
 class UNIX_SpanningTreeService : CIM_SpanningTreeService
 {
 
-}
+};
 

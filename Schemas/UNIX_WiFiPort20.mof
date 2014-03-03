@@ -1384,5 +1384,5 @@ class CIM_WiFiPort : CIM_NetworkPort {
 class UNIX_WiFiPort : CIM_WiFiPort
 {
 
-}
+};
 

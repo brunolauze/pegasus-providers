@@ -88,5 +88,5 @@ class CIM_DeviceSAPImplementation : CIM_Dependency {
 class UNIX_DeviceSAPImplementation : CIM_DeviceSAPImplementation
 {
 
-}
+};
 

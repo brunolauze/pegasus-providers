@@ -102,5 +102,5 @@ class CIM_ForwardsAmong : CIM_ServiceSAPDependency {
 class UNIX_ForwardsAmong : CIM_ForwardsAmong
 {
 
-}
+};
 

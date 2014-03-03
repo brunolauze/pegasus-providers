@@ -100,5 +100,5 @@ class CIM_ScopedSetting : CIM_HostedDependency {
 class UNIX_ScopedSetting : CIM_ScopedSetting
 {
 
-}
+};
 

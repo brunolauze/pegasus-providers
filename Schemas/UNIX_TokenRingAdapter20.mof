@@ -1575,5 +1575,5 @@ class CIM_TokenRingAdapter : CIM_NetworkAdapter {
 class UNIX_TokenRingAdapter : CIM_TokenRingAdapter
 {
 
-}
+};
 

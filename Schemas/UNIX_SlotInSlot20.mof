@@ -121,5 +121,5 @@ class CIM_SlotInSlot : CIM_ConnectedTo {
 class UNIX_SlotInSlot : CIM_SlotInSlot
 {
 
-}
+};
 

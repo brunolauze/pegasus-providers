@@ -908,5 +908,5 @@ class CIM_ObjectManagerCommunicationMechanism : CIM_ServiceAccessPoint {
 class UNIX_ObjectManagerCommunicationMechanism : CIM_ObjectManagerCommunicationMechanism
 {
 
-}
+};
 

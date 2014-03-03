@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_DiagnosticTestModule";
+	Location = "UNIX_DiagnosticTest";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DiagnosticTestModule";
 	Name = "UNIX_DiagnosticTestProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DiagnosticTestModule";
 	ProviderName = "UNIX_DiagnosticTestProvider";
 	ClassName = "CIM_DiagnosticTest";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DiagnosticTestModule";
 	ProviderName = "UNIX_DiagnosticTestProvider";
 	ClassName = "UNIX_DiagnosticTest";
 	Namespaces = {"root/cimv2"};

@@ -813,5 +813,5 @@ class CIM_USBRedirectionSAP : CIM_ServiceAccessPoint {
 class UNIX_USBRedirectionSAP : CIM_USBRedirectionSAP
 {
 
-}
+};
 

@@ -276,5 +276,5 @@ class CIM_OtherRoleInformation : CIM_ManagedElement {
 class UNIX_OtherRoleInformation : CIM_OtherRoleInformation
 {
 
-}
+};
 

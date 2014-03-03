@@ -421,5 +421,5 @@ class CIM_ESPTransform : CIM_SATransform {
 class UNIX_ESPTransform : CIM_ESPTransform
 {
 
-}
+};
 

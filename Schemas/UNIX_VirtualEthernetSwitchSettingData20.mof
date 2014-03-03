@@ -548,5 +548,5 @@ class CIM_VirtualEthernetSwitchSettingData : CIM_VirtualSystemSettingData {
 class UNIX_VirtualEthernetSwitchSettingData : CIM_VirtualEthernetSwitchSettingData
 {
 
-}
+};
 

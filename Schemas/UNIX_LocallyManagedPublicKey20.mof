@@ -108,5 +108,5 @@ class CIM_LocallyManagedPublicKey : CIM_ManagedCredential {
 class UNIX_LocallyManagedPublicKey : CIM_LocallyManagedPublicKey
 {
 
-}
+};
 

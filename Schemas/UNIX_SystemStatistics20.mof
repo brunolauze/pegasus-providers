@@ -76,5 +76,5 @@ class CIM_SystemStatistics : CIM_Statistics {
 class UNIX_SystemStatistics : CIM_SystemStatistics
 {
 
-}
+};
 

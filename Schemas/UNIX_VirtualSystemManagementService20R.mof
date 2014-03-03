@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_VirtualSystemManagementServiceModule";
+	Location = "UNIX_VirtualSystemManagementService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_VirtualSystemManagementServiceModule";
 	Name = "UNIX_VirtualSystemManagementServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_VirtualSystemManagementServiceModule";
 	ProviderName = "UNIX_VirtualSystemManagementServiceProvider";
 	ClassName = "CIM_VirtualSystemManagementService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_VirtualSystemManagementServiceModule";
 	ProviderName = "UNIX_VirtualSystemManagementServiceProvider";
 	ClassName = "UNIX_VirtualSystemManagementService";
 	Namespaces = {"root/cimv2"};

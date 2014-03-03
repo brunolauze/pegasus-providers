@@ -139,5 +139,5 @@ class CIM_TapePartitionOnSurface : CIM_BasedOn {
 class UNIX_TapePartitionOnSurface : CIM_TapePartitionOnSurface
 {
 
-}
+};
 

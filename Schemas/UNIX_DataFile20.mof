@@ -604,5 +604,5 @@ class CIM_DataFile : CIM_LogicalFile {
 class UNIX_DataFile : CIM_DataFile
 {
 
-}
+};
 

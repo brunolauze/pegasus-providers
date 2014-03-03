@@ -112,5 +112,5 @@ class CIM_ConfigurationForSystem : CIM_HostedDependency {
 class UNIX_ConfigurationForSystem : CIM_ConfigurationForSystem
 {
 
-}
+};
 

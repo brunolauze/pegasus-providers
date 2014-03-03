@@ -1719,5 +1719,5 @@ class CIM_VoltageSensor : CIM_NumericSensor {
 class UNIX_VoltageSensor : CIM_VoltageSensor
 {
 
-}
+};
 

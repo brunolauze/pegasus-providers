@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SynchronizedModule";
+	Location = "UNIX_Synchronized";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SynchronizedModule";
 	Name = "UNIX_SynchronizedProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SynchronizedModule";
 	ProviderName = "UNIX_SynchronizedProvider";
 	ClassName = "CIM_Synchronized";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SynchronizedModule";
 	ProviderName = "UNIX_SynchronizedProvider";
 	ClassName = "UNIX_Synchronized";
 	Namespaces = {"root/cimv2"};

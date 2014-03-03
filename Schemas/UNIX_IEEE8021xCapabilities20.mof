@@ -214,5 +214,5 @@ class CIM_IEEE8021xCapabilities : CIM_Capabilities {
 class UNIX_IEEE8021xCapabilities : CIM_IEEE8021xCapabilities
 {
 
-}
+};
 

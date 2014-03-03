@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_DVDDriveModule";
+	Location = "UNIX_DVDDrive";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DVDDriveModule";
 	Name = "UNIX_DVDDriveProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DVDDriveModule";
 	ProviderName = "UNIX_DVDDriveProvider";
 	ClassName = "CIM_DVDDrive";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DVDDriveModule";
 	ProviderName = "UNIX_DVDDriveProvider";
 	ClassName = "UNIX_DVDDrive";
 	Namespaces = {"root/cimv2"};

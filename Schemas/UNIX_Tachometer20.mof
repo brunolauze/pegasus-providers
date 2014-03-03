@@ -1648,5 +1648,5 @@ class CIM_Tachometer : CIM_NumericSensor {
 class UNIX_Tachometer : CIM_Tachometer
 {
 
-}
+};
 

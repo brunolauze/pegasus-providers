@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_X509CertificateModule";
+	Location = "UNIX_X509Certificate";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_X509CertificateModule";
 	Name = "UNIX_X509CertificateProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_X509CertificateModule";
 	ProviderName = "UNIX_X509CertificateProvider";
 	ClassName = "CIM_X509Certificate";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_X509CertificateModule";
 	ProviderName = "UNIX_X509CertificateProvider";
 	ClassName = "UNIX_X509Certificate";
 	Namespaces = {"root/cimv2"};

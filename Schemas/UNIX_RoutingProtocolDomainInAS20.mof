@@ -133,5 +133,5 @@ class CIM_RoutingProtocolDomainInAS : CIM_ContainedDomain {
 class UNIX_RoutingProtocolDomainInAS : CIM_RoutingProtocolDomainInAS
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_TimeServiceModule";
+	Location = "UNIX_TimeService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_TimeServiceModule";
 	Name = "UNIX_TimeServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_TimeServiceModule";
 	ProviderName = "UNIX_TimeServiceProvider";
 	ClassName = "CIM_TimeService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_TimeServiceModule";
 	ProviderName = "UNIX_TimeServiceProvider";
 	ClassName = "UNIX_TimeService";
 	Namespaces = {"root/cimv2"};

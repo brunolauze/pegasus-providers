@@ -1024,5 +1024,5 @@ class CIM_OSPFService : CIM_RouteCalculationService {
 class UNIX_OSPFService : CIM_OSPFService
 {
 
-}
+};
 

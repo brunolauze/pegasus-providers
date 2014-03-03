@@ -115,5 +115,5 @@ class CIM_PortImplementsEndpoint : CIM_DeviceSAPImplementation {
 class UNIX_PortImplementsEndpoint : CIM_PortImplementsEndpoint
 {
 
-}
+};
 

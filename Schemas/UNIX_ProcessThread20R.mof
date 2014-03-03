@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ProcessThreadModule";
+	Location = "UNIX_ProcessThread";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ProcessThreadModule";
 	Name = "UNIX_ProcessThreadProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ProcessThreadModule";
 	ProviderName = "UNIX_ProcessThreadProvider";
 	ClassName = "CIM_ProcessThread";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ProcessThreadModule";
 	ProviderName = "UNIX_ProcessThreadProvider";
 	ClassName = "UNIX_ProcessThread";
 	Namespaces = {"root/cimv2"};

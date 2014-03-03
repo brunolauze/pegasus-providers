@@ -1013,5 +1013,5 @@ class CIM_TCPProtocolEndpoint : CIM_ProtocolEndpoint {
 class UNIX_TCPProtocolEndpoint : CIM_TCPProtocolEndpoint
 {
 
-}
+};
 

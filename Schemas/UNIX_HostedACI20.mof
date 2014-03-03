@@ -108,5 +108,5 @@ class CIM_HostedACI : CIM_HostedDependency {
 class UNIX_HostedACI : CIM_HostedACI
 {
 
-}
+};
 

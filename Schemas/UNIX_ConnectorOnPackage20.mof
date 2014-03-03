@@ -114,5 +114,5 @@ class CIM_ConnectorOnPackage : CIM_Container {
 class UNIX_ConnectorOnPackage : CIM_ConnectorOnPackage
 {
 
-}
+};
 

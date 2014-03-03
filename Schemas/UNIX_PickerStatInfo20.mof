@@ -244,5 +244,5 @@ class CIM_PickerStatInfo : CIM_DeviceStatisticalInformation {
 class UNIX_PickerStatInfo : CIM_PickerStatInfo
 {
 
-}
+};
 

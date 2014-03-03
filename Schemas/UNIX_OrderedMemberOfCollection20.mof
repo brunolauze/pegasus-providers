@@ -98,5 +98,5 @@ class CIM_OrderedMemberOfCollection : CIM_MemberOfCollection {
 class UNIX_OrderedMemberOfCollection : CIM_OrderedMemberOfCollection
 {
 
-}
+};
 

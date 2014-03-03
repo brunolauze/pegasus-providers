@@ -275,5 +275,5 @@ class CIM_GatewayPathID : CIM_StorageHardwareID {
 class UNIX_GatewayPathID : CIM_GatewayPathID
 {
 
-}
+};
 

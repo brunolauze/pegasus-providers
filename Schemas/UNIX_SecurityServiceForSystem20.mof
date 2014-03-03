@@ -129,5 +129,5 @@ class CIM_SecurityServiceForSystem : CIM_ProvidesServiceToElement {
 class UNIX_SecurityServiceForSystem : CIM_SecurityServiceForSystem
 {
 
-}
+};
 

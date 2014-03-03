@@ -1551,5 +1551,5 @@ class CIM_PCIBridge : CIM_PCIDevice {
 class UNIX_PCIBridge : CIM_PCIBridge
 {
 
-}
+};
 

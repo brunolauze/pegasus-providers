@@ -137,5 +137,5 @@ class CIM_HostedForwardingServices : CIM_HostedService {
 class UNIX_HostedForwardingServices : CIM_HostedForwardingServices
 {
 
-}
+};
 

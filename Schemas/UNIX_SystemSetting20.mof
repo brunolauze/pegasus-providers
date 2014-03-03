@@ -595,5 +595,5 @@ class CIM_SystemSetting : CIM_Setting {
 class UNIX_SystemSetting : CIM_SystemSetting
 {
 
-}
+};
 

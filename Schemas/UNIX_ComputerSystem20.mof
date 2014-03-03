@@ -1093,5 +1093,5 @@ class CIM_UnitaryComputerSystem : CIM_ComputerSystem {
 class UNIX_ComputerSystem : CIM_UnitaryComputerSystem
 {
 
-}
+};
 

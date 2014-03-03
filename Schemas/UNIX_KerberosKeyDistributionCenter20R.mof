@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_KerberosKeyDistributionCenterModule";
+	Location = "UNIX_KerberosKeyDistributionCenter";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_KerberosKeyDistributionCenterModule";
 	Name = "UNIX_KerberosKeyDistributionCenterProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_KerberosKeyDistributionCenterModule";
 	ProviderName = "UNIX_KerberosKeyDistributionCenterProvider";
 	ClassName = "CIM_KerberosKeyDistributionCenter";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_KerberosKeyDistributionCenterModule";
 	ProviderName = "UNIX_KerberosKeyDistributionCenterProvider";
 	ClassName = "UNIX_KerberosKeyDistributionCenter";
 	Namespaces = {"root/cimv2"};

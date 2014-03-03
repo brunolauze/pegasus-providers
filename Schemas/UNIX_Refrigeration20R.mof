@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_RefrigerationModule";
+	Location = "UNIX_Refrigeration";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RefrigerationModule";
 	Name = "UNIX_RefrigerationProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RefrigerationModule";
 	ProviderName = "UNIX_RefrigerationProvider";
 	ClassName = "CIM_Refrigeration";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RefrigerationModule";
 	ProviderName = "UNIX_RefrigerationProvider";
 	ClassName = "UNIX_Refrigeration";
 	Namespaces = {"root/cimv2"};

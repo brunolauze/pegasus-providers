@@ -175,5 +175,5 @@ class CIM_PhysicalStatisticalInformation : CIM_StatisticalInformation {
 class UNIX_PhysicalStatisticalInformation : CIM_PhysicalStatisticalInformation
 {
 
-}
+};
 

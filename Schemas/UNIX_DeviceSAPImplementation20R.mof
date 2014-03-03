@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_DeviceSAPImplementationModule";
+	Location = "UNIX_DeviceSAPImplementation";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DeviceSAPImplementationModule";
 	Name = "UNIX_DeviceSAPImplementationProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DeviceSAPImplementationModule";
 	ProviderName = "UNIX_DeviceSAPImplementationProvider";
 	ClassName = "CIM_DeviceSAPImplementation";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DeviceSAPImplementationModule";
 	ProviderName = "UNIX_DeviceSAPImplementationProvider";
 	ClassName = "UNIX_DeviceSAPImplementation";
 	Namespaces = {"root/cimv2"};

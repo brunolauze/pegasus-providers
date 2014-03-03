@@ -154,5 +154,5 @@ class CIM_PSExtentBasedOnPExtent : CIM_BasedOn {
 class UNIX_PSExtentBasedOnPExtent : CIM_PSExtentBasedOnPExtent
 {
 
-}
+};
 

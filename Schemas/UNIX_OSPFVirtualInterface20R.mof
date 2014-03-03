@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_OSPFVirtualInterfaceModule";
+	Location = "UNIX_OSPFVirtualInterface";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OSPFVirtualInterfaceModule";
 	Name = "UNIX_OSPFVirtualInterfaceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OSPFVirtualInterfaceModule";
 	ProviderName = "UNIX_OSPFVirtualInterfaceProvider";
 	ClassName = "CIM_OSPFVirtualInterface";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OSPFVirtualInterfaceModule";
 	ProviderName = "UNIX_OSPFVirtualInterfaceProvider";
 	ClassName = "UNIX_OSPFVirtualInterface";
 	Namespaces = {"root/cimv2"};

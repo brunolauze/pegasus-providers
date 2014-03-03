@@ -1719,5 +1719,5 @@ class CIM_CurrentSensor : CIM_NumericSensor {
 class UNIX_CurrentSensor : CIM_CurrentSensor
 {
 
-}
+};
 

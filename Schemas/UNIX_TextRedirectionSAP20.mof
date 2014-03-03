@@ -807,5 +807,5 @@ class CIM_TextRedirectionSAP : CIM_ServiceAccessPoint {
 class UNIX_TextRedirectionSAP : CIM_TextRedirectionSAP
 {
 
-}
+};
 

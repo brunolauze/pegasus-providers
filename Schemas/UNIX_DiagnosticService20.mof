@@ -973,5 +973,5 @@ class CIM_DiagnosticService : CIM_Service {
 class UNIX_DiagnosticService : CIM_DiagnosticService
 {
 
-}
+};
 

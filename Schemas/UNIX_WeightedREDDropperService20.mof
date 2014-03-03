@@ -1075,5 +1075,5 @@ class CIM_WeightedREDDropperService : CIM_DropperService {
 class UNIX_WeightedREDDropperService : CIM_WeightedREDDropperService
 {
 
-}
+};
 

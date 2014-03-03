@@ -81,5 +81,5 @@ class CIM_ElementCapabilities {
 class UNIX_ElementCapabilities : CIM_ElementCapabilities
 {
 
-}
+};
 

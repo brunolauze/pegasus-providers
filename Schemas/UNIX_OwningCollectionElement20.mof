@@ -57,5 +57,5 @@ class CIM_OwningCollectionElement {
 class UNIX_OwningCollectionElement : CIM_OwningCollectionElement
 {
 
-}
+};
 

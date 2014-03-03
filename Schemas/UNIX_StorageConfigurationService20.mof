@@ -1355,5 +1355,5 @@ class CIM_StorageConfigurationService : CIM_Service {
 class UNIX_StorageConfigurationService : CIM_StorageConfigurationService
 {
 
-}
+};
 

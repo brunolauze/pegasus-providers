@@ -111,5 +111,5 @@ class CIM_SystemBIOS : CIM_SystemComponent {
 class UNIX_SystemBIOS : CIM_SystemBIOS
 {
 
-}
+};
 

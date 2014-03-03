@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_HostedBGPRouteMapModule";
+	Location = "UNIX_HostedBGPRouteMap";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HostedBGPRouteMapModule";
 	Name = "UNIX_HostedBGPRouteMapProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HostedBGPRouteMapModule";
 	ProviderName = "UNIX_HostedBGPRouteMapProvider";
 	ClassName = "CIM_HostedBGPRouteMap";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HostedBGPRouteMapModule";
 	ProviderName = "UNIX_HostedBGPRouteMapProvider";
 	ClassName = "UNIX_HostedBGPRouteMap";
 	Namespaces = {"root/cimv2"};

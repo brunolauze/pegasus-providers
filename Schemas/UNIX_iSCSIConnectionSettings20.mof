@@ -379,5 +379,5 @@ class CIM_iSCSIConnectionSettings : CIM_SettingData {
 class UNIX_iSCSIConnectionSettings : CIM_iSCSIConnectionSettings
 {
 
-}
+};
 

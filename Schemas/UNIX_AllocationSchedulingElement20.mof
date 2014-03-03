@@ -244,5 +244,5 @@ class CIM_AllocationSchedulingElement : CIM_SchedulingElement {
 class UNIX_AllocationSchedulingElement : CIM_AllocationSchedulingElement
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_OpaqueManagementDataServiceModule";
+	Location = "UNIX_OpaqueManagementDataService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OpaqueManagementDataServiceModule";
 	Name = "UNIX_OpaqueManagementDataServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OpaqueManagementDataServiceModule";
 	ProviderName = "UNIX_OpaqueManagementDataServiceProvider";
 	ClassName = "CIM_OpaqueManagementDataService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OpaqueManagementDataServiceModule";
 	ProviderName = "UNIX_OpaqueManagementDataServiceProvider";
 	ClassName = "UNIX_OpaqueManagementDataService";
 	Namespaces = {"root/cimv2"};

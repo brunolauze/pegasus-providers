@@ -106,5 +106,5 @@ class CIM_ParticipatingCS : CIM_Dependency {
 class UNIX_ParticipatingCS : CIM_ParticipatingCS
 {
 
-}
+};
 

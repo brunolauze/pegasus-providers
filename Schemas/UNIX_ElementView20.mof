@@ -84,5 +84,5 @@ class CIM_ElementView : CIM_Dependency {
 class UNIX_ElementView : CIM_ElementView
 {
 
-}
+};
 

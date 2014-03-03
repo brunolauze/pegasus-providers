@@ -775,5 +775,5 @@ class CIM_ClusteringSAP : CIM_ServiceAccessPoint {
 class UNIX_ClusteringSAP : CIM_ClusteringSAP
 {
 
-}
+};
 

@@ -76,5 +76,5 @@ class CIM_SoftwareFeatureComponent : CIM_Component {
 class UNIX_SoftwareFeatureComponent : CIM_SoftwareFeatureComponent
 {
 
-}
+};
 

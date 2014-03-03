@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ProductPhysicalComponentModule";
+	Location = "UNIX_ProductPhysicalComponent";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ProductPhysicalComponentModule";
 	Name = "UNIX_ProductPhysicalComponentProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ProductPhysicalComponentModule";
 	ProviderName = "UNIX_ProductPhysicalComponentProvider";
 	ClassName = "CIM_ProductPhysicalComponent";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ProductPhysicalComponentModule";
 	ProviderName = "UNIX_ProductPhysicalComponentProvider";
 	ClassName = "UNIX_ProductPhysicalComponent";
 	Namespaces = {"root/cimv2"};

@@ -97,5 +97,5 @@ class CIM_LastAppliedSnapshot : CIM_Dependency {
 class UNIX_LastAppliedSnapshot : CIM_LastAppliedSnapshot
 {
 
-}
+};
 

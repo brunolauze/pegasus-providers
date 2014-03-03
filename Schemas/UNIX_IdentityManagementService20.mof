@@ -899,5 +899,5 @@ class CIM_IdentityManagementService : CIM_AuthenticationService {
 class UNIX_IdentityManagementService : CIM_IdentityManagementService
 {
 
-}
+};
 

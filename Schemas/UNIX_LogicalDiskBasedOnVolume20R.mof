@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_LogicalDiskBasedOnVolumeModule";
+	Location = "UNIX_LogicalDiskBasedOnVolume";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_LogicalDiskBasedOnVolumeModule";
 	Name = "UNIX_LogicalDiskBasedOnVolumeProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_LogicalDiskBasedOnVolumeModule";
 	ProviderName = "UNIX_LogicalDiskBasedOnVolumeProvider";
 	ClassName = "CIM_LogicalDiskBasedOnVolume";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_LogicalDiskBasedOnVolumeModule";
 	ProviderName = "UNIX_LogicalDiskBasedOnVolumeProvider";
 	ClassName = "UNIX_LogicalDiskBasedOnVolume";
 	Namespaces = {"root/cimv2"};

@@ -97,5 +97,5 @@ class CIM_SwitchServiceSourceRouting : CIM_ServiceComponent {
 class UNIX_SwitchServiceSourceRouting : CIM_SwitchServiceSourceRouting
 {
 
-}
+};
 

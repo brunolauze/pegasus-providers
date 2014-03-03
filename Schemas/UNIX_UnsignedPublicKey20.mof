@@ -231,5 +231,5 @@ class CIM_UnsignedPublicKey : CIM_Credential {
 class UNIX_UnsignedPublicKey : CIM_UnsignedPublicKey
 {
 
-}
+};
 

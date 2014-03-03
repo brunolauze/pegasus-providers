@@ -108,5 +108,5 @@ class CIM_SoftwareElementServiceImplementation : CIM_Dependency {
 class UNIX_SoftwareElementServiceImplementation : CIM_SoftwareElementServiceImplementation
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_AuthorizedPrivilegeModule";
+	Location = "UNIX_AuthorizedPrivilege";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AuthorizedPrivilegeModule";
 	Name = "UNIX_AuthorizedPrivilegeProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AuthorizedPrivilegeModule";
 	ProviderName = "UNIX_AuthorizedPrivilegeProvider";
 	ClassName = "CIM_AuthorizedPrivilege";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AuthorizedPrivilegeModule";
 	ProviderName = "UNIX_AuthorizedPrivilegeProvider";
 	ClassName = "UNIX_AuthorizedPrivilege";
 	Namespaces = {"root/cimv2"};

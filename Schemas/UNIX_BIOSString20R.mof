@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_BIOSStringModule";
+	Location = "UNIX_BIOSString";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BIOSStringModule";
 	Name = "UNIX_BIOSStringProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BIOSStringModule";
 	ProviderName = "UNIX_BIOSStringProvider";
 	ClassName = "CIM_BIOSString";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BIOSStringModule";
 	ProviderName = "UNIX_BIOSStringProvider";
 	ClassName = "UNIX_BIOSString";
 	Namespaces = {"root/cimv2"};

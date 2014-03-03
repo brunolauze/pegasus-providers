@@ -57,5 +57,5 @@ class CIM_CollectionInSystem {
 class UNIX_CollectionInSystem : CIM_CollectionInSystem
 {
 
-}
+};
 

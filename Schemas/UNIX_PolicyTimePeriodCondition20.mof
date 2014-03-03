@@ -527,5 +527,5 @@ class CIM_PolicyTimePeriodCondition : CIM_PolicyCondition {
 class UNIX_PolicyTimePeriodCondition : CIM_PolicyTimePeriodCondition
 {
 
-}
+};
 

@@ -76,5 +76,5 @@ class CIM_SystemAdministratorRole : CIM_Dependency {
 class UNIX_SystemAdministratorRole : CIM_SystemAdministratorRole
 {
 
-}
+};
 

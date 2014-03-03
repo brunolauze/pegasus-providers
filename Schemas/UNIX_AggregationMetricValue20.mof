@@ -287,5 +287,5 @@ class CIM_AggregationMetricValue : CIM_BaseMetricValue {
 class UNIX_AggregationMetricValue : CIM_AggregationMetricValue
 {
 
-}
+};
 

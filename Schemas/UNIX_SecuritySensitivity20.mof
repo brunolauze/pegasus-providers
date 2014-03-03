@@ -222,5 +222,5 @@ class CIM_SecuritySensitivity : CIM_ManagedElement {
 class UNIX_SecuritySensitivity : CIM_SecuritySensitivity
 {
 
-}
+};
 

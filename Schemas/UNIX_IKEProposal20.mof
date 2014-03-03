@@ -435,5 +435,5 @@ class CIM_IKEProposal : CIM_SAProposal {
 class UNIX_IKEProposal : CIM_IKEProposal
 {
 
-}
+};
 

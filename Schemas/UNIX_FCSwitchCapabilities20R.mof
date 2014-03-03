@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_FCSwitchCapabilitiesModule";
+	Location = "UNIX_FCSwitchCapabilities";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_FCSwitchCapabilitiesModule";
 	Name = "UNIX_FCSwitchCapabilitiesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_FCSwitchCapabilitiesModule";
 	ProviderName = "UNIX_FCSwitchCapabilitiesProvider";
 	ClassName = "CIM_FCSwitchCapabilities";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_FCSwitchCapabilitiesModule";
 	ProviderName = "UNIX_FCSwitchCapabilitiesProvider";
 	ClassName = "UNIX_FCSwitchCapabilities";
 	Namespaces = {"root/cimv2"};

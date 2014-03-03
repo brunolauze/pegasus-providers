@@ -197,5 +197,5 @@ class CIM_InstalledProduct : CIM_Collection {
 class UNIX_InstalledProduct : CIM_InstalledProduct
 {
 
-}
+};
 

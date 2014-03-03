@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ParallelControllerModule";
+	Location = "UNIX_ParallelController";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ParallelControllerModule";
 	Name = "UNIX_ParallelControllerProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ParallelControllerModule";
 	ProviderName = "UNIX_ParallelControllerProvider";
 	ClassName = "CIM_ParallelController";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ParallelControllerModule";
 	ProviderName = "UNIX_ParallelControllerProvider";
 	ClassName = "UNIX_ParallelController";
 	Namespaces = {"root/cimv2"};

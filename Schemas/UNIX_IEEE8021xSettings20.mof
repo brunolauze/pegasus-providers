@@ -440,5 +440,5 @@ class CIM_IEEE8021xSettings : CIM_SettingData {
 class UNIX_IEEE8021xSettings : CIM_IEEE8021xSettings
 {
 
-}
+};
 

@@ -1106,5 +1106,5 @@ class CIM_OSPFProtocolEndpoint : CIM_OSPFProtocolEndpointBase {
 class UNIX_OSPFProtocolEndpoint : CIM_OSPFProtocolEndpoint
 {
 
-}
+};
 

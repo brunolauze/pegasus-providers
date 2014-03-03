@@ -78,5 +78,5 @@ class CIM_CollectedSoftwareElements : CIM_MemberOfCollection {
 class UNIX_CollectedSoftwareElements : CIM_CollectedSoftwareElements
 {
 
-}
+};
 

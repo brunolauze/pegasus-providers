@@ -102,5 +102,5 @@ class CIM_AccessLabelReader : CIM_AssociatedLabelReader {
 class UNIX_AccessLabelReader : CIM_AccessLabelReader
 {
 
-}
+};
 

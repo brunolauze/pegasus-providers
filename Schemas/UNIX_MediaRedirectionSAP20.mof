@@ -825,5 +825,5 @@ class CIM_MediaRedirectionSAP : CIM_ServiceAccessPoint {
 class UNIX_MediaRedirectionSAP : CIM_MediaRedirectionSAP
 {
 
-}
+};
 

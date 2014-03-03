@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_BGPStatisticsModule";
+	Location = "UNIX_BGPStatistics";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BGPStatisticsModule";
 	Name = "UNIX_BGPStatisticsProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BGPStatisticsModule";
 	ProviderName = "UNIX_BGPStatisticsProvider";
 	ClassName = "CIM_BGPStatistics";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BGPStatisticsModule";
 	ProviderName = "UNIX_BGPStatisticsProvider";
 	ClassName = "UNIX_BGPStatistics";
 	Namespaces = {"root/cimv2"};

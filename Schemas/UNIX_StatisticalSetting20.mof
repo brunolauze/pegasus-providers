@@ -262,5 +262,5 @@ class CIM_StatisticalSetting : CIM_SettingData {
 class UNIX_StatisticalSetting : CIM_StatisticalSetting
 {
 
-}
+};
 

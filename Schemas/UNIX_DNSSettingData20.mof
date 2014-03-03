@@ -377,5 +377,5 @@ class CIM_DNSSettingData : CIM_IPAssignmentSettingData {
 class UNIX_DNSSettingData : CIM_DNSSettingData
 {
 
-}
+};
 

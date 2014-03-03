@@ -632,5 +632,5 @@ class CIM_IPSOFilterEntry : CIM_FilterEntryBase {
 class UNIX_IPSOFilterEntry : CIM_IPSOFilterEntry
 {
 
-}
+};
 

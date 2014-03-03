@@ -93,5 +93,5 @@ class CIM_EndpointOfNetworkPipe : CIM_Dependency {
 class UNIX_EndpointOfNetworkPipe : CIM_EndpointOfNetworkPipe
 {
 
-}
+};
 

@@ -55,5 +55,5 @@ class CIM_RecordInLog {
 class UNIX_RecordInLog : CIM_RecordInLog
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_DiskGroupModule";
+	Location = "UNIX_DiskGroup";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DiskGroupModule";
 	Name = "UNIX_DiskGroupProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DiskGroupModule";
 	ProviderName = "UNIX_DiskGroupProvider";
 	ClassName = "CIM_DiskGroup";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DiskGroupModule";
 	ProviderName = "UNIX_DiskGroupProvider";
 	ClassName = "UNIX_DiskGroup";
 	Namespaces = {"root/cimv2"};

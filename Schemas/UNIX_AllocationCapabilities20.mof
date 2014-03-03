@@ -284,5 +284,5 @@ class CIM_AllocationCapabilities : CIM_Capabilities {
 class UNIX_AllocationCapabilities : CIM_AllocationCapabilities
 {
 
-}
+};
 

@@ -440,5 +440,5 @@ class CIM_DiagnosticCompletionRecord : CIM_DiagnosticServiceRecord {
 class UNIX_DiagnosticCompletionRecord : CIM_DiagnosticCompletionRecord
 {
 
-}
+};
 

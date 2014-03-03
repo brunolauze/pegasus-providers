@@ -260,5 +260,5 @@ class CIM_ProcessorCapabilities : CIM_EnabledLogicalElementCapabilities {
 class UNIX_ProcessorCapabilities : CIM_ProcessorCapabilities
 {
 
-}
+};
 

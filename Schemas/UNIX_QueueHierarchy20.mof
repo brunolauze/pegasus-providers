@@ -199,5 +199,5 @@ class CIM_QueueHierarchy : CIM_ServiceServiceDependency {
 class UNIX_QueueHierarchy : CIM_QueueHierarchy
 {
 
-}
+};
 

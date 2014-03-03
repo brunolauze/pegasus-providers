@@ -90,5 +90,5 @@ class CIM_IPsecPolicyForEndpoint : CIM_Dependency {
 class UNIX_IPsecPolicyForEndpoint : CIM_IPsecPolicyForEndpoint
 {
 
-}
+};
 

@@ -53,5 +53,5 @@ class CIM_RelatedStatistics {
 class UNIX_RelatedStatistics : CIM_RelatedStatistics
 {
 
-}
+};
 

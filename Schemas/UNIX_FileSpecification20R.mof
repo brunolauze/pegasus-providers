@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_FileSpecificationModule";
+	Location = "UNIX_FileSpecification";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_FileSpecificationModule";
 	Name = "UNIX_FileSpecificationProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_FileSpecificationModule";
 	ProviderName = "UNIX_FileSpecificationProvider";
 	ClassName = "CIM_FileSpecification";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_FileSpecificationModule";
 	ProviderName = "UNIX_FileSpecificationProvider";
 	ClassName = "UNIX_FileSpecification";
 	Namespaces = {"root/cimv2"};

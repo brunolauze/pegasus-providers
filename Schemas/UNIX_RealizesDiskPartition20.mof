@@ -142,5 +142,5 @@ class CIM_RealizesDiskPartition : CIM_RealizesExtent {
 class UNIX_RealizesDiskPartition : CIM_RealizesDiskPartition
 {
 
-}
+};
 

@@ -110,5 +110,5 @@ class CIM_ConditioningServiceOnEndpoint : CIM_Dependency {
 class UNIX_ConditioningServiceOnEndpoint : CIM_ConditioningServiceOnEndpoint
 {
 
-}
+};
 

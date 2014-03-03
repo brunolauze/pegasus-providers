@@ -972,5 +972,5 @@ class CIM_ProtocolService : CIM_Service {
 class UNIX_ProtocolService : CIM_ProtocolService
 {
 
-}
+};
 

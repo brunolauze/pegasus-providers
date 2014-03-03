@@ -124,5 +124,5 @@ class CIM_ChassisInRack : CIM_Container {
 class UNIX_ChassisInRack : CIM_ChassisInRack
 {
 
-}
+};
 

@@ -252,5 +252,5 @@ class CIM_IndicationHandlerCIMXML : CIM_IndicationHandler {
 class UNIX_IndicationHandlerCIMXML : CIM_IndicationHandlerCIMXML
 {
 
-}
+};
 

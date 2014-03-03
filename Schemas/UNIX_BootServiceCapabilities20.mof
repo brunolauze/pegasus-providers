@@ -356,5 +356,5 @@ class CIM_BootServiceCapabilities : CIM_EnabledLogicalElementCapabilities {
 class UNIX_BootServiceCapabilities : CIM_BootServiceCapabilities
 {
 
-}
+};
 

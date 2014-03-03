@@ -213,5 +213,5 @@ class CIM_PrioritySchedulingElement : CIM_SchedulingElement {
 class UNIX_PrioritySchedulingElement : CIM_PrioritySchedulingElement
 {
 
-}
+};
 

@@ -824,5 +824,5 @@ class CIM_PortResource : CIM_MemoryMappedIO {
 class UNIX_PortResource : CIM_PortResource
 {
 
-}
+};
 

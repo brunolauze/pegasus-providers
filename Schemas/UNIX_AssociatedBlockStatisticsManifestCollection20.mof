@@ -61,5 +61,5 @@ class CIM_AssociatedBlockStatisticsManifestCollection {
 class UNIX_AssociatedBlockStatisticsManifestCollection : CIM_AssociatedBlockStatisticsManifestCollection
 {
 
-}
+};
 

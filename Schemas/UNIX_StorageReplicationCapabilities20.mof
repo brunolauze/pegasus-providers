@@ -556,5 +556,5 @@ class CIM_StorageReplicationCapabilities : CIM_Capabilities {
 class UNIX_StorageReplicationCapabilities : CIM_StorageReplicationCapabilities
 {
 
-}
+};
 

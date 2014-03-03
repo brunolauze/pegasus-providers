@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_CommonDatabaseModule";
+	Location = "UNIX_CommonDatabase";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CommonDatabaseModule";
 	Name = "UNIX_CommonDatabaseProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CommonDatabaseModule";
 	ProviderName = "UNIX_CommonDatabaseProvider";
 	ClassName = "CIM_CommonDatabase";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CommonDatabaseModule";
 	ProviderName = "UNIX_CommonDatabaseProvider";
 	ClassName = "UNIX_CommonDatabase";
 	Namespaces = {"root/cimv2"};

@@ -184,5 +184,5 @@ class CIM_FilterCollection : CIM_Collection {
 class UNIX_FilterCollection : CIM_FilterCollection
 {
 
-}
+};
 

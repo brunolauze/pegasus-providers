@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_PacketFilterConditionModule";
+	Location = "UNIX_PacketFilterCondition";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PacketFilterConditionModule";
 	Name = "UNIX_PacketFilterConditionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PacketFilterConditionModule";
 	ProviderName = "UNIX_PacketFilterConditionProvider";
 	ClassName = "CIM_PacketFilterCondition";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PacketFilterConditionModule";
 	ProviderName = "UNIX_PacketFilterConditionProvider";
 	ClassName = "UNIX_PacketFilterCondition";
 	Namespaces = {"root/cimv2"};

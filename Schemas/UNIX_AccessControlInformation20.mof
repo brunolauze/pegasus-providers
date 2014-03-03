@@ -591,5 +591,5 @@ class CIM_AccessControlInformation : CIM_LogicalElement {
 class UNIX_AccessControlInformation : CIM_AccessControlInformation
 {
 
-}
+};
 

@@ -703,5 +703,5 @@ class CIM_StorageSettingWithHints : CIM_StorageSetting {
 class UNIX_StorageSettingWithHints : CIM_StorageSettingWithHints
 {
 
-}
+};
 

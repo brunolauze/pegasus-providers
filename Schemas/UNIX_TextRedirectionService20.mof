@@ -967,5 +967,5 @@ class CIM_TextRedirectionService : CIM_RedirectionService {
 class UNIX_TextRedirectionService : CIM_TextRedirectionService
 {
 
-}
+};
 

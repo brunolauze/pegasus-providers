@@ -398,5 +398,5 @@ class CIM_iSCSILoginStatistics : CIM_StatisticalData {
 class UNIX_iSCSILoginStatistics : CIM_iSCSILoginStatistics
 {
 
-}
+};
 

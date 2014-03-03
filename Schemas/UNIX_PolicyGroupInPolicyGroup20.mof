@@ -106,5 +106,5 @@ class CIM_PolicyGroupInPolicyGroup : CIM_PolicyComponent {
 class UNIX_PolicyGroupInPolicyGroup : CIM_PolicyGroupInPolicyGroup
 {
 
-}
+};
 

@@ -266,5 +266,5 @@ class CIM_MediaPhysicalStatInfo : CIM_PhysicalStatisticalInformation {
 class UNIX_MediaPhysicalStatInfo : CIM_MediaPhysicalStatInfo
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_DynamicForwardingEntryModule";
+	Location = "UNIX_DynamicForwardingEntry";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DynamicForwardingEntryModule";
 	Name = "UNIX_DynamicForwardingEntryProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DynamicForwardingEntryModule";
 	ProviderName = "UNIX_DynamicForwardingEntryProvider";
 	ClassName = "CIM_DynamicForwardingEntry";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DynamicForwardingEntryModule";
 	ProviderName = "UNIX_DynamicForwardingEntryProvider";
 	ClassName = "UNIX_DynamicForwardingEntry";
 	Namespaces = {"root/cimv2"};

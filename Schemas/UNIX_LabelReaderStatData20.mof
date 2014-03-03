@@ -243,5 +243,5 @@ class CIM_LabelReaderStatData : CIM_StatisticalData {
 class UNIX_LabelReaderStatData : CIM_LabelReaderStatData
 {
 
-}
+};
 

@@ -1229,5 +1229,5 @@ class CIM_SSAController : CIM_Controller {
 class UNIX_SSAController : CIM_SSAController
 {
 
-}
+};
 

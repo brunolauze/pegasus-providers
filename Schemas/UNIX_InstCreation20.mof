@@ -285,5 +285,5 @@ class CIM_InstCreation : CIM_InstIndication {
 class UNIX_InstCreation : CIM_InstCreation
 {
 
-}
+};
 

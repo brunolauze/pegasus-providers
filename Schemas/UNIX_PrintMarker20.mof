@@ -807,5 +807,5 @@ class CIM_PrintMarker : CIM_PrinterElement {
 class UNIX_PrintMarker : CIM_PrintMarker
 {
 
-}
+};
 

@@ -98,5 +98,5 @@ class CIM_DriveInDiskGroup : CIM_CollectedMSEs {
 class UNIX_DriveInDiskGroup : CIM_DriveInDiskGroup
 {
 
-}
+};
 

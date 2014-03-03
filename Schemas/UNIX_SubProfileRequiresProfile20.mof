@@ -104,5 +104,5 @@ class CIM_SubProfileRequiresProfile : CIM_ReferencedProfile {
 class UNIX_SubProfileRequiresProfile : CIM_SubProfileRequiresProfile
 {
 
-}
+};
 

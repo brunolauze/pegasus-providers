@@ -412,5 +412,5 @@ class CIM_IKEAction : CIM_SANegotiationAction {
 class UNIX_IKEAction : CIM_IKEAction
 {
 
-}
+};
 

@@ -97,5 +97,5 @@ class CIM_DeviceServicesLocation : CIM_Dependency {
 class UNIX_DeviceServicesLocation : CIM_DeviceServicesLocation
 {
 
-}
+};
 

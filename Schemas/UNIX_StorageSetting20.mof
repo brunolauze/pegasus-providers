@@ -622,5 +622,5 @@ class CIM_StorageSetting : CIM_SettingData {
 class UNIX_StorageSetting : CIM_StorageSetting
 {
 
-}
+};
 

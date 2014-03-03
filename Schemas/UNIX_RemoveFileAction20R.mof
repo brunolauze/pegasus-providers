@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_RemoveFileActionModule";
+	Location = "UNIX_RemoveFileAction";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RemoveFileActionModule";
 	Name = "UNIX_RemoveFileActionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RemoveFileActionModule";
 	ProviderName = "UNIX_RemoveFileActionProvider";
 	ClassName = "CIM_RemoveFileAction";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RemoveFileActionModule";
 	ProviderName = "UNIX_RemoveFileActionProvider";
 	ClassName = "UNIX_RemoveFileAction";
 	Namespaces = {"root/cimv2"};

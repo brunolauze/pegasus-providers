@@ -270,5 +270,5 @@ class CIM_DeviceErrorData : CIM_StatisticalData {
 class UNIX_DeviceErrorData : CIM_DeviceErrorData
 {
 
-}
+};
 

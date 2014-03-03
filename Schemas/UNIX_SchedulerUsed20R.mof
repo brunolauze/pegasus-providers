@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SchedulerUsedModule";
+	Location = "UNIX_SchedulerUsed";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SchedulerUsedModule";
 	Name = "UNIX_SchedulerUsedProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SchedulerUsedModule";
 	ProviderName = "UNIX_SchedulerUsedProvider";
 	ClassName = "CIM_SchedulerUsed";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SchedulerUsedModule";
 	ProviderName = "UNIX_SchedulerUsedProvider";
 	ClassName = "UNIX_SchedulerUsed";
 	Namespaces = {"root/cimv2"};

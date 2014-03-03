@@ -85,5 +85,5 @@ class CIM_BIOSLoadedInNV : CIM_Dependency {
 class UNIX_BIOSLoadedInNV : CIM_BIOSLoadedInNV
 {
 
-}
+};
 

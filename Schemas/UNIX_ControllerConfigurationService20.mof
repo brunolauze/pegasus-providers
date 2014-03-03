@@ -1358,5 +1358,5 @@ class CIM_ControllerConfigurationService : CIM_Service {
 class UNIX_ControllerConfigurationService : CIM_ControllerConfigurationService
 {
 
-}
+};
 

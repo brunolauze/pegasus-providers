@@ -952,5 +952,5 @@ class CIM_Rack : CIM_PhysicalFrame {
 class UNIX_Rack : CIM_Rack
 {
 
-}
+};
 

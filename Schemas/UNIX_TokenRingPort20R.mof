@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_TokenRingPortModule";
+	Location = "UNIX_TokenRingPort";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_TokenRingPortModule";
 	Name = "UNIX_TokenRingPortProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_TokenRingPortModule";
 	ProviderName = "UNIX_TokenRingPortProvider";
 	ClassName = "CIM_NetworkPort";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_TokenRingPortModule";
 	ProviderName = "UNIX_TokenRingPortProvider";
 	ClassName = "UNIX_NetworkPort";
 	Namespaces = {"root/cimv2"};
@@ -60,7 +70,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_TokenRingPortModule";
 	ProviderName = "UNIX_TokenRingPortProvider";
 	ClassName = "CIM_TokenRingPort";
 	Namespaces = {"root/cimv2"};
@@ -71,7 +81,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_TokenRingPortModule";
 	ProviderName = "UNIX_TokenRingPortProvider";
 	ClassName = "UNIX_TokenRingPort";
 	Namespaces = {"root/cimv2"};

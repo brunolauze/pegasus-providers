@@ -76,5 +76,5 @@ class CIM_ContainedLocation : CIM_Component {
 class UNIX_ContainedLocation : CIM_ContainedLocation
 {
 
-}
+};
 

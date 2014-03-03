@@ -101,5 +101,5 @@ class CIM_ClusterServiceAccessBySAP : CIM_ServiceAccessBySAP {
 class UNIX_ClusterServiceAccessBySAP : CIM_ClusterServiceAccessBySAP
 {
 
-}
+};
 

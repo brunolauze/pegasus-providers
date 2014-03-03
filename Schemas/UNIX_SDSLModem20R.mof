@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SDSLModemModule";
+	Location = "UNIX_SDSLModem";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SDSLModemModule";
 	Name = "UNIX_SDSLModemProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SDSLModemModule";
 	ProviderName = "UNIX_SDSLModemProvider";
 	ClassName = "CIM_SDSLModem";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SDSLModemModule";
 	ProviderName = "UNIX_SDSLModemProvider";
 	ClassName = "UNIX_SDSLModem";
 	Namespaces = {"root/cimv2"};

@@ -638,5 +638,5 @@ class CIM_Hdr8021Filter : CIM_FilterEntryBase {
 class UNIX_Hdr8021Filter : CIM_Hdr8021Filter
 {
 
-}
+};
 

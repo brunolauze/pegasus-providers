@@ -1562,5 +1562,5 @@ class CIM_TapePartition : CIM_MediaPartition {
 class UNIX_TapePartition : CIM_TapePartition
 {
 
-}
+};
 

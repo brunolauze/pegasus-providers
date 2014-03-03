@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_QueueForPrintServiceModule";
+	Location = "UNIX_QueueForPrintService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_QueueForPrintServiceModule";
 	Name = "UNIX_QueueForPrintServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_QueueForPrintServiceModule";
 	ProviderName = "UNIX_QueueForPrintServiceProvider";
 	ClassName = "CIM_QueueForPrintService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_QueueForPrintServiceModule";
 	ProviderName = "UNIX_QueueForPrintServiceProvider";
 	ClassName = "UNIX_QueueForPrintService";
 	Namespaces = {"root/cimv2"};

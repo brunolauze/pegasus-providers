@@ -102,5 +102,5 @@ class CIM_OrderedComponent : CIM_Component {
 class UNIX_OrderedComponent : CIM_OrderedComponent
 {
 
-}
+};
 

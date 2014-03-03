@@ -163,5 +163,5 @@ class CIM_SwitchPortSpanningTree : CIM_ServiceSAPDependency {
 class UNIX_SwitchPortSpanningTree : CIM_SwitchPortSpanningTree
 {
 
-}
+};
 

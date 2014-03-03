@@ -294,5 +294,5 @@ class CIM_InstModification : CIM_InstIndication {
 class UNIX_InstModification : CIM_InstModification
 {
 
-}
+};
 

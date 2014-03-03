@@ -273,5 +273,5 @@ class CIM_ClassCreation : CIM_ClassIndication {
 class UNIX_ClassCreation : CIM_ClassCreation
 {
 
-}
+};
 

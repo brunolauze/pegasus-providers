@@ -313,5 +313,5 @@ class CIM_CreateDirectoryAction : CIM_DirectoryAction {
 class UNIX_CreateDirectoryAction : CIM_CreateDirectoryAction
 {
 
-}
+};
 

@@ -817,5 +817,5 @@ class CIM_IPHeadersFilter : CIM_FilterEntryBase {
 class UNIX_IPHeadersFilter : CIM_IPHeadersFilter
 {
 
-}
+};
 

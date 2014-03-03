@@ -65,5 +65,5 @@ class CIM_SoftwareElementChecks {
 class UNIX_SoftwareElementChecks : CIM_SoftwareElementChecks
 {
 
-}
+};
 

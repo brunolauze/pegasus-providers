@@ -61,5 +61,5 @@ class CIM_DiagnosticResultForTest {
 class UNIX_DiagnosticResultForTest : CIM_DiagnosticResultForTest
 {
 
-}
+};
 

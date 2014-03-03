@@ -123,5 +123,5 @@ class CIM_SwitchesAmong : CIM_ForwardsAmong {
 class UNIX_SwitchesAmong : CIM_SwitchesAmong
 {
 
-}
+};
 

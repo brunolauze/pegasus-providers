@@ -80,5 +80,5 @@ class CIM_TrustHierarchy : CIM_Dependency {
 class UNIX_TrustHierarchy : CIM_TrustHierarchy
 {
 
-}
+};
 

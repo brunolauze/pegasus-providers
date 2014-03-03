@@ -122,5 +122,5 @@ class CIM_SwitchPortPair : CIM_SAPSAPDependency {
 class UNIX_SwitchPortPair : CIM_SwitchPortPair
 {
 
-}
+};
 

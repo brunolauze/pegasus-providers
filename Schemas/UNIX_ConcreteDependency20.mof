@@ -96,5 +96,5 @@ class CIM_ConcreteDependency : CIM_Dependency {
 class UNIX_ConcreteDependency : CIM_ConcreteDependency
 {
 
-}
+};
 

@@ -230,5 +230,5 @@ class CIM_AbstractIndicationSubscription {
 class UNIX_AbstractIndicationSubscription : CIM_AbstractIndicationSubscription
 {
 
-}
+};
 

@@ -1356,5 +1356,5 @@ class CIM_MetricService : CIM_Service {
 class UNIX_MetricService : CIM_MetricService
 {
 
-}
+};
 

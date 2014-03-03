@@ -337,5 +337,5 @@ class CIM_IndicatorLEDCapabilities : CIM_EnabledLogicalElementCapabilities {
 class UNIX_IndicatorLEDCapabilities : CIM_IndicatorLEDCapabilities
 {
 
-}
+};
 

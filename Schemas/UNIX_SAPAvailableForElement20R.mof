@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SAPAvailableForElementModule";
+	Location = "UNIX_SAPAvailableForElement";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SAPAvailableForElementModule";
 	Name = "UNIX_SAPAvailableForElementProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SAPAvailableForElementModule";
 	ProviderName = "UNIX_SAPAvailableForElementProvider";
 	ClassName = "CIM_SAPAvailableForElement";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SAPAvailableForElementModule";
 	ProviderName = "UNIX_SAPAvailableForElementProvider";
 	ClassName = "UNIX_SAPAvailableForElement";
 	Namespaces = {"root/cimv2"};

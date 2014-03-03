@@ -1227,5 +1227,5 @@ class CIM_ESCONController : CIM_Controller {
 class UNIX_ESCONController : CIM_ESCONController
 {
 
-}
+};
 

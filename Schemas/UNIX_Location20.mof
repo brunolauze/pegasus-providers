@@ -147,5 +147,5 @@ class CIM_Location : CIM_ManagedElement {
 class UNIX_Location : CIM_Location
 {
 
-}
+};
 

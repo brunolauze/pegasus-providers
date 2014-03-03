@@ -110,5 +110,5 @@ class CIM_CommMechanismForManager : CIM_ServiceAccessBySAP {
 class UNIX_CommMechanismForManager : CIM_CommMechanismForManager
 {
 
-}
+};
 

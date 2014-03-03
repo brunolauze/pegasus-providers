@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_Specific802dot1QVLANServiceModule";
+	Location = "UNIX_Specific802dot1QVLANService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_Specific802dot1QVLANServiceModule";
 	Name = "UNIX_Specific802dot1QVLANServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_Specific802dot1QVLANServiceModule";
 	ProviderName = "UNIX_Specific802dot1QVLANServiceProvider";
 	ClassName = "CIM_Specific802dot1QVLANService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_Specific802dot1QVLANServiceModule";
 	ProviderName = "UNIX_Specific802dot1QVLANServiceProvider";
 	ClassName = "UNIX_Specific802dot1QVLANService";
 	Namespaces = {"root/cimv2"};

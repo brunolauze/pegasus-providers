@@ -232,5 +232,5 @@ class CIM_LabelReaderStatInfo : CIM_DeviceStatisticalInformation {
 class UNIX_LabelReaderStatInfo : CIM_LabelReaderStatInfo
 {
 
-}
+};
 

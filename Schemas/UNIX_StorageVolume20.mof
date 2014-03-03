@@ -1511,5 +1511,5 @@ class CIM_StorageVolume : CIM_StorageExtent {
 class UNIX_StorageVolume : CIM_StorageVolume
 {
 
-}
+};
 

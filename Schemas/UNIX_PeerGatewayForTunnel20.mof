@@ -100,5 +100,5 @@ class CIM_PeerGatewayForTunnel : CIM_Dependency {
 class UNIX_PeerGatewayForTunnel : CIM_PeerGatewayForTunnel
 {
 
-}
+};
 

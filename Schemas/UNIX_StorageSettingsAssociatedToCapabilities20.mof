@@ -123,5 +123,5 @@ class CIM_StorageSettingsAssociatedToCapabilities : CIM_SettingAssociatedToCapab
 class UNIX_StorageSettingsAssociatedToCapabilities : CIM_StorageSettingsAssociatedToCapabilities
 {
 
-}
+};
 

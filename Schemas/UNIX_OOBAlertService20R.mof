@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_OOBAlertServiceModule";
+	Location = "UNIX_OOBAlertService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OOBAlertServiceModule";
 	Name = "UNIX_OOBAlertServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OOBAlertServiceModule";
 	ProviderName = "UNIX_OOBAlertServiceProvider";
 	ClassName = "CIM_OOBAlertService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OOBAlertServiceModule";
 	ProviderName = "UNIX_OOBAlertServiceProvider";
 	ClassName = "UNIX_OOBAlertService";
 	Namespaces = {"root/cimv2"};

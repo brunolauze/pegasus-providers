@@ -1412,5 +1412,5 @@ class CIM_PCVideoController : CIM_VideoController {
 class UNIX_PCVideoController : CIM_PCVideoController
 {
 
-}
+};
 

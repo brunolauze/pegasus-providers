@@ -287,5 +287,5 @@ class CIM_WiFiNetworkDetectionSettings : CIM_SettingData {
 class UNIX_WiFiNetworkDetectionSettings : CIM_WiFiNetworkDetectionSettings
 {
 
-}
+};
 

@@ -101,5 +101,5 @@ class CIM_HostedNetworkPipe : CIM_HostedDependency {
 class UNIX_HostedNetworkPipe : CIM_HostedNetworkPipe
 {
 
-}
+};
 

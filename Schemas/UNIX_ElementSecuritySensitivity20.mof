@@ -55,5 +55,5 @@ class CIM_ElementSecuritySensitivity {
 class UNIX_ElementSecuritySensitivity : CIM_ElementSecuritySensitivity
 {
 
-}
+};
 

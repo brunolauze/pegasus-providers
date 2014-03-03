@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ReplaceableProductFRUModule";
+	Location = "UNIX_ReplaceableProductFRU";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ReplaceableProductFRUModule";
 	Name = "UNIX_ReplaceableProductFRUProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ReplaceableProductFRUModule";
 	ProviderName = "UNIX_ReplaceableProductFRUProvider";
 	ClassName = "CIM_ReplaceableProductFRU";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ReplaceableProductFRUModule";
 	ProviderName = "UNIX_ReplaceableProductFRUProvider";
 	ClassName = "UNIX_ReplaceableProductFRU";
 	Namespaces = {"root/cimv2"};

@@ -1415,5 +1415,5 @@ class CIM_DiskDrive : CIM_MediaAccessDevice {
 class UNIX_DiskDrive : CIM_DiskDrive
 {
 
-}
+};
 

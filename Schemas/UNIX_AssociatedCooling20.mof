@@ -77,5 +77,5 @@ class CIM_AssociatedCooling : CIM_Dependency {
 class UNIX_AssociatedCooling : CIM_AssociatedCooling
 {
 
-}
+};
 

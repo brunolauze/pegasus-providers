@@ -123,5 +123,5 @@ class CIM_ServiceAffectsElement {
 class UNIX_ServiceAffectsElement : CIM_ServiceAffectsElement
 {
 
-}
+};
 

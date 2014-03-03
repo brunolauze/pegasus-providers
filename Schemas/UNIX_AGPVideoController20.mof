@@ -1465,5 +1465,5 @@ class CIM_AGPVideoController : CIM_VideoController {
 class UNIX_AGPVideoController : CIM_AGPVideoController
 {
 
-}
+};
 

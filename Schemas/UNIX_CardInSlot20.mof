@@ -154,5 +154,5 @@ class CIM_CardInSlot : CIM_PackageInSlot {
 class UNIX_CardInSlot : CIM_CardInSlot
 {
 
-}
+};
 

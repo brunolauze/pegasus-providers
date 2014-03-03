@@ -1181,5 +1181,5 @@ class CIM_WiFiRadio : CIM_LogicalDevice {
 class UNIX_WiFiRadio : CIM_WiFiRadio
 {
 
-}
+};
 

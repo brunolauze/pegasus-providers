@@ -1364,5 +1364,5 @@ class CIM_USBHub : CIM_USBDevice {
 class UNIX_USBHub : CIM_USBHub
 {
 
-}
+};
 

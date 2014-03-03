@@ -215,5 +215,5 @@ class CIM_VLANEndpointCapabilities : CIM_Capabilities {
 class UNIX_VLANEndpointCapabilities : CIM_VLANEndpointCapabilities
 {
 
-}
+};
 

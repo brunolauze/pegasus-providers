@@ -1227,5 +1227,5 @@ class CIM_FlatPanel : CIM_Display {
 class UNIX_FlatPanel : CIM_FlatPanel
 {
 
-}
+};
 

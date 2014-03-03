@@ -1008,5 +1008,5 @@ class CIM_SwitchPort : CIM_ProtocolEndpoint {
 class UNIX_SwitchPort : CIM_SwitchPort
 {
 
-}
+};
 

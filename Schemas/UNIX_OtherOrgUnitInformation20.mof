@@ -279,5 +279,5 @@ class CIM_OtherOrgUnitInformation : CIM_ManagedElement {
 class UNIX_OtherOrgUnitInformation : CIM_OtherOrgUnitInformation
 {
 
-}
+};
 

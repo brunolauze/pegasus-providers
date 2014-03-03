@@ -105,5 +105,5 @@ class CIM_AllocatedDMA : CIM_AllocatedResource {
 class UNIX_AllocatedDMA : CIM_AllocatedDMA
 {
 
-}
+};
 

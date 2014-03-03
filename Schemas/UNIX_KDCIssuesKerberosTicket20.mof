@@ -106,5 +106,5 @@ class CIM_KDCIssuesKerberosTicket : CIM_ManagedCredential {
 class UNIX_KDCIssuesKerberosTicket : CIM_KDCIssuesKerberosTicket
 {
 
-}
+};
 

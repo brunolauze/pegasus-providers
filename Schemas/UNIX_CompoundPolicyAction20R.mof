@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_CompoundPolicyActionModule";
+	Location = "UNIX_CompoundPolicyAction";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CompoundPolicyActionModule";
 	Name = "UNIX_CompoundPolicyActionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CompoundPolicyActionModule";
 	ProviderName = "UNIX_CompoundPolicyActionProvider";
 	ClassName = "CIM_CompoundPolicyAction";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CompoundPolicyActionModule";
 	ProviderName = "UNIX_CompoundPolicyActionProvider";
 	ClassName = "UNIX_CompoundPolicyAction";
 	Namespaces = {"root/cimv2"};

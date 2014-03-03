@@ -369,5 +369,5 @@ class CIM_iSCSISessionSettings : CIM_SettingData {
 class UNIX_iSCSISessionSettings : CIM_iSCSISessionSettings
 {
 
-}
+};
 

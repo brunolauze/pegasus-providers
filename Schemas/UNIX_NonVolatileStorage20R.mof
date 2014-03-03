@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_NonVolatileStorageModule";
+	Location = "UNIX_NonVolatileStorage";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NonVolatileStorageModule";
 	Name = "UNIX_NonVolatileStorageProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NonVolatileStorageModule";
 	ProviderName = "UNIX_NonVolatileStorageProvider";
 	ClassName = "CIM_NonVolatileStorage";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NonVolatileStorageModule";
 	ProviderName = "UNIX_NonVolatileStorageProvider";
 	ClassName = "UNIX_NonVolatileStorage";
 	Namespaces = {"root/cimv2"};

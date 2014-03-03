@@ -80,5 +80,5 @@ class CIM_SuppliesPower : CIM_Dependency {
 class UNIX_SuppliesPower : CIM_SuppliesPower
 {
 
-}
+};
 

@@ -946,5 +946,5 @@ class CIM_Notary : CIM_CredentialManagementService {
 class UNIX_Notary : CIM_Notary
 {
 
-}
+};
 

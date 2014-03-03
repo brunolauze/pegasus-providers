@@ -109,5 +109,5 @@ class CIM_DatabaseControlFile : CIM_HostedDependency {
 class UNIX_DatabaseControlFile : CIM_DatabaseControlFile
 {
 
-}
+};
 

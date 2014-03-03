@@ -102,5 +102,5 @@ class CIM_HostedBGPRouteMap : CIM_HostedDependency {
 class UNIX_HostedBGPRouteMap : CIM_HostedBGPRouteMap
 {
 
-}
+};
 

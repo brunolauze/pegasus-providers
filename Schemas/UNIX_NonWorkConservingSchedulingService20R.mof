@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_NonWorkConservingSchedulingServiceModule";
+	Location = "UNIX_NonWorkConservingSchedulingService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NonWorkConservingSchedulingServiceModule";
 	Name = "UNIX_NonWorkConservingSchedulingServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NonWorkConservingSchedulingServiceModule";
 	ProviderName = "UNIX_NonWorkConservingSchedulingServiceProvider";
 	ClassName = "CIM_NonWorkConservingSchedulingService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NonWorkConservingSchedulingServiceModule";
 	ProviderName = "UNIX_NonWorkConservingSchedulingServiceProvider";
 	ClassName = "UNIX_NonWorkConservingSchedulingService";
 	Namespaces = {"root/cimv2"};

@@ -1211,5 +1211,5 @@ class CIM_DesktopMonitor : CIM_Display {
 class UNIX_DesktopMonitor : CIM_DesktopMonitor
 {
 
-}
+};
 

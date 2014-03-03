@@ -204,5 +204,5 @@ class CIM_SwitchPortSpanningTreeStatistics : CIM_SAPStatisticalInformation {
 class UNIX_SwitchPortSpanningTreeStatistics : CIM_SwitchPortSpanningTreeStatistics
 {
 
-}
+};
 

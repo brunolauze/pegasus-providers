@@ -77,5 +77,5 @@ class CIM_SystemAdministratorGroup : CIM_Dependency {
 class UNIX_SystemAdministratorGroup : CIM_SystemAdministratorGroup
 {
 
-}
+};
 

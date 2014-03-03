@@ -218,5 +218,5 @@ class CIM_CommonDatabaseCapabilities : CIM_Capabilities {
 class UNIX_CommonDatabaseCapabilities : CIM_CommonDatabaseCapabilities
 {
 
-}
+};
 

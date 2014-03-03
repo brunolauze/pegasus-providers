@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_PExtentRedundancyComponentModule";
+	Location = "UNIX_PExtentRedundancyComponent";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PExtentRedundancyComponentModule";
 	Name = "UNIX_PExtentRedundancyComponentProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PExtentRedundancyComponentModule";
 	ProviderName = "UNIX_PExtentRedundancyComponentProvider";
 	ClassName = "CIM_PExtentRedundancyComponent";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PExtentRedundancyComponentModule";
 	ProviderName = "UNIX_PExtentRedundancyComponentProvider";
 	ClassName = "UNIX_PExtentRedundancyComponent";
 	Namespaces = {"root/cimv2"};

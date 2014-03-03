@@ -1037,5 +1037,5 @@ class CIM_Chassis : CIM_PhysicalFrame {
 class UNIX_Chassis : CIM_Chassis
 {
 
-}
+};
 

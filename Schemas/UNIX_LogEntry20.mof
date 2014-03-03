@@ -316,5 +316,5 @@ class CIM_LogEntry : CIM_RecordForLog {
 class UNIX_LogEntry : CIM_LogEntry
 {
 
-}
+};
 

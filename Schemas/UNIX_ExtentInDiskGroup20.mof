@@ -100,5 +100,5 @@ class CIM_ExtentInDiskGroup : CIM_CollectedMSEs {
 class UNIX_ExtentInDiskGroup : CIM_ExtentInDiskGroup
 {
 
-}
+};
 

@@ -628,5 +628,5 @@ class CIM_UnixDirectory : CIM_Directory {
 class UNIX_Directory : CIM_UnixDirectory
 {
 
-}
+};
 

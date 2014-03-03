@@ -268,5 +268,5 @@ class CIM_ConnectivityMembershipSettingData : CIM_SettingData {
 class UNIX_ConnectivityMembershipSettingData : CIM_ConnectivityMembershipSettingData
 {
 
-}
+};
 

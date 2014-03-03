@@ -85,5 +85,5 @@ class CIM_ElementInSchedulingService : CIM_Component {
 class UNIX_ElementInSchedulingService : CIM_ElementInSchedulingService
 {
 
-}
+};
 

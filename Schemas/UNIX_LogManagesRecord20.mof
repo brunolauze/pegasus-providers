@@ -54,5 +54,5 @@ class CIM_LogManagesRecord {
 class UNIX_LogManagesRecord : CIM_LogManagesRecord
 {
 
-}
+};
 

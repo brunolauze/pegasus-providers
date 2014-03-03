@@ -933,5 +933,5 @@ class CIM_PrecedenceService : CIM_QoSService {
 class UNIX_PrecedenceService : CIM_PrecedenceService
 {
 
-}
+};
 

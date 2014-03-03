@@ -78,5 +78,5 @@ class CIM_DeviceAccessedByFile : CIM_Dependency {
 class UNIX_DeviceAccessedByFile : CIM_DeviceAccessedByFile
 {
 
-}
+};
 

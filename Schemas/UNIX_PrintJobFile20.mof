@@ -75,5 +75,5 @@ class CIM_PrintJobFile : CIM_Component {
 class UNIX_PrintJobFile : CIM_PrintJobFile
 {
 
-}
+};
 

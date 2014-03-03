@@ -214,5 +214,5 @@ class CIM_Role : CIM_Collection {
 class UNIX_Role : CIM_Role
 {
 
-}
+};
 

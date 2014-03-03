@@ -74,5 +74,5 @@ class CIM_ModulePort : CIM_Component {
 class UNIX_ModulePort : CIM_ModulePort
 {
 
-}
+};
 

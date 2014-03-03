@@ -773,5 +773,5 @@ class CIM_HardwareThread : CIM_EnabledLogicalElement {
 class UNIX_HardwareThread : CIM_HardwareThread
 {
 
-}
+};
 

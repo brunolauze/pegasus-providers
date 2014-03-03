@@ -82,5 +82,5 @@ class CIM_ReflectorClientService : CIM_Dependency {
 class UNIX_ReflectorClientService : CIM_ReflectorClientService
 {
 
-}
+};
 

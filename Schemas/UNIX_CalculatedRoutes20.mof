@@ -90,5 +90,5 @@ class CIM_CalculatedRoutes : CIM_Dependency {
 class UNIX_CalculatedRoutes : CIM_CalculatedRoutes
 {
 
-}
+};
 

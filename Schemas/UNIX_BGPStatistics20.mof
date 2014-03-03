@@ -271,5 +271,5 @@ class CIM_BGPStatistics : CIM_ServiceStatisticalInformation {
 class UNIX_BGPStatistics : CIM_BGPStatistics
 {
 
-}
+};
 

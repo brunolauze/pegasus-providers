@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SwitchPortSourceRoutingStatisticsModule";
+	Location = "UNIX_SwitchPortSourceRoutingStatistics";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SwitchPortSourceRoutingStatisticsModule";
 	Name = "UNIX_SwitchPortSourceRoutingStatisticsProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SwitchPortSourceRoutingStatisticsModule";
 	ProviderName = "UNIX_SwitchPortSourceRoutingStatisticsProvider";
 	ClassName = "CIM_SwitchPortSourceRoutingStatistics";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SwitchPortSourceRoutingStatisticsModule";
 	ProviderName = "UNIX_SwitchPortSourceRoutingStatisticsProvider";
 	ClassName = "UNIX_SwitchPortSourceRoutingStatistics";
 	Namespaces = {"root/cimv2"};

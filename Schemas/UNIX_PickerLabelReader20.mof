@@ -101,5 +101,5 @@ class CIM_PickerLabelReader : CIM_AssociatedLabelReader {
 class UNIX_PickerLabelReader : CIM_PickerLabelReader
 {
 
-}
+};
 

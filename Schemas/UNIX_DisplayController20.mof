@@ -1313,5 +1313,5 @@ class CIM_DisplayController : CIM_Controller {
 class UNIX_DisplayController : CIM_DisplayController
 {
 
-}
+};
 

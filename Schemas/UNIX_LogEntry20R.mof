@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_LogEntryModule";
+	Location = "UNIX_LogEntry";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_LogEntryModule";
 	Name = "UNIX_LogEntryProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_LogEntryModule";
 	ProviderName = "UNIX_LogEntryProvider";
 	ClassName = "CIM_LogEntry";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_LogEntryModule";
 	ProviderName = "UNIX_LogEntryProvider";
 	ClassName = "UNIX_LogEntry";
 	Namespaces = {"root/cimv2"};

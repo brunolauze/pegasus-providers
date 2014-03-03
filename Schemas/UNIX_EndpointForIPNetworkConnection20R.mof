@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_EndpointForIPNetworkConnectionModule";
+	Location = "UNIX_EndpointForIPNetworkConnection";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_EndpointForIPNetworkConnectionModule";
 	Name = "UNIX_EndpointForIPNetworkConnectionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_EndpointForIPNetworkConnectionModule";
 	ProviderName = "UNIX_EndpointForIPNetworkConnectionProvider";
 	ClassName = "CIM_EndpointForIPNetworkConnection";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_EndpointForIPNetworkConnectionModule";
 	ProviderName = "UNIX_EndpointForIPNetworkConnectionProvider";
 	ClassName = "UNIX_EndpointForIPNetworkConnection";
 	Namespaces = {"root/cimv2"};

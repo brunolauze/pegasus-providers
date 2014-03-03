@@ -85,5 +85,5 @@ class CIM_AccountMapsToAccount : CIM_Dependency {
 class UNIX_AccountMapsToAccount : CIM_AccountMapsToAccount
 {
 
-}
+};
 

@@ -110,5 +110,5 @@ class CIM_DeviceIdentity : CIM_LogicalIdentity {
 class UNIX_DeviceIdentity : CIM_DeviceIdentity
 {
 
-}
+};
 

@@ -1512,5 +1512,5 @@ class CIM_ProtectedSpaceExtent : CIM_StorageExtent {
 class UNIX_ProtectedSpaceExtent : CIM_ProtectedSpaceExtent
 {
 
-}
+};
 

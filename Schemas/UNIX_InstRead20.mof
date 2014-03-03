@@ -286,5 +286,5 @@ class CIM_InstRead : CIM_InstIndication {
 class UNIX_InstRead : CIM_InstRead
 {
 
-}
+};
 

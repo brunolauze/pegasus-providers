@@ -82,5 +82,5 @@ class CIM_SystemInNamespace {
 class UNIX_SystemInNamespace : CIM_SystemInNamespace
 {
 
-}
+};
 

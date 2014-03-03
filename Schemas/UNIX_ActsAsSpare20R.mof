@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ActsAsSpareModule";
+	Location = "UNIX_ActsAsSpare";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ActsAsSpareModule";
 	Name = "UNIX_ActsAsSpareProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ActsAsSpareModule";
 	ProviderName = "UNIX_ActsAsSpareProvider";
 	ClassName = "CIM_ActsAsSpare";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ActsAsSpareModule";
 	ProviderName = "UNIX_ActsAsSpareProvider";
 	ClassName = "UNIX_ActsAsSpare";
 	Namespaces = {"root/cimv2"};

@@ -76,5 +76,5 @@ class CIM_PrinterServicingJob : CIM_Dependency {
 class UNIX_PrinterServicingJob : CIM_PrinterServicingJob
 {
 
-}
+};
 

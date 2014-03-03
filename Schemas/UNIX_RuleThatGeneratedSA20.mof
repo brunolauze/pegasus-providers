@@ -79,5 +79,5 @@ class CIM_RuleThatGeneratedSA : CIM_Dependency {
 class UNIX_RuleThatGeneratedSA : CIM_RuleThatGeneratedSA
 {
 
-}
+};
 

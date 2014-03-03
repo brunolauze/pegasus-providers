@@ -65,5 +65,5 @@ class CIM_CompatibleProduct {
 class UNIX_CompatibleProduct : CIM_CompatibleProduct
 {
 
-}
+};
 

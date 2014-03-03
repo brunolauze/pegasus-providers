@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_RemotePortModule";
+	Location = "UNIX_RemotePort";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RemotePortModule";
 	Name = "UNIX_RemotePortProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RemotePortModule";
 	ProviderName = "UNIX_RemotePortProvider";
 	ClassName = "CIM_RemotePort";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RemotePortModule";
 	ProviderName = "UNIX_RemotePortProvider";
 	ClassName = "UNIX_RemotePort";
 	Namespaces = {"root/cimv2"};

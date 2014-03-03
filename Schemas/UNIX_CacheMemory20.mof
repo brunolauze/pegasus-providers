@@ -1768,5 +1768,5 @@ class CIM_CacheMemory : CIM_Memory {
 class UNIX_CacheMemory : CIM_CacheMemory
 {
 
-}
+};
 

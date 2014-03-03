@@ -1234,5 +1234,5 @@ class CIM_VideoHead : CIM_LogicalDevice {
 class UNIX_VideoHead : CIM_VideoHead
 {
 
-}
+};
 

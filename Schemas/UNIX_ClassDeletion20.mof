@@ -273,5 +273,5 @@ class CIM_ClassDeletion : CIM_ClassIndication {
 class UNIX_ClassDeletion : CIM_ClassDeletion
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SnapshotModule";
+	Location = "UNIX_Snapshot";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SnapshotModule";
 	Name = "UNIX_SnapshotProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SnapshotModule";
 	ProviderName = "UNIX_SnapshotProvider";
 	ClassName = "CIM_Snapshot";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SnapshotModule";
 	ProviderName = "UNIX_SnapshotProvider";
 	ClassName = "UNIX_Snapshot";
 	Namespaces = {"root/cimv2"};

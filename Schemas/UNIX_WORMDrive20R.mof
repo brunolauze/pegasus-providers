@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_WORMDriveModule";
+	Location = "UNIX_WORMDrive";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_WORMDriveModule";
 	Name = "UNIX_WORMDriveProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_WORMDriveModule";
 	ProviderName = "UNIX_WORMDriveProvider";
 	ClassName = "CIM_WORMDrive";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_WORMDriveModule";
 	ProviderName = "UNIX_WORMDriveProvider";
 	ClassName = "UNIX_WORMDrive";
 	Namespaces = {"root/cimv2"};

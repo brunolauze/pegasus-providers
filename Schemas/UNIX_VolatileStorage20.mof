@@ -1678,5 +1678,5 @@ class CIM_VolatileStorage : CIM_Memory {
 class UNIX_VolatileStorage : CIM_VolatileStorage
 {
 
-}
+};
 

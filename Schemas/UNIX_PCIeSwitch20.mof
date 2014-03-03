@@ -1439,5 +1439,5 @@ class CIM_PCIeSwitch : CIM_PCIDevice {
 class UNIX_PCIeSwitch : CIM_PCIeSwitch
 {
 
-}
+};
 

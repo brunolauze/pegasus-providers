@@ -1062,5 +1062,5 @@ class CIM_PhysicalComputerSystemView : CIM_View {
 class UNIX_PhysicalComputerSystemView : CIM_PhysicalComputerSystemView
 {
 
-}
+};
 

@@ -550,5 +550,5 @@ class CIM_AuthenticationRequirement : CIM_LogicalElement {
 class UNIX_AuthenticationRequirement : CIM_AuthenticationRequirement
 {
 
-}
+};
 

@@ -119,5 +119,5 @@ class CIM_OOBAlertServiceOnNetworkAdapter : CIM_DeviceServiceImplementation {
 class UNIX_OOBAlertServiceOnNetworkAdapter : CIM_OOBAlertServiceOnNetworkAdapter
 {
 
-}
+};
 

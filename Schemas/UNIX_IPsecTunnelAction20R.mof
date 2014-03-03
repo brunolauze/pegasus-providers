@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_IPsecTunnelActionModule";
+	Location = "UNIX_IPsecTunnelAction";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IPsecTunnelActionModule";
 	Name = "UNIX_IPsecTunnelActionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IPsecTunnelActionModule";
 	ProviderName = "UNIX_IPsecTunnelActionProvider";
 	ClassName = "CIM_IPsecTunnelAction";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IPsecTunnelActionModule";
 	ProviderName = "UNIX_IPsecTunnelActionProvider";
 	ClassName = "UNIX_IPsecTunnelAction";
 	Namespaces = {"root/cimv2"};

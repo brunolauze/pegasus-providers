@@ -1174,5 +1174,5 @@ class CIM_PrivilegeManagementService : CIM_AuthorizationService {
 class UNIX_PrivilegeManagementService : CIM_PrivilegeManagementService
 {
 
-}
+};
 

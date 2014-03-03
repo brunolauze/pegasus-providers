@@ -1194,5 +1194,5 @@ class CIM_CableModem : CIM_ConnectionBasedModem {
 class UNIX_CableModem : CIM_CableModem
 {
 
-}
+};
 

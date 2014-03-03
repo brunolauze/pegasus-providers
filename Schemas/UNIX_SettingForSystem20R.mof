@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SettingForSystemModule";
+	Location = "UNIX_SettingForSystem";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SettingForSystemModule";
 	Name = "UNIX_SettingForSystemProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SettingForSystemModule";
 	ProviderName = "UNIX_SettingForSystemProvider";
 	ClassName = "CIM_SettingForSystem";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SettingForSystemModule";
 	ProviderName = "UNIX_SettingForSystemProvider";
 	ClassName = "UNIX_SettingForSystem";
 	Namespaces = {"root/cimv2"};

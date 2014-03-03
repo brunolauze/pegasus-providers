@@ -140,5 +140,5 @@ class CIM_RealizesAggregatePExtent : CIM_RealizesExtent {
 class UNIX_RealizesAggregatePExtent : CIM_RealizesAggregatePExtent
 {
 
-}
+};
 

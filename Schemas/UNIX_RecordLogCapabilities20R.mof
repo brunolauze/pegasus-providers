@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_RecordLogCapabilitiesModule";
+	Location = "UNIX_RecordLogCapabilities";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RecordLogCapabilitiesModule";
 	Name = "UNIX_RecordLogCapabilitiesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RecordLogCapabilitiesModule";
 	ProviderName = "UNIX_RecordLogCapabilitiesProvider";
 	ClassName = "CIM_RecordLogCapabilities";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RecordLogCapabilitiesModule";
 	ProviderName = "UNIX_RecordLogCapabilitiesProvider";
 	ClassName = "UNIX_RecordLogCapabilities";
 	Namespaces = {"root/cimv2"};

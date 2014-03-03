@@ -113,5 +113,5 @@ class CIM_IngressConditioningServiceOnEndpoint : CIM_ServiceSAPDependency {
 class UNIX_IngressConditioningServiceOnEndpoint : CIM_IngressConditioningServiceOnEndpoint
 {
 
-}
+};
 

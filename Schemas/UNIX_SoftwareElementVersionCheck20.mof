@@ -416,5 +416,5 @@ class CIM_SoftwareElementVersionCheck : CIM_Check {
 class UNIX_SoftwareElementVersionCheck : CIM_SoftwareElementVersionCheck
 {
 
-}
+};
 

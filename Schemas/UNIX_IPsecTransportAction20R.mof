@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_IPsecTransportActionModule";
+	Location = "UNIX_IPsecTransportAction";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IPsecTransportActionModule";
 	Name = "UNIX_IPsecTransportActionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IPsecTransportActionModule";
 	ProviderName = "UNIX_IPsecTransportActionProvider";
 	ClassName = "CIM_IPsecTransportAction";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IPsecTransportActionModule";
 	ProviderName = "UNIX_IPsecTransportActionProvider";
 	ClassName = "UNIX_IPsecTransportAction";
 	Namespaces = {"root/cimv2"};

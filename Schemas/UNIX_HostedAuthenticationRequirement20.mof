@@ -106,5 +106,5 @@ class CIM_HostedAuthenticationRequirement : CIM_HostedDependency {
 class UNIX_HostedAuthenticationRequirement : CIM_HostedAuthenticationRequirement
 {
 
-}
+};
 

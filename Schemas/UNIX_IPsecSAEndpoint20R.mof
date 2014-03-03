@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_IPsecSAEndpointModule";
+	Location = "UNIX_IPsecSAEndpoint";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IPsecSAEndpointModule";
 	Name = "UNIX_IPsecSAEndpointProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IPsecSAEndpointModule";
 	ProviderName = "UNIX_IPsecSAEndpointProvider";
 	ClassName = "CIM_IPsecSAEndpoint";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IPsecSAEndpointModule";
 	ProviderName = "UNIX_IPsecSAEndpointProvider";
 	ClassName = "UNIX_IPsecSAEndpoint";
 	Namespaces = {"root/cimv2"};

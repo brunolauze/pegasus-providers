@@ -102,5 +102,5 @@ class CIM_HostedBGPAttributes : CIM_HostedDependency {
 class UNIX_HostedBGPAttributes : CIM_HostedBGPAttributes
 {
 
-}
+};
 

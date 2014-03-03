@@ -124,5 +124,5 @@ class CIM_USBConnection : CIM_DeviceConnection {
 class UNIX_USBConnection : CIM_USBConnection
 {
 
-}
+};
 

@@ -233,5 +233,5 @@ class CIM_PCIPortGroup : CIM_LogicalPortGroup {
 class UNIX_PCIPortGroup : CIM_PCIPortGroup
 {
 
-}
+};
 

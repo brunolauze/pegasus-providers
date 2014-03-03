@@ -830,5 +830,5 @@ class CIM_JobQueue : CIM_JobDestination {
 class UNIX_JobQueue : CIM_JobQueue
 {
 
-}
+};
 

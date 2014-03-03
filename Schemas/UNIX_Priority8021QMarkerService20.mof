@@ -964,5 +964,5 @@ class CIM_Priority8021QMarkerService : CIM_MarkerService {
 class UNIX_Priority8021QMarkerService : CIM_Priority8021QMarkerService
 {
 
-}
+};
 

@@ -300,5 +300,5 @@ class CIM_ZoneMembershipSettingData : CIM_ConnectivityMembershipSettingData {
 class UNIX_ZoneMembershipSettingData : CIM_ZoneMembershipSettingData
 {
 
-}
+};
 

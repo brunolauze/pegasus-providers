@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_RoleLimitedToTargetModule";
+	Location = "UNIX_RoleLimitedToTarget";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RoleLimitedToTargetModule";
 	Name = "UNIX_RoleLimitedToTargetProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RoleLimitedToTargetModule";
 	ProviderName = "UNIX_RoleLimitedToTargetProvider";
 	ClassName = "CIM_RoleLimitedToTarget";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RoleLimitedToTargetModule";
 	ProviderName = "UNIX_RoleLimitedToTargetProvider";
 	ClassName = "UNIX_RoleLimitedToTarget";
 	Namespaces = {"root/cimv2"};

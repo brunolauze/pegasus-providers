@@ -321,5 +321,5 @@ class CIM_QueryCondition : CIM_PolicyCondition {
 class UNIX_QueryCondition : CIM_QueryCondition
 {
 
-}
+};
 

@@ -97,5 +97,5 @@ class CIM_MetricDefForME : CIM_Dependency {
 class UNIX_MetricDefForME : CIM_MetricDefForME
 {
 
-}
+};
 

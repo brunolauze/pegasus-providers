@@ -78,5 +78,5 @@ class CIM_ElementAllocatedFromPool : CIM_Dependency {
 class UNIX_ElementAllocatedFromPool : CIM_ElementAllocatedFromPool
 {
 
-}
+};
 

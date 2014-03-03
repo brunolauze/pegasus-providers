@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_BlockStorageStatisticalDataModule";
+	Location = "UNIX_BlockStorageStatisticalData";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BlockStorageStatisticalDataModule";
 	Name = "UNIX_BlockStorageStatisticalDataProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BlockStorageStatisticalDataModule";
 	ProviderName = "UNIX_BlockStorageStatisticalDataProvider";
 	ClassName = "CIM_BlockStorageStatisticalData";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BlockStorageStatisticalDataModule";
 	ProviderName = "UNIX_BlockStorageStatisticalDataProvider";
 	ClassName = "UNIX_BlockStorageStatisticalData";
 	Namespaces = {"root/cimv2"};

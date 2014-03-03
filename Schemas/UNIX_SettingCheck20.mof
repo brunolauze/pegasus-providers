@@ -333,5 +333,5 @@ class CIM_SettingCheck : CIM_Check {
 class UNIX_SettingCheck : CIM_SettingCheck
 {
 
-}
+};
 

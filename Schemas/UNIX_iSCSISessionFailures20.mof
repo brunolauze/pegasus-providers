@@ -288,5 +288,5 @@ class CIM_iSCSISessionFailures : CIM_StatisticalData {
 class UNIX_iSCSISessionFailures : CIM_iSCSISessionFailures
 {
 
-}
+};
 

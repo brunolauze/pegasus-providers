@@ -289,5 +289,5 @@ class CIM_FCPortRateStatistics : CIM_StatisticalData {
 class UNIX_FCPortRateStatistics : CIM_FCPortRateStatistics
 {
 
-}
+};
 

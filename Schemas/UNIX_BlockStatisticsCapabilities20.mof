@@ -276,5 +276,5 @@ class CIM_BlockStatisticsCapabilities : CIM_StatisticsCapabilities {
 class UNIX_BlockStatisticsCapabilities : CIM_BlockStatisticsCapabilities
 {
 
-}
+};
 

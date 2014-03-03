@@ -108,5 +108,5 @@ class CIM_InLogicalNetwork : CIM_CollectedMSEs {
 class UNIX_InLogicalNetwork : CIM_InLogicalNetwork
 {
 
-}
+};
 

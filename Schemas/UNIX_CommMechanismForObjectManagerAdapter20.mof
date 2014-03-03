@@ -84,5 +84,5 @@ class CIM_CommMechanismForObjectManagerAdapter : CIM_Dependency {
 class UNIX_CommMechanismForObjectManagerAdapter : CIM_CommMechanismForObjectManagerAdapter
 {
 
-}
+};
 

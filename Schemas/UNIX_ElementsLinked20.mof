@@ -76,5 +76,5 @@ class CIM_ElementsLinked : CIM_Dependency {
 class UNIX_ElementsLinked : CIM_ElementsLinked
 {
 
-}
+};
 

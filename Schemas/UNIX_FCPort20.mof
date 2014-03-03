@@ -1421,5 +1421,5 @@ class CIM_FCPort : CIM_NetworkPort {
 class UNIX_FCPort : CIM_FCPort
 {
 
-}
+};
 

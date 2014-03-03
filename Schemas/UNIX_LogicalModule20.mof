@@ -1199,5 +1199,5 @@ class CIM_LogicalModule : CIM_LogicalDevice {
 class UNIX_LogicalModule : CIM_LogicalModule
 {
 
-}
+};
 

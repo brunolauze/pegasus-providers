@@ -469,5 +469,5 @@ class CIM_IPsecRule : CIM_SARule {
 class UNIX_IPsecRule : CIM_IPsecRule
 {
 
-}
+};
 

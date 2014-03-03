@@ -80,5 +80,5 @@ class CIM_ResidesOnExtent : CIM_Dependency {
 class UNIX_ResidesOnExtent : CIM_ResidesOnExtent
 {
 
-}
+};
 

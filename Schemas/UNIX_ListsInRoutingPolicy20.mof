@@ -83,5 +83,5 @@ class CIM_ListsInRoutingPolicy : CIM_Component {
 class UNIX_ListsInRoutingPolicy : CIM_ListsInRoutingPolicy
 {
 
-}
+};
 

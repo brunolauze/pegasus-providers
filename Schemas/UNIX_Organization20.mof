@@ -206,5 +206,5 @@ class CIM_Organization : CIM_OrganizationalEntity {
 class UNIX_Organization : CIM_Organization
 {
 
-}
+};
 

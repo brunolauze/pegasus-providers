@@ -224,5 +224,5 @@ class CIM_SwitchPortTransparentBridgingStatistics : CIM_SAPStatisticalInformatio
 class UNIX_SwitchPortTransparentBridgingStatistics : CIM_SwitchPortTransparentBridgingStatistics
 {
 
-}
+};
 

@@ -62,5 +62,5 @@ class CIM_PolicySetAppliesToElement {
 class UNIX_PolicySetAppliesToElement : CIM_PolicySetAppliesToElement
 {
 
-}
+};
 

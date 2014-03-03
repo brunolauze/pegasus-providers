@@ -122,5 +122,5 @@ class CIM_FilterListInSystem : CIM_SystemComponent {
 class UNIX_FilterListInSystem : CIM_FilterListInSystem
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_VerificationServiceModule";
+	Location = "UNIX_VerificationService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_VerificationServiceModule";
 	Name = "UNIX_VerificationServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_VerificationServiceModule";
 	ProviderName = "UNIX_VerificationServiceProvider";
 	ClassName = "CIM_VerificationService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_VerificationServiceModule";
 	ProviderName = "UNIX_VerificationServiceProvider";
 	ClassName = "UNIX_VerificationService";
 	Namespaces = {"root/cimv2"};

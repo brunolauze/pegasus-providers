@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ScopedSettingModule";
+	Location = "UNIX_ScopedSetting";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ScopedSettingModule";
 	Name = "UNIX_ScopedSettingProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ScopedSettingModule";
 	ProviderName = "UNIX_ScopedSettingProvider";
 	ClassName = "CIM_ScopedSetting";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ScopedSettingModule";
 	ProviderName = "UNIX_ScopedSettingProvider";
 	ClassName = "UNIX_ScopedSetting";
 	Namespaces = {"root/cimv2"};

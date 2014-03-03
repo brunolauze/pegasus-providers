@@ -1265,5 +1265,5 @@ class CIM_USBPort : CIM_LogicalPort {
 class UNIX_USBPort : CIM_USBPort
 {
 
-}
+};
 

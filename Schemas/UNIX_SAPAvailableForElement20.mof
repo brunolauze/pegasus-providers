@@ -60,5 +60,5 @@ class CIM_SAPAvailableForElement {
 class UNIX_SAPAvailableForElement : CIM_SAPAvailableForElement
 {
 
-}
+};
 

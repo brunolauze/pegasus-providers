@@ -120,5 +120,5 @@ class CIM_USBPortOnHub : CIM_PortOnDevice {
 class UNIX_USBPortOnHub : CIM_USBPortOnHub
 {
 
-}
+};
 

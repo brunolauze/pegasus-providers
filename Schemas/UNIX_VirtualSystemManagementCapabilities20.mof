@@ -310,5 +310,5 @@ class CIM_VirtualSystemManagementCapabilities : CIM_EnabledLogicalElementCapabil
 class UNIX_VirtualSystemManagementCapabilities : CIM_VirtualSystemManagementCapabilities
 {
 
-}
+};
 

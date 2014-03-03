@@ -106,5 +106,5 @@ class CIM_EndpointForIPNetworkConnection : CIM_SAPSAPDependency {
 class UNIX_EndpointForIPNetworkConnection : CIM_EndpointForIPNetworkConnection
 {
 
-}
+};
 

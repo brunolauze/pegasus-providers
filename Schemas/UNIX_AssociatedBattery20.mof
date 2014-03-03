@@ -80,5 +80,5 @@ class CIM_AssociatedBattery : CIM_Dependency {
 class UNIX_AssociatedBattery : CIM_AssociatedBattery
 {
 
-}
+};
 

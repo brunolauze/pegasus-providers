@@ -105,5 +105,5 @@ class CIM_BGPPeerUsesRouteMap : CIM_CollectedMSEs {
 class UNIX_BGPPeerUsesRouteMap : CIM_BGPPeerUsesRouteMap
 {
 
-}
+};
 

@@ -219,5 +219,5 @@ class CIM_LogicalPortGroup : CIM_SystemSpecificCollection {
 class UNIX_LogicalPortGroup : CIM_LogicalPortGroup
 {
 
-}
+};
 

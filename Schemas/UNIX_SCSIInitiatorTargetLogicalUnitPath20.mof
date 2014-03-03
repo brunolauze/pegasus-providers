@@ -151,5 +151,5 @@ class CIM_SCSIInitiatorTargetLogicalUnitPath {
 class UNIX_SCSIInitiatorTargetLogicalUnitPath : CIM_SCSIInitiatorTargetLogicalUnitPath
 {
 
-}
+};
 

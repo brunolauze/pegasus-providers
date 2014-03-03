@@ -76,5 +76,5 @@ class CIM_ProductPhysicalComponent : CIM_Component {
 class UNIX_ProductPhysicalComponent : CIM_ProductPhysicalComponent
 {
 
-}
+};
 

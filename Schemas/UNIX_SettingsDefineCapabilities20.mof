@@ -198,5 +198,5 @@ class CIM_SettingsDefineCapabilities : CIM_Component {
 class UNIX_SettingsDefineCapabilities : CIM_SettingsDefineCapabilities
 {
 
-}
+};
 

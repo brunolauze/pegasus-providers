@@ -78,5 +78,5 @@ class CIM_CollectedSoftwareFeatures : CIM_MemberOfCollection {
 class UNIX_CollectedSoftwareFeatures : CIM_CollectedSoftwareFeatures
 {
 
-}
+};
 

@@ -312,5 +312,5 @@ class CIM_NetworkPortCapabilities : CIM_LogicalPortCapabilities {
 class UNIX_NetworkPortCapabilities : CIM_NetworkPortCapabilities
 {
 
-}
+};
 

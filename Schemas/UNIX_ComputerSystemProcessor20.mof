@@ -143,5 +143,5 @@ class CIM_ComputerSystemProcessor : CIM_SystemDevice {
 class UNIX_ComputerSystemProcessor : CIM_ComputerSystemProcessor
 {
 
-}
+};
 

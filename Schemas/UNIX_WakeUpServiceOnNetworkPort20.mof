@@ -109,5 +109,5 @@ class CIM_WakeUpServiceOnNetworkPort : CIM_DeviceServiceImplementation {
 class UNIX_WakeUpServiceOnNetworkPort : CIM_WakeUpServiceOnNetworkPort
 {
 
-}
+};
 

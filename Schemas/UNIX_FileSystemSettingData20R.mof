@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_FileSystemSettingDataModule";
+	Location = "UNIX_FileSystemSettingData";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_FileSystemSettingDataModule";
 	Name = "UNIX_FileSystemSettingDataProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_FileSystemSettingDataModule";
 	ProviderName = "UNIX_FileSystemSettingDataProvider";
 	ClassName = "CIM_FileSystemSettingData";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_FileSystemSettingDataModule";
 	ProviderName = "UNIX_FileSystemSettingDataProvider";
 	ClassName = "UNIX_FileSystemSettingData";
 	Namespaces = {"root/cimv2"};

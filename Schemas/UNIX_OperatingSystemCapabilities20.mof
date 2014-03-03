@@ -269,5 +269,5 @@ class CIM_OperatingSystemCapabilities : CIM_EnabledLogicalElementCapabilities {
 class UNIX_OperatingSystemCapabilities : CIM_OperatingSystemCapabilities
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_DisketteDriveModule";
+	Location = "UNIX_DisketteDrive";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DisketteDriveModule";
 	Name = "UNIX_DisketteDriveProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DisketteDriveModule";
 	ProviderName = "UNIX_DisketteDriveProvider";
 	ClassName = "CIM_DisketteDrive";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DisketteDriveModule";
 	ProviderName = "UNIX_DisketteDriveProvider";
 	ClassName = "UNIX_DisketteDrive";
 	Namespaces = {"root/cimv2"};

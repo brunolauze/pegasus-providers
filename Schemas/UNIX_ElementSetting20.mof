@@ -55,5 +55,5 @@ class CIM_ElementSetting {
 class UNIX_ElementSetting : CIM_ElementSetting
 {
 
-}
+};
 

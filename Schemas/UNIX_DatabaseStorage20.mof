@@ -84,5 +84,5 @@ class CIM_DatabaseStorage : CIM_Component {
 class UNIX_DatabaseStorage : CIM_DatabaseStorage
 {
 
-}
+};
 

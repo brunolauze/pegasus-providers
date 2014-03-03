@@ -358,5 +358,5 @@ class CIM_MediaRedirectionCapabilities : CIM_RedirectionServiceCapabilities {
 class UNIX_MediaRedirectionCapabilities : CIM_MediaRedirectionCapabilities
 {
 
-}
+};
 

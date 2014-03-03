@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_JobQueueModule";
+	Location = "UNIX_JobQueue";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_JobQueueModule";
 	Name = "UNIX_JobQueueProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_JobQueueModule";
 	ProviderName = "UNIX_JobQueueProvider";
 	ClassName = "CIM_JobQueue";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_JobQueueModule";
 	ProviderName = "UNIX_JobQueueProvider";
 	ClassName = "UNIX_JobQueue";
 	Namespaces = {"root/cimv2"};

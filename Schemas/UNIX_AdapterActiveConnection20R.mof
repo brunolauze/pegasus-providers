@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_AdapterActiveConnectionModule";
+	Location = "UNIX_AdapterActiveConnection";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AdapterActiveConnectionModule";
 	Name = "UNIX_AdapterActiveConnectionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AdapterActiveConnectionModule";
 	ProviderName = "UNIX_AdapterActiveConnectionProvider";
 	ClassName = "CIM_AdapterActiveConnection";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AdapterActiveConnectionModule";
 	ProviderName = "UNIX_AdapterActiveConnectionProvider";
 	ClassName = "UNIX_AdapterActiveConnection";
 	Namespaces = {"root/cimv2"};

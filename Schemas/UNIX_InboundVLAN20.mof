@@ -160,5 +160,5 @@ class CIM_InboundVLAN : CIM_SAPSAPDependency {
 class UNIX_InboundVLAN : CIM_InboundVLAN
 {
 
-}
+};
 

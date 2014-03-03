@@ -286,5 +286,5 @@ class CIM_PublicPrivateKeyAuthentication : CIM_AuthenticationCondition {
 class UNIX_PublicPrivateKeyAuthentication : CIM_PublicPrivateKeyAuthentication
 {
 
-}
+};
 

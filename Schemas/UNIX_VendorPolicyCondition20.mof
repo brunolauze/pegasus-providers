@@ -279,5 +279,5 @@ class CIM_VendorPolicyCondition : CIM_PolicyCondition {
 class UNIX_VendorPolicyCondition : CIM_VendorPolicyCondition
 {
 
-}
+};
 

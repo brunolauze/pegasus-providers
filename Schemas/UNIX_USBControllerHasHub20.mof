@@ -197,5 +197,5 @@ class CIM_USBControllerHasHub : CIM_ControlledBy {
 class UNIX_USBControllerHasHub : CIM_USBControllerHasHub
 {
 
-}
+};
 

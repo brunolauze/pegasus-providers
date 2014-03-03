@@ -102,5 +102,5 @@ class CIM_SwitchServiceVLAN : CIM_ServiceComponent {
 class UNIX_SwitchServiceVLAN : CIM_SwitchServiceVLAN
 {
 
-}
+};
 

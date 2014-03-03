@@ -525,5 +525,5 @@ class CIM_DHCPSettingData : CIM_IPAssignmentSettingData {
 class UNIX_DHCPSettingData : CIM_DHCPSettingData
 {
 
-}
+};
 

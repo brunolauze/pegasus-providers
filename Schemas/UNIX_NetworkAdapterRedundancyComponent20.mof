@@ -145,5 +145,5 @@ class CIM_NetworkAdapterRedundancyComponent : CIM_RedundancyComponent {
 class UNIX_NetworkAdapterRedundancyComponent : CIM_NetworkAdapterRedundancyComponent
 {
 
-}
+};
 

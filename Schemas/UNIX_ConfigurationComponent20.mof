@@ -71,5 +71,5 @@ class CIM_ConfigurationComponent {
 class UNIX_ConfigurationComponent : CIM_ConfigurationComponent
 {
 
-}
+};
 

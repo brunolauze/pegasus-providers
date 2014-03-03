@@ -81,5 +81,5 @@ class CIM_PickerForChanger : CIM_Dependency {
 class UNIX_PickerForChanger : CIM_PickerForChanger
 {
 
-}
+};
 

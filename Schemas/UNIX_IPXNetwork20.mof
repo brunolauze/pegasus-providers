@@ -272,5 +272,5 @@ class CIM_IPXNetwork : CIM_LogicalNetwork {
 class UNIX_IPXNetwork : CIM_IPXNetwork
 {
 
-}
+};
 

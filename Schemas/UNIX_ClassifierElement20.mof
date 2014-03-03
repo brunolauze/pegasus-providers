@@ -971,5 +971,5 @@ class CIM_ClassifierElement : CIM_ClassifierService {
 class UNIX_ClassifierElement : CIM_ClassifierElement
 {
 
-}
+};
 

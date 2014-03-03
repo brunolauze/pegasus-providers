@@ -268,5 +268,5 @@ class CIM_MediaAccessStatData : CIM_StatisticalData {
 class UNIX_MediaAccessStatData : CIM_MediaAccessStatData
 {
 
-}
+};
 

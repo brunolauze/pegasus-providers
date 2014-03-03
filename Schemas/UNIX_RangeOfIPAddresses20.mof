@@ -219,5 +219,5 @@ class CIM_RangeOfIPAddresses : CIM_SystemSpecificCollection {
 class UNIX_RangeOfIPAddresses : CIM_RangeOfIPAddresses
 {
 
-}
+};
 

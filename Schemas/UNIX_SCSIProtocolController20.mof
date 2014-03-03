@@ -1196,5 +1196,5 @@ class CIM_SCSIProtocolController : CIM_ProtocolController {
 class UNIX_SCSIProtocolController : CIM_SCSIProtocolController
 {
 
-}
+};
 

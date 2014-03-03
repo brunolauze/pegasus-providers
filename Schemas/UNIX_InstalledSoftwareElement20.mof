@@ -57,5 +57,5 @@ class CIM_InstalledSoftwareElement {
 class UNIX_InstalledSoftwareElement : CIM_InstalledSoftwareElement
 {
 
-}
+};
 

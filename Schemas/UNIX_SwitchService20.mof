@@ -1033,5 +1033,5 @@ class CIM_SwitchService : CIM_ForwardingService {
 class UNIX_SwitchService : CIM_SwitchService
 {
 
-}
+};
 

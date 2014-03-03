@@ -332,5 +332,5 @@ class CIM_DHCPCapabilities : CIM_EnabledLogicalElementCapabilities {
 class UNIX_DHCPCapabilities : CIM_DHCPCapabilities
 {
 
-}
+};
 

@@ -931,5 +931,5 @@ class CIM_DatabaseService : CIM_Service {
 class UNIX_DatabaseService : CIM_DatabaseService
 {
 
-}
+};
 

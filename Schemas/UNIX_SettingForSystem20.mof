@@ -99,5 +99,5 @@ class CIM_SettingForSystem : CIM_HostedDependency {
 class UNIX_SettingForSystem : CIM_SettingForSystem
 {
 
-}
+};
 

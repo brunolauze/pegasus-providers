@@ -1209,5 +1209,5 @@ class CIM_HDSLModem : CIM_DSLModem {
 class UNIX_HDSLModem : CIM_HDSLModem
 {
 
-}
+};
 

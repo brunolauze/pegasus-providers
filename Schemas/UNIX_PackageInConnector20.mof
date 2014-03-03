@@ -106,5 +106,5 @@ class CIM_PackageInConnector : CIM_ElementInConnector {
 class UNIX_PackageInConnector : CIM_PackageInConnector
 {
 
-}
+};
 

@@ -300,5 +300,5 @@ class CIM_BootConfigSetting : CIM_SettingData {
 class UNIX_BootConfigSetting : CIM_BootConfigSetting
 {
 
-}
+};
 

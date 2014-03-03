@@ -1367,5 +1367,5 @@ class CIM_UninterruptiblePowerSupply : CIM_PowerSupply {
 class UNIX_UninterruptiblePowerSupply : CIM_UninterruptiblePowerSupply
 {
 
-}
+};
 

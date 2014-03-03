@@ -632,5 +632,5 @@ class CIM_FilterEntry : CIM_FilterEntryBase {
 class UNIX_FilterEntry : CIM_FilterEntry
 {
 
-}
+};
 

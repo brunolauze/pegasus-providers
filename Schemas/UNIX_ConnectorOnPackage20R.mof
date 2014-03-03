@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ConnectorOnPackageModule";
+	Location = "UNIX_ConnectorOnPackage";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ConnectorOnPackageModule";
 	Name = "UNIX_ConnectorOnPackageProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ConnectorOnPackageModule";
 	ProviderName = "UNIX_ConnectorOnPackageProvider";
 	ClassName = "CIM_ConnectorOnPackage";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ConnectorOnPackageModule";
 	ProviderName = "UNIX_ConnectorOnPackageProvider";
 	ClassName = "UNIX_ConnectorOnPackage";
 	Namespaces = {"root/cimv2"};

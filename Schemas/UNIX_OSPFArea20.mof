@@ -935,5 +935,5 @@ class CIM_OSPFArea : CIM_RoutingProtocolDomain {
 class UNIX_OSPFArea : CIM_OSPFArea
 {
 
-}
+};
 

@@ -1457,5 +1457,5 @@ class CIM_FibrePort : CIM_LogicalPort {
 class UNIX_FibrePort : CIM_FibrePort
 {
 
-}
+};
 

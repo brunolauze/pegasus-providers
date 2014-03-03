@@ -105,5 +105,5 @@ class CIM_HostedJobDestination : CIM_HostedDependency {
 class UNIX_HostedJobDestination : CIM_HostedJobDestination
 {
 
-}
+};
 

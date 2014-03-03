@@ -184,5 +184,5 @@ class CIM_RelatedSpanningTree : CIM_ServiceServiceDependency {
 class UNIX_RelatedSpanningTree : CIM_RelatedSpanningTree
 {
 
-}
+};
 

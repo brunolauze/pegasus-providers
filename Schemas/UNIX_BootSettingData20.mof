@@ -269,5 +269,5 @@ class CIM_BootSettingData : CIM_SettingData {
 class UNIX_BootSettingData : CIM_BootSettingData
 {
 
-}
+};
 

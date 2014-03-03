@@ -214,5 +214,5 @@ class CIM_BlockStatisticsManifestCollection : CIM_SystemSpecificCollection {
 class UNIX_BlockStatisticsManifestCollection : CIM_BlockStatisticsManifestCollection
 {
 
-}
+};
 

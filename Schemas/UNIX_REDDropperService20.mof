@@ -1098,5 +1098,5 @@ class CIM_REDDropperService : CIM_DropperService {
 class UNIX_REDDropperService : CIM_REDDropperService
 {
 
-}
+};
 

@@ -232,5 +232,5 @@ class CIM_WRRSchedulingElement : CIM_SchedulingElement {
 class UNIX_WRRSchedulingElement : CIM_WRRSchedulingElement
 {
 
-}
+};
 

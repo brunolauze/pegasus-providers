@@ -1024,5 +1024,5 @@ class CIM_TokenBucketMeterService : CIM_MeterService {
 class UNIX_TokenBucketMeterService : CIM_TokenBucketMeterService
 {
 
-}
+};
 

@@ -123,5 +123,5 @@ class CIM_CASignsPublicKeyCertificate : CIM_ManagedCredential {
 class UNIX_CASignsPublicKeyCertificate : CIM_CASignsPublicKeyCertificate
 {
 
-}
+};
 

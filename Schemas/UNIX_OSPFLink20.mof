@@ -260,5 +260,5 @@ class CIM_OSPFLink : CIM_ConnectivityCollection {
 class UNIX_OSPFLink : CIM_OSPFLink
 {
 
-}
+};
 

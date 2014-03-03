@@ -785,5 +785,5 @@ class CIM_ProcessorCore : CIM_EnabledLogicalElement {
 class UNIX_ProcessorCore : CIM_ProcessorCore
 {
 
-}
+};
 

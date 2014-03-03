@@ -71,5 +71,5 @@ class CIM_Synchronized {
 class UNIX_Synchronized : CIM_Synchronized
 {
 
-}
+};
 

@@ -89,5 +89,5 @@ class CIM_CommMechanismForAdapter : CIM_Dependency {
 class UNIX_CommMechanismForAdapter : CIM_CommMechanismForAdapter
 {
 
-}
+};
 

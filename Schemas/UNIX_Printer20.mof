@@ -1953,5 +1953,5 @@ class CIM_Printer : CIM_LogicalDevice {
 class UNIX_Printer : CIM_Printer
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ManagementControllerModule";
+	Location = "UNIX_ManagementController";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ManagementControllerModule";
 	Name = "UNIX_ManagementControllerProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ManagementControllerModule";
 	ProviderName = "UNIX_ManagementControllerProvider";
 	ClassName = "CIM_ManagementController";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ManagementControllerModule";
 	ProviderName = "UNIX_ManagementControllerProvider";
 	ClassName = "UNIX_ManagementController";
 	Namespaces = {"root/cimv2"};

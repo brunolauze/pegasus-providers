@@ -54,5 +54,5 @@ class CIM_CorrespondingSettingDataRecord {
 class UNIX_CorrespondingSettingDataRecord : CIM_CorrespondingSettingDataRecord
 {
 
-}
+};
 

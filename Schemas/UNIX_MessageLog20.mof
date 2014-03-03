@@ -1325,5 +1325,5 @@ class CIM_MessageLog : CIM_Log {
 class UNIX_MessageLog : CIM_MessageLog
 {
 
-}
+};
 

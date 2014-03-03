@@ -98,5 +98,5 @@ class CIM_VideoBIOSFeatureVideoBIOSElements : CIM_SoftwareFeatureSoftwareElement
 class UNIX_VideoBIOSFeatureVideoBIOSElements : CIM_VideoBIOSFeatureVideoBIOSElements
 {
 
-}
+};
 

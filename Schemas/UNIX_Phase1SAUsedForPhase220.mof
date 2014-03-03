@@ -81,5 +81,5 @@ class CIM_Phase1SAUsedForPhase2 : CIM_Dependency {
 class UNIX_Phase1SAUsedForPhase2 : CIM_Phase1SAUsedForPhase2
 {
 
-}
+};
 

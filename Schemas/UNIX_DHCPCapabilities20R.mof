@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_DHCPCapabilitiesModule";
+	Location = "UNIX_DHCPCapabilities";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DHCPCapabilitiesModule";
 	Name = "UNIX_DHCPCapabilitiesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DHCPCapabilitiesModule";
 	ProviderName = "UNIX_DHCPCapabilitiesProvider";
 	ClassName = "CIM_DHCPCapabilities";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DHCPCapabilitiesModule";
 	ProviderName = "UNIX_DHCPCapabilitiesProvider";
 	ClassName = "UNIX_DHCPCapabilities";
 	Namespaces = {"root/cimv2"};

@@ -1652,5 +1652,5 @@ class CIM_CertificateManagementService : CIM_KeyBasedCredentialManagementService
 class UNIX_CertificateManagementService : CIM_CertificateManagementService
 {
 
-}
+};
 

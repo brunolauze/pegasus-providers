@@ -100,5 +100,5 @@ class CIM_ElementSettingData {
 class UNIX_ElementSettingData : CIM_ElementSettingData
 {
 
-}
+};
 

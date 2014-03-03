@@ -675,5 +675,5 @@ class CIM_PhysicalLink : CIM_PhysicalElement {
 class UNIX_PhysicalLink : CIM_PhysicalLink
 {
 
-}
+};
 

@@ -293,5 +293,5 @@ class CIM_FileSystemSettingData : CIM_ScopedSettingData {
 class UNIX_FileSystemSettingData : CIM_FileSystemSettingData
 {
 
-}
+};
 

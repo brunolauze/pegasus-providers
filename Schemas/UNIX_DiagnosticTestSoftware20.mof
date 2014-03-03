@@ -90,5 +90,5 @@ class CIM_DiagnosticTestSoftware : CIM_Dependency {
 class UNIX_DiagnosticTestSoftware : CIM_DiagnosticTestSoftware
 {
 
-}
+};
 

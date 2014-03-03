@@ -117,5 +117,5 @@ class CIM_ClassifierElementInClassifierService : CIM_ServiceComponent {
 class UNIX_ClassifierElementInClassifierService : CIM_ClassifierElementInClassifierService
 {
 
-}
+};
 

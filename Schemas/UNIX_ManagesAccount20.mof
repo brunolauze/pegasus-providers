@@ -76,5 +76,5 @@ class CIM_ManagesAccount : CIM_Dependency {
 class UNIX_ManagesAccount : CIM_ManagesAccount
 {
 
-}
+};
 

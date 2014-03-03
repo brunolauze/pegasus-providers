@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ManagesAccountOnSystemModule";
+	Location = "UNIX_ManagesAccountOnSystem";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ManagesAccountOnSystemModule";
 	Name = "UNIX_ManagesAccountOnSystemProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ManagesAccountOnSystemModule";
 	ProviderName = "UNIX_ManagesAccountOnSystemProvider";
 	ClassName = "CIM_ManagesAccountOnSystem";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ManagesAccountOnSystemModule";
 	ProviderName = "UNIX_ManagesAccountOnSystemProvider";
 	ClassName = "UNIX_ManagesAccountOnSystem";
 	Namespaces = {"root/cimv2"};

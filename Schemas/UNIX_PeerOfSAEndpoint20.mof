@@ -77,5 +77,5 @@ class CIM_PeerOfSAEndpoint : CIM_Dependency {
 class UNIX_PeerOfSAEndpoint : CIM_PeerOfSAEndpoint
 {
 
-}
+};
 

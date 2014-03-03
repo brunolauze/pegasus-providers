@@ -101,5 +101,5 @@ class CIM_RoutersInBGPCluster : CIM_CollectedMSEs {
 class UNIX_RoutersInBGPCluster : CIM_RoutersInBGPCluster
 {
 
-}
+};
 

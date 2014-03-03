@@ -76,5 +76,5 @@ class CIM_DeviceStatistics : CIM_Statistics {
 class UNIX_DeviceStatistics : CIM_DeviceStatistics
 {
 
-}
+};
 

@@ -153,5 +153,5 @@ class CIM_StorageError : CIM_ManagedElement {
 class UNIX_StorageError : CIM_StorageError
 {
 
-}
+};
 

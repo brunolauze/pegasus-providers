@@ -896,5 +896,5 @@ class CIM_RoutingProtocolDomain : CIM_AdminDomain {
 class UNIX_RoutingProtocolDomain : CIM_RoutingProtocolDomain
 {
 
-}
+};
 

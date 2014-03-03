@@ -1153,5 +1153,5 @@ class CIM_SoftwareInstallationService : CIM_Service {
 class UNIX_SoftwareInstallationService : CIM_SoftwareInstallationService
 {
 
-}
+};
 

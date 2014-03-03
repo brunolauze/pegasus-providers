@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_PolicyRuleValidityPeriodModule";
+	Location = "UNIX_PolicyRuleValidityPeriod";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PolicyRuleValidityPeriodModule";
 	Name = "UNIX_PolicyRuleValidityPeriodProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PolicyRuleValidityPeriodModule";
 	ProviderName = "UNIX_PolicyRuleValidityPeriodProvider";
 	ClassName = "CIM_PolicyRuleValidityPeriod";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PolicyRuleValidityPeriodModule";
 	ProviderName = "UNIX_PolicyRuleValidityPeriodProvider";
 	ClassName = "UNIX_PolicyRuleValidityPeriod";
 	Namespaces = {"root/cimv2"};

@@ -175,5 +175,5 @@ class CIM_PolicyGroupInSystem : CIM_PolicySetInSystem {
 class UNIX_PolicyGroupInSystem : CIM_PolicyGroupInSystem
 {
 
-}
+};
 

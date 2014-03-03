@@ -229,5 +229,5 @@ class CIM_DeviceErrorCounts : CIM_StatisticalInformation {
 class UNIX_DeviceErrorCounts : CIM_DeviceErrorCounts
 {
 
-}
+};
 

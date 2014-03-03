@@ -1145,5 +1145,5 @@ class CIM_WiFiPortConfigurationService : CIM_NetworkPortConfigurationService {
 class UNIX_WiFiPortConfigurationService : CIM_WiFiPortConfigurationService
 {
 
-}
+};
 

@@ -55,5 +55,5 @@ class CIM_SoftwareElementActions {
 class UNIX_SoftwareElementActions : CIM_SoftwareElementActions
 {
 
-}
+};
 

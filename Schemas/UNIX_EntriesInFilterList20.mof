@@ -88,5 +88,5 @@ class CIM_EntriesInFilterList : CIM_Component {
 class UNIX_EntriesInFilterList : CIM_EntriesInFilterList
 {
 
-}
+};
 

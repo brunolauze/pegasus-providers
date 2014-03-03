@@ -251,5 +251,5 @@ class CIM_IPNetworkIdentity : CIM_Identity {
 class UNIX_IPNetworkIdentity : CIM_IPNetworkIdentity
 {
 
-}
+};
 

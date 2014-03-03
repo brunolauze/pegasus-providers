@@ -1033,5 +1033,5 @@ class CIM_HeadTailDropper : CIM_DropperService {
 class UNIX_HeadTailDropper : CIM_HeadTailDropper
 {
 
-}
+};
 

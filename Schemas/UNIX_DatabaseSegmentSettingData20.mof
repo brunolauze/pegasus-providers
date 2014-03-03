@@ -329,5 +329,5 @@ class CIM_DatabaseSegmentSettingData : CIM_ScopedSettingData {
 class UNIX_DatabaseSegmentSettingData : CIM_DatabaseSegmentSettingData
 {
 
-}
+};
 

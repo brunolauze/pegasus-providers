@@ -988,5 +988,5 @@ class CIM_ConfigurationReportingService : CIM_Service {
 class UNIX_ConfigurationReportingService : CIM_ConfigurationReportingService
 {
 
-}
+};
 

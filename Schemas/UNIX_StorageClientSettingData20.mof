@@ -294,5 +294,5 @@ class CIM_StorageClientSettingData : CIM_SettingData {
 class UNIX_StorageClientSettingData : CIM_StorageClientSettingData
 {
 
-}
+};
 

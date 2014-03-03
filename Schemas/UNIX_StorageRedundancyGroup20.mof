@@ -597,5 +597,5 @@ class CIM_StorageRedundancyGroup : CIM_RedundancyGroup {
 class UNIX_StorageRedundancyGroup : CIM_StorageRedundancyGroup
 {
 
-}
+};
 

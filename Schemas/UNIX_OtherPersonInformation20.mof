@@ -519,5 +519,5 @@ class CIM_OtherPersonInformation : CIM_ManagedElement {
 class UNIX_OtherPersonInformation : CIM_OtherPersonInformation
 {
 
-}
+};
 

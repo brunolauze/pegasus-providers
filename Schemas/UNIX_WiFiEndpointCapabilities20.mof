@@ -351,5 +351,5 @@ class CIM_WiFiEndpointCapabilities : CIM_EnabledLogicalElementCapabilities {
 class UNIX_WiFiEndpointCapabilities : CIM_WiFiEndpointCapabilities
 {
 
-}
+};
 

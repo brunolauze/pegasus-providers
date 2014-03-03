@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_AccountSettingDataModule";
+	Location = "UNIX_AccountSettingData";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AccountSettingDataModule";
 	Name = "UNIX_AccountSettingDataProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AccountSettingDataModule";
 	ProviderName = "UNIX_AccountSettingDataProvider";
 	ClassName = "CIM_AccountSettingData";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AccountSettingDataModule";
 	ProviderName = "UNIX_AccountSettingDataProvider";
 	ClassName = "UNIX_AccountSettingData";
 	Namespaces = {"root/cimv2"};

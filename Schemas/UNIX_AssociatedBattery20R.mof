@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_AssociatedBatteryModule";
+	Location = "UNIX_AssociatedBattery";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AssociatedBatteryModule";
 	Name = "UNIX_AssociatedBatteryProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AssociatedBatteryModule";
 	ProviderName = "UNIX_AssociatedBatteryProvider";
 	ClassName = "CIM_AssociatedBattery";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_AssociatedBatteryModule";
 	ProviderName = "UNIX_AssociatedBatteryProvider";
 	ClassName = "UNIX_AssociatedBattery";
 	Namespaces = {"root/cimv2"};

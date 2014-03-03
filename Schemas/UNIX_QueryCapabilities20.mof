@@ -226,5 +226,5 @@ class CIM_QueryCapabilities : CIM_Capabilities {
 class UNIX_QueryCapabilities : CIM_QueryCapabilities
 {
 
-}
+};
 

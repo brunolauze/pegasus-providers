@@ -330,5 +330,5 @@ class CIM_BlockStatisticsManifest : CIM_ManagedElement {
 class UNIX_BlockStatisticsManifest : CIM_BlockStatisticsManifest
 {
 
-}
+};
 

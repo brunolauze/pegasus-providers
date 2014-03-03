@@ -103,5 +103,5 @@ class CIM_LibraryPackage : CIM_SystemPackaging {
 class UNIX_LibraryPackage : CIM_LibraryPackage
 {
 
-}
+};
 

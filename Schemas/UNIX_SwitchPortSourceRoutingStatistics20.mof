@@ -286,5 +286,5 @@ class CIM_SwitchPortSourceRoutingStatistics : CIM_SAPStatisticalInformation {
 class UNIX_SwitchPortSourceRoutingStatistics : CIM_SwitchPortSourceRoutingStatistics
 {
 
-}
+};
 

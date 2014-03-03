@@ -81,5 +81,5 @@ class CIM_AssociatedNextHop : CIM_Dependency {
 class UNIX_AssociatedNextHop : CIM_AssociatedNextHop
 {
 
-}
+};
 

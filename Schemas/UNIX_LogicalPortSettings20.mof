@@ -268,5 +268,5 @@ class CIM_LogicalPortSettings : CIM_SettingData {
 class UNIX_LogicalPortSettings : CIM_LogicalPortSettings
 {
 
-}
+};
 

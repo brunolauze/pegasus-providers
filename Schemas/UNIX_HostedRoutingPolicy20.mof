@@ -104,5 +104,5 @@ class CIM_HostedRoutingPolicy : CIM_HostedDependency {
 class UNIX_HostedRoutingPolicy : CIM_HostedRoutingPolicy
 {
 
-}
+};
 

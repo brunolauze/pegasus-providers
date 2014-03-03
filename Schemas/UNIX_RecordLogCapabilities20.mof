@@ -261,5 +261,5 @@ class CIM_RecordLogCapabilities : CIM_EnabledLogicalElementCapabilities {
 class UNIX_RecordLogCapabilities : CIM_RecordLogCapabilities
 {
 
-}
+};
 

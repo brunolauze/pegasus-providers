@@ -1574,5 +1574,5 @@ class CIM_VolumeSet : CIM_StorageVolume {
 class UNIX_VolumeSet : CIM_VolumeSet
 {
 
-}
+};
 

@@ -78,5 +78,5 @@ class CIM_SwitchPortDynamicForwarding : CIM_Dependency {
 class UNIX_SwitchPortDynamicForwarding : CIM_SwitchPortDynamicForwarding
 {
 
-}
+};
 

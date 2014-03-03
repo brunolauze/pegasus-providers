@@ -137,5 +137,5 @@ class CIM_AggregateRedundancyComponent : CIM_ExtentRedundancyComponent {
 class UNIX_AggregateRedundancyComponent : CIM_AggregateRedundancyComponent
 {
 
-}
+};
 

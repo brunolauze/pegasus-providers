@@ -1002,5 +1002,5 @@ class CIM_AverageRateMeterService : CIM_MeterService {
 class UNIX_AverageRateMeterService : CIM_AverageRateMeterService
 {
 
-}
+};
 

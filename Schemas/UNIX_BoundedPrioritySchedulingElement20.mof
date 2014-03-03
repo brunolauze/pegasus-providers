@@ -249,5 +249,5 @@ class CIM_BoundedPrioritySchedulingElement : CIM_PrioritySchedulingElement {
 class UNIX_BoundedPrioritySchedulingElement : CIM_BoundedPrioritySchedulingElement
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_OrderedMemberOfCollectionModule";
+	Location = "UNIX_OrderedMemberOfCollection";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OrderedMemberOfCollectionModule";
 	Name = "UNIX_OrderedMemberOfCollectionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OrderedMemberOfCollectionModule";
 	ProviderName = "UNIX_OrderedMemberOfCollectionProvider";
 	ClassName = "CIM_OrderedMemberOfCollection";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_OrderedMemberOfCollectionModule";
 	ProviderName = "UNIX_OrderedMemberOfCollectionProvider";
 	ClassName = "UNIX_OrderedMemberOfCollection";
 	Namespaces = {"root/cimv2"};

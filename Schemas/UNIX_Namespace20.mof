@@ -218,5 +218,5 @@ class CIM_Namespace : CIM_ManagedElement {
 class UNIX_Namespace : CIM_Namespace
 {
 
-}
+};
 

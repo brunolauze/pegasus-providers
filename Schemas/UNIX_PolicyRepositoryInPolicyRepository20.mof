@@ -123,5 +123,5 @@ class CIM_PolicyRepositoryInPolicyRepository : CIM_SystemComponent {
 class UNIX_PolicyRepositoryInPolicyRepository : CIM_PolicyRepositoryInPolicyRepository
 {
 
-}
+};
 

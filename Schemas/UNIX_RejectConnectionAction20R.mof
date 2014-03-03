@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_RejectConnectionActionModule";
+	Location = "UNIX_RejectConnectionAction";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RejectConnectionActionModule";
 	Name = "UNIX_RejectConnectionActionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RejectConnectionActionModule";
 	ProviderName = "UNIX_RejectConnectionActionProvider";
 	ClassName = "CIM_RejectConnectionAction";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RejectConnectionActionModule";
 	ProviderName = "UNIX_RejectConnectionActionProvider";
 	ClassName = "UNIX_RejectConnectionAction";
 	Namespaces = {"root/cimv2"};

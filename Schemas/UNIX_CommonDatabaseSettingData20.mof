@@ -268,5 +268,5 @@ class CIM_CommonDatabaseSettingData : CIM_SettingData {
 class UNIX_CommonDatabaseSettingData : CIM_CommonDatabaseSettingData
 {
 
-}
+};
 

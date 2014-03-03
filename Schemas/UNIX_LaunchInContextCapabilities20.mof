@@ -263,5 +263,5 @@ class CIM_LaunchInContextCapabilities : CIM_EnabledLogicalElementCapabilities {
 class UNIX_LaunchInContextCapabilities : CIM_LaunchInContextCapabilities
 {
 
-}
+};
 

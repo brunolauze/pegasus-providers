@@ -138,5 +138,5 @@ class CIM_InSegment : CIM_InLogicalNetwork {
 class UNIX_InSegment : CIM_InSegment
 {
 
-}
+};
 

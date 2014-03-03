@@ -1306,5 +1306,5 @@ class CIM_BIOSService : CIM_Service {
 class UNIX_BIOSService : CIM_BIOSService
 {
 
-}
+};
 

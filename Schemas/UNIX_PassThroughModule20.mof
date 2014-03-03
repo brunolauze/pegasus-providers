@@ -1333,5 +1333,5 @@ class CIM_PassThroughModule : CIM_LogicalModule {
 class UNIX_PassThroughModule : CIM_PassThroughModule
 {
 
-}
+};
 

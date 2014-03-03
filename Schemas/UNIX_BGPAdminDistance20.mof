@@ -83,5 +83,5 @@ class CIM_BGPAdminDistance : CIM_Dependency {
 class UNIX_BGPAdminDistance : CIM_BGPAdminDistance
 {
 
-}
+};
 

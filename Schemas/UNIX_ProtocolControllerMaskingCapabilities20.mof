@@ -342,5 +342,5 @@ class CIM_ProtocolControllerMaskingCapabilities : CIM_Capabilities {
 class UNIX_ProtocolControllerMaskingCapabilities : CIM_ProtocolControllerMaskingCapabilities
 {
 
-}
+};
 

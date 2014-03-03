@@ -93,5 +93,5 @@ class CIM_QueueAllocation : CIM_Dependency {
 class UNIX_QueueAllocation : CIM_QueueAllocation
 {
 
-}
+};
 

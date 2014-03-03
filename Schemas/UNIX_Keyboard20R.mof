@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_KeyboardModule";
+	Location = "UNIX_Keyboard";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_KeyboardModule";
 	Name = "UNIX_KeyboardProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_KeyboardModule";
 	ProviderName = "UNIX_KeyboardProvider";
 	ClassName = "CIM_Keyboard";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_KeyboardModule";
 	ProviderName = "UNIX_KeyboardProvider";
 	ClassName = "UNIX_Keyboard";
 	Namespaces = {"root/cimv2"};

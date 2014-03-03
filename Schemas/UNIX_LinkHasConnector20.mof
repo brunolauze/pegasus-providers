@@ -76,5 +76,5 @@ class CIM_LinkHasConnector : CIM_Component {
 class UNIX_LinkHasConnector : CIM_LinkHasConnector
 {
 
-}
+};
 

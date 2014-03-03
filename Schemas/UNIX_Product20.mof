@@ -191,5 +191,5 @@ class CIM_Product : CIM_ManagedElement {
 class UNIX_Product : CIM_Product
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SSHProtocolEndpointModule";
+	Location = "UNIX_SSHProtocolEndpoint";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SSHProtocolEndpointModule";
 	Name = "UNIX_SSHProtocolEndpointProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SSHProtocolEndpointModule";
 	ProviderName = "UNIX_SSHProtocolEndpointProvider";
 	ClassName = "CIM_SSHProtocolEndpoint";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SSHProtocolEndpointModule";
 	ProviderName = "UNIX_SSHProtocolEndpointProvider";
 	ClassName = "UNIX_SSHProtocolEndpoint";
 	Namespaces = {"root/cimv2"};

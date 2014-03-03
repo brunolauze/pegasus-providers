@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SwitchPortDynamicForwardingModule";
+	Location = "UNIX_SwitchPortDynamicForwarding";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SwitchPortDynamicForwardingModule";
 	Name = "UNIX_SwitchPortDynamicForwardingProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SwitchPortDynamicForwardingModule";
 	ProviderName = "UNIX_SwitchPortDynamicForwardingProvider";
 	ClassName = "CIM_SwitchPortDynamicForwarding";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SwitchPortDynamicForwardingModule";
 	ProviderName = "UNIX_SwitchPortDynamicForwardingProvider";
 	ClassName = "UNIX_SwitchPortDynamicForwarding";
 	Namespaces = {"root/cimv2"};

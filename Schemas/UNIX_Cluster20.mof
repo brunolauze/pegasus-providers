@@ -1060,5 +1060,5 @@ class CIM_Cluster : CIM_ComputerSystem {
 class UNIX_Cluster : CIM_Cluster
 {
 
-}
+};
 

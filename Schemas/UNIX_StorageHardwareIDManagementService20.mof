@@ -1097,5 +1097,5 @@ class CIM_StorageHardwareIDManagementService : CIM_IdentityManagementService {
 class UNIX_StorageHardwareIDManagementService : CIM_StorageHardwareIDManagementService
 {
 
-}
+};
 

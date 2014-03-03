@@ -2164,5 +2164,7 @@
     <None Include="UNIX_iSCSISessionSettings20R.mof" />
     <None Include="Meta_Class20.mof" />
     <None Include="Meta_Class20R.mof" />
+    <None Include="UNIX_ManagedSystemSchema20.mof" />
+    <None Include="UNIX_ManagedSystemSchema20R.mof" />
   </ItemGroup>
 </Project>

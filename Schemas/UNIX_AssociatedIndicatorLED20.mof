@@ -80,5 +80,5 @@ class CIM_AssociatedIndicatorLED : CIM_Dependency {
 class UNIX_AssociatedIndicatorLED : CIM_AssociatedIndicatorLED
 {
 
-}
+};
 

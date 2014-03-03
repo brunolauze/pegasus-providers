@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_IDEControllerModule";
+	Location = "UNIX_IDEController";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IDEControllerModule";
 	Name = "UNIX_IDEControllerProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IDEControllerModule";
 	ProviderName = "UNIX_IDEControllerProvider";
 	ClassName = "CIM_IDEController";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_IDEControllerModule";
 	ProviderName = "UNIX_IDEControllerProvider";
 	ClassName = "UNIX_IDEController";
 	Namespaces = {"root/cimv2"};

@@ -82,5 +82,5 @@ class CIM_DatabaseFile : CIM_Component {
 class UNIX_DatabaseFile : CIM_DatabaseFile
 {
 
-}
+};
 

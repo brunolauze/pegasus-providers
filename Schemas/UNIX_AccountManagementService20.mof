@@ -1023,5 +1023,5 @@ class CIM_AccountManagementService : CIM_SecurityService {
 class UNIX_AccountManagementService : CIM_AccountManagementService
 {
 
-}
+};
 

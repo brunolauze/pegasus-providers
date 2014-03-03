@@ -352,5 +352,5 @@ class CIM_MetricServiceCapabilities : CIM_EnabledLogicalElementCapabilities {
 class UNIX_MetricServiceCapabilities : CIM_MetricServiceCapabilities
 {
 
-}
+};
 

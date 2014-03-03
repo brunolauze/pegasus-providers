@@ -1142,5 +1142,5 @@ class CIM_DHCPProtocolEndpoint : CIM_ProtocolEndpoint {
 class UNIX_DHCPProtocolEndpoint : CIM_DHCPProtocolEndpoint
 {
 
-}
+};
 

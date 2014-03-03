@@ -234,5 +234,5 @@ class CIM_StorageHardwareID : CIM_Identity {
 class UNIX_StorageHardwareID : CIM_StorageHardwareID
 {
 
-}
+};
 

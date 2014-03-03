@@ -88,5 +88,5 @@ class CIM_AuthorizationTarget : CIM_Dependency {
 class UNIX_AuthorizationTarget : CIM_AuthorizationTarget
 {
 
-}
+};
 

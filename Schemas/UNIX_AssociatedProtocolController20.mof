@@ -137,5 +137,5 @@ class CIM_AssociatedProtocolController : CIM_ProtocolControllerForDevice {
 class UNIX_AssociatedProtocolController : CIM_AssociatedProtocolController
 {
 
-}
+};
 

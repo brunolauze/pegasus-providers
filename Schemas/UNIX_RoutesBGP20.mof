@@ -81,5 +81,5 @@ class CIM_RoutesBGP : CIM_Dependency {
 class UNIX_RoutesBGP : CIM_RoutesBGP
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_DesktopMonitorModule";
+	Location = "UNIX_DesktopMonitor";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DesktopMonitorModule";
 	Name = "UNIX_DesktopMonitorProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DesktopMonitorModule";
 	ProviderName = "UNIX_DesktopMonitorProvider";
 	ClassName = "CIM_DesktopMonitor";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DesktopMonitorModule";
 	ProviderName = "UNIX_DesktopMonitorProvider";
 	ClassName = "UNIX_DesktopMonitor";
 	Namespaces = {"root/cimv2"};

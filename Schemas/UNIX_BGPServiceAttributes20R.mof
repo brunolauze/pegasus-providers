@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_BGPServiceAttributesModule";
+	Location = "UNIX_BGPServiceAttributes";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BGPServiceAttributesModule";
 	Name = "UNIX_BGPServiceAttributesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BGPServiceAttributesModule";
 	ProviderName = "UNIX_BGPServiceAttributesProvider";
 	ClassName = "CIM_BGPServiceAttributes";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_BGPServiceAttributesModule";
 	ProviderName = "UNIX_BGPServiceAttributesProvider";
 	ClassName = "UNIX_BGPServiceAttributes";
 	Namespaces = {"root/cimv2"};

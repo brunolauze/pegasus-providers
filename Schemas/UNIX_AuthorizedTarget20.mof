@@ -56,5 +56,5 @@ class CIM_AuthorizedTarget {
 class UNIX_AuthorizedTarget : CIM_AuthorizedTarget
 {
 
-}
+};
 

@@ -551,5 +551,5 @@ class CIM_FilterList : CIM_LogicalElement {
 class UNIX_FilterList : CIM_FilterList
 {
 
-}
+};
 

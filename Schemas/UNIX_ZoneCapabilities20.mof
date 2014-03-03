@@ -248,5 +248,5 @@ class CIM_ZoneCapabilities : CIM_Capabilities {
 class UNIX_ZoneCapabilities : CIM_ZoneCapabilities
 {
 
-}
+};
 

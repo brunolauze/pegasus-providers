@@ -67,5 +67,5 @@ class CIM_NetworksInAdminDomain {
 class UNIX_NetworksInAdminDomain : CIM_NetworksInAdminDomain
 {
 
-}
+};
 

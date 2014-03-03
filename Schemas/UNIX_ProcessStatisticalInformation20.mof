@@ -274,5 +274,5 @@ class CIM_UnixProcessStatisticalInformation : CIM_StatisticalInformation {
 class UNIX_ProcessStatisticalInformation : CIM_UnixProcessStatisticalInformation
 {
 
-}
+};
 

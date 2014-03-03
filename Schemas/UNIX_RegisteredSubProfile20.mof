@@ -500,5 +500,5 @@ class CIM_RegisteredSubProfile : CIM_RegisteredProfile {
 class UNIX_RegisteredSubProfile : CIM_RegisteredSubProfile
 {
 
-}
+};
 

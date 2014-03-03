@@ -964,5 +964,5 @@ class CIM_DSCPMarkerService : CIM_MarkerService {
 class UNIX_DSCPMarkerService : CIM_DSCPMarkerService
 {
 
-}
+};
 

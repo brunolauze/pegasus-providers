@@ -70,5 +70,5 @@ class CIM_ParametersForMethod {
 class UNIX_ParametersForMethod : CIM_ParametersForMethod
 {
 
-}
+};
 

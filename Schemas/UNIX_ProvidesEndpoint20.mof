@@ -103,5 +103,5 @@ class CIM_ProvidesEndpoint : CIM_ServiceAccessBySAP {
 class UNIX_ProvidesEndpoint : CIM_ProvidesEndpoint
 {
 
-}
+};
 

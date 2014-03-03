@@ -83,5 +83,5 @@ class CIM_PortActiveConnection : CIM_Dependency {
 class UNIX_PortActiveConnection : CIM_PortActiveConnection
 {
 
-}
+};
 

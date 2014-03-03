@@ -326,5 +326,5 @@ class CIM_CLPCapabilities : CIM_ProtocolServiceCapabilities {
 class UNIX_CLPCapabilities : CIM_CLPCapabilities
 {
 
-}
+};
 

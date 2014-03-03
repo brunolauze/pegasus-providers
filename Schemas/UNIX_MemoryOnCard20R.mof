@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_MemoryOnCardModule";
+	Location = "UNIX_MemoryOnCard";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MemoryOnCardModule";
 	Name = "UNIX_MemoryOnCardProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MemoryOnCardModule";
 	ProviderName = "UNIX_MemoryOnCardProvider";
 	ClassName = "CIM_MemoryOnCard";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MemoryOnCardModule";
 	ProviderName = "UNIX_MemoryOnCardProvider";
 	ClassName = "UNIX_MemoryOnCard";
 	Namespaces = {"root/cimv2"};

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_MediaPhysicalStatInfoModule";
+	Location = "UNIX_MediaPhysicalStatInfo";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MediaPhysicalStatInfoModule";
 	Name = "UNIX_MediaPhysicalStatInfoProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MediaPhysicalStatInfoModule";
 	ProviderName = "UNIX_MediaPhysicalStatInfoProvider";
 	ClassName = "CIM_MediaPhysicalStatInfo";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_MediaPhysicalStatInfoModule";
 	ProviderName = "UNIX_MediaPhysicalStatInfoProvider";
 	ClassName = "UNIX_MediaPhysicalStatInfo";
 	Namespaces = {"root/cimv2"};

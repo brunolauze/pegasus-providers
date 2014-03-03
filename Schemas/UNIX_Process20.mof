@@ -940,5 +940,5 @@ class CIM_UnixProcess : CIM_Process {
 class UNIX_Process : CIM_UnixProcess
 {
 
-}
+};
 

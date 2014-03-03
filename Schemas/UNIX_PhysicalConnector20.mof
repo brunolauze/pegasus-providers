@@ -811,5 +811,5 @@ class CIM_PhysicalConnector : CIM_PhysicalElement {
 class UNIX_PhysicalConnector : CIM_PhysicalConnector
 {
 
-}
+};
 

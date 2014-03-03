@@ -79,5 +79,5 @@ class CIM_MoreRoleInfo : CIM_Dependency {
 class UNIX_MoreRoleInfo : CIM_MoreRoleInfo
 {
 
-}
+};
 

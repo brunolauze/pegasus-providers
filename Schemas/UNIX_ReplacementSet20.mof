@@ -147,5 +147,5 @@ class CIM_ReplacementSet : CIM_Collection {
 class UNIX_ReplacementSet : CIM_ReplacementSet
 {
 
-}
+};
 

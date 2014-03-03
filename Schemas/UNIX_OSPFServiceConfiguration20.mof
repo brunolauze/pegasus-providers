@@ -93,5 +93,5 @@ class CIM_OSPFServiceConfiguration : CIM_Dependency {
 class UNIX_OSPFServiceConfiguration : CIM_OSPFServiceConfiguration
 {
 
-}
+};
 

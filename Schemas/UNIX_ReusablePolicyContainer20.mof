@@ -894,5 +894,5 @@ class CIM_ReusablePolicyContainer : CIM_AdminDomain {
 class UNIX_ReusablePolicyContainer : CIM_ReusablePolicyContainer
 {
 
-}
+};
 

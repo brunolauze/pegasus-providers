@@ -548,5 +548,5 @@ class CIM_DiagnosticSettingData : CIM_SettingData {
 class UNIX_DiagnosticSettingData : CIM_DiagnosticSettingData
 {
 
-}
+};
 

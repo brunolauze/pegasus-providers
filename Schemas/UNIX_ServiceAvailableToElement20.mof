@@ -63,5 +63,5 @@ class CIM_ServiceAvailableToElement {
 class UNIX_ServiceAvailableToElement : CIM_ServiceAvailableToElement
 {
 
-}
+};
 

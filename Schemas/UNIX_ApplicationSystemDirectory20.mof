@@ -122,5 +122,5 @@ class CIM_ApplicationSystemDirectory {
 class UNIX_ApplicationSystemDirectory : CIM_ApplicationSystemDirectory
 {
 
-}
+};
 

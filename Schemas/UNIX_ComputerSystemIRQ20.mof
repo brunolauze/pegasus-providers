@@ -158,5 +158,5 @@ class CIM_ComputerSystemIRQ : CIM_ComputerSystemResource {
 class UNIX_ComputerSystemIRQ : CIM_ComputerSystemIRQ
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_UsersAccessModule";
+	Location = "UNIX_UsersAccess";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_UsersAccessModule";
 	Name = "UNIX_UsersAccessProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_UsersAccessModule";
 	ProviderName = "UNIX_UsersAccessProvider";
 	ClassName = "CIM_UsersAccess";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_UsersAccessModule";
 	ProviderName = "UNIX_UsersAccessProvider";
 	ClassName = "UNIX_UsersAccess";
 	Namespaces = {"root/cimv2"};

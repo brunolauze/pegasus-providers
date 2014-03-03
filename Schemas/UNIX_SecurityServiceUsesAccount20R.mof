@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SecurityServiceUsesAccountModule";
+	Location = "UNIX_SecurityServiceUsesAccount";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SecurityServiceUsesAccountModule";
 	Name = "UNIX_SecurityServiceUsesAccountProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SecurityServiceUsesAccountModule";
 	ProviderName = "UNIX_SecurityServiceUsesAccountProvider";
 	ClassName = "CIM_SecurityServiceUsesAccount";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SecurityServiceUsesAccountModule";
 	ProviderName = "UNIX_SecurityServiceUsesAccountProvider";
 	ClassName = "UNIX_SecurityServiceUsesAccount";
 	Namespaces = {"root/cimv2"};

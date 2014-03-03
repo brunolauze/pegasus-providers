@@ -78,5 +78,5 @@ class CIM_BGPPeerGroupService : CIM_Dependency {
 class UNIX_BGPPeerGroupService : CIM_BGPPeerGroupService
 {
 
-}
+};
 

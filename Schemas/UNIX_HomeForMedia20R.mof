@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_HomeForMediaModule";
+	Location = "UNIX_HomeForMedia";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HomeForMediaModule";
 	Name = "UNIX_HomeForMediaProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HomeForMediaModule";
 	ProviderName = "UNIX_HomeForMediaProvider";
 	ClassName = "CIM_HomeForMedia";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HomeForMediaModule";
 	ProviderName = "UNIX_HomeForMediaProvider";
 	ClassName = "UNIX_HomeForMedia";
 	Namespaces = {"root/cimv2"};

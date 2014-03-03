@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_iSCSICapabilitiesModule";
+	Location = "UNIX_iSCSICapabilities";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_iSCSICapabilitiesModule";
 	Name = "UNIX_iSCSICapabilitiesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_iSCSICapabilitiesModule";
 	ProviderName = "UNIX_iSCSICapabilitiesProvider";
 	ClassName = "CIM_iSCSICapabilities";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_iSCSICapabilitiesModule";
 	ProviderName = "UNIX_iSCSICapabilitiesProvider";
 	ClassName = "UNIX_iSCSICapabilities";
 	Namespaces = {"root/cimv2"};

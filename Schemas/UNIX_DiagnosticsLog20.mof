@@ -864,5 +864,5 @@ class CIM_DiagnosticsLog : CIM_RecordLog {
 class UNIX_DiagnosticsLog : CIM_DiagnosticsLog
 {
 
-}
+};
 

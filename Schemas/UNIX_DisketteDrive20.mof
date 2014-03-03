@@ -1415,5 +1415,5 @@ class CIM_DisketteDrive : CIM_MediaAccessDevice {
 class UNIX_DisketteDrive : CIM_DisketteDrive
 {
 
-}
+};
 

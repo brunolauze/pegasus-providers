@@ -212,5 +212,5 @@ class CIM_VirtualSystemSnapshotCapabilities : CIM_Capabilities {
 class UNIX_VirtualSystemSnapshotCapabilities : CIM_VirtualSystemSnapshotCapabilities
 {
 
-}
+};
 

@@ -52,5 +52,5 @@ class CIM_FRUPhysicalElements {
 class UNIX_FRUPhysicalElements : CIM_FRUPhysicalElements
 {
 
-}
+};
 

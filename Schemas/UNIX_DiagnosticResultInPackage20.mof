@@ -64,5 +64,5 @@ class CIM_DiagnosticResultInPackage {
 class UNIX_DiagnosticResultInPackage : CIM_DiagnosticResultInPackage
 {
 
-}
+};
 

@@ -275,5 +275,5 @@ class CIM_Zone : CIM_ConnectivityCollection {
 class UNIX_Zone : CIM_Zone
 {
 
-}
+};
 

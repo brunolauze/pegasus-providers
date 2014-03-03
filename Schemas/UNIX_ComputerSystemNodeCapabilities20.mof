@@ -215,5 +215,5 @@ class CIM_ComputerSystemNodeCapabilities : CIM_Capabilities {
 class UNIX_ComputerSystemNodeCapabilities : CIM_ComputerSystemNodeCapabilities
 {
 
-}
+};
 

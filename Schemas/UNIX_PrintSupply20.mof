@@ -841,5 +841,5 @@ class CIM_PrintSupply : CIM_PrinterElement {
 class UNIX_PrintSupply : CIM_PrintSupply
 {
 
-}
+};
 

@@ -608,5 +608,5 @@ class CIM_RoutingPolicy : CIM_LogicalElement {
 class UNIX_RoutingPolicy : CIM_RoutingPolicy
 {
 
-}
+};
 

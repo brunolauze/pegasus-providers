@@ -114,5 +114,5 @@ class CIM_HostedStoragePool : CIM_SystemComponent {
 class UNIX_HostedStoragePool : CIM_HostedStoragePool
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_CacheMemoryModule";
+	Location = "UNIX_CacheMemory";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CacheMemoryModule";
 	Name = "UNIX_CacheMemoryProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CacheMemoryModule";
 	ProviderName = "UNIX_CacheMemoryProvider";
 	ClassName = "CIM_CacheMemory";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_CacheMemoryModule";
 	ProviderName = "UNIX_CacheMemoryProvider";
 	ClassName = "UNIX_CacheMemory";
 	Namespaces = {"root/cimv2"};

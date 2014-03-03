@@ -1069,5 +1069,5 @@ class CIM_BootService : CIM_Service {
 class UNIX_BootService : CIM_BootService
 {
 
-}
+};
 

@@ -1296,5 +1296,5 @@ class CIM_DiscreteSensor : CIM_Sensor {
 class UNIX_DiscreteSensor : CIM_DiscreteSensor
 {
 
-}
+};
 

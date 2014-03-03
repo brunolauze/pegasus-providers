@@ -605,5 +605,5 @@ class CIM_AlertInstIndication : CIM_AlertIndication {
 class UNIX_AlertInstIndication : CIM_AlertInstIndication
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_WiFiEndpointModule";
+	Location = "UNIX_WiFiEndpoint";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_WiFiEndpointModule";
 	Name = "UNIX_WiFiEndpointProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_WiFiEndpointModule";
 	ProviderName = "UNIX_WiFiEndpointProvider";
 	ClassName = "CIM_WiFiEndpoint";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_WiFiEndpointModule";
 	ProviderName = "UNIX_WiFiEndpointProvider";
 	ClassName = "UNIX_WiFiEndpoint";
 	Namespaces = {"root/cimv2"};

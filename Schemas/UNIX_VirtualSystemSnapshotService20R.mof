@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_VirtualSystemSnapshotServiceModule";
+	Location = "UNIX_VirtualSystemSnapshotService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_VirtualSystemSnapshotServiceModule";
 	Name = "UNIX_VirtualSystemSnapshotServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_VirtualSystemSnapshotServiceModule";
 	ProviderName = "UNIX_VirtualSystemSnapshotServiceProvider";
 	ClassName = "CIM_VirtualSystemSnapshotService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_VirtualSystemSnapshotServiceModule";
 	ProviderName = "UNIX_VirtualSystemSnapshotServiceProvider";
 	ClassName = "UNIX_VirtualSystemSnapshotService";
 	Namespaces = {"root/cimv2"};

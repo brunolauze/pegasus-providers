@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SSAControllerModule";
+	Location = "UNIX_SSAController";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SSAControllerModule";
 	Name = "UNIX_SSAControllerProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SSAControllerModule";
 	ProviderName = "UNIX_SSAControllerProvider";
 	ClassName = "CIM_SSAController";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SSAControllerModule";
 	ProviderName = "UNIX_SSAControllerProvider";
 	ClassName = "UNIX_SSAController";
 	Namespaces = {"root/cimv2"};

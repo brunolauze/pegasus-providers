@@ -1110,5 +1110,5 @@ class CIM_IPsecSAEndpoint : CIM_SecurityAssociationEndpoint {
 class UNIX_IPsecSAEndpoint : CIM_IPsecSAEndpoint
 {
 
-}
+};
 

@@ -947,5 +947,5 @@ class CIM_ObjectManager : CIM_WBEMService {
 class UNIX_ObjectManager : CIM_ObjectManager
 {
 
-}
+};
 

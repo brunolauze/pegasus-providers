@@ -893,5 +893,5 @@ class CIM_RemotePort : CIM_RemoteServiceAccessPoint {
 class UNIX_RemotePort : CIM_RemotePort
 {
 
-}
+};
 

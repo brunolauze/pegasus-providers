@@ -880,5 +880,5 @@ class CIM_VLANService : CIM_Service {
 class UNIX_VLANService : CIM_VLANService
 {
 
-}
+};
 

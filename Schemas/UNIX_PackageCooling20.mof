@@ -113,5 +113,5 @@ class CIM_PackageCooling : CIM_PackageDependency {
 class UNIX_PackageCooling : CIM_PackageCooling
 {
 
-}
+};
 

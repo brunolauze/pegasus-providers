@@ -112,5 +112,5 @@ class CIM_TransformOfPreconfiguredAction : CIM_Dependency {
 class UNIX_TransformOfPreconfiguredAction : CIM_TransformOfPreconfiguredAction
 {
 
-}
+};
 

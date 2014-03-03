@@ -392,5 +392,5 @@ class CIM_SCSIMultipathConfigurationCapabilities : CIM_Capabilities {
 class UNIX_SCSIMultipathConfigurationCapabilities : CIM_SCSIMultipathConfigurationCapabilities
 {
 
-}
+};
 

@@ -233,5 +233,5 @@ class CIM_AssociatedCacheMemory : CIM_AssociatedMemory {
 class UNIX_AssociatedCacheMemory : CIM_AssociatedCacheMemory
 {
 
-}
+};
 

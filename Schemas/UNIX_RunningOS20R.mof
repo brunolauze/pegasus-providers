@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_RunningOSModule";
+	Location = "UNIX_RunningOS";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RunningOSModule";
 	Name = "UNIX_RunningOSProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RunningOSModule";
 	ProviderName = "UNIX_RunningOSProvider";
 	ClassName = "CIM_RunningOS";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_RunningOSModule";
 	ProviderName = "UNIX_RunningOSProvider";
 	ClassName = "UNIX_RunningOS";
 	Namespaces = {"root/cimv2"};

@@ -290,5 +290,5 @@ class CIM_PlatformWatchdogServiceCapabilities : CIM_EnabledLogicalElementCapabil
 class UNIX_PlatformWatchdogServiceCapabilities : CIM_PlatformWatchdogServiceCapabilities
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_DependencyContextModule";
+	Location = "UNIX_DependencyContext";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DependencyContextModule";
 	Name = "UNIX_DependencyContextProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DependencyContextModule";
 	ProviderName = "UNIX_DependencyContextProvider";
 	ClassName = "CIM_DependencyContext";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DependencyContextModule";
 	ProviderName = "UNIX_DependencyContextProvider";
 	ClassName = "UNIX_DependencyContext";
 	Namespaces = {"root/cimv2"};

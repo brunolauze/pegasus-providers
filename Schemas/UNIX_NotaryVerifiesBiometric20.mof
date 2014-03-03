@@ -88,5 +88,5 @@ class CIM_NotaryVerifiesBiometric : CIM_Dependency {
 class UNIX_NotaryVerifiesBiometric : CIM_NotaryVerifiesBiometric
 {
 
-}
+};
 

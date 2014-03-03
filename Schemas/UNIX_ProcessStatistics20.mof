@@ -79,5 +79,5 @@ class CIM_UnixProcessStatistics : CIM_Statistics {
 class UNIX_ProcessStatistics : CIM_UnixProcessStatistics
 {
 
-}
+};
 

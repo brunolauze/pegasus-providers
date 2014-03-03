@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_PCIeSwitchModule";
+	Location = "UNIX_PCIeSwitch";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PCIeSwitchModule";
 	Name = "UNIX_PCIeSwitchProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PCIeSwitchModule";
 	ProviderName = "UNIX_PCIeSwitchProvider";
 	ClassName = "CIM_PCIeSwitch";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PCIeSwitchModule";
 	ProviderName = "UNIX_PCIeSwitchProvider";
 	ClassName = "UNIX_PCIeSwitch";
 	Namespaces = {"root/cimv2"};

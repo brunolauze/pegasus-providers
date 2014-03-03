@@ -294,5 +294,5 @@ class CIM_MemoryError : CIM_StorageError {
 class UNIX_MemoryError : CIM_MemoryError
 {
 
-}
+};
 

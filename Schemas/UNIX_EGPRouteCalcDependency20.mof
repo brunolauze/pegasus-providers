@@ -195,5 +195,5 @@ class CIM_EGPRouteCalcDependency : CIM_ServiceServiceDependency {
 class UNIX_EGPRouteCalcDependency : CIM_EGPRouteCalcDependency
 {
 
-}
+};
 

@@ -66,5 +66,5 @@ class CIM_SchedulingServiceToSchedule {
 class UNIX_SchedulingServiceToSchedule : CIM_SchedulingServiceToSchedule
 {
 
-}
+};
 

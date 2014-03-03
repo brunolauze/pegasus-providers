@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_NetworkPipeCompositionModule";
+	Location = "UNIX_NetworkPipeComposition";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NetworkPipeCompositionModule";
 	Name = "UNIX_NetworkPipeCompositionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NetworkPipeCompositionModule";
 	ProviderName = "UNIX_NetworkPipeCompositionProvider";
 	ClassName = "CIM_NetworkPipeComposition";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_NetworkPipeCompositionModule";
 	ProviderName = "UNIX_NetworkPipeCompositionProvider";
 	ClassName = "UNIX_NetworkPipeComposition";
 	Namespaces = {"root/cimv2"};

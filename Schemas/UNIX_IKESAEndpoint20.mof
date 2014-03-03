@@ -1186,5 +1186,5 @@ class CIM_IKESAEndpoint : CIM_SecurityAssociationEndpoint {
 class UNIX_IKESAEndpoint : CIM_IKESAEndpoint
 {
 
-}
+};
 

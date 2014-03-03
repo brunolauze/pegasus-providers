@@ -659,5 +659,5 @@ class CIM_VideoControllerResolution : CIM_Setting {
 class UNIX_VideoControllerResolution : CIM_VideoControllerResolution
 {
 
-}
+};
 

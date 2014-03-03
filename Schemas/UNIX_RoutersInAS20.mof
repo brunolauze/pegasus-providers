@@ -148,5 +148,5 @@ class CIM_RoutersInAS : CIM_SystemComponent {
 class UNIX_RoutersInAS : CIM_RoutersInAS
 {
 
-}
+};
 

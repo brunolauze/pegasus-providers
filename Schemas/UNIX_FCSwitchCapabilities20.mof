@@ -292,5 +292,5 @@ class CIM_FCSwitchCapabilities : CIM_EnabledLogicalElementCapabilities {
 class UNIX_FCSwitchCapabilities : CIM_FCSwitchCapabilities
 {
 
-}
+};
 

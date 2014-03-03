@@ -1171,5 +1171,5 @@ class CIM_Refrigeration : CIM_CoolingDevice {
 class UNIX_Refrigeration : CIM_Refrigeration
 {
 
-}
+};
 

@@ -538,5 +538,5 @@ class CIM_DynamicForwardingEntry : CIM_LogicalElement {
 class UNIX_DynamicForwardingEntry : CIM_DynamicForwardingEntry
 {
 
-}
+};
 

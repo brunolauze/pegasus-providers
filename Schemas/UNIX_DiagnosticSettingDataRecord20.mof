@@ -334,5 +334,5 @@ class CIM_DiagnosticSettingDataRecord : CIM_DiagnosticRecord {
 class UNIX_DiagnosticSettingDataRecord : CIM_DiagnosticSettingDataRecord
 {
 
-}
+};
 

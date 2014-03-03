@@ -108,5 +108,5 @@ class CIM_PackageAlarm : CIM_PackageDependency {
 class UNIX_PackageAlarm : CIM_PackageAlarm
 {
 
-}
+};
 

@@ -186,5 +186,5 @@ class CIM_CalculationBasedOnQueue : CIM_ServiceServiceDependency {
 class UNIX_CalculationBasedOnQueue : CIM_CalculationBasedOnQueue
 {
 
-}
+};
 

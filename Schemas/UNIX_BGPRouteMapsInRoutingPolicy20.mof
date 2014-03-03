@@ -84,5 +84,5 @@ class CIM_BGPRouteMapsInRoutingPolicy : CIM_Component {
 class UNIX_BGPRouteMapsInRoutingPolicy : CIM_BGPRouteMapsInRoutingPolicy
 {
 
-}
+};
 

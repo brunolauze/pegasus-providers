@@ -1521,5 +1521,5 @@ class CIM_OpaqueManagementData : CIM_StorageExtent {
 class UNIX_OpaqueManagementData : CIM_OpaqueManagementData
 {
 
-}
+};
 

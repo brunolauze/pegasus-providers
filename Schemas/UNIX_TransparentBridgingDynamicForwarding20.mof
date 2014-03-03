@@ -80,5 +80,5 @@ class CIM_TransparentBridgingDynamicForwarding : CIM_Dependency {
 class UNIX_TransparentBridgingDynamicForwarding : CIM_TransparentBridgingDynamicForwarding
 {
 
-}
+};
 

@@ -214,5 +214,5 @@ class CIM_StatisticsCapabilities : CIM_Capabilities {
 class UNIX_StatisticsCapabilities : CIM_StatisticsCapabilities
 {
 
-}
+};
 

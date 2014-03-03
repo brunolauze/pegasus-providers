@@ -771,5 +771,5 @@ class CIM_TimeZone : CIM_Setting {
 class UNIX_TimeZone : CIM_TimeZone
 {
 
-}
+};
 

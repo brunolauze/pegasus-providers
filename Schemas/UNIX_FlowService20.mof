@@ -918,5 +918,5 @@ class CIM_FlowService : CIM_QoSService {
 class UNIX_FlowService : CIM_FlowService
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_PolicyRoleCollectionModule";
+	Location = "UNIX_PolicyRoleCollection";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PolicyRoleCollectionModule";
 	Name = "UNIX_PolicyRoleCollectionProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PolicyRoleCollectionModule";
 	ProviderName = "UNIX_PolicyRoleCollectionProvider";
 	ClassName = "CIM_PolicyRoleCollection";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PolicyRoleCollectionModule";
 	ProviderName = "UNIX_PolicyRoleCollectionProvider";
 	ClassName = "UNIX_PolicyRoleCollection";
 	Namespaces = {"root/cimv2"};

@@ -282,5 +282,5 @@ class CIM_NetworkPacketAction : CIM_PolicyAction {
 class UNIX_NetworkPacketAction : CIM_NetworkPacketAction
 {
 
-}
+};
 

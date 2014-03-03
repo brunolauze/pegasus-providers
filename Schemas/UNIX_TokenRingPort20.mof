@@ -1447,5 +1447,5 @@ class CIM_TokenRingPort : CIM_NetworkPort {
 class UNIX_TokenRingPort : CIM_TokenRingPort
 {
 
-}
+};
 

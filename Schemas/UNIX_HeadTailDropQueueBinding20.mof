@@ -88,5 +88,5 @@ class CIM_HeadTailDropQueueBinding : CIM_Dependency {
 class UNIX_HeadTailDropQueueBinding : CIM_HeadTailDropQueueBinding
 {
 
-}
+};
 

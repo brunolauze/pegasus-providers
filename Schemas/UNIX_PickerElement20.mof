@@ -1198,5 +1198,5 @@ class CIM_PickerElement : CIM_MediaTransferDevice {
 class UNIX_PickerElement : CIM_PickerElement
 {
 
-}
+};
 

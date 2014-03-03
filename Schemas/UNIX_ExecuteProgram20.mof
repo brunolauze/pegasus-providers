@@ -305,5 +305,5 @@ class CIM_ExecuteProgram : CIM_Action {
 class UNIX_ExecuteProgram : CIM_ExecuteProgram
 {
 
-}
+};
 

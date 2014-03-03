@@ -612,5 +612,5 @@ class CIM_PowerAllocationSettingData : CIM_ResourceAllocationSettingData {
 class UNIX_PowerAllocationSettingData : CIM_PowerAllocationSettingData
 {
 
-}
+};
 

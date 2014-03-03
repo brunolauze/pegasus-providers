@@ -1521,5 +1521,5 @@ class CIM_PhysicalExtent : CIM_StorageExtent {
 class UNIX_PhysicalExtent : CIM_PhysicalExtent
 {
 
-}
+};
 

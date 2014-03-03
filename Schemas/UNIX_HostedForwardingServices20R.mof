@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_HostedForwardingServicesModule";
+	Location = "UNIX_HostedForwardingServices";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HostedForwardingServicesModule";
 	Name = "UNIX_HostedForwardingServicesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HostedForwardingServicesModule";
 	ProviderName = "UNIX_HostedForwardingServicesProvider";
 	ClassName = "CIM_HostedForwardingServices";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HostedForwardingServicesModule";
 	ProviderName = "UNIX_HostedForwardingServicesProvider";
 	ClassName = "UNIX_HostedForwardingServices";
 	Namespaces = {"root/cimv2"};

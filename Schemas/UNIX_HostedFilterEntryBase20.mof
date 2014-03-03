@@ -102,5 +102,5 @@ class CIM_HostedFilterEntryBase : CIM_HostedDependency {
 class UNIX_HostedFilterEntryBase : CIM_HostedFilterEntryBase
 {
 
-}
+};
 

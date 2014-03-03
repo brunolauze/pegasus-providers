@@ -82,5 +82,5 @@ class CIM_AuthorizedUse : CIM_Dependency {
 class UNIX_AuthorizedUse : CIM_AuthorizedUse
 {
 
-}
+};
 

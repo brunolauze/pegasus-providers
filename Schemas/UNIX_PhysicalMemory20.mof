@@ -846,5 +846,5 @@ class CIM_PhysicalMemory : CIM_Chip {
 class UNIX_PhysicalMemory : CIM_PhysicalMemory
 {
 
-}
+};
 

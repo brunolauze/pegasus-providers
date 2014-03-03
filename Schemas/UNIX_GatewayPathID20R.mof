@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_GatewayPathIDModule";
+	Location = "UNIX_GatewayPathID";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_GatewayPathIDModule";
 	Name = "UNIX_GatewayPathIDProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_GatewayPathIDModule";
 	ProviderName = "UNIX_GatewayPathIDProvider";
 	ClassName = "CIM_GatewayPathID";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_GatewayPathIDModule";
 	ProviderName = "UNIX_GatewayPathIDProvider";
 	ClassName = "UNIX_GatewayPathID";
 	Namespaces = {"root/cimv2"};

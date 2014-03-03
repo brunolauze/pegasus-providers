@@ -191,5 +191,5 @@ class CIM_NextHopRoute : CIM_ManagedElement {
 class UNIX_NextHopRoute : CIM_NextHopRoute
 {
 
-}
+};
 

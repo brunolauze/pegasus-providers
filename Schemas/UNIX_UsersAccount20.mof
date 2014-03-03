@@ -84,5 +84,5 @@ class CIM_UsersAccount : CIM_Dependency {
 class UNIX_UsersAccount : CIM_UsersAccount
 {
 
-}
+};
 

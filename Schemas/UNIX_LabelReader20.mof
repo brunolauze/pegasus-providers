@@ -1185,5 +1185,5 @@ class CIM_LabelReader : CIM_LogicalDevice {
 class UNIX_LabelReader : CIM_LabelReader
 {
 
-}
+};
 

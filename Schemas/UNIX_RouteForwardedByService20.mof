@@ -100,5 +100,5 @@ class CIM_RouteForwardedByService : CIM_Dependency {
 class UNIX_RouteForwardedByService : CIM_RouteForwardedByService
 {
 
-}
+};
 

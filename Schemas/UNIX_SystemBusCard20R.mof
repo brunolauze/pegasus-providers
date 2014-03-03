@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SystemBusCardModule";
+	Location = "UNIX_SystemBusCard";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SystemBusCardModule";
 	Name = "UNIX_SystemBusCardProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SystemBusCardModule";
 	ProviderName = "UNIX_SystemBusCardProvider";
 	ClassName = "CIM_SystemBusCard";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SystemBusCardModule";
 	ProviderName = "UNIX_SystemBusCardProvider";
 	ClassName = "UNIX_SystemBusCard";
 	Namespaces = {"root/cimv2"};

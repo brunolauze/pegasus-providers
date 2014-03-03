@@ -80,5 +80,5 @@ class CIM_ConnectedTo : CIM_Dependency {
 class UNIX_ConnectedTo : CIM_ConnectedTo
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_PrintMarkerModule";
+	Location = "UNIX_PrintMarker";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PrintMarkerModule";
 	Name = "UNIX_PrintMarkerProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PrintMarkerModule";
 	ProviderName = "UNIX_PrintMarkerProvider";
 	ClassName = "CIM_PrintMarker";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PrintMarkerModule";
 	ProviderName = "UNIX_PrintMarkerProvider";
 	ClassName = "UNIX_PrintMarker";
 	Namespaces = {"root/cimv2"};

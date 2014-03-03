@@ -245,5 +245,5 @@ class CIM_ZoneSet : CIM_ConnectivityCollection {
 class UNIX_ZoneSet : CIM_ZoneSet
 {
 
-}
+};
 

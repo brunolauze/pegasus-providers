@@ -1255,5 +1255,5 @@ class CIM_ADSLModem : CIM_DSLModem {
 class UNIX_ADSLModem : CIM_ADSLModem
 {
 
-}
+};
 

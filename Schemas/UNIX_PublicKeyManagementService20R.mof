@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_PublicKeyManagementServiceModule";
+	Location = "UNIX_PublicKeyManagementService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PublicKeyManagementServiceModule";
 	Name = "UNIX_PublicKeyManagementServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PublicKeyManagementServiceModule";
 	ProviderName = "UNIX_PublicKeyManagementServiceProvider";
 	ClassName = "CIM_PublicKeyManagementService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_PublicKeyManagementServiceModule";
 	ProviderName = "UNIX_PublicKeyManagementServiceProvider";
 	ClassName = "UNIX_PublicKeyManagementService";
 	Namespaces = {"root/cimv2"};

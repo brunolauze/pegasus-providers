@@ -90,5 +90,5 @@ class CIM_AllocatedFromStoragePool : CIM_Dependency {
 class UNIX_AllocatedFromStoragePool : CIM_AllocatedFromStoragePool
 {
 
-}
+};
 

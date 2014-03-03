@@ -337,5 +337,5 @@ class CIM_OpaqueManagementDataCapabilities : CIM_EnabledLogicalElementCapabiliti
 class UNIX_OpaqueManagementDataCapabilities : CIM_OpaqueManagementDataCapabilities
 {
 
-}
+};
 

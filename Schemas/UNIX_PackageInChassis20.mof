@@ -115,5 +115,5 @@ class CIM_PackageInChassis : CIM_Container {
 class UNIX_PackageInChassis : CIM_PackageInChassis
 {
 
-}
+};
 

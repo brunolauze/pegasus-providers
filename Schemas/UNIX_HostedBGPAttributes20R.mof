@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_HostedBGPAttributesModule";
+	Location = "UNIX_HostedBGPAttributes";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HostedBGPAttributesModule";
 	Name = "UNIX_HostedBGPAttributesProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HostedBGPAttributesModule";
 	ProviderName = "UNIX_HostedBGPAttributesProvider";
 	ClassName = "CIM_HostedBGPAttributes";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_HostedBGPAttributesModule";
 	ProviderName = "UNIX_HostedBGPAttributesProvider";
 	ClassName = "UNIX_HostedBGPAttributes";
 	Namespaces = {"root/cimv2"};

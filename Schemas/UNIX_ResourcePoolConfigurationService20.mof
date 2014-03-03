@@ -1081,5 +1081,5 @@ class CIM_ResourcePoolConfigurationService : CIM_Service {
 class UNIX_ResourcePoolConfigurationService : CIM_ResourcePoolConfigurationService
 {
 
-}
+};
 

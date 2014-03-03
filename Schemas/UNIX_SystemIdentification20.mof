@@ -210,5 +210,5 @@ class CIM_SystemIdentification : CIM_ManagedElement {
 class UNIX_SystemIdentification : CIM_SystemIdentification
 {
 
-}
+};
 

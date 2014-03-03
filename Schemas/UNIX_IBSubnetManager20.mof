@@ -898,5 +898,5 @@ class CIM_IBSubnetManager : CIM_Service {
 class UNIX_IBSubnetManager : CIM_IBSubnetManager
 {
 
-}
+};
 

@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_DisplayControllerModule";
+	Location = "UNIX_DisplayController";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DisplayControllerModule";
 	Name = "UNIX_DisplayControllerProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DisplayControllerModule";
 	ProviderName = "UNIX_DisplayControllerProvider";
 	ClassName = "CIM_DisplayController";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_DisplayControllerModule";
 	ProviderName = "UNIX_DisplayControllerProvider";
 	ClassName = "UNIX_DisplayController";
 	Namespaces = {"root/cimv2"};

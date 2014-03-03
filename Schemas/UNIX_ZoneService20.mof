@@ -1176,5 +1176,5 @@ class CIM_ZoneService : CIM_Service {
 class UNIX_ZoneService : CIM_ZoneService
 {
 
-}
+};
 

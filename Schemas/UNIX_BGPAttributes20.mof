@@ -589,5 +589,5 @@ class CIM_BGPAttributes : CIM_LogicalElement {
 class UNIX_BGPAttributes : CIM_BGPAttributes
 {
 
-}
+};
 

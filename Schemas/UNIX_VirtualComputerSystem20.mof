@@ -1027,5 +1027,5 @@ class CIM_VirtualComputerSystem : CIM_ComputerSystem {
 class UNIX_VirtualComputerSystem : CIM_VirtualComputerSystem
 {
 
-}
+};
 

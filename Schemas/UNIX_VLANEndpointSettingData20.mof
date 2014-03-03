@@ -291,5 +291,5 @@ class CIM_VLANEndpointSettingData : CIM_SettingData {
 class UNIX_VLANEndpointSettingData : CIM_VLANEndpointSettingData
 {
 
-}
+};
 

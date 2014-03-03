@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_QueueHierarchyModule";
+	Location = "UNIX_QueueHierarchy";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_QueueHierarchyModule";
 	Name = "UNIX_QueueHierarchyProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_QueueHierarchyModule";
 	ProviderName = "UNIX_QueueHierarchyProvider";
 	ClassName = "CIM_QueueHierarchy";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_QueueHierarchyModule";
 	ProviderName = "UNIX_QueueHierarchyProvider";
 	ClassName = "UNIX_QueueHierarchy";
 	Namespaces = {"root/cimv2"};

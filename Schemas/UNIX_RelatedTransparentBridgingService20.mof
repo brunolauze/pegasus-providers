@@ -110,5 +110,5 @@ class CIM_RelatedTransparentBridgingService : CIM_ServiceSAPDependency {
 class UNIX_RelatedTransparentBridgingService : CIM_RelatedTransparentBridgingService
 {
 
-}
+};
 

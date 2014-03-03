@@ -297,5 +297,5 @@ class CIM_BootSourceSetting : CIM_SettingData {
 class UNIX_BootSourceSetting : CIM_BootSourceSetting
 {
 
-}
+};
 

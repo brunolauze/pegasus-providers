@@ -590,5 +590,5 @@ class CIM_AdministrativeDistance : CIM_LogicalElement {
 class UNIX_AdministrativeDistance : CIM_AdministrativeDistance
 {
 
-}
+};
 

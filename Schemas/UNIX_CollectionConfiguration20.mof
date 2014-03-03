@@ -72,5 +72,5 @@ class CIM_CollectionConfiguration {
 class UNIX_CollectionConfiguration : CIM_CollectionConfiguration
 {
 
-}
+};
 

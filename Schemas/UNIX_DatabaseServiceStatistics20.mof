@@ -351,5 +351,5 @@ class CIM_DatabaseServiceStatistics : CIM_StatisticalData {
 class UNIX_DatabaseServiceStatistics : CIM_DatabaseServiceStatistics
 {
 
-}
+};
 

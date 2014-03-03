@@ -1415,5 +1415,5 @@ class CIM_CDROMDrive : CIM_MediaAccessDevice {
 class UNIX_CDROMDrive : CIM_CDROMDrive
 {
 
-}
+};
 

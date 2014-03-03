@@ -901,5 +901,5 @@ class CIM_TimeService : CIM_Service {
 class UNIX_TimeService : CIM_TimeService
 {
 
-}
+};
 

@@ -136,5 +136,5 @@ class CIM_ProtocolControllerForPort : CIM_ProtocolControllerForDevice {
 class UNIX_ProtocolControllerForPort : CIM_ProtocolControllerForPort
 {
 
-}
+};
 

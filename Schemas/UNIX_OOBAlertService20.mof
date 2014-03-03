@@ -974,5 +974,5 @@ class CIM_OOBAlertService : CIM_Service {
 class UNIX_OOBAlertService : CIM_OOBAlertService
 {
 
-}
+};
 

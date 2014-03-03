@@ -62,5 +62,5 @@ class CIM_ElementStatisticalData {
 class UNIX_ElementStatisticalData : CIM_ElementStatisticalData
 {
 
-}
+};
 

@@ -90,5 +90,5 @@ class CIM_FilterOfPacketCondition : CIM_Dependency {
 class UNIX_FilterOfPacketCondition : CIM_FilterOfPacketCondition
 {
 
-}
+};
 

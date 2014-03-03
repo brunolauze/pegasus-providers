@@ -981,5 +981,5 @@ class CIM_AutonomousSystem : CIM_AdminDomain {
 class UNIX_AutonomousSystem : CIM_AutonomousSystem
 {
 
-}
+};
 

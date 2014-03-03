@@ -917,5 +917,5 @@ class CIM_WakeUpService : CIM_Service {
 class UNIX_WakeUpService : CIM_WakeUpService
 {
 
-}
+};
 

@@ -341,5 +341,5 @@ class CIM_RedundancySet : CIM_SystemSpecificCollection {
 class UNIX_RedundancySet : CIM_RedundancySet
 {
 
-}
+};
 

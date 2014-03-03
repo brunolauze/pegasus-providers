@@ -157,5 +157,5 @@ class CIM_Configuration : CIM_ManagedElement {
 class UNIX_Configuration : CIM_Configuration
 {
 
-}
+};
 

@@ -81,5 +81,5 @@ class CIM_ElementInPolicyRoleCollection : CIM_MemberOfCollection {
 class UNIX_ElementInPolicyRoleCollection : CIM_ElementInPolicyRoleCollection
 {
 
-}
+};
 

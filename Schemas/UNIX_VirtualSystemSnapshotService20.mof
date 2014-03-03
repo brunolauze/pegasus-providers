@@ -952,5 +952,5 @@ class CIM_VirtualSystemSnapshotService : CIM_Service {
 class UNIX_VirtualSystemSnapshotService : CIM_VirtualSystemSnapshotService
 {
 
-}
+};
 

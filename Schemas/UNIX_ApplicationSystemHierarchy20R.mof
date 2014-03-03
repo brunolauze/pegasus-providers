@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ApplicationSystemHierarchyModule";
+	Location = "UNIX_ApplicationSystemHierarchy";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ApplicationSystemHierarchyModule";
 	Name = "UNIX_ApplicationSystemHierarchyProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ApplicationSystemHierarchyModule";
 	ProviderName = "UNIX_ApplicationSystemHierarchyProvider";
 	ClassName = "CIM_ApplicationSystemHierarchy";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ApplicationSystemHierarchyModule";
 	ProviderName = "UNIX_ApplicationSystemHierarchyProvider";
 	ClassName = "UNIX_ApplicationSystemHierarchy";
 	Namespaces = {"root/cimv2"};

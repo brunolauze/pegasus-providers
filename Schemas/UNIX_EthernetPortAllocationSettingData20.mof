@@ -730,5 +730,5 @@ class CIM_EthernetPortAllocationSettingData : CIM_ResourceAllocationSettingData 
 class UNIX_EthernetPortAllocationSettingData : CIM_EthernetPortAllocationSettingData
 {
 
-}
+};
 

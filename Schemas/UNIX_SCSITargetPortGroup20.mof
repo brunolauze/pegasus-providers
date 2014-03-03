@@ -341,5 +341,5 @@ class CIM_SCSITargetPortGroup : CIM_SystemSpecificCollection {
 class UNIX_SCSITargetPortGroup : CIM_SCSITargetPortGroup
 {
 
-}
+};
 

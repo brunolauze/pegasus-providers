@@ -1193,5 +1193,5 @@ class CIM_BGPProtocolEndpoint : CIM_ProtocolEndpoint {
 class UNIX_BGPProtocolEndpoint : CIM_BGPProtocolEndpoint
 {
 
-}
+};
 

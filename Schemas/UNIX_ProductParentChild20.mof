@@ -54,5 +54,5 @@ class CIM_ProductParentChild {
 class UNIX_ProductParentChild : CIM_ProductParentChild
 {
 
-}
+};
 

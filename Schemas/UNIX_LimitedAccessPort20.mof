@@ -1224,5 +1224,5 @@ class CIM_LimitedAccessPort : CIM_MediaTransferDevice {
 class UNIX_LimitedAccessPort : CIM_LimitedAccessPort
 {
 
-}
+};
 

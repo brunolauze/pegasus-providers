@@ -79,5 +79,5 @@ class CIM_MorePersonInfo : CIM_Dependency {
 class UNIX_MorePersonInfo : CIM_MorePersonInfo
 {
 
-}
+};
 

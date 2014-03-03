@@ -188,5 +188,5 @@ class CIM_ProtectedExtentBasedOn : CIM_BasedOn {
 class UNIX_ProtectedExtentBasedOn : CIM_ProtectedExtentBasedOn
 {
 
-}
+};
 

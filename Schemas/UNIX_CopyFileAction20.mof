@@ -328,5 +328,5 @@ class CIM_CopyFileAction : CIM_FileAction {
 class UNIX_CopyFileAction : CIM_CopyFileAction
 {
 
-}
+};
 

@@ -380,5 +380,5 @@ class CIM_StaticIPAssignmentSettingData : CIM_IPAssignmentSettingData {
 class UNIX_StaticIPAssignmentSettingData : CIM_StaticIPAssignmentSettingData
 {
 
-}
+};
 

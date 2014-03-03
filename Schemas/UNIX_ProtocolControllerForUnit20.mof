@@ -163,5 +163,5 @@ class CIM_ProtocolControllerForUnit : CIM_ProtocolControllerForDevice {
 class UNIX_ProtocolControllerForUnit : CIM_ProtocolControllerForUnit
 {
 
-}
+};
 

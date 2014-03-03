@@ -284,5 +284,5 @@ class CIM_StatisticalRuntimeOverview : CIM_StatisticalData {
 class UNIX_StatisticalRuntimeOverview : CIM_StatisticalRuntimeOverview
 {
 
-}
+};
 

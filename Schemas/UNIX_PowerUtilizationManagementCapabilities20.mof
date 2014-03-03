@@ -268,5 +268,5 @@ class CIM_PowerUtilizationManagementCapabilities : CIM_EnabledLogicalElementCapa
 class UNIX_PowerUtilizationManagementCapabilities : CIM_PowerUtilizationManagementCapabilities
 {
 
-}
+};
 

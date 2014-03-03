@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_ProtocolServiceModule";
+	Location = "UNIX_ProtocolService";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ProtocolServiceModule";
 	Name = "UNIX_ProtocolServiceProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ProtocolServiceModule";
 	ProviderName = "UNIX_ProtocolServiceProvider";
 	ClassName = "CIM_ProtocolService";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_ProtocolServiceModule";
 	ProviderName = "UNIX_ProtocolServiceProvider";
 	ClassName = "UNIX_ProtocolService";
 	Namespaces = {"root/cimv2"};

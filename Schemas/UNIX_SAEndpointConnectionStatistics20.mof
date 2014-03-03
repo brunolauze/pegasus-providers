@@ -244,5 +244,5 @@ class CIM_SAEndpointConnectionStatistics : CIM_StatisticalData {
 class UNIX_SAEndpointConnectionStatistics : CIM_SAEndpointConnectionStatistics
 {
 
-}
+};
 

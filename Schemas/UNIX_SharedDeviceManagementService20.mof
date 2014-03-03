@@ -955,5 +955,5 @@ class CIM_SharedDeviceManagementService : CIM_Service {
 class UNIX_SharedDeviceManagementService : CIM_SharedDeviceManagementService
 {
 
-}
+};
 

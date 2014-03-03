@@ -30,15 +30,25 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+instance of PG_ProviderModule
+{
+	Name = "UNIX_SystemAdministratorModule";
+	Location = "UNIX_SystemAdministrator";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
+};
+
 instance of PG_Provider
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SystemAdministratorModule";
 	Name = "UNIX_SystemAdministratorProvider";
 };
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SystemAdministratorModule";
 	ProviderName = "UNIX_SystemAdministratorProvider";
 	ClassName = "CIM_SystemAdministrator";
 	Namespaces = {"root/cimv2"};
@@ -49,7 +59,7 @@ instance of PG_ProviderCapabilities
 
 instance of PG_ProviderCapabilities
 {
-	ProviderModuleName = "UNIXProvidersModule";
+	ProviderModuleName = "UNIX_SystemAdministratorModule";
 	ProviderName = "UNIX_SystemAdministratorProvider";
 	ClassName = "UNIX_SystemAdministrator";
 	Namespaces = {"root/cimv2"};

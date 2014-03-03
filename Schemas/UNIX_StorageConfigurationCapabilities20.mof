@@ -296,5 +296,5 @@ class CIM_StorageConfigurationCapabilities : CIM_Capabilities {
 class UNIX_StorageConfigurationCapabilities : CIM_StorageConfigurationCapabilities
 {
 
-}
+};
 

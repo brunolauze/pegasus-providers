@@ -277,5 +277,5 @@ class CIM_AlarmDeviceCapabilities : CIM_EnabledLogicalElementCapabilities {
 class UNIX_AlarmDeviceCapabilities : CIM_AlarmDeviceCapabilities
 {
 
-}
+};
 
