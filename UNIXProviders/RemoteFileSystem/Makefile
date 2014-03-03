@@ -36,7 +36,7 @@ DIR = Providers/ManagedSystem/UNIXProviders/RemoteFileSystem
 
 include $(ROOT)/mak/config.mak
 
-LIBRARY = UNIX_RemoteFileSystem
+LIBRARY = UNIX_RemoteFileSystemProvider
 
 EXTRA_INCLUDES += -I/usr/local/include -I./..
 
@@ -94,7 +94,7 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_FileSystem \
+	-lUNIX_FileSystemProvider \
 	-lgeom \
 	-lkvm \
 	-lcam
