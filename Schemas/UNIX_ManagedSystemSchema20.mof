@@ -29,7 +29,7 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
-
+#pragma include ("Meta_Class20.mof")
 #pragma include ("UNIX_OtherOrganizationInformation20.mof")
 #pragma include ("UNIX_DirectorySpecification20.mof")
 #pragma include ("UNIX_MemoryCheck20.mof")

@@ -42,7 +42,7 @@
 #define PROPERTY_CHARACTERISTIC_DESCRIPTIONS				"CharacteristicDescriptions"
 
 class UNIX_BIOSFeature :
-	public UNIX_SoftwareFeature
+	public CIM_LogicalElement
 {
 public:
 

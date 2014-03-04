@@ -95,7 +95,6 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_SoftwareFeatureProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

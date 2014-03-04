@@ -59,7 +59,7 @@ void UNIX_PROVIDER::_checkClass(CIMName& className)
 {
   if (!className.equal (CLASS_IMPLEMENTATION_CIM_NAME) &&
 #ifdef BASE_BASE_CLASS_CIM_NAME
-  	&& !className.equal (BASE_BASE_CLASS_CIM_NAME)
+  	!className.equal (BASE_BASE_CLASS_CIM_NAME) &&
 #endif
       !className.equal (BASE_CLASS_CIM_NAME))
     throw CIMNotSupportedException(className.getString() +
@@ -356,7 +356,7 @@ void UNIX_PROVIDER::execQuery(
 	    // there would be dups
 	    if (className.equal (CLASS_IMPLEMENTATION_CIM_NAME) ||
 #ifdef BASE_BASE_CLASS_CIM_NAME
-  	&& !className.equal (BASE_BASE_CLASS_CIM_NAME)
+  			className.equal (BASE_BASE_CLASS_CIM_NAME) ||
 #endif
 	    	className.equal(BASE_CLASS_CIM_NAME))
 	    {
@@ -427,7 +427,7 @@ void UNIX_PROVIDER::enumerateInstanceNames(const OperationContext &ctx,
 	    // CLASS_IMPLEMENTATION_CIM_NAME or BASE_CLASS_CIM_NAME
 	    if (className.equal (BASE_CLASS_CIM_NAME)
 #ifdef BASE_BASE_CLASS_CIM_NAME
-	    className.equal (BASE_BASE_CLASS_CIM_NAME)
+	    || className.equal (BASE_BASE_CLASS_CIM_NAME)
 #endif
 	    || className.equal(CLASS_IMPLEMENTATION_CIM_NAME))
 	    {
