@@ -178,6 +178,7 @@ EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
 	-lgeom \
+	-L/usr/local/lib -lpkg \
 	-lkvm \
 	-lcam
 

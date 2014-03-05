@@ -33,7 +33,7 @@
 instance of PG_ProviderModule
 {
 	Name = "Meta_ClassModule";
-	Location = "Meta_Class";
+	Location = "Meta_ClassProvider";
 	Vendor = "OpenPegasus";
 	Version = "2.4.0";
 	InterfaceType = "C++Default";
