@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SettingContextMain.cpp \
 	UNIX_SettingContext.cpp \
-	UNIX_SettingContextProvider.cpp \
-	UNIX_SettingContextMain.cpp
+	UNIX_SettingContextProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SettingContext_AIX.cxx
+	SOURCES += UNIX_SettingContext_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SettingContext_DARWIN.cxx
+	SOURCES += UNIX_SettingContext_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SettingContext_FREEBSD.cxx
+	SOURCES += UNIX_SettingContext_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SettingContext_HPUX.cxx
+	SOURCES += UNIX_SettingContext_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SettingContext_LINUX.cxx
+	SOURCES += UNIX_SettingContext_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SettingContext_SOLARIS.cxx
+	SOURCES += UNIX_SettingContext_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SettingContext_TRU64.cxx
+	SOURCES += UNIX_SettingContext_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SettingContext_VMS.cxx
+	SOURCES += UNIX_SettingContext_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SettingContext_WIN32.cxx
+	SOURCES += UNIX_SettingContext_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SettingContext_ZOS.cxx
+	SOURCES += UNIX_SettingContext_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SettingContext_STUB.cxx
+	SOURCES += UNIX_SettingContext_STUB.cxx
 endif
 
 LIBRARIES = \

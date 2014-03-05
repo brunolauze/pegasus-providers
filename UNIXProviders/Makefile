@@ -35,42 +35,45 @@ ROOT = ../../../..
 include $(ROOT)/mak/config.mak
 
 DIRS = \
+	Meta_Class \
 	ComputerSystem \
+	CurrentTime \
 	Process \
-	VirtualComputerSystem \
-	Cluster \
-	ApplicationSystem \
-	DatabaseSystem \
-	OperatingSystem \
-	MessageLog \
-	DatabaseService \
-	Processor \
-	EthernetPort \
-	DiskDrive \
-	EthernetAdapter \
-	LogicalDisk \
-	DiskPartition \
-	FileSystem \
-	LocalFileSystem \
-	NFS \
-	Process \
-	Account \
-	UsersAccess \
-	SoftwareElement \
-	BIOSElement \
-	SoftwareFeature \
-	BIOSFeature \
+	BIOSString \
+	Group \
 	Directory \
 	DeviceFile \
-	BIOSString \
-	CreateDirectoryAction \
+	SoftwareFeature \
+	BIOSFeature \
+	SoftwareElement \
+	BIOSElement \
+	Process \
+	Account \
+	OperatingSystem \
+	FileSystem \
+	LocalFileSystem \
+	RemoteFileSystem \
+	NFS \
+	Processor \
+	DiskDrive \
+	EthernetPort \
+	EthernetAdapter \
+	DiskPartition \
+	LogicalDisk \
+	Cluster \
+	VirtualComputerSystem \
+	ApplicationSystem \
+	DatabaseSystem \
+	MessageLog \
+	DatabaseService \
 	LogEntry \
-	Group \
 	AccountManagementCapabilities \
+	UsersAccess \
+	CreateDirectoryAction \
+	OSProcess \
 	AccountOnSystem \
 	InstalledOS \
 	SystemBIOS \
-	OSProcess \
 	ComputerSystemPackage \
 	Mount \
 	InstalledSoftwareElement \

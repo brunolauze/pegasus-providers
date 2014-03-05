@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ActionSequenceMain.cpp \
 	UNIX_ActionSequence.cpp \
-	UNIX_ActionSequenceProvider.cpp \
-	UNIX_ActionSequenceMain.cpp
+	UNIX_ActionSequenceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ActionSequence_AIX.cxx
+	SOURCES += UNIX_ActionSequence_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ActionSequence_DARWIN.cxx
+	SOURCES += UNIX_ActionSequence_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ActionSequence_FREEBSD.cxx
+	SOURCES += UNIX_ActionSequence_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ActionSequence_HPUX.cxx
+	SOURCES += UNIX_ActionSequence_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ActionSequence_LINUX.cxx
+	SOURCES += UNIX_ActionSequence_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ActionSequence_SOLARIS.cxx
+	SOURCES += UNIX_ActionSequence_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ActionSequence_TRU64.cxx
+	SOURCES += UNIX_ActionSequence_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ActionSequence_VMS.cxx
+	SOURCES += UNIX_ActionSequence_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ActionSequence_WIN32.cxx
+	SOURCES += UNIX_ActionSequence_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ActionSequence_ZOS.cxx
+	SOURCES += UNIX_ActionSequence_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ActionSequence_STUB.cxx
+	SOURCES += UNIX_ActionSequence_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_BGPAdminDistanceMain.cpp \
 	UNIX_BGPAdminDistance.cpp \
-	UNIX_BGPAdminDistanceProvider.cpp \
-	UNIX_BGPAdminDistanceMain.cpp
+	UNIX_BGPAdminDistanceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BGPAdminDistance_AIX.cxx
+	SOURCES += UNIX_BGPAdminDistance_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BGPAdminDistance_DARWIN.cxx
+	SOURCES += UNIX_BGPAdminDistance_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BGPAdminDistance_FREEBSD.cxx
+	SOURCES += UNIX_BGPAdminDistance_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BGPAdminDistance_HPUX.cxx
+	SOURCES += UNIX_BGPAdminDistance_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BGPAdminDistance_LINUX.cxx
+	SOURCES += UNIX_BGPAdminDistance_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BGPAdminDistance_SOLARIS.cxx
+	SOURCES += UNIX_BGPAdminDistance_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BGPAdminDistance_TRU64.cxx
+	SOURCES += UNIX_BGPAdminDistance_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BGPAdminDistance_VMS.cxx
+	SOURCES += UNIX_BGPAdminDistance_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BGPAdminDistance_WIN32.cxx
+	SOURCES += UNIX_BGPAdminDistance_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BGPAdminDistance_ZOS.cxx
+	SOURCES += UNIX_BGPAdminDistance_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BGPAdminDistance_STUB.cxx
+	SOURCES += UNIX_BGPAdminDistance_STUB.cxx
 endif
 
 LIBRARIES = \

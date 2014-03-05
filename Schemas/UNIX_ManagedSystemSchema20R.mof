@@ -43,6 +43,7 @@
 #pragma include ("UNIX_DatabaseSystem20R.mof")
 #pragma include ("UNIX_VirtualComputerSystem20R.mof")
 #pragma include ("UNIX_Cluster20R.mof")
+#pragma include ("UNIX_CurrentTime20R.mof")
 #pragma include ("UNIX_MessageLog20R.mof")
 #pragma include ("UNIX_OperatingSystem20R.mof")
 #pragma include ("UNIX_Account20R.mof")

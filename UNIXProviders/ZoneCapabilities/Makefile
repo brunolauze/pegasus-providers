@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ZoneCapabilitiesMain.cpp \
 	UNIX_ZoneCapabilities.cpp \
-	UNIX_ZoneCapabilitiesProvider.cpp \
-	UNIX_ZoneCapabilitiesMain.cpp
+	UNIX_ZoneCapabilitiesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ZoneCapabilities_AIX.cxx
+	SOURCES += UNIX_ZoneCapabilities_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ZoneCapabilities_DARWIN.cxx
+	SOURCES += UNIX_ZoneCapabilities_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ZoneCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_ZoneCapabilities_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ZoneCapabilities_HPUX.cxx
+	SOURCES += UNIX_ZoneCapabilities_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ZoneCapabilities_LINUX.cxx
+	SOURCES += UNIX_ZoneCapabilities_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ZoneCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_ZoneCapabilities_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ZoneCapabilities_TRU64.cxx
+	SOURCES += UNIX_ZoneCapabilities_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ZoneCapabilities_VMS.cxx
+	SOURCES += UNIX_ZoneCapabilities_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ZoneCapabilities_WIN32.cxx
+	SOURCES += UNIX_ZoneCapabilities_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ZoneCapabilities_ZOS.cxx
+	SOURCES += UNIX_ZoneCapabilities_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ZoneCapabilities_STUB.cxx
+	SOURCES += UNIX_ZoneCapabilities_STUB.cxx
 endif
 
 LIBRARIES = \

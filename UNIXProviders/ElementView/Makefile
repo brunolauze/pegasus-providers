@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ElementViewMain.cpp \
 	UNIX_ElementView.cpp \
-	UNIX_ElementViewProvider.cpp \
-	UNIX_ElementViewMain.cpp
+	UNIX_ElementViewProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ElementView_AIX.cxx
+	SOURCES += UNIX_ElementView_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ElementView_DARWIN.cxx
+	SOURCES += UNIX_ElementView_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ElementView_FREEBSD.cxx
+	SOURCES += UNIX_ElementView_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ElementView_HPUX.cxx
+	SOURCES += UNIX_ElementView_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ElementView_LINUX.cxx
+	SOURCES += UNIX_ElementView_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ElementView_SOLARIS.cxx
+	SOURCES += UNIX_ElementView_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ElementView_TRU64.cxx
+	SOURCES += UNIX_ElementView_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ElementView_VMS.cxx
+	SOURCES += UNIX_ElementView_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ElementView_WIN32.cxx
+	SOURCES += UNIX_ElementView_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ElementView_ZOS.cxx
+	SOURCES += UNIX_ElementView_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ElementView_STUB.cxx
+	SOURCES += UNIX_ElementView_STUB.cxx
 endif
 
 LIBRARIES = \

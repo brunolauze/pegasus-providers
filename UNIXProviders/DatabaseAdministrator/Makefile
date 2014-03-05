@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_DatabaseAdministratorMain.cpp \
 	UNIX_DatabaseAdministrator.cpp \
-	UNIX_DatabaseAdministratorProvider.cpp \
-	UNIX_DatabaseAdministratorMain.cpp
+	UNIX_DatabaseAdministratorProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_DatabaseAdministrator_AIX.cxx
+	SOURCES += UNIX_DatabaseAdministrator_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_DatabaseAdministrator_DARWIN.cxx
+	SOURCES += UNIX_DatabaseAdministrator_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_DatabaseAdministrator_FREEBSD.cxx
+	SOURCES += UNIX_DatabaseAdministrator_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_DatabaseAdministrator_HPUX.cxx
+	SOURCES += UNIX_DatabaseAdministrator_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_DatabaseAdministrator_LINUX.cxx
+	SOURCES += UNIX_DatabaseAdministrator_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_DatabaseAdministrator_SOLARIS.cxx
+	SOURCES += UNIX_DatabaseAdministrator_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_DatabaseAdministrator_TRU64.cxx
+	SOURCES += UNIX_DatabaseAdministrator_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_DatabaseAdministrator_VMS.cxx
+	SOURCES += UNIX_DatabaseAdministrator_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_DatabaseAdministrator_WIN32.cxx
+	SOURCES += UNIX_DatabaseAdministrator_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_DatabaseAdministrator_ZOS.cxx
+	SOURCES += UNIX_DatabaseAdministrator_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_DatabaseAdministrator_STUB.cxx
+	SOURCES += UNIX_DatabaseAdministrator_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,44 +43,130 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_MountMain.cpp \
 	UNIX_Mount.cpp \
-	UNIX_MountProvider.cpp \
-	UNIX_MountMain.cpp
+	UNIX_MountProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_Mount_AIX.cxx
+	SOURCES += UNIX_Mount_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_Mount_DARWIN.cxx
+	SOURCES += UNIX_Mount_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_Mount_FREEBSD.cxx
+	SOURCES += UNIX_Mount_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_Mount_HPUX.cxx
+	SOURCES += UNIX_Mount_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_Mount_LINUX.cxx
+	SOURCES += UNIX_Mount_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_Mount_SOLARIS.cxx
+	SOURCES += UNIX_Mount_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_Mount_TRU64.cxx
+	SOURCES += UNIX_Mount_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_Mount_VMS.cxx
+	SOURCES += UNIX_Mount_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_Mount_WIN32.cxx
+	SOURCES += UNIX_Mount_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_Mount_ZOS.cxx
+	SOURCES += UNIX_Mount_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_Mount_STUB.cxx
+	SOURCES += UNIX_Mount_STUB.cxx
 endif
+
+
+SOURCES += \
+	../FileSystem/UNIX_FileSystem.cpp \
+	../FileSystem/UNIX_FileSystemProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../FileSystem/UNIX_FileSystem_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../FileSystem/UNIX_FileSystem_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../FileSystem/UNIX_FileSystem_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../FileSystem/UNIX_FileSystem_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../FileSystem/UNIX_FileSystem_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../FileSystem/UNIX_FileSystem_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../FileSystem/UNIX_FileSystem_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../FileSystem/UNIX_FileSystem_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../FileSystem/UNIX_FileSystem_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../FileSystem/UNIX_FileSystem_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../FileSystem/UNIX_FileSystem_STUB.cxx
+endif
+
+
+SOURCES += \
+	../Directory/UNIX_Directory.cpp \
+	../Directory/UNIX_DirectoryProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../Directory/UNIX_Directory_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../Directory/UNIX_Directory_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../Directory/UNIX_Directory_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../Directory/UNIX_Directory_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../Directory/UNIX_Directory_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../Directory/UNIX_Directory_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../Directory/UNIX_Directory_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../Directory/UNIX_Directory_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../Directory/UNIX_Directory_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../Directory/UNIX_Directory_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../Directory/UNIX_Directory_STUB.cxx
+endif
+
+
+
 
 LIBRARIES = \
 	pegprovider \
@@ -94,8 +180,6 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_FileSystemProvider \
-	-lUNIX_DirectoryProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

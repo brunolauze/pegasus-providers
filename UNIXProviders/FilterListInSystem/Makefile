@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_FilterListInSystemMain.cpp \
 	UNIX_FilterListInSystem.cpp \
-	UNIX_FilterListInSystemProvider.cpp \
-	UNIX_FilterListInSystemMain.cpp
+	UNIX_FilterListInSystemProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_FilterListInSystem_AIX.cxx
+	SOURCES += UNIX_FilterListInSystem_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_FilterListInSystem_DARWIN.cxx
+	SOURCES += UNIX_FilterListInSystem_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_FilterListInSystem_FREEBSD.cxx
+	SOURCES += UNIX_FilterListInSystem_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_FilterListInSystem_HPUX.cxx
+	SOURCES += UNIX_FilterListInSystem_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_FilterListInSystem_LINUX.cxx
+	SOURCES += UNIX_FilterListInSystem_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_FilterListInSystem_SOLARIS.cxx
+	SOURCES += UNIX_FilterListInSystem_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_FilterListInSystem_TRU64.cxx
+	SOURCES += UNIX_FilterListInSystem_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_FilterListInSystem_VMS.cxx
+	SOURCES += UNIX_FilterListInSystem_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_FilterListInSystem_WIN32.cxx
+	SOURCES += UNIX_FilterListInSystem_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_FilterListInSystem_ZOS.cxx
+	SOURCES += UNIX_FilterListInSystem_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_FilterListInSystem_STUB.cxx
+	SOURCES += UNIX_FilterListInSystem_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ResourcePoolConfigurationServiceMain.cpp \
 	UNIX_ResourcePoolConfigurationService.cpp \
-	UNIX_ResourcePoolConfigurationServiceProvider.cpp \
-	UNIX_ResourcePoolConfigurationServiceMain.cpp
+	UNIX_ResourcePoolConfigurationServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ResourcePoolConfigurationService_AIX.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ResourcePoolConfigurationService_DARWIN.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ResourcePoolConfigurationService_FREEBSD.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ResourcePoolConfigurationService_HPUX.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ResourcePoolConfigurationService_LINUX.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ResourcePoolConfigurationService_SOLARIS.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ResourcePoolConfigurationService_TRU64.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ResourcePoolConfigurationService_VMS.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ResourcePoolConfigurationService_WIN32.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ResourcePoolConfigurationService_ZOS.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ResourcePoolConfigurationService_STUB.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationService_STUB.cxx
 endif
 
 LIBRARIES = \

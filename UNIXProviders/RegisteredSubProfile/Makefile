@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_RegisteredSubProfileMain.cpp \
 	UNIX_RegisteredSubProfile.cpp \
-	UNIX_RegisteredSubProfileProvider.cpp \
-	UNIX_RegisteredSubProfileMain.cpp
+	UNIX_RegisteredSubProfileProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_RegisteredSubProfile_AIX.cxx
+	SOURCES += UNIX_RegisteredSubProfile_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_RegisteredSubProfile_DARWIN.cxx
+	SOURCES += UNIX_RegisteredSubProfile_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_RegisteredSubProfile_FREEBSD.cxx
+	SOURCES += UNIX_RegisteredSubProfile_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_RegisteredSubProfile_HPUX.cxx
+	SOURCES += UNIX_RegisteredSubProfile_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_RegisteredSubProfile_LINUX.cxx
+	SOURCES += UNIX_RegisteredSubProfile_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_RegisteredSubProfile_SOLARIS.cxx
+	SOURCES += UNIX_RegisteredSubProfile_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_RegisteredSubProfile_TRU64.cxx
+	SOURCES += UNIX_RegisteredSubProfile_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_RegisteredSubProfile_VMS.cxx
+	SOURCES += UNIX_RegisteredSubProfile_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_RegisteredSubProfile_WIN32.cxx
+	SOURCES += UNIX_RegisteredSubProfile_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_RegisteredSubProfile_ZOS.cxx
+	SOURCES += UNIX_RegisteredSubProfile_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_RegisteredSubProfile_STUB.cxx
+	SOURCES += UNIX_RegisteredSubProfile_STUB.cxx
 endif
 
 LIBRARIES = \

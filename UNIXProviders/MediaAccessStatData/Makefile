@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_MediaAccessStatDataMain.cpp \
 	UNIX_MediaAccessStatData.cpp \
-	UNIX_MediaAccessStatDataProvider.cpp \
-	UNIX_MediaAccessStatDataMain.cpp
+	UNIX_MediaAccessStatDataProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_MediaAccessStatData_AIX.cxx
+	SOURCES += UNIX_MediaAccessStatData_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_MediaAccessStatData_DARWIN.cxx
+	SOURCES += UNIX_MediaAccessStatData_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_MediaAccessStatData_FREEBSD.cxx
+	SOURCES += UNIX_MediaAccessStatData_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_MediaAccessStatData_HPUX.cxx
+	SOURCES += UNIX_MediaAccessStatData_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_MediaAccessStatData_LINUX.cxx
+	SOURCES += UNIX_MediaAccessStatData_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_MediaAccessStatData_SOLARIS.cxx
+	SOURCES += UNIX_MediaAccessStatData_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_MediaAccessStatData_TRU64.cxx
+	SOURCES += UNIX_MediaAccessStatData_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_MediaAccessStatData_VMS.cxx
+	SOURCES += UNIX_MediaAccessStatData_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_MediaAccessStatData_WIN32.cxx
+	SOURCES += UNIX_MediaAccessStatData_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_MediaAccessStatData_ZOS.cxx
+	SOURCES += UNIX_MediaAccessStatData_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_MediaAccessStatData_STUB.cxx
+	SOURCES += UNIX_MediaAccessStatData_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_NonVolatileStorageMain.cpp \
 	UNIX_NonVolatileStorage.cpp \
-	UNIX_NonVolatileStorageProvider.cpp \
-	UNIX_NonVolatileStorageMain.cpp
+	UNIX_NonVolatileStorageProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_NonVolatileStorage_AIX.cxx
+	SOURCES += UNIX_NonVolatileStorage_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_NonVolatileStorage_DARWIN.cxx
+	SOURCES += UNIX_NonVolatileStorage_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_NonVolatileStorage_FREEBSD.cxx
+	SOURCES += UNIX_NonVolatileStorage_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_NonVolatileStorage_HPUX.cxx
+	SOURCES += UNIX_NonVolatileStorage_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_NonVolatileStorage_LINUX.cxx
+	SOURCES += UNIX_NonVolatileStorage_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_NonVolatileStorage_SOLARIS.cxx
+	SOURCES += UNIX_NonVolatileStorage_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_NonVolatileStorage_TRU64.cxx
+	SOURCES += UNIX_NonVolatileStorage_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_NonVolatileStorage_VMS.cxx
+	SOURCES += UNIX_NonVolatileStorage_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_NonVolatileStorage_WIN32.cxx
+	SOURCES += UNIX_NonVolatileStorage_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_NonVolatileStorage_ZOS.cxx
+	SOURCES += UNIX_NonVolatileStorage_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_NonVolatileStorage_STUB.cxx
+	SOURCES += UNIX_NonVolatileStorage_STUB.cxx
 endif
 
 LIBRARIES = \

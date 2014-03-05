@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_IPsecPolicyForEndpointMain.cpp \
 	UNIX_IPsecPolicyForEndpoint.cpp \
-	UNIX_IPsecPolicyForEndpointProvider.cpp \
-	UNIX_IPsecPolicyForEndpointMain.cpp
+	UNIX_IPsecPolicyForEndpointProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_IPsecPolicyForEndpoint_AIX.cxx
+	SOURCES += UNIX_IPsecPolicyForEndpoint_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_IPsecPolicyForEndpoint_DARWIN.cxx
+	SOURCES += UNIX_IPsecPolicyForEndpoint_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_IPsecPolicyForEndpoint_FREEBSD.cxx
+	SOURCES += UNIX_IPsecPolicyForEndpoint_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_IPsecPolicyForEndpoint_HPUX.cxx
+	SOURCES += UNIX_IPsecPolicyForEndpoint_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_IPsecPolicyForEndpoint_LINUX.cxx
+	SOURCES += UNIX_IPsecPolicyForEndpoint_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_IPsecPolicyForEndpoint_SOLARIS.cxx
+	SOURCES += UNIX_IPsecPolicyForEndpoint_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_IPsecPolicyForEndpoint_TRU64.cxx
+	SOURCES += UNIX_IPsecPolicyForEndpoint_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_IPsecPolicyForEndpoint_VMS.cxx
+	SOURCES += UNIX_IPsecPolicyForEndpoint_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_IPsecPolicyForEndpoint_WIN32.cxx
+	SOURCES += UNIX_IPsecPolicyForEndpoint_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_IPsecPolicyForEndpoint_ZOS.cxx
+	SOURCES += UNIX_IPsecPolicyForEndpoint_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_IPsecPolicyForEndpoint_STUB.cxx
+	SOURCES += UNIX_IPsecPolicyForEndpoint_STUB.cxx
 endif
 
 LIBRARIES = \

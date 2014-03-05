@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SerialInterfaceMain.cpp \
 	UNIX_SerialInterface.cpp \
-	UNIX_SerialInterfaceProvider.cpp \
-	UNIX_SerialInterfaceMain.cpp
+	UNIX_SerialInterfaceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SerialInterface_AIX.cxx
+	SOURCES += UNIX_SerialInterface_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SerialInterface_DARWIN.cxx
+	SOURCES += UNIX_SerialInterface_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SerialInterface_FREEBSD.cxx
+	SOURCES += UNIX_SerialInterface_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SerialInterface_HPUX.cxx
+	SOURCES += UNIX_SerialInterface_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SerialInterface_LINUX.cxx
+	SOURCES += UNIX_SerialInterface_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SerialInterface_SOLARIS.cxx
+	SOURCES += UNIX_SerialInterface_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SerialInterface_TRU64.cxx
+	SOURCES += UNIX_SerialInterface_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SerialInterface_VMS.cxx
+	SOURCES += UNIX_SerialInterface_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SerialInterface_WIN32.cxx
+	SOURCES += UNIX_SerialInterface_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SerialInterface_ZOS.cxx
+	SOURCES += UNIX_SerialInterface_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SerialInterface_STUB.cxx
+	SOURCES += UNIX_SerialInterface_STUB.cxx
 endif
 
 LIBRARIES = \

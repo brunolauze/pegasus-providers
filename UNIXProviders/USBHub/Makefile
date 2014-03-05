@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_USBHubMain.cpp \
 	UNIX_USBHub.cpp \
-	UNIX_USBHubProvider.cpp \
-	UNIX_USBHubMain.cpp
+	UNIX_USBHubProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_USBHub_AIX.cxx
+	SOURCES += UNIX_USBHub_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_USBHub_DARWIN.cxx
+	SOURCES += UNIX_USBHub_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_USBHub_FREEBSD.cxx
+	SOURCES += UNIX_USBHub_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_USBHub_HPUX.cxx
+	SOURCES += UNIX_USBHub_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_USBHub_LINUX.cxx
+	SOURCES += UNIX_USBHub_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_USBHub_SOLARIS.cxx
+	SOURCES += UNIX_USBHub_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_USBHub_TRU64.cxx
+	SOURCES += UNIX_USBHub_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_USBHub_VMS.cxx
+	SOURCES += UNIX_USBHub_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_USBHub_WIN32.cxx
+	SOURCES += UNIX_USBHub_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_USBHub_ZOS.cxx
+	SOURCES += UNIX_USBHub_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_USBHub_STUB.cxx
+	SOURCES += UNIX_USBHub_STUB.cxx
 endif
 
 LIBRARIES = \

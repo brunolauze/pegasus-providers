@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AlarmDeviceMain.cpp \
 	UNIX_AlarmDevice.cpp \
-	UNIX_AlarmDeviceProvider.cpp \
-	UNIX_AlarmDeviceMain.cpp
+	UNIX_AlarmDeviceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AlarmDevice_AIX.cxx
+	SOURCES += UNIX_AlarmDevice_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AlarmDevice_DARWIN.cxx
+	SOURCES += UNIX_AlarmDevice_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AlarmDevice_FREEBSD.cxx
+	SOURCES += UNIX_AlarmDevice_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AlarmDevice_HPUX.cxx
+	SOURCES += UNIX_AlarmDevice_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AlarmDevice_LINUX.cxx
+	SOURCES += UNIX_AlarmDevice_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AlarmDevice_SOLARIS.cxx
+	SOURCES += UNIX_AlarmDevice_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AlarmDevice_TRU64.cxx
+	SOURCES += UNIX_AlarmDevice_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AlarmDevice_VMS.cxx
+	SOURCES += UNIX_AlarmDevice_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AlarmDevice_WIN32.cxx
+	SOURCES += UNIX_AlarmDevice_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AlarmDevice_ZOS.cxx
+	SOURCES += UNIX_AlarmDevice_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AlarmDevice_STUB.cxx
+	SOURCES += UNIX_AlarmDevice_STUB.cxx
 endif
 
 LIBRARIES = \

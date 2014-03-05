@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_MediaRedirectionCapabilitiesMain.cpp \
 	UNIX_MediaRedirectionCapabilities.cpp \
-	UNIX_MediaRedirectionCapabilitiesProvider.cpp \
-	UNIX_MediaRedirectionCapabilitiesMain.cpp
+	UNIX_MediaRedirectionCapabilitiesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_MediaRedirectionCapabilities_AIX.cxx
+	SOURCES += UNIX_MediaRedirectionCapabilities_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_MediaRedirectionCapabilities_DARWIN.cxx
+	SOURCES += UNIX_MediaRedirectionCapabilities_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_MediaRedirectionCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_MediaRedirectionCapabilities_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_MediaRedirectionCapabilities_HPUX.cxx
+	SOURCES += UNIX_MediaRedirectionCapabilities_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_MediaRedirectionCapabilities_LINUX.cxx
+	SOURCES += UNIX_MediaRedirectionCapabilities_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_MediaRedirectionCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_MediaRedirectionCapabilities_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_MediaRedirectionCapabilities_TRU64.cxx
+	SOURCES += UNIX_MediaRedirectionCapabilities_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_MediaRedirectionCapabilities_VMS.cxx
+	SOURCES += UNIX_MediaRedirectionCapabilities_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_MediaRedirectionCapabilities_WIN32.cxx
+	SOURCES += UNIX_MediaRedirectionCapabilities_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_MediaRedirectionCapabilities_ZOS.cxx
+	SOURCES += UNIX_MediaRedirectionCapabilities_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_MediaRedirectionCapabilities_STUB.cxx
+	SOURCES += UNIX_MediaRedirectionCapabilities_STUB.cxx
 endif
 
 LIBRARIES = \

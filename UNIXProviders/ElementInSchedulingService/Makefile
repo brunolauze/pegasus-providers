@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ElementInSchedulingServiceMain.cpp \
 	UNIX_ElementInSchedulingService.cpp \
-	UNIX_ElementInSchedulingServiceProvider.cpp \
-	UNIX_ElementInSchedulingServiceMain.cpp
+	UNIX_ElementInSchedulingServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ElementInSchedulingService_AIX.cxx
+	SOURCES += UNIX_ElementInSchedulingService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ElementInSchedulingService_DARWIN.cxx
+	SOURCES += UNIX_ElementInSchedulingService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ElementInSchedulingService_FREEBSD.cxx
+	SOURCES += UNIX_ElementInSchedulingService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ElementInSchedulingService_HPUX.cxx
+	SOURCES += UNIX_ElementInSchedulingService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ElementInSchedulingService_LINUX.cxx
+	SOURCES += UNIX_ElementInSchedulingService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ElementInSchedulingService_SOLARIS.cxx
+	SOURCES += UNIX_ElementInSchedulingService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ElementInSchedulingService_TRU64.cxx
+	SOURCES += UNIX_ElementInSchedulingService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ElementInSchedulingService_VMS.cxx
+	SOURCES += UNIX_ElementInSchedulingService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ElementInSchedulingService_WIN32.cxx
+	SOURCES += UNIX_ElementInSchedulingService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ElementInSchedulingService_ZOS.cxx
+	SOURCES += UNIX_ElementInSchedulingService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ElementInSchedulingService_STUB.cxx
+	SOURCES += UNIX_ElementInSchedulingService_STUB.cxx
 endif
 
 LIBRARIES = \

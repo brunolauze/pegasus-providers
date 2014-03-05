@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_IKERuleMain.cpp \
 	UNIX_IKERule.cpp \
-	UNIX_IKERuleProvider.cpp \
-	UNIX_IKERuleMain.cpp
+	UNIX_IKERuleProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_IKERule_AIX.cxx
+	SOURCES += UNIX_IKERule_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_IKERule_DARWIN.cxx
+	SOURCES += UNIX_IKERule_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_IKERule_FREEBSD.cxx
+	SOURCES += UNIX_IKERule_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_IKERule_HPUX.cxx
+	SOURCES += UNIX_IKERule_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_IKERule_LINUX.cxx
+	SOURCES += UNIX_IKERule_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_IKERule_SOLARIS.cxx
+	SOURCES += UNIX_IKERule_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_IKERule_TRU64.cxx
+	SOURCES += UNIX_IKERule_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_IKERule_VMS.cxx
+	SOURCES += UNIX_IKERule_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_IKERule_WIN32.cxx
+	SOURCES += UNIX_IKERule_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_IKERule_ZOS.cxx
+	SOURCES += UNIX_IKERule_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_IKERule_STUB.cxx
+	SOURCES += UNIX_IKERule_STUB.cxx
 endif
 
 LIBRARIES = \

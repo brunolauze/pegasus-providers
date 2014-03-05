@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_BootServiceMain.cpp \
 	UNIX_BootService.cpp \
-	UNIX_BootServiceProvider.cpp \
-	UNIX_BootServiceMain.cpp
+	UNIX_BootServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BootService_AIX.cxx
+	SOURCES += UNIX_BootService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BootService_DARWIN.cxx
+	SOURCES += UNIX_BootService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BootService_FREEBSD.cxx
+	SOURCES += UNIX_BootService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BootService_HPUX.cxx
+	SOURCES += UNIX_BootService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BootService_LINUX.cxx
+	SOURCES += UNIX_BootService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BootService_SOLARIS.cxx
+	SOURCES += UNIX_BootService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BootService_TRU64.cxx
+	SOURCES += UNIX_BootService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BootService_VMS.cxx
+	SOURCES += UNIX_BootService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BootService_WIN32.cxx
+	SOURCES += UNIX_BootService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BootService_ZOS.cxx
+	SOURCES += UNIX_BootService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BootService_STUB.cxx
+	SOURCES += UNIX_BootService_STUB.cxx
 endif
 
 LIBRARIES = \

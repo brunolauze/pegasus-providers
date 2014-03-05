@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AssociatedSupplyCurrentSensorMain.cpp \
 	UNIX_AssociatedSupplyCurrentSensor.cpp \
-	UNIX_AssociatedSupplyCurrentSensorProvider.cpp \
-	UNIX_AssociatedSupplyCurrentSensorMain.cpp
+	UNIX_AssociatedSupplyCurrentSensorProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AssociatedSupplyCurrentSensor_AIX.cxx
+	SOURCES += UNIX_AssociatedSupplyCurrentSensor_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AssociatedSupplyCurrentSensor_DARWIN.cxx
+	SOURCES += UNIX_AssociatedSupplyCurrentSensor_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AssociatedSupplyCurrentSensor_FREEBSD.cxx
+	SOURCES += UNIX_AssociatedSupplyCurrentSensor_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AssociatedSupplyCurrentSensor_HPUX.cxx
+	SOURCES += UNIX_AssociatedSupplyCurrentSensor_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AssociatedSupplyCurrentSensor_LINUX.cxx
+	SOURCES += UNIX_AssociatedSupplyCurrentSensor_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AssociatedSupplyCurrentSensor_SOLARIS.cxx
+	SOURCES += UNIX_AssociatedSupplyCurrentSensor_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AssociatedSupplyCurrentSensor_TRU64.cxx
+	SOURCES += UNIX_AssociatedSupplyCurrentSensor_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AssociatedSupplyCurrentSensor_VMS.cxx
+	SOURCES += UNIX_AssociatedSupplyCurrentSensor_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AssociatedSupplyCurrentSensor_WIN32.cxx
+	SOURCES += UNIX_AssociatedSupplyCurrentSensor_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AssociatedSupplyCurrentSensor_ZOS.cxx
+	SOURCES += UNIX_AssociatedSupplyCurrentSensor_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AssociatedSupplyCurrentSensor_STUB.cxx
+	SOURCES += UNIX_AssociatedSupplyCurrentSensor_STUB.cxx
 endif
 
 LIBRARIES = \

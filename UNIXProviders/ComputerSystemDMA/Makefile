@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ComputerSystemDMAMain.cpp \
 	UNIX_ComputerSystemDMA.cpp \
-	UNIX_ComputerSystemDMAProvider.cpp \
-	UNIX_ComputerSystemDMAMain.cpp
+	UNIX_ComputerSystemDMAProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ComputerSystemDMA_AIX.cxx
+	SOURCES += UNIX_ComputerSystemDMA_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ComputerSystemDMA_DARWIN.cxx
+	SOURCES += UNIX_ComputerSystemDMA_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ComputerSystemDMA_FREEBSD.cxx
+	SOURCES += UNIX_ComputerSystemDMA_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ComputerSystemDMA_HPUX.cxx
+	SOURCES += UNIX_ComputerSystemDMA_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ComputerSystemDMA_LINUX.cxx
+	SOURCES += UNIX_ComputerSystemDMA_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ComputerSystemDMA_SOLARIS.cxx
+	SOURCES += UNIX_ComputerSystemDMA_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ComputerSystemDMA_TRU64.cxx
+	SOURCES += UNIX_ComputerSystemDMA_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ComputerSystemDMA_VMS.cxx
+	SOURCES += UNIX_ComputerSystemDMA_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ComputerSystemDMA_WIN32.cxx
+	SOURCES += UNIX_ComputerSystemDMA_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ComputerSystemDMA_ZOS.cxx
+	SOURCES += UNIX_ComputerSystemDMA_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ComputerSystemDMA_STUB.cxx
+	SOURCES += UNIX_ComputerSystemDMA_STUB.cxx
 endif
 
 LIBRARIES = \

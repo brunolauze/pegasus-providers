@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_iSCSIConnectionSettingsMain.cpp \
 	UNIX_iSCSIConnectionSettings.cpp \
-	UNIX_iSCSIConnectionSettingsProvider.cpp \
-	UNIX_iSCSIConnectionSettingsMain.cpp
+	UNIX_iSCSIConnectionSettingsProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_iSCSIConnectionSettings_AIX.cxx
+	SOURCES += UNIX_iSCSIConnectionSettings_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_iSCSIConnectionSettings_DARWIN.cxx
+	SOURCES += UNIX_iSCSIConnectionSettings_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_iSCSIConnectionSettings_FREEBSD.cxx
+	SOURCES += UNIX_iSCSIConnectionSettings_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_iSCSIConnectionSettings_HPUX.cxx
+	SOURCES += UNIX_iSCSIConnectionSettings_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_iSCSIConnectionSettings_LINUX.cxx
+	SOURCES += UNIX_iSCSIConnectionSettings_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_iSCSIConnectionSettings_SOLARIS.cxx
+	SOURCES += UNIX_iSCSIConnectionSettings_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_iSCSIConnectionSettings_TRU64.cxx
+	SOURCES += UNIX_iSCSIConnectionSettings_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_iSCSIConnectionSettings_VMS.cxx
+	SOURCES += UNIX_iSCSIConnectionSettings_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_iSCSIConnectionSettings_WIN32.cxx
+	SOURCES += UNIX_iSCSIConnectionSettings_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_iSCSIConnectionSettings_ZOS.cxx
+	SOURCES += UNIX_iSCSIConnectionSettings_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_iSCSIConnectionSettings_STUB.cxx
+	SOURCES += UNIX_iSCSIConnectionSettings_STUB.cxx
 endif
 
 LIBRARIES = \

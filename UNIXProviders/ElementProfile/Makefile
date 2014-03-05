@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ElementProfileMain.cpp \
 	UNIX_ElementProfile.cpp \
-	UNIX_ElementProfileProvider.cpp \
-	UNIX_ElementProfileMain.cpp
+	UNIX_ElementProfileProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ElementProfile_AIX.cxx
+	SOURCES += UNIX_ElementProfile_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ElementProfile_DARWIN.cxx
+	SOURCES += UNIX_ElementProfile_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ElementProfile_FREEBSD.cxx
+	SOURCES += UNIX_ElementProfile_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ElementProfile_HPUX.cxx
+	SOURCES += UNIX_ElementProfile_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ElementProfile_LINUX.cxx
+	SOURCES += UNIX_ElementProfile_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ElementProfile_SOLARIS.cxx
+	SOURCES += UNIX_ElementProfile_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ElementProfile_TRU64.cxx
+	SOURCES += UNIX_ElementProfile_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ElementProfile_VMS.cxx
+	SOURCES += UNIX_ElementProfile_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ElementProfile_WIN32.cxx
+	SOURCES += UNIX_ElementProfile_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ElementProfile_ZOS.cxx
+	SOURCES += UNIX_ElementProfile_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ElementProfile_STUB.cxx
+	SOURCES += UNIX_ElementProfile_STUB.cxx
 endif
 
 LIBRARIES = \

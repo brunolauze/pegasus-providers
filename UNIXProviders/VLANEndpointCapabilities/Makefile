@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_VLANEndpointCapabilitiesMain.cpp \
 	UNIX_VLANEndpointCapabilities.cpp \
-	UNIX_VLANEndpointCapabilitiesProvider.cpp \
-	UNIX_VLANEndpointCapabilitiesMain.cpp
+	UNIX_VLANEndpointCapabilitiesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_VLANEndpointCapabilities_AIX.cxx
+	SOURCES += UNIX_VLANEndpointCapabilities_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_VLANEndpointCapabilities_DARWIN.cxx
+	SOURCES += UNIX_VLANEndpointCapabilities_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_VLANEndpointCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_VLANEndpointCapabilities_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_VLANEndpointCapabilities_HPUX.cxx
+	SOURCES += UNIX_VLANEndpointCapabilities_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_VLANEndpointCapabilities_LINUX.cxx
+	SOURCES += UNIX_VLANEndpointCapabilities_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_VLANEndpointCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_VLANEndpointCapabilities_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_VLANEndpointCapabilities_TRU64.cxx
+	SOURCES += UNIX_VLANEndpointCapabilities_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_VLANEndpointCapabilities_VMS.cxx
+	SOURCES += UNIX_VLANEndpointCapabilities_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_VLANEndpointCapabilities_WIN32.cxx
+	SOURCES += UNIX_VLANEndpointCapabilities_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_VLANEndpointCapabilities_ZOS.cxx
+	SOURCES += UNIX_VLANEndpointCapabilities_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_VLANEndpointCapabilities_STUB.cxx
+	SOURCES += UNIX_VLANEndpointCapabilities_STUB.cxx
 endif
 
 LIBRARIES = \

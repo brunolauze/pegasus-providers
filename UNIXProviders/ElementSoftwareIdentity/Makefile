@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ElementSoftwareIdentityMain.cpp \
 	UNIX_ElementSoftwareIdentity.cpp \
-	UNIX_ElementSoftwareIdentityProvider.cpp \
-	UNIX_ElementSoftwareIdentityMain.cpp
+	UNIX_ElementSoftwareIdentityProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ElementSoftwareIdentity_AIX.cxx
+	SOURCES += UNIX_ElementSoftwareIdentity_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ElementSoftwareIdentity_DARWIN.cxx
+	SOURCES += UNIX_ElementSoftwareIdentity_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ElementSoftwareIdentity_FREEBSD.cxx
+	SOURCES += UNIX_ElementSoftwareIdentity_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ElementSoftwareIdentity_HPUX.cxx
+	SOURCES += UNIX_ElementSoftwareIdentity_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ElementSoftwareIdentity_LINUX.cxx
+	SOURCES += UNIX_ElementSoftwareIdentity_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ElementSoftwareIdentity_SOLARIS.cxx
+	SOURCES += UNIX_ElementSoftwareIdentity_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ElementSoftwareIdentity_TRU64.cxx
+	SOURCES += UNIX_ElementSoftwareIdentity_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ElementSoftwareIdentity_VMS.cxx
+	SOURCES += UNIX_ElementSoftwareIdentity_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ElementSoftwareIdentity_WIN32.cxx
+	SOURCES += UNIX_ElementSoftwareIdentity_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ElementSoftwareIdentity_ZOS.cxx
+	SOURCES += UNIX_ElementSoftwareIdentity_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ElementSoftwareIdentity_STUB.cxx
+	SOURCES += UNIX_ElementSoftwareIdentity_STUB.cxx
 endif
 
 LIBRARIES = \
@@ -95,6 +96,7 @@ EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
 	-lgeom \
+	-L/usr/local/lib -lpkg \
 	-lkvm \
 	-lcam
 

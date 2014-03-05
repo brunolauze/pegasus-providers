@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_NonWorkConservingSchedulingServiceMain.cpp \
 	UNIX_NonWorkConservingSchedulingService.cpp \
-	UNIX_NonWorkConservingSchedulingServiceProvider.cpp \
-	UNIX_NonWorkConservingSchedulingServiceMain.cpp
+	UNIX_NonWorkConservingSchedulingServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_NonWorkConservingSchedulingService_AIX.cxx
+	SOURCES += UNIX_NonWorkConservingSchedulingService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_NonWorkConservingSchedulingService_DARWIN.cxx
+	SOURCES += UNIX_NonWorkConservingSchedulingService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_NonWorkConservingSchedulingService_FREEBSD.cxx
+	SOURCES += UNIX_NonWorkConservingSchedulingService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_NonWorkConservingSchedulingService_HPUX.cxx
+	SOURCES += UNIX_NonWorkConservingSchedulingService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_NonWorkConservingSchedulingService_LINUX.cxx
+	SOURCES += UNIX_NonWorkConservingSchedulingService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_NonWorkConservingSchedulingService_SOLARIS.cxx
+	SOURCES += UNIX_NonWorkConservingSchedulingService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_NonWorkConservingSchedulingService_TRU64.cxx
+	SOURCES += UNIX_NonWorkConservingSchedulingService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_NonWorkConservingSchedulingService_VMS.cxx
+	SOURCES += UNIX_NonWorkConservingSchedulingService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_NonWorkConservingSchedulingService_WIN32.cxx
+	SOURCES += UNIX_NonWorkConservingSchedulingService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_NonWorkConservingSchedulingService_ZOS.cxx
+	SOURCES += UNIX_NonWorkConservingSchedulingService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_NonWorkConservingSchedulingService_STUB.cxx
+	SOURCES += UNIX_NonWorkConservingSchedulingService_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SCSIInitiatorTargetLogicalUnitPathMain.cpp \
 	UNIX_SCSIInitiatorTargetLogicalUnitPath.cpp \
-	UNIX_SCSIInitiatorTargetLogicalUnitPathProvider.cpp \
-	UNIX_SCSIInitiatorTargetLogicalUnitPathMain.cpp
+	UNIX_SCSIInitiatorTargetLogicalUnitPathProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SCSIInitiatorTargetLogicalUnitPath_AIX.cxx
+	SOURCES += UNIX_SCSIInitiatorTargetLogicalUnitPath_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SCSIInitiatorTargetLogicalUnitPath_DARWIN.cxx
+	SOURCES += UNIX_SCSIInitiatorTargetLogicalUnitPath_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SCSIInitiatorTargetLogicalUnitPath_FREEBSD.cxx
+	SOURCES += UNIX_SCSIInitiatorTargetLogicalUnitPath_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SCSIInitiatorTargetLogicalUnitPath_HPUX.cxx
+	SOURCES += UNIX_SCSIInitiatorTargetLogicalUnitPath_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SCSIInitiatorTargetLogicalUnitPath_LINUX.cxx
+	SOURCES += UNIX_SCSIInitiatorTargetLogicalUnitPath_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SCSIInitiatorTargetLogicalUnitPath_SOLARIS.cxx
+	SOURCES += UNIX_SCSIInitiatorTargetLogicalUnitPath_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SCSIInitiatorTargetLogicalUnitPath_TRU64.cxx
+	SOURCES += UNIX_SCSIInitiatorTargetLogicalUnitPath_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SCSIInitiatorTargetLogicalUnitPath_VMS.cxx
+	SOURCES += UNIX_SCSIInitiatorTargetLogicalUnitPath_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SCSIInitiatorTargetLogicalUnitPath_WIN32.cxx
+	SOURCES += UNIX_SCSIInitiatorTargetLogicalUnitPath_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SCSIInitiatorTargetLogicalUnitPath_ZOS.cxx
+	SOURCES += UNIX_SCSIInitiatorTargetLogicalUnitPath_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SCSIInitiatorTargetLogicalUnitPath_STUB.cxx
+	SOURCES += UNIX_SCSIInitiatorTargetLogicalUnitPath_STUB.cxx
 endif
 
 LIBRARIES = \

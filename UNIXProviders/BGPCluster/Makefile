@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_BGPClusterMain.cpp \
 	UNIX_BGPCluster.cpp \
-	UNIX_BGPClusterProvider.cpp \
-	UNIX_BGPClusterMain.cpp
+	UNIX_BGPClusterProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BGPCluster_AIX.cxx
+	SOURCES += UNIX_BGPCluster_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BGPCluster_DARWIN.cxx
+	SOURCES += UNIX_BGPCluster_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BGPCluster_FREEBSD.cxx
+	SOURCES += UNIX_BGPCluster_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BGPCluster_HPUX.cxx
+	SOURCES += UNIX_BGPCluster_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BGPCluster_LINUX.cxx
+	SOURCES += UNIX_BGPCluster_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BGPCluster_SOLARIS.cxx
+	SOURCES += UNIX_BGPCluster_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BGPCluster_TRU64.cxx
+	SOURCES += UNIX_BGPCluster_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BGPCluster_VMS.cxx
+	SOURCES += UNIX_BGPCluster_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BGPCluster_WIN32.cxx
+	SOURCES += UNIX_BGPCluster_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BGPCluster_ZOS.cxx
+	SOURCES += UNIX_BGPCluster_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BGPCluster_STUB.cxx
+	SOURCES += UNIX_BGPCluster_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ProductPhysicalComponentMain.cpp \
 	UNIX_ProductPhysicalComponent.cpp \
-	UNIX_ProductPhysicalComponentProvider.cpp \
-	UNIX_ProductPhysicalComponentMain.cpp
+	UNIX_ProductPhysicalComponentProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ProductPhysicalComponent_AIX.cxx
+	SOURCES += UNIX_ProductPhysicalComponent_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ProductPhysicalComponent_DARWIN.cxx
+	SOURCES += UNIX_ProductPhysicalComponent_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ProductPhysicalComponent_FREEBSD.cxx
+	SOURCES += UNIX_ProductPhysicalComponent_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ProductPhysicalComponent_HPUX.cxx
+	SOURCES += UNIX_ProductPhysicalComponent_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ProductPhysicalComponent_LINUX.cxx
+	SOURCES += UNIX_ProductPhysicalComponent_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ProductPhysicalComponent_SOLARIS.cxx
+	SOURCES += UNIX_ProductPhysicalComponent_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ProductPhysicalComponent_TRU64.cxx
+	SOURCES += UNIX_ProductPhysicalComponent_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ProductPhysicalComponent_VMS.cxx
+	SOURCES += UNIX_ProductPhysicalComponent_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ProductPhysicalComponent_WIN32.cxx
+	SOURCES += UNIX_ProductPhysicalComponent_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ProductPhysicalComponent_ZOS.cxx
+	SOURCES += UNIX_ProductPhysicalComponent_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ProductPhysicalComponent_STUB.cxx
+	SOURCES += UNIX_ProductPhysicalComponent_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ResourcePoolConfigurationCapabilitiesMain.cpp \
 	UNIX_ResourcePoolConfigurationCapabilities.cpp \
-	UNIX_ResourcePoolConfigurationCapabilitiesProvider.cpp \
-	UNIX_ResourcePoolConfigurationCapabilitiesMain.cpp
+	UNIX_ResourcePoolConfigurationCapabilitiesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ResourcePoolConfigurationCapabilities_AIX.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationCapabilities_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ResourcePoolConfigurationCapabilities_DARWIN.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationCapabilities_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ResourcePoolConfigurationCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationCapabilities_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ResourcePoolConfigurationCapabilities_HPUX.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationCapabilities_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ResourcePoolConfigurationCapabilities_LINUX.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationCapabilities_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ResourcePoolConfigurationCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationCapabilities_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ResourcePoolConfigurationCapabilities_TRU64.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationCapabilities_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ResourcePoolConfigurationCapabilities_VMS.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationCapabilities_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ResourcePoolConfigurationCapabilities_WIN32.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationCapabilities_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ResourcePoolConfigurationCapabilities_ZOS.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationCapabilities_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ResourcePoolConfigurationCapabilities_STUB.cxx
+	SOURCES += UNIX_ResourcePoolConfigurationCapabilities_STUB.cxx
 endif
 
 LIBRARIES = \

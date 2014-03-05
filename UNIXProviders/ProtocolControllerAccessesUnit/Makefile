@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ProtocolControllerAccessesUnitMain.cpp \
 	UNIX_ProtocolControllerAccessesUnit.cpp \
-	UNIX_ProtocolControllerAccessesUnitProvider.cpp \
-	UNIX_ProtocolControllerAccessesUnitMain.cpp
+	UNIX_ProtocolControllerAccessesUnitProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ProtocolControllerAccessesUnit_AIX.cxx
+	SOURCES += UNIX_ProtocolControllerAccessesUnit_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ProtocolControllerAccessesUnit_DARWIN.cxx
+	SOURCES += UNIX_ProtocolControllerAccessesUnit_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ProtocolControllerAccessesUnit_FREEBSD.cxx
+	SOURCES += UNIX_ProtocolControllerAccessesUnit_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ProtocolControllerAccessesUnit_HPUX.cxx
+	SOURCES += UNIX_ProtocolControllerAccessesUnit_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ProtocolControllerAccessesUnit_LINUX.cxx
+	SOURCES += UNIX_ProtocolControllerAccessesUnit_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ProtocolControllerAccessesUnit_SOLARIS.cxx
+	SOURCES += UNIX_ProtocolControllerAccessesUnit_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ProtocolControllerAccessesUnit_TRU64.cxx
+	SOURCES += UNIX_ProtocolControllerAccessesUnit_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ProtocolControllerAccessesUnit_VMS.cxx
+	SOURCES += UNIX_ProtocolControllerAccessesUnit_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ProtocolControllerAccessesUnit_WIN32.cxx
+	SOURCES += UNIX_ProtocolControllerAccessesUnit_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ProtocolControllerAccessesUnit_ZOS.cxx
+	SOURCES += UNIX_ProtocolControllerAccessesUnit_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ProtocolControllerAccessesUnit_STUB.cxx
+	SOURCES += UNIX_ProtocolControllerAccessesUnit_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_TokenRingAdapterMain.cpp \
 	UNIX_TokenRingAdapter.cpp \
-	UNIX_TokenRingAdapterProvider.cpp \
-	UNIX_TokenRingAdapterMain.cpp
+	UNIX_TokenRingAdapterProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_TokenRingAdapter_AIX.cxx
+	SOURCES += UNIX_TokenRingAdapter_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_TokenRingAdapter_DARWIN.cxx
+	SOURCES += UNIX_TokenRingAdapter_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_TokenRingAdapter_FREEBSD.cxx
+	SOURCES += UNIX_TokenRingAdapter_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_TokenRingAdapter_HPUX.cxx
+	SOURCES += UNIX_TokenRingAdapter_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_TokenRingAdapter_LINUX.cxx
+	SOURCES += UNIX_TokenRingAdapter_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_TokenRingAdapter_SOLARIS.cxx
+	SOURCES += UNIX_TokenRingAdapter_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_TokenRingAdapter_TRU64.cxx
+	SOURCES += UNIX_TokenRingAdapter_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_TokenRingAdapter_VMS.cxx
+	SOURCES += UNIX_TokenRingAdapter_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_TokenRingAdapter_WIN32.cxx
+	SOURCES += UNIX_TokenRingAdapter_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_TokenRingAdapter_ZOS.cxx
+	SOURCES += UNIX_TokenRingAdapter_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_TokenRingAdapter_STUB.cxx
+	SOURCES += UNIX_TokenRingAdapter_STUB.cxx
 endif
 
 LIBRARIES = \

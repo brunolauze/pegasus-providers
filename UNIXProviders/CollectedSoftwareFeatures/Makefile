@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_CollectedSoftwareFeaturesMain.cpp \
 	UNIX_CollectedSoftwareFeatures.cpp \
-	UNIX_CollectedSoftwareFeaturesProvider.cpp \
-	UNIX_CollectedSoftwareFeaturesMain.cpp
+	UNIX_CollectedSoftwareFeaturesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_CollectedSoftwareFeatures_AIX.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_CollectedSoftwareFeatures_DARWIN.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_CollectedSoftwareFeatures_FREEBSD.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_CollectedSoftwareFeatures_HPUX.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_CollectedSoftwareFeatures_LINUX.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_CollectedSoftwareFeatures_SOLARIS.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_CollectedSoftwareFeatures_TRU64.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_CollectedSoftwareFeatures_VMS.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_CollectedSoftwareFeatures_WIN32.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_CollectedSoftwareFeatures_ZOS.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_CollectedSoftwareFeatures_STUB.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_STUB.cxx
 endif
 
 LIBRARIES = \
@@ -95,6 +96,7 @@ EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
 	-lgeom \
+	-L/usr/local/lib -lpkg \
 	-lkvm \
 	-lcam
 

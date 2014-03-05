@@ -44,43 +44,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 SOURCES = \
 	../CIMHelper.cpp \
 	../smbios.cpp \
+	UNIX_BIOSServiceCapabilitiesMain.cpp \
 	UNIX_BIOSServiceCapabilities.cpp \
-	UNIX_BIOSServiceCapabilitiesProvider.cpp \
-	UNIX_BIOSServiceCapabilitiesMain.cpp
+	UNIX_BIOSServiceCapabilitiesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BIOSServiceCapabilities_AIX.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BIOSServiceCapabilities_DARWIN.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BIOSServiceCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BIOSServiceCapabilities_HPUX.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BIOSServiceCapabilities_LINUX.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BIOSServiceCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BIOSServiceCapabilities_TRU64.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BIOSServiceCapabilities_VMS.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BIOSServiceCapabilities_WIN32.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BIOSServiceCapabilities_ZOS.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BIOSServiceCapabilities_STUB.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_NetworkServicesInAdminDomainMain.cpp \
 	UNIX_NetworkServicesInAdminDomain.cpp \
-	UNIX_NetworkServicesInAdminDomainProvider.cpp \
-	UNIX_NetworkServicesInAdminDomainMain.cpp
+	UNIX_NetworkServicesInAdminDomainProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_NetworkServicesInAdminDomain_AIX.cxx
+	SOURCES += UNIX_NetworkServicesInAdminDomain_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_NetworkServicesInAdminDomain_DARWIN.cxx
+	SOURCES += UNIX_NetworkServicesInAdminDomain_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_NetworkServicesInAdminDomain_FREEBSD.cxx
+	SOURCES += UNIX_NetworkServicesInAdminDomain_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_NetworkServicesInAdminDomain_HPUX.cxx
+	SOURCES += UNIX_NetworkServicesInAdminDomain_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_NetworkServicesInAdminDomain_LINUX.cxx
+	SOURCES += UNIX_NetworkServicesInAdminDomain_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_NetworkServicesInAdminDomain_SOLARIS.cxx
+	SOURCES += UNIX_NetworkServicesInAdminDomain_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_NetworkServicesInAdminDomain_TRU64.cxx
+	SOURCES += UNIX_NetworkServicesInAdminDomain_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_NetworkServicesInAdminDomain_VMS.cxx
+	SOURCES += UNIX_NetworkServicesInAdminDomain_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_NetworkServicesInAdminDomain_WIN32.cxx
+	SOURCES += UNIX_NetworkServicesInAdminDomain_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_NetworkServicesInAdminDomain_ZOS.cxx
+	SOURCES += UNIX_NetworkServicesInAdminDomain_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_NetworkServicesInAdminDomain_STUB.cxx
+	SOURCES += UNIX_NetworkServicesInAdminDomain_STUB.cxx
 endif
 
 LIBRARIES = \

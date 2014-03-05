@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_BlockStorageStatisticalDataMain.cpp \
 	UNIX_BlockStorageStatisticalData.cpp \
-	UNIX_BlockStorageStatisticalDataProvider.cpp \
-	UNIX_BlockStorageStatisticalDataMain.cpp
+	UNIX_BlockStorageStatisticalDataProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BlockStorageStatisticalData_AIX.cxx
+	SOURCES += UNIX_BlockStorageStatisticalData_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BlockStorageStatisticalData_DARWIN.cxx
+	SOURCES += UNIX_BlockStorageStatisticalData_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BlockStorageStatisticalData_FREEBSD.cxx
+	SOURCES += UNIX_BlockStorageStatisticalData_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BlockStorageStatisticalData_HPUX.cxx
+	SOURCES += UNIX_BlockStorageStatisticalData_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BlockStorageStatisticalData_LINUX.cxx
+	SOURCES += UNIX_BlockStorageStatisticalData_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BlockStorageStatisticalData_SOLARIS.cxx
+	SOURCES += UNIX_BlockStorageStatisticalData_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BlockStorageStatisticalData_TRU64.cxx
+	SOURCES += UNIX_BlockStorageStatisticalData_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BlockStorageStatisticalData_VMS.cxx
+	SOURCES += UNIX_BlockStorageStatisticalData_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BlockStorageStatisticalData_WIN32.cxx
+	SOURCES += UNIX_BlockStorageStatisticalData_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BlockStorageStatisticalData_ZOS.cxx
+	SOURCES += UNIX_BlockStorageStatisticalData_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BlockStorageStatisticalData_STUB.cxx
+	SOURCES += UNIX_BlockStorageStatisticalData_STUB.cxx
 endif
 
 LIBRARIES = \

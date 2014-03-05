@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_IPAddressRangeMain.cpp \
 	UNIX_IPAddressRange.cpp \
-	UNIX_IPAddressRangeProvider.cpp \
-	UNIX_IPAddressRangeMain.cpp
+	UNIX_IPAddressRangeProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_IPAddressRange_AIX.cxx
+	SOURCES += UNIX_IPAddressRange_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_IPAddressRange_DARWIN.cxx
+	SOURCES += UNIX_IPAddressRange_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_IPAddressRange_FREEBSD.cxx
+	SOURCES += UNIX_IPAddressRange_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_IPAddressRange_HPUX.cxx
+	SOURCES += UNIX_IPAddressRange_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_IPAddressRange_LINUX.cxx
+	SOURCES += UNIX_IPAddressRange_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_IPAddressRange_SOLARIS.cxx
+	SOURCES += UNIX_IPAddressRange_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_IPAddressRange_TRU64.cxx
+	SOURCES += UNIX_IPAddressRange_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_IPAddressRange_VMS.cxx
+	SOURCES += UNIX_IPAddressRange_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_IPAddressRange_WIN32.cxx
+	SOURCES += UNIX_IPAddressRange_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_IPAddressRange_ZOS.cxx
+	SOURCES += UNIX_IPAddressRange_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_IPAddressRange_STUB.cxx
+	SOURCES += UNIX_IPAddressRange_STUB.cxx
 endif
 
 LIBRARIES = \

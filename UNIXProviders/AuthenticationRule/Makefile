@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AuthenticationRuleMain.cpp \
 	UNIX_AuthenticationRule.cpp \
-	UNIX_AuthenticationRuleProvider.cpp \
-	UNIX_AuthenticationRuleMain.cpp
+	UNIX_AuthenticationRuleProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AuthenticationRule_AIX.cxx
+	SOURCES += UNIX_AuthenticationRule_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AuthenticationRule_DARWIN.cxx
+	SOURCES += UNIX_AuthenticationRule_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AuthenticationRule_FREEBSD.cxx
+	SOURCES += UNIX_AuthenticationRule_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AuthenticationRule_HPUX.cxx
+	SOURCES += UNIX_AuthenticationRule_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AuthenticationRule_LINUX.cxx
+	SOURCES += UNIX_AuthenticationRule_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AuthenticationRule_SOLARIS.cxx
+	SOURCES += UNIX_AuthenticationRule_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AuthenticationRule_TRU64.cxx
+	SOURCES += UNIX_AuthenticationRule_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AuthenticationRule_VMS.cxx
+	SOURCES += UNIX_AuthenticationRule_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AuthenticationRule_WIN32.cxx
+	SOURCES += UNIX_AuthenticationRule_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AuthenticationRule_ZOS.cxx
+	SOURCES += UNIX_AuthenticationRule_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AuthenticationRule_STUB.cxx
+	SOURCES += UNIX_AuthenticationRule_STUB.cxx
 endif
 
 LIBRARIES = \

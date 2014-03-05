@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_MetricDefinitionMain.cpp \
 	UNIX_MetricDefinition.cpp \
-	UNIX_MetricDefinitionProvider.cpp \
-	UNIX_MetricDefinitionMain.cpp
+	UNIX_MetricDefinitionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_MetricDefinition_AIX.cxx
+	SOURCES += UNIX_MetricDefinition_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_MetricDefinition_DARWIN.cxx
+	SOURCES += UNIX_MetricDefinition_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_MetricDefinition_FREEBSD.cxx
+	SOURCES += UNIX_MetricDefinition_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_MetricDefinition_HPUX.cxx
+	SOURCES += UNIX_MetricDefinition_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_MetricDefinition_LINUX.cxx
+	SOURCES += UNIX_MetricDefinition_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_MetricDefinition_SOLARIS.cxx
+	SOURCES += UNIX_MetricDefinition_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_MetricDefinition_TRU64.cxx
+	SOURCES += UNIX_MetricDefinition_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_MetricDefinition_VMS.cxx
+	SOURCES += UNIX_MetricDefinition_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_MetricDefinition_WIN32.cxx
+	SOURCES += UNIX_MetricDefinition_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_MetricDefinition_ZOS.cxx
+	SOURCES += UNIX_MetricDefinition_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_MetricDefinition_STUB.cxx
+	SOURCES += UNIX_MetricDefinition_STUB.cxx
 endif
 
 LIBRARIES = \

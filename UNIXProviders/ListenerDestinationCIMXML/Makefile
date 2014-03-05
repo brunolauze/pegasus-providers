@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ListenerDestinationCIMXMLMain.cpp \
 	UNIX_ListenerDestinationCIMXML.cpp \
-	UNIX_ListenerDestinationCIMXMLProvider.cpp \
-	UNIX_ListenerDestinationCIMXMLMain.cpp
+	UNIX_ListenerDestinationCIMXMLProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ListenerDestinationCIMXML_AIX.cxx
+	SOURCES += UNIX_ListenerDestinationCIMXML_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ListenerDestinationCIMXML_DARWIN.cxx
+	SOURCES += UNIX_ListenerDestinationCIMXML_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ListenerDestinationCIMXML_FREEBSD.cxx
+	SOURCES += UNIX_ListenerDestinationCIMXML_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ListenerDestinationCIMXML_HPUX.cxx
+	SOURCES += UNIX_ListenerDestinationCIMXML_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ListenerDestinationCIMXML_LINUX.cxx
+	SOURCES += UNIX_ListenerDestinationCIMXML_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ListenerDestinationCIMXML_SOLARIS.cxx
+	SOURCES += UNIX_ListenerDestinationCIMXML_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ListenerDestinationCIMXML_TRU64.cxx
+	SOURCES += UNIX_ListenerDestinationCIMXML_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ListenerDestinationCIMXML_VMS.cxx
+	SOURCES += UNIX_ListenerDestinationCIMXML_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ListenerDestinationCIMXML_WIN32.cxx
+	SOURCES += UNIX_ListenerDestinationCIMXML_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ListenerDestinationCIMXML_ZOS.cxx
+	SOURCES += UNIX_ListenerDestinationCIMXML_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ListenerDestinationCIMXML_STUB.cxx
+	SOURCES += UNIX_ListenerDestinationCIMXML_STUB.cxx
 endif
 
 LIBRARIES = \

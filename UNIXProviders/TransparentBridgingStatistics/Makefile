@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_TransparentBridgingStatisticsMain.cpp \
 	UNIX_TransparentBridgingStatistics.cpp \
-	UNIX_TransparentBridgingStatisticsProvider.cpp \
-	UNIX_TransparentBridgingStatisticsMain.cpp
+	UNIX_TransparentBridgingStatisticsProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_TransparentBridgingStatistics_AIX.cxx
+	SOURCES += UNIX_TransparentBridgingStatistics_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_TransparentBridgingStatistics_DARWIN.cxx
+	SOURCES += UNIX_TransparentBridgingStatistics_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_TransparentBridgingStatistics_FREEBSD.cxx
+	SOURCES += UNIX_TransparentBridgingStatistics_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_TransparentBridgingStatistics_HPUX.cxx
+	SOURCES += UNIX_TransparentBridgingStatistics_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_TransparentBridgingStatistics_LINUX.cxx
+	SOURCES += UNIX_TransparentBridgingStatistics_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_TransparentBridgingStatistics_SOLARIS.cxx
+	SOURCES += UNIX_TransparentBridgingStatistics_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_TransparentBridgingStatistics_TRU64.cxx
+	SOURCES += UNIX_TransparentBridgingStatistics_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_TransparentBridgingStatistics_VMS.cxx
+	SOURCES += UNIX_TransparentBridgingStatistics_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_TransparentBridgingStatistics_WIN32.cxx
+	SOURCES += UNIX_TransparentBridgingStatistics_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_TransparentBridgingStatistics_ZOS.cxx
+	SOURCES += UNIX_TransparentBridgingStatistics_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_TransparentBridgingStatistics_STUB.cxx
+	SOURCES += UNIX_TransparentBridgingStatistics_STUB.cxx
 endif
 
 LIBRARIES = \

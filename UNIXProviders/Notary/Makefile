@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_NotaryMain.cpp \
 	UNIX_Notary.cpp \
-	UNIX_NotaryProvider.cpp \
-	UNIX_NotaryMain.cpp
+	UNIX_NotaryProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_Notary_AIX.cxx
+	SOURCES += UNIX_Notary_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_Notary_DARWIN.cxx
+	SOURCES += UNIX_Notary_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_Notary_FREEBSD.cxx
+	SOURCES += UNIX_Notary_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_Notary_HPUX.cxx
+	SOURCES += UNIX_Notary_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_Notary_LINUX.cxx
+	SOURCES += UNIX_Notary_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_Notary_SOLARIS.cxx
+	SOURCES += UNIX_Notary_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_Notary_TRU64.cxx
+	SOURCES += UNIX_Notary_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_Notary_VMS.cxx
+	SOURCES += UNIX_Notary_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_Notary_WIN32.cxx
+	SOURCES += UNIX_Notary_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_Notary_ZOS.cxx
+	SOURCES += UNIX_Notary_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_Notary_STUB.cxx
+	SOURCES += UNIX_Notary_STUB.cxx
 endif
 
 LIBRARIES = \

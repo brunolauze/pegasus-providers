@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_UnsignedPublicKeyMain.cpp \
 	UNIX_UnsignedPublicKey.cpp \
-	UNIX_UnsignedPublicKeyProvider.cpp \
-	UNIX_UnsignedPublicKeyMain.cpp
+	UNIX_UnsignedPublicKeyProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_UnsignedPublicKey_AIX.cxx
+	SOURCES += UNIX_UnsignedPublicKey_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_UnsignedPublicKey_DARWIN.cxx
+	SOURCES += UNIX_UnsignedPublicKey_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_UnsignedPublicKey_FREEBSD.cxx
+	SOURCES += UNIX_UnsignedPublicKey_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_UnsignedPublicKey_HPUX.cxx
+	SOURCES += UNIX_UnsignedPublicKey_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_UnsignedPublicKey_LINUX.cxx
+	SOURCES += UNIX_UnsignedPublicKey_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_UnsignedPublicKey_SOLARIS.cxx
+	SOURCES += UNIX_UnsignedPublicKey_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_UnsignedPublicKey_TRU64.cxx
+	SOURCES += UNIX_UnsignedPublicKey_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_UnsignedPublicKey_VMS.cxx
+	SOURCES += UNIX_UnsignedPublicKey_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_UnsignedPublicKey_WIN32.cxx
+	SOURCES += UNIX_UnsignedPublicKey_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_UnsignedPublicKey_ZOS.cxx
+	SOURCES += UNIX_UnsignedPublicKey_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_UnsignedPublicKey_STUB.cxx
+	SOURCES += UNIX_UnsignedPublicKey_STUB.cxx
 endif
 
 LIBRARIES = \

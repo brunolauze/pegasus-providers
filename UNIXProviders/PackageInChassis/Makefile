@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PackageInChassisMain.cpp \
 	UNIX_PackageInChassis.cpp \
-	UNIX_PackageInChassisProvider.cpp \
-	UNIX_PackageInChassisMain.cpp
+	UNIX_PackageInChassisProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PackageInChassis_AIX.cxx
+	SOURCES += UNIX_PackageInChassis_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PackageInChassis_DARWIN.cxx
+	SOURCES += UNIX_PackageInChassis_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PackageInChassis_FREEBSD.cxx
+	SOURCES += UNIX_PackageInChassis_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PackageInChassis_HPUX.cxx
+	SOURCES += UNIX_PackageInChassis_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PackageInChassis_LINUX.cxx
+	SOURCES += UNIX_PackageInChassis_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PackageInChassis_SOLARIS.cxx
+	SOURCES += UNIX_PackageInChassis_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PackageInChassis_TRU64.cxx
+	SOURCES += UNIX_PackageInChassis_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PackageInChassis_VMS.cxx
+	SOURCES += UNIX_PackageInChassis_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PackageInChassis_WIN32.cxx
+	SOURCES += UNIX_PackageInChassis_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PackageInChassis_ZOS.cxx
+	SOURCES += UNIX_PackageInChassis_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PackageInChassis_STUB.cxx
+	SOURCES += UNIX_PackageInChassis_STUB.cxx
 endif
 
 LIBRARIES = \

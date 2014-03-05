@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_WiFiEndpointSettingsMain.cpp \
 	UNIX_WiFiEndpointSettings.cpp \
-	UNIX_WiFiEndpointSettingsProvider.cpp \
-	UNIX_WiFiEndpointSettingsMain.cpp
+	UNIX_WiFiEndpointSettingsProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_WiFiEndpointSettings_AIX.cxx
+	SOURCES += UNIX_WiFiEndpointSettings_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_WiFiEndpointSettings_DARWIN.cxx
+	SOURCES += UNIX_WiFiEndpointSettings_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_WiFiEndpointSettings_FREEBSD.cxx
+	SOURCES += UNIX_WiFiEndpointSettings_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_WiFiEndpointSettings_HPUX.cxx
+	SOURCES += UNIX_WiFiEndpointSettings_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_WiFiEndpointSettings_LINUX.cxx
+	SOURCES += UNIX_WiFiEndpointSettings_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_WiFiEndpointSettings_SOLARIS.cxx
+	SOURCES += UNIX_WiFiEndpointSettings_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_WiFiEndpointSettings_TRU64.cxx
+	SOURCES += UNIX_WiFiEndpointSettings_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_WiFiEndpointSettings_VMS.cxx
+	SOURCES += UNIX_WiFiEndpointSettings_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_WiFiEndpointSettings_WIN32.cxx
+	SOURCES += UNIX_WiFiEndpointSettings_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_WiFiEndpointSettings_ZOS.cxx
+	SOURCES += UNIX_WiFiEndpointSettings_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_WiFiEndpointSettings_STUB.cxx
+	SOURCES += UNIX_WiFiEndpointSettings_STUB.cxx
 endif
 
 LIBRARIES = \

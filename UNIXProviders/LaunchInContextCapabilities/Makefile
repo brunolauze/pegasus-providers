@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_LaunchInContextCapabilitiesMain.cpp \
 	UNIX_LaunchInContextCapabilities.cpp \
-	UNIX_LaunchInContextCapabilitiesProvider.cpp \
-	UNIX_LaunchInContextCapabilitiesMain.cpp
+	UNIX_LaunchInContextCapabilitiesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_LaunchInContextCapabilities_AIX.cxx
+	SOURCES += UNIX_LaunchInContextCapabilities_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_LaunchInContextCapabilities_DARWIN.cxx
+	SOURCES += UNIX_LaunchInContextCapabilities_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_LaunchInContextCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_LaunchInContextCapabilities_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_LaunchInContextCapabilities_HPUX.cxx
+	SOURCES += UNIX_LaunchInContextCapabilities_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_LaunchInContextCapabilities_LINUX.cxx
+	SOURCES += UNIX_LaunchInContextCapabilities_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_LaunchInContextCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_LaunchInContextCapabilities_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_LaunchInContextCapabilities_TRU64.cxx
+	SOURCES += UNIX_LaunchInContextCapabilities_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_LaunchInContextCapabilities_VMS.cxx
+	SOURCES += UNIX_LaunchInContextCapabilities_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_LaunchInContextCapabilities_WIN32.cxx
+	SOURCES += UNIX_LaunchInContextCapabilities_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_LaunchInContextCapabilities_ZOS.cxx
+	SOURCES += UNIX_LaunchInContextCapabilities_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_LaunchInContextCapabilities_STUB.cxx
+	SOURCES += UNIX_LaunchInContextCapabilities_STUB.cxx
 endif
 
 LIBRARIES = \

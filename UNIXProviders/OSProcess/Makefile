@@ -43,44 +43,130 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_OSProcessMain.cpp \
 	UNIX_OSProcess.cpp \
-	UNIX_OSProcessProvider.cpp \
-	UNIX_OSProcessMain.cpp
+	UNIX_OSProcessProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_OSProcess_AIX.cxx
+	SOURCES += UNIX_OSProcess_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_OSProcess_DARWIN.cxx
+	SOURCES += UNIX_OSProcess_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_OSProcess_FREEBSD.cxx
+	SOURCES += UNIX_OSProcess_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_OSProcess_HPUX.cxx
+	SOURCES += UNIX_OSProcess_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_OSProcess_LINUX.cxx
+	SOURCES += UNIX_OSProcess_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_OSProcess_SOLARIS.cxx
+	SOURCES += UNIX_OSProcess_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_OSProcess_TRU64.cxx
+	SOURCES += UNIX_OSProcess_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_OSProcess_VMS.cxx
+	SOURCES += UNIX_OSProcess_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_OSProcess_WIN32.cxx
+	SOURCES += UNIX_OSProcess_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_OSProcess_ZOS.cxx
+	SOURCES += UNIX_OSProcess_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_OSProcess_STUB.cxx
+	SOURCES += UNIX_OSProcess_STUB.cxx
 endif
+
+
+SOURCES += \
+	../OperatingSystem/UNIX_OperatingSystem.cpp \
+	../OperatingSystem/UNIX_OperatingSystemProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_STUB.cxx
+endif
+
+
+SOURCES += \
+	../Process/UNIX_Process.cpp \
+	../Process/UNIX_ProcessProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../Process/UNIX_Process_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../Process/UNIX_Process_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../Process/UNIX_Process_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../Process/UNIX_Process_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../Process/UNIX_Process_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../Process/UNIX_Process_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../Process/UNIX_Process_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../Process/UNIX_Process_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../Process/UNIX_Process_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../Process/UNIX_Process_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../Process/UNIX_Process_STUB.cxx
+endif
+
+
+
 
 LIBRARIES = \
 	pegprovider \
@@ -94,8 +180,6 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_OperatingSystemProvider \
-	-lUNIX_ProcessProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

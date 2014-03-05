@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_DNSProtocolEndpointMain.cpp \
 	UNIX_DNSProtocolEndpoint.cpp \
-	UNIX_DNSProtocolEndpointProvider.cpp \
-	UNIX_DNSProtocolEndpointMain.cpp
+	UNIX_DNSProtocolEndpointProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_DNSProtocolEndpoint_AIX.cxx
+	SOURCES += UNIX_DNSProtocolEndpoint_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_DNSProtocolEndpoint_DARWIN.cxx
+	SOURCES += UNIX_DNSProtocolEndpoint_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_DNSProtocolEndpoint_FREEBSD.cxx
+	SOURCES += UNIX_DNSProtocolEndpoint_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_DNSProtocolEndpoint_HPUX.cxx
+	SOURCES += UNIX_DNSProtocolEndpoint_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_DNSProtocolEndpoint_LINUX.cxx
+	SOURCES += UNIX_DNSProtocolEndpoint_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_DNSProtocolEndpoint_SOLARIS.cxx
+	SOURCES += UNIX_DNSProtocolEndpoint_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_DNSProtocolEndpoint_TRU64.cxx
+	SOURCES += UNIX_DNSProtocolEndpoint_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_DNSProtocolEndpoint_VMS.cxx
+	SOURCES += UNIX_DNSProtocolEndpoint_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_DNSProtocolEndpoint_WIN32.cxx
+	SOURCES += UNIX_DNSProtocolEndpoint_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_DNSProtocolEndpoint_ZOS.cxx
+	SOURCES += UNIX_DNSProtocolEndpoint_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_DNSProtocolEndpoint_STUB.cxx
+	SOURCES += UNIX_DNSProtocolEndpoint_STUB.cxx
 endif
 
 LIBRARIES = \

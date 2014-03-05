@@ -44,43 +44,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 SOURCES = \
 	../CIMHelper.cpp \
 	../smbios.cpp \
+	UNIX_BIOSFeatureBIOSElementsMain.cpp \
 	UNIX_BIOSFeatureBIOSElements.cpp \
-	UNIX_BIOSFeatureBIOSElementsProvider.cpp \
-	UNIX_BIOSFeatureBIOSElementsMain.cpp
+	UNIX_BIOSFeatureBIOSElementsProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BIOSFeatureBIOSElements_AIX.cxx
+	SOURCES += UNIX_BIOSFeatureBIOSElements_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BIOSFeatureBIOSElements_DARWIN.cxx
+	SOURCES += UNIX_BIOSFeatureBIOSElements_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BIOSFeatureBIOSElements_FREEBSD.cxx
+	SOURCES += UNIX_BIOSFeatureBIOSElements_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BIOSFeatureBIOSElements_HPUX.cxx
+	SOURCES += UNIX_BIOSFeatureBIOSElements_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BIOSFeatureBIOSElements_LINUX.cxx
+	SOURCES += UNIX_BIOSFeatureBIOSElements_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BIOSFeatureBIOSElements_SOLARIS.cxx
+	SOURCES += UNIX_BIOSFeatureBIOSElements_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BIOSFeatureBIOSElements_TRU64.cxx
+	SOURCES += UNIX_BIOSFeatureBIOSElements_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BIOSFeatureBIOSElements_VMS.cxx
+	SOURCES += UNIX_BIOSFeatureBIOSElements_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BIOSFeatureBIOSElements_WIN32.cxx
+	SOURCES += UNIX_BIOSFeatureBIOSElements_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BIOSFeatureBIOSElements_ZOS.cxx
+	SOURCES += UNIX_BIOSFeatureBIOSElements_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BIOSFeatureBIOSElements_STUB.cxx
+	SOURCES += UNIX_BIOSFeatureBIOSElements_STUB.cxx
 endif
 
 LIBRARIES = \

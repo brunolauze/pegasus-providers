@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ModulePortMain.cpp \
 	UNIX_ModulePort.cpp \
-	UNIX_ModulePortProvider.cpp \
-	UNIX_ModulePortMain.cpp
+	UNIX_ModulePortProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ModulePort_AIX.cxx
+	SOURCES += UNIX_ModulePort_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ModulePort_DARWIN.cxx
+	SOURCES += UNIX_ModulePort_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ModulePort_FREEBSD.cxx
+	SOURCES += UNIX_ModulePort_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ModulePort_HPUX.cxx
+	SOURCES += UNIX_ModulePort_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ModulePort_LINUX.cxx
+	SOURCES += UNIX_ModulePort_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ModulePort_SOLARIS.cxx
+	SOURCES += UNIX_ModulePort_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ModulePort_TRU64.cxx
+	SOURCES += UNIX_ModulePort_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ModulePort_VMS.cxx
+	SOURCES += UNIX_ModulePort_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ModulePort_WIN32.cxx
+	SOURCES += UNIX_ModulePort_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ModulePort_ZOS.cxx
+	SOURCES += UNIX_ModulePort_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ModulePort_STUB.cxx
+	SOURCES += UNIX_ModulePort_STUB.cxx
 endif
 
 LIBRARIES = \

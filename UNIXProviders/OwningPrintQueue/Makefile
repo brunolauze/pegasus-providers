@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_OwningPrintQueueMain.cpp \
 	UNIX_OwningPrintQueue.cpp \
-	UNIX_OwningPrintQueueProvider.cpp \
-	UNIX_OwningPrintQueueMain.cpp
+	UNIX_OwningPrintQueueProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_OwningPrintQueue_AIX.cxx
+	SOURCES += UNIX_OwningPrintQueue_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_OwningPrintQueue_DARWIN.cxx
+	SOURCES += UNIX_OwningPrintQueue_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_OwningPrintQueue_FREEBSD.cxx
+	SOURCES += UNIX_OwningPrintQueue_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_OwningPrintQueue_HPUX.cxx
+	SOURCES += UNIX_OwningPrintQueue_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_OwningPrintQueue_LINUX.cxx
+	SOURCES += UNIX_OwningPrintQueue_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_OwningPrintQueue_SOLARIS.cxx
+	SOURCES += UNIX_OwningPrintQueue_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_OwningPrintQueue_TRU64.cxx
+	SOURCES += UNIX_OwningPrintQueue_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_OwningPrintQueue_VMS.cxx
+	SOURCES += UNIX_OwningPrintQueue_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_OwningPrintQueue_WIN32.cxx
+	SOURCES += UNIX_OwningPrintQueue_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_OwningPrintQueue_ZOS.cxx
+	SOURCES += UNIX_OwningPrintQueue_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_OwningPrintQueue_STUB.cxx
+	SOURCES += UNIX_OwningPrintQueue_STUB.cxx
 endif
 
 LIBRARIES = \

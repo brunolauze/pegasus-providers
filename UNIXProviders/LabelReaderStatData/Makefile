@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_LabelReaderStatDataMain.cpp \
 	UNIX_LabelReaderStatData.cpp \
-	UNIX_LabelReaderStatDataProvider.cpp \
-	UNIX_LabelReaderStatDataMain.cpp
+	UNIX_LabelReaderStatDataProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_LabelReaderStatData_AIX.cxx
+	SOURCES += UNIX_LabelReaderStatData_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_LabelReaderStatData_DARWIN.cxx
+	SOURCES += UNIX_LabelReaderStatData_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_LabelReaderStatData_FREEBSD.cxx
+	SOURCES += UNIX_LabelReaderStatData_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_LabelReaderStatData_HPUX.cxx
+	SOURCES += UNIX_LabelReaderStatData_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_LabelReaderStatData_LINUX.cxx
+	SOURCES += UNIX_LabelReaderStatData_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_LabelReaderStatData_SOLARIS.cxx
+	SOURCES += UNIX_LabelReaderStatData_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_LabelReaderStatData_TRU64.cxx
+	SOURCES += UNIX_LabelReaderStatData_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_LabelReaderStatData_VMS.cxx
+	SOURCES += UNIX_LabelReaderStatData_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_LabelReaderStatData_WIN32.cxx
+	SOURCES += UNIX_LabelReaderStatData_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_LabelReaderStatData_ZOS.cxx
+	SOURCES += UNIX_LabelReaderStatData_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_LabelReaderStatData_STUB.cxx
+	SOURCES += UNIX_LabelReaderStatData_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AverageRateMeterServiceMain.cpp \
 	UNIX_AverageRateMeterService.cpp \
-	UNIX_AverageRateMeterServiceProvider.cpp \
-	UNIX_AverageRateMeterServiceMain.cpp
+	UNIX_AverageRateMeterServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AverageRateMeterService_AIX.cxx
+	SOURCES += UNIX_AverageRateMeterService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AverageRateMeterService_DARWIN.cxx
+	SOURCES += UNIX_AverageRateMeterService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AverageRateMeterService_FREEBSD.cxx
+	SOURCES += UNIX_AverageRateMeterService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AverageRateMeterService_HPUX.cxx
+	SOURCES += UNIX_AverageRateMeterService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AverageRateMeterService_LINUX.cxx
+	SOURCES += UNIX_AverageRateMeterService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AverageRateMeterService_SOLARIS.cxx
+	SOURCES += UNIX_AverageRateMeterService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AverageRateMeterService_TRU64.cxx
+	SOURCES += UNIX_AverageRateMeterService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AverageRateMeterService_VMS.cxx
+	SOURCES += UNIX_AverageRateMeterService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AverageRateMeterService_WIN32.cxx
+	SOURCES += UNIX_AverageRateMeterService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AverageRateMeterService_ZOS.cxx
+	SOURCES += UNIX_AverageRateMeterService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AverageRateMeterService_STUB.cxx
+	SOURCES += UNIX_AverageRateMeterService_STUB.cxx
 endif
 
 LIBRARIES = \

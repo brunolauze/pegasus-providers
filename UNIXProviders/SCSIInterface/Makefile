@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SCSIInterfaceMain.cpp \
 	UNIX_SCSIInterface.cpp \
-	UNIX_SCSIInterfaceProvider.cpp \
-	UNIX_SCSIInterfaceMain.cpp
+	UNIX_SCSIInterfaceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SCSIInterface_AIX.cxx
+	SOURCES += UNIX_SCSIInterface_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SCSIInterface_DARWIN.cxx
+	SOURCES += UNIX_SCSIInterface_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SCSIInterface_FREEBSD.cxx
+	SOURCES += UNIX_SCSIInterface_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SCSIInterface_HPUX.cxx
+	SOURCES += UNIX_SCSIInterface_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SCSIInterface_LINUX.cxx
+	SOURCES += UNIX_SCSIInterface_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SCSIInterface_SOLARIS.cxx
+	SOURCES += UNIX_SCSIInterface_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SCSIInterface_TRU64.cxx
+	SOURCES += UNIX_SCSIInterface_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SCSIInterface_VMS.cxx
+	SOURCES += UNIX_SCSIInterface_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SCSIInterface_WIN32.cxx
+	SOURCES += UNIX_SCSIInterface_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SCSIInterface_ZOS.cxx
+	SOURCES += UNIX_SCSIInterface_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SCSIInterface_STUB.cxx
+	SOURCES += UNIX_SCSIInterface_STUB.cxx
 endif
 
 LIBRARIES = \

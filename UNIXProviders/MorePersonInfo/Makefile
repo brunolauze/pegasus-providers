@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_MorePersonInfoMain.cpp \
 	UNIX_MorePersonInfo.cpp \
-	UNIX_MorePersonInfoProvider.cpp \
-	UNIX_MorePersonInfoMain.cpp
+	UNIX_MorePersonInfoProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_MorePersonInfo_AIX.cxx
+	SOURCES += UNIX_MorePersonInfo_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_MorePersonInfo_DARWIN.cxx
+	SOURCES += UNIX_MorePersonInfo_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_MorePersonInfo_FREEBSD.cxx
+	SOURCES += UNIX_MorePersonInfo_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_MorePersonInfo_HPUX.cxx
+	SOURCES += UNIX_MorePersonInfo_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_MorePersonInfo_LINUX.cxx
+	SOURCES += UNIX_MorePersonInfo_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_MorePersonInfo_SOLARIS.cxx
+	SOURCES += UNIX_MorePersonInfo_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_MorePersonInfo_TRU64.cxx
+	SOURCES += UNIX_MorePersonInfo_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_MorePersonInfo_VMS.cxx
+	SOURCES += UNIX_MorePersonInfo_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_MorePersonInfo_WIN32.cxx
+	SOURCES += UNIX_MorePersonInfo_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_MorePersonInfo_ZOS.cxx
+	SOURCES += UNIX_MorePersonInfo_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_MorePersonInfo_STUB.cxx
+	SOURCES += UNIX_MorePersonInfo_STUB.cxx
 endif
 
 LIBRARIES = \

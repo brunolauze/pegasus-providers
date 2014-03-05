@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_LLDPEthernetPortStatisticsMain.cpp \
 	UNIX_LLDPEthernetPortStatistics.cpp \
-	UNIX_LLDPEthernetPortStatisticsProvider.cpp \
-	UNIX_LLDPEthernetPortStatisticsMain.cpp
+	UNIX_LLDPEthernetPortStatisticsProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_LLDPEthernetPortStatistics_AIX.cxx
+	SOURCES += UNIX_LLDPEthernetPortStatistics_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_LLDPEthernetPortStatistics_DARWIN.cxx
+	SOURCES += UNIX_LLDPEthernetPortStatistics_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_LLDPEthernetPortStatistics_FREEBSD.cxx
+	SOURCES += UNIX_LLDPEthernetPortStatistics_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_LLDPEthernetPortStatistics_HPUX.cxx
+	SOURCES += UNIX_LLDPEthernetPortStatistics_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_LLDPEthernetPortStatistics_LINUX.cxx
+	SOURCES += UNIX_LLDPEthernetPortStatistics_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_LLDPEthernetPortStatistics_SOLARIS.cxx
+	SOURCES += UNIX_LLDPEthernetPortStatistics_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_LLDPEthernetPortStatistics_TRU64.cxx
+	SOURCES += UNIX_LLDPEthernetPortStatistics_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_LLDPEthernetPortStatistics_VMS.cxx
+	SOURCES += UNIX_LLDPEthernetPortStatistics_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_LLDPEthernetPortStatistics_WIN32.cxx
+	SOURCES += UNIX_LLDPEthernetPortStatistics_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_LLDPEthernetPortStatistics_ZOS.cxx
+	SOURCES += UNIX_LLDPEthernetPortStatistics_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_LLDPEthernetPortStatistics_STUB.cxx
+	SOURCES += UNIX_LLDPEthernetPortStatistics_STUB.cxx
 endif
 
 LIBRARIES = \

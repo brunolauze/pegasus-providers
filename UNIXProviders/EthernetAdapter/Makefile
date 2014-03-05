@@ -43,44 +43,89 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_EthernetAdapterMain.cpp \
 	UNIX_EthernetAdapter.cpp \
-	UNIX_EthernetAdapterProvider.cpp \
-	UNIX_EthernetAdapterMain.cpp
+	UNIX_EthernetAdapterProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_EthernetAdapter_AIX.cxx
+	SOURCES += UNIX_EthernetAdapter_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_EthernetAdapter_DARWIN.cxx
+	SOURCES += UNIX_EthernetAdapter_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_EthernetAdapter_FREEBSD.cxx
+	SOURCES += UNIX_EthernetAdapter_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_EthernetAdapter_HPUX.cxx
+	SOURCES += UNIX_EthernetAdapter_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_EthernetAdapter_LINUX.cxx
+	SOURCES += UNIX_EthernetAdapter_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_EthernetAdapter_SOLARIS.cxx
+	SOURCES += UNIX_EthernetAdapter_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_EthernetAdapter_TRU64.cxx
+	SOURCES += UNIX_EthernetAdapter_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_EthernetAdapter_VMS.cxx
+	SOURCES += UNIX_EthernetAdapter_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_EthernetAdapter_WIN32.cxx
+	SOURCES += UNIX_EthernetAdapter_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_EthernetAdapter_ZOS.cxx
+	SOURCES += UNIX_EthernetAdapter_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_EthernetAdapter_STUB.cxx
+	SOURCES += UNIX_EthernetAdapter_STUB.cxx
 endif
+
+
+SOURCES += \
+	../EthernetPort/UNIX_EthernetPort.cpp \
+	../EthernetPort/UNIX_EthernetPortProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_STUB.cxx
+endif
+
+
+
 
 LIBRARIES = \
 	pegprovider \
@@ -94,7 +139,6 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_EthernetPortProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

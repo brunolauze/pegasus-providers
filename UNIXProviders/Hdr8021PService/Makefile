@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_Hdr8021PServiceMain.cpp \
 	UNIX_Hdr8021PService.cpp \
-	UNIX_Hdr8021PServiceProvider.cpp \
-	UNIX_Hdr8021PServiceMain.cpp
+	UNIX_Hdr8021PServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_Hdr8021PService_AIX.cxx
+	SOURCES += UNIX_Hdr8021PService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_Hdr8021PService_DARWIN.cxx
+	SOURCES += UNIX_Hdr8021PService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_Hdr8021PService_FREEBSD.cxx
+	SOURCES += UNIX_Hdr8021PService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_Hdr8021PService_HPUX.cxx
+	SOURCES += UNIX_Hdr8021PService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_Hdr8021PService_LINUX.cxx
+	SOURCES += UNIX_Hdr8021PService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_Hdr8021PService_SOLARIS.cxx
+	SOURCES += UNIX_Hdr8021PService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_Hdr8021PService_TRU64.cxx
+	SOURCES += UNIX_Hdr8021PService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_Hdr8021PService_VMS.cxx
+	SOURCES += UNIX_Hdr8021PService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_Hdr8021PService_WIN32.cxx
+	SOURCES += UNIX_Hdr8021PService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_Hdr8021PService_ZOS.cxx
+	SOURCES += UNIX_Hdr8021PService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_Hdr8021PService_STUB.cxx
+	SOURCES += UNIX_Hdr8021PService_STUB.cxx
 endif
 
 LIBRARIES = \

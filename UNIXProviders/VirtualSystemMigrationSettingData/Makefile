@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_VirtualSystemMigrationSettingDataMain.cpp \
 	UNIX_VirtualSystemMigrationSettingData.cpp \
-	UNIX_VirtualSystemMigrationSettingDataProvider.cpp \
-	UNIX_VirtualSystemMigrationSettingDataMain.cpp
+	UNIX_VirtualSystemMigrationSettingDataProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_VirtualSystemMigrationSettingData_AIX.cxx
+	SOURCES += UNIX_VirtualSystemMigrationSettingData_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_VirtualSystemMigrationSettingData_DARWIN.cxx
+	SOURCES += UNIX_VirtualSystemMigrationSettingData_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_VirtualSystemMigrationSettingData_FREEBSD.cxx
+	SOURCES += UNIX_VirtualSystemMigrationSettingData_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_VirtualSystemMigrationSettingData_HPUX.cxx
+	SOURCES += UNIX_VirtualSystemMigrationSettingData_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_VirtualSystemMigrationSettingData_LINUX.cxx
+	SOURCES += UNIX_VirtualSystemMigrationSettingData_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_VirtualSystemMigrationSettingData_SOLARIS.cxx
+	SOURCES += UNIX_VirtualSystemMigrationSettingData_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_VirtualSystemMigrationSettingData_TRU64.cxx
+	SOURCES += UNIX_VirtualSystemMigrationSettingData_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_VirtualSystemMigrationSettingData_VMS.cxx
+	SOURCES += UNIX_VirtualSystemMigrationSettingData_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_VirtualSystemMigrationSettingData_WIN32.cxx
+	SOURCES += UNIX_VirtualSystemMigrationSettingData_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_VirtualSystemMigrationSettingData_ZOS.cxx
+	SOURCES += UNIX_VirtualSystemMigrationSettingData_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_VirtualSystemMigrationSettingData_STUB.cxx
+	SOURCES += UNIX_VirtualSystemMigrationSettingData_STUB.cxx
 endif
 
 LIBRARIES = \

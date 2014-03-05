@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PrintQueueMain.cpp \
 	UNIX_PrintQueue.cpp \
-	UNIX_PrintQueueProvider.cpp \
-	UNIX_PrintQueueMain.cpp
+	UNIX_PrintQueueProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PrintQueue_AIX.cxx
+	SOURCES += UNIX_PrintQueue_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PrintQueue_DARWIN.cxx
+	SOURCES += UNIX_PrintQueue_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PrintQueue_FREEBSD.cxx
+	SOURCES += UNIX_PrintQueue_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PrintQueue_HPUX.cxx
+	SOURCES += UNIX_PrintQueue_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PrintQueue_LINUX.cxx
+	SOURCES += UNIX_PrintQueue_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PrintQueue_SOLARIS.cxx
+	SOURCES += UNIX_PrintQueue_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PrintQueue_TRU64.cxx
+	SOURCES += UNIX_PrintQueue_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PrintQueue_VMS.cxx
+	SOURCES += UNIX_PrintQueue_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PrintQueue_WIN32.cxx
+	SOURCES += UNIX_PrintQueue_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PrintQueue_ZOS.cxx
+	SOURCES += UNIX_PrintQueue_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PrintQueue_STUB.cxx
+	SOURCES += UNIX_PrintQueue_STUB.cxx
 endif
 
 LIBRARIES = \

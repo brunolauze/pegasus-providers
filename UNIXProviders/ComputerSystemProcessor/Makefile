@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ComputerSystemProcessorMain.cpp \
 	UNIX_ComputerSystemProcessor.cpp \
-	UNIX_ComputerSystemProcessorProvider.cpp \
-	UNIX_ComputerSystemProcessorMain.cpp
+	UNIX_ComputerSystemProcessorProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ComputerSystemProcessor_AIX.cxx
+	SOURCES += UNIX_ComputerSystemProcessor_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ComputerSystemProcessor_DARWIN.cxx
+	SOURCES += UNIX_ComputerSystemProcessor_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ComputerSystemProcessor_FREEBSD.cxx
+	SOURCES += UNIX_ComputerSystemProcessor_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ComputerSystemProcessor_HPUX.cxx
+	SOURCES += UNIX_ComputerSystemProcessor_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ComputerSystemProcessor_LINUX.cxx
+	SOURCES += UNIX_ComputerSystemProcessor_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ComputerSystemProcessor_SOLARIS.cxx
+	SOURCES += UNIX_ComputerSystemProcessor_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ComputerSystemProcessor_TRU64.cxx
+	SOURCES += UNIX_ComputerSystemProcessor_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ComputerSystemProcessor_VMS.cxx
+	SOURCES += UNIX_ComputerSystemProcessor_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ComputerSystemProcessor_WIN32.cxx
+	SOURCES += UNIX_ComputerSystemProcessor_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ComputerSystemProcessor_ZOS.cxx
+	SOURCES += UNIX_ComputerSystemProcessor_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ComputerSystemProcessor_STUB.cxx
+	SOURCES += UNIX_ComputerSystemProcessor_STUB.cxx
 endif
 
 LIBRARIES = \

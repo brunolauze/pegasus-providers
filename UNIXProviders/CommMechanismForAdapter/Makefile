@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_CommMechanismForAdapterMain.cpp \
 	UNIX_CommMechanismForAdapter.cpp \
-	UNIX_CommMechanismForAdapterProvider.cpp \
-	UNIX_CommMechanismForAdapterMain.cpp
+	UNIX_CommMechanismForAdapterProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_CommMechanismForAdapter_AIX.cxx
+	SOURCES += UNIX_CommMechanismForAdapter_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_CommMechanismForAdapter_DARWIN.cxx
+	SOURCES += UNIX_CommMechanismForAdapter_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_CommMechanismForAdapter_FREEBSD.cxx
+	SOURCES += UNIX_CommMechanismForAdapter_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_CommMechanismForAdapter_HPUX.cxx
+	SOURCES += UNIX_CommMechanismForAdapter_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_CommMechanismForAdapter_LINUX.cxx
+	SOURCES += UNIX_CommMechanismForAdapter_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_CommMechanismForAdapter_SOLARIS.cxx
+	SOURCES += UNIX_CommMechanismForAdapter_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_CommMechanismForAdapter_TRU64.cxx
+	SOURCES += UNIX_CommMechanismForAdapter_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_CommMechanismForAdapter_VMS.cxx
+	SOURCES += UNIX_CommMechanismForAdapter_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_CommMechanismForAdapter_WIN32.cxx
+	SOURCES += UNIX_CommMechanismForAdapter_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_CommMechanismForAdapter_ZOS.cxx
+	SOURCES += UNIX_CommMechanismForAdapter_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_CommMechanismForAdapter_STUB.cxx
+	SOURCES += UNIX_CommMechanismForAdapter_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_HostedBGPAttributesMain.cpp \
 	UNIX_HostedBGPAttributes.cpp \
-	UNIX_HostedBGPAttributesProvider.cpp \
-	UNIX_HostedBGPAttributesMain.cpp
+	UNIX_HostedBGPAttributesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_HostedBGPAttributes_AIX.cxx
+	SOURCES += UNIX_HostedBGPAttributes_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_HostedBGPAttributes_DARWIN.cxx
+	SOURCES += UNIX_HostedBGPAttributes_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_HostedBGPAttributes_FREEBSD.cxx
+	SOURCES += UNIX_HostedBGPAttributes_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_HostedBGPAttributes_HPUX.cxx
+	SOURCES += UNIX_HostedBGPAttributes_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_HostedBGPAttributes_LINUX.cxx
+	SOURCES += UNIX_HostedBGPAttributes_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_HostedBGPAttributes_SOLARIS.cxx
+	SOURCES += UNIX_HostedBGPAttributes_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_HostedBGPAttributes_TRU64.cxx
+	SOURCES += UNIX_HostedBGPAttributes_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_HostedBGPAttributes_VMS.cxx
+	SOURCES += UNIX_HostedBGPAttributes_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_HostedBGPAttributes_WIN32.cxx
+	SOURCES += UNIX_HostedBGPAttributes_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_HostedBGPAttributes_ZOS.cxx
+	SOURCES += UNIX_HostedBGPAttributes_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_HostedBGPAttributes_STUB.cxx
+	SOURCES += UNIX_HostedBGPAttributes_STUB.cxx
 endif
 
 LIBRARIES = \

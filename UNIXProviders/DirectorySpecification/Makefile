@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_DirectorySpecificationMain.cpp \
 	UNIX_DirectorySpecification.cpp \
-	UNIX_DirectorySpecificationProvider.cpp \
-	UNIX_DirectorySpecificationMain.cpp
+	UNIX_DirectorySpecificationProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_DirectorySpecification_AIX.cxx
+	SOURCES += UNIX_DirectorySpecification_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_DirectorySpecification_DARWIN.cxx
+	SOURCES += UNIX_DirectorySpecification_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_DirectorySpecification_FREEBSD.cxx
+	SOURCES += UNIX_DirectorySpecification_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_DirectorySpecification_HPUX.cxx
+	SOURCES += UNIX_DirectorySpecification_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_DirectorySpecification_LINUX.cxx
+	SOURCES += UNIX_DirectorySpecification_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_DirectorySpecification_SOLARIS.cxx
+	SOURCES += UNIX_DirectorySpecification_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_DirectorySpecification_TRU64.cxx
+	SOURCES += UNIX_DirectorySpecification_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_DirectorySpecification_VMS.cxx
+	SOURCES += UNIX_DirectorySpecification_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_DirectorySpecification_WIN32.cxx
+	SOURCES += UNIX_DirectorySpecification_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_DirectorySpecification_ZOS.cxx
+	SOURCES += UNIX_DirectorySpecification_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_DirectorySpecification_STUB.cxx
+	SOURCES += UNIX_DirectorySpecification_STUB.cxx
 endif
 
 LIBRARIES = \

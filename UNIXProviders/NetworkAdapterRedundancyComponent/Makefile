@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_NetworkAdapterRedundancyComponentMain.cpp \
 	UNIX_NetworkAdapterRedundancyComponent.cpp \
-	UNIX_NetworkAdapterRedundancyComponentProvider.cpp \
-	UNIX_NetworkAdapterRedundancyComponentMain.cpp
+	UNIX_NetworkAdapterRedundancyComponentProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_NetworkAdapterRedundancyComponent_AIX.cxx
+	SOURCES += UNIX_NetworkAdapterRedundancyComponent_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_NetworkAdapterRedundancyComponent_DARWIN.cxx
+	SOURCES += UNIX_NetworkAdapterRedundancyComponent_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_NetworkAdapterRedundancyComponent_FREEBSD.cxx
+	SOURCES += UNIX_NetworkAdapterRedundancyComponent_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_NetworkAdapterRedundancyComponent_HPUX.cxx
+	SOURCES += UNIX_NetworkAdapterRedundancyComponent_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_NetworkAdapterRedundancyComponent_LINUX.cxx
+	SOURCES += UNIX_NetworkAdapterRedundancyComponent_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_NetworkAdapterRedundancyComponent_SOLARIS.cxx
+	SOURCES += UNIX_NetworkAdapterRedundancyComponent_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_NetworkAdapterRedundancyComponent_TRU64.cxx
+	SOURCES += UNIX_NetworkAdapterRedundancyComponent_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_NetworkAdapterRedundancyComponent_VMS.cxx
+	SOURCES += UNIX_NetworkAdapterRedundancyComponent_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_NetworkAdapterRedundancyComponent_WIN32.cxx
+	SOURCES += UNIX_NetworkAdapterRedundancyComponent_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_NetworkAdapterRedundancyComponent_ZOS.cxx
+	SOURCES += UNIX_NetworkAdapterRedundancyComponent_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_NetworkAdapterRedundancyComponent_STUB.cxx
+	SOURCES += UNIX_NetworkAdapterRedundancyComponent_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_LogInDataFileMain.cpp \
 	UNIX_LogInDataFile.cpp \
-	UNIX_LogInDataFileProvider.cpp \
-	UNIX_LogInDataFileMain.cpp
+	UNIX_LogInDataFileProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_LogInDataFile_AIX.cxx
+	SOURCES += UNIX_LogInDataFile_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_LogInDataFile_DARWIN.cxx
+	SOURCES += UNIX_LogInDataFile_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_LogInDataFile_FREEBSD.cxx
+	SOURCES += UNIX_LogInDataFile_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_LogInDataFile_HPUX.cxx
+	SOURCES += UNIX_LogInDataFile_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_LogInDataFile_LINUX.cxx
+	SOURCES += UNIX_LogInDataFile_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_LogInDataFile_SOLARIS.cxx
+	SOURCES += UNIX_LogInDataFile_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_LogInDataFile_TRU64.cxx
+	SOURCES += UNIX_LogInDataFile_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_LogInDataFile_VMS.cxx
+	SOURCES += UNIX_LogInDataFile_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_LogInDataFile_WIN32.cxx
+	SOURCES += UNIX_LogInDataFile_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_LogInDataFile_ZOS.cxx
+	SOURCES += UNIX_LogInDataFile_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_LogInDataFile_STUB.cxx
+	SOURCES += UNIX_LogInDataFile_STUB.cxx
 endif
 
 LIBRARIES = \

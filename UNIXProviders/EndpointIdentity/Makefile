@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_EndpointIdentityMain.cpp \
 	UNIX_EndpointIdentity.cpp \
-	UNIX_EndpointIdentityProvider.cpp \
-	UNIX_EndpointIdentityMain.cpp
+	UNIX_EndpointIdentityProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_EndpointIdentity_AIX.cxx
+	SOURCES += UNIX_EndpointIdentity_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_EndpointIdentity_DARWIN.cxx
+	SOURCES += UNIX_EndpointIdentity_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_EndpointIdentity_FREEBSD.cxx
+	SOURCES += UNIX_EndpointIdentity_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_EndpointIdentity_HPUX.cxx
+	SOURCES += UNIX_EndpointIdentity_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_EndpointIdentity_LINUX.cxx
+	SOURCES += UNIX_EndpointIdentity_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_EndpointIdentity_SOLARIS.cxx
+	SOURCES += UNIX_EndpointIdentity_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_EndpointIdentity_TRU64.cxx
+	SOURCES += UNIX_EndpointIdentity_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_EndpointIdentity_VMS.cxx
+	SOURCES += UNIX_EndpointIdentity_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_EndpointIdentity_WIN32.cxx
+	SOURCES += UNIX_EndpointIdentity_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_EndpointIdentity_ZOS.cxx
+	SOURCES += UNIX_EndpointIdentity_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_EndpointIdentity_STUB.cxx
+	SOURCES += UNIX_EndpointIdentity_STUB.cxx
 endif
 
 LIBRARIES = \

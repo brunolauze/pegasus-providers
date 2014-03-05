@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SpanningTreeStatisticsMain.cpp \
 	UNIX_SpanningTreeStatistics.cpp \
-	UNIX_SpanningTreeStatisticsProvider.cpp \
-	UNIX_SpanningTreeStatisticsMain.cpp
+	UNIX_SpanningTreeStatisticsProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SpanningTreeStatistics_AIX.cxx
+	SOURCES += UNIX_SpanningTreeStatistics_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SpanningTreeStatistics_DARWIN.cxx
+	SOURCES += UNIX_SpanningTreeStatistics_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SpanningTreeStatistics_FREEBSD.cxx
+	SOURCES += UNIX_SpanningTreeStatistics_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SpanningTreeStatistics_HPUX.cxx
+	SOURCES += UNIX_SpanningTreeStatistics_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SpanningTreeStatistics_LINUX.cxx
+	SOURCES += UNIX_SpanningTreeStatistics_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SpanningTreeStatistics_SOLARIS.cxx
+	SOURCES += UNIX_SpanningTreeStatistics_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SpanningTreeStatistics_TRU64.cxx
+	SOURCES += UNIX_SpanningTreeStatistics_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SpanningTreeStatistics_VMS.cxx
+	SOURCES += UNIX_SpanningTreeStatistics_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SpanningTreeStatistics_WIN32.cxx
+	SOURCES += UNIX_SpanningTreeStatistics_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SpanningTreeStatistics_ZOS.cxx
+	SOURCES += UNIX_SpanningTreeStatistics_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SpanningTreeStatistics_STUB.cxx
+	SOURCES += UNIX_SpanningTreeStatistics_STUB.cxx
 endif
 
 LIBRARIES = \

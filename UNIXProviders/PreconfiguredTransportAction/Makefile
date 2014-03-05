@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PreconfiguredTransportActionMain.cpp \
 	UNIX_PreconfiguredTransportAction.cpp \
-	UNIX_PreconfiguredTransportActionProvider.cpp \
-	UNIX_PreconfiguredTransportActionMain.cpp
+	UNIX_PreconfiguredTransportActionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PreconfiguredTransportAction_AIX.cxx
+	SOURCES += UNIX_PreconfiguredTransportAction_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PreconfiguredTransportAction_DARWIN.cxx
+	SOURCES += UNIX_PreconfiguredTransportAction_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PreconfiguredTransportAction_FREEBSD.cxx
+	SOURCES += UNIX_PreconfiguredTransportAction_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PreconfiguredTransportAction_HPUX.cxx
+	SOURCES += UNIX_PreconfiguredTransportAction_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PreconfiguredTransportAction_LINUX.cxx
+	SOURCES += UNIX_PreconfiguredTransportAction_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PreconfiguredTransportAction_SOLARIS.cxx
+	SOURCES += UNIX_PreconfiguredTransportAction_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PreconfiguredTransportAction_TRU64.cxx
+	SOURCES += UNIX_PreconfiguredTransportAction_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PreconfiguredTransportAction_VMS.cxx
+	SOURCES += UNIX_PreconfiguredTransportAction_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PreconfiguredTransportAction_WIN32.cxx
+	SOURCES += UNIX_PreconfiguredTransportAction_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PreconfiguredTransportAction_ZOS.cxx
+	SOURCES += UNIX_PreconfiguredTransportAction_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PreconfiguredTransportAction_STUB.cxx
+	SOURCES += UNIX_PreconfiguredTransportAction_STUB.cxx
 endif
 
 LIBRARIES = \

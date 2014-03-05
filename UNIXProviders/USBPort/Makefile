@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_USBPortMain.cpp \
 	UNIX_USBPort.cpp \
-	UNIX_USBPortProvider.cpp \
-	UNIX_USBPortMain.cpp
+	UNIX_USBPortProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_USBPort_AIX.cxx
+	SOURCES += UNIX_USBPort_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_USBPort_DARWIN.cxx
+	SOURCES += UNIX_USBPort_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_USBPort_FREEBSD.cxx
+	SOURCES += UNIX_USBPort_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_USBPort_HPUX.cxx
+	SOURCES += UNIX_USBPort_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_USBPort_LINUX.cxx
+	SOURCES += UNIX_USBPort_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_USBPort_SOLARIS.cxx
+	SOURCES += UNIX_USBPort_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_USBPort_TRU64.cxx
+	SOURCES += UNIX_USBPort_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_USBPort_VMS.cxx
+	SOURCES += UNIX_USBPort_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_USBPort_WIN32.cxx
+	SOURCES += UNIX_USBPort_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_USBPort_ZOS.cxx
+	SOURCES += UNIX_USBPort_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_USBPort_STUB.cxx
+	SOURCES += UNIX_USBPort_STUB.cxx
 endif
 
 LIBRARIES = \

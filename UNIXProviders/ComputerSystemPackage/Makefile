@@ -43,44 +43,89 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ComputerSystemPackageMain.cpp \
 	UNIX_ComputerSystemPackage.cpp \
-	UNIX_ComputerSystemPackageProvider.cpp \
-	UNIX_ComputerSystemPackageMain.cpp
+	UNIX_ComputerSystemPackageProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ComputerSystemPackage_AIX.cxx
+	SOURCES += UNIX_ComputerSystemPackage_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ComputerSystemPackage_DARWIN.cxx
+	SOURCES += UNIX_ComputerSystemPackage_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ComputerSystemPackage_FREEBSD.cxx
+	SOURCES += UNIX_ComputerSystemPackage_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ComputerSystemPackage_HPUX.cxx
+	SOURCES += UNIX_ComputerSystemPackage_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ComputerSystemPackage_LINUX.cxx
+	SOURCES += UNIX_ComputerSystemPackage_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ComputerSystemPackage_SOLARIS.cxx
+	SOURCES += UNIX_ComputerSystemPackage_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ComputerSystemPackage_TRU64.cxx
+	SOURCES += UNIX_ComputerSystemPackage_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ComputerSystemPackage_VMS.cxx
+	SOURCES += UNIX_ComputerSystemPackage_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ComputerSystemPackage_WIN32.cxx
+	SOURCES += UNIX_ComputerSystemPackage_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ComputerSystemPackage_ZOS.cxx
+	SOURCES += UNIX_ComputerSystemPackage_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ComputerSystemPackage_STUB.cxx
+	SOURCES += UNIX_ComputerSystemPackage_STUB.cxx
 endif
+
+
+SOURCES += \
+	../ComputerSystem/UNIX_ComputerSystem.cpp \
+	../ComputerSystem/UNIX_ComputerSystemProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_STUB.cxx
+endif
+
+
+
 
 LIBRARIES = \
 	pegprovider \
@@ -94,7 +139,6 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_ComputerSystemProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

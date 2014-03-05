@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_LogicalDiskMain.cpp \
 	UNIX_LogicalDisk.cpp \
-	UNIX_LogicalDiskProvider.cpp \
-	UNIX_LogicalDiskMain.cpp
+	UNIX_LogicalDiskProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_LogicalDisk_AIX.cxx
+	SOURCES += UNIX_LogicalDisk_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_LogicalDisk_DARWIN.cxx
+	SOURCES += UNIX_LogicalDisk_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_LogicalDisk_FREEBSD.cxx
+	SOURCES += UNIX_LogicalDisk_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_LogicalDisk_HPUX.cxx
+	SOURCES += UNIX_LogicalDisk_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_LogicalDisk_LINUX.cxx
+	SOURCES += UNIX_LogicalDisk_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_LogicalDisk_SOLARIS.cxx
+	SOURCES += UNIX_LogicalDisk_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_LogicalDisk_TRU64.cxx
+	SOURCES += UNIX_LogicalDisk_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_LogicalDisk_VMS.cxx
+	SOURCES += UNIX_LogicalDisk_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_LogicalDisk_WIN32.cxx
+	SOURCES += UNIX_LogicalDisk_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_LogicalDisk_ZOS.cxx
+	SOURCES += UNIX_LogicalDisk_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_LogicalDisk_STUB.cxx
+	SOURCES += UNIX_LogicalDisk_STUB.cxx
 endif
 
 LIBRARIES = \

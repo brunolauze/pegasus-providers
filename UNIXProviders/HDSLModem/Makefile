@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_HDSLModemMain.cpp \
 	UNIX_HDSLModem.cpp \
-	UNIX_HDSLModemProvider.cpp \
-	UNIX_HDSLModemMain.cpp
+	UNIX_HDSLModemProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_HDSLModem_AIX.cxx
+	SOURCES += UNIX_HDSLModem_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_HDSLModem_DARWIN.cxx
+	SOURCES += UNIX_HDSLModem_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_HDSLModem_FREEBSD.cxx
+	SOURCES += UNIX_HDSLModem_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_HDSLModem_HPUX.cxx
+	SOURCES += UNIX_HDSLModem_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_HDSLModem_LINUX.cxx
+	SOURCES += UNIX_HDSLModem_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_HDSLModem_SOLARIS.cxx
+	SOURCES += UNIX_HDSLModem_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_HDSLModem_TRU64.cxx
+	SOURCES += UNIX_HDSLModem_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_HDSLModem_VMS.cxx
+	SOURCES += UNIX_HDSLModem_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_HDSLModem_WIN32.cxx
+	SOURCES += UNIX_HDSLModem_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_HDSLModem_ZOS.cxx
+	SOURCES += UNIX_HDSLModem_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_HDSLModem_STUB.cxx
+	SOURCES += UNIX_HDSLModem_STUB.cxx
 endif
 
 LIBRARIES = \

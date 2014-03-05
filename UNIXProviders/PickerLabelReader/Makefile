@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PickerLabelReaderMain.cpp \
 	UNIX_PickerLabelReader.cpp \
-	UNIX_PickerLabelReaderProvider.cpp \
-	UNIX_PickerLabelReaderMain.cpp
+	UNIX_PickerLabelReaderProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PickerLabelReader_AIX.cxx
+	SOURCES += UNIX_PickerLabelReader_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PickerLabelReader_DARWIN.cxx
+	SOURCES += UNIX_PickerLabelReader_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PickerLabelReader_FREEBSD.cxx
+	SOURCES += UNIX_PickerLabelReader_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PickerLabelReader_HPUX.cxx
+	SOURCES += UNIX_PickerLabelReader_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PickerLabelReader_LINUX.cxx
+	SOURCES += UNIX_PickerLabelReader_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PickerLabelReader_SOLARIS.cxx
+	SOURCES += UNIX_PickerLabelReader_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PickerLabelReader_TRU64.cxx
+	SOURCES += UNIX_PickerLabelReader_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PickerLabelReader_VMS.cxx
+	SOURCES += UNIX_PickerLabelReader_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PickerLabelReader_WIN32.cxx
+	SOURCES += UNIX_PickerLabelReader_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PickerLabelReader_ZOS.cxx
+	SOURCES += UNIX_PickerLabelReader_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PickerLabelReader_STUB.cxx
+	SOURCES += UNIX_PickerLabelReader_STUB.cxx
 endif
 
 LIBRARIES = \

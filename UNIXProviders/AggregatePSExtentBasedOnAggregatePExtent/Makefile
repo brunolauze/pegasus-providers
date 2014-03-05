@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AggregatePSExtentBasedOnAggregatePExtentMain.cpp \
 	UNIX_AggregatePSExtentBasedOnAggregatePExtent.cpp \
-	UNIX_AggregatePSExtentBasedOnAggregatePExtentProvider.cpp \
-	UNIX_AggregatePSExtentBasedOnAggregatePExtentMain.cpp
+	UNIX_AggregatePSExtentBasedOnAggregatePExtentProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AggregatePSExtentBasedOnAggregatePExtent_AIX.cxx
+	SOURCES += UNIX_AggregatePSExtentBasedOnAggregatePExtent_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AggregatePSExtentBasedOnAggregatePExtent_DARWIN.cxx
+	SOURCES += UNIX_AggregatePSExtentBasedOnAggregatePExtent_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AggregatePSExtentBasedOnAggregatePExtent_FREEBSD.cxx
+	SOURCES += UNIX_AggregatePSExtentBasedOnAggregatePExtent_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AggregatePSExtentBasedOnAggregatePExtent_HPUX.cxx
+	SOURCES += UNIX_AggregatePSExtentBasedOnAggregatePExtent_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AggregatePSExtentBasedOnAggregatePExtent_LINUX.cxx
+	SOURCES += UNIX_AggregatePSExtentBasedOnAggregatePExtent_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AggregatePSExtentBasedOnAggregatePExtent_SOLARIS.cxx
+	SOURCES += UNIX_AggregatePSExtentBasedOnAggregatePExtent_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AggregatePSExtentBasedOnAggregatePExtent_TRU64.cxx
+	SOURCES += UNIX_AggregatePSExtentBasedOnAggregatePExtent_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AggregatePSExtentBasedOnAggregatePExtent_VMS.cxx
+	SOURCES += UNIX_AggregatePSExtentBasedOnAggregatePExtent_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AggregatePSExtentBasedOnAggregatePExtent_WIN32.cxx
+	SOURCES += UNIX_AggregatePSExtentBasedOnAggregatePExtent_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AggregatePSExtentBasedOnAggregatePExtent_ZOS.cxx
+	SOURCES += UNIX_AggregatePSExtentBasedOnAggregatePExtent_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AggregatePSExtentBasedOnAggregatePExtent_STUB.cxx
+	SOURCES += UNIX_AggregatePSExtentBasedOnAggregatePExtent_STUB.cxx
 endif
 
 LIBRARIES = \

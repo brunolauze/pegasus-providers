@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_WatchdogMain.cpp \
 	UNIX_Watchdog.cpp \
-	UNIX_WatchdogProvider.cpp \
-	UNIX_WatchdogMain.cpp
+	UNIX_WatchdogProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_Watchdog_AIX.cxx
+	SOURCES += UNIX_Watchdog_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_Watchdog_DARWIN.cxx
+	SOURCES += UNIX_Watchdog_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_Watchdog_FREEBSD.cxx
+	SOURCES += UNIX_Watchdog_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_Watchdog_HPUX.cxx
+	SOURCES += UNIX_Watchdog_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_Watchdog_LINUX.cxx
+	SOURCES += UNIX_Watchdog_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_Watchdog_SOLARIS.cxx
+	SOURCES += UNIX_Watchdog_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_Watchdog_TRU64.cxx
+	SOURCES += UNIX_Watchdog_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_Watchdog_VMS.cxx
+	SOURCES += UNIX_Watchdog_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_Watchdog_WIN32.cxx
+	SOURCES += UNIX_Watchdog_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_Watchdog_ZOS.cxx
+	SOURCES += UNIX_Watchdog_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_Watchdog_STUB.cxx
+	SOURCES += UNIX_Watchdog_STUB.cxx
 endif
 
 LIBRARIES = \

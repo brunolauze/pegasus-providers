@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_StaticIPAssignmentSettingDataMain.cpp \
 	UNIX_StaticIPAssignmentSettingData.cpp \
-	UNIX_StaticIPAssignmentSettingDataProvider.cpp \
-	UNIX_StaticIPAssignmentSettingDataMain.cpp
+	UNIX_StaticIPAssignmentSettingDataProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_StaticIPAssignmentSettingData_AIX.cxx
+	SOURCES += UNIX_StaticIPAssignmentSettingData_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_StaticIPAssignmentSettingData_DARWIN.cxx
+	SOURCES += UNIX_StaticIPAssignmentSettingData_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_StaticIPAssignmentSettingData_FREEBSD.cxx
+	SOURCES += UNIX_StaticIPAssignmentSettingData_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_StaticIPAssignmentSettingData_HPUX.cxx
+	SOURCES += UNIX_StaticIPAssignmentSettingData_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_StaticIPAssignmentSettingData_LINUX.cxx
+	SOURCES += UNIX_StaticIPAssignmentSettingData_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_StaticIPAssignmentSettingData_SOLARIS.cxx
+	SOURCES += UNIX_StaticIPAssignmentSettingData_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_StaticIPAssignmentSettingData_TRU64.cxx
+	SOURCES += UNIX_StaticIPAssignmentSettingData_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_StaticIPAssignmentSettingData_VMS.cxx
+	SOURCES += UNIX_StaticIPAssignmentSettingData_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_StaticIPAssignmentSettingData_WIN32.cxx
+	SOURCES += UNIX_StaticIPAssignmentSettingData_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_StaticIPAssignmentSettingData_ZOS.cxx
+	SOURCES += UNIX_StaticIPAssignmentSettingData_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_StaticIPAssignmentSettingData_STUB.cxx
+	SOURCES += UNIX_StaticIPAssignmentSettingData_STUB.cxx
 endif
 
 LIBRARIES = \

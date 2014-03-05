@@ -33,10 +33,14 @@
 #define __UNIX_BIOSFEATURE_H
 
 
-#include <SoftwareFeature/UNIX_SoftwareFeature.h>
-#include <BIOSElement/UNIX_BIOSElement.h>
+#include <CIM_LogicalElement.h>
 #include "UNIX_BIOSFeatureDeps.h"
 
+
+#define PROPERTY_IDENTIFYING_NUMBER				"IdentifyingNumber"
+#define PROPERTY_PRODUCT_NAME				"ProductName"
+#define PROPERTY_VENDOR				"Vendor"
+#define PROPERTY_VERSION				"Version"
 
 #define PROPERTY_CHARACTERISTICS							"Characteristics"
 #define PROPERTY_CHARACTERISTIC_DESCRIPTIONS				"CharacteristicDescriptions"

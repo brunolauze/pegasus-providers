@@ -43,43 +43,126 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_DatabaseSystemMain.cpp \
 	UNIX_DatabaseSystem.cpp \
-	UNIX_DatabaseSystemProvider.cpp \
-	UNIX_DatabaseSystemMain.cpp
+	UNIX_DatabaseSystemProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_DatabaseSystem_AIX.cxx
+	SOURCES += UNIX_DatabaseSystem_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_DatabaseSystem_DARWIN.cxx
+	SOURCES += UNIX_DatabaseSystem_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_DatabaseSystem_FREEBSD.cxx
+	SOURCES += UNIX_DatabaseSystem_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_DatabaseSystem_HPUX.cxx
+	SOURCES += UNIX_DatabaseSystem_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_DatabaseSystem_LINUX.cxx
+	SOURCES += UNIX_DatabaseSystem_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_DatabaseSystem_SOLARIS.cxx
+	SOURCES += UNIX_DatabaseSystem_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_DatabaseSystem_TRU64.cxx
+	SOURCES += UNIX_DatabaseSystem_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_DatabaseSystem_VMS.cxx
+	SOURCES += UNIX_DatabaseSystem_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_DatabaseSystem_WIN32.cxx
+	SOURCES += UNIX_DatabaseSystem_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_DatabaseSystem_ZOS.cxx
+	SOURCES += UNIX_DatabaseSystem_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_DatabaseSystem_STUB.cxx
+	SOURCES += UNIX_DatabaseSystem_STUB.cxx
+endif
+
+
+SOURCES += \
+	../ApplicationSystem/UNIX_ApplicationSystem.cpp \
+	../ApplicationSystem/UNIX_ApplicationSystemProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_STUB.cxx
+endif
+
+
+SOURCES += \
+	../SoftwareElement/UNIX_SoftwareElement.cpp \
+	../SoftwareElement/UNIX_SoftwareElementProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_STUB.cxx
 endif
 
 LIBRARIES = \
@@ -94,7 +177,6 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_ApplicationSystemProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

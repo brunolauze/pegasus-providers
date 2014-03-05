@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_SCSIProtocolEndpointProvider.cpp \
 	UNIX_SCSIProtocolEndpointMain.cpp
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SCSIProtocolEndpoint_AIX.cxx
+	SOURCES += UNIX_SCSIProtocolEndpoint_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SCSIProtocolEndpoint_DARWIN.cxx
+	SOURCES += UNIX_SCSIProtocolEndpoint_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SCSIProtocolEndpoint_FREEBSD.cxx
+	SOURCES += UNIX_SCSIProtocolEndpoint_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SCSIProtocolEndpoint_HPUX.cxx
+	SOURCES += UNIX_SCSIProtocolEndpoint_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SCSIProtocolEndpoint_LINUX.cxx
+	SOURCES += UNIX_SCSIProtocolEndpoint_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SCSIProtocolEndpoint_SOLARIS.cxx
+	SOURCES += UNIX_SCSIProtocolEndpoint_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SCSIProtocolEndpoint_TRU64.cxx
+	SOURCES += UNIX_SCSIProtocolEndpoint_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SCSIProtocolEndpoint_VMS.cxx
+	SOURCES += UNIX_SCSIProtocolEndpoint_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SCSIProtocolEndpoint_WIN32.cxx
+	SOURCES += UNIX_SCSIProtocolEndpoint_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SCSIProtocolEndpoint_ZOS.cxx
+	SOURCES += UNIX_SCSIProtocolEndpoint_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SCSIProtocolEndpoint_STUB.cxx
+	SOURCES += UNIX_SCSIProtocolEndpoint_STUB.cxx
 endif
 
 LIBRARIES = \

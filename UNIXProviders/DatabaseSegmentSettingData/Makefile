@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_DatabaseSegmentSettingDataMain.cpp \
 	UNIX_DatabaseSegmentSettingData.cpp \
-	UNIX_DatabaseSegmentSettingDataProvider.cpp \
-	UNIX_DatabaseSegmentSettingDataMain.cpp
+	UNIX_DatabaseSegmentSettingDataProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_DatabaseSegmentSettingData_AIX.cxx
+	SOURCES += UNIX_DatabaseSegmentSettingData_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_DatabaseSegmentSettingData_DARWIN.cxx
+	SOURCES += UNIX_DatabaseSegmentSettingData_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_DatabaseSegmentSettingData_FREEBSD.cxx
+	SOURCES += UNIX_DatabaseSegmentSettingData_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_DatabaseSegmentSettingData_HPUX.cxx
+	SOURCES += UNIX_DatabaseSegmentSettingData_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_DatabaseSegmentSettingData_LINUX.cxx
+	SOURCES += UNIX_DatabaseSegmentSettingData_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_DatabaseSegmentSettingData_SOLARIS.cxx
+	SOURCES += UNIX_DatabaseSegmentSettingData_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_DatabaseSegmentSettingData_TRU64.cxx
+	SOURCES += UNIX_DatabaseSegmentSettingData_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_DatabaseSegmentSettingData_VMS.cxx
+	SOURCES += UNIX_DatabaseSegmentSettingData_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_DatabaseSegmentSettingData_WIN32.cxx
+	SOURCES += UNIX_DatabaseSegmentSettingData_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_DatabaseSegmentSettingData_ZOS.cxx
+	SOURCES += UNIX_DatabaseSegmentSettingData_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_DatabaseSegmentSettingData_STUB.cxx
+	SOURCES += UNIX_DatabaseSegmentSettingData_STUB.cxx
 endif
 
 LIBRARIES = \

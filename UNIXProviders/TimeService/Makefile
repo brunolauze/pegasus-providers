@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_TimeServiceMain.cpp \
 	UNIX_TimeService.cpp \
-	UNIX_TimeServiceProvider.cpp \
-	UNIX_TimeServiceMain.cpp
+	UNIX_TimeServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_TimeService_AIX.cxx
+	SOURCES += UNIX_TimeService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_TimeService_DARWIN.cxx
+	SOURCES += UNIX_TimeService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_TimeService_FREEBSD.cxx
+	SOURCES += UNIX_TimeService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_TimeService_HPUX.cxx
+	SOURCES += UNIX_TimeService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_TimeService_LINUX.cxx
+	SOURCES += UNIX_TimeService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_TimeService_SOLARIS.cxx
+	SOURCES += UNIX_TimeService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_TimeService_TRU64.cxx
+	SOURCES += UNIX_TimeService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_TimeService_VMS.cxx
+	SOURCES += UNIX_TimeService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_TimeService_WIN32.cxx
+	SOURCES += UNIX_TimeService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_TimeService_ZOS.cxx
+	SOURCES += UNIX_TimeService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_TimeService_STUB.cxx
+	SOURCES += UNIX_TimeService_STUB.cxx
 endif
 
 LIBRARIES = \

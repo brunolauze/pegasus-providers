@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_DeviceSAPImplementationProvider.cpp \
 	UNIX_DeviceSAPImplementationMain.cpp
 ifeq ($(OS), aix)
-	SOURCE += UNIX_DeviceSAPImplementation_AIX.cxx
+	SOURCES += UNIX_DeviceSAPImplementation_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_DeviceSAPImplementation_DARWIN.cxx
+	SOURCES += UNIX_DeviceSAPImplementation_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_DeviceSAPImplementation_FREEBSD.cxx
+	SOURCES += UNIX_DeviceSAPImplementation_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_DeviceSAPImplementation_HPUX.cxx
+	SOURCES += UNIX_DeviceSAPImplementation_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_DeviceSAPImplementation_LINUX.cxx
+	SOURCES += UNIX_DeviceSAPImplementation_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_DeviceSAPImplementation_SOLARIS.cxx
+	SOURCES += UNIX_DeviceSAPImplementation_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_DeviceSAPImplementation_TRU64.cxx
+	SOURCES += UNIX_DeviceSAPImplementation_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_DeviceSAPImplementation_VMS.cxx
+	SOURCES += UNIX_DeviceSAPImplementation_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_DeviceSAPImplementation_WIN32.cxx
+	SOURCES += UNIX_DeviceSAPImplementation_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_DeviceSAPImplementation_ZOS.cxx
+	SOURCES += UNIX_DeviceSAPImplementation_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_DeviceSAPImplementation_STUB.cxx
+	SOURCES += UNIX_DeviceSAPImplementation_STUB.cxx
 endif
 
 LIBRARIES = \

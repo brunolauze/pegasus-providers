@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_HostedRoutingServicesMain.cpp \
 	UNIX_HostedRoutingServices.cpp \
-	UNIX_HostedRoutingServicesProvider.cpp \
-	UNIX_HostedRoutingServicesMain.cpp
+	UNIX_HostedRoutingServicesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_HostedRoutingServices_AIX.cxx
+	SOURCES += UNIX_HostedRoutingServices_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_HostedRoutingServices_DARWIN.cxx
+	SOURCES += UNIX_HostedRoutingServices_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_HostedRoutingServices_FREEBSD.cxx
+	SOURCES += UNIX_HostedRoutingServices_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_HostedRoutingServices_HPUX.cxx
+	SOURCES += UNIX_HostedRoutingServices_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_HostedRoutingServices_LINUX.cxx
+	SOURCES += UNIX_HostedRoutingServices_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_HostedRoutingServices_SOLARIS.cxx
+	SOURCES += UNIX_HostedRoutingServices_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_HostedRoutingServices_TRU64.cxx
+	SOURCES += UNIX_HostedRoutingServices_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_HostedRoutingServices_VMS.cxx
+	SOURCES += UNIX_HostedRoutingServices_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_HostedRoutingServices_WIN32.cxx
+	SOURCES += UNIX_HostedRoutingServices_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_HostedRoutingServices_ZOS.cxx
+	SOURCES += UNIX_HostedRoutingServices_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_HostedRoutingServices_STUB.cxx
+	SOURCES += UNIX_HostedRoutingServices_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_RuleThatGeneratedSAMain.cpp \
 	UNIX_RuleThatGeneratedSA.cpp \
-	UNIX_RuleThatGeneratedSAProvider.cpp \
-	UNIX_RuleThatGeneratedSAMain.cpp
+	UNIX_RuleThatGeneratedSAProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_RuleThatGeneratedSA_AIX.cxx
+	SOURCES += UNIX_RuleThatGeneratedSA_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_RuleThatGeneratedSA_DARWIN.cxx
+	SOURCES += UNIX_RuleThatGeneratedSA_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_RuleThatGeneratedSA_FREEBSD.cxx
+	SOURCES += UNIX_RuleThatGeneratedSA_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_RuleThatGeneratedSA_HPUX.cxx
+	SOURCES += UNIX_RuleThatGeneratedSA_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_RuleThatGeneratedSA_LINUX.cxx
+	SOURCES += UNIX_RuleThatGeneratedSA_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_RuleThatGeneratedSA_SOLARIS.cxx
+	SOURCES += UNIX_RuleThatGeneratedSA_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_RuleThatGeneratedSA_TRU64.cxx
+	SOURCES += UNIX_RuleThatGeneratedSA_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_RuleThatGeneratedSA_VMS.cxx
+	SOURCES += UNIX_RuleThatGeneratedSA_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_RuleThatGeneratedSA_WIN32.cxx
+	SOURCES += UNIX_RuleThatGeneratedSA_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_RuleThatGeneratedSA_ZOS.cxx
+	SOURCES += UNIX_RuleThatGeneratedSA_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_RuleThatGeneratedSA_STUB.cxx
+	SOURCES += UNIX_RuleThatGeneratedSA_STUB.cxx
 endif
 
 LIBRARIES = \

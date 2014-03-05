@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_BGPServiceMain.cpp \
 	UNIX_BGPService.cpp \
-	UNIX_BGPServiceProvider.cpp \
-	UNIX_BGPServiceMain.cpp
+	UNIX_BGPServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BGPService_AIX.cxx
+	SOURCES += UNIX_BGPService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BGPService_DARWIN.cxx
+	SOURCES += UNIX_BGPService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BGPService_FREEBSD.cxx
+	SOURCES += UNIX_BGPService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BGPService_HPUX.cxx
+	SOURCES += UNIX_BGPService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BGPService_LINUX.cxx
+	SOURCES += UNIX_BGPService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BGPService_SOLARIS.cxx
+	SOURCES += UNIX_BGPService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BGPService_TRU64.cxx
+	SOURCES += UNIX_BGPService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BGPService_VMS.cxx
+	SOURCES += UNIX_BGPService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BGPService_WIN32.cxx
+	SOURCES += UNIX_BGPService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BGPService_ZOS.cxx
+	SOURCES += UNIX_BGPService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BGPService_STUB.cxx
+	SOURCES += UNIX_BGPService_STUB.cxx
 endif
 
 LIBRARIES = \

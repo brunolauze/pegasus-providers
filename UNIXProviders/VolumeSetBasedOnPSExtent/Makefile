@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_VolumeSetBasedOnPSExtentMain.cpp \
 	UNIX_VolumeSetBasedOnPSExtent.cpp \
-	UNIX_VolumeSetBasedOnPSExtentProvider.cpp \
-	UNIX_VolumeSetBasedOnPSExtentMain.cpp
+	UNIX_VolumeSetBasedOnPSExtentProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_VolumeSetBasedOnPSExtent_AIX.cxx
+	SOURCES += UNIX_VolumeSetBasedOnPSExtent_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_VolumeSetBasedOnPSExtent_DARWIN.cxx
+	SOURCES += UNIX_VolumeSetBasedOnPSExtent_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_VolumeSetBasedOnPSExtent_FREEBSD.cxx
+	SOURCES += UNIX_VolumeSetBasedOnPSExtent_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_VolumeSetBasedOnPSExtent_HPUX.cxx
+	SOURCES += UNIX_VolumeSetBasedOnPSExtent_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_VolumeSetBasedOnPSExtent_LINUX.cxx
+	SOURCES += UNIX_VolumeSetBasedOnPSExtent_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_VolumeSetBasedOnPSExtent_SOLARIS.cxx
+	SOURCES += UNIX_VolumeSetBasedOnPSExtent_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_VolumeSetBasedOnPSExtent_TRU64.cxx
+	SOURCES += UNIX_VolumeSetBasedOnPSExtent_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_VolumeSetBasedOnPSExtent_VMS.cxx
+	SOURCES += UNIX_VolumeSetBasedOnPSExtent_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_VolumeSetBasedOnPSExtent_WIN32.cxx
+	SOURCES += UNIX_VolumeSetBasedOnPSExtent_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_VolumeSetBasedOnPSExtent_ZOS.cxx
+	SOURCES += UNIX_VolumeSetBasedOnPSExtent_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_VolumeSetBasedOnPSExtent_STUB.cxx
+	SOURCES += UNIX_VolumeSetBasedOnPSExtent_STUB.cxx
 endif
 
 LIBRARIES = \

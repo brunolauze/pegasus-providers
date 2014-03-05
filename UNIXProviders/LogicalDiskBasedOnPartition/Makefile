@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_LogicalDiskBasedOnPartitionMain.cpp \
 	UNIX_LogicalDiskBasedOnPartition.cpp \
-	UNIX_LogicalDiskBasedOnPartitionProvider.cpp \
-	UNIX_LogicalDiskBasedOnPartitionMain.cpp
+	UNIX_LogicalDiskBasedOnPartitionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_LogicalDiskBasedOnPartition_AIX.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_LogicalDiskBasedOnPartition_DARWIN.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_LogicalDiskBasedOnPartition_FREEBSD.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_LogicalDiskBasedOnPartition_HPUX.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_LogicalDiskBasedOnPartition_LINUX.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_LogicalDiskBasedOnPartition_SOLARIS.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_LogicalDiskBasedOnPartition_TRU64.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_LogicalDiskBasedOnPartition_VMS.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_LogicalDiskBasedOnPartition_WIN32.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_LogicalDiskBasedOnPartition_ZOS.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_LogicalDiskBasedOnPartition_STUB.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SwitchPortStatisticsMain.cpp \
 	UNIX_SwitchPortStatistics.cpp \
-	UNIX_SwitchPortStatisticsProvider.cpp \
-	UNIX_SwitchPortStatisticsMain.cpp
+	UNIX_SwitchPortStatisticsProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SwitchPortStatistics_AIX.cxx
+	SOURCES += UNIX_SwitchPortStatistics_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SwitchPortStatistics_DARWIN.cxx
+	SOURCES += UNIX_SwitchPortStatistics_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SwitchPortStatistics_FREEBSD.cxx
+	SOURCES += UNIX_SwitchPortStatistics_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SwitchPortStatistics_HPUX.cxx
+	SOURCES += UNIX_SwitchPortStatistics_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SwitchPortStatistics_LINUX.cxx
+	SOURCES += UNIX_SwitchPortStatistics_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SwitchPortStatistics_SOLARIS.cxx
+	SOURCES += UNIX_SwitchPortStatistics_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SwitchPortStatistics_TRU64.cxx
+	SOURCES += UNIX_SwitchPortStatistics_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SwitchPortStatistics_VMS.cxx
+	SOURCES += UNIX_SwitchPortStatistics_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SwitchPortStatistics_WIN32.cxx
+	SOURCES += UNIX_SwitchPortStatistics_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SwitchPortStatistics_ZOS.cxx
+	SOURCES += UNIX_SwitchPortStatistics_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SwitchPortStatistics_STUB.cxx
+	SOURCES += UNIX_SwitchPortStatistics_STUB.cxx
 endif
 
 LIBRARIES = \

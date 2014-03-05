@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_Priority8021QMarkerServiceMain.cpp \
 	UNIX_Priority8021QMarkerService.cpp \
-	UNIX_Priority8021QMarkerServiceProvider.cpp \
-	UNIX_Priority8021QMarkerServiceMain.cpp
+	UNIX_Priority8021QMarkerServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_Priority8021QMarkerService_AIX.cxx
+	SOURCES += UNIX_Priority8021QMarkerService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_Priority8021QMarkerService_DARWIN.cxx
+	SOURCES += UNIX_Priority8021QMarkerService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_Priority8021QMarkerService_FREEBSD.cxx
+	SOURCES += UNIX_Priority8021QMarkerService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_Priority8021QMarkerService_HPUX.cxx
+	SOURCES += UNIX_Priority8021QMarkerService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_Priority8021QMarkerService_LINUX.cxx
+	SOURCES += UNIX_Priority8021QMarkerService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_Priority8021QMarkerService_SOLARIS.cxx
+	SOURCES += UNIX_Priority8021QMarkerService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_Priority8021QMarkerService_TRU64.cxx
+	SOURCES += UNIX_Priority8021QMarkerService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_Priority8021QMarkerService_VMS.cxx
+	SOURCES += UNIX_Priority8021QMarkerService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_Priority8021QMarkerService_WIN32.cxx
+	SOURCES += UNIX_Priority8021QMarkerService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_Priority8021QMarkerService_ZOS.cxx
+	SOURCES += UNIX_Priority8021QMarkerService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_Priority8021QMarkerService_STUB.cxx
+	SOURCES += UNIX_Priority8021QMarkerService_STUB.cxx
 endif
 
 LIBRARIES = \

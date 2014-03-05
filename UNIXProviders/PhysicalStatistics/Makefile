@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PhysicalStatisticsMain.cpp \
 	UNIX_PhysicalStatistics.cpp \
-	UNIX_PhysicalStatisticsProvider.cpp \
-	UNIX_PhysicalStatisticsMain.cpp
+	UNIX_PhysicalStatisticsProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PhysicalStatistics_AIX.cxx
+	SOURCES += UNIX_PhysicalStatistics_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PhysicalStatistics_DARWIN.cxx
+	SOURCES += UNIX_PhysicalStatistics_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PhysicalStatistics_FREEBSD.cxx
+	SOURCES += UNIX_PhysicalStatistics_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PhysicalStatistics_HPUX.cxx
+	SOURCES += UNIX_PhysicalStatistics_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PhysicalStatistics_LINUX.cxx
+	SOURCES += UNIX_PhysicalStatistics_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PhysicalStatistics_SOLARIS.cxx
+	SOURCES += UNIX_PhysicalStatistics_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PhysicalStatistics_TRU64.cxx
+	SOURCES += UNIX_PhysicalStatistics_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PhysicalStatistics_VMS.cxx
+	SOURCES += UNIX_PhysicalStatistics_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PhysicalStatistics_WIN32.cxx
+	SOURCES += UNIX_PhysicalStatistics_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PhysicalStatistics_ZOS.cxx
+	SOURCES += UNIX_PhysicalStatistics_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PhysicalStatistics_STUB.cxx
+	SOURCES += UNIX_PhysicalStatistics_STUB.cxx
 endif
 
 LIBRARIES = \

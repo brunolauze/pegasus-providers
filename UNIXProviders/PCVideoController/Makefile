@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PCVideoControllerMain.cpp \
 	UNIX_PCVideoController.cpp \
-	UNIX_PCVideoControllerProvider.cpp \
-	UNIX_PCVideoControllerMain.cpp
+	UNIX_PCVideoControllerProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PCVideoController_AIX.cxx
+	SOURCES += UNIX_PCVideoController_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PCVideoController_DARWIN.cxx
+	SOURCES += UNIX_PCVideoController_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PCVideoController_FREEBSD.cxx
+	SOURCES += UNIX_PCVideoController_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PCVideoController_HPUX.cxx
+	SOURCES += UNIX_PCVideoController_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PCVideoController_LINUX.cxx
+	SOURCES += UNIX_PCVideoController_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PCVideoController_SOLARIS.cxx
+	SOURCES += UNIX_PCVideoController_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PCVideoController_TRU64.cxx
+	SOURCES += UNIX_PCVideoController_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PCVideoController_VMS.cxx
+	SOURCES += UNIX_PCVideoController_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PCVideoController_WIN32.cxx
+	SOURCES += UNIX_PCVideoController_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PCVideoController_ZOS.cxx
+	SOURCES += UNIX_PCVideoController_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PCVideoController_STUB.cxx
+	SOURCES += UNIX_PCVideoController_STUB.cxx
 endif
 
 LIBRARIES = \

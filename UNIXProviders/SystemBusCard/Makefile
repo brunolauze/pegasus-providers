@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SystemBusCardMain.cpp \
 	UNIX_SystemBusCard.cpp \
-	UNIX_SystemBusCardProvider.cpp \
-	UNIX_SystemBusCardMain.cpp
+	UNIX_SystemBusCardProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SystemBusCard_AIX.cxx
+	SOURCES += UNIX_SystemBusCard_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SystemBusCard_DARWIN.cxx
+	SOURCES += UNIX_SystemBusCard_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SystemBusCard_FREEBSD.cxx
+	SOURCES += UNIX_SystemBusCard_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SystemBusCard_HPUX.cxx
+	SOURCES += UNIX_SystemBusCard_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SystemBusCard_LINUX.cxx
+	SOURCES += UNIX_SystemBusCard_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SystemBusCard_SOLARIS.cxx
+	SOURCES += UNIX_SystemBusCard_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SystemBusCard_TRU64.cxx
+	SOURCES += UNIX_SystemBusCard_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SystemBusCard_VMS.cxx
+	SOURCES += UNIX_SystemBusCard_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SystemBusCard_WIN32.cxx
+	SOURCES += UNIX_SystemBusCard_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SystemBusCard_ZOS.cxx
+	SOURCES += UNIX_SystemBusCard_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SystemBusCard_STUB.cxx
+	SOURCES += UNIX_SystemBusCard_STUB.cxx
 endif
 
 LIBRARIES = \

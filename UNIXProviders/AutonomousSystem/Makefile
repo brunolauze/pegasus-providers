@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AutonomousSystemMain.cpp \
 	UNIX_AutonomousSystem.cpp \
-	UNIX_AutonomousSystemProvider.cpp \
-	UNIX_AutonomousSystemMain.cpp
+	UNIX_AutonomousSystemProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AutonomousSystem_AIX.cxx
+	SOURCES += UNIX_AutonomousSystem_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AutonomousSystem_DARWIN.cxx
+	SOURCES += UNIX_AutonomousSystem_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AutonomousSystem_FREEBSD.cxx
+	SOURCES += UNIX_AutonomousSystem_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AutonomousSystem_HPUX.cxx
+	SOURCES += UNIX_AutonomousSystem_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AutonomousSystem_LINUX.cxx
+	SOURCES += UNIX_AutonomousSystem_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AutonomousSystem_SOLARIS.cxx
+	SOURCES += UNIX_AutonomousSystem_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AutonomousSystem_TRU64.cxx
+	SOURCES += UNIX_AutonomousSystem_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AutonomousSystem_VMS.cxx
+	SOURCES += UNIX_AutonomousSystem_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AutonomousSystem_WIN32.cxx
+	SOURCES += UNIX_AutonomousSystem_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AutonomousSystem_ZOS.cxx
+	SOURCES += UNIX_AutonomousSystem_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AutonomousSystem_STUB.cxx
+	SOURCES += UNIX_AutonomousSystem_STUB.cxx
 endif
 
 LIBRARIES = \

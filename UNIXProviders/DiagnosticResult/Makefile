@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_DiagnosticResultMain.cpp \
 	UNIX_DiagnosticResult.cpp \
-	UNIX_DiagnosticResultProvider.cpp \
-	UNIX_DiagnosticResultMain.cpp
+	UNIX_DiagnosticResultProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_DiagnosticResult_AIX.cxx
+	SOURCES += UNIX_DiagnosticResult_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_DiagnosticResult_DARWIN.cxx
+	SOURCES += UNIX_DiagnosticResult_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_DiagnosticResult_FREEBSD.cxx
+	SOURCES += UNIX_DiagnosticResult_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_DiagnosticResult_HPUX.cxx
+	SOURCES += UNIX_DiagnosticResult_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_DiagnosticResult_LINUX.cxx
+	SOURCES += UNIX_DiagnosticResult_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_DiagnosticResult_SOLARIS.cxx
+	SOURCES += UNIX_DiagnosticResult_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_DiagnosticResult_TRU64.cxx
+	SOURCES += UNIX_DiagnosticResult_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_DiagnosticResult_VMS.cxx
+	SOURCES += UNIX_DiagnosticResult_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_DiagnosticResult_WIN32.cxx
+	SOURCES += UNIX_DiagnosticResult_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_DiagnosticResult_ZOS.cxx
+	SOURCES += UNIX_DiagnosticResult_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_DiagnosticResult_STUB.cxx
+	SOURCES += UNIX_DiagnosticResult_STUB.cxx
 endif
 
 LIBRARIES = \

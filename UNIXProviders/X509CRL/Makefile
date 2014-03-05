@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_X509CRLMain.cpp \
 	UNIX_X509CRL.cpp \
-	UNIX_X509CRLProvider.cpp \
-	UNIX_X509CRLMain.cpp
+	UNIX_X509CRLProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_X509CRL_AIX.cxx
+	SOURCES += UNIX_X509CRL_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_X509CRL_DARWIN.cxx
+	SOURCES += UNIX_X509CRL_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_X509CRL_FREEBSD.cxx
+	SOURCES += UNIX_X509CRL_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_X509CRL_HPUX.cxx
+	SOURCES += UNIX_X509CRL_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_X509CRL_LINUX.cxx
+	SOURCES += UNIX_X509CRL_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_X509CRL_SOLARIS.cxx
+	SOURCES += UNIX_X509CRL_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_X509CRL_TRU64.cxx
+	SOURCES += UNIX_X509CRL_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_X509CRL_VMS.cxx
+	SOURCES += UNIX_X509CRL_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_X509CRL_WIN32.cxx
+	SOURCES += UNIX_X509CRL_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_X509CRL_ZOS.cxx
+	SOURCES += UNIX_X509CRL_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_X509CRL_STUB.cxx
+	SOURCES += UNIX_X509CRL_STUB.cxx
 endif
 
 LIBRARIES = \

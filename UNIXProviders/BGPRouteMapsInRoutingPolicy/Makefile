@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_BGPRouteMapsInRoutingPolicyMain.cpp \
 	UNIX_BGPRouteMapsInRoutingPolicy.cpp \
-	UNIX_BGPRouteMapsInRoutingPolicyProvider.cpp \
-	UNIX_BGPRouteMapsInRoutingPolicyMain.cpp
+	UNIX_BGPRouteMapsInRoutingPolicyProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BGPRouteMapsInRoutingPolicy_AIX.cxx
+	SOURCES += UNIX_BGPRouteMapsInRoutingPolicy_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BGPRouteMapsInRoutingPolicy_DARWIN.cxx
+	SOURCES += UNIX_BGPRouteMapsInRoutingPolicy_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BGPRouteMapsInRoutingPolicy_FREEBSD.cxx
+	SOURCES += UNIX_BGPRouteMapsInRoutingPolicy_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BGPRouteMapsInRoutingPolicy_HPUX.cxx
+	SOURCES += UNIX_BGPRouteMapsInRoutingPolicy_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BGPRouteMapsInRoutingPolicy_LINUX.cxx
+	SOURCES += UNIX_BGPRouteMapsInRoutingPolicy_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BGPRouteMapsInRoutingPolicy_SOLARIS.cxx
+	SOURCES += UNIX_BGPRouteMapsInRoutingPolicy_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BGPRouteMapsInRoutingPolicy_TRU64.cxx
+	SOURCES += UNIX_BGPRouteMapsInRoutingPolicy_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BGPRouteMapsInRoutingPolicy_VMS.cxx
+	SOURCES += UNIX_BGPRouteMapsInRoutingPolicy_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BGPRouteMapsInRoutingPolicy_WIN32.cxx
+	SOURCES += UNIX_BGPRouteMapsInRoutingPolicy_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BGPRouteMapsInRoutingPolicy_ZOS.cxx
+	SOURCES += UNIX_BGPRouteMapsInRoutingPolicy_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BGPRouteMapsInRoutingPolicy_STUB.cxx
+	SOURCES += UNIX_BGPRouteMapsInRoutingPolicy_STUB.cxx
 endif
 
 LIBRARIES = \

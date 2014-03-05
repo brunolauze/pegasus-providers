@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AccountMain.cpp \
 	UNIX_Account.cpp \
-	UNIX_AccountProvider.cpp \
-	UNIX_AccountMain.cpp
+	UNIX_AccountProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_Account_AIX.cxx
+	SOURCES += UNIX_Account_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_Account_DARWIN.cxx
+	SOURCES += UNIX_Account_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_Account_FREEBSD.cxx
+	SOURCES += UNIX_Account_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_Account_HPUX.cxx
+	SOURCES += UNIX_Account_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_Account_LINUX.cxx
+	SOURCES += UNIX_Account_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_Account_SOLARIS.cxx
+	SOURCES += UNIX_Account_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_Account_TRU64.cxx
+	SOURCES += UNIX_Account_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_Account_VMS.cxx
+	SOURCES += UNIX_Account_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_Account_WIN32.cxx
+	SOURCES += UNIX_Account_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_Account_ZOS.cxx
+	SOURCES += UNIX_Account_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_Account_STUB.cxx
+	SOURCES += UNIX_Account_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SettingCheckMain.cpp \
 	UNIX_SettingCheck.cpp \
-	UNIX_SettingCheckProvider.cpp \
-	UNIX_SettingCheckMain.cpp
+	UNIX_SettingCheckProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SettingCheck_AIX.cxx
+	SOURCES += UNIX_SettingCheck_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SettingCheck_DARWIN.cxx
+	SOURCES += UNIX_SettingCheck_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SettingCheck_FREEBSD.cxx
+	SOURCES += UNIX_SettingCheck_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SettingCheck_HPUX.cxx
+	SOURCES += UNIX_SettingCheck_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SettingCheck_LINUX.cxx
+	SOURCES += UNIX_SettingCheck_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SettingCheck_SOLARIS.cxx
+	SOURCES += UNIX_SettingCheck_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SettingCheck_TRU64.cxx
+	SOURCES += UNIX_SettingCheck_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SettingCheck_VMS.cxx
+	SOURCES += UNIX_SettingCheck_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SettingCheck_WIN32.cxx
+	SOURCES += UNIX_SettingCheck_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SettingCheck_ZOS.cxx
+	SOURCES += UNIX_SettingCheck_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SettingCheck_STUB.cxx
+	SOURCES += UNIX_SettingCheck_STUB.cxx
 endif
 
 LIBRARIES = \

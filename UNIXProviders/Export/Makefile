@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ExportMain.cpp \
 	UNIX_Export.cpp \
-	UNIX_ExportProvider.cpp \
-	UNIX_ExportMain.cpp
+	UNIX_ExportProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_Export_AIX.cxx
+	SOURCES += UNIX_Export_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_Export_DARWIN.cxx
+	SOURCES += UNIX_Export_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_Export_FREEBSD.cxx
+	SOURCES += UNIX_Export_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_Export_HPUX.cxx
+	SOURCES += UNIX_Export_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_Export_LINUX.cxx
+	SOURCES += UNIX_Export_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_Export_SOLARIS.cxx
+	SOURCES += UNIX_Export_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_Export_TRU64.cxx
+	SOURCES += UNIX_Export_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_Export_VMS.cxx
+	SOURCES += UNIX_Export_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_Export_WIN32.cxx
+	SOURCES += UNIX_Export_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_Export_ZOS.cxx
+	SOURCES += UNIX_Export_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_Export_STUB.cxx
+	SOURCES += UNIX_Export_STUB.cxx
 endif
 
 LIBRARIES = \

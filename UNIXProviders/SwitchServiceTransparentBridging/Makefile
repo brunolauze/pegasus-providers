@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SwitchServiceTransparentBridgingMain.cpp \
 	UNIX_SwitchServiceTransparentBridging.cpp \
-	UNIX_SwitchServiceTransparentBridgingProvider.cpp \
-	UNIX_SwitchServiceTransparentBridgingMain.cpp
+	UNIX_SwitchServiceTransparentBridgingProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SwitchServiceTransparentBridging_AIX.cxx
+	SOURCES += UNIX_SwitchServiceTransparentBridging_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SwitchServiceTransparentBridging_DARWIN.cxx
+	SOURCES += UNIX_SwitchServiceTransparentBridging_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SwitchServiceTransparentBridging_FREEBSD.cxx
+	SOURCES += UNIX_SwitchServiceTransparentBridging_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SwitchServiceTransparentBridging_HPUX.cxx
+	SOURCES += UNIX_SwitchServiceTransparentBridging_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SwitchServiceTransparentBridging_LINUX.cxx
+	SOURCES += UNIX_SwitchServiceTransparentBridging_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SwitchServiceTransparentBridging_SOLARIS.cxx
+	SOURCES += UNIX_SwitchServiceTransparentBridging_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SwitchServiceTransparentBridging_TRU64.cxx
+	SOURCES += UNIX_SwitchServiceTransparentBridging_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SwitchServiceTransparentBridging_VMS.cxx
+	SOURCES += UNIX_SwitchServiceTransparentBridging_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SwitchServiceTransparentBridging_WIN32.cxx
+	SOURCES += UNIX_SwitchServiceTransparentBridging_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SwitchServiceTransparentBridging_ZOS.cxx
+	SOURCES += UNIX_SwitchServiceTransparentBridging_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SwitchServiceTransparentBridging_STUB.cxx
+	SOURCES += UNIX_SwitchServiceTransparentBridging_STUB.cxx
 endif
 
 LIBRARIES = \

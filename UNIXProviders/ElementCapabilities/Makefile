@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ElementCapabilitiesMain.cpp \
 	UNIX_ElementCapabilities.cpp \
-	UNIX_ElementCapabilitiesProvider.cpp \
-	UNIX_ElementCapabilitiesMain.cpp
+	UNIX_ElementCapabilitiesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ElementCapabilities_AIX.cxx
+	SOURCES += UNIX_ElementCapabilities_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ElementCapabilities_DARWIN.cxx
+	SOURCES += UNIX_ElementCapabilities_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ElementCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_ElementCapabilities_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ElementCapabilities_HPUX.cxx
+	SOURCES += UNIX_ElementCapabilities_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ElementCapabilities_LINUX.cxx
+	SOURCES += UNIX_ElementCapabilities_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ElementCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_ElementCapabilities_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ElementCapabilities_TRU64.cxx
+	SOURCES += UNIX_ElementCapabilities_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ElementCapabilities_VMS.cxx
+	SOURCES += UNIX_ElementCapabilities_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ElementCapabilities_WIN32.cxx
+	SOURCES += UNIX_ElementCapabilities_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ElementCapabilities_ZOS.cxx
+	SOURCES += UNIX_ElementCapabilities_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ElementCapabilities_STUB.cxx
+	SOURCES += UNIX_ElementCapabilities_STUB.cxx
 endif
 
 LIBRARIES = \

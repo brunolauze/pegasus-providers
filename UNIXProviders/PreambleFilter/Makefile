@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PreambleFilterMain.cpp \
 	UNIX_PreambleFilter.cpp \
-	UNIX_PreambleFilterProvider.cpp \
-	UNIX_PreambleFilterMain.cpp
+	UNIX_PreambleFilterProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PreambleFilter_AIX.cxx
+	SOURCES += UNIX_PreambleFilter_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PreambleFilter_DARWIN.cxx
+	SOURCES += UNIX_PreambleFilter_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PreambleFilter_FREEBSD.cxx
+	SOURCES += UNIX_PreambleFilter_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PreambleFilter_HPUX.cxx
+	SOURCES += UNIX_PreambleFilter_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PreambleFilter_LINUX.cxx
+	SOURCES += UNIX_PreambleFilter_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PreambleFilter_SOLARIS.cxx
+	SOURCES += UNIX_PreambleFilter_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PreambleFilter_TRU64.cxx
+	SOURCES += UNIX_PreambleFilter_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PreambleFilter_VMS.cxx
+	SOURCES += UNIX_PreambleFilter_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PreambleFilter_WIN32.cxx
+	SOURCES += UNIX_PreambleFilter_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PreambleFilter_ZOS.cxx
+	SOURCES += UNIX_PreambleFilter_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PreambleFilter_STUB.cxx
+	SOURCES += UNIX_PreambleFilter_STUB.cxx
 endif
 
 LIBRARIES = \

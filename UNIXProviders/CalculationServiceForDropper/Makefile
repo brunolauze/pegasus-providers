@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_CalculationServiceForDropperMain.cpp \
 	UNIX_CalculationServiceForDropper.cpp \
-	UNIX_CalculationServiceForDropperProvider.cpp \
-	UNIX_CalculationServiceForDropperMain.cpp
+	UNIX_CalculationServiceForDropperProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_CalculationServiceForDropper_AIX.cxx
+	SOURCES += UNIX_CalculationServiceForDropper_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_CalculationServiceForDropper_DARWIN.cxx
+	SOURCES += UNIX_CalculationServiceForDropper_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_CalculationServiceForDropper_FREEBSD.cxx
+	SOURCES += UNIX_CalculationServiceForDropper_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_CalculationServiceForDropper_HPUX.cxx
+	SOURCES += UNIX_CalculationServiceForDropper_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_CalculationServiceForDropper_LINUX.cxx
+	SOURCES += UNIX_CalculationServiceForDropper_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_CalculationServiceForDropper_SOLARIS.cxx
+	SOURCES += UNIX_CalculationServiceForDropper_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_CalculationServiceForDropper_TRU64.cxx
+	SOURCES += UNIX_CalculationServiceForDropper_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_CalculationServiceForDropper_VMS.cxx
+	SOURCES += UNIX_CalculationServiceForDropper_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_CalculationServiceForDropper_WIN32.cxx
+	SOURCES += UNIX_CalculationServiceForDropper_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_CalculationServiceForDropper_ZOS.cxx
+	SOURCES += UNIX_CalculationServiceForDropper_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_CalculationServiceForDropper_STUB.cxx
+	SOURCES += UNIX_CalculationServiceForDropper_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_IPConfigurationServiceMain.cpp \
 	UNIX_IPConfigurationService.cpp \
-	UNIX_IPConfigurationServiceProvider.cpp \
-	UNIX_IPConfigurationServiceMain.cpp
+	UNIX_IPConfigurationServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_IPConfigurationService_AIX.cxx
+	SOURCES += UNIX_IPConfigurationService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_IPConfigurationService_DARWIN.cxx
+	SOURCES += UNIX_IPConfigurationService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_IPConfigurationService_FREEBSD.cxx
+	SOURCES += UNIX_IPConfigurationService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_IPConfigurationService_HPUX.cxx
+	SOURCES += UNIX_IPConfigurationService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_IPConfigurationService_LINUX.cxx
+	SOURCES += UNIX_IPConfigurationService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_IPConfigurationService_SOLARIS.cxx
+	SOURCES += UNIX_IPConfigurationService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_IPConfigurationService_TRU64.cxx
+	SOURCES += UNIX_IPConfigurationService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_IPConfigurationService_VMS.cxx
+	SOURCES += UNIX_IPConfigurationService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_IPConfigurationService_WIN32.cxx
+	SOURCES += UNIX_IPConfigurationService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_IPConfigurationService_ZOS.cxx
+	SOURCES += UNIX_IPConfigurationService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_IPConfigurationService_STUB.cxx
+	SOURCES += UNIX_IPConfigurationService_STUB.cxx
 endif
 
 LIBRARIES = \

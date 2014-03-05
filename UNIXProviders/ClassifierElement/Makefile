@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ClassifierElementMain.cpp \
 	UNIX_ClassifierElement.cpp \
-	UNIX_ClassifierElementProvider.cpp \
-	UNIX_ClassifierElementMain.cpp
+	UNIX_ClassifierElementProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ClassifierElement_AIX.cxx
+	SOURCES += UNIX_ClassifierElement_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ClassifierElement_DARWIN.cxx
+	SOURCES += UNIX_ClassifierElement_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ClassifierElement_FREEBSD.cxx
+	SOURCES += UNIX_ClassifierElement_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ClassifierElement_HPUX.cxx
+	SOURCES += UNIX_ClassifierElement_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ClassifierElement_LINUX.cxx
+	SOURCES += UNIX_ClassifierElement_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ClassifierElement_SOLARIS.cxx
+	SOURCES += UNIX_ClassifierElement_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ClassifierElement_TRU64.cxx
+	SOURCES += UNIX_ClassifierElement_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ClassifierElement_VMS.cxx
+	SOURCES += UNIX_ClassifierElement_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ClassifierElement_WIN32.cxx
+	SOURCES += UNIX_ClassifierElement_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ClassifierElement_ZOS.cxx
+	SOURCES += UNIX_ClassifierElement_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ClassifierElement_STUB.cxx
+	SOURCES += UNIX_ClassifierElement_STUB.cxx
 endif
 
 LIBRARIES = \

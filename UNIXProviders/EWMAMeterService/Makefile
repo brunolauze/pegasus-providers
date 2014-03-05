@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_EWMAMeterServiceMain.cpp \
 	UNIX_EWMAMeterService.cpp \
-	UNIX_EWMAMeterServiceProvider.cpp \
-	UNIX_EWMAMeterServiceMain.cpp
+	UNIX_EWMAMeterServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_EWMAMeterService_AIX.cxx
+	SOURCES += UNIX_EWMAMeterService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_EWMAMeterService_DARWIN.cxx
+	SOURCES += UNIX_EWMAMeterService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_EWMAMeterService_FREEBSD.cxx
+	SOURCES += UNIX_EWMAMeterService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_EWMAMeterService_HPUX.cxx
+	SOURCES += UNIX_EWMAMeterService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_EWMAMeterService_LINUX.cxx
+	SOURCES += UNIX_EWMAMeterService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_EWMAMeterService_SOLARIS.cxx
+	SOURCES += UNIX_EWMAMeterService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_EWMAMeterService_TRU64.cxx
+	SOURCES += UNIX_EWMAMeterService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_EWMAMeterService_VMS.cxx
+	SOURCES += UNIX_EWMAMeterService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_EWMAMeterService_WIN32.cxx
+	SOURCES += UNIX_EWMAMeterService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_EWMAMeterService_ZOS.cxx
+	SOURCES += UNIX_EWMAMeterService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_EWMAMeterService_STUB.cxx
+	SOURCES += UNIX_EWMAMeterService_STUB.cxx
 endif
 
 LIBRARIES = \

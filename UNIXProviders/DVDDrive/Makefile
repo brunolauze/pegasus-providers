@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_DVDDriveMain.cpp \
 	UNIX_DVDDrive.cpp \
-	UNIX_DVDDriveProvider.cpp \
-	UNIX_DVDDriveMain.cpp
+	UNIX_DVDDriveProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_DVDDrive_AIX.cxx
+	SOURCES += UNIX_DVDDrive_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_DVDDrive_DARWIN.cxx
+	SOURCES += UNIX_DVDDrive_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_DVDDrive_FREEBSD.cxx
+	SOURCES += UNIX_DVDDrive_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_DVDDrive_HPUX.cxx
+	SOURCES += UNIX_DVDDrive_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_DVDDrive_LINUX.cxx
+	SOURCES += UNIX_DVDDrive_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_DVDDrive_SOLARIS.cxx
+	SOURCES += UNIX_DVDDrive_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_DVDDrive_TRU64.cxx
+	SOURCES += UNIX_DVDDrive_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_DVDDrive_VMS.cxx
+	SOURCES += UNIX_DVDDrive_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_DVDDrive_WIN32.cxx
+	SOURCES += UNIX_DVDDrive_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_DVDDrive_ZOS.cxx
+	SOURCES += UNIX_DVDDrive_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_DVDDrive_STUB.cxx
+	SOURCES += UNIX_DVDDrive_STUB.cxx
 endif
 
 LIBRARIES = \

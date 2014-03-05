@@ -100,6 +100,7 @@ public:
 
 private:
 	CIMName currentScope;
+	struct tm* currentclock;
 
 #	include "UNIX_CurrentTimePrivate.h"
 

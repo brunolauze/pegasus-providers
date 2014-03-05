@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_BGPRouteMapMain.cpp \
 	UNIX_BGPRouteMap.cpp \
-	UNIX_BGPRouteMapProvider.cpp \
-	UNIX_BGPRouteMapMain.cpp
+	UNIX_BGPRouteMapProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BGPRouteMap_AIX.cxx
+	SOURCES += UNIX_BGPRouteMap_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BGPRouteMap_DARWIN.cxx
+	SOURCES += UNIX_BGPRouteMap_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BGPRouteMap_FREEBSD.cxx
+	SOURCES += UNIX_BGPRouteMap_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BGPRouteMap_HPUX.cxx
+	SOURCES += UNIX_BGPRouteMap_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BGPRouteMap_LINUX.cxx
+	SOURCES += UNIX_BGPRouteMap_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BGPRouteMap_SOLARIS.cxx
+	SOURCES += UNIX_BGPRouteMap_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BGPRouteMap_TRU64.cxx
+	SOURCES += UNIX_BGPRouteMap_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BGPRouteMap_VMS.cxx
+	SOURCES += UNIX_BGPRouteMap_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BGPRouteMap_WIN32.cxx
+	SOURCES += UNIX_BGPRouteMap_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BGPRouteMap_ZOS.cxx
+	SOURCES += UNIX_BGPRouteMap_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BGPRouteMap_STUB.cxx
+	SOURCES += UNIX_BGPRouteMap_STUB.cxx
 endif
 
 LIBRARIES = \

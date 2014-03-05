@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_BootSourceSettingMain.cpp \
 	UNIX_BootSourceSetting.cpp \
-	UNIX_BootSourceSettingProvider.cpp \
-	UNIX_BootSourceSettingMain.cpp
+	UNIX_BootSourceSettingProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BootSourceSetting_AIX.cxx
+	SOURCES += UNIX_BootSourceSetting_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BootSourceSetting_DARWIN.cxx
+	SOURCES += UNIX_BootSourceSetting_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BootSourceSetting_FREEBSD.cxx
+	SOURCES += UNIX_BootSourceSetting_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BootSourceSetting_HPUX.cxx
+	SOURCES += UNIX_BootSourceSetting_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BootSourceSetting_LINUX.cxx
+	SOURCES += UNIX_BootSourceSetting_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BootSourceSetting_SOLARIS.cxx
+	SOURCES += UNIX_BootSourceSetting_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BootSourceSetting_TRU64.cxx
+	SOURCES += UNIX_BootSourceSetting_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BootSourceSetting_VMS.cxx
+	SOURCES += UNIX_BootSourceSetting_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BootSourceSetting_WIN32.cxx
+	SOURCES += UNIX_BootSourceSetting_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BootSourceSetting_ZOS.cxx
+	SOURCES += UNIX_BootSourceSetting_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BootSourceSetting_STUB.cxx
+	SOURCES += UNIX_BootSourceSetting_STUB.cxx
 endif
 
 LIBRARIES = \

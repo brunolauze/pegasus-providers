@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ManagementControllerMain.cpp \
 	UNIX_ManagementController.cpp \
-	UNIX_ManagementControllerProvider.cpp \
-	UNIX_ManagementControllerMain.cpp
+	UNIX_ManagementControllerProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ManagementController_AIX.cxx
+	SOURCES += UNIX_ManagementController_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ManagementController_DARWIN.cxx
+	SOURCES += UNIX_ManagementController_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ManagementController_FREEBSD.cxx
+	SOURCES += UNIX_ManagementController_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ManagementController_HPUX.cxx
+	SOURCES += UNIX_ManagementController_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ManagementController_LINUX.cxx
+	SOURCES += UNIX_ManagementController_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ManagementController_SOLARIS.cxx
+	SOURCES += UNIX_ManagementController_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ManagementController_TRU64.cxx
+	SOURCES += UNIX_ManagementController_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ManagementController_VMS.cxx
+	SOURCES += UNIX_ManagementController_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ManagementController_WIN32.cxx
+	SOURCES += UNIX_ManagementController_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ManagementController_ZOS.cxx
+	SOURCES += UNIX_ManagementController_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ManagementController_STUB.cxx
+	SOURCES += UNIX_ManagementController_STUB.cxx
 endif
 
 LIBRARIES = \

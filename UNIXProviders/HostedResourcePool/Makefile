@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_HostedResourcePoolMain.cpp \
 	UNIX_HostedResourcePool.cpp \
-	UNIX_HostedResourcePoolProvider.cpp \
-	UNIX_HostedResourcePoolMain.cpp
+	UNIX_HostedResourcePoolProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_HostedResourcePool_AIX.cxx
+	SOURCES += UNIX_HostedResourcePool_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_HostedResourcePool_DARWIN.cxx
+	SOURCES += UNIX_HostedResourcePool_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_HostedResourcePool_FREEBSD.cxx
+	SOURCES += UNIX_HostedResourcePool_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_HostedResourcePool_HPUX.cxx
+	SOURCES += UNIX_HostedResourcePool_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_HostedResourcePool_LINUX.cxx
+	SOURCES += UNIX_HostedResourcePool_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_HostedResourcePool_SOLARIS.cxx
+	SOURCES += UNIX_HostedResourcePool_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_HostedResourcePool_TRU64.cxx
+	SOURCES += UNIX_HostedResourcePool_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_HostedResourcePool_VMS.cxx
+	SOURCES += UNIX_HostedResourcePool_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_HostedResourcePool_WIN32.cxx
+	SOURCES += UNIX_HostedResourcePool_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_HostedResourcePool_ZOS.cxx
+	SOURCES += UNIX_HostedResourcePool_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_HostedResourcePool_STUB.cxx
+	SOURCES += UNIX_HostedResourcePool_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_ComponentCSProvider.cpp \
 	UNIX_ComponentCSMain.cpp
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ComponentCS_AIX.cxx
+	SOURCES += UNIX_ComponentCS_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ComponentCS_DARWIN.cxx
+	SOURCES += UNIX_ComponentCS_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ComponentCS_FREEBSD.cxx
+	SOURCES += UNIX_ComponentCS_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ComponentCS_HPUX.cxx
+	SOURCES += UNIX_ComponentCS_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ComponentCS_LINUX.cxx
+	SOURCES += UNIX_ComponentCS_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ComponentCS_SOLARIS.cxx
+	SOURCES += UNIX_ComponentCS_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ComponentCS_TRU64.cxx
+	SOURCES += UNIX_ComponentCS_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ComponentCS_VMS.cxx
+	SOURCES += UNIX_ComponentCS_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ComponentCS_WIN32.cxx
+	SOURCES += UNIX_ComponentCS_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ComponentCS_ZOS.cxx
+	SOURCES += UNIX_ComponentCS_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ComponentCS_STUB.cxx
+	SOURCES += UNIX_ComponentCS_STUB.cxx
 endif
 
 LIBRARIES = \

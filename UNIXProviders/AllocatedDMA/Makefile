@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AllocatedDMAMain.cpp \
 	UNIX_AllocatedDMA.cpp \
-	UNIX_AllocatedDMAProvider.cpp \
-	UNIX_AllocatedDMAMain.cpp
+	UNIX_AllocatedDMAProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AllocatedDMA_AIX.cxx
+	SOURCES += UNIX_AllocatedDMA_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AllocatedDMA_DARWIN.cxx
+	SOURCES += UNIX_AllocatedDMA_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AllocatedDMA_FREEBSD.cxx
+	SOURCES += UNIX_AllocatedDMA_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AllocatedDMA_HPUX.cxx
+	SOURCES += UNIX_AllocatedDMA_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AllocatedDMA_LINUX.cxx
+	SOURCES += UNIX_AllocatedDMA_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AllocatedDMA_SOLARIS.cxx
+	SOURCES += UNIX_AllocatedDMA_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AllocatedDMA_TRU64.cxx
+	SOURCES += UNIX_AllocatedDMA_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AllocatedDMA_VMS.cxx
+	SOURCES += UNIX_AllocatedDMA_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AllocatedDMA_WIN32.cxx
+	SOURCES += UNIX_AllocatedDMA_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AllocatedDMA_ZOS.cxx
+	SOURCES += UNIX_AllocatedDMA_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AllocatedDMA_STUB.cxx
+	SOURCES += UNIX_AllocatedDMA_STUB.cxx
 endif
 
 LIBRARIES = \

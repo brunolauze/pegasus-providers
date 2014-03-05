@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_LogicalNetworkServiceMain.cpp \
 	UNIX_LogicalNetworkService.cpp \
-	UNIX_LogicalNetworkServiceProvider.cpp \
-	UNIX_LogicalNetworkServiceMain.cpp
+	UNIX_LogicalNetworkServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_LogicalNetworkService_AIX.cxx
+	SOURCES += UNIX_LogicalNetworkService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_LogicalNetworkService_DARWIN.cxx
+	SOURCES += UNIX_LogicalNetworkService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_LogicalNetworkService_FREEBSD.cxx
+	SOURCES += UNIX_LogicalNetworkService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_LogicalNetworkService_HPUX.cxx
+	SOURCES += UNIX_LogicalNetworkService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_LogicalNetworkService_LINUX.cxx
+	SOURCES += UNIX_LogicalNetworkService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_LogicalNetworkService_SOLARIS.cxx
+	SOURCES += UNIX_LogicalNetworkService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_LogicalNetworkService_TRU64.cxx
+	SOURCES += UNIX_LogicalNetworkService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_LogicalNetworkService_VMS.cxx
+	SOURCES += UNIX_LogicalNetworkService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_LogicalNetworkService_WIN32.cxx
+	SOURCES += UNIX_LogicalNetworkService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_LogicalNetworkService_ZOS.cxx
+	SOURCES += UNIX_LogicalNetworkService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_LogicalNetworkService_STUB.cxx
+	SOURCES += UNIX_LogicalNetworkService_STUB.cxx
 endif
 
 LIBRARIES = \

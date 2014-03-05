@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SCSIPathConfigurationServiceMain.cpp \
 	UNIX_SCSIPathConfigurationService.cpp \
-	UNIX_SCSIPathConfigurationServiceProvider.cpp \
-	UNIX_SCSIPathConfigurationServiceMain.cpp
+	UNIX_SCSIPathConfigurationServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SCSIPathConfigurationService_AIX.cxx
+	SOURCES += UNIX_SCSIPathConfigurationService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SCSIPathConfigurationService_DARWIN.cxx
+	SOURCES += UNIX_SCSIPathConfigurationService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SCSIPathConfigurationService_FREEBSD.cxx
+	SOURCES += UNIX_SCSIPathConfigurationService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SCSIPathConfigurationService_HPUX.cxx
+	SOURCES += UNIX_SCSIPathConfigurationService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SCSIPathConfigurationService_LINUX.cxx
+	SOURCES += UNIX_SCSIPathConfigurationService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SCSIPathConfigurationService_SOLARIS.cxx
+	SOURCES += UNIX_SCSIPathConfigurationService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SCSIPathConfigurationService_TRU64.cxx
+	SOURCES += UNIX_SCSIPathConfigurationService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SCSIPathConfigurationService_VMS.cxx
+	SOURCES += UNIX_SCSIPathConfigurationService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SCSIPathConfigurationService_WIN32.cxx
+	SOURCES += UNIX_SCSIPathConfigurationService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SCSIPathConfigurationService_ZOS.cxx
+	SOURCES += UNIX_SCSIPathConfigurationService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SCSIPathConfigurationService_STUB.cxx
+	SOURCES += UNIX_SCSIPathConfigurationService_STUB.cxx
 endif
 
 LIBRARIES = \

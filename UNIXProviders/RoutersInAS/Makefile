@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_RoutersInASMain.cpp \
 	UNIX_RoutersInAS.cpp \
-	UNIX_RoutersInASProvider.cpp \
-	UNIX_RoutersInASMain.cpp
+	UNIX_RoutersInASProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_RoutersInAS_AIX.cxx
+	SOURCES += UNIX_RoutersInAS_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_RoutersInAS_DARWIN.cxx
+	SOURCES += UNIX_RoutersInAS_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_RoutersInAS_FREEBSD.cxx
+	SOURCES += UNIX_RoutersInAS_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_RoutersInAS_HPUX.cxx
+	SOURCES += UNIX_RoutersInAS_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_RoutersInAS_LINUX.cxx
+	SOURCES += UNIX_RoutersInAS_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_RoutersInAS_SOLARIS.cxx
+	SOURCES += UNIX_RoutersInAS_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_RoutersInAS_TRU64.cxx
+	SOURCES += UNIX_RoutersInAS_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_RoutersInAS_VMS.cxx
+	SOURCES += UNIX_RoutersInAS_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_RoutersInAS_WIN32.cxx
+	SOURCES += UNIX_RoutersInAS_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_RoutersInAS_ZOS.cxx
+	SOURCES += UNIX_RoutersInAS_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_RoutersInAS_STUB.cxx
+	SOURCES += UNIX_RoutersInAS_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_UnimodemMain.cpp \
 	UNIX_Unimodem.cpp \
-	UNIX_UnimodemProvider.cpp \
-	UNIX_UnimodemMain.cpp
+	UNIX_UnimodemProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_Unimodem_AIX.cxx
+	SOURCES += UNIX_Unimodem_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_Unimodem_DARWIN.cxx
+	SOURCES += UNIX_Unimodem_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_Unimodem_FREEBSD.cxx
+	SOURCES += UNIX_Unimodem_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_Unimodem_HPUX.cxx
+	SOURCES += UNIX_Unimodem_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_Unimodem_LINUX.cxx
+	SOURCES += UNIX_Unimodem_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_Unimodem_SOLARIS.cxx
+	SOURCES += UNIX_Unimodem_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_Unimodem_TRU64.cxx
+	SOURCES += UNIX_Unimodem_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_Unimodem_VMS.cxx
+	SOURCES += UNIX_Unimodem_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_Unimodem_WIN32.cxx
+	SOURCES += UNIX_Unimodem_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_Unimodem_ZOS.cxx
+	SOURCES += UNIX_Unimodem_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_Unimodem_STUB.cxx
+	SOURCES += UNIX_Unimodem_STUB.cxx
 endif
 
 LIBRARIES = \

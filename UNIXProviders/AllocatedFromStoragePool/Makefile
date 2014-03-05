@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AllocatedFromStoragePoolMain.cpp \
 	UNIX_AllocatedFromStoragePool.cpp \
-	UNIX_AllocatedFromStoragePoolProvider.cpp \
-	UNIX_AllocatedFromStoragePoolMain.cpp
+	UNIX_AllocatedFromStoragePoolProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AllocatedFromStoragePool_AIX.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AllocatedFromStoragePool_DARWIN.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AllocatedFromStoragePool_FREEBSD.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AllocatedFromStoragePool_HPUX.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AllocatedFromStoragePool_LINUX.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AllocatedFromStoragePool_SOLARIS.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AllocatedFromStoragePool_TRU64.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AllocatedFromStoragePool_VMS.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AllocatedFromStoragePool_WIN32.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AllocatedFromStoragePool_ZOS.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AllocatedFromStoragePool_STUB.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_STUB.cxx
 endif
 
 LIBRARIES = \

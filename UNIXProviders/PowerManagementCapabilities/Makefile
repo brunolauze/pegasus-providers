@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PowerManagementCapabilitiesMain.cpp \
 	UNIX_PowerManagementCapabilities.cpp \
-	UNIX_PowerManagementCapabilitiesProvider.cpp \
-	UNIX_PowerManagementCapabilitiesMain.cpp
+	UNIX_PowerManagementCapabilitiesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PowerManagementCapabilities_AIX.cxx
+	SOURCES += UNIX_PowerManagementCapabilities_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PowerManagementCapabilities_DARWIN.cxx
+	SOURCES += UNIX_PowerManagementCapabilities_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PowerManagementCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_PowerManagementCapabilities_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PowerManagementCapabilities_HPUX.cxx
+	SOURCES += UNIX_PowerManagementCapabilities_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PowerManagementCapabilities_LINUX.cxx
+	SOURCES += UNIX_PowerManagementCapabilities_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PowerManagementCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_PowerManagementCapabilities_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PowerManagementCapabilities_TRU64.cxx
+	SOURCES += UNIX_PowerManagementCapabilities_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PowerManagementCapabilities_VMS.cxx
+	SOURCES += UNIX_PowerManagementCapabilities_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PowerManagementCapabilities_WIN32.cxx
+	SOURCES += UNIX_PowerManagementCapabilities_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PowerManagementCapabilities_ZOS.cxx
+	SOURCES += UNIX_PowerManagementCapabilities_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PowerManagementCapabilities_STUB.cxx
+	SOURCES += UNIX_PowerManagementCapabilities_STUB.cxx
 endif
 
 LIBRARIES = \

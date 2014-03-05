@@ -107,26 +107,25 @@ class CIM_ManagedElement {
 };
 
 
-classs CIM_Class : CIM_ManagedElement
+class CIM_Class : CIM_ManagedElement
 {
-   		[Description("Name of the class")]
+   	[Description("Name of the class")]
    string Name;
 
-   		[Description("Name of the class")]
+   	[Description("Name of the class")]
    string ClassName;
 
-   		[Description("Name of the super class")]
+   	[Description("Name of the super class")]
    string SuperClassName;
 
-   		[Description("Namespace of the class")]
+   	[Description("Namespace of the class")]
    string Namespace;
 
-   		[Description (
-   			"Property Names of the class" )]
-   	string[] Properties;
-}
+   	[Description ("Property Names of the class" )]
+   string Properties[];
+};
 
 class Meta_Class : CIM_Class
 {
 
-}
+};

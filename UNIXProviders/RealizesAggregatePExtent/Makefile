@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_RealizesAggregatePExtentMain.cpp \
 	UNIX_RealizesAggregatePExtent.cpp \
-	UNIX_RealizesAggregatePExtentProvider.cpp \
-	UNIX_RealizesAggregatePExtentMain.cpp
+	UNIX_RealizesAggregatePExtentProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_RealizesAggregatePExtent_AIX.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_RealizesAggregatePExtent_DARWIN.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_RealizesAggregatePExtent_FREEBSD.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_RealizesAggregatePExtent_HPUX.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_RealizesAggregatePExtent_LINUX.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_RealizesAggregatePExtent_SOLARIS.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_RealizesAggregatePExtent_TRU64.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_RealizesAggregatePExtent_VMS.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_RealizesAggregatePExtent_WIN32.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_RealizesAggregatePExtent_ZOS.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_RealizesAggregatePExtent_STUB.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_STUB.cxx
 endif
 
 LIBRARIES = \

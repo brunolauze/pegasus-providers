@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SwitchesAmongMain.cpp \
 	UNIX_SwitchesAmong.cpp \
-	UNIX_SwitchesAmongProvider.cpp \
-	UNIX_SwitchesAmongMain.cpp
+	UNIX_SwitchesAmongProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SwitchesAmong_AIX.cxx
+	SOURCES += UNIX_SwitchesAmong_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SwitchesAmong_DARWIN.cxx
+	SOURCES += UNIX_SwitchesAmong_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SwitchesAmong_FREEBSD.cxx
+	SOURCES += UNIX_SwitchesAmong_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SwitchesAmong_HPUX.cxx
+	SOURCES += UNIX_SwitchesAmong_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SwitchesAmong_LINUX.cxx
+	SOURCES += UNIX_SwitchesAmong_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SwitchesAmong_SOLARIS.cxx
+	SOURCES += UNIX_SwitchesAmong_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SwitchesAmong_TRU64.cxx
+	SOURCES += UNIX_SwitchesAmong_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SwitchesAmong_VMS.cxx
+	SOURCES += UNIX_SwitchesAmong_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SwitchesAmong_WIN32.cxx
+	SOURCES += UNIX_SwitchesAmong_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SwitchesAmong_ZOS.cxx
+	SOURCES += UNIX_SwitchesAmong_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SwitchesAmong_STUB.cxx
+	SOURCES += UNIX_SwitchesAmong_STUB.cxx
 endif
 
 LIBRARIES = \

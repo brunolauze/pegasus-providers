@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ClassifierFilterSetMain.cpp \
 	UNIX_ClassifierFilterSet.cpp \
-	UNIX_ClassifierFilterSetProvider.cpp \
-	UNIX_ClassifierFilterSetMain.cpp
+	UNIX_ClassifierFilterSetProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ClassifierFilterSet_AIX.cxx
+	SOURCES += UNIX_ClassifierFilterSet_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ClassifierFilterSet_DARWIN.cxx
+	SOURCES += UNIX_ClassifierFilterSet_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ClassifierFilterSet_FREEBSD.cxx
+	SOURCES += UNIX_ClassifierFilterSet_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ClassifierFilterSet_HPUX.cxx
+	SOURCES += UNIX_ClassifierFilterSet_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ClassifierFilterSet_LINUX.cxx
+	SOURCES += UNIX_ClassifierFilterSet_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ClassifierFilterSet_SOLARIS.cxx
+	SOURCES += UNIX_ClassifierFilterSet_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ClassifierFilterSet_TRU64.cxx
+	SOURCES += UNIX_ClassifierFilterSet_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ClassifierFilterSet_VMS.cxx
+	SOURCES += UNIX_ClassifierFilterSet_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ClassifierFilterSet_WIN32.cxx
+	SOURCES += UNIX_ClassifierFilterSet_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ClassifierFilterSet_ZOS.cxx
+	SOURCES += UNIX_ClassifierFilterSet_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ClassifierFilterSet_STUB.cxx
+	SOURCES += UNIX_ClassifierFilterSet_STUB.cxx
 endif
 
 LIBRARIES = \

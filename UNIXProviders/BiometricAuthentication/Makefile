@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_BiometricAuthenticationMain.cpp \
 	UNIX_BiometricAuthentication.cpp \
-	UNIX_BiometricAuthenticationProvider.cpp \
-	UNIX_BiometricAuthenticationMain.cpp
+	UNIX_BiometricAuthenticationProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BiometricAuthentication_AIX.cxx
+	SOURCES += UNIX_BiometricAuthentication_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BiometricAuthentication_DARWIN.cxx
+	SOURCES += UNIX_BiometricAuthentication_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BiometricAuthentication_FREEBSD.cxx
+	SOURCES += UNIX_BiometricAuthentication_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BiometricAuthentication_HPUX.cxx
+	SOURCES += UNIX_BiometricAuthentication_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BiometricAuthentication_LINUX.cxx
+	SOURCES += UNIX_BiometricAuthentication_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BiometricAuthentication_SOLARIS.cxx
+	SOURCES += UNIX_BiometricAuthentication_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BiometricAuthentication_TRU64.cxx
+	SOURCES += UNIX_BiometricAuthentication_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BiometricAuthentication_VMS.cxx
+	SOURCES += UNIX_BiometricAuthentication_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BiometricAuthentication_WIN32.cxx
+	SOURCES += UNIX_BiometricAuthentication_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BiometricAuthentication_ZOS.cxx
+	SOURCES += UNIX_BiometricAuthentication_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BiometricAuthentication_STUB.cxx
+	SOURCES += UNIX_BiometricAuthentication_STUB.cxx
 endif
 
 LIBRARIES = \

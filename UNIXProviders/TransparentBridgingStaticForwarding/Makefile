@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_TransparentBridgingStaticForwardingMain.cpp \
 	UNIX_TransparentBridgingStaticForwarding.cpp \
-	UNIX_TransparentBridgingStaticForwardingProvider.cpp \
-	UNIX_TransparentBridgingStaticForwardingMain.cpp
+	UNIX_TransparentBridgingStaticForwardingProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_TransparentBridgingStaticForwarding_AIX.cxx
+	SOURCES += UNIX_TransparentBridgingStaticForwarding_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_TransparentBridgingStaticForwarding_DARWIN.cxx
+	SOURCES += UNIX_TransparentBridgingStaticForwarding_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_TransparentBridgingStaticForwarding_FREEBSD.cxx
+	SOURCES += UNIX_TransparentBridgingStaticForwarding_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_TransparentBridgingStaticForwarding_HPUX.cxx
+	SOURCES += UNIX_TransparentBridgingStaticForwarding_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_TransparentBridgingStaticForwarding_LINUX.cxx
+	SOURCES += UNIX_TransparentBridgingStaticForwarding_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_TransparentBridgingStaticForwarding_SOLARIS.cxx
+	SOURCES += UNIX_TransparentBridgingStaticForwarding_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_TransparentBridgingStaticForwarding_TRU64.cxx
+	SOURCES += UNIX_TransparentBridgingStaticForwarding_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_TransparentBridgingStaticForwarding_VMS.cxx
+	SOURCES += UNIX_TransparentBridgingStaticForwarding_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_TransparentBridgingStaticForwarding_WIN32.cxx
+	SOURCES += UNIX_TransparentBridgingStaticForwarding_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_TransparentBridgingStaticForwarding_ZOS.cxx
+	SOURCES += UNIX_TransparentBridgingStaticForwarding_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_TransparentBridgingStaticForwarding_STUB.cxx
+	SOURCES += UNIX_TransparentBridgingStaticForwarding_STUB.cxx
 endif
 
 LIBRARIES = \

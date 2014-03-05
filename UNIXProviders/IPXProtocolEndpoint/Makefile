@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_IPXProtocolEndpointMain.cpp \
 	UNIX_IPXProtocolEndpoint.cpp \
-	UNIX_IPXProtocolEndpointProvider.cpp \
-	UNIX_IPXProtocolEndpointMain.cpp
+	UNIX_IPXProtocolEndpointProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_IPXProtocolEndpoint_AIX.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_IPXProtocolEndpoint_DARWIN.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_IPXProtocolEndpoint_FREEBSD.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_IPXProtocolEndpoint_HPUX.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_IPXProtocolEndpoint_LINUX.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_IPXProtocolEndpoint_SOLARIS.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_IPXProtocolEndpoint_TRU64.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_IPXProtocolEndpoint_VMS.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_IPXProtocolEndpoint_WIN32.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_IPXProtocolEndpoint_ZOS.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_IPXProtocolEndpoint_STUB.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_STUB.cxx
 endif
 
 LIBRARIES = \

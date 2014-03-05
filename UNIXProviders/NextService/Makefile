@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_NextServiceMain.cpp \
 	UNIX_NextService.cpp \
-	UNIX_NextServiceProvider.cpp \
-	UNIX_NextServiceMain.cpp
+	UNIX_NextServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_NextService_AIX.cxx
+	SOURCES += UNIX_NextService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_NextService_DARWIN.cxx
+	SOURCES += UNIX_NextService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_NextService_FREEBSD.cxx
+	SOURCES += UNIX_NextService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_NextService_HPUX.cxx
+	SOURCES += UNIX_NextService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_NextService_LINUX.cxx
+	SOURCES += UNIX_NextService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_NextService_SOLARIS.cxx
+	SOURCES += UNIX_NextService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_NextService_TRU64.cxx
+	SOURCES += UNIX_NextService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_NextService_VMS.cxx
+	SOURCES += UNIX_NextService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_NextService_WIN32.cxx
+	SOURCES += UNIX_NextService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_NextService_ZOS.cxx
+	SOURCES += UNIX_NextService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_NextService_STUB.cxx
+	SOURCES += UNIX_NextService_STUB.cxx
 endif
 
 LIBRARIES = \

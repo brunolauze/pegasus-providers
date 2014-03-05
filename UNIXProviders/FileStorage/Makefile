@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_FileStorageMain.cpp \
 	UNIX_FileStorage.cpp \
-	UNIX_FileStorageProvider.cpp \
-	UNIX_FileStorageMain.cpp
+	UNIX_FileStorageProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_FileStorage_AIX.cxx
+	SOURCES += UNIX_FileStorage_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_FileStorage_DARWIN.cxx
+	SOURCES += UNIX_FileStorage_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_FileStorage_FREEBSD.cxx
+	SOURCES += UNIX_FileStorage_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_FileStorage_HPUX.cxx
+	SOURCES += UNIX_FileStorage_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_FileStorage_LINUX.cxx
+	SOURCES += UNIX_FileStorage_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_FileStorage_SOLARIS.cxx
+	SOURCES += UNIX_FileStorage_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_FileStorage_TRU64.cxx
+	SOURCES += UNIX_FileStorage_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_FileStorage_VMS.cxx
+	SOURCES += UNIX_FileStorage_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_FileStorage_WIN32.cxx
+	SOURCES += UNIX_FileStorage_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_FileStorage_ZOS.cxx
+	SOURCES += UNIX_FileStorage_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_FileStorage_STUB.cxx
+	SOURCES += UNIX_FileStorage_STUB.cxx
 endif
 
 LIBRARIES = \

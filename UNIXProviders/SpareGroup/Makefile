@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SpareGroupMain.cpp \
 	UNIX_SpareGroup.cpp \
-	UNIX_SpareGroupProvider.cpp \
-	UNIX_SpareGroupMain.cpp
+	UNIX_SpareGroupProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SpareGroup_AIX.cxx
+	SOURCES += UNIX_SpareGroup_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SpareGroup_DARWIN.cxx
+	SOURCES += UNIX_SpareGroup_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SpareGroup_FREEBSD.cxx
+	SOURCES += UNIX_SpareGroup_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SpareGroup_HPUX.cxx
+	SOURCES += UNIX_SpareGroup_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SpareGroup_LINUX.cxx
+	SOURCES += UNIX_SpareGroup_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SpareGroup_SOLARIS.cxx
+	SOURCES += UNIX_SpareGroup_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SpareGroup_TRU64.cxx
+	SOURCES += UNIX_SpareGroup_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SpareGroup_VMS.cxx
+	SOURCES += UNIX_SpareGroup_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SpareGroup_WIN32.cxx
+	SOURCES += UNIX_SpareGroup_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SpareGroup_ZOS.cxx
+	SOURCES += UNIX_SpareGroup_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SpareGroup_STUB.cxx
+	SOURCES += UNIX_SpareGroup_STUB.cxx
 endif
 
 LIBRARIES = \

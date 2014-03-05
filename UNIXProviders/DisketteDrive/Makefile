@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_DisketteDriveMain.cpp \
 	UNIX_DisketteDrive.cpp \
-	UNIX_DisketteDriveProvider.cpp \
-	UNIX_DisketteDriveMain.cpp
+	UNIX_DisketteDriveProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_DisketteDrive_AIX.cxx
+	SOURCES += UNIX_DisketteDrive_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_DisketteDrive_DARWIN.cxx
+	SOURCES += UNIX_DisketteDrive_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_DisketteDrive_FREEBSD.cxx
+	SOURCES += UNIX_DisketteDrive_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_DisketteDrive_HPUX.cxx
+	SOURCES += UNIX_DisketteDrive_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_DisketteDrive_LINUX.cxx
+	SOURCES += UNIX_DisketteDrive_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_DisketteDrive_SOLARIS.cxx
+	SOURCES += UNIX_DisketteDrive_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_DisketteDrive_TRU64.cxx
+	SOURCES += UNIX_DisketteDrive_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_DisketteDrive_VMS.cxx
+	SOURCES += UNIX_DisketteDrive_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_DisketteDrive_WIN32.cxx
+	SOURCES += UNIX_DisketteDrive_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_DisketteDrive_ZOS.cxx
+	SOURCES += UNIX_DisketteDrive_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_DisketteDrive_STUB.cxx
+	SOURCES += UNIX_DisketteDrive_STUB.cxx
 endif
 
 LIBRARIES = \

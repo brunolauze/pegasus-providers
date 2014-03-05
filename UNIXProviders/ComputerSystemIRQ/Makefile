@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ComputerSystemIRQMain.cpp \
 	UNIX_ComputerSystemIRQ.cpp \
-	UNIX_ComputerSystemIRQProvider.cpp \
-	UNIX_ComputerSystemIRQMain.cpp
+	UNIX_ComputerSystemIRQProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ComputerSystemIRQ_AIX.cxx
+	SOURCES += UNIX_ComputerSystemIRQ_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ComputerSystemIRQ_DARWIN.cxx
+	SOURCES += UNIX_ComputerSystemIRQ_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ComputerSystemIRQ_FREEBSD.cxx
+	SOURCES += UNIX_ComputerSystemIRQ_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ComputerSystemIRQ_HPUX.cxx
+	SOURCES += UNIX_ComputerSystemIRQ_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ComputerSystemIRQ_LINUX.cxx
+	SOURCES += UNIX_ComputerSystemIRQ_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ComputerSystemIRQ_SOLARIS.cxx
+	SOURCES += UNIX_ComputerSystemIRQ_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ComputerSystemIRQ_TRU64.cxx
+	SOURCES += UNIX_ComputerSystemIRQ_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ComputerSystemIRQ_VMS.cxx
+	SOURCES += UNIX_ComputerSystemIRQ_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ComputerSystemIRQ_WIN32.cxx
+	SOURCES += UNIX_ComputerSystemIRQ_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ComputerSystemIRQ_ZOS.cxx
+	SOURCES += UNIX_ComputerSystemIRQ_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ComputerSystemIRQ_STUB.cxx
+	SOURCES += UNIX_ComputerSystemIRQ_STUB.cxx
 endif
 
 LIBRARIES = \

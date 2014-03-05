@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ReusablePolicyMain.cpp \
 	UNIX_ReusablePolicy.cpp \
-	UNIX_ReusablePolicyProvider.cpp \
-	UNIX_ReusablePolicyMain.cpp
+	UNIX_ReusablePolicyProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ReusablePolicy_AIX.cxx
+	SOURCES += UNIX_ReusablePolicy_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ReusablePolicy_DARWIN.cxx
+	SOURCES += UNIX_ReusablePolicy_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ReusablePolicy_FREEBSD.cxx
+	SOURCES += UNIX_ReusablePolicy_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ReusablePolicy_HPUX.cxx
+	SOURCES += UNIX_ReusablePolicy_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ReusablePolicy_LINUX.cxx
+	SOURCES += UNIX_ReusablePolicy_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ReusablePolicy_SOLARIS.cxx
+	SOURCES += UNIX_ReusablePolicy_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ReusablePolicy_TRU64.cxx
+	SOURCES += UNIX_ReusablePolicy_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ReusablePolicy_VMS.cxx
+	SOURCES += UNIX_ReusablePolicy_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ReusablePolicy_WIN32.cxx
+	SOURCES += UNIX_ReusablePolicy_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ReusablePolicy_ZOS.cxx
+	SOURCES += UNIX_ReusablePolicy_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ReusablePolicy_STUB.cxx
+	SOURCES += UNIX_ReusablePolicy_STUB.cxx
 endif
 
 LIBRARIES = \

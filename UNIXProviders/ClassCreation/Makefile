@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ClassCreationMain.cpp \
 	UNIX_ClassCreation.cpp \
-	UNIX_ClassCreationProvider.cpp \
-	UNIX_ClassCreationMain.cpp
+	UNIX_ClassCreationProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ClassCreation_AIX.cxx
+	SOURCES += UNIX_ClassCreation_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ClassCreation_DARWIN.cxx
+	SOURCES += UNIX_ClassCreation_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ClassCreation_FREEBSD.cxx
+	SOURCES += UNIX_ClassCreation_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ClassCreation_HPUX.cxx
+	SOURCES += UNIX_ClassCreation_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ClassCreation_LINUX.cxx
+	SOURCES += UNIX_ClassCreation_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ClassCreation_SOLARIS.cxx
+	SOURCES += UNIX_ClassCreation_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ClassCreation_TRU64.cxx
+	SOURCES += UNIX_ClassCreation_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ClassCreation_VMS.cxx
+	SOURCES += UNIX_ClassCreation_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ClassCreation_WIN32.cxx
+	SOURCES += UNIX_ClassCreation_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ClassCreation_ZOS.cxx
+	SOURCES += UNIX_ClassCreation_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ClassCreation_STUB.cxx
+	SOURCES += UNIX_ClassCreation_STUB.cxx
 endif
 
 LIBRARIES = \

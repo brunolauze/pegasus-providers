@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ComputerSystemMemoryMain.cpp \
 	UNIX_ComputerSystemMemory.cpp \
-	UNIX_ComputerSystemMemoryProvider.cpp \
-	UNIX_ComputerSystemMemoryMain.cpp
+	UNIX_ComputerSystemMemoryProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ComputerSystemMemory_AIX.cxx
+	SOURCES += UNIX_ComputerSystemMemory_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ComputerSystemMemory_DARWIN.cxx
+	SOURCES += UNIX_ComputerSystemMemory_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ComputerSystemMemory_FREEBSD.cxx
+	SOURCES += UNIX_ComputerSystemMemory_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ComputerSystemMemory_HPUX.cxx
+	SOURCES += UNIX_ComputerSystemMemory_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ComputerSystemMemory_LINUX.cxx
+	SOURCES += UNIX_ComputerSystemMemory_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ComputerSystemMemory_SOLARIS.cxx
+	SOURCES += UNIX_ComputerSystemMemory_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ComputerSystemMemory_TRU64.cxx
+	SOURCES += UNIX_ComputerSystemMemory_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ComputerSystemMemory_VMS.cxx
+	SOURCES += UNIX_ComputerSystemMemory_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ComputerSystemMemory_WIN32.cxx
+	SOURCES += UNIX_ComputerSystemMemory_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ComputerSystemMemory_ZOS.cxx
+	SOURCES += UNIX_ComputerSystemMemory_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ComputerSystemMemory_STUB.cxx
+	SOURCES += UNIX_ComputerSystemMemory_STUB.cxx
 endif
 
 LIBRARIES = \

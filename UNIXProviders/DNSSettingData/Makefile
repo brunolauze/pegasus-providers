@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_DNSSettingDataMain.cpp \
 	UNIX_DNSSettingData.cpp \
-	UNIX_DNSSettingDataProvider.cpp \
-	UNIX_DNSSettingDataMain.cpp
+	UNIX_DNSSettingDataProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_DNSSettingData_AIX.cxx
+	SOURCES += UNIX_DNSSettingData_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_DNSSettingData_DARWIN.cxx
+	SOURCES += UNIX_DNSSettingData_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_DNSSettingData_FREEBSD.cxx
+	SOURCES += UNIX_DNSSettingData_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_DNSSettingData_HPUX.cxx
+	SOURCES += UNIX_DNSSettingData_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_DNSSettingData_LINUX.cxx
+	SOURCES += UNIX_DNSSettingData_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_DNSSettingData_SOLARIS.cxx
+	SOURCES += UNIX_DNSSettingData_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_DNSSettingData_TRU64.cxx
+	SOURCES += UNIX_DNSSettingData_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_DNSSettingData_VMS.cxx
+	SOURCES += UNIX_DNSSettingData_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_DNSSettingData_WIN32.cxx
+	SOURCES += UNIX_DNSSettingData_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_DNSSettingData_ZOS.cxx
+	SOURCES += UNIX_DNSSettingData_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_DNSSettingData_STUB.cxx
+	SOURCES += UNIX_DNSSettingData_STUB.cxx
 endif
 
 LIBRARIES = \

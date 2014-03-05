@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ProtocolControllerForUnitMain.cpp \
 	UNIX_ProtocolControllerForUnit.cpp \
-	UNIX_ProtocolControllerForUnitProvider.cpp \
-	UNIX_ProtocolControllerForUnitMain.cpp
+	UNIX_ProtocolControllerForUnitProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ProtocolControllerForUnit_AIX.cxx
+	SOURCES += UNIX_ProtocolControllerForUnit_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ProtocolControllerForUnit_DARWIN.cxx
+	SOURCES += UNIX_ProtocolControllerForUnit_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ProtocolControllerForUnit_FREEBSD.cxx
+	SOURCES += UNIX_ProtocolControllerForUnit_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ProtocolControllerForUnit_HPUX.cxx
+	SOURCES += UNIX_ProtocolControllerForUnit_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ProtocolControllerForUnit_LINUX.cxx
+	SOURCES += UNIX_ProtocolControllerForUnit_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ProtocolControllerForUnit_SOLARIS.cxx
+	SOURCES += UNIX_ProtocolControllerForUnit_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ProtocolControllerForUnit_TRU64.cxx
+	SOURCES += UNIX_ProtocolControllerForUnit_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ProtocolControllerForUnit_VMS.cxx
+	SOURCES += UNIX_ProtocolControllerForUnit_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ProtocolControllerForUnit_WIN32.cxx
+	SOURCES += UNIX_ProtocolControllerForUnit_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ProtocolControllerForUnit_ZOS.cxx
+	SOURCES += UNIX_ProtocolControllerForUnit_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ProtocolControllerForUnit_STUB.cxx
+	SOURCES += UNIX_ProtocolControllerForUnit_STUB.cxx
 endif
 
 LIBRARIES = \

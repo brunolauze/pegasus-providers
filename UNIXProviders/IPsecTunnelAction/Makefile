@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_IPsecTunnelActionMain.cpp \
 	UNIX_IPsecTunnelAction.cpp \
-	UNIX_IPsecTunnelActionProvider.cpp \
-	UNIX_IPsecTunnelActionMain.cpp
+	UNIX_IPsecTunnelActionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_IPsecTunnelAction_AIX.cxx
+	SOURCES += UNIX_IPsecTunnelAction_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_IPsecTunnelAction_DARWIN.cxx
+	SOURCES += UNIX_IPsecTunnelAction_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_IPsecTunnelAction_FREEBSD.cxx
+	SOURCES += UNIX_IPsecTunnelAction_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_IPsecTunnelAction_HPUX.cxx
+	SOURCES += UNIX_IPsecTunnelAction_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_IPsecTunnelAction_LINUX.cxx
+	SOURCES += UNIX_IPsecTunnelAction_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_IPsecTunnelAction_SOLARIS.cxx
+	SOURCES += UNIX_IPsecTunnelAction_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_IPsecTunnelAction_TRU64.cxx
+	SOURCES += UNIX_IPsecTunnelAction_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_IPsecTunnelAction_VMS.cxx
+	SOURCES += UNIX_IPsecTunnelAction_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_IPsecTunnelAction_WIN32.cxx
+	SOURCES += UNIX_IPsecTunnelAction_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_IPsecTunnelAction_ZOS.cxx
+	SOURCES += UNIX_IPsecTunnelAction_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_IPsecTunnelAction_STUB.cxx
+	SOURCES += UNIX_IPsecTunnelAction_STUB.cxx
 endif
 
 LIBRARIES = \

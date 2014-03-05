@@ -43,44 +43,130 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_NFSMain.cpp \
 	UNIX_NFS.cpp \
-	UNIX_NFSProvider.cpp \
-	UNIX_NFSMain.cpp
+	UNIX_NFSProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_NFS_AIX.cxx
+	SOURCES += UNIX_NFS_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_NFS_DARWIN.cxx
+	SOURCES += UNIX_NFS_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_NFS_FREEBSD.cxx
+	SOURCES += UNIX_NFS_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_NFS_HPUX.cxx
+	SOURCES += UNIX_NFS_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_NFS_LINUX.cxx
+	SOURCES += UNIX_NFS_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_NFS_SOLARIS.cxx
+	SOURCES += UNIX_NFS_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_NFS_TRU64.cxx
+	SOURCES += UNIX_NFS_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_NFS_VMS.cxx
+	SOURCES += UNIX_NFS_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_NFS_WIN32.cxx
+	SOURCES += UNIX_NFS_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_NFS_ZOS.cxx
+	SOURCES += UNIX_NFS_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_NFS_STUB.cxx
+	SOURCES += UNIX_NFS_STUB.cxx
 endif
+
+
+SOURCES += \
+	../FileSystem/UNIX_FileSystem.cpp \
+	../FileSystem/UNIX_FileSystemProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../FileSystem/UNIX_FileSystem_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../FileSystem/UNIX_FileSystem_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../FileSystem/UNIX_FileSystem_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../FileSystem/UNIX_FileSystem_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../FileSystem/UNIX_FileSystem_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../FileSystem/UNIX_FileSystem_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../FileSystem/UNIX_FileSystem_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../FileSystem/UNIX_FileSystem_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../FileSystem/UNIX_FileSystem_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../FileSystem/UNIX_FileSystem_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../FileSystem/UNIX_FileSystem_STUB.cxx
+endif
+
+
+SOURCES += \
+	../RemoteFileSystem/UNIX_RemoteFileSystem.cpp \
+	../RemoteFileSystem/UNIX_RemoteFileSystemProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../RemoteFileSystem/UNIX_RemoteFileSystem_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../RemoteFileSystem/UNIX_RemoteFileSystem_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../RemoteFileSystem/UNIX_RemoteFileSystem_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../RemoteFileSystem/UNIX_RemoteFileSystem_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../RemoteFileSystem/UNIX_RemoteFileSystem_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../RemoteFileSystem/UNIX_RemoteFileSystem_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../RemoteFileSystem/UNIX_RemoteFileSystem_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../RemoteFileSystem/UNIX_RemoteFileSystem_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../RemoteFileSystem/UNIX_RemoteFileSystem_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../RemoteFileSystem/UNIX_RemoteFileSystem_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../RemoteFileSystem/UNIX_RemoteFileSystem_STUB.cxx
+endif
+
+
+
 
 LIBRARIES = \
 	pegprovider \
@@ -94,8 +180,6 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_FileSystemProvider \
-	-lUNIX_RemoteFileSystemProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

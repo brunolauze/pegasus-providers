@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_VirtualSystemManagementCapabilitiesMain.cpp \
 	UNIX_VirtualSystemManagementCapabilities.cpp \
-	UNIX_VirtualSystemManagementCapabilitiesProvider.cpp \
-	UNIX_VirtualSystemManagementCapabilitiesMain.cpp
+	UNIX_VirtualSystemManagementCapabilitiesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_VirtualSystemManagementCapabilities_AIX.cxx
+	SOURCES += UNIX_VirtualSystemManagementCapabilities_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_VirtualSystemManagementCapabilities_DARWIN.cxx
+	SOURCES += UNIX_VirtualSystemManagementCapabilities_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_VirtualSystemManagementCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_VirtualSystemManagementCapabilities_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_VirtualSystemManagementCapabilities_HPUX.cxx
+	SOURCES += UNIX_VirtualSystemManagementCapabilities_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_VirtualSystemManagementCapabilities_LINUX.cxx
+	SOURCES += UNIX_VirtualSystemManagementCapabilities_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_VirtualSystemManagementCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_VirtualSystemManagementCapabilities_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_VirtualSystemManagementCapabilities_TRU64.cxx
+	SOURCES += UNIX_VirtualSystemManagementCapabilities_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_VirtualSystemManagementCapabilities_VMS.cxx
+	SOURCES += UNIX_VirtualSystemManagementCapabilities_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_VirtualSystemManagementCapabilities_WIN32.cxx
+	SOURCES += UNIX_VirtualSystemManagementCapabilities_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_VirtualSystemManagementCapabilities_ZOS.cxx
+	SOURCES += UNIX_VirtualSystemManagementCapabilities_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_VirtualSystemManagementCapabilities_STUB.cxx
+	SOURCES += UNIX_VirtualSystemManagementCapabilities_STUB.cxx
 endif
 
 LIBRARIES = \

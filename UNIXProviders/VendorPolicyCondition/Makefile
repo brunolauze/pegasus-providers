@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_VendorPolicyConditionMain.cpp \
 	UNIX_VendorPolicyCondition.cpp \
-	UNIX_VendorPolicyConditionProvider.cpp \
-	UNIX_VendorPolicyConditionMain.cpp
+	UNIX_VendorPolicyConditionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_VendorPolicyCondition_AIX.cxx
+	SOURCES += UNIX_VendorPolicyCondition_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_VendorPolicyCondition_DARWIN.cxx
+	SOURCES += UNIX_VendorPolicyCondition_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_VendorPolicyCondition_FREEBSD.cxx
+	SOURCES += UNIX_VendorPolicyCondition_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_VendorPolicyCondition_HPUX.cxx
+	SOURCES += UNIX_VendorPolicyCondition_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_VendorPolicyCondition_LINUX.cxx
+	SOURCES += UNIX_VendorPolicyCondition_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_VendorPolicyCondition_SOLARIS.cxx
+	SOURCES += UNIX_VendorPolicyCondition_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_VendorPolicyCondition_TRU64.cxx
+	SOURCES += UNIX_VendorPolicyCondition_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_VendorPolicyCondition_VMS.cxx
+	SOURCES += UNIX_VendorPolicyCondition_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_VendorPolicyCondition_WIN32.cxx
+	SOURCES += UNIX_VendorPolicyCondition_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_VendorPolicyCondition_ZOS.cxx
+	SOURCES += UNIX_VendorPolicyCondition_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_VendorPolicyCondition_STUB.cxx
+	SOURCES += UNIX_VendorPolicyCondition_STUB.cxx
 endif
 
 LIBRARIES = \

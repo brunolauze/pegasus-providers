@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_MemoryOnCardMain.cpp \
 	UNIX_MemoryOnCard.cpp \
-	UNIX_MemoryOnCardProvider.cpp \
-	UNIX_MemoryOnCardMain.cpp
+	UNIX_MemoryOnCardProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_MemoryOnCard_AIX.cxx
+	SOURCES += UNIX_MemoryOnCard_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_MemoryOnCard_DARWIN.cxx
+	SOURCES += UNIX_MemoryOnCard_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_MemoryOnCard_FREEBSD.cxx
+	SOURCES += UNIX_MemoryOnCard_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_MemoryOnCard_HPUX.cxx
+	SOURCES += UNIX_MemoryOnCard_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_MemoryOnCard_LINUX.cxx
+	SOURCES += UNIX_MemoryOnCard_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_MemoryOnCard_SOLARIS.cxx
+	SOURCES += UNIX_MemoryOnCard_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_MemoryOnCard_TRU64.cxx
+	SOURCES += UNIX_MemoryOnCard_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_MemoryOnCard_VMS.cxx
+	SOURCES += UNIX_MemoryOnCard_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_MemoryOnCard_WIN32.cxx
+	SOURCES += UNIX_MemoryOnCard_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_MemoryOnCard_ZOS.cxx
+	SOURCES += UNIX_MemoryOnCard_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_MemoryOnCard_STUB.cxx
+	SOURCES += UNIX_MemoryOnCard_STUB.cxx
 endif
 
 LIBRARIES = \

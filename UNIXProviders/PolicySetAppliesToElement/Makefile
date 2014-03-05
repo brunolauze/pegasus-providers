@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PolicySetAppliesToElementMain.cpp \
 	UNIX_PolicySetAppliesToElement.cpp \
-	UNIX_PolicySetAppliesToElementProvider.cpp \
-	UNIX_PolicySetAppliesToElementMain.cpp
+	UNIX_PolicySetAppliesToElementProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PolicySetAppliesToElement_AIX.cxx
+	SOURCES += UNIX_PolicySetAppliesToElement_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PolicySetAppliesToElement_DARWIN.cxx
+	SOURCES += UNIX_PolicySetAppliesToElement_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PolicySetAppliesToElement_FREEBSD.cxx
+	SOURCES += UNIX_PolicySetAppliesToElement_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PolicySetAppliesToElement_HPUX.cxx
+	SOURCES += UNIX_PolicySetAppliesToElement_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PolicySetAppliesToElement_LINUX.cxx
+	SOURCES += UNIX_PolicySetAppliesToElement_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PolicySetAppliesToElement_SOLARIS.cxx
+	SOURCES += UNIX_PolicySetAppliesToElement_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PolicySetAppliesToElement_TRU64.cxx
+	SOURCES += UNIX_PolicySetAppliesToElement_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PolicySetAppliesToElement_VMS.cxx
+	SOURCES += UNIX_PolicySetAppliesToElement_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PolicySetAppliesToElement_WIN32.cxx
+	SOURCES += UNIX_PolicySetAppliesToElement_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PolicySetAppliesToElement_ZOS.cxx
+	SOURCES += UNIX_PolicySetAppliesToElement_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PolicySetAppliesToElement_STUB.cxx
+	SOURCES += UNIX_PolicySetAppliesToElement_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PolicyContainerInPolicyContainerMain.cpp \
 	UNIX_PolicyContainerInPolicyContainer.cpp \
-	UNIX_PolicyContainerInPolicyContainerProvider.cpp \
-	UNIX_PolicyContainerInPolicyContainerMain.cpp
+	UNIX_PolicyContainerInPolicyContainerProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PolicyContainerInPolicyContainer_AIX.cxx
+	SOURCES += UNIX_PolicyContainerInPolicyContainer_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PolicyContainerInPolicyContainer_DARWIN.cxx
+	SOURCES += UNIX_PolicyContainerInPolicyContainer_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PolicyContainerInPolicyContainer_FREEBSD.cxx
+	SOURCES += UNIX_PolicyContainerInPolicyContainer_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PolicyContainerInPolicyContainer_HPUX.cxx
+	SOURCES += UNIX_PolicyContainerInPolicyContainer_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PolicyContainerInPolicyContainer_LINUX.cxx
+	SOURCES += UNIX_PolicyContainerInPolicyContainer_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PolicyContainerInPolicyContainer_SOLARIS.cxx
+	SOURCES += UNIX_PolicyContainerInPolicyContainer_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PolicyContainerInPolicyContainer_TRU64.cxx
+	SOURCES += UNIX_PolicyContainerInPolicyContainer_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PolicyContainerInPolicyContainer_VMS.cxx
+	SOURCES += UNIX_PolicyContainerInPolicyContainer_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PolicyContainerInPolicyContainer_WIN32.cxx
+	SOURCES += UNIX_PolicyContainerInPolicyContainer_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PolicyContainerInPolicyContainer_ZOS.cxx
+	SOURCES += UNIX_PolicyContainerInPolicyContainer_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PolicyContainerInPolicyContainer_STUB.cxx
+	SOURCES += UNIX_PolicyContainerInPolicyContainer_STUB.cxx
 endif
 
 LIBRARIES = \

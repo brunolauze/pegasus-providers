@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PackageCoolingMain.cpp \
 	UNIX_PackageCooling.cpp \
-	UNIX_PackageCoolingProvider.cpp \
-	UNIX_PackageCoolingMain.cpp
+	UNIX_PackageCoolingProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PackageCooling_AIX.cxx
+	SOURCES += UNIX_PackageCooling_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PackageCooling_DARWIN.cxx
+	SOURCES += UNIX_PackageCooling_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PackageCooling_FREEBSD.cxx
+	SOURCES += UNIX_PackageCooling_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PackageCooling_HPUX.cxx
+	SOURCES += UNIX_PackageCooling_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PackageCooling_LINUX.cxx
+	SOURCES += UNIX_PackageCooling_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PackageCooling_SOLARIS.cxx
+	SOURCES += UNIX_PackageCooling_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PackageCooling_TRU64.cxx
+	SOURCES += UNIX_PackageCooling_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PackageCooling_VMS.cxx
+	SOURCES += UNIX_PackageCooling_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PackageCooling_WIN32.cxx
+	SOURCES += UNIX_PackageCooling_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PackageCooling_ZOS.cxx
+	SOURCES += UNIX_PackageCooling_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PackageCooling_STUB.cxx
+	SOURCES += UNIX_PackageCooling_STUB.cxx
 endif
 
 LIBRARIES = \

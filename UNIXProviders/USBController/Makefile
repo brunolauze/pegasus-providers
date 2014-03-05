@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_USBControllerMain.cpp \
 	UNIX_USBController.cpp \
-	UNIX_USBControllerProvider.cpp \
-	UNIX_USBControllerMain.cpp
+	UNIX_USBControllerProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_USBController_AIX.cxx
+	SOURCES += UNIX_USBController_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_USBController_DARWIN.cxx
+	SOURCES += UNIX_USBController_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_USBController_FREEBSD.cxx
+	SOURCES += UNIX_USBController_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_USBController_HPUX.cxx
+	SOURCES += UNIX_USBController_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_USBController_LINUX.cxx
+	SOURCES += UNIX_USBController_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_USBController_SOLARIS.cxx
+	SOURCES += UNIX_USBController_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_USBController_TRU64.cxx
+	SOURCES += UNIX_USBController_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_USBController_VMS.cxx
+	SOURCES += UNIX_USBController_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_USBController_WIN32.cxx
+	SOURCES += UNIX_USBController_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_USBController_ZOS.cxx
+	SOURCES += UNIX_USBController_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_USBController_STUB.cxx
+	SOURCES += UNIX_USBController_STUB.cxx
 endif
 
 LIBRARIES = \

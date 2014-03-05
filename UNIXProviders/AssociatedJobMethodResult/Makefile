@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AssociatedJobMethodResultMain.cpp \
 	UNIX_AssociatedJobMethodResult.cpp \
-	UNIX_AssociatedJobMethodResultProvider.cpp \
-	UNIX_AssociatedJobMethodResultMain.cpp
+	UNIX_AssociatedJobMethodResultProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AssociatedJobMethodResult_AIX.cxx
+	SOURCES += UNIX_AssociatedJobMethodResult_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AssociatedJobMethodResult_DARWIN.cxx
+	SOURCES += UNIX_AssociatedJobMethodResult_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AssociatedJobMethodResult_FREEBSD.cxx
+	SOURCES += UNIX_AssociatedJobMethodResult_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AssociatedJobMethodResult_HPUX.cxx
+	SOURCES += UNIX_AssociatedJobMethodResult_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AssociatedJobMethodResult_LINUX.cxx
+	SOURCES += UNIX_AssociatedJobMethodResult_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AssociatedJobMethodResult_SOLARIS.cxx
+	SOURCES += UNIX_AssociatedJobMethodResult_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AssociatedJobMethodResult_TRU64.cxx
+	SOURCES += UNIX_AssociatedJobMethodResult_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AssociatedJobMethodResult_VMS.cxx
+	SOURCES += UNIX_AssociatedJobMethodResult_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AssociatedJobMethodResult_WIN32.cxx
+	SOURCES += UNIX_AssociatedJobMethodResult_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AssociatedJobMethodResult_ZOS.cxx
+	SOURCES += UNIX_AssociatedJobMethodResult_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AssociatedJobMethodResult_STUB.cxx
+	SOURCES += UNIX_AssociatedJobMethodResult_STUB.cxx
 endif
 
 LIBRARIES = \

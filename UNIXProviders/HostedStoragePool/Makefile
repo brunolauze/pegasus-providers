@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_HostedStoragePoolMain.cpp \
 	UNIX_HostedStoragePool.cpp \
-	UNIX_HostedStoragePoolProvider.cpp \
-	UNIX_HostedStoragePoolMain.cpp
+	UNIX_HostedStoragePoolProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_HostedStoragePool_AIX.cxx
+	SOURCES += UNIX_HostedStoragePool_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_HostedStoragePool_DARWIN.cxx
+	SOURCES += UNIX_HostedStoragePool_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_HostedStoragePool_FREEBSD.cxx
+	SOURCES += UNIX_HostedStoragePool_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_HostedStoragePool_HPUX.cxx
+	SOURCES += UNIX_HostedStoragePool_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_HostedStoragePool_LINUX.cxx
+	SOURCES += UNIX_HostedStoragePool_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_HostedStoragePool_SOLARIS.cxx
+	SOURCES += UNIX_HostedStoragePool_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_HostedStoragePool_TRU64.cxx
+	SOURCES += UNIX_HostedStoragePool_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_HostedStoragePool_VMS.cxx
+	SOURCES += UNIX_HostedStoragePool_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_HostedStoragePool_WIN32.cxx
+	SOURCES += UNIX_HostedStoragePool_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_HostedStoragePool_ZOS.cxx
+	SOURCES += UNIX_HostedStoragePool_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_HostedStoragePool_STUB.cxx
+	SOURCES += UNIX_HostedStoragePool_STUB.cxx
 endif
 
 LIBRARIES = \

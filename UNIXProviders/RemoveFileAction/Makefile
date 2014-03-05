@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_RemoveFileActionMain.cpp \
 	UNIX_RemoveFileAction.cpp \
-	UNIX_RemoveFileActionProvider.cpp \
-	UNIX_RemoveFileActionMain.cpp
+	UNIX_RemoveFileActionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_RemoveFileAction_AIX.cxx
+	SOURCES += UNIX_RemoveFileAction_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_RemoveFileAction_DARWIN.cxx
+	SOURCES += UNIX_RemoveFileAction_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_RemoveFileAction_FREEBSD.cxx
+	SOURCES += UNIX_RemoveFileAction_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_RemoveFileAction_HPUX.cxx
+	SOURCES += UNIX_RemoveFileAction_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_RemoveFileAction_LINUX.cxx
+	SOURCES += UNIX_RemoveFileAction_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_RemoveFileAction_SOLARIS.cxx
+	SOURCES += UNIX_RemoveFileAction_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_RemoveFileAction_TRU64.cxx
+	SOURCES += UNIX_RemoveFileAction_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_RemoveFileAction_VMS.cxx
+	SOURCES += UNIX_RemoveFileAction_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_RemoveFileAction_WIN32.cxx
+	SOURCES += UNIX_RemoveFileAction_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_RemoveFileAction_ZOS.cxx
+	SOURCES += UNIX_RemoveFileAction_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_RemoveFileAction_STUB.cxx
+	SOURCES += UNIX_RemoveFileAction_STUB.cxx
 endif
 
 LIBRARIES = \

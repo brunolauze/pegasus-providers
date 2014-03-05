@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AuthorizedUseMain.cpp \
 	UNIX_AuthorizedUse.cpp \
-	UNIX_AuthorizedUseProvider.cpp \
-	UNIX_AuthorizedUseMain.cpp
+	UNIX_AuthorizedUseProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AuthorizedUse_AIX.cxx
+	SOURCES += UNIX_AuthorizedUse_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AuthorizedUse_DARWIN.cxx
+	SOURCES += UNIX_AuthorizedUse_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AuthorizedUse_FREEBSD.cxx
+	SOURCES += UNIX_AuthorizedUse_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AuthorizedUse_HPUX.cxx
+	SOURCES += UNIX_AuthorizedUse_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AuthorizedUse_LINUX.cxx
+	SOURCES += UNIX_AuthorizedUse_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AuthorizedUse_SOLARIS.cxx
+	SOURCES += UNIX_AuthorizedUse_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AuthorizedUse_TRU64.cxx
+	SOURCES += UNIX_AuthorizedUse_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AuthorizedUse_VMS.cxx
+	SOURCES += UNIX_AuthorizedUse_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AuthorizedUse_WIN32.cxx
+	SOURCES += UNIX_AuthorizedUse_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AuthorizedUse_ZOS.cxx
+	SOURCES += UNIX_AuthorizedUse_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AuthorizedUse_STUB.cxx
+	SOURCES += UNIX_AuthorizedUse_STUB.cxx
 endif
 
 LIBRARIES = \

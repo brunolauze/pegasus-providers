@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PortControllerMain.cpp \
 	UNIX_PortController.cpp \
-	UNIX_PortControllerProvider.cpp \
-	UNIX_PortControllerMain.cpp
+	UNIX_PortControllerProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PortController_AIX.cxx
+	SOURCES += UNIX_PortController_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PortController_DARWIN.cxx
+	SOURCES += UNIX_PortController_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PortController_FREEBSD.cxx
+	SOURCES += UNIX_PortController_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PortController_HPUX.cxx
+	SOURCES += UNIX_PortController_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PortController_LINUX.cxx
+	SOURCES += UNIX_PortController_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PortController_SOLARIS.cxx
+	SOURCES += UNIX_PortController_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PortController_TRU64.cxx
+	SOURCES += UNIX_PortController_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PortController_VMS.cxx
+	SOURCES += UNIX_PortController_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PortController_WIN32.cxx
+	SOURCES += UNIX_PortController_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PortController_ZOS.cxx
+	SOURCES += UNIX_PortController_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PortController_STUB.cxx
+	SOURCES += UNIX_PortController_STUB.cxx
 endif
 
 LIBRARIES = \

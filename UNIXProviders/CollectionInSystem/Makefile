@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_CollectionInSystemMain.cpp \
 	UNIX_CollectionInSystem.cpp \
-	UNIX_CollectionInSystemProvider.cpp \
-	UNIX_CollectionInSystemMain.cpp
+	UNIX_CollectionInSystemProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_CollectionInSystem_AIX.cxx
+	SOURCES += UNIX_CollectionInSystem_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_CollectionInSystem_DARWIN.cxx
+	SOURCES += UNIX_CollectionInSystem_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_CollectionInSystem_FREEBSD.cxx
+	SOURCES += UNIX_CollectionInSystem_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_CollectionInSystem_HPUX.cxx
+	SOURCES += UNIX_CollectionInSystem_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_CollectionInSystem_LINUX.cxx
+	SOURCES += UNIX_CollectionInSystem_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_CollectionInSystem_SOLARIS.cxx
+	SOURCES += UNIX_CollectionInSystem_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_CollectionInSystem_TRU64.cxx
+	SOURCES += UNIX_CollectionInSystem_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_CollectionInSystem_VMS.cxx
+	SOURCES += UNIX_CollectionInSystem_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_CollectionInSystem_WIN32.cxx
+	SOURCES += UNIX_CollectionInSystem_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_CollectionInSystem_ZOS.cxx
+	SOURCES += UNIX_CollectionInSystem_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_CollectionInSystem_STUB.cxx
+	SOURCES += UNIX_CollectionInSystem_STUB.cxx
 endif
 
 LIBRARIES = \

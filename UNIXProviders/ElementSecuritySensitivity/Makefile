@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ElementSecuritySensitivityMain.cpp \
 	UNIX_ElementSecuritySensitivity.cpp \
-	UNIX_ElementSecuritySensitivityProvider.cpp \
-	UNIX_ElementSecuritySensitivityMain.cpp
+	UNIX_ElementSecuritySensitivityProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ElementSecuritySensitivity_AIX.cxx
+	SOURCES += UNIX_ElementSecuritySensitivity_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ElementSecuritySensitivity_DARWIN.cxx
+	SOURCES += UNIX_ElementSecuritySensitivity_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ElementSecuritySensitivity_FREEBSD.cxx
+	SOURCES += UNIX_ElementSecuritySensitivity_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ElementSecuritySensitivity_HPUX.cxx
+	SOURCES += UNIX_ElementSecuritySensitivity_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ElementSecuritySensitivity_LINUX.cxx
+	SOURCES += UNIX_ElementSecuritySensitivity_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ElementSecuritySensitivity_SOLARIS.cxx
+	SOURCES += UNIX_ElementSecuritySensitivity_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ElementSecuritySensitivity_TRU64.cxx
+	SOURCES += UNIX_ElementSecuritySensitivity_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ElementSecuritySensitivity_VMS.cxx
+	SOURCES += UNIX_ElementSecuritySensitivity_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ElementSecuritySensitivity_WIN32.cxx
+	SOURCES += UNIX_ElementSecuritySensitivity_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ElementSecuritySensitivity_ZOS.cxx
+	SOURCES += UNIX_ElementSecuritySensitivity_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ElementSecuritySensitivity_STUB.cxx
+	SOURCES += UNIX_ElementSecuritySensitivity_STUB.cxx
 endif
 
 LIBRARIES = \

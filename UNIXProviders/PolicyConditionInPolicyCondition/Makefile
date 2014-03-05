@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PolicyConditionInPolicyConditionMain.cpp \
 	UNIX_PolicyConditionInPolicyCondition.cpp \
-	UNIX_PolicyConditionInPolicyConditionProvider.cpp \
-	UNIX_PolicyConditionInPolicyConditionMain.cpp
+	UNIX_PolicyConditionInPolicyConditionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PolicyConditionInPolicyCondition_AIX.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyCondition_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PolicyConditionInPolicyCondition_DARWIN.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyCondition_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PolicyConditionInPolicyCondition_FREEBSD.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyCondition_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PolicyConditionInPolicyCondition_HPUX.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyCondition_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PolicyConditionInPolicyCondition_LINUX.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyCondition_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PolicyConditionInPolicyCondition_SOLARIS.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyCondition_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PolicyConditionInPolicyCondition_TRU64.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyCondition_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PolicyConditionInPolicyCondition_VMS.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyCondition_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PolicyConditionInPolicyCondition_WIN32.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyCondition_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PolicyConditionInPolicyCondition_ZOS.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyCondition_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PolicyConditionInPolicyCondition_STUB.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyCondition_STUB.cxx
 endif
 
 LIBRARIES = \

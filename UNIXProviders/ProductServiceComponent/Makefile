@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ProductServiceComponentMain.cpp \
 	UNIX_ProductServiceComponent.cpp \
-	UNIX_ProductServiceComponentProvider.cpp \
-	UNIX_ProductServiceComponentMain.cpp
+	UNIX_ProductServiceComponentProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ProductServiceComponent_AIX.cxx
+	SOURCES += UNIX_ProductServiceComponent_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ProductServiceComponent_DARWIN.cxx
+	SOURCES += UNIX_ProductServiceComponent_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ProductServiceComponent_FREEBSD.cxx
+	SOURCES += UNIX_ProductServiceComponent_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ProductServiceComponent_HPUX.cxx
+	SOURCES += UNIX_ProductServiceComponent_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ProductServiceComponent_LINUX.cxx
+	SOURCES += UNIX_ProductServiceComponent_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ProductServiceComponent_SOLARIS.cxx
+	SOURCES += UNIX_ProductServiceComponent_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ProductServiceComponent_TRU64.cxx
+	SOURCES += UNIX_ProductServiceComponent_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ProductServiceComponent_VMS.cxx
+	SOURCES += UNIX_ProductServiceComponent_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ProductServiceComponent_WIN32.cxx
+	SOURCES += UNIX_ProductServiceComponent_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ProductServiceComponent_ZOS.cxx
+	SOURCES += UNIX_ProductServiceComponent_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ProductServiceComponent_STUB.cxx
+	SOURCES += UNIX_ProductServiceComponent_STUB.cxx
 endif
 
 LIBRARIES = \

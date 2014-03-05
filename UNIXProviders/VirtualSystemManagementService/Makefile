@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_VirtualSystemManagementServiceMain.cpp \
 	UNIX_VirtualSystemManagementService.cpp \
-	UNIX_VirtualSystemManagementServiceProvider.cpp \
-	UNIX_VirtualSystemManagementServiceMain.cpp
+	UNIX_VirtualSystemManagementServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_VirtualSystemManagementService_AIX.cxx
+	SOURCES += UNIX_VirtualSystemManagementService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_VirtualSystemManagementService_DARWIN.cxx
+	SOURCES += UNIX_VirtualSystemManagementService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_VirtualSystemManagementService_FREEBSD.cxx
+	SOURCES += UNIX_VirtualSystemManagementService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_VirtualSystemManagementService_HPUX.cxx
+	SOURCES += UNIX_VirtualSystemManagementService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_VirtualSystemManagementService_LINUX.cxx
+	SOURCES += UNIX_VirtualSystemManagementService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_VirtualSystemManagementService_SOLARIS.cxx
+	SOURCES += UNIX_VirtualSystemManagementService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_VirtualSystemManagementService_TRU64.cxx
+	SOURCES += UNIX_VirtualSystemManagementService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_VirtualSystemManagementService_VMS.cxx
+	SOURCES += UNIX_VirtualSystemManagementService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_VirtualSystemManagementService_WIN32.cxx
+	SOURCES += UNIX_VirtualSystemManagementService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_VirtualSystemManagementService_ZOS.cxx
+	SOURCES += UNIX_VirtualSystemManagementService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_VirtualSystemManagementService_STUB.cxx
+	SOURCES += UNIX_VirtualSystemManagementService_STUB.cxx
 endif
 
 LIBRARIES = \

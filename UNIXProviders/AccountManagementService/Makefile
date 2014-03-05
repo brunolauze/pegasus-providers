@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AccountManagementServiceMain.cpp \
 	UNIX_AccountManagementService.cpp \
-	UNIX_AccountManagementServiceProvider.cpp \
-	UNIX_AccountManagementServiceMain.cpp
+	UNIX_AccountManagementServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AccountManagementService_AIX.cxx
+	SOURCES += UNIX_AccountManagementService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AccountManagementService_DARWIN.cxx
+	SOURCES += UNIX_AccountManagementService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AccountManagementService_FREEBSD.cxx
+	SOURCES += UNIX_AccountManagementService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AccountManagementService_HPUX.cxx
+	SOURCES += UNIX_AccountManagementService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AccountManagementService_LINUX.cxx
+	SOURCES += UNIX_AccountManagementService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AccountManagementService_SOLARIS.cxx
+	SOURCES += UNIX_AccountManagementService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AccountManagementService_TRU64.cxx
+	SOURCES += UNIX_AccountManagementService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AccountManagementService_VMS.cxx
+	SOURCES += UNIX_AccountManagementService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AccountManagementService_WIN32.cxx
+	SOURCES += UNIX_AccountManagementService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AccountManagementService_ZOS.cxx
+	SOURCES += UNIX_AccountManagementService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AccountManagementService_STUB.cxx
+	SOURCES += UNIX_AccountManagementService_STUB.cxx
 endif
 
 LIBRARIES = \

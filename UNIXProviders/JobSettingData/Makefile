@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_JobSettingDataMain.cpp \
 	UNIX_JobSettingData.cpp \
-	UNIX_JobSettingDataProvider.cpp \
-	UNIX_JobSettingDataMain.cpp
+	UNIX_JobSettingDataProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_JobSettingData_AIX.cxx
+	SOURCES += UNIX_JobSettingData_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_JobSettingData_DARWIN.cxx
+	SOURCES += UNIX_JobSettingData_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_JobSettingData_FREEBSD.cxx
+	SOURCES += UNIX_JobSettingData_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_JobSettingData_HPUX.cxx
+	SOURCES += UNIX_JobSettingData_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_JobSettingData_LINUX.cxx
+	SOURCES += UNIX_JobSettingData_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_JobSettingData_SOLARIS.cxx
+	SOURCES += UNIX_JobSettingData_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_JobSettingData_TRU64.cxx
+	SOURCES += UNIX_JobSettingData_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_JobSettingData_VMS.cxx
+	SOURCES += UNIX_JobSettingData_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_JobSettingData_WIN32.cxx
+	SOURCES += UNIX_JobSettingData_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_JobSettingData_ZOS.cxx
+	SOURCES += UNIX_JobSettingData_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_JobSettingData_STUB.cxx
+	SOURCES += UNIX_JobSettingData_STUB.cxx
 endif
 
 LIBRARIES = \

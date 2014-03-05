@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PCIPortGroupMain.cpp \
 	UNIX_PCIPortGroup.cpp \
-	UNIX_PCIPortGroupProvider.cpp \
-	UNIX_PCIPortGroupMain.cpp
+	UNIX_PCIPortGroupProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PCIPortGroup_AIX.cxx
+	SOURCES += UNIX_PCIPortGroup_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PCIPortGroup_DARWIN.cxx
+	SOURCES += UNIX_PCIPortGroup_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PCIPortGroup_FREEBSD.cxx
+	SOURCES += UNIX_PCIPortGroup_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PCIPortGroup_HPUX.cxx
+	SOURCES += UNIX_PCIPortGroup_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PCIPortGroup_LINUX.cxx
+	SOURCES += UNIX_PCIPortGroup_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PCIPortGroup_SOLARIS.cxx
+	SOURCES += UNIX_PCIPortGroup_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PCIPortGroup_TRU64.cxx
+	SOURCES += UNIX_PCIPortGroup_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PCIPortGroup_VMS.cxx
+	SOURCES += UNIX_PCIPortGroup_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PCIPortGroup_WIN32.cxx
+	SOURCES += UNIX_PCIPortGroup_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PCIPortGroup_ZOS.cxx
+	SOURCES += UNIX_PCIPortGroup_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PCIPortGroup_STUB.cxx
+	SOURCES += UNIX_PCIPortGroup_STUB.cxx
 endif
 
 LIBRARIES = \

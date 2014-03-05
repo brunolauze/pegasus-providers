@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_OSPFLinkMain.cpp \
 	UNIX_OSPFLink.cpp \
-	UNIX_OSPFLinkProvider.cpp \
-	UNIX_OSPFLinkMain.cpp
+	UNIX_OSPFLinkProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_OSPFLink_AIX.cxx
+	SOURCES += UNIX_OSPFLink_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_OSPFLink_DARWIN.cxx
+	SOURCES += UNIX_OSPFLink_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_OSPFLink_FREEBSD.cxx
+	SOURCES += UNIX_OSPFLink_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_OSPFLink_HPUX.cxx
+	SOURCES += UNIX_OSPFLink_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_OSPFLink_LINUX.cxx
+	SOURCES += UNIX_OSPFLink_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_OSPFLink_SOLARIS.cxx
+	SOURCES += UNIX_OSPFLink_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_OSPFLink_TRU64.cxx
+	SOURCES += UNIX_OSPFLink_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_OSPFLink_VMS.cxx
+	SOURCES += UNIX_OSPFLink_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_OSPFLink_WIN32.cxx
+	SOURCES += UNIX_OSPFLink_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_OSPFLink_ZOS.cxx
+	SOURCES += UNIX_OSPFLink_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_OSPFLink_STUB.cxx
+	SOURCES += UNIX_OSPFLink_STUB.cxx
 endif
 
 LIBRARIES = \

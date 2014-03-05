@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AggregationMetricDefinitionMain.cpp \
 	UNIX_AggregationMetricDefinition.cpp \
-	UNIX_AggregationMetricDefinitionProvider.cpp \
-	UNIX_AggregationMetricDefinitionMain.cpp
+	UNIX_AggregationMetricDefinitionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AggregationMetricDefinition_AIX.cxx
+	SOURCES += UNIX_AggregationMetricDefinition_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AggregationMetricDefinition_DARWIN.cxx
+	SOURCES += UNIX_AggregationMetricDefinition_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AggregationMetricDefinition_FREEBSD.cxx
+	SOURCES += UNIX_AggregationMetricDefinition_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AggregationMetricDefinition_HPUX.cxx
+	SOURCES += UNIX_AggregationMetricDefinition_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AggregationMetricDefinition_LINUX.cxx
+	SOURCES += UNIX_AggregationMetricDefinition_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AggregationMetricDefinition_SOLARIS.cxx
+	SOURCES += UNIX_AggregationMetricDefinition_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AggregationMetricDefinition_TRU64.cxx
+	SOURCES += UNIX_AggregationMetricDefinition_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AggregationMetricDefinition_VMS.cxx
+	SOURCES += UNIX_AggregationMetricDefinition_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AggregationMetricDefinition_WIN32.cxx
+	SOURCES += UNIX_AggregationMetricDefinition_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AggregationMetricDefinition_ZOS.cxx
+	SOURCES += UNIX_AggregationMetricDefinition_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AggregationMetricDefinition_STUB.cxx
+	SOURCES += UNIX_AggregationMetricDefinition_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ChangerDeviceMain.cpp \
 	UNIX_ChangerDevice.cpp \
-	UNIX_ChangerDeviceProvider.cpp \
-	UNIX_ChangerDeviceMain.cpp
+	UNIX_ChangerDeviceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ChangerDevice_AIX.cxx
+	SOURCES += UNIX_ChangerDevice_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ChangerDevice_DARWIN.cxx
+	SOURCES += UNIX_ChangerDevice_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ChangerDevice_FREEBSD.cxx
+	SOURCES += UNIX_ChangerDevice_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ChangerDevice_HPUX.cxx
+	SOURCES += UNIX_ChangerDevice_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ChangerDevice_LINUX.cxx
+	SOURCES += UNIX_ChangerDevice_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ChangerDevice_SOLARIS.cxx
+	SOURCES += UNIX_ChangerDevice_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ChangerDevice_TRU64.cxx
+	SOURCES += UNIX_ChangerDevice_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ChangerDevice_VMS.cxx
+	SOURCES += UNIX_ChangerDevice_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ChangerDevice_WIN32.cxx
+	SOURCES += UNIX_ChangerDevice_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ChangerDevice_ZOS.cxx
+	SOURCES += UNIX_ChangerDevice_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ChangerDevice_STUB.cxx
+	SOURCES += UNIX_ChangerDevice_STUB.cxx
 endif
 
 LIBRARIES = \

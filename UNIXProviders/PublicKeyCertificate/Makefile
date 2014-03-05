@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PublicKeyCertificateMain.cpp \
 	UNIX_PublicKeyCertificate.cpp \
-	UNIX_PublicKeyCertificateProvider.cpp \
-	UNIX_PublicKeyCertificateMain.cpp
+	UNIX_PublicKeyCertificateProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PublicKeyCertificate_AIX.cxx
+	SOURCES += UNIX_PublicKeyCertificate_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PublicKeyCertificate_DARWIN.cxx
+	SOURCES += UNIX_PublicKeyCertificate_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PublicKeyCertificate_FREEBSD.cxx
+	SOURCES += UNIX_PublicKeyCertificate_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PublicKeyCertificate_HPUX.cxx
+	SOURCES += UNIX_PublicKeyCertificate_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PublicKeyCertificate_LINUX.cxx
+	SOURCES += UNIX_PublicKeyCertificate_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PublicKeyCertificate_SOLARIS.cxx
+	SOURCES += UNIX_PublicKeyCertificate_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PublicKeyCertificate_TRU64.cxx
+	SOURCES += UNIX_PublicKeyCertificate_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PublicKeyCertificate_VMS.cxx
+	SOURCES += UNIX_PublicKeyCertificate_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PublicKeyCertificate_WIN32.cxx
+	SOURCES += UNIX_PublicKeyCertificate_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PublicKeyCertificate_ZOS.cxx
+	SOURCES += UNIX_PublicKeyCertificate_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PublicKeyCertificate_STUB.cxx
+	SOURCES += UNIX_PublicKeyCertificate_STUB.cxx
 endif
 
 LIBRARIES = \

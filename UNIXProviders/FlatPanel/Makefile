@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_FlatPanelMain.cpp \
 	UNIX_FlatPanel.cpp \
-	UNIX_FlatPanelProvider.cpp \
-	UNIX_FlatPanelMain.cpp
+	UNIX_FlatPanelProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_FlatPanel_AIX.cxx
+	SOURCES += UNIX_FlatPanel_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_FlatPanel_DARWIN.cxx
+	SOURCES += UNIX_FlatPanel_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_FlatPanel_FREEBSD.cxx
+	SOURCES += UNIX_FlatPanel_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_FlatPanel_HPUX.cxx
+	SOURCES += UNIX_FlatPanel_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_FlatPanel_LINUX.cxx
+	SOURCES += UNIX_FlatPanel_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_FlatPanel_SOLARIS.cxx
+	SOURCES += UNIX_FlatPanel_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_FlatPanel_TRU64.cxx
+	SOURCES += UNIX_FlatPanel_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_FlatPanel_VMS.cxx
+	SOURCES += UNIX_FlatPanel_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_FlatPanel_WIN32.cxx
+	SOURCES += UNIX_FlatPanel_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_FlatPanel_ZOS.cxx
+	SOURCES += UNIX_FlatPanel_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_FlatPanel_STUB.cxx
+	SOURCES += UNIX_FlatPanel_STUB.cxx
 endif
 
 LIBRARIES = \

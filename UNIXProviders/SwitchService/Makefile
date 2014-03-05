@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SwitchServiceMain.cpp \
 	UNIX_SwitchService.cpp \
-	UNIX_SwitchServiceProvider.cpp \
-	UNIX_SwitchServiceMain.cpp
+	UNIX_SwitchServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SwitchService_AIX.cxx
+	SOURCES += UNIX_SwitchService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SwitchService_DARWIN.cxx
+	SOURCES += UNIX_SwitchService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SwitchService_FREEBSD.cxx
+	SOURCES += UNIX_SwitchService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SwitchService_HPUX.cxx
+	SOURCES += UNIX_SwitchService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SwitchService_LINUX.cxx
+	SOURCES += UNIX_SwitchService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SwitchService_SOLARIS.cxx
+	SOURCES += UNIX_SwitchService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SwitchService_TRU64.cxx
+	SOURCES += UNIX_SwitchService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SwitchService_VMS.cxx
+	SOURCES += UNIX_SwitchService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SwitchService_WIN32.cxx
+	SOURCES += UNIX_SwitchService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SwitchService_ZOS.cxx
+	SOURCES += UNIX_SwitchService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SwitchService_STUB.cxx
+	SOURCES += UNIX_SwitchService_STUB.cxx
 endif
 
 LIBRARIES = \

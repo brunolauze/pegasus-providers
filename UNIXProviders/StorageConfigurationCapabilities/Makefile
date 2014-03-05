@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_StorageConfigurationCapabilitiesMain.cpp \
 	UNIX_StorageConfigurationCapabilities.cpp \
-	UNIX_StorageConfigurationCapabilitiesProvider.cpp \
-	UNIX_StorageConfigurationCapabilitiesMain.cpp
+	UNIX_StorageConfigurationCapabilitiesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_StorageConfigurationCapabilities_AIX.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_StorageConfigurationCapabilities_DARWIN.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_StorageConfigurationCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_StorageConfigurationCapabilities_HPUX.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_StorageConfigurationCapabilities_LINUX.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_StorageConfigurationCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_StorageConfigurationCapabilities_TRU64.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_StorageConfigurationCapabilities_VMS.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_StorageConfigurationCapabilities_WIN32.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_StorageConfigurationCapabilities_ZOS.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_StorageConfigurationCapabilities_STUB.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_STUB.cxx
 endif
 
 LIBRARIES = \

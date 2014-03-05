@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PowerUtilizationManagementServiceMain.cpp \
 	UNIX_PowerUtilizationManagementService.cpp \
-	UNIX_PowerUtilizationManagementServiceProvider.cpp \
-	UNIX_PowerUtilizationManagementServiceMain.cpp
+	UNIX_PowerUtilizationManagementServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PowerUtilizationManagementService_AIX.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PowerUtilizationManagementService_DARWIN.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PowerUtilizationManagementService_FREEBSD.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PowerUtilizationManagementService_HPUX.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PowerUtilizationManagementService_LINUX.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PowerUtilizationManagementService_SOLARIS.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PowerUtilizationManagementService_TRU64.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PowerUtilizationManagementService_VMS.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PowerUtilizationManagementService_WIN32.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PowerUtilizationManagementService_ZOS.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PowerUtilizationManagementService_STUB.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_STUB.cxx
 endif
 
 LIBRARIES = \

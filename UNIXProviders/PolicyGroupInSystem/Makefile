@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PolicyGroupInSystemMain.cpp \
 	UNIX_PolicyGroupInSystem.cpp \
-	UNIX_PolicyGroupInSystemProvider.cpp \
-	UNIX_PolicyGroupInSystemMain.cpp
+	UNIX_PolicyGroupInSystemProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PolicyGroupInSystem_AIX.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PolicyGroupInSystem_DARWIN.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PolicyGroupInSystem_FREEBSD.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PolicyGroupInSystem_HPUX.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PolicyGroupInSystem_LINUX.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PolicyGroupInSystem_SOLARIS.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PolicyGroupInSystem_TRU64.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PolicyGroupInSystem_VMS.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PolicyGroupInSystem_WIN32.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PolicyGroupInSystem_ZOS.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PolicyGroupInSystem_STUB.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_STUB.cxx
 endif
 
 LIBRARIES = \

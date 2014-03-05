@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_DeviceIdentityMain.cpp \
 	UNIX_DeviceIdentity.cpp \
-	UNIX_DeviceIdentityProvider.cpp \
-	UNIX_DeviceIdentityMain.cpp
+	UNIX_DeviceIdentityProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_DeviceIdentity_AIX.cxx
+	SOURCES += UNIX_DeviceIdentity_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_DeviceIdentity_DARWIN.cxx
+	SOURCES += UNIX_DeviceIdentity_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_DeviceIdentity_FREEBSD.cxx
+	SOURCES += UNIX_DeviceIdentity_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_DeviceIdentity_HPUX.cxx
+	SOURCES += UNIX_DeviceIdentity_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_DeviceIdentity_LINUX.cxx
+	SOURCES += UNIX_DeviceIdentity_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_DeviceIdentity_SOLARIS.cxx
+	SOURCES += UNIX_DeviceIdentity_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_DeviceIdentity_TRU64.cxx
+	SOURCES += UNIX_DeviceIdentity_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_DeviceIdentity_VMS.cxx
+	SOURCES += UNIX_DeviceIdentity_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_DeviceIdentity_WIN32.cxx
+	SOURCES += UNIX_DeviceIdentity_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_DeviceIdentity_ZOS.cxx
+	SOURCES += UNIX_DeviceIdentity_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_DeviceIdentity_STUB.cxx
+	SOURCES += UNIX_DeviceIdentity_STUB.cxx
 endif
 
 LIBRARIES = \

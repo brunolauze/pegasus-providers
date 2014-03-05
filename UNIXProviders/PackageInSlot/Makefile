@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_PackageInSlotProvider.cpp \
 	UNIX_PackageInSlotMain.cpp
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PackageInSlot_AIX.cxx
+	SOURCES += UNIX_PackageInSlot_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PackageInSlot_DARWIN.cxx
+	SOURCES += UNIX_PackageInSlot_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PackageInSlot_FREEBSD.cxx
+	SOURCES += UNIX_PackageInSlot_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PackageInSlot_HPUX.cxx
+	SOURCES += UNIX_PackageInSlot_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PackageInSlot_LINUX.cxx
+	SOURCES += UNIX_PackageInSlot_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PackageInSlot_SOLARIS.cxx
+	SOURCES += UNIX_PackageInSlot_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PackageInSlot_TRU64.cxx
+	SOURCES += UNIX_PackageInSlot_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PackageInSlot_VMS.cxx
+	SOURCES += UNIX_PackageInSlot_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PackageInSlot_WIN32.cxx
+	SOURCES += UNIX_PackageInSlot_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PackageInSlot_ZOS.cxx
+	SOURCES += UNIX_PackageInSlot_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PackageInSlot_STUB.cxx
+	SOURCES += UNIX_PackageInSlot_STUB.cxx
 endif
 
 LIBRARIES = \

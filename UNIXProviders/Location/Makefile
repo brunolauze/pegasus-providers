@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_LocationMain.cpp \
 	UNIX_Location.cpp \
-	UNIX_LocationProvider.cpp \
-	UNIX_LocationMain.cpp
+	UNIX_LocationProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_Location_AIX.cxx
+	SOURCES += UNIX_Location_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_Location_DARWIN.cxx
+	SOURCES += UNIX_Location_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_Location_FREEBSD.cxx
+	SOURCES += UNIX_Location_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_Location_HPUX.cxx
+	SOURCES += UNIX_Location_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_Location_LINUX.cxx
+	SOURCES += UNIX_Location_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_Location_SOLARIS.cxx
+	SOURCES += UNIX_Location_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_Location_TRU64.cxx
+	SOURCES += UNIX_Location_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_Location_VMS.cxx
+	SOURCES += UNIX_Location_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_Location_WIN32.cxx
+	SOURCES += UNIX_Location_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_Location_ZOS.cxx
+	SOURCES += UNIX_Location_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_Location_STUB.cxx
+	SOURCES += UNIX_Location_STUB.cxx
 endif
 
 LIBRARIES = \

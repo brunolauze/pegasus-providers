@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ServiceAffectsElementMain.cpp \
 	UNIX_ServiceAffectsElement.cpp \
-	UNIX_ServiceAffectsElementProvider.cpp \
-	UNIX_ServiceAffectsElementMain.cpp
+	UNIX_ServiceAffectsElementProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ServiceAffectsElement_AIX.cxx
+	SOURCES += UNIX_ServiceAffectsElement_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ServiceAffectsElement_DARWIN.cxx
+	SOURCES += UNIX_ServiceAffectsElement_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ServiceAffectsElement_FREEBSD.cxx
+	SOURCES += UNIX_ServiceAffectsElement_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ServiceAffectsElement_HPUX.cxx
+	SOURCES += UNIX_ServiceAffectsElement_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ServiceAffectsElement_LINUX.cxx
+	SOURCES += UNIX_ServiceAffectsElement_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ServiceAffectsElement_SOLARIS.cxx
+	SOURCES += UNIX_ServiceAffectsElement_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ServiceAffectsElement_TRU64.cxx
+	SOURCES += UNIX_ServiceAffectsElement_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ServiceAffectsElement_VMS.cxx
+	SOURCES += UNIX_ServiceAffectsElement_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ServiceAffectsElement_WIN32.cxx
+	SOURCES += UNIX_ServiceAffectsElement_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ServiceAffectsElement_ZOS.cxx
+	SOURCES += UNIX_ServiceAffectsElement_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ServiceAffectsElement_STUB.cxx
+	SOURCES += UNIX_ServiceAffectsElement_STUB.cxx
 endif
 
 LIBRARIES = \

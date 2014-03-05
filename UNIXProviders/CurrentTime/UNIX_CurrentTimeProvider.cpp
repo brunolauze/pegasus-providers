@@ -43,7 +43,7 @@ UNIX_CurrentTimeProvider::~UNIX_CurrentTimeProvider()
 CIMInstance UNIX_CurrentTimeProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_CurrentTime &_p)
+	const UNIX_CurrentTime &_p) const
 {
 	CIMProperty p;
 
@@ -75,7 +75,7 @@ CIMInstance UNIX_CurrentTimeProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_CurrentTimeProvider::constructKeyBindings(const UNIX_CurrentTime& _p)
+Array<CIMKeyBinding> UNIX_CurrentTimeProvider::constructKeyBindings(const UNIX_CurrentTime& _p) const
 
 {
 

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_InBGPPeerGroupMain.cpp \
 	UNIX_InBGPPeerGroup.cpp \
-	UNIX_InBGPPeerGroupProvider.cpp \
-	UNIX_InBGPPeerGroupMain.cpp
+	UNIX_InBGPPeerGroupProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_InBGPPeerGroup_AIX.cxx
+	SOURCES += UNIX_InBGPPeerGroup_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_InBGPPeerGroup_DARWIN.cxx
+	SOURCES += UNIX_InBGPPeerGroup_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_InBGPPeerGroup_FREEBSD.cxx
+	SOURCES += UNIX_InBGPPeerGroup_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_InBGPPeerGroup_HPUX.cxx
+	SOURCES += UNIX_InBGPPeerGroup_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_InBGPPeerGroup_LINUX.cxx
+	SOURCES += UNIX_InBGPPeerGroup_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_InBGPPeerGroup_SOLARIS.cxx
+	SOURCES += UNIX_InBGPPeerGroup_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_InBGPPeerGroup_TRU64.cxx
+	SOURCES += UNIX_InBGPPeerGroup_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_InBGPPeerGroup_VMS.cxx
+	SOURCES += UNIX_InBGPPeerGroup_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_InBGPPeerGroup_WIN32.cxx
+	SOURCES += UNIX_InBGPPeerGroup_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_InBGPPeerGroup_ZOS.cxx
+	SOURCES += UNIX_InBGPPeerGroup_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_InBGPPeerGroup_STUB.cxx
+	SOURCES += UNIX_InBGPPeerGroup_STUB.cxx
 endif
 
 LIBRARIES = \

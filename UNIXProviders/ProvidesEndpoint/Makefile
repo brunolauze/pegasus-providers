@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ProvidesEndpointMain.cpp \
 	UNIX_ProvidesEndpoint.cpp \
-	UNIX_ProvidesEndpointProvider.cpp \
-	UNIX_ProvidesEndpointMain.cpp
+	UNIX_ProvidesEndpointProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ProvidesEndpoint_AIX.cxx
+	SOURCES += UNIX_ProvidesEndpoint_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ProvidesEndpoint_DARWIN.cxx
+	SOURCES += UNIX_ProvidesEndpoint_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ProvidesEndpoint_FREEBSD.cxx
+	SOURCES += UNIX_ProvidesEndpoint_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ProvidesEndpoint_HPUX.cxx
+	SOURCES += UNIX_ProvidesEndpoint_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ProvidesEndpoint_LINUX.cxx
+	SOURCES += UNIX_ProvidesEndpoint_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ProvidesEndpoint_SOLARIS.cxx
+	SOURCES += UNIX_ProvidesEndpoint_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ProvidesEndpoint_TRU64.cxx
+	SOURCES += UNIX_ProvidesEndpoint_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ProvidesEndpoint_VMS.cxx
+	SOURCES += UNIX_ProvidesEndpoint_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ProvidesEndpoint_WIN32.cxx
+	SOURCES += UNIX_ProvidesEndpoint_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ProvidesEndpoint_ZOS.cxx
+	SOURCES += UNIX_ProvidesEndpoint_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ProvidesEndpoint_STUB.cxx
+	SOURCES += UNIX_ProvidesEndpoint_STUB.cxx
 endif
 
 LIBRARIES = \

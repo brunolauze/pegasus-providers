@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_FCAdapterEventCountersMain.cpp \
 	UNIX_FCAdapterEventCounters.cpp \
-	UNIX_FCAdapterEventCountersProvider.cpp \
-	UNIX_FCAdapterEventCountersMain.cpp
+	UNIX_FCAdapterEventCountersProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_FCAdapterEventCounters_AIX.cxx
+	SOURCES += UNIX_FCAdapterEventCounters_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_FCAdapterEventCounters_DARWIN.cxx
+	SOURCES += UNIX_FCAdapterEventCounters_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_FCAdapterEventCounters_FREEBSD.cxx
+	SOURCES += UNIX_FCAdapterEventCounters_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_FCAdapterEventCounters_HPUX.cxx
+	SOURCES += UNIX_FCAdapterEventCounters_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_FCAdapterEventCounters_LINUX.cxx
+	SOURCES += UNIX_FCAdapterEventCounters_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_FCAdapterEventCounters_SOLARIS.cxx
+	SOURCES += UNIX_FCAdapterEventCounters_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_FCAdapterEventCounters_TRU64.cxx
+	SOURCES += UNIX_FCAdapterEventCounters_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_FCAdapterEventCounters_VMS.cxx
+	SOURCES += UNIX_FCAdapterEventCounters_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_FCAdapterEventCounters_WIN32.cxx
+	SOURCES += UNIX_FCAdapterEventCounters_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_FCAdapterEventCounters_ZOS.cxx
+	SOURCES += UNIX_FCAdapterEventCounters_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_FCAdapterEventCounters_STUB.cxx
+	SOURCES += UNIX_FCAdapterEventCounters_STUB.cxx
 endif
 
 LIBRARIES = \

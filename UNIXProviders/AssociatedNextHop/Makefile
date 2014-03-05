@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AssociatedNextHopMain.cpp \
 	UNIX_AssociatedNextHop.cpp \
-	UNIX_AssociatedNextHopProvider.cpp \
-	UNIX_AssociatedNextHopMain.cpp
+	UNIX_AssociatedNextHopProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AssociatedNextHop_AIX.cxx
+	SOURCES += UNIX_AssociatedNextHop_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AssociatedNextHop_DARWIN.cxx
+	SOURCES += UNIX_AssociatedNextHop_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AssociatedNextHop_FREEBSD.cxx
+	SOURCES += UNIX_AssociatedNextHop_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AssociatedNextHop_HPUX.cxx
+	SOURCES += UNIX_AssociatedNextHop_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AssociatedNextHop_LINUX.cxx
+	SOURCES += UNIX_AssociatedNextHop_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AssociatedNextHop_SOLARIS.cxx
+	SOURCES += UNIX_AssociatedNextHop_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AssociatedNextHop_TRU64.cxx
+	SOURCES += UNIX_AssociatedNextHop_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AssociatedNextHop_VMS.cxx
+	SOURCES += UNIX_AssociatedNextHop_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AssociatedNextHop_WIN32.cxx
+	SOURCES += UNIX_AssociatedNextHop_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AssociatedNextHop_ZOS.cxx
+	SOURCES += UNIX_AssociatedNextHop_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AssociatedNextHop_STUB.cxx
+	SOURCES += UNIX_AssociatedNextHop_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_RealizesPExtentMain.cpp \
 	UNIX_RealizesPExtent.cpp \
-	UNIX_RealizesPExtentProvider.cpp \
-	UNIX_RealizesPExtentMain.cpp
+	UNIX_RealizesPExtentProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_RealizesPExtent_AIX.cxx
+	SOURCES += UNIX_RealizesPExtent_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_RealizesPExtent_DARWIN.cxx
+	SOURCES += UNIX_RealizesPExtent_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_RealizesPExtent_FREEBSD.cxx
+	SOURCES += UNIX_RealizesPExtent_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_RealizesPExtent_HPUX.cxx
+	SOURCES += UNIX_RealizesPExtent_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_RealizesPExtent_LINUX.cxx
+	SOURCES += UNIX_RealizesPExtent_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_RealizesPExtent_SOLARIS.cxx
+	SOURCES += UNIX_RealizesPExtent_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_RealizesPExtent_TRU64.cxx
+	SOURCES += UNIX_RealizesPExtent_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_RealizesPExtent_VMS.cxx
+	SOURCES += UNIX_RealizesPExtent_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_RealizesPExtent_WIN32.cxx
+	SOURCES += UNIX_RealizesPExtent_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_RealizesPExtent_ZOS.cxx
+	SOURCES += UNIX_RealizesPExtent_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_RealizesPExtent_STUB.cxx
+	SOURCES += UNIX_RealizesPExtent_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ConcreteComponentMain.cpp \
 	UNIX_ConcreteComponent.cpp \
-	UNIX_ConcreteComponentProvider.cpp \
-	UNIX_ConcreteComponentMain.cpp
+	UNIX_ConcreteComponentProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ConcreteComponent_AIX.cxx
+	SOURCES += UNIX_ConcreteComponent_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ConcreteComponent_DARWIN.cxx
+	SOURCES += UNIX_ConcreteComponent_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ConcreteComponent_FREEBSD.cxx
+	SOURCES += UNIX_ConcreteComponent_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ConcreteComponent_HPUX.cxx
+	SOURCES += UNIX_ConcreteComponent_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ConcreteComponent_LINUX.cxx
+	SOURCES += UNIX_ConcreteComponent_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ConcreteComponent_SOLARIS.cxx
+	SOURCES += UNIX_ConcreteComponent_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ConcreteComponent_TRU64.cxx
+	SOURCES += UNIX_ConcreteComponent_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ConcreteComponent_VMS.cxx
+	SOURCES += UNIX_ConcreteComponent_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ConcreteComponent_WIN32.cxx
+	SOURCES += UNIX_ConcreteComponent_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ConcreteComponent_ZOS.cxx
+	SOURCES += UNIX_ConcreteComponent_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ConcreteComponent_STUB.cxx
+	SOURCES += UNIX_ConcreteComponent_STUB.cxx
 endif
 
 LIBRARIES = \

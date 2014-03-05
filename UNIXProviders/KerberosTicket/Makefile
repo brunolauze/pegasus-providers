@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_KerberosTicketMain.cpp \
 	UNIX_KerberosTicket.cpp \
-	UNIX_KerberosTicketProvider.cpp \
-	UNIX_KerberosTicketMain.cpp
+	UNIX_KerberosTicketProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_KerberosTicket_AIX.cxx
+	SOURCES += UNIX_KerberosTicket_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_KerberosTicket_DARWIN.cxx
+	SOURCES += UNIX_KerberosTicket_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_KerberosTicket_FREEBSD.cxx
+	SOURCES += UNIX_KerberosTicket_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_KerberosTicket_HPUX.cxx
+	SOURCES += UNIX_KerberosTicket_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_KerberosTicket_LINUX.cxx
+	SOURCES += UNIX_KerberosTicket_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_KerberosTicket_SOLARIS.cxx
+	SOURCES += UNIX_KerberosTicket_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_KerberosTicket_TRU64.cxx
+	SOURCES += UNIX_KerberosTicket_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_KerberosTicket_VMS.cxx
+	SOURCES += UNIX_KerberosTicket_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_KerberosTicket_WIN32.cxx
+	SOURCES += UNIX_KerberosTicket_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_KerberosTicket_ZOS.cxx
+	SOURCES += UNIX_KerberosTicket_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_KerberosTicket_STUB.cxx
+	SOURCES += UNIX_KerberosTicket_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_VirtualEthernetSwitchSettingDataMain.cpp \
 	UNIX_VirtualEthernetSwitchSettingData.cpp \
-	UNIX_VirtualEthernetSwitchSettingDataProvider.cpp \
-	UNIX_VirtualEthernetSwitchSettingDataMain.cpp
+	UNIX_VirtualEthernetSwitchSettingDataProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_VirtualEthernetSwitchSettingData_AIX.cxx
+	SOURCES += UNIX_VirtualEthernetSwitchSettingData_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_VirtualEthernetSwitchSettingData_DARWIN.cxx
+	SOURCES += UNIX_VirtualEthernetSwitchSettingData_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_VirtualEthernetSwitchSettingData_FREEBSD.cxx
+	SOURCES += UNIX_VirtualEthernetSwitchSettingData_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_VirtualEthernetSwitchSettingData_HPUX.cxx
+	SOURCES += UNIX_VirtualEthernetSwitchSettingData_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_VirtualEthernetSwitchSettingData_LINUX.cxx
+	SOURCES += UNIX_VirtualEthernetSwitchSettingData_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_VirtualEthernetSwitchSettingData_SOLARIS.cxx
+	SOURCES += UNIX_VirtualEthernetSwitchSettingData_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_VirtualEthernetSwitchSettingData_TRU64.cxx
+	SOURCES += UNIX_VirtualEthernetSwitchSettingData_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_VirtualEthernetSwitchSettingData_VMS.cxx
+	SOURCES += UNIX_VirtualEthernetSwitchSettingData_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_VirtualEthernetSwitchSettingData_WIN32.cxx
+	SOURCES += UNIX_VirtualEthernetSwitchSettingData_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_VirtualEthernetSwitchSettingData_ZOS.cxx
+	SOURCES += UNIX_VirtualEthernetSwitchSettingData_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_VirtualEthernetSwitchSettingData_STUB.cxx
+	SOURCES += UNIX_VirtualEthernetSwitchSettingData_STUB.cxx
 endif
 
 LIBRARIES = \

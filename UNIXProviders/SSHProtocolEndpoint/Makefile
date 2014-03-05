@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SSHProtocolEndpointMain.cpp \
 	UNIX_SSHProtocolEndpoint.cpp \
-	UNIX_SSHProtocolEndpointProvider.cpp \
-	UNIX_SSHProtocolEndpointMain.cpp
+	UNIX_SSHProtocolEndpointProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SSHProtocolEndpoint_AIX.cxx
+	SOURCES += UNIX_SSHProtocolEndpoint_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SSHProtocolEndpoint_DARWIN.cxx
+	SOURCES += UNIX_SSHProtocolEndpoint_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SSHProtocolEndpoint_FREEBSD.cxx
+	SOURCES += UNIX_SSHProtocolEndpoint_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SSHProtocolEndpoint_HPUX.cxx
+	SOURCES += UNIX_SSHProtocolEndpoint_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SSHProtocolEndpoint_LINUX.cxx
+	SOURCES += UNIX_SSHProtocolEndpoint_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SSHProtocolEndpoint_SOLARIS.cxx
+	SOURCES += UNIX_SSHProtocolEndpoint_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SSHProtocolEndpoint_TRU64.cxx
+	SOURCES += UNIX_SSHProtocolEndpoint_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SSHProtocolEndpoint_VMS.cxx
+	SOURCES += UNIX_SSHProtocolEndpoint_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SSHProtocolEndpoint_WIN32.cxx
+	SOURCES += UNIX_SSHProtocolEndpoint_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SSHProtocolEndpoint_ZOS.cxx
+	SOURCES += UNIX_SSHProtocolEndpoint_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SSHProtocolEndpoint_STUB.cxx
+	SOURCES += UNIX_SSHProtocolEndpoint_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AssociatedBlockStatisticsManifestCollectionMain.cpp \
 	UNIX_AssociatedBlockStatisticsManifestCollection.cpp \
-	UNIX_AssociatedBlockStatisticsManifestCollectionProvider.cpp \
-	UNIX_AssociatedBlockStatisticsManifestCollectionMain.cpp
+	UNIX_AssociatedBlockStatisticsManifestCollectionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AssociatedBlockStatisticsManifestCollection_AIX.cxx
+	SOURCES += UNIX_AssociatedBlockStatisticsManifestCollection_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AssociatedBlockStatisticsManifestCollection_DARWIN.cxx
+	SOURCES += UNIX_AssociatedBlockStatisticsManifestCollection_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AssociatedBlockStatisticsManifestCollection_FREEBSD.cxx
+	SOURCES += UNIX_AssociatedBlockStatisticsManifestCollection_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AssociatedBlockStatisticsManifestCollection_HPUX.cxx
+	SOURCES += UNIX_AssociatedBlockStatisticsManifestCollection_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AssociatedBlockStatisticsManifestCollection_LINUX.cxx
+	SOURCES += UNIX_AssociatedBlockStatisticsManifestCollection_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AssociatedBlockStatisticsManifestCollection_SOLARIS.cxx
+	SOURCES += UNIX_AssociatedBlockStatisticsManifestCollection_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AssociatedBlockStatisticsManifestCollection_TRU64.cxx
+	SOURCES += UNIX_AssociatedBlockStatisticsManifestCollection_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AssociatedBlockStatisticsManifestCollection_VMS.cxx
+	SOURCES += UNIX_AssociatedBlockStatisticsManifestCollection_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AssociatedBlockStatisticsManifestCollection_WIN32.cxx
+	SOURCES += UNIX_AssociatedBlockStatisticsManifestCollection_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AssociatedBlockStatisticsManifestCollection_ZOS.cxx
+	SOURCES += UNIX_AssociatedBlockStatisticsManifestCollection_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AssociatedBlockStatisticsManifestCollection_STUB.cxx
+	SOURCES += UNIX_AssociatedBlockStatisticsManifestCollection_STUB.cxx
 endif
 
 LIBRARIES = \

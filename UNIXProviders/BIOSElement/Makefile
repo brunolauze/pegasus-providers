@@ -44,43 +44,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 SOURCES = \
 	../CIMHelper.cpp \
 	../smbios.cpp \
+	UNIX_BIOSElementMain.cpp \
 	UNIX_BIOSElement.cpp \
-	UNIX_BIOSElementProvider.cpp \
-	UNIX_BIOSElementMain.cpp
+	UNIX_BIOSElementProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BIOSElement_AIX.cxx
+	SOURCES += UNIX_BIOSElement_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BIOSElement_DARWIN.cxx
+	SOURCES += UNIX_BIOSElement_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BIOSElement_FREEBSD.cxx
+	SOURCES += UNIX_BIOSElement_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BIOSElement_HPUX.cxx
+	SOURCES += UNIX_BIOSElement_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BIOSElement_LINUX.cxx
+	SOURCES += UNIX_BIOSElement_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BIOSElement_SOLARIS.cxx
+	SOURCES += UNIX_BIOSElement_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BIOSElement_TRU64.cxx
+	SOURCES += UNIX_BIOSElement_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BIOSElement_VMS.cxx
+	SOURCES += UNIX_BIOSElement_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BIOSElement_WIN32.cxx
+	SOURCES += UNIX_BIOSElement_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BIOSElement_ZOS.cxx
+	SOURCES += UNIX_BIOSElement_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BIOSElement_STUB.cxx
+	SOURCES += UNIX_BIOSElement_STUB.cxx
 endif
 
 LIBRARIES = \

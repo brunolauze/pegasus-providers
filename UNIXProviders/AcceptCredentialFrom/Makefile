@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AcceptCredentialFromMain.cpp \
 	UNIX_AcceptCredentialFrom.cpp \
-	UNIX_AcceptCredentialFromProvider.cpp \
-	UNIX_AcceptCredentialFromMain.cpp
+	UNIX_AcceptCredentialFromProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AcceptCredentialFrom_AIX.cxx
+	SOURCES += UNIX_AcceptCredentialFrom_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AcceptCredentialFrom_DARWIN.cxx
+	SOURCES += UNIX_AcceptCredentialFrom_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AcceptCredentialFrom_FREEBSD.cxx
+	SOURCES += UNIX_AcceptCredentialFrom_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AcceptCredentialFrom_HPUX.cxx
+	SOURCES += UNIX_AcceptCredentialFrom_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AcceptCredentialFrom_LINUX.cxx
+	SOURCES += UNIX_AcceptCredentialFrom_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AcceptCredentialFrom_SOLARIS.cxx
+	SOURCES += UNIX_AcceptCredentialFrom_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AcceptCredentialFrom_TRU64.cxx
+	SOURCES += UNIX_AcceptCredentialFrom_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AcceptCredentialFrom_VMS.cxx
+	SOURCES += UNIX_AcceptCredentialFrom_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AcceptCredentialFrom_WIN32.cxx
+	SOURCES += UNIX_AcceptCredentialFrom_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AcceptCredentialFrom_ZOS.cxx
+	SOURCES += UNIX_AcceptCredentialFrom_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AcceptCredentialFrom_STUB.cxx
+	SOURCES += UNIX_AcceptCredentialFrom_STUB.cxx
 endif
 
 LIBRARIES = \

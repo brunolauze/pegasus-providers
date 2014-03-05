@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PCIBridgeMain.cpp \
 	UNIX_PCIBridge.cpp \
-	UNIX_PCIBridgeProvider.cpp \
-	UNIX_PCIBridgeMain.cpp
+	UNIX_PCIBridgeProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PCIBridge_AIX.cxx
+	SOURCES += UNIX_PCIBridge_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PCIBridge_DARWIN.cxx
+	SOURCES += UNIX_PCIBridge_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PCIBridge_FREEBSD.cxx
+	SOURCES += UNIX_PCIBridge_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PCIBridge_HPUX.cxx
+	SOURCES += UNIX_PCIBridge_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PCIBridge_LINUX.cxx
+	SOURCES += UNIX_PCIBridge_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PCIBridge_SOLARIS.cxx
+	SOURCES += UNIX_PCIBridge_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PCIBridge_TRU64.cxx
+	SOURCES += UNIX_PCIBridge_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PCIBridge_VMS.cxx
+	SOURCES += UNIX_PCIBridge_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PCIBridge_WIN32.cxx
+	SOURCES += UNIX_PCIBridge_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PCIBridge_ZOS.cxx
+	SOURCES += UNIX_PCIBridge_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PCIBridge_STUB.cxx
+	SOURCES += UNIX_PCIBridge_STUB.cxx
 endif
 
 LIBRARIES = \

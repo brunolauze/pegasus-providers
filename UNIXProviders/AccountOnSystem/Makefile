@@ -43,44 +43,130 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AccountOnSystemMain.cpp \
 	UNIX_AccountOnSystem.cpp \
-	UNIX_AccountOnSystemProvider.cpp \
-	UNIX_AccountOnSystemMain.cpp
+	UNIX_AccountOnSystemProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AccountOnSystem_AIX.cxx
+	SOURCES += UNIX_AccountOnSystem_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AccountOnSystem_DARWIN.cxx
+	SOURCES += UNIX_AccountOnSystem_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AccountOnSystem_FREEBSD.cxx
+	SOURCES += UNIX_AccountOnSystem_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AccountOnSystem_HPUX.cxx
+	SOURCES += UNIX_AccountOnSystem_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AccountOnSystem_LINUX.cxx
+	SOURCES += UNIX_AccountOnSystem_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AccountOnSystem_SOLARIS.cxx
+	SOURCES += UNIX_AccountOnSystem_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AccountOnSystem_TRU64.cxx
+	SOURCES += UNIX_AccountOnSystem_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AccountOnSystem_VMS.cxx
+	SOURCES += UNIX_AccountOnSystem_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AccountOnSystem_WIN32.cxx
+	SOURCES += UNIX_AccountOnSystem_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AccountOnSystem_ZOS.cxx
+	SOURCES += UNIX_AccountOnSystem_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AccountOnSystem_STUB.cxx
+	SOURCES += UNIX_AccountOnSystem_STUB.cxx
 endif
+
+
+SOURCES += \
+	../ComputerSystem/UNIX_ComputerSystem.cpp \
+	../ComputerSystem/UNIX_ComputerSystemProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_STUB.cxx
+endif
+
+
+SOURCES += \
+	../Account/UNIX_Account.cpp \
+	../Account/UNIX_AccountProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../Account/UNIX_Account_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../Account/UNIX_Account_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../Account/UNIX_Account_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../Account/UNIX_Account_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../Account/UNIX_Account_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../Account/UNIX_Account_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../Account/UNIX_Account_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../Account/UNIX_Account_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../Account/UNIX_Account_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../Account/UNIX_Account_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../Account/UNIX_Account_STUB.cxx
+endif
+
+
+
 
 LIBRARIES = \
 	pegprovider \
@@ -94,8 +180,6 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_ComputerSystemProvider \
-	-lUNIX_AccountProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_DisplayControllerMain.cpp \
 	UNIX_DisplayController.cpp \
-	UNIX_DisplayControllerProvider.cpp \
-	UNIX_DisplayControllerMain.cpp
+	UNIX_DisplayControllerProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_DisplayController_AIX.cxx
+	SOURCES += UNIX_DisplayController_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_DisplayController_DARWIN.cxx
+	SOURCES += UNIX_DisplayController_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_DisplayController_FREEBSD.cxx
+	SOURCES += UNIX_DisplayController_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_DisplayController_HPUX.cxx
+	SOURCES += UNIX_DisplayController_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_DisplayController_LINUX.cxx
+	SOURCES += UNIX_DisplayController_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_DisplayController_SOLARIS.cxx
+	SOURCES += UNIX_DisplayController_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_DisplayController_TRU64.cxx
+	SOURCES += UNIX_DisplayController_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_DisplayController_VMS.cxx
+	SOURCES += UNIX_DisplayController_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_DisplayController_WIN32.cxx
+	SOURCES += UNIX_DisplayController_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_DisplayController_ZOS.cxx
+	SOURCES += UNIX_DisplayController_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_DisplayController_STUB.cxx
+	SOURCES += UNIX_DisplayController_STUB.cxx
 endif
 
 LIBRARIES = \

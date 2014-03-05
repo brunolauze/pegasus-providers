@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ConfigurationCapacityMain.cpp \
 	UNIX_ConfigurationCapacity.cpp \
-	UNIX_ConfigurationCapacityProvider.cpp \
-	UNIX_ConfigurationCapacityMain.cpp
+	UNIX_ConfigurationCapacityProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ConfigurationCapacity_AIX.cxx
+	SOURCES += UNIX_ConfigurationCapacity_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ConfigurationCapacity_DARWIN.cxx
+	SOURCES += UNIX_ConfigurationCapacity_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ConfigurationCapacity_FREEBSD.cxx
+	SOURCES += UNIX_ConfigurationCapacity_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ConfigurationCapacity_HPUX.cxx
+	SOURCES += UNIX_ConfigurationCapacity_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ConfigurationCapacity_LINUX.cxx
+	SOURCES += UNIX_ConfigurationCapacity_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ConfigurationCapacity_SOLARIS.cxx
+	SOURCES += UNIX_ConfigurationCapacity_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ConfigurationCapacity_TRU64.cxx
+	SOURCES += UNIX_ConfigurationCapacity_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ConfigurationCapacity_VMS.cxx
+	SOURCES += UNIX_ConfigurationCapacity_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ConfigurationCapacity_WIN32.cxx
+	SOURCES += UNIX_ConfigurationCapacity_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ConfigurationCapacity_ZOS.cxx
+	SOURCES += UNIX_ConfigurationCapacity_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ConfigurationCapacity_STUB.cxx
+	SOURCES += UNIX_ConfigurationCapacity_STUB.cxx
 endif
 
 LIBRARIES = \

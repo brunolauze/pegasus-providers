@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PackageAlarmMain.cpp \
 	UNIX_PackageAlarm.cpp \
-	UNIX_PackageAlarmProvider.cpp \
-	UNIX_PackageAlarmMain.cpp
+	UNIX_PackageAlarmProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PackageAlarm_AIX.cxx
+	SOURCES += UNIX_PackageAlarm_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PackageAlarm_DARWIN.cxx
+	SOURCES += UNIX_PackageAlarm_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PackageAlarm_FREEBSD.cxx
+	SOURCES += UNIX_PackageAlarm_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PackageAlarm_HPUX.cxx
+	SOURCES += UNIX_PackageAlarm_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PackageAlarm_LINUX.cxx
+	SOURCES += UNIX_PackageAlarm_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PackageAlarm_SOLARIS.cxx
+	SOURCES += UNIX_PackageAlarm_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PackageAlarm_TRU64.cxx
+	SOURCES += UNIX_PackageAlarm_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PackageAlarm_VMS.cxx
+	SOURCES += UNIX_PackageAlarm_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PackageAlarm_WIN32.cxx
+	SOURCES += UNIX_PackageAlarm_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PackageAlarm_ZOS.cxx
+	SOURCES += UNIX_PackageAlarm_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PackageAlarm_STUB.cxx
+	SOURCES += UNIX_PackageAlarm_STUB.cxx
 endif
 
 LIBRARIES = \

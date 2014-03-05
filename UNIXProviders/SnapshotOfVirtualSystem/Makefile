@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SnapshotOfVirtualSystemMain.cpp \
 	UNIX_SnapshotOfVirtualSystem.cpp \
-	UNIX_SnapshotOfVirtualSystemProvider.cpp \
-	UNIX_SnapshotOfVirtualSystemMain.cpp
+	UNIX_SnapshotOfVirtualSystemProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SnapshotOfVirtualSystem_AIX.cxx
+	SOURCES += UNIX_SnapshotOfVirtualSystem_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SnapshotOfVirtualSystem_DARWIN.cxx
+	SOURCES += UNIX_SnapshotOfVirtualSystem_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SnapshotOfVirtualSystem_FREEBSD.cxx
+	SOURCES += UNIX_SnapshotOfVirtualSystem_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SnapshotOfVirtualSystem_HPUX.cxx
+	SOURCES += UNIX_SnapshotOfVirtualSystem_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SnapshotOfVirtualSystem_LINUX.cxx
+	SOURCES += UNIX_SnapshotOfVirtualSystem_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SnapshotOfVirtualSystem_SOLARIS.cxx
+	SOURCES += UNIX_SnapshotOfVirtualSystem_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SnapshotOfVirtualSystem_TRU64.cxx
+	SOURCES += UNIX_SnapshotOfVirtualSystem_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SnapshotOfVirtualSystem_VMS.cxx
+	SOURCES += UNIX_SnapshotOfVirtualSystem_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SnapshotOfVirtualSystem_WIN32.cxx
+	SOURCES += UNIX_SnapshotOfVirtualSystem_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SnapshotOfVirtualSystem_ZOS.cxx
+	SOURCES += UNIX_SnapshotOfVirtualSystem_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SnapshotOfVirtualSystem_STUB.cxx
+	SOURCES += UNIX_SnapshotOfVirtualSystem_STUB.cxx
 endif
 
 LIBRARIES = \

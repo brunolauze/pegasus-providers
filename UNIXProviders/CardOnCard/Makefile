@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_CardOnCardMain.cpp \
 	UNIX_CardOnCard.cpp \
-	UNIX_CardOnCardProvider.cpp \
-	UNIX_CardOnCardMain.cpp
+	UNIX_CardOnCardProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_CardOnCard_AIX.cxx
+	SOURCES += UNIX_CardOnCard_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_CardOnCard_DARWIN.cxx
+	SOURCES += UNIX_CardOnCard_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_CardOnCard_FREEBSD.cxx
+	SOURCES += UNIX_CardOnCard_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_CardOnCard_HPUX.cxx
+	SOURCES += UNIX_CardOnCard_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_CardOnCard_LINUX.cxx
+	SOURCES += UNIX_CardOnCard_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_CardOnCard_SOLARIS.cxx
+	SOURCES += UNIX_CardOnCard_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_CardOnCard_TRU64.cxx
+	SOURCES += UNIX_CardOnCard_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_CardOnCard_VMS.cxx
+	SOURCES += UNIX_CardOnCard_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_CardOnCard_WIN32.cxx
+	SOURCES += UNIX_CardOnCard_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_CardOnCard_ZOS.cxx
+	SOURCES += UNIX_CardOnCard_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_CardOnCard_STUB.cxx
+	SOURCES += UNIX_CardOnCard_STUB.cxx
 endif
 
 LIBRARIES = \

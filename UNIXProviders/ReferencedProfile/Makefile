@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_ReferencedProfileProvider.cpp \
 	UNIX_ReferencedProfileMain.cpp
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ReferencedProfile_AIX.cxx
+	SOURCES += UNIX_ReferencedProfile_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ReferencedProfile_DARWIN.cxx
+	SOURCES += UNIX_ReferencedProfile_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ReferencedProfile_FREEBSD.cxx
+	SOURCES += UNIX_ReferencedProfile_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ReferencedProfile_HPUX.cxx
+	SOURCES += UNIX_ReferencedProfile_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ReferencedProfile_LINUX.cxx
+	SOURCES += UNIX_ReferencedProfile_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ReferencedProfile_SOLARIS.cxx
+	SOURCES += UNIX_ReferencedProfile_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ReferencedProfile_TRU64.cxx
+	SOURCES += UNIX_ReferencedProfile_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ReferencedProfile_VMS.cxx
+	SOURCES += UNIX_ReferencedProfile_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ReferencedProfile_WIN32.cxx
+	SOURCES += UNIX_ReferencedProfile_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ReferencedProfile_ZOS.cxx
+	SOURCES += UNIX_ReferencedProfile_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ReferencedProfile_STUB.cxx
+	SOURCES += UNIX_ReferencedProfile_STUB.cxx
 endif
 
 LIBRARIES = \

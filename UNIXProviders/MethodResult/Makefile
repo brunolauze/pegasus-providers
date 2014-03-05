@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_MethodResultMain.cpp \
 	UNIX_MethodResult.cpp \
-	UNIX_MethodResultProvider.cpp \
-	UNIX_MethodResultMain.cpp
+	UNIX_MethodResultProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_MethodResult_AIX.cxx
+	SOURCES += UNIX_MethodResult_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_MethodResult_DARWIN.cxx
+	SOURCES += UNIX_MethodResult_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_MethodResult_FREEBSD.cxx
+	SOURCES += UNIX_MethodResult_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_MethodResult_HPUX.cxx
+	SOURCES += UNIX_MethodResult_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_MethodResult_LINUX.cxx
+	SOURCES += UNIX_MethodResult_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_MethodResult_SOLARIS.cxx
+	SOURCES += UNIX_MethodResult_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_MethodResult_TRU64.cxx
+	SOURCES += UNIX_MethodResult_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_MethodResult_VMS.cxx
+	SOURCES += UNIX_MethodResult_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_MethodResult_WIN32.cxx
+	SOURCES += UNIX_MethodResult_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_MethodResult_ZOS.cxx
+	SOURCES += UNIX_MethodResult_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_MethodResult_STUB.cxx
+	SOURCES += UNIX_MethodResult_STUB.cxx
 endif
 
 LIBRARIES = \

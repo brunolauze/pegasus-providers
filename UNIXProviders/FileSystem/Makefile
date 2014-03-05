@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_FileSystemMain.cpp \
 	UNIX_FileSystem.cpp \
-	UNIX_FileSystemProvider.cpp \
-	UNIX_FileSystemMain.cpp
+	UNIX_FileSystemProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_FileSystem_AIX.cxx
+	SOURCES += UNIX_FileSystem_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_FileSystem_DARWIN.cxx
+	SOURCES += UNIX_FileSystem_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_FileSystem_FREEBSD.cxx
+	SOURCES += UNIX_FileSystem_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_FileSystem_HPUX.cxx
+	SOURCES += UNIX_FileSystem_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_FileSystem_LINUX.cxx
+	SOURCES += UNIX_FileSystem_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_FileSystem_SOLARIS.cxx
+	SOURCES += UNIX_FileSystem_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_FileSystem_TRU64.cxx
+	SOURCES += UNIX_FileSystem_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_FileSystem_VMS.cxx
+	SOURCES += UNIX_FileSystem_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_FileSystem_WIN32.cxx
+	SOURCES += UNIX_FileSystem_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_FileSystem_ZOS.cxx
+	SOURCES += UNIX_FileSystem_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_FileSystem_STUB.cxx
+	SOURCES += UNIX_FileSystem_STUB.cxx
 endif
 
 LIBRARIES = \

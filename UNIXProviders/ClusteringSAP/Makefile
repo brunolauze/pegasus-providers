@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ClusteringSAPMain.cpp \
 	UNIX_ClusteringSAP.cpp \
-	UNIX_ClusteringSAPProvider.cpp \
-	UNIX_ClusteringSAPMain.cpp
+	UNIX_ClusteringSAPProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ClusteringSAP_AIX.cxx
+	SOURCES += UNIX_ClusteringSAP_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ClusteringSAP_DARWIN.cxx
+	SOURCES += UNIX_ClusteringSAP_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ClusteringSAP_FREEBSD.cxx
+	SOURCES += UNIX_ClusteringSAP_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ClusteringSAP_HPUX.cxx
+	SOURCES += UNIX_ClusteringSAP_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ClusteringSAP_LINUX.cxx
+	SOURCES += UNIX_ClusteringSAP_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ClusteringSAP_SOLARIS.cxx
+	SOURCES += UNIX_ClusteringSAP_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ClusteringSAP_TRU64.cxx
+	SOURCES += UNIX_ClusteringSAP_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ClusteringSAP_VMS.cxx
+	SOURCES += UNIX_ClusteringSAP_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ClusteringSAP_WIN32.cxx
+	SOURCES += UNIX_ClusteringSAP_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ClusteringSAP_ZOS.cxx
+	SOURCES += UNIX_ClusteringSAP_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ClusteringSAP_STUB.cxx
+	SOURCES += UNIX_ClusteringSAP_STUB.cxx
 endif
 
 LIBRARIES = \

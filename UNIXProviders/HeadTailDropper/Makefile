@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_HeadTailDropperMain.cpp \
 	UNIX_HeadTailDropper.cpp \
-	UNIX_HeadTailDropperProvider.cpp \
-	UNIX_HeadTailDropperMain.cpp
+	UNIX_HeadTailDropperProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_HeadTailDropper_AIX.cxx
+	SOURCES += UNIX_HeadTailDropper_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_HeadTailDropper_DARWIN.cxx
+	SOURCES += UNIX_HeadTailDropper_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_HeadTailDropper_FREEBSD.cxx
+	SOURCES += UNIX_HeadTailDropper_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_HeadTailDropper_HPUX.cxx
+	SOURCES += UNIX_HeadTailDropper_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_HeadTailDropper_LINUX.cxx
+	SOURCES += UNIX_HeadTailDropper_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_HeadTailDropper_SOLARIS.cxx
+	SOURCES += UNIX_HeadTailDropper_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_HeadTailDropper_TRU64.cxx
+	SOURCES += UNIX_HeadTailDropper_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_HeadTailDropper_VMS.cxx
+	SOURCES += UNIX_HeadTailDropper_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_HeadTailDropper_WIN32.cxx
+	SOURCES += UNIX_HeadTailDropper_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_HeadTailDropper_ZOS.cxx
+	SOURCES += UNIX_HeadTailDropper_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_HeadTailDropper_STUB.cxx
+	SOURCES += UNIX_HeadTailDropper_STUB.cxx
 endif
 
 LIBRARIES = \

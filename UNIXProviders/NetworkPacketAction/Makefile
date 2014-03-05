@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_NetworkPacketActionMain.cpp \
 	UNIX_NetworkPacketAction.cpp \
-	UNIX_NetworkPacketActionProvider.cpp \
-	UNIX_NetworkPacketActionMain.cpp
+	UNIX_NetworkPacketActionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_NetworkPacketAction_AIX.cxx
+	SOURCES += UNIX_NetworkPacketAction_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_NetworkPacketAction_DARWIN.cxx
+	SOURCES += UNIX_NetworkPacketAction_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_NetworkPacketAction_FREEBSD.cxx
+	SOURCES += UNIX_NetworkPacketAction_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_NetworkPacketAction_HPUX.cxx
+	SOURCES += UNIX_NetworkPacketAction_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_NetworkPacketAction_LINUX.cxx
+	SOURCES += UNIX_NetworkPacketAction_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_NetworkPacketAction_SOLARIS.cxx
+	SOURCES += UNIX_NetworkPacketAction_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_NetworkPacketAction_TRU64.cxx
+	SOURCES += UNIX_NetworkPacketAction_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_NetworkPacketAction_VMS.cxx
+	SOURCES += UNIX_NetworkPacketAction_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_NetworkPacketAction_WIN32.cxx
+	SOURCES += UNIX_NetworkPacketAction_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_NetworkPacketAction_ZOS.cxx
+	SOURCES += UNIX_NetworkPacketAction_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_NetworkPacketAction_STUB.cxx
+	SOURCES += UNIX_NetworkPacketAction_STUB.cxx
 endif
 
 LIBRARIES = \

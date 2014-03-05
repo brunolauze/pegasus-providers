@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_StaticForwardingEntryMain.cpp \
 	UNIX_StaticForwardingEntry.cpp \
-	UNIX_StaticForwardingEntryProvider.cpp \
-	UNIX_StaticForwardingEntryMain.cpp
+	UNIX_StaticForwardingEntryProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_StaticForwardingEntry_AIX.cxx
+	SOURCES += UNIX_StaticForwardingEntry_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_StaticForwardingEntry_DARWIN.cxx
+	SOURCES += UNIX_StaticForwardingEntry_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_StaticForwardingEntry_FREEBSD.cxx
+	SOURCES += UNIX_StaticForwardingEntry_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_StaticForwardingEntry_HPUX.cxx
+	SOURCES += UNIX_StaticForwardingEntry_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_StaticForwardingEntry_LINUX.cxx
+	SOURCES += UNIX_StaticForwardingEntry_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_StaticForwardingEntry_SOLARIS.cxx
+	SOURCES += UNIX_StaticForwardingEntry_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_StaticForwardingEntry_TRU64.cxx
+	SOURCES += UNIX_StaticForwardingEntry_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_StaticForwardingEntry_VMS.cxx
+	SOURCES += UNIX_StaticForwardingEntry_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_StaticForwardingEntry_WIN32.cxx
+	SOURCES += UNIX_StaticForwardingEntry_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_StaticForwardingEntry_ZOS.cxx
+	SOURCES += UNIX_StaticForwardingEntry_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_StaticForwardingEntry_STUB.cxx
+	SOURCES += UNIX_StaticForwardingEntry_STUB.cxx
 endif
 
 LIBRARIES = \

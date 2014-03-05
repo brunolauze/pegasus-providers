@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_WiFiPortMain.cpp \
 	UNIX_WiFiPort.cpp \
-	UNIX_WiFiPortProvider.cpp \
-	UNIX_WiFiPortMain.cpp
+	UNIX_WiFiPortProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_WiFiPort_AIX.cxx
+	SOURCES += UNIX_WiFiPort_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_WiFiPort_DARWIN.cxx
+	SOURCES += UNIX_WiFiPort_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_WiFiPort_FREEBSD.cxx
+	SOURCES += UNIX_WiFiPort_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_WiFiPort_HPUX.cxx
+	SOURCES += UNIX_WiFiPort_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_WiFiPort_LINUX.cxx
+	SOURCES += UNIX_WiFiPort_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_WiFiPort_SOLARIS.cxx
+	SOURCES += UNIX_WiFiPort_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_WiFiPort_TRU64.cxx
+	SOURCES += UNIX_WiFiPort_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_WiFiPort_VMS.cxx
+	SOURCES += UNIX_WiFiPort_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_WiFiPort_WIN32.cxx
+	SOURCES += UNIX_WiFiPort_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_WiFiPort_ZOS.cxx
+	SOURCES += UNIX_WiFiPort_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_WiFiPort_STUB.cxx
+	SOURCES += UNIX_WiFiPort_STUB.cxx
 endif
 
 LIBRARIES = \

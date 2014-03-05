@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_BlockStatisticsServiceMain.cpp \
 	UNIX_BlockStatisticsService.cpp \
-	UNIX_BlockStatisticsServiceProvider.cpp \
-	UNIX_BlockStatisticsServiceMain.cpp
+	UNIX_BlockStatisticsServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BlockStatisticsService_AIX.cxx
+	SOURCES += UNIX_BlockStatisticsService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BlockStatisticsService_DARWIN.cxx
+	SOURCES += UNIX_BlockStatisticsService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BlockStatisticsService_FREEBSD.cxx
+	SOURCES += UNIX_BlockStatisticsService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BlockStatisticsService_HPUX.cxx
+	SOURCES += UNIX_BlockStatisticsService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BlockStatisticsService_LINUX.cxx
+	SOURCES += UNIX_BlockStatisticsService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BlockStatisticsService_SOLARIS.cxx
+	SOURCES += UNIX_BlockStatisticsService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BlockStatisticsService_TRU64.cxx
+	SOURCES += UNIX_BlockStatisticsService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BlockStatisticsService_VMS.cxx
+	SOURCES += UNIX_BlockStatisticsService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BlockStatisticsService_WIN32.cxx
+	SOURCES += UNIX_BlockStatisticsService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BlockStatisticsService_ZOS.cxx
+	SOURCES += UNIX_BlockStatisticsService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BlockStatisticsService_STUB.cxx
+	SOURCES += UNIX_BlockStatisticsService_STUB.cxx
 endif
 
 LIBRARIES = \

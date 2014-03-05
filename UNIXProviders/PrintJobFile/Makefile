@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PrintJobFileMain.cpp \
 	UNIX_PrintJobFile.cpp \
-	UNIX_PrintJobFileProvider.cpp \
-	UNIX_PrintJobFileMain.cpp
+	UNIX_PrintJobFileProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PrintJobFile_AIX.cxx
+	SOURCES += UNIX_PrintJobFile_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PrintJobFile_DARWIN.cxx
+	SOURCES += UNIX_PrintJobFile_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PrintJobFile_FREEBSD.cxx
+	SOURCES += UNIX_PrintJobFile_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PrintJobFile_HPUX.cxx
+	SOURCES += UNIX_PrintJobFile_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PrintJobFile_LINUX.cxx
+	SOURCES += UNIX_PrintJobFile_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PrintJobFile_SOLARIS.cxx
+	SOURCES += UNIX_PrintJobFile_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PrintJobFile_TRU64.cxx
+	SOURCES += UNIX_PrintJobFile_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PrintJobFile_VMS.cxx
+	SOURCES += UNIX_PrintJobFile_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PrintJobFile_WIN32.cxx
+	SOURCES += UNIX_PrintJobFile_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PrintJobFile_ZOS.cxx
+	SOURCES += UNIX_PrintJobFile_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PrintJobFile_STUB.cxx
+	SOURCES += UNIX_PrintJobFile_STUB.cxx
 endif
 
 LIBRARIES = \

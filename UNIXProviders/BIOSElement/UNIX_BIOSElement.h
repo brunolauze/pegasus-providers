@@ -32,9 +32,23 @@
 #ifndef __UNIX_BIOSELEMENT_H
 #define __UNIX_BIOSELEMENT_H
 
+#include "CIM_LogicalElement.h"
 #include "UNIX_BIOSElementDeps.h"
 
+//CIM_SoftwareElemen
+#define PROPERTY_VERSION				"Version"
+#define PROPERTY_SOFTWARE_ELEMENT_STATE				"SoftwareElementState"
+#define PROPERTY_SOFTWARE_ELEMENT_ID				"SoftwareElementID"
+#define PROPERTY_TARGET_OPERATING_SYSTEM				"TargetOperatingSystem"
+#define PROPERTY_OTHER_TARGET_OS				"OtherTargetOS"
+#define PROPERTY_MANUFACTURER				"Manufacturer"
+#define PROPERTY_BUILD_NUMBER				"BuildNumber"
+#define PROPERTY_SERIAL_NUMBER				"SerialNumber"
+#define PROPERTY_CODE_SET				"CodeSet"
+#define PROPERTY_IDENTIFICATION_CODE				"IdentificationCode"
+#define PROPERTY_LANGUAGE_EDITION				"LanguageEdition"
 
+//CIM_BIOSElement
 #define PROPERTY_PRIMARY_B_I_OS				"PrimaryBIOS"
 #define PROPERTY_LIST_OF_LANGUAGES				"ListOfLanguages"
 #define PROPERTY_CURRENT_LANGUAGE				"CurrentLanguage"
@@ -46,7 +60,7 @@
 
 
 class UNIX_BIOSElement :
-	public CIM_LogicalElement
+	public CIM_LogicalElement /* UNIX_SoftwareElement */
 {
 public:
 

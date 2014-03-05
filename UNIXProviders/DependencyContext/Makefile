@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_DependencyContextMain.cpp \
 	UNIX_DependencyContext.cpp \
-	UNIX_DependencyContextProvider.cpp \
-	UNIX_DependencyContextMain.cpp
+	UNIX_DependencyContextProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_DependencyContext_AIX.cxx
+	SOURCES += UNIX_DependencyContext_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_DependencyContext_DARWIN.cxx
+	SOURCES += UNIX_DependencyContext_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_DependencyContext_FREEBSD.cxx
+	SOURCES += UNIX_DependencyContext_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_DependencyContext_HPUX.cxx
+	SOURCES += UNIX_DependencyContext_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_DependencyContext_LINUX.cxx
+	SOURCES += UNIX_DependencyContext_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_DependencyContext_SOLARIS.cxx
+	SOURCES += UNIX_DependencyContext_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_DependencyContext_TRU64.cxx
+	SOURCES += UNIX_DependencyContext_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_DependencyContext_VMS.cxx
+	SOURCES += UNIX_DependencyContext_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_DependencyContext_WIN32.cxx
+	SOURCES += UNIX_DependencyContext_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_DependencyContext_ZOS.cxx
+	SOURCES += UNIX_DependencyContext_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_DependencyContext_STUB.cxx
+	SOURCES += UNIX_DependencyContext_STUB.cxx
 endif
 
 LIBRARIES = \

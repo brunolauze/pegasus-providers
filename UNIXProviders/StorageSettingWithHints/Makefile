@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_StorageSettingWithHintsMain.cpp \
 	UNIX_StorageSettingWithHints.cpp \
-	UNIX_StorageSettingWithHintsProvider.cpp \
-	UNIX_StorageSettingWithHintsMain.cpp
+	UNIX_StorageSettingWithHintsProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_StorageSettingWithHints_AIX.cxx
+	SOURCES += UNIX_StorageSettingWithHints_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_StorageSettingWithHints_DARWIN.cxx
+	SOURCES += UNIX_StorageSettingWithHints_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_StorageSettingWithHints_FREEBSD.cxx
+	SOURCES += UNIX_StorageSettingWithHints_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_StorageSettingWithHints_HPUX.cxx
+	SOURCES += UNIX_StorageSettingWithHints_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_StorageSettingWithHints_LINUX.cxx
+	SOURCES += UNIX_StorageSettingWithHints_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_StorageSettingWithHints_SOLARIS.cxx
+	SOURCES += UNIX_StorageSettingWithHints_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_StorageSettingWithHints_TRU64.cxx
+	SOURCES += UNIX_StorageSettingWithHints_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_StorageSettingWithHints_VMS.cxx
+	SOURCES += UNIX_StorageSettingWithHints_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_StorageSettingWithHints_WIN32.cxx
+	SOURCES += UNIX_StorageSettingWithHints_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_StorageSettingWithHints_ZOS.cxx
+	SOURCES += UNIX_StorageSettingWithHints_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_StorageSettingWithHints_STUB.cxx
+	SOURCES += UNIX_StorageSettingWithHints_STUB.cxx
 endif
 
 LIBRARIES = \

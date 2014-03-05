@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_WiFiRadioMain.cpp \
 	UNIX_WiFiRadio.cpp \
-	UNIX_WiFiRadioProvider.cpp \
-	UNIX_WiFiRadioMain.cpp
+	UNIX_WiFiRadioProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_WiFiRadio_AIX.cxx
+	SOURCES += UNIX_WiFiRadio_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_WiFiRadio_DARWIN.cxx
+	SOURCES += UNIX_WiFiRadio_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_WiFiRadio_FREEBSD.cxx
+	SOURCES += UNIX_WiFiRadio_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_WiFiRadio_HPUX.cxx
+	SOURCES += UNIX_WiFiRadio_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_WiFiRadio_LINUX.cxx
+	SOURCES += UNIX_WiFiRadio_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_WiFiRadio_SOLARIS.cxx
+	SOURCES += UNIX_WiFiRadio_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_WiFiRadio_TRU64.cxx
+	SOURCES += UNIX_WiFiRadio_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_WiFiRadio_VMS.cxx
+	SOURCES += UNIX_WiFiRadio_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_WiFiRadio_WIN32.cxx
+	SOURCES += UNIX_WiFiRadio_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_WiFiRadio_ZOS.cxx
+	SOURCES += UNIX_WiFiRadio_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_WiFiRadio_STUB.cxx
+	SOURCES += UNIX_WiFiRadio_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SharingDependencyMain.cpp \
 	UNIX_SharingDependency.cpp \
-	UNIX_SharingDependencyProvider.cpp \
-	UNIX_SharingDependencyMain.cpp
+	UNIX_SharingDependencyProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SharingDependency_AIX.cxx
+	SOURCES += UNIX_SharingDependency_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SharingDependency_DARWIN.cxx
+	SOURCES += UNIX_SharingDependency_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SharingDependency_FREEBSD.cxx
+	SOURCES += UNIX_SharingDependency_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SharingDependency_HPUX.cxx
+	SOURCES += UNIX_SharingDependency_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SharingDependency_LINUX.cxx
+	SOURCES += UNIX_SharingDependency_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SharingDependency_SOLARIS.cxx
+	SOURCES += UNIX_SharingDependency_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SharingDependency_TRU64.cxx
+	SOURCES += UNIX_SharingDependency_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SharingDependency_VMS.cxx
+	SOURCES += UNIX_SharingDependency_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SharingDependency_WIN32.cxx
+	SOURCES += UNIX_SharingDependency_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SharingDependency_ZOS.cxx
+	SOURCES += UNIX_SharingDependency_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SharingDependency_STUB.cxx
+	SOURCES += UNIX_SharingDependency_STUB.cxx
 endif
 
 LIBRARIES = \

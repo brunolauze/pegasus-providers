@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ReflectorClientServiceMain.cpp \
 	UNIX_ReflectorClientService.cpp \
-	UNIX_ReflectorClientServiceProvider.cpp \
-	UNIX_ReflectorClientServiceMain.cpp
+	UNIX_ReflectorClientServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ReflectorClientService_AIX.cxx
+	SOURCES += UNIX_ReflectorClientService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ReflectorClientService_DARWIN.cxx
+	SOURCES += UNIX_ReflectorClientService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ReflectorClientService_FREEBSD.cxx
+	SOURCES += UNIX_ReflectorClientService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ReflectorClientService_HPUX.cxx
+	SOURCES += UNIX_ReflectorClientService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ReflectorClientService_LINUX.cxx
+	SOURCES += UNIX_ReflectorClientService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ReflectorClientService_SOLARIS.cxx
+	SOURCES += UNIX_ReflectorClientService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ReflectorClientService_TRU64.cxx
+	SOURCES += UNIX_ReflectorClientService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ReflectorClientService_VMS.cxx
+	SOURCES += UNIX_ReflectorClientService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ReflectorClientService_WIN32.cxx
+	SOURCES += UNIX_ReflectorClientService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ReflectorClientService_ZOS.cxx
+	SOURCES += UNIX_ReflectorClientService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ReflectorClientService_STUB.cxx
+	SOURCES += UNIX_ReflectorClientService_STUB.cxx
 endif
 
 LIBRARIES = \

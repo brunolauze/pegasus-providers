@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_OOBAlertServiceOnModemMain.cpp \
 	UNIX_OOBAlertServiceOnModem.cpp \
-	UNIX_OOBAlertServiceOnModemProvider.cpp \
-	UNIX_OOBAlertServiceOnModemMain.cpp
+	UNIX_OOBAlertServiceOnModemProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_OOBAlertServiceOnModem_AIX.cxx
+	SOURCES += UNIX_OOBAlertServiceOnModem_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_OOBAlertServiceOnModem_DARWIN.cxx
+	SOURCES += UNIX_OOBAlertServiceOnModem_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_OOBAlertServiceOnModem_FREEBSD.cxx
+	SOURCES += UNIX_OOBAlertServiceOnModem_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_OOBAlertServiceOnModem_HPUX.cxx
+	SOURCES += UNIX_OOBAlertServiceOnModem_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_OOBAlertServiceOnModem_LINUX.cxx
+	SOURCES += UNIX_OOBAlertServiceOnModem_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_OOBAlertServiceOnModem_SOLARIS.cxx
+	SOURCES += UNIX_OOBAlertServiceOnModem_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_OOBAlertServiceOnModem_TRU64.cxx
+	SOURCES += UNIX_OOBAlertServiceOnModem_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_OOBAlertServiceOnModem_VMS.cxx
+	SOURCES += UNIX_OOBAlertServiceOnModem_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_OOBAlertServiceOnModem_WIN32.cxx
+	SOURCES += UNIX_OOBAlertServiceOnModem_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_OOBAlertServiceOnModem_ZOS.cxx
+	SOURCES += UNIX_OOBAlertServiceOnModem_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_OOBAlertServiceOnModem_STUB.cxx
+	SOURCES += UNIX_OOBAlertServiceOnModem_STUB.cxx
 endif
 
 LIBRARIES = \

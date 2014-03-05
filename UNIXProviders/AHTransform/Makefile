@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AHTransformMain.cpp \
 	UNIX_AHTransform.cpp \
-	UNIX_AHTransformProvider.cpp \
-	UNIX_AHTransformMain.cpp
+	UNIX_AHTransformProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AHTransform_AIX.cxx
+	SOURCES += UNIX_AHTransform_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AHTransform_DARWIN.cxx
+	SOURCES += UNIX_AHTransform_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AHTransform_FREEBSD.cxx
+	SOURCES += UNIX_AHTransform_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AHTransform_HPUX.cxx
+	SOURCES += UNIX_AHTransform_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AHTransform_LINUX.cxx
+	SOURCES += UNIX_AHTransform_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AHTransform_SOLARIS.cxx
+	SOURCES += UNIX_AHTransform_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AHTransform_TRU64.cxx
+	SOURCES += UNIX_AHTransform_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AHTransform_VMS.cxx
+	SOURCES += UNIX_AHTransform_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AHTransform_WIN32.cxx
+	SOURCES += UNIX_AHTransform_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AHTransform_ZOS.cxx
+	SOURCES += UNIX_AHTransform_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AHTransform_STUB.cxx
+	SOURCES += UNIX_AHTransform_STUB.cxx
 endif
 
 LIBRARIES = \

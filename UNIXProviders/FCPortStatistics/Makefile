@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_FCPortStatisticsMain.cpp \
 	UNIX_FCPortStatistics.cpp \
-	UNIX_FCPortStatisticsProvider.cpp \
-	UNIX_FCPortStatisticsMain.cpp
+	UNIX_FCPortStatisticsProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_FCPortStatistics_AIX.cxx
+	SOURCES += UNIX_FCPortStatistics_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_FCPortStatistics_DARWIN.cxx
+	SOURCES += UNIX_FCPortStatistics_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_FCPortStatistics_FREEBSD.cxx
+	SOURCES += UNIX_FCPortStatistics_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_FCPortStatistics_HPUX.cxx
+	SOURCES += UNIX_FCPortStatistics_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_FCPortStatistics_LINUX.cxx
+	SOURCES += UNIX_FCPortStatistics_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_FCPortStatistics_SOLARIS.cxx
+	SOURCES += UNIX_FCPortStatistics_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_FCPortStatistics_TRU64.cxx
+	SOURCES += UNIX_FCPortStatistics_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_FCPortStatistics_VMS.cxx
+	SOURCES += UNIX_FCPortStatistics_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_FCPortStatistics_WIN32.cxx
+	SOURCES += UNIX_FCPortStatistics_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_FCPortStatistics_ZOS.cxx
+	SOURCES += UNIX_FCPortStatistics_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_FCPortStatistics_STUB.cxx
+	SOURCES += UNIX_FCPortStatistics_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PCMCIAControllerMain.cpp \
 	UNIX_PCMCIAController.cpp \
-	UNIX_PCMCIAControllerProvider.cpp \
-	UNIX_PCMCIAControllerMain.cpp
+	UNIX_PCMCIAControllerProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PCMCIAController_AIX.cxx
+	SOURCES += UNIX_PCMCIAController_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PCMCIAController_DARWIN.cxx
+	SOURCES += UNIX_PCMCIAController_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PCMCIAController_FREEBSD.cxx
+	SOURCES += UNIX_PCMCIAController_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PCMCIAController_HPUX.cxx
+	SOURCES += UNIX_PCMCIAController_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PCMCIAController_LINUX.cxx
+	SOURCES += UNIX_PCMCIAController_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PCMCIAController_SOLARIS.cxx
+	SOURCES += UNIX_PCMCIAController_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PCMCIAController_TRU64.cxx
+	SOURCES += UNIX_PCMCIAController_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PCMCIAController_VMS.cxx
+	SOURCES += UNIX_PCMCIAController_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PCMCIAController_WIN32.cxx
+	SOURCES += UNIX_PCMCIAController_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PCMCIAController_ZOS.cxx
+	SOURCES += UNIX_PCMCIAController_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PCMCIAController_STUB.cxx
+	SOURCES += UNIX_PCMCIAController_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ElementsLinkedMain.cpp \
 	UNIX_ElementsLinked.cpp \
-	UNIX_ElementsLinkedProvider.cpp \
-	UNIX_ElementsLinkedMain.cpp
+	UNIX_ElementsLinkedProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ElementsLinked_AIX.cxx
+	SOURCES += UNIX_ElementsLinked_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ElementsLinked_DARWIN.cxx
+	SOURCES += UNIX_ElementsLinked_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ElementsLinked_FREEBSD.cxx
+	SOURCES += UNIX_ElementsLinked_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ElementsLinked_HPUX.cxx
+	SOURCES += UNIX_ElementsLinked_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ElementsLinked_LINUX.cxx
+	SOURCES += UNIX_ElementsLinked_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ElementsLinked_SOLARIS.cxx
+	SOURCES += UNIX_ElementsLinked_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ElementsLinked_TRU64.cxx
+	SOURCES += UNIX_ElementsLinked_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ElementsLinked_VMS.cxx
+	SOURCES += UNIX_ElementsLinked_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ElementsLinked_WIN32.cxx
+	SOURCES += UNIX_ElementsLinked_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ElementsLinked_ZOS.cxx
+	SOURCES += UNIX_ElementsLinked_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ElementsLinked_STUB.cxx
+	SOURCES += UNIX_ElementsLinked_STUB.cxx
 endif
 
 LIBRARIES = \

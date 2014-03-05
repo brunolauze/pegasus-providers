@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_VideoHeadMain.cpp \
 	UNIX_VideoHead.cpp \
-	UNIX_VideoHeadProvider.cpp \
-	UNIX_VideoHeadMain.cpp
+	UNIX_VideoHeadProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_VideoHead_AIX.cxx
+	SOURCES += UNIX_VideoHead_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_VideoHead_DARWIN.cxx
+	SOURCES += UNIX_VideoHead_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_VideoHead_FREEBSD.cxx
+	SOURCES += UNIX_VideoHead_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_VideoHead_HPUX.cxx
+	SOURCES += UNIX_VideoHead_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_VideoHead_LINUX.cxx
+	SOURCES += UNIX_VideoHead_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_VideoHead_SOLARIS.cxx
+	SOURCES += UNIX_VideoHead_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_VideoHead_TRU64.cxx
+	SOURCES += UNIX_VideoHead_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_VideoHead_VMS.cxx
+	SOURCES += UNIX_VideoHead_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_VideoHead_WIN32.cxx
+	SOURCES += UNIX_VideoHead_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_VideoHead_ZOS.cxx
+	SOURCES += UNIX_VideoHead_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_VideoHead_STUB.cxx
+	SOURCES += UNIX_VideoHead_STUB.cxx
 endif
 
 LIBRARIES = \

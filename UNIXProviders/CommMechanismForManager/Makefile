@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_CommMechanismForManagerMain.cpp \
 	UNIX_CommMechanismForManager.cpp \
-	UNIX_CommMechanismForManagerProvider.cpp \
-	UNIX_CommMechanismForManagerMain.cpp
+	UNIX_CommMechanismForManagerProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_CommMechanismForManager_AIX.cxx
+	SOURCES += UNIX_CommMechanismForManager_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_CommMechanismForManager_DARWIN.cxx
+	SOURCES += UNIX_CommMechanismForManager_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_CommMechanismForManager_FREEBSD.cxx
+	SOURCES += UNIX_CommMechanismForManager_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_CommMechanismForManager_HPUX.cxx
+	SOURCES += UNIX_CommMechanismForManager_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_CommMechanismForManager_LINUX.cxx
+	SOURCES += UNIX_CommMechanismForManager_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_CommMechanismForManager_SOLARIS.cxx
+	SOURCES += UNIX_CommMechanismForManager_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_CommMechanismForManager_TRU64.cxx
+	SOURCES += UNIX_CommMechanismForManager_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_CommMechanismForManager_VMS.cxx
+	SOURCES += UNIX_CommMechanismForManager_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_CommMechanismForManager_WIN32.cxx
+	SOURCES += UNIX_CommMechanismForManager_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_CommMechanismForManager_ZOS.cxx
+	SOURCES += UNIX_CommMechanismForManager_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_CommMechanismForManager_STUB.cxx
+	SOURCES += UNIX_CommMechanismForManager_STUB.cxx
 endif
 
 LIBRARIES = \

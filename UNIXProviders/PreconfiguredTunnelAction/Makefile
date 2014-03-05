@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PreconfiguredTunnelActionMain.cpp \
 	UNIX_PreconfiguredTunnelAction.cpp \
-	UNIX_PreconfiguredTunnelActionProvider.cpp \
-	UNIX_PreconfiguredTunnelActionMain.cpp
+	UNIX_PreconfiguredTunnelActionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PreconfiguredTunnelAction_AIX.cxx
+	SOURCES += UNIX_PreconfiguredTunnelAction_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PreconfiguredTunnelAction_DARWIN.cxx
+	SOURCES += UNIX_PreconfiguredTunnelAction_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PreconfiguredTunnelAction_FREEBSD.cxx
+	SOURCES += UNIX_PreconfiguredTunnelAction_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PreconfiguredTunnelAction_HPUX.cxx
+	SOURCES += UNIX_PreconfiguredTunnelAction_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PreconfiguredTunnelAction_LINUX.cxx
+	SOURCES += UNIX_PreconfiguredTunnelAction_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PreconfiguredTunnelAction_SOLARIS.cxx
+	SOURCES += UNIX_PreconfiguredTunnelAction_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PreconfiguredTunnelAction_TRU64.cxx
+	SOURCES += UNIX_PreconfiguredTunnelAction_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PreconfiguredTunnelAction_VMS.cxx
+	SOURCES += UNIX_PreconfiguredTunnelAction_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PreconfiguredTunnelAction_WIN32.cxx
+	SOURCES += UNIX_PreconfiguredTunnelAction_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PreconfiguredTunnelAction_ZOS.cxx
+	SOURCES += UNIX_PreconfiguredTunnelAction_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PreconfiguredTunnelAction_STUB.cxx
+	SOURCES += UNIX_PreconfiguredTunnelAction_STUB.cxx
 endif
 
 LIBRARIES = \

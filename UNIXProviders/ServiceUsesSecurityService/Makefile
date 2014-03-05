@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ServiceUsesSecurityServiceMain.cpp \
 	UNIX_ServiceUsesSecurityService.cpp \
-	UNIX_ServiceUsesSecurityServiceProvider.cpp \
-	UNIX_ServiceUsesSecurityServiceMain.cpp
+	UNIX_ServiceUsesSecurityServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ServiceUsesSecurityService_AIX.cxx
+	SOURCES += UNIX_ServiceUsesSecurityService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ServiceUsesSecurityService_DARWIN.cxx
+	SOURCES += UNIX_ServiceUsesSecurityService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ServiceUsesSecurityService_FREEBSD.cxx
+	SOURCES += UNIX_ServiceUsesSecurityService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ServiceUsesSecurityService_HPUX.cxx
+	SOURCES += UNIX_ServiceUsesSecurityService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ServiceUsesSecurityService_LINUX.cxx
+	SOURCES += UNIX_ServiceUsesSecurityService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ServiceUsesSecurityService_SOLARIS.cxx
+	SOURCES += UNIX_ServiceUsesSecurityService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ServiceUsesSecurityService_TRU64.cxx
+	SOURCES += UNIX_ServiceUsesSecurityService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ServiceUsesSecurityService_VMS.cxx
+	SOURCES += UNIX_ServiceUsesSecurityService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ServiceUsesSecurityService_WIN32.cxx
+	SOURCES += UNIX_ServiceUsesSecurityService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ServiceUsesSecurityService_ZOS.cxx
+	SOURCES += UNIX_ServiceUsesSecurityService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ServiceUsesSecurityService_STUB.cxx
+	SOURCES += UNIX_ServiceUsesSecurityService_STUB.cxx
 endif
 
 LIBRARIES = \

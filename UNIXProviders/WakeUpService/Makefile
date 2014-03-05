@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_WakeUpServiceMain.cpp \
 	UNIX_WakeUpService.cpp \
-	UNIX_WakeUpServiceProvider.cpp \
-	UNIX_WakeUpServiceMain.cpp
+	UNIX_WakeUpServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_WakeUpService_AIX.cxx
+	SOURCES += UNIX_WakeUpService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_WakeUpService_DARWIN.cxx
+	SOURCES += UNIX_WakeUpService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_WakeUpService_FREEBSD.cxx
+	SOURCES += UNIX_WakeUpService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_WakeUpService_HPUX.cxx
+	SOURCES += UNIX_WakeUpService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_WakeUpService_LINUX.cxx
+	SOURCES += UNIX_WakeUpService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_WakeUpService_SOLARIS.cxx
+	SOURCES += UNIX_WakeUpService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_WakeUpService_TRU64.cxx
+	SOURCES += UNIX_WakeUpService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_WakeUpService_VMS.cxx
+	SOURCES += UNIX_WakeUpService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_WakeUpService_WIN32.cxx
+	SOURCES += UNIX_WakeUpService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_WakeUpService_ZOS.cxx
+	SOURCES += UNIX_WakeUpService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_WakeUpService_STUB.cxx
+	SOURCES += UNIX_WakeUpService_STUB.cxx
 endif
 
 LIBRARIES = \

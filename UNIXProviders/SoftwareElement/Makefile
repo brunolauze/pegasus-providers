@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SoftwareElementMain.cpp \
 	UNIX_SoftwareElement.cpp \
-	UNIX_SoftwareElementProvider.cpp \
-	UNIX_SoftwareElementMain.cpp
+	UNIX_SoftwareElementProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SoftwareElement_AIX.cxx
+	SOURCES += UNIX_SoftwareElement_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SoftwareElement_DARWIN.cxx
+	SOURCES += UNIX_SoftwareElement_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SoftwareElement_FREEBSD.cxx
+	SOURCES += UNIX_SoftwareElement_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SoftwareElement_HPUX.cxx
+	SOURCES += UNIX_SoftwareElement_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SoftwareElement_LINUX.cxx
+	SOURCES += UNIX_SoftwareElement_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SoftwareElement_SOLARIS.cxx
+	SOURCES += UNIX_SoftwareElement_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SoftwareElement_TRU64.cxx
+	SOURCES += UNIX_SoftwareElement_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SoftwareElement_VMS.cxx
+	SOURCES += UNIX_SoftwareElement_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SoftwareElement_WIN32.cxx
+	SOURCES += UNIX_SoftwareElement_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SoftwareElement_ZOS.cxx
+	SOURCES += UNIX_SoftwareElement_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SoftwareElement_STUB.cxx
+	SOURCES += UNIX_SoftwareElement_STUB.cxx
 endif
 
 LIBRARIES = \
@@ -94,8 +95,8 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-L/usr/local/lib -lpkg \
 	-lgeom \
+	-L/usr/local/lib -lpkg \
 	-lkvm \
 	-lcam
 

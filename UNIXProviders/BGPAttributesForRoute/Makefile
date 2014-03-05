@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_BGPAttributesForRouteMain.cpp \
 	UNIX_BGPAttributesForRoute.cpp \
-	UNIX_BGPAttributesForRouteProvider.cpp \
-	UNIX_BGPAttributesForRouteMain.cpp
+	UNIX_BGPAttributesForRouteProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BGPAttributesForRoute_AIX.cxx
+	SOURCES += UNIX_BGPAttributesForRoute_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BGPAttributesForRoute_DARWIN.cxx
+	SOURCES += UNIX_BGPAttributesForRoute_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BGPAttributesForRoute_FREEBSD.cxx
+	SOURCES += UNIX_BGPAttributesForRoute_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BGPAttributesForRoute_HPUX.cxx
+	SOURCES += UNIX_BGPAttributesForRoute_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BGPAttributesForRoute_LINUX.cxx
+	SOURCES += UNIX_BGPAttributesForRoute_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BGPAttributesForRoute_SOLARIS.cxx
+	SOURCES += UNIX_BGPAttributesForRoute_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BGPAttributesForRoute_TRU64.cxx
+	SOURCES += UNIX_BGPAttributesForRoute_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BGPAttributesForRoute_VMS.cxx
+	SOURCES += UNIX_BGPAttributesForRoute_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BGPAttributesForRoute_WIN32.cxx
+	SOURCES += UNIX_BGPAttributesForRoute_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BGPAttributesForRoute_ZOS.cxx
+	SOURCES += UNIX_BGPAttributesForRoute_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BGPAttributesForRoute_STUB.cxx
+	SOURCES += UNIX_BGPAttributesForRoute_STUB.cxx
 endif
 
 LIBRARIES = \

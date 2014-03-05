@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_StorageClientSettingDataMain.cpp \
 	UNIX_StorageClientSettingData.cpp \
-	UNIX_StorageClientSettingDataProvider.cpp \
-	UNIX_StorageClientSettingDataMain.cpp
+	UNIX_StorageClientSettingDataProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_StorageClientSettingData_AIX.cxx
+	SOURCES += UNIX_StorageClientSettingData_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_StorageClientSettingData_DARWIN.cxx
+	SOURCES += UNIX_StorageClientSettingData_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_StorageClientSettingData_FREEBSD.cxx
+	SOURCES += UNIX_StorageClientSettingData_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_StorageClientSettingData_HPUX.cxx
+	SOURCES += UNIX_StorageClientSettingData_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_StorageClientSettingData_LINUX.cxx
+	SOURCES += UNIX_StorageClientSettingData_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_StorageClientSettingData_SOLARIS.cxx
+	SOURCES += UNIX_StorageClientSettingData_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_StorageClientSettingData_TRU64.cxx
+	SOURCES += UNIX_StorageClientSettingData_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_StorageClientSettingData_VMS.cxx
+	SOURCES += UNIX_StorageClientSettingData_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_StorageClientSettingData_WIN32.cxx
+	SOURCES += UNIX_StorageClientSettingData_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_StorageClientSettingData_ZOS.cxx
+	SOURCES += UNIX_StorageClientSettingData_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_StorageClientSettingData_STUB.cxx
+	SOURCES += UNIX_StorageClientSettingData_STUB.cxx
 endif
 
 LIBRARIES = \

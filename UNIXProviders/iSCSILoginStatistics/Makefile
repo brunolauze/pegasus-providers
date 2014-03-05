@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_iSCSILoginStatisticsMain.cpp \
 	UNIX_iSCSILoginStatistics.cpp \
-	UNIX_iSCSILoginStatisticsProvider.cpp \
-	UNIX_iSCSILoginStatisticsMain.cpp
+	UNIX_iSCSILoginStatisticsProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_iSCSILoginStatistics_AIX.cxx
+	SOURCES += UNIX_iSCSILoginStatistics_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_iSCSILoginStatistics_DARWIN.cxx
+	SOURCES += UNIX_iSCSILoginStatistics_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_iSCSILoginStatistics_FREEBSD.cxx
+	SOURCES += UNIX_iSCSILoginStatistics_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_iSCSILoginStatistics_HPUX.cxx
+	SOURCES += UNIX_iSCSILoginStatistics_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_iSCSILoginStatistics_LINUX.cxx
+	SOURCES += UNIX_iSCSILoginStatistics_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_iSCSILoginStatistics_SOLARIS.cxx
+	SOURCES += UNIX_iSCSILoginStatistics_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_iSCSILoginStatistics_TRU64.cxx
+	SOURCES += UNIX_iSCSILoginStatistics_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_iSCSILoginStatistics_VMS.cxx
+	SOURCES += UNIX_iSCSILoginStatistics_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_iSCSILoginStatistics_WIN32.cxx
+	SOURCES += UNIX_iSCSILoginStatistics_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_iSCSILoginStatistics_ZOS.cxx
+	SOURCES += UNIX_iSCSILoginStatistics_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_iSCSILoginStatistics_STUB.cxx
+	SOURCES += UNIX_iSCSILoginStatistics_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_LogInDeviceFileMain.cpp \
 	UNIX_LogInDeviceFile.cpp \
-	UNIX_LogInDeviceFileProvider.cpp \
-	UNIX_LogInDeviceFileMain.cpp
+	UNIX_LogInDeviceFileProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_LogInDeviceFile_AIX.cxx
+	SOURCES += UNIX_LogInDeviceFile_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_LogInDeviceFile_DARWIN.cxx
+	SOURCES += UNIX_LogInDeviceFile_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_LogInDeviceFile_FREEBSD.cxx
+	SOURCES += UNIX_LogInDeviceFile_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_LogInDeviceFile_HPUX.cxx
+	SOURCES += UNIX_LogInDeviceFile_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_LogInDeviceFile_LINUX.cxx
+	SOURCES += UNIX_LogInDeviceFile_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_LogInDeviceFile_SOLARIS.cxx
+	SOURCES += UNIX_LogInDeviceFile_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_LogInDeviceFile_TRU64.cxx
+	SOURCES += UNIX_LogInDeviceFile_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_LogInDeviceFile_VMS.cxx
+	SOURCES += UNIX_LogInDeviceFile_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_LogInDeviceFile_WIN32.cxx
+	SOURCES += UNIX_LogInDeviceFile_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_LogInDeviceFile_ZOS.cxx
+	SOURCES += UNIX_LogInDeviceFile_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_LogInDeviceFile_STUB.cxx
+	SOURCES += UNIX_LogInDeviceFile_STUB.cxx
 endif
 
 LIBRARIES = \

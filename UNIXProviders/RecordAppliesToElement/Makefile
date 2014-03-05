@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_RecordAppliesToElementMain.cpp \
 	UNIX_RecordAppliesToElement.cpp \
-	UNIX_RecordAppliesToElementProvider.cpp \
-	UNIX_RecordAppliesToElementMain.cpp
+	UNIX_RecordAppliesToElementProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_RecordAppliesToElement_AIX.cxx
+	SOURCES += UNIX_RecordAppliesToElement_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_RecordAppliesToElement_DARWIN.cxx
+	SOURCES += UNIX_RecordAppliesToElement_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_RecordAppliesToElement_FREEBSD.cxx
+	SOURCES += UNIX_RecordAppliesToElement_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_RecordAppliesToElement_HPUX.cxx
+	SOURCES += UNIX_RecordAppliesToElement_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_RecordAppliesToElement_LINUX.cxx
+	SOURCES += UNIX_RecordAppliesToElement_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_RecordAppliesToElement_SOLARIS.cxx
+	SOURCES += UNIX_RecordAppliesToElement_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_RecordAppliesToElement_TRU64.cxx
+	SOURCES += UNIX_RecordAppliesToElement_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_RecordAppliesToElement_VMS.cxx
+	SOURCES += UNIX_RecordAppliesToElement_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_RecordAppliesToElement_WIN32.cxx
+	SOURCES += UNIX_RecordAppliesToElement_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_RecordAppliesToElement_ZOS.cxx
+	SOURCES += UNIX_RecordAppliesToElement_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_RecordAppliesToElement_STUB.cxx
+	SOURCES += UNIX_RecordAppliesToElement_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_InstMethodCallMain.cpp \
 	UNIX_InstMethodCall.cpp \
-	UNIX_InstMethodCallProvider.cpp \
-	UNIX_InstMethodCallMain.cpp
+	UNIX_InstMethodCallProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_InstMethodCall_AIX.cxx
+	SOURCES += UNIX_InstMethodCall_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_InstMethodCall_DARWIN.cxx
+	SOURCES += UNIX_InstMethodCall_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_InstMethodCall_FREEBSD.cxx
+	SOURCES += UNIX_InstMethodCall_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_InstMethodCall_HPUX.cxx
+	SOURCES += UNIX_InstMethodCall_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_InstMethodCall_LINUX.cxx
+	SOURCES += UNIX_InstMethodCall_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_InstMethodCall_SOLARIS.cxx
+	SOURCES += UNIX_InstMethodCall_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_InstMethodCall_TRU64.cxx
+	SOURCES += UNIX_InstMethodCall_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_InstMethodCall_VMS.cxx
+	SOURCES += UNIX_InstMethodCall_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_InstMethodCall_WIN32.cxx
+	SOURCES += UNIX_InstMethodCall_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_InstMethodCall_ZOS.cxx
+	SOURCES += UNIX_InstMethodCall_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_InstMethodCall_STUB.cxx
+	SOURCES += UNIX_InstMethodCall_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ClassDeletionMain.cpp \
 	UNIX_ClassDeletion.cpp \
-	UNIX_ClassDeletionProvider.cpp \
-	UNIX_ClassDeletionMain.cpp
+	UNIX_ClassDeletionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ClassDeletion_AIX.cxx
+	SOURCES += UNIX_ClassDeletion_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ClassDeletion_DARWIN.cxx
+	SOURCES += UNIX_ClassDeletion_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ClassDeletion_FREEBSD.cxx
+	SOURCES += UNIX_ClassDeletion_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ClassDeletion_HPUX.cxx
+	SOURCES += UNIX_ClassDeletion_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ClassDeletion_LINUX.cxx
+	SOURCES += UNIX_ClassDeletion_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ClassDeletion_SOLARIS.cxx
+	SOURCES += UNIX_ClassDeletion_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ClassDeletion_TRU64.cxx
+	SOURCES += UNIX_ClassDeletion_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ClassDeletion_VMS.cxx
+	SOURCES += UNIX_ClassDeletion_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ClassDeletion_WIN32.cxx
+	SOURCES += UNIX_ClassDeletion_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ClassDeletion_ZOS.cxx
+	SOURCES += UNIX_ClassDeletion_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ClassDeletion_STUB.cxx
+	SOURCES += UNIX_ClassDeletion_STUB.cxx
 endif
 
 LIBRARIES = \

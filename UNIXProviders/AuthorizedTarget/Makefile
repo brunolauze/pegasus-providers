@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AuthorizedTargetMain.cpp \
 	UNIX_AuthorizedTarget.cpp \
-	UNIX_AuthorizedTargetProvider.cpp \
-	UNIX_AuthorizedTargetMain.cpp
+	UNIX_AuthorizedTargetProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AuthorizedTarget_AIX.cxx
+	SOURCES += UNIX_AuthorizedTarget_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AuthorizedTarget_DARWIN.cxx
+	SOURCES += UNIX_AuthorizedTarget_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AuthorizedTarget_FREEBSD.cxx
+	SOURCES += UNIX_AuthorizedTarget_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AuthorizedTarget_HPUX.cxx
+	SOURCES += UNIX_AuthorizedTarget_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AuthorizedTarget_LINUX.cxx
+	SOURCES += UNIX_AuthorizedTarget_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AuthorizedTarget_SOLARIS.cxx
+	SOURCES += UNIX_AuthorizedTarget_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AuthorizedTarget_TRU64.cxx
+	SOURCES += UNIX_AuthorizedTarget_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AuthorizedTarget_VMS.cxx
+	SOURCES += UNIX_AuthorizedTarget_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AuthorizedTarget_WIN32.cxx
+	SOURCES += UNIX_AuthorizedTarget_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AuthorizedTarget_ZOS.cxx
+	SOURCES += UNIX_AuthorizedTarget_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AuthorizedTarget_STUB.cxx
+	SOURCES += UNIX_AuthorizedTarget_STUB.cxx
 endif
 
 LIBRARIES = \

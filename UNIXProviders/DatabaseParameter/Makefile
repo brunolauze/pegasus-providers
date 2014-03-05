@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_DatabaseParameterProvider.cpp \
 	UNIX_DatabaseParameterMain.cpp
 ifeq ($(OS), aix)
-	SOURCE += UNIX_DatabaseParameter_AIX.cxx
+	SOURCES += UNIX_DatabaseParameter_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_DatabaseParameter_DARWIN.cxx
+	SOURCES += UNIX_DatabaseParameter_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_DatabaseParameter_FREEBSD.cxx
+	SOURCES += UNIX_DatabaseParameter_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_DatabaseParameter_HPUX.cxx
+	SOURCES += UNIX_DatabaseParameter_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_DatabaseParameter_LINUX.cxx
+	SOURCES += UNIX_DatabaseParameter_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_DatabaseParameter_SOLARIS.cxx
+	SOURCES += UNIX_DatabaseParameter_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_DatabaseParameter_TRU64.cxx
+	SOURCES += UNIX_DatabaseParameter_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_DatabaseParameter_VMS.cxx
+	SOURCES += UNIX_DatabaseParameter_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_DatabaseParameter_WIN32.cxx
+	SOURCES += UNIX_DatabaseParameter_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_DatabaseParameter_ZOS.cxx
+	SOURCES += UNIX_DatabaseParameter_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_DatabaseParameter_STUB.cxx
+	SOURCES += UNIX_DatabaseParameter_STUB.cxx
 endif
 
 LIBRARIES = \

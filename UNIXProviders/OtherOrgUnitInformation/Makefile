@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_OtherOrgUnitInformationMain.cpp \
 	UNIX_OtherOrgUnitInformation.cpp \
-	UNIX_OtherOrgUnitInformationProvider.cpp \
-	UNIX_OtherOrgUnitInformationMain.cpp
+	UNIX_OtherOrgUnitInformationProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_OtherOrgUnitInformation_AIX.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_OtherOrgUnitInformation_DARWIN.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_OtherOrgUnitInformation_FREEBSD.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_OtherOrgUnitInformation_HPUX.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_OtherOrgUnitInformation_LINUX.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_OtherOrgUnitInformation_SOLARIS.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_OtherOrgUnitInformation_TRU64.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_OtherOrgUnitInformation_VMS.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_OtherOrgUnitInformation_WIN32.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_OtherOrgUnitInformation_ZOS.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_OtherOrgUnitInformation_STUB.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_STUB.cxx
 endif
 
 LIBRARIES = \

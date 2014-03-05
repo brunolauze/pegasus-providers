@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_RelatedStatisticsMain.cpp \
 	UNIX_RelatedStatistics.cpp \
-	UNIX_RelatedStatisticsProvider.cpp \
-	UNIX_RelatedStatisticsMain.cpp
+	UNIX_RelatedStatisticsProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_RelatedStatistics_AIX.cxx
+	SOURCES += UNIX_RelatedStatistics_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_RelatedStatistics_DARWIN.cxx
+	SOURCES += UNIX_RelatedStatistics_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_RelatedStatistics_FREEBSD.cxx
+	SOURCES += UNIX_RelatedStatistics_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_RelatedStatistics_HPUX.cxx
+	SOURCES += UNIX_RelatedStatistics_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_RelatedStatistics_LINUX.cxx
+	SOURCES += UNIX_RelatedStatistics_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_RelatedStatistics_SOLARIS.cxx
+	SOURCES += UNIX_RelatedStatistics_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_RelatedStatistics_TRU64.cxx
+	SOURCES += UNIX_RelatedStatistics_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_RelatedStatistics_VMS.cxx
+	SOURCES += UNIX_RelatedStatistics_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_RelatedStatistics_WIN32.cxx
+	SOURCES += UNIX_RelatedStatistics_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_RelatedStatistics_ZOS.cxx
+	SOURCES += UNIX_RelatedStatistics_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_RelatedStatistics_STUB.cxx
+	SOURCES += UNIX_RelatedStatistics_STUB.cxx
 endif
 
 LIBRARIES = \

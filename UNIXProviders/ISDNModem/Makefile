@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ISDNModemMain.cpp \
 	UNIX_ISDNModem.cpp \
-	UNIX_ISDNModemProvider.cpp \
-	UNIX_ISDNModemMain.cpp
+	UNIX_ISDNModemProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ISDNModem_AIX.cxx
+	SOURCES += UNIX_ISDNModem_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ISDNModem_DARWIN.cxx
+	SOURCES += UNIX_ISDNModem_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ISDNModem_FREEBSD.cxx
+	SOURCES += UNIX_ISDNModem_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ISDNModem_HPUX.cxx
+	SOURCES += UNIX_ISDNModem_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ISDNModem_LINUX.cxx
+	SOURCES += UNIX_ISDNModem_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ISDNModem_SOLARIS.cxx
+	SOURCES += UNIX_ISDNModem_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ISDNModem_TRU64.cxx
+	SOURCES += UNIX_ISDNModem_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ISDNModem_VMS.cxx
+	SOURCES += UNIX_ISDNModem_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ISDNModem_WIN32.cxx
+	SOURCES += UNIX_ISDNModem_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ISDNModem_ZOS.cxx
+	SOURCES += UNIX_ISDNModem_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ISDNModem_STUB.cxx
+	SOURCES += UNIX_ISDNModem_STUB.cxx
 endif
 
 LIBRARIES = \

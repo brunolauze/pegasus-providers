@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_StorageSettingProvider.cpp \
 	UNIX_StorageSettingMain.cpp
 ifeq ($(OS), aix)
-	SOURCE += UNIX_StorageSetting_AIX.cxx
+	SOURCES += UNIX_StorageSetting_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_StorageSetting_DARWIN.cxx
+	SOURCES += UNIX_StorageSetting_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_StorageSetting_FREEBSD.cxx
+	SOURCES += UNIX_StorageSetting_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_StorageSetting_HPUX.cxx
+	SOURCES += UNIX_StorageSetting_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_StorageSetting_LINUX.cxx
+	SOURCES += UNIX_StorageSetting_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_StorageSetting_SOLARIS.cxx
+	SOURCES += UNIX_StorageSetting_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_StorageSetting_TRU64.cxx
+	SOURCES += UNIX_StorageSetting_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_StorageSetting_VMS.cxx
+	SOURCES += UNIX_StorageSetting_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_StorageSetting_WIN32.cxx
+	SOURCES += UNIX_StorageSetting_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_StorageSetting_ZOS.cxx
+	SOURCES += UNIX_StorageSetting_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_StorageSetting_STUB.cxx
+	SOURCES += UNIX_StorageSetting_STUB.cxx
 endif
 
 LIBRARIES = \

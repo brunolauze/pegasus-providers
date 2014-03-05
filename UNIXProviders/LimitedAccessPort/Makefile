@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_LimitedAccessPortMain.cpp \
 	UNIX_LimitedAccessPort.cpp \
-	UNIX_LimitedAccessPortProvider.cpp \
-	UNIX_LimitedAccessPortMain.cpp
+	UNIX_LimitedAccessPortProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_LimitedAccessPort_AIX.cxx
+	SOURCES += UNIX_LimitedAccessPort_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_LimitedAccessPort_DARWIN.cxx
+	SOURCES += UNIX_LimitedAccessPort_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_LimitedAccessPort_FREEBSD.cxx
+	SOURCES += UNIX_LimitedAccessPort_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_LimitedAccessPort_HPUX.cxx
+	SOURCES += UNIX_LimitedAccessPort_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_LimitedAccessPort_LINUX.cxx
+	SOURCES += UNIX_LimitedAccessPort_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_LimitedAccessPort_SOLARIS.cxx
+	SOURCES += UNIX_LimitedAccessPort_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_LimitedAccessPort_TRU64.cxx
+	SOURCES += UNIX_LimitedAccessPort_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_LimitedAccessPort_VMS.cxx
+	SOURCES += UNIX_LimitedAccessPort_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_LimitedAccessPort_WIN32.cxx
+	SOURCES += UNIX_LimitedAccessPort_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_LimitedAccessPort_ZOS.cxx
+	SOURCES += UNIX_LimitedAccessPort_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_LimitedAccessPort_STUB.cxx
+	SOURCES += UNIX_LimitedAccessPort_STUB.cxx
 endif
 
 LIBRARIES = \

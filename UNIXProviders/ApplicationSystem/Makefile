@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ApplicationSystemMain.cpp \
 	UNIX_ApplicationSystem.cpp \
-	UNIX_ApplicationSystemProvider.cpp \
-	UNIX_ApplicationSystemMain.cpp
+	UNIX_ApplicationSystemProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ApplicationSystem_AIX.cxx
+	SOURCES += UNIX_ApplicationSystem_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ApplicationSystem_DARWIN.cxx
+	SOURCES += UNIX_ApplicationSystem_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ApplicationSystem_FREEBSD.cxx
+	SOURCES += UNIX_ApplicationSystem_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ApplicationSystem_HPUX.cxx
+	SOURCES += UNIX_ApplicationSystem_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ApplicationSystem_LINUX.cxx
+	SOURCES += UNIX_ApplicationSystem_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ApplicationSystem_SOLARIS.cxx
+	SOURCES += UNIX_ApplicationSystem_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ApplicationSystem_TRU64.cxx
+	SOURCES += UNIX_ApplicationSystem_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ApplicationSystem_VMS.cxx
+	SOURCES += UNIX_ApplicationSystem_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ApplicationSystem_WIN32.cxx
+	SOURCES += UNIX_ApplicationSystem_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ApplicationSystem_ZOS.cxx
+	SOURCES += UNIX_ApplicationSystem_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ApplicationSystem_STUB.cxx
+	SOURCES += UNIX_ApplicationSystem_STUB.cxx
 endif
 
 LIBRARIES = \

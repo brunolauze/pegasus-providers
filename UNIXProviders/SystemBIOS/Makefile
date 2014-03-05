@@ -43,44 +43,213 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	../smbios.cpp \
+	UNIX_SystemBIOSMain.cpp \
 	UNIX_SystemBIOS.cpp \
-	UNIX_SystemBIOSProvider.cpp \
-	UNIX_SystemBIOSMain.cpp
+	UNIX_SystemBIOSProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SystemBIOS_AIX.cxx
+	SOURCES += UNIX_SystemBIOS_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SystemBIOS_DARWIN.cxx
+	SOURCES += UNIX_SystemBIOS_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SystemBIOS_FREEBSD.cxx
+	SOURCES += UNIX_SystemBIOS_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SystemBIOS_HPUX.cxx
+	SOURCES += UNIX_SystemBIOS_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SystemBIOS_LINUX.cxx
+	SOURCES += UNIX_SystemBIOS_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SystemBIOS_SOLARIS.cxx
+	SOURCES += UNIX_SystemBIOS_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SystemBIOS_TRU64.cxx
+	SOURCES += UNIX_SystemBIOS_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SystemBIOS_VMS.cxx
+	SOURCES += UNIX_SystemBIOS_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SystemBIOS_WIN32.cxx
+	SOURCES += UNIX_SystemBIOS_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SystemBIOS_ZOS.cxx
+	SOURCES += UNIX_SystemBIOS_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SystemBIOS_STUB.cxx
+	SOURCES += UNIX_SystemBIOS_STUB.cxx
 endif
+
+
+SOURCES += \
+	../VirtualComputerSystem/UNIX_VirtualComputerSystem.cpp \
+	../VirtualComputerSystem/UNIX_VirtualComputerSystemProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../VirtualComputerSystem/UNIX_VirtualComputerSystem_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../VirtualComputerSystem/UNIX_VirtualComputerSystem_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../VirtualComputerSystem/UNIX_VirtualComputerSystem_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../VirtualComputerSystem/UNIX_VirtualComputerSystem_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../VirtualComputerSystem/UNIX_VirtualComputerSystem_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../VirtualComputerSystem/UNIX_VirtualComputerSystem_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../VirtualComputerSystem/UNIX_VirtualComputerSystem_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../VirtualComputerSystem/UNIX_VirtualComputerSystem_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../VirtualComputerSystem/UNIX_VirtualComputerSystem_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../VirtualComputerSystem/UNIX_VirtualComputerSystem_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../VirtualComputerSystem/UNIX_VirtualComputerSystem_STUB.cxx
+endif
+
+
+SOURCES += \
+	../ComputerSystem/UNIX_ComputerSystem.cpp \
+	../ComputerSystem/UNIX_ComputerSystemProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../ComputerSystem/UNIX_ComputerSystem_STUB.cxx
+endif
+
+
+SOURCES += \
+	../Cluster/UNIX_Cluster.cpp \
+	../Cluster/UNIX_ClusterProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../Cluster/UNIX_Cluster_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../Cluster/UNIX_Cluster_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../Cluster/UNIX_Cluster_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../Cluster/UNIX_Cluster_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../Cluster/UNIX_Cluster_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../Cluster/UNIX_Cluster_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../Cluster/UNIX_Cluster_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../Cluster/UNIX_Cluster_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../Cluster/UNIX_Cluster_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../Cluster/UNIX_Cluster_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../Cluster/UNIX_Cluster_STUB.cxx
+endif
+
+
+SOURCES += \
+	../BIOSElement/UNIX_BIOSElement.cpp \
+	../BIOSElement/UNIX_BIOSElementProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCE += ../BIOSElement/UNIX_BIOSElement_AIX.cxx
+endif
+ifeq ($(OS), darwin)
+	SOURCE += ../BIOSElement/UNIX_BIOSElement_DARWIN.cxx
+endif
+ifeq ($(OS), freebsd)
+	SOURCE += ../BIOSElement/UNIX_BIOSElement_FREEBSD.cxx
+endif
+ifeq ($(OS), hpux)
+	SOURCE += ../BIOSElement/UNIX_BIOSElement_HPUX.cxx
+endif
+ifeq ($(OS), linux)
+	SOURCE += ../BIOSElement/UNIX_BIOSElement_LINUX.cxx
+endif
+ifeq ($(OS), solaris)
+	SOURCE += ../BIOSElement/UNIX_BIOSElement_SOLARIS.cxx
+endif
+ifeq ($(OS), tru64)
+	SOURCE += ../BIOSElement/UNIX_BIOSElement_TRU64.cxx
+endif
+ifeq ($(OS), vms)
+	SOURCE += ../BIOSElement/UNIX_BIOSElement_VMS.cxx
+endif
+ifeq ($(OS), win32)
+	SOURCE += ../BIOSElement/UNIX_BIOSElement_WIN32.cxx
+endif
+ifeq ($(OS), zos)
+	SOURCE += ../BIOSElement/UNIX_BIOSElement_ZOS.cxx
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCE += ../BIOSElement/UNIX_BIOSElement_STUB.cxx
+endif
+
+
+
 
 LIBRARIES = \
 	pegprovider \
@@ -94,10 +263,6 @@ LIBRARIES = \
 EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
-	-lUNIX_VirtualComputerSystemProvider \
-	-lUNIX_ComputerSystemProvider \
-	-lUNIX_ClusterProvider \
-	-lUNIX_BIOSElementProvider \
 	-lgeom \
 	-lkvm \
 	-lcam

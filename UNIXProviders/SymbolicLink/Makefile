@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SymbolicLinkMain.cpp \
 	UNIX_SymbolicLink.cpp \
-	UNIX_SymbolicLinkProvider.cpp \
-	UNIX_SymbolicLinkMain.cpp
+	UNIX_SymbolicLinkProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SymbolicLink_AIX.cxx
+	SOURCES += UNIX_SymbolicLink_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SymbolicLink_DARWIN.cxx
+	SOURCES += UNIX_SymbolicLink_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SymbolicLink_FREEBSD.cxx
+	SOURCES += UNIX_SymbolicLink_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SymbolicLink_HPUX.cxx
+	SOURCES += UNIX_SymbolicLink_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SymbolicLink_LINUX.cxx
+	SOURCES += UNIX_SymbolicLink_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SymbolicLink_SOLARIS.cxx
+	SOURCES += UNIX_SymbolicLink_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SymbolicLink_TRU64.cxx
+	SOURCES += UNIX_SymbolicLink_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SymbolicLink_VMS.cxx
+	SOURCES += UNIX_SymbolicLink_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SymbolicLink_WIN32.cxx
+	SOURCES += UNIX_SymbolicLink_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SymbolicLink_ZOS.cxx
+	SOURCES += UNIX_SymbolicLink_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SymbolicLink_STUB.cxx
+	SOURCES += UNIX_SymbolicLink_STUB.cxx
 endif
 
 LIBRARIES = \

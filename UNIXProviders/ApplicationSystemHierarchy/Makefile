@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ApplicationSystemHierarchyMain.cpp \
 	UNIX_ApplicationSystemHierarchy.cpp \
-	UNIX_ApplicationSystemHierarchyProvider.cpp \
-	UNIX_ApplicationSystemHierarchyMain.cpp
+	UNIX_ApplicationSystemHierarchyProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ApplicationSystemHierarchy_AIX.cxx
+	SOURCES += UNIX_ApplicationSystemHierarchy_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ApplicationSystemHierarchy_DARWIN.cxx
+	SOURCES += UNIX_ApplicationSystemHierarchy_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ApplicationSystemHierarchy_FREEBSD.cxx
+	SOURCES += UNIX_ApplicationSystemHierarchy_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ApplicationSystemHierarchy_HPUX.cxx
+	SOURCES += UNIX_ApplicationSystemHierarchy_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ApplicationSystemHierarchy_LINUX.cxx
+	SOURCES += UNIX_ApplicationSystemHierarchy_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ApplicationSystemHierarchy_SOLARIS.cxx
+	SOURCES += UNIX_ApplicationSystemHierarchy_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ApplicationSystemHierarchy_TRU64.cxx
+	SOURCES += UNIX_ApplicationSystemHierarchy_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ApplicationSystemHierarchy_VMS.cxx
+	SOURCES += UNIX_ApplicationSystemHierarchy_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ApplicationSystemHierarchy_WIN32.cxx
+	SOURCES += UNIX_ApplicationSystemHierarchy_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ApplicationSystemHierarchy_ZOS.cxx
+	SOURCES += UNIX_ApplicationSystemHierarchy_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ApplicationSystemHierarchy_STUB.cxx
+	SOURCES += UNIX_ApplicationSystemHierarchy_STUB.cxx
 endif
 
 LIBRARIES = \

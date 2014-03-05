@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_OSPFServiceCapabilitiesMain.cpp \
 	UNIX_OSPFServiceCapabilities.cpp \
-	UNIX_OSPFServiceCapabilitiesProvider.cpp \
-	UNIX_OSPFServiceCapabilitiesMain.cpp
+	UNIX_OSPFServiceCapabilitiesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_OSPFServiceCapabilities_AIX.cxx
+	SOURCES += UNIX_OSPFServiceCapabilities_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_OSPFServiceCapabilities_DARWIN.cxx
+	SOURCES += UNIX_OSPFServiceCapabilities_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_OSPFServiceCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_OSPFServiceCapabilities_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_OSPFServiceCapabilities_HPUX.cxx
+	SOURCES += UNIX_OSPFServiceCapabilities_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_OSPFServiceCapabilities_LINUX.cxx
+	SOURCES += UNIX_OSPFServiceCapabilities_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_OSPFServiceCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_OSPFServiceCapabilities_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_OSPFServiceCapabilities_TRU64.cxx
+	SOURCES += UNIX_OSPFServiceCapabilities_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_OSPFServiceCapabilities_VMS.cxx
+	SOURCES += UNIX_OSPFServiceCapabilities_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_OSPFServiceCapabilities_WIN32.cxx
+	SOURCES += UNIX_OSPFServiceCapabilities_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_OSPFServiceCapabilities_ZOS.cxx
+	SOURCES += UNIX_OSPFServiceCapabilities_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_OSPFServiceCapabilities_STUB.cxx
+	SOURCES += UNIX_OSPFServiceCapabilities_STUB.cxx
 endif
 
 LIBRARIES = \

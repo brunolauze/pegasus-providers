@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_StorageAllocationSettingDataMain.cpp \
 	UNIX_StorageAllocationSettingData.cpp \
-	UNIX_StorageAllocationSettingDataProvider.cpp \
-	UNIX_StorageAllocationSettingDataMain.cpp
+	UNIX_StorageAllocationSettingDataProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_StorageAllocationSettingData_AIX.cxx
+	SOURCES += UNIX_StorageAllocationSettingData_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_StorageAllocationSettingData_DARWIN.cxx
+	SOURCES += UNIX_StorageAllocationSettingData_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_StorageAllocationSettingData_FREEBSD.cxx
+	SOURCES += UNIX_StorageAllocationSettingData_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_StorageAllocationSettingData_HPUX.cxx
+	SOURCES += UNIX_StorageAllocationSettingData_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_StorageAllocationSettingData_LINUX.cxx
+	SOURCES += UNIX_StorageAllocationSettingData_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_StorageAllocationSettingData_SOLARIS.cxx
+	SOURCES += UNIX_StorageAllocationSettingData_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_StorageAllocationSettingData_TRU64.cxx
+	SOURCES += UNIX_StorageAllocationSettingData_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_StorageAllocationSettingData_VMS.cxx
+	SOURCES += UNIX_StorageAllocationSettingData_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_StorageAllocationSettingData_WIN32.cxx
+	SOURCES += UNIX_StorageAllocationSettingData_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_StorageAllocationSettingData_ZOS.cxx
+	SOURCES += UNIX_StorageAllocationSettingData_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_StorageAllocationSettingData_STUB.cxx
+	SOURCES += UNIX_StorageAllocationSettingData_STUB.cxx
 endif
 
 LIBRARIES = \

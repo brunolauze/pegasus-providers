@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ConfigurationForSystemMain.cpp \
 	UNIX_ConfigurationForSystem.cpp \
-	UNIX_ConfigurationForSystemProvider.cpp \
-	UNIX_ConfigurationForSystemMain.cpp
+	UNIX_ConfigurationForSystemProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ConfigurationForSystem_AIX.cxx
+	SOURCES += UNIX_ConfigurationForSystem_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ConfigurationForSystem_DARWIN.cxx
+	SOURCES += UNIX_ConfigurationForSystem_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ConfigurationForSystem_FREEBSD.cxx
+	SOURCES += UNIX_ConfigurationForSystem_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ConfigurationForSystem_HPUX.cxx
+	SOURCES += UNIX_ConfigurationForSystem_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ConfigurationForSystem_LINUX.cxx
+	SOURCES += UNIX_ConfigurationForSystem_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ConfigurationForSystem_SOLARIS.cxx
+	SOURCES += UNIX_ConfigurationForSystem_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ConfigurationForSystem_TRU64.cxx
+	SOURCES += UNIX_ConfigurationForSystem_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ConfigurationForSystem_VMS.cxx
+	SOURCES += UNIX_ConfigurationForSystem_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ConfigurationForSystem_WIN32.cxx
+	SOURCES += UNIX_ConfigurationForSystem_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ConfigurationForSystem_ZOS.cxx
+	SOURCES += UNIX_ConfigurationForSystem_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ConfigurationForSystem_STUB.cxx
+	SOURCES += UNIX_ConfigurationForSystem_STUB.cxx
 endif
 
 LIBRARIES = \

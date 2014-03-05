@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_BootServiceCapabilitiesMain.cpp \
 	UNIX_BootServiceCapabilities.cpp \
-	UNIX_BootServiceCapabilitiesProvider.cpp \
-	UNIX_BootServiceCapabilitiesMain.cpp
+	UNIX_BootServiceCapabilitiesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BootServiceCapabilities_AIX.cxx
+	SOURCES += UNIX_BootServiceCapabilities_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BootServiceCapabilities_DARWIN.cxx
+	SOURCES += UNIX_BootServiceCapabilities_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BootServiceCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_BootServiceCapabilities_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BootServiceCapabilities_HPUX.cxx
+	SOURCES += UNIX_BootServiceCapabilities_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BootServiceCapabilities_LINUX.cxx
+	SOURCES += UNIX_BootServiceCapabilities_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BootServiceCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_BootServiceCapabilities_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BootServiceCapabilities_TRU64.cxx
+	SOURCES += UNIX_BootServiceCapabilities_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BootServiceCapabilities_VMS.cxx
+	SOURCES += UNIX_BootServiceCapabilities_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BootServiceCapabilities_WIN32.cxx
+	SOURCES += UNIX_BootServiceCapabilities_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BootServiceCapabilities_ZOS.cxx
+	SOURCES += UNIX_BootServiceCapabilities_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BootServiceCapabilities_STUB.cxx
+	SOURCES += UNIX_BootServiceCapabilities_STUB.cxx
 endif
 
 LIBRARIES = \

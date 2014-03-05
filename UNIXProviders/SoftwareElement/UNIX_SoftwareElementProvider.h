@@ -35,7 +35,7 @@
 #define UNIX_PROVIDER UNIX_SoftwareElementProvider
 #define CLASS_IMPLEMENTATION UNIX_SoftwareElement
 #define CLASS_IMPLEMENTATION_NAME "UNIX_SoftwareElement"
-#define BASE_CLASS_NAME "UNIX_SoftwareElement"
+#define BASE_CLASS_NAME "CIM_SoftwareElement"
 #define NUMKEYS_CLASS_IMPLEMENTATION 5
 
 

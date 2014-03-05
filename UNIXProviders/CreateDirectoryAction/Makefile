@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_CreateDirectoryActionMain.cpp \
 	UNIX_CreateDirectoryAction.cpp \
-	UNIX_CreateDirectoryActionProvider.cpp \
-	UNIX_CreateDirectoryActionMain.cpp
+	UNIX_CreateDirectoryActionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_CreateDirectoryAction_AIX.cxx
+	SOURCES += UNIX_CreateDirectoryAction_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_CreateDirectoryAction_DARWIN.cxx
+	SOURCES += UNIX_CreateDirectoryAction_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_CreateDirectoryAction_FREEBSD.cxx
+	SOURCES += UNIX_CreateDirectoryAction_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_CreateDirectoryAction_HPUX.cxx
+	SOURCES += UNIX_CreateDirectoryAction_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_CreateDirectoryAction_LINUX.cxx
+	SOURCES += UNIX_CreateDirectoryAction_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_CreateDirectoryAction_SOLARIS.cxx
+	SOURCES += UNIX_CreateDirectoryAction_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_CreateDirectoryAction_TRU64.cxx
+	SOURCES += UNIX_CreateDirectoryAction_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_CreateDirectoryAction_VMS.cxx
+	SOURCES += UNIX_CreateDirectoryAction_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_CreateDirectoryAction_WIN32.cxx
+	SOURCES += UNIX_CreateDirectoryAction_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_CreateDirectoryAction_ZOS.cxx
+	SOURCES += UNIX_CreateDirectoryAction_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_CreateDirectoryAction_STUB.cxx
+	SOURCES += UNIX_CreateDirectoryAction_STUB.cxx
 endif
 
 LIBRARIES = \

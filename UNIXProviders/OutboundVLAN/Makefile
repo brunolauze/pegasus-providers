@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_OutboundVLANMain.cpp \
 	UNIX_OutboundVLAN.cpp \
-	UNIX_OutboundVLANProvider.cpp \
-	UNIX_OutboundVLANMain.cpp
+	UNIX_OutboundVLANProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_OutboundVLAN_AIX.cxx
+	SOURCES += UNIX_OutboundVLAN_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_OutboundVLAN_DARWIN.cxx
+	SOURCES += UNIX_OutboundVLAN_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_OutboundVLAN_FREEBSD.cxx
+	SOURCES += UNIX_OutboundVLAN_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_OutboundVLAN_HPUX.cxx
+	SOURCES += UNIX_OutboundVLAN_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_OutboundVLAN_LINUX.cxx
+	SOURCES += UNIX_OutboundVLAN_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_OutboundVLAN_SOLARIS.cxx
+	SOURCES += UNIX_OutboundVLAN_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_OutboundVLAN_TRU64.cxx
+	SOURCES += UNIX_OutboundVLAN_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_OutboundVLAN_VMS.cxx
+	SOURCES += UNIX_OutboundVLAN_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_OutboundVLAN_WIN32.cxx
+	SOURCES += UNIX_OutboundVLAN_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_OutboundVLAN_ZOS.cxx
+	SOURCES += UNIX_OutboundVLAN_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_OutboundVLAN_STUB.cxx
+	SOURCES += UNIX_OutboundVLAN_STUB.cxx
 endif
 
 LIBRARIES = \

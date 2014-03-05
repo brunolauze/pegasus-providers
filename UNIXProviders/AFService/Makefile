@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AFServiceMain.cpp \
 	UNIX_AFService.cpp \
-	UNIX_AFServiceProvider.cpp \
-	UNIX_AFServiceMain.cpp
+	UNIX_AFServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AFService_AIX.cxx
+	SOURCES += UNIX_AFService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AFService_DARWIN.cxx
+	SOURCES += UNIX_AFService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AFService_FREEBSD.cxx
+	SOURCES += UNIX_AFService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AFService_HPUX.cxx
+	SOURCES += UNIX_AFService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AFService_LINUX.cxx
+	SOURCES += UNIX_AFService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AFService_SOLARIS.cxx
+	SOURCES += UNIX_AFService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AFService_TRU64.cxx
+	SOURCES += UNIX_AFService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AFService_VMS.cxx
+	SOURCES += UNIX_AFService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AFService_WIN32.cxx
+	SOURCES += UNIX_AFService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AFService_ZOS.cxx
+	SOURCES += UNIX_AFService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AFService_STUB.cxx
+	SOURCES += UNIX_AFService_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -80,7 +80,7 @@ Boolean UNIX_CurrentTime::getDay(CIMProperty &p) const
 
 Uint32 UNIX_CurrentTime::getDay() const
 {
-	return Uint32(0);
+	return Uint32(currentclock->tm_mday);
 }
 
 Boolean UNIX_CurrentTime::getDayOfWeek(CIMProperty &p) const
@@ -102,7 +102,7 @@ Boolean UNIX_CurrentTime::getHour(CIMProperty &p) const
 
 Uint32 UNIX_CurrentTime::getHour() const
 {
-	return Uint32(0);
+	return Uint32(currentclock->tm_hour);
 }
 
 Boolean UNIX_CurrentTime::getMilliseconds(CIMProperty &p) const
@@ -124,7 +124,7 @@ Boolean UNIX_CurrentTime::getMinute(CIMProperty &p) const
 
 Uint32 UNIX_CurrentTime::getMinute() const
 {
-	return Uint32(0);
+	return Uint32(currentclock->tm_min);
 }
 
 Boolean UNIX_CurrentTime::getMonth(CIMProperty &p) const
@@ -135,7 +135,7 @@ Boolean UNIX_CurrentTime::getMonth(CIMProperty &p) const
 
 Uint32 UNIX_CurrentTime::getMonth() const
 {
-	return Uint32(0);
+	return Uint32(currentclock->tm_mon + 1);
 }
 
 Boolean UNIX_CurrentTime::getQuarter(CIMProperty &p) const
@@ -157,7 +157,7 @@ Boolean UNIX_CurrentTime::getSecond(CIMProperty &p) const
 
 Uint32 UNIX_CurrentTime::getSecond() const
 {
-	return Uint32(0);
+	return Uint32(currentclock->tm_sec);
 }
 
 Boolean UNIX_CurrentTime::getWeekInMonth(CIMProperty &p) const
@@ -179,7 +179,7 @@ Boolean UNIX_CurrentTime::getYear(CIMProperty &p) const
 
 Uint32 UNIX_CurrentTime::getYear() const
 {
-	return Uint32(0);
+	return Uint32(currentclock->tm_year + 1900);
 }
 
 Boolean UNIX_CurrentTime::getTimeZoneOffset(CIMProperty &p) const
@@ -190,24 +190,29 @@ Boolean UNIX_CurrentTime::getTimeZoneOffset(CIMProperty &p) const
 
 Uint32 UNIX_CurrentTime::getTimeZoneOffset() const
 {
-	return Uint32(0);
+	return Uint32(currentclock->tm_gmtoff);
 }
-
 
 
 Boolean UNIX_CurrentTime::initialize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_CurrentTime::load(int &pIndex)
 {
+	if (pIndex == 0)
+	{
+		time_t val = time(NULL);
+		currentclock = gmtime(&(val));	// Get the last modified time and put it into the time structure
+		return true;
+	}
 	return false;
 }
 
 Boolean UNIX_CurrentTime::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_CurrentTime::find(Array<CIMKeyBinding> &kbArray)
@@ -227,9 +232,8 @@ Boolean UNIX_CurrentTime::find(Array<CIMKeyBinding> &kbArray)
 		else if (keyName.equal(PROPERTY_CREATION_CLASS_NAME)) creationClassNameKey = kb.getValue();
 	}
 
-
-
-/* EXecute find with extracted keys */
-
-	return false;
+	/* Return just the time */
+	int pIndex = 0;
+	load(pIndex);
+	return true;
 }

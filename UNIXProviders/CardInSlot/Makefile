@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_CardInSlotMain.cpp \
 	UNIX_CardInSlot.cpp \
-	UNIX_CardInSlotProvider.cpp \
-	UNIX_CardInSlotMain.cpp
+	UNIX_CardInSlotProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_CardInSlot_AIX.cxx
+	SOURCES += UNIX_CardInSlot_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_CardInSlot_DARWIN.cxx
+	SOURCES += UNIX_CardInSlot_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_CardInSlot_FREEBSD.cxx
+	SOURCES += UNIX_CardInSlot_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_CardInSlot_HPUX.cxx
+	SOURCES += UNIX_CardInSlot_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_CardInSlot_LINUX.cxx
+	SOURCES += UNIX_CardInSlot_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_CardInSlot_SOLARIS.cxx
+	SOURCES += UNIX_CardInSlot_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_CardInSlot_TRU64.cxx
+	SOURCES += UNIX_CardInSlot_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_CardInSlot_VMS.cxx
+	SOURCES += UNIX_CardInSlot_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_CardInSlot_WIN32.cxx
+	SOURCES += UNIX_CardInSlot_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_CardInSlot_ZOS.cxx
+	SOURCES += UNIX_CardInSlot_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_CardInSlot_STUB.cxx
+	SOURCES += UNIX_CardInSlot_STUB.cxx
 endif
 
 LIBRARIES = \

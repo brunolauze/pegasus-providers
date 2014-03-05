@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ExtendedStaticIPAssignmentSettingDataMain.cpp \
 	UNIX_ExtendedStaticIPAssignmentSettingData.cpp \
-	UNIX_ExtendedStaticIPAssignmentSettingDataProvider.cpp \
-	UNIX_ExtendedStaticIPAssignmentSettingDataMain.cpp
+	UNIX_ExtendedStaticIPAssignmentSettingDataProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ExtendedStaticIPAssignmentSettingData_AIX.cxx
+	SOURCES += UNIX_ExtendedStaticIPAssignmentSettingData_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ExtendedStaticIPAssignmentSettingData_DARWIN.cxx
+	SOURCES += UNIX_ExtendedStaticIPAssignmentSettingData_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ExtendedStaticIPAssignmentSettingData_FREEBSD.cxx
+	SOURCES += UNIX_ExtendedStaticIPAssignmentSettingData_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ExtendedStaticIPAssignmentSettingData_HPUX.cxx
+	SOURCES += UNIX_ExtendedStaticIPAssignmentSettingData_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ExtendedStaticIPAssignmentSettingData_LINUX.cxx
+	SOURCES += UNIX_ExtendedStaticIPAssignmentSettingData_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ExtendedStaticIPAssignmentSettingData_SOLARIS.cxx
+	SOURCES += UNIX_ExtendedStaticIPAssignmentSettingData_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ExtendedStaticIPAssignmentSettingData_TRU64.cxx
+	SOURCES += UNIX_ExtendedStaticIPAssignmentSettingData_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ExtendedStaticIPAssignmentSettingData_VMS.cxx
+	SOURCES += UNIX_ExtendedStaticIPAssignmentSettingData_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ExtendedStaticIPAssignmentSettingData_WIN32.cxx
+	SOURCES += UNIX_ExtendedStaticIPAssignmentSettingData_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ExtendedStaticIPAssignmentSettingData_ZOS.cxx
+	SOURCES += UNIX_ExtendedStaticIPAssignmentSettingData_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ExtendedStaticIPAssignmentSettingData_STUB.cxx
+	SOURCES += UNIX_ExtendedStaticIPAssignmentSettingData_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_StorageHardwareIDManagementServiceMain.cpp \
 	UNIX_StorageHardwareIDManagementService.cpp \
-	UNIX_StorageHardwareIDManagementServiceProvider.cpp \
-	UNIX_StorageHardwareIDManagementServiceMain.cpp
+	UNIX_StorageHardwareIDManagementServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_StorageHardwareIDManagementService_AIX.cxx
+	SOURCES += UNIX_StorageHardwareIDManagementService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_StorageHardwareIDManagementService_DARWIN.cxx
+	SOURCES += UNIX_StorageHardwareIDManagementService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_StorageHardwareIDManagementService_FREEBSD.cxx
+	SOURCES += UNIX_StorageHardwareIDManagementService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_StorageHardwareIDManagementService_HPUX.cxx
+	SOURCES += UNIX_StorageHardwareIDManagementService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_StorageHardwareIDManagementService_LINUX.cxx
+	SOURCES += UNIX_StorageHardwareIDManagementService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_StorageHardwareIDManagementService_SOLARIS.cxx
+	SOURCES += UNIX_StorageHardwareIDManagementService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_StorageHardwareIDManagementService_TRU64.cxx
+	SOURCES += UNIX_StorageHardwareIDManagementService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_StorageHardwareIDManagementService_VMS.cxx
+	SOURCES += UNIX_StorageHardwareIDManagementService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_StorageHardwareIDManagementService_WIN32.cxx
+	SOURCES += UNIX_StorageHardwareIDManagementService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_StorageHardwareIDManagementService_ZOS.cxx
+	SOURCES += UNIX_StorageHardwareIDManagementService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_StorageHardwareIDManagementService_STUB.cxx
+	SOURCES += UNIX_StorageHardwareIDManagementService_STUB.cxx
 endif
 
 LIBRARIES = \

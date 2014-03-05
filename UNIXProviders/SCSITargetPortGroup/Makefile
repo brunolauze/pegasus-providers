@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SCSITargetPortGroupMain.cpp \
 	UNIX_SCSITargetPortGroup.cpp \
-	UNIX_SCSITargetPortGroupProvider.cpp \
-	UNIX_SCSITargetPortGroupMain.cpp
+	UNIX_SCSITargetPortGroupProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SCSITargetPortGroup_AIX.cxx
+	SOURCES += UNIX_SCSITargetPortGroup_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SCSITargetPortGroup_DARWIN.cxx
+	SOURCES += UNIX_SCSITargetPortGroup_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SCSITargetPortGroup_FREEBSD.cxx
+	SOURCES += UNIX_SCSITargetPortGroup_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SCSITargetPortGroup_HPUX.cxx
+	SOURCES += UNIX_SCSITargetPortGroup_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SCSITargetPortGroup_LINUX.cxx
+	SOURCES += UNIX_SCSITargetPortGroup_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SCSITargetPortGroup_SOLARIS.cxx
+	SOURCES += UNIX_SCSITargetPortGroup_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SCSITargetPortGroup_TRU64.cxx
+	SOURCES += UNIX_SCSITargetPortGroup_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SCSITargetPortGroup_VMS.cxx
+	SOURCES += UNIX_SCSITargetPortGroup_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SCSITargetPortGroup_WIN32.cxx
+	SOURCES += UNIX_SCSITargetPortGroup_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SCSITargetPortGroup_ZOS.cxx
+	SOURCES += UNIX_SCSITargetPortGroup_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SCSITargetPortGroup_STUB.cxx
+	SOURCES += UNIX_SCSITargetPortGroup_STUB.cxx
 endif
 
 LIBRARIES = \

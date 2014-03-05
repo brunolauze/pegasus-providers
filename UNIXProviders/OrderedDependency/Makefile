@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_OrderedDependencyMain.cpp \
 	UNIX_OrderedDependency.cpp \
-	UNIX_OrderedDependencyProvider.cpp \
-	UNIX_OrderedDependencyMain.cpp
+	UNIX_OrderedDependencyProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_OrderedDependency_AIX.cxx
+	SOURCES += UNIX_OrderedDependency_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_OrderedDependency_DARWIN.cxx
+	SOURCES += UNIX_OrderedDependency_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_OrderedDependency_FREEBSD.cxx
+	SOURCES += UNIX_OrderedDependency_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_OrderedDependency_HPUX.cxx
+	SOURCES += UNIX_OrderedDependency_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_OrderedDependency_LINUX.cxx
+	SOURCES += UNIX_OrderedDependency_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_OrderedDependency_SOLARIS.cxx
+	SOURCES += UNIX_OrderedDependency_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_OrderedDependency_TRU64.cxx
+	SOURCES += UNIX_OrderedDependency_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_OrderedDependency_VMS.cxx
+	SOURCES += UNIX_OrderedDependency_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_OrderedDependency_WIN32.cxx
+	SOURCES += UNIX_OrderedDependency_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_OrderedDependency_ZOS.cxx
+	SOURCES += UNIX_OrderedDependency_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_OrderedDependency_STUB.cxx
+	SOURCES += UNIX_OrderedDependency_STUB.cxx
 endif
 
 LIBRARIES = \

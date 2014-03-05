@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PeerGatewayForPreconfiguredTunnelMain.cpp \
 	UNIX_PeerGatewayForPreconfiguredTunnel.cpp \
-	UNIX_PeerGatewayForPreconfiguredTunnelProvider.cpp \
-	UNIX_PeerGatewayForPreconfiguredTunnelMain.cpp
+	UNIX_PeerGatewayForPreconfiguredTunnelProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PeerGatewayForPreconfiguredTunnel_AIX.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PeerGatewayForPreconfiguredTunnel_DARWIN.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PeerGatewayForPreconfiguredTunnel_FREEBSD.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PeerGatewayForPreconfiguredTunnel_HPUX.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PeerGatewayForPreconfiguredTunnel_LINUX.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PeerGatewayForPreconfiguredTunnel_SOLARIS.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PeerGatewayForPreconfiguredTunnel_TRU64.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PeerGatewayForPreconfiguredTunnel_VMS.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PeerGatewayForPreconfiguredTunnel_WIN32.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PeerGatewayForPreconfiguredTunnel_ZOS.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PeerGatewayForPreconfiguredTunnel_STUB.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_STUB.cxx
 endif
 
 LIBRARIES = \

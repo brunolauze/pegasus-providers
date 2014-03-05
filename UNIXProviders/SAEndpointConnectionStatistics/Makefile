@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SAEndpointConnectionStatisticsMain.cpp \
 	UNIX_SAEndpointConnectionStatistics.cpp \
-	UNIX_SAEndpointConnectionStatisticsProvider.cpp \
-	UNIX_SAEndpointConnectionStatisticsMain.cpp
+	UNIX_SAEndpointConnectionStatisticsProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SAEndpointConnectionStatistics_AIX.cxx
+	SOURCES += UNIX_SAEndpointConnectionStatistics_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SAEndpointConnectionStatistics_DARWIN.cxx
+	SOURCES += UNIX_SAEndpointConnectionStatistics_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SAEndpointConnectionStatistics_FREEBSD.cxx
+	SOURCES += UNIX_SAEndpointConnectionStatistics_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SAEndpointConnectionStatistics_HPUX.cxx
+	SOURCES += UNIX_SAEndpointConnectionStatistics_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SAEndpointConnectionStatistics_LINUX.cxx
+	SOURCES += UNIX_SAEndpointConnectionStatistics_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SAEndpointConnectionStatistics_SOLARIS.cxx
+	SOURCES += UNIX_SAEndpointConnectionStatistics_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SAEndpointConnectionStatistics_TRU64.cxx
+	SOURCES += UNIX_SAEndpointConnectionStatistics_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SAEndpointConnectionStatistics_VMS.cxx
+	SOURCES += UNIX_SAEndpointConnectionStatistics_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SAEndpointConnectionStatistics_WIN32.cxx
+	SOURCES += UNIX_SAEndpointConnectionStatistics_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SAEndpointConnectionStatistics_ZOS.cxx
+	SOURCES += UNIX_SAEndpointConnectionStatistics_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SAEndpointConnectionStatistics_STUB.cxx
+	SOURCES += UNIX_SAEndpointConnectionStatistics_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_BootSAPMain.cpp \
 	UNIX_BootSAP.cpp \
-	UNIX_BootSAPProvider.cpp \
-	UNIX_BootSAPMain.cpp
+	UNIX_BootSAPProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BootSAP_AIX.cxx
+	SOURCES += UNIX_BootSAP_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BootSAP_DARWIN.cxx
+	SOURCES += UNIX_BootSAP_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BootSAP_FREEBSD.cxx
+	SOURCES += UNIX_BootSAP_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BootSAP_HPUX.cxx
+	SOURCES += UNIX_BootSAP_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BootSAP_LINUX.cxx
+	SOURCES += UNIX_BootSAP_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BootSAP_SOLARIS.cxx
+	SOURCES += UNIX_BootSAP_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BootSAP_TRU64.cxx
+	SOURCES += UNIX_BootSAP_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BootSAP_VMS.cxx
+	SOURCES += UNIX_BootSAP_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BootSAP_WIN32.cxx
+	SOURCES += UNIX_BootSAP_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BootSAP_ZOS.cxx
+	SOURCES += UNIX_BootSAP_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BootSAP_STUB.cxx
+	SOURCES += UNIX_BootSAP_STUB.cxx
 endif
 
 LIBRARIES = \

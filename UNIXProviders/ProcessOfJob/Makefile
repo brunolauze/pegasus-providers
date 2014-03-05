@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ProcessOfJobMain.cpp \
 	UNIX_ProcessOfJob.cpp \
-	UNIX_ProcessOfJobProvider.cpp \
-	UNIX_ProcessOfJobMain.cpp
+	UNIX_ProcessOfJobProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ProcessOfJob_AIX.cxx
+	SOURCES += UNIX_ProcessOfJob_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ProcessOfJob_DARWIN.cxx
+	SOURCES += UNIX_ProcessOfJob_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ProcessOfJob_FREEBSD.cxx
+	SOURCES += UNIX_ProcessOfJob_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ProcessOfJob_HPUX.cxx
+	SOURCES += UNIX_ProcessOfJob_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ProcessOfJob_LINUX.cxx
+	SOURCES += UNIX_ProcessOfJob_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ProcessOfJob_SOLARIS.cxx
+	SOURCES += UNIX_ProcessOfJob_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ProcessOfJob_TRU64.cxx
+	SOURCES += UNIX_ProcessOfJob_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ProcessOfJob_VMS.cxx
+	SOURCES += UNIX_ProcessOfJob_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ProcessOfJob_WIN32.cxx
+	SOURCES += UNIX_ProcessOfJob_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ProcessOfJob_ZOS.cxx
+	SOURCES += UNIX_ProcessOfJob_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ProcessOfJob_STUB.cxx
+	SOURCES += UNIX_ProcessOfJob_STUB.cxx
 endif
 
 LIBRARIES = \

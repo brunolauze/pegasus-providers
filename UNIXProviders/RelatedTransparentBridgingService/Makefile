@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_RelatedTransparentBridgingServiceMain.cpp \
 	UNIX_RelatedTransparentBridgingService.cpp \
-	UNIX_RelatedTransparentBridgingServiceProvider.cpp \
-	UNIX_RelatedTransparentBridgingServiceMain.cpp
+	UNIX_RelatedTransparentBridgingServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_RelatedTransparentBridgingService_AIX.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_RelatedTransparentBridgingService_DARWIN.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_RelatedTransparentBridgingService_FREEBSD.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_RelatedTransparentBridgingService_HPUX.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_RelatedTransparentBridgingService_LINUX.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_RelatedTransparentBridgingService_SOLARIS.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_RelatedTransparentBridgingService_TRU64.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_RelatedTransparentBridgingService_VMS.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_RelatedTransparentBridgingService_WIN32.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_RelatedTransparentBridgingService_ZOS.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_RelatedTransparentBridgingService_STUB.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_STUB.cxx
 endif
 
 LIBRARIES = \

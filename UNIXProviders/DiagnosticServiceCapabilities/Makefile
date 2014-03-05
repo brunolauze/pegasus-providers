@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_DiagnosticServiceCapabilitiesMain.cpp \
 	UNIX_DiagnosticServiceCapabilities.cpp \
-	UNIX_DiagnosticServiceCapabilitiesProvider.cpp \
-	UNIX_DiagnosticServiceCapabilitiesMain.cpp
+	UNIX_DiagnosticServiceCapabilitiesProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_DiagnosticServiceCapabilities_AIX.cxx
+	SOURCES += UNIX_DiagnosticServiceCapabilities_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_DiagnosticServiceCapabilities_DARWIN.cxx
+	SOURCES += UNIX_DiagnosticServiceCapabilities_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_DiagnosticServiceCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_DiagnosticServiceCapabilities_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_DiagnosticServiceCapabilities_HPUX.cxx
+	SOURCES += UNIX_DiagnosticServiceCapabilities_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_DiagnosticServiceCapabilities_LINUX.cxx
+	SOURCES += UNIX_DiagnosticServiceCapabilities_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_DiagnosticServiceCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_DiagnosticServiceCapabilities_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_DiagnosticServiceCapabilities_TRU64.cxx
+	SOURCES += UNIX_DiagnosticServiceCapabilities_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_DiagnosticServiceCapabilities_VMS.cxx
+	SOURCES += UNIX_DiagnosticServiceCapabilities_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_DiagnosticServiceCapabilities_WIN32.cxx
+	SOURCES += UNIX_DiagnosticServiceCapabilities_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_DiagnosticServiceCapabilities_ZOS.cxx
+	SOURCES += UNIX_DiagnosticServiceCapabilities_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_DiagnosticServiceCapabilities_STUB.cxx
+	SOURCES += UNIX_DiagnosticServiceCapabilities_STUB.cxx
 endif
 
 LIBRARIES = \

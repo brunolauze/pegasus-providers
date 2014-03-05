@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_HostedClusterServiceMain.cpp \
 	UNIX_HostedClusterService.cpp \
-	UNIX_HostedClusterServiceProvider.cpp \
-	UNIX_HostedClusterServiceMain.cpp
+	UNIX_HostedClusterServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_HostedClusterService_AIX.cxx
+	SOURCES += UNIX_HostedClusterService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_HostedClusterService_DARWIN.cxx
+	SOURCES += UNIX_HostedClusterService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_HostedClusterService_FREEBSD.cxx
+	SOURCES += UNIX_HostedClusterService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_HostedClusterService_HPUX.cxx
+	SOURCES += UNIX_HostedClusterService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_HostedClusterService_LINUX.cxx
+	SOURCES += UNIX_HostedClusterService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_HostedClusterService_SOLARIS.cxx
+	SOURCES += UNIX_HostedClusterService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_HostedClusterService_TRU64.cxx
+	SOURCES += UNIX_HostedClusterService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_HostedClusterService_VMS.cxx
+	SOURCES += UNIX_HostedClusterService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_HostedClusterService_WIN32.cxx
+	SOURCES += UNIX_HostedClusterService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_HostedClusterService_ZOS.cxx
+	SOURCES += UNIX_HostedClusterService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_HostedClusterService_STUB.cxx
+	SOURCES += UNIX_HostedClusterService_STUB.cxx
 endif
 
 LIBRARIES = \

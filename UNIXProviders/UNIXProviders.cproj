@@ -500,6 +500,18 @@
     <Compile Include="LocalFileSystem\UNIX_LocalFileSystem_TRU64.cxx" />
     <Compile Include="LocalFileSystem\UNIX_LocalFileSystem_VMS.cxx" />
     <Compile Include="LocalFileSystem\UNIX_LocalFileSystem_ZOS.cxx" />
+    <Compile Include="CurrentTime\UNIX_CurrentTime.cpp" />
+    <Compile Include="CurrentTime\UNIX_CurrentTimeProvider.cpp" />
+    <Compile Include="CurrentTime\UNIX_CurrentTime_AIX.cxx" />
+    <Compile Include="CurrentTime\UNIX_CurrentTime_DARWIN.cxx" />
+    <Compile Include="CurrentTime\UNIX_CurrentTime_FREEBSD.cxx" />
+    <Compile Include="CurrentTime\UNIX_CurrentTime_HPUX.cxx" />
+    <Compile Include="CurrentTime\UNIX_CurrentTime_LINUX.cxx" />
+    <Compile Include="CurrentTime\UNIX_CurrentTime_SOLARIS.cxx" />
+    <Compile Include="CurrentTime\UNIX_CurrentTime_STUB.cxx" />
+    <Compile Include="CurrentTime\UNIX_CurrentTime_TRU64.cxx" />
+    <Compile Include="CurrentTime\UNIX_CurrentTime_VMS.cxx" />
+    <Compile Include="CurrentTime\UNIX_CurrentTime_ZOS.cxx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CIMHelper.h" />
@@ -2302,6 +2314,56 @@
     <None Include="Meta_Class\Meta_ClassMain.cpp" />
     <None Include="DatabaseSystem\Makefile" />
     <None Include="smbios.cpp" />
+    <None Include="SoftwareFeature\Makefile" />
+    <None Include="SoftwareElement\Makefile" />
+    <None Include="CurrentTime\Makefile" />
+    <None Include="CurrentTime\UNIX_CurrentTime.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimeDeps.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimeDeps_AIX.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimeDeps_DARWIN.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimeDeps_FREEBSD.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimeDeps_HPUX.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimeDeps_LINUX.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimeDeps_SOLARIS.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimeDeps_STUB.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimeDeps_TRU64.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimeDeps_VMS.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimeDeps_ZOS.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimePrivate.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimePrivate_AIX.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimePrivate_DARWIN.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimePrivate_FREEBSD.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimePrivate_HPUX.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimePrivate_LINUX.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimePrivate_SOLARIS.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimePrivate_STUB.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimePrivate_TRU64.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimePrivate_VMS.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimePrivate_ZOS.h" />
+    <None Include="CurrentTime\UNIX_CurrentTimeProvider.h" />
+    <None Include="CurrentTime\UNIX_CurrentTime_AIX.hpp" />
+    <None Include="CurrentTime\UNIX_CurrentTime_AIX.hxx" />
+    <None Include="CurrentTime\UNIX_CurrentTime_DARWIN.hpp" />
+    <None Include="CurrentTime\UNIX_CurrentTime_DARWIN.hxx" />
+    <None Include="CurrentTime\UNIX_CurrentTime_FREEBSD.hpp" />
+    <None Include="CurrentTime\UNIX_CurrentTime_FREEBSD.hxx" />
+    <None Include="CurrentTime\UNIX_CurrentTime_HPUX.hpp" />
+    <None Include="CurrentTime\UNIX_CurrentTime_HPUX.hxx" />
+    <None Include="CurrentTime\UNIX_CurrentTime_LINUX.hpp" />
+    <None Include="CurrentTime\UNIX_CurrentTime_LINUX.hxx" />
+    <None Include="CurrentTime\UNIX_CurrentTime_SOLARIS.hpp" />
+    <None Include="CurrentTime\UNIX_CurrentTime_SOLARIS.hxx" />
+    <None Include="CurrentTime\UNIX_CurrentTime_STUB.hpp" />
+    <None Include="CurrentTime\UNIX_CurrentTime_STUB.hxx" />
+    <None Include="CurrentTime\UNIX_CurrentTime_TRU64.hpp" />
+    <None Include="CurrentTime\UNIX_CurrentTime_TRU64.hxx" />
+    <None Include="CurrentTime\UNIX_CurrentTime_VMS.hpp" />
+    <None Include="CurrentTime\UNIX_CurrentTime_VMS.hxx" />
+    <None Include="CurrentTime\UNIX_CurrentTime_WIN32.hpp" />
+    <None Include="CurrentTime\UNIX_CurrentTime_ZOS.hpp" />
+    <None Include="CurrentTime\UNIX_CurrentTime_ZOS.hxx" />
+    <None Include="CurrentTime\UNIX_CurrentTimeMain.cpp" />
+    <None Include="DiskPartition\Makefile" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Account\" />
@@ -2346,5 +2408,6 @@
     <Folder Include="NFS\" />
     <Folder Include="RemoteFileSystem\" />
     <Folder Include="LocalFileSystem\" />
+    <Folder Include="CurrentTime\" />
   </ItemGroup>
 </Project>

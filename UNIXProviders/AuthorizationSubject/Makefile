@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AuthorizationSubjectMain.cpp \
 	UNIX_AuthorizationSubject.cpp \
-	UNIX_AuthorizationSubjectProvider.cpp \
-	UNIX_AuthorizationSubjectMain.cpp
+	UNIX_AuthorizationSubjectProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AuthorizationSubject_AIX.cxx
+	SOURCES += UNIX_AuthorizationSubject_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AuthorizationSubject_DARWIN.cxx
+	SOURCES += UNIX_AuthorizationSubject_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AuthorizationSubject_FREEBSD.cxx
+	SOURCES += UNIX_AuthorizationSubject_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AuthorizationSubject_HPUX.cxx
+	SOURCES += UNIX_AuthorizationSubject_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AuthorizationSubject_LINUX.cxx
+	SOURCES += UNIX_AuthorizationSubject_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AuthorizationSubject_SOLARIS.cxx
+	SOURCES += UNIX_AuthorizationSubject_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AuthorizationSubject_TRU64.cxx
+	SOURCES += UNIX_AuthorizationSubject_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AuthorizationSubject_VMS.cxx
+	SOURCES += UNIX_AuthorizationSubject_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AuthorizationSubject_WIN32.cxx
+	SOURCES += UNIX_AuthorizationSubject_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AuthorizationSubject_ZOS.cxx
+	SOURCES += UNIX_AuthorizationSubject_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AuthorizationSubject_STUB.cxx
+	SOURCES += UNIX_AuthorizationSubject_STUB.cxx
 endif
 
 LIBRARIES = \

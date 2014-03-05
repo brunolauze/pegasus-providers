@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AssociatedRemainingExtentMain.cpp \
 	UNIX_AssociatedRemainingExtent.cpp \
-	UNIX_AssociatedRemainingExtentProvider.cpp \
-	UNIX_AssociatedRemainingExtentMain.cpp
+	UNIX_AssociatedRemainingExtentProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AssociatedRemainingExtent_AIX.cxx
+	SOURCES += UNIX_AssociatedRemainingExtent_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AssociatedRemainingExtent_DARWIN.cxx
+	SOURCES += UNIX_AssociatedRemainingExtent_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AssociatedRemainingExtent_FREEBSD.cxx
+	SOURCES += UNIX_AssociatedRemainingExtent_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AssociatedRemainingExtent_HPUX.cxx
+	SOURCES += UNIX_AssociatedRemainingExtent_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AssociatedRemainingExtent_LINUX.cxx
+	SOURCES += UNIX_AssociatedRemainingExtent_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AssociatedRemainingExtent_SOLARIS.cxx
+	SOURCES += UNIX_AssociatedRemainingExtent_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AssociatedRemainingExtent_TRU64.cxx
+	SOURCES += UNIX_AssociatedRemainingExtent_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AssociatedRemainingExtent_VMS.cxx
+	SOURCES += UNIX_AssociatedRemainingExtent_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AssociatedRemainingExtent_WIN32.cxx
+	SOURCES += UNIX_AssociatedRemainingExtent_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AssociatedRemainingExtent_ZOS.cxx
+	SOURCES += UNIX_AssociatedRemainingExtent_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AssociatedRemainingExtent_STUB.cxx
+	SOURCES += UNIX_AssociatedRemainingExtent_STUB.cxx
 endif
 
 LIBRARIES = \

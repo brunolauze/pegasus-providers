@@ -44,43 +44,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 SOURCES = \
 	../CIMHelper.cpp \
 	../smbios.cpp \
+	UNIX_BIOSIntegerMain.cpp \
 	UNIX_BIOSInteger.cpp \
-	UNIX_BIOSIntegerProvider.cpp \
-	UNIX_BIOSIntegerMain.cpp
+	UNIX_BIOSIntegerProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BIOSInteger_AIX.cxx
+	SOURCES += UNIX_BIOSInteger_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BIOSInteger_DARWIN.cxx
+	SOURCES += UNIX_BIOSInteger_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BIOSInteger_FREEBSD.cxx
+	SOURCES += UNIX_BIOSInteger_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BIOSInteger_HPUX.cxx
+	SOURCES += UNIX_BIOSInteger_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BIOSInteger_LINUX.cxx
+	SOURCES += UNIX_BIOSInteger_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BIOSInteger_SOLARIS.cxx
+	SOURCES += UNIX_BIOSInteger_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BIOSInteger_TRU64.cxx
+	SOURCES += UNIX_BIOSInteger_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BIOSInteger_VMS.cxx
+	SOURCES += UNIX_BIOSInteger_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BIOSInteger_WIN32.cxx
+	SOURCES += UNIX_BIOSInteger_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BIOSInteger_ZOS.cxx
+	SOURCES += UNIX_BIOSInteger_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BIOSInteger_STUB.cxx
+	SOURCES += UNIX_BIOSInteger_STUB.cxx
 endif
 
 LIBRARIES = \

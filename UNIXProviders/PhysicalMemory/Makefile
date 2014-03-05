@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PhysicalMemoryMain.cpp \
 	UNIX_PhysicalMemory.cpp \
-	UNIX_PhysicalMemoryProvider.cpp \
-	UNIX_PhysicalMemoryMain.cpp
+	UNIX_PhysicalMemoryProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PhysicalMemory_AIX.cxx
+	SOURCES += UNIX_PhysicalMemory_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PhysicalMemory_DARWIN.cxx
+	SOURCES += UNIX_PhysicalMemory_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PhysicalMemory_FREEBSD.cxx
+	SOURCES += UNIX_PhysicalMemory_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PhysicalMemory_HPUX.cxx
+	SOURCES += UNIX_PhysicalMemory_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PhysicalMemory_LINUX.cxx
+	SOURCES += UNIX_PhysicalMemory_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PhysicalMemory_SOLARIS.cxx
+	SOURCES += UNIX_PhysicalMemory_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PhysicalMemory_TRU64.cxx
+	SOURCES += UNIX_PhysicalMemory_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PhysicalMemory_VMS.cxx
+	SOURCES += UNIX_PhysicalMemory_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PhysicalMemory_WIN32.cxx
+	SOURCES += UNIX_PhysicalMemory_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PhysicalMemory_ZOS.cxx
+	SOURCES += UNIX_PhysicalMemory_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PhysicalMemory_STUB.cxx
+	SOURCES += UNIX_PhysicalMemory_STUB.cxx
 endif
 
 LIBRARIES = \

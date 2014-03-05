@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_IBSubnetManagerMain.cpp \
 	UNIX_IBSubnetManager.cpp \
-	UNIX_IBSubnetManagerProvider.cpp \
-	UNIX_IBSubnetManagerMain.cpp
+	UNIX_IBSubnetManagerProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_IBSubnetManager_AIX.cxx
+	SOURCES += UNIX_IBSubnetManager_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_IBSubnetManager_DARWIN.cxx
+	SOURCES += UNIX_IBSubnetManager_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_IBSubnetManager_FREEBSD.cxx
+	SOURCES += UNIX_IBSubnetManager_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_IBSubnetManager_HPUX.cxx
+	SOURCES += UNIX_IBSubnetManager_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_IBSubnetManager_LINUX.cxx
+	SOURCES += UNIX_IBSubnetManager_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_IBSubnetManager_SOLARIS.cxx
+	SOURCES += UNIX_IBSubnetManager_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_IBSubnetManager_TRU64.cxx
+	SOURCES += UNIX_IBSubnetManager_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_IBSubnetManager_VMS.cxx
+	SOURCES += UNIX_IBSubnetManager_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_IBSubnetManager_WIN32.cxx
+	SOURCES += UNIX_IBSubnetManager_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_IBSubnetManager_ZOS.cxx
+	SOURCES += UNIX_IBSubnetManager_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_IBSubnetManager_STUB.cxx
+	SOURCES += UNIX_IBSubnetManager_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_AllocatedResourceProvider.cpp \
 	UNIX_AllocatedResourceMain.cpp
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AllocatedResource_AIX.cxx
+	SOURCES += UNIX_AllocatedResource_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AllocatedResource_DARWIN.cxx
+	SOURCES += UNIX_AllocatedResource_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AllocatedResource_FREEBSD.cxx
+	SOURCES += UNIX_AllocatedResource_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AllocatedResource_HPUX.cxx
+	SOURCES += UNIX_AllocatedResource_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AllocatedResource_LINUX.cxx
+	SOURCES += UNIX_AllocatedResource_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AllocatedResource_SOLARIS.cxx
+	SOURCES += UNIX_AllocatedResource_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AllocatedResource_TRU64.cxx
+	SOURCES += UNIX_AllocatedResource_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AllocatedResource_VMS.cxx
+	SOURCES += UNIX_AllocatedResource_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AllocatedResource_WIN32.cxx
+	SOURCES += UNIX_AllocatedResource_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AllocatedResource_ZOS.cxx
+	SOURCES += UNIX_AllocatedResource_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AllocatedResource_STUB.cxx
+	SOURCES += UNIX_AllocatedResource_STUB.cxx
 endif
 
 LIBRARIES = \

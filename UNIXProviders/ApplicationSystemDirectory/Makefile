@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ApplicationSystemDirectoryMain.cpp \
 	UNIX_ApplicationSystemDirectory.cpp \
-	UNIX_ApplicationSystemDirectoryProvider.cpp \
-	UNIX_ApplicationSystemDirectoryMain.cpp
+	UNIX_ApplicationSystemDirectoryProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ApplicationSystemDirectory_AIX.cxx
+	SOURCES += UNIX_ApplicationSystemDirectory_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ApplicationSystemDirectory_DARWIN.cxx
+	SOURCES += UNIX_ApplicationSystemDirectory_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ApplicationSystemDirectory_FREEBSD.cxx
+	SOURCES += UNIX_ApplicationSystemDirectory_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ApplicationSystemDirectory_HPUX.cxx
+	SOURCES += UNIX_ApplicationSystemDirectory_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ApplicationSystemDirectory_LINUX.cxx
+	SOURCES += UNIX_ApplicationSystemDirectory_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ApplicationSystemDirectory_SOLARIS.cxx
+	SOURCES += UNIX_ApplicationSystemDirectory_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ApplicationSystemDirectory_TRU64.cxx
+	SOURCES += UNIX_ApplicationSystemDirectory_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ApplicationSystemDirectory_VMS.cxx
+	SOURCES += UNIX_ApplicationSystemDirectory_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ApplicationSystemDirectory_WIN32.cxx
+	SOURCES += UNIX_ApplicationSystemDirectory_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ApplicationSystemDirectory_ZOS.cxx
+	SOURCES += UNIX_ApplicationSystemDirectory_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ApplicationSystemDirectory_STUB.cxx
+	SOURCES += UNIX_ApplicationSystemDirectory_STUB.cxx
 endif
 
 LIBRARIES = \

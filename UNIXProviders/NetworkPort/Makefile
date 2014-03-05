@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_NetworkPortMain.cpp \
 	UNIX_NetworkPort.cpp \
-	UNIX_NetworkPortProvider.cpp \
-	UNIX_NetworkPortMain.cpp
+	UNIX_NetworkPortProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_NetworkPort_AIX.cxx
+	SOURCES += UNIX_NetworkPort_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_NetworkPort_DARWIN.cxx
+	SOURCES += UNIX_NetworkPort_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_NetworkPort_FREEBSD.cxx
+	SOURCES += UNIX_NetworkPort_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_NetworkPort_HPUX.cxx
+	SOURCES += UNIX_NetworkPort_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_NetworkPort_LINUX.cxx
+	SOURCES += UNIX_NetworkPort_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_NetworkPort_SOLARIS.cxx
+	SOURCES += UNIX_NetworkPort_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_NetworkPort_TRU64.cxx
+	SOURCES += UNIX_NetworkPort_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_NetworkPort_VMS.cxx
+	SOURCES += UNIX_NetworkPort_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_NetworkPort_WIN32.cxx
+	SOURCES += UNIX_NetworkPort_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_NetworkPort_ZOS.cxx
+	SOURCES += UNIX_NetworkPort_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_NetworkPort_STUB.cxx
+	SOURCES += UNIX_NetworkPort_STUB.cxx
 endif
 
 LIBRARIES = \

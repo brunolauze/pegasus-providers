@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ObjectManagerAdapterMain.cpp \
 	UNIX_ObjectManagerAdapter.cpp \
-	UNIX_ObjectManagerAdapterProvider.cpp \
-	UNIX_ObjectManagerAdapterMain.cpp
+	UNIX_ObjectManagerAdapterProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ObjectManagerAdapter_AIX.cxx
+	SOURCES += UNIX_ObjectManagerAdapter_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ObjectManagerAdapter_DARWIN.cxx
+	SOURCES += UNIX_ObjectManagerAdapter_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ObjectManagerAdapter_FREEBSD.cxx
+	SOURCES += UNIX_ObjectManagerAdapter_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ObjectManagerAdapter_HPUX.cxx
+	SOURCES += UNIX_ObjectManagerAdapter_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ObjectManagerAdapter_LINUX.cxx
+	SOURCES += UNIX_ObjectManagerAdapter_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ObjectManagerAdapter_SOLARIS.cxx
+	SOURCES += UNIX_ObjectManagerAdapter_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ObjectManagerAdapter_TRU64.cxx
+	SOURCES += UNIX_ObjectManagerAdapter_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ObjectManagerAdapter_VMS.cxx
+	SOURCES += UNIX_ObjectManagerAdapter_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ObjectManagerAdapter_WIN32.cxx
+	SOURCES += UNIX_ObjectManagerAdapter_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ObjectManagerAdapter_ZOS.cxx
+	SOURCES += UNIX_ObjectManagerAdapter_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ObjectManagerAdapter_STUB.cxx
+	SOURCES += UNIX_ObjectManagerAdapter_STUB.cxx
 endif
 
 LIBRARIES = \

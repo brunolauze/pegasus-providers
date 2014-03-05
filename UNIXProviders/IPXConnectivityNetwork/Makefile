@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_IPXConnectivityNetworkMain.cpp \
 	UNIX_IPXConnectivityNetwork.cpp \
-	UNIX_IPXConnectivityNetworkProvider.cpp \
-	UNIX_IPXConnectivityNetworkMain.cpp
+	UNIX_IPXConnectivityNetworkProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_IPXConnectivityNetwork_AIX.cxx
+	SOURCES += UNIX_IPXConnectivityNetwork_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_IPXConnectivityNetwork_DARWIN.cxx
+	SOURCES += UNIX_IPXConnectivityNetwork_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_IPXConnectivityNetwork_FREEBSD.cxx
+	SOURCES += UNIX_IPXConnectivityNetwork_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_IPXConnectivityNetwork_HPUX.cxx
+	SOURCES += UNIX_IPXConnectivityNetwork_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_IPXConnectivityNetwork_LINUX.cxx
+	SOURCES += UNIX_IPXConnectivityNetwork_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_IPXConnectivityNetwork_SOLARIS.cxx
+	SOURCES += UNIX_IPXConnectivityNetwork_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_IPXConnectivityNetwork_TRU64.cxx
+	SOURCES += UNIX_IPXConnectivityNetwork_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_IPXConnectivityNetwork_VMS.cxx
+	SOURCES += UNIX_IPXConnectivityNetwork_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_IPXConnectivityNetwork_WIN32.cxx
+	SOURCES += UNIX_IPXConnectivityNetwork_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_IPXConnectivityNetwork_ZOS.cxx
+	SOURCES += UNIX_IPXConnectivityNetwork_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_IPXConnectivityNetwork_STUB.cxx
+	SOURCES += UNIX_IPXConnectivityNetwork_STUB.cxx
 endif
 
 LIBRARIES = \

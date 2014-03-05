@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_OSPFAreaMain.cpp \
 	UNIX_OSPFArea.cpp \
-	UNIX_OSPFAreaProvider.cpp \
-	UNIX_OSPFAreaMain.cpp
+	UNIX_OSPFAreaProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_OSPFArea_AIX.cxx
+	SOURCES += UNIX_OSPFArea_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_OSPFArea_DARWIN.cxx
+	SOURCES += UNIX_OSPFArea_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_OSPFArea_FREEBSD.cxx
+	SOURCES += UNIX_OSPFArea_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_OSPFArea_HPUX.cxx
+	SOURCES += UNIX_OSPFArea_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_OSPFArea_LINUX.cxx
+	SOURCES += UNIX_OSPFArea_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_OSPFArea_SOLARIS.cxx
+	SOURCES += UNIX_OSPFArea_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_OSPFArea_TRU64.cxx
+	SOURCES += UNIX_OSPFArea_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_OSPFArea_VMS.cxx
+	SOURCES += UNIX_OSPFArea_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_OSPFArea_WIN32.cxx
+	SOURCES += UNIX_OSPFArea_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_OSPFArea_ZOS.cxx
+	SOURCES += UNIX_OSPFArea_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_OSPFArea_STUB.cxx
+	SOURCES += UNIX_OSPFArea_STUB.cxx
 endif
 
 LIBRARIES = \

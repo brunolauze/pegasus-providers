@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SnapshotOfExtentMain.cpp \
 	UNIX_SnapshotOfExtent.cpp \
-	UNIX_SnapshotOfExtentProvider.cpp \
-	UNIX_SnapshotOfExtentMain.cpp
+	UNIX_SnapshotOfExtentProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SnapshotOfExtent_AIX.cxx
+	SOURCES += UNIX_SnapshotOfExtent_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SnapshotOfExtent_DARWIN.cxx
+	SOURCES += UNIX_SnapshotOfExtent_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SnapshotOfExtent_FREEBSD.cxx
+	SOURCES += UNIX_SnapshotOfExtent_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SnapshotOfExtent_HPUX.cxx
+	SOURCES += UNIX_SnapshotOfExtent_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SnapshotOfExtent_LINUX.cxx
+	SOURCES += UNIX_SnapshotOfExtent_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SnapshotOfExtent_SOLARIS.cxx
+	SOURCES += UNIX_SnapshotOfExtent_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SnapshotOfExtent_TRU64.cxx
+	SOURCES += UNIX_SnapshotOfExtent_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SnapshotOfExtent_VMS.cxx
+	SOURCES += UNIX_SnapshotOfExtent_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SnapshotOfExtent_WIN32.cxx
+	SOURCES += UNIX_SnapshotOfExtent_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SnapshotOfExtent_ZOS.cxx
+	SOURCES += UNIX_SnapshotOfExtent_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SnapshotOfExtent_STUB.cxx
+	SOURCES += UNIX_SnapshotOfExtent_STUB.cxx
 endif
 
 LIBRARIES = \

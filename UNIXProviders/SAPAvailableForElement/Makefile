@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SAPAvailableForElementMain.cpp \
 	UNIX_SAPAvailableForElement.cpp \
-	UNIX_SAPAvailableForElementProvider.cpp \
-	UNIX_SAPAvailableForElementMain.cpp
+	UNIX_SAPAvailableForElementProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SAPAvailableForElement_AIX.cxx
+	SOURCES += UNIX_SAPAvailableForElement_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SAPAvailableForElement_DARWIN.cxx
+	SOURCES += UNIX_SAPAvailableForElement_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SAPAvailableForElement_FREEBSD.cxx
+	SOURCES += UNIX_SAPAvailableForElement_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SAPAvailableForElement_HPUX.cxx
+	SOURCES += UNIX_SAPAvailableForElement_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SAPAvailableForElement_LINUX.cxx
+	SOURCES += UNIX_SAPAvailableForElement_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SAPAvailableForElement_SOLARIS.cxx
+	SOURCES += UNIX_SAPAvailableForElement_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SAPAvailableForElement_TRU64.cxx
+	SOURCES += UNIX_SAPAvailableForElement_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SAPAvailableForElement_VMS.cxx
+	SOURCES += UNIX_SAPAvailableForElement_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SAPAvailableForElement_WIN32.cxx
+	SOURCES += UNIX_SAPAvailableForElement_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SAPAvailableForElement_ZOS.cxx
+	SOURCES += UNIX_SAPAvailableForElement_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SAPAvailableForElement_STUB.cxx
+	SOURCES += UNIX_SAPAvailableForElement_STUB.cxx
 endif
 
 LIBRARIES = \

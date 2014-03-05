@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_CASignsPublicKeyCertificateMain.cpp \
 	UNIX_CASignsPublicKeyCertificate.cpp \
-	UNIX_CASignsPublicKeyCertificateProvider.cpp \
-	UNIX_CASignsPublicKeyCertificateMain.cpp
+	UNIX_CASignsPublicKeyCertificateProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_CASignsPublicKeyCertificate_AIX.cxx
+	SOURCES += UNIX_CASignsPublicKeyCertificate_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_CASignsPublicKeyCertificate_DARWIN.cxx
+	SOURCES += UNIX_CASignsPublicKeyCertificate_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_CASignsPublicKeyCertificate_FREEBSD.cxx
+	SOURCES += UNIX_CASignsPublicKeyCertificate_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_CASignsPublicKeyCertificate_HPUX.cxx
+	SOURCES += UNIX_CASignsPublicKeyCertificate_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_CASignsPublicKeyCertificate_LINUX.cxx
+	SOURCES += UNIX_CASignsPublicKeyCertificate_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_CASignsPublicKeyCertificate_SOLARIS.cxx
+	SOURCES += UNIX_CASignsPublicKeyCertificate_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_CASignsPublicKeyCertificate_TRU64.cxx
+	SOURCES += UNIX_CASignsPublicKeyCertificate_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_CASignsPublicKeyCertificate_VMS.cxx
+	SOURCES += UNIX_CASignsPublicKeyCertificate_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_CASignsPublicKeyCertificate_WIN32.cxx
+	SOURCES += UNIX_CASignsPublicKeyCertificate_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_CASignsPublicKeyCertificate_ZOS.cxx
+	SOURCES += UNIX_CASignsPublicKeyCertificate_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_CASignsPublicKeyCertificate_STUB.cxx
+	SOURCES += UNIX_CASignsPublicKeyCertificate_STUB.cxx
 endif
 
 LIBRARIES = \

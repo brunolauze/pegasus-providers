@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_InfraredControllerMain.cpp \
 	UNIX_InfraredController.cpp \
-	UNIX_InfraredControllerProvider.cpp \
-	UNIX_InfraredControllerMain.cpp
+	UNIX_InfraredControllerProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_InfraredController_AIX.cxx
+	SOURCES += UNIX_InfraredController_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_InfraredController_DARWIN.cxx
+	SOURCES += UNIX_InfraredController_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_InfraredController_FREEBSD.cxx
+	SOURCES += UNIX_InfraredController_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_InfraredController_HPUX.cxx
+	SOURCES += UNIX_InfraredController_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_InfraredController_LINUX.cxx
+	SOURCES += UNIX_InfraredController_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_InfraredController_SOLARIS.cxx
+	SOURCES += UNIX_InfraredController_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_InfraredController_TRU64.cxx
+	SOURCES += UNIX_InfraredController_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_InfraredController_VMS.cxx
+	SOURCES += UNIX_InfraredController_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_InfraredController_WIN32.cxx
+	SOURCES += UNIX_InfraredController_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_InfraredController_ZOS.cxx
+	SOURCES += UNIX_InfraredController_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_InfraredController_STUB.cxx
+	SOURCES += UNIX_InfraredController_STUB.cxx
 endif
 
 LIBRARIES = \

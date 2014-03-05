@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ErrorMain.cpp \
 	UNIX_Error.cpp \
-	UNIX_ErrorProvider.cpp \
-	UNIX_ErrorMain.cpp
+	UNIX_ErrorProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_Error_AIX.cxx
+	SOURCES += UNIX_Error_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_Error_DARWIN.cxx
+	SOURCES += UNIX_Error_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_Error_FREEBSD.cxx
+	SOURCES += UNIX_Error_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_Error_HPUX.cxx
+	SOURCES += UNIX_Error_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_Error_LINUX.cxx
+	SOURCES += UNIX_Error_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_Error_SOLARIS.cxx
+	SOURCES += UNIX_Error_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_Error_TRU64.cxx
+	SOURCES += UNIX_Error_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_Error_VMS.cxx
+	SOURCES += UNIX_Error_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_Error_WIN32.cxx
+	SOURCES += UNIX_Error_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_Error_ZOS.cxx
+	SOURCES += UNIX_Error_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_Error_STUB.cxx
+	SOURCES += UNIX_Error_STUB.cxx
 endif
 
 LIBRARIES = \

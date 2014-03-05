@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_InstReadMain.cpp \
 	UNIX_InstRead.cpp \
-	UNIX_InstReadProvider.cpp \
-	UNIX_InstReadMain.cpp
+	UNIX_InstReadProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_InstRead_AIX.cxx
+	SOURCES += UNIX_InstRead_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_InstRead_DARWIN.cxx
+	SOURCES += UNIX_InstRead_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_InstRead_FREEBSD.cxx
+	SOURCES += UNIX_InstRead_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_InstRead_HPUX.cxx
+	SOURCES += UNIX_InstRead_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_InstRead_LINUX.cxx
+	SOURCES += UNIX_InstRead_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_InstRead_SOLARIS.cxx
+	SOURCES += UNIX_InstRead_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_InstRead_TRU64.cxx
+	SOURCES += UNIX_InstRead_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_InstRead_VMS.cxx
+	SOURCES += UNIX_InstRead_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_InstRead_WIN32.cxx
+	SOURCES += UNIX_InstRead_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_InstRead_ZOS.cxx
+	SOURCES += UNIX_InstRead_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_InstRead_STUB.cxx
+	SOURCES += UNIX_InstRead_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_StorageRedundancySetMain.cpp \
 	UNIX_StorageRedundancySet.cpp \
-	UNIX_StorageRedundancySetProvider.cpp \
-	UNIX_StorageRedundancySetMain.cpp
+	UNIX_StorageRedundancySetProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_StorageRedundancySet_AIX.cxx
+	SOURCES += UNIX_StorageRedundancySet_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_StorageRedundancySet_DARWIN.cxx
+	SOURCES += UNIX_StorageRedundancySet_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_StorageRedundancySet_FREEBSD.cxx
+	SOURCES += UNIX_StorageRedundancySet_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_StorageRedundancySet_HPUX.cxx
+	SOURCES += UNIX_StorageRedundancySet_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_StorageRedundancySet_LINUX.cxx
+	SOURCES += UNIX_StorageRedundancySet_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_StorageRedundancySet_SOLARIS.cxx
+	SOURCES += UNIX_StorageRedundancySet_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_StorageRedundancySet_TRU64.cxx
+	SOURCES += UNIX_StorageRedundancySet_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_StorageRedundancySet_VMS.cxx
+	SOURCES += UNIX_StorageRedundancySet_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_StorageRedundancySet_WIN32.cxx
+	SOURCES += UNIX_StorageRedundancySet_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_StorageRedundancySet_ZOS.cxx
+	SOURCES += UNIX_StorageRedundancySet_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_StorageRedundancySet_STUB.cxx
+	SOURCES += UNIX_StorageRedundancySet_STUB.cxx
 endif
 
 LIBRARIES = \

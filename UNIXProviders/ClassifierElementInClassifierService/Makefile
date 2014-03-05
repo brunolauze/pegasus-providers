@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ClassifierElementInClassifierServiceMain.cpp \
 	UNIX_ClassifierElementInClassifierService.cpp \
-	UNIX_ClassifierElementInClassifierServiceProvider.cpp \
-	UNIX_ClassifierElementInClassifierServiceMain.cpp
+	UNIX_ClassifierElementInClassifierServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ClassifierElementInClassifierService_AIX.cxx
+	SOURCES += UNIX_ClassifierElementInClassifierService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ClassifierElementInClassifierService_DARWIN.cxx
+	SOURCES += UNIX_ClassifierElementInClassifierService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ClassifierElementInClassifierService_FREEBSD.cxx
+	SOURCES += UNIX_ClassifierElementInClassifierService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ClassifierElementInClassifierService_HPUX.cxx
+	SOURCES += UNIX_ClassifierElementInClassifierService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ClassifierElementInClassifierService_LINUX.cxx
+	SOURCES += UNIX_ClassifierElementInClassifierService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ClassifierElementInClassifierService_SOLARIS.cxx
+	SOURCES += UNIX_ClassifierElementInClassifierService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ClassifierElementInClassifierService_TRU64.cxx
+	SOURCES += UNIX_ClassifierElementInClassifierService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ClassifierElementInClassifierService_VMS.cxx
+	SOURCES += UNIX_ClassifierElementInClassifierService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ClassifierElementInClassifierService_WIN32.cxx
+	SOURCES += UNIX_ClassifierElementInClassifierService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ClassifierElementInClassifierService_ZOS.cxx
+	SOURCES += UNIX_ClassifierElementInClassifierService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ClassifierElementInClassifierService_STUB.cxx
+	SOURCES += UNIX_ClassifierElementInClassifierService_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_QueuingServiceMain.cpp \
 	UNIX_QueuingService.cpp \
-	UNIX_QueuingServiceProvider.cpp \
-	UNIX_QueuingServiceMain.cpp
+	UNIX_QueuingServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_QueuingService_AIX.cxx
+	SOURCES += UNIX_QueuingService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_QueuingService_DARWIN.cxx
+	SOURCES += UNIX_QueuingService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_QueuingService_FREEBSD.cxx
+	SOURCES += UNIX_QueuingService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_QueuingService_HPUX.cxx
+	SOURCES += UNIX_QueuingService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_QueuingService_LINUX.cxx
+	SOURCES += UNIX_QueuingService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_QueuingService_SOLARIS.cxx
+	SOURCES += UNIX_QueuingService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_QueuingService_TRU64.cxx
+	SOURCES += UNIX_QueuingService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_QueuingService_VMS.cxx
+	SOURCES += UNIX_QueuingService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_QueuingService_WIN32.cxx
+	SOURCES += UNIX_QueuingService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_QueuingService_ZOS.cxx
+	SOURCES += UNIX_QueuingService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_QueuingService_STUB.cxx
+	SOURCES += UNIX_QueuingService_STUB.cxx
 endif
 
 LIBRARIES = \

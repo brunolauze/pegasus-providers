@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_CredentialContextMain.cpp \
 	UNIX_CredentialContext.cpp \
-	UNIX_CredentialContextProvider.cpp \
-	UNIX_CredentialContextMain.cpp
+	UNIX_CredentialContextProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_CredentialContext_AIX.cxx
+	SOURCES += UNIX_CredentialContext_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_CredentialContext_DARWIN.cxx
+	SOURCES += UNIX_CredentialContext_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_CredentialContext_FREEBSD.cxx
+	SOURCES += UNIX_CredentialContext_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_CredentialContext_HPUX.cxx
+	SOURCES += UNIX_CredentialContext_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_CredentialContext_LINUX.cxx
+	SOURCES += UNIX_CredentialContext_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_CredentialContext_SOLARIS.cxx
+	SOURCES += UNIX_CredentialContext_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_CredentialContext_TRU64.cxx
+	SOURCES += UNIX_CredentialContext_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_CredentialContext_VMS.cxx
+	SOURCES += UNIX_CredentialContext_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_CredentialContext_WIN32.cxx
+	SOURCES += UNIX_CredentialContext_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_CredentialContext_ZOS.cxx
+	SOURCES += UNIX_CredentialContext_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_CredentialContext_STUB.cxx
+	SOURCES += UNIX_CredentialContext_STUB.cxx
 endif
 
 LIBRARIES = \

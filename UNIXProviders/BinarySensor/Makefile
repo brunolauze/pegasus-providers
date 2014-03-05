@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_BinarySensorMain.cpp \
 	UNIX_BinarySensor.cpp \
-	UNIX_BinarySensorProvider.cpp \
-	UNIX_BinarySensorMain.cpp
+	UNIX_BinarySensorProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_BinarySensor_AIX.cxx
+	SOURCES += UNIX_BinarySensor_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_BinarySensor_DARWIN.cxx
+	SOURCES += UNIX_BinarySensor_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_BinarySensor_FREEBSD.cxx
+	SOURCES += UNIX_BinarySensor_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_BinarySensor_HPUX.cxx
+	SOURCES += UNIX_BinarySensor_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_BinarySensor_LINUX.cxx
+	SOURCES += UNIX_BinarySensor_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_BinarySensor_SOLARIS.cxx
+	SOURCES += UNIX_BinarySensor_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_BinarySensor_TRU64.cxx
+	SOURCES += UNIX_BinarySensor_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_BinarySensor_VMS.cxx
+	SOURCES += UNIX_BinarySensor_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_BinarySensor_WIN32.cxx
+	SOURCES += UNIX_BinarySensor_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_BinarySensor_ZOS.cxx
+	SOURCES += UNIX_BinarySensor_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_BinarySensor_STUB.cxx
+	SOURCES += UNIX_BinarySensor_STUB.cxx
 endif
 
 LIBRARIES = \

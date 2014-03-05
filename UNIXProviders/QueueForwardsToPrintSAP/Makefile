@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_QueueForwardsToPrintSAPMain.cpp \
 	UNIX_QueueForwardsToPrintSAP.cpp \
-	UNIX_QueueForwardsToPrintSAPProvider.cpp \
-	UNIX_QueueForwardsToPrintSAPMain.cpp
+	UNIX_QueueForwardsToPrintSAPProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_QueueForwardsToPrintSAP_AIX.cxx
+	SOURCES += UNIX_QueueForwardsToPrintSAP_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_QueueForwardsToPrintSAP_DARWIN.cxx
+	SOURCES += UNIX_QueueForwardsToPrintSAP_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_QueueForwardsToPrintSAP_FREEBSD.cxx
+	SOURCES += UNIX_QueueForwardsToPrintSAP_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_QueueForwardsToPrintSAP_HPUX.cxx
+	SOURCES += UNIX_QueueForwardsToPrintSAP_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_QueueForwardsToPrintSAP_LINUX.cxx
+	SOURCES += UNIX_QueueForwardsToPrintSAP_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_QueueForwardsToPrintSAP_SOLARIS.cxx
+	SOURCES += UNIX_QueueForwardsToPrintSAP_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_QueueForwardsToPrintSAP_TRU64.cxx
+	SOURCES += UNIX_QueueForwardsToPrintSAP_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_QueueForwardsToPrintSAP_VMS.cxx
+	SOURCES += UNIX_QueueForwardsToPrintSAP_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_QueueForwardsToPrintSAP_WIN32.cxx
+	SOURCES += UNIX_QueueForwardsToPrintSAP_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_QueueForwardsToPrintSAP_ZOS.cxx
+	SOURCES += UNIX_QueueForwardsToPrintSAP_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_QueueForwardsToPrintSAP_STUB.cxx
+	SOURCES += UNIX_QueueForwardsToPrintSAP_STUB.cxx
 endif
 
 LIBRARIES = \

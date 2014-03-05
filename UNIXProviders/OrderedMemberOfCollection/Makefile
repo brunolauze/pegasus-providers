@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_OrderedMemberOfCollectionMain.cpp \
 	UNIX_OrderedMemberOfCollection.cpp \
-	UNIX_OrderedMemberOfCollectionProvider.cpp \
-	UNIX_OrderedMemberOfCollectionMain.cpp
+	UNIX_OrderedMemberOfCollectionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_OrderedMemberOfCollection_AIX.cxx
+	SOURCES += UNIX_OrderedMemberOfCollection_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_OrderedMemberOfCollection_DARWIN.cxx
+	SOURCES += UNIX_OrderedMemberOfCollection_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_OrderedMemberOfCollection_FREEBSD.cxx
+	SOURCES += UNIX_OrderedMemberOfCollection_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_OrderedMemberOfCollection_HPUX.cxx
+	SOURCES += UNIX_OrderedMemberOfCollection_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_OrderedMemberOfCollection_LINUX.cxx
+	SOURCES += UNIX_OrderedMemberOfCollection_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_OrderedMemberOfCollection_SOLARIS.cxx
+	SOURCES += UNIX_OrderedMemberOfCollection_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_OrderedMemberOfCollection_TRU64.cxx
+	SOURCES += UNIX_OrderedMemberOfCollection_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_OrderedMemberOfCollection_VMS.cxx
+	SOURCES += UNIX_OrderedMemberOfCollection_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_OrderedMemberOfCollection_WIN32.cxx
+	SOURCES += UNIX_OrderedMemberOfCollection_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_OrderedMemberOfCollection_ZOS.cxx
+	SOURCES += UNIX_OrderedMemberOfCollection_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_OrderedMemberOfCollection_STUB.cxx
+	SOURCES += UNIX_OrderedMemberOfCollection_STUB.cxx
 endif
 
 LIBRARIES = \

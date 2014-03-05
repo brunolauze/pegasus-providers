@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_MessageLogMain.cpp \
 	UNIX_MessageLog.cpp \
-	UNIX_MessageLogProvider.cpp \
-	UNIX_MessageLogMain.cpp
+	UNIX_MessageLogProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_MessageLog_AIX.cxx
+	SOURCES += UNIX_MessageLog_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_MessageLog_DARWIN.cxx
+	SOURCES += UNIX_MessageLog_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_MessageLog_FREEBSD.cxx
+	SOURCES += UNIX_MessageLog_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_MessageLog_HPUX.cxx
+	SOURCES += UNIX_MessageLog_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_MessageLog_LINUX.cxx
+	SOURCES += UNIX_MessageLog_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_MessageLog_SOLARIS.cxx
+	SOURCES += UNIX_MessageLog_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_MessageLog_TRU64.cxx
+	SOURCES += UNIX_MessageLog_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_MessageLog_VMS.cxx
+	SOURCES += UNIX_MessageLog_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_MessageLog_WIN32.cxx
+	SOURCES += UNIX_MessageLog_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_MessageLog_ZOS.cxx
+	SOURCES += UNIX_MessageLog_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_MessageLog_STUB.cxx
+	SOURCES += UNIX_MessageLog_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_WeightedREDDropperServiceMain.cpp \
 	UNIX_WeightedREDDropperService.cpp \
-	UNIX_WeightedREDDropperServiceProvider.cpp \
-	UNIX_WeightedREDDropperServiceMain.cpp
+	UNIX_WeightedREDDropperServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_WeightedREDDropperService_AIX.cxx
+	SOURCES += UNIX_WeightedREDDropperService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_WeightedREDDropperService_DARWIN.cxx
+	SOURCES += UNIX_WeightedREDDropperService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_WeightedREDDropperService_FREEBSD.cxx
+	SOURCES += UNIX_WeightedREDDropperService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_WeightedREDDropperService_HPUX.cxx
+	SOURCES += UNIX_WeightedREDDropperService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_WeightedREDDropperService_LINUX.cxx
+	SOURCES += UNIX_WeightedREDDropperService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_WeightedREDDropperService_SOLARIS.cxx
+	SOURCES += UNIX_WeightedREDDropperService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_WeightedREDDropperService_TRU64.cxx
+	SOURCES += UNIX_WeightedREDDropperService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_WeightedREDDropperService_VMS.cxx
+	SOURCES += UNIX_WeightedREDDropperService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_WeightedREDDropperService_WIN32.cxx
+	SOURCES += UNIX_WeightedREDDropperService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_WeightedREDDropperService_ZOS.cxx
+	SOURCES += UNIX_WeightedREDDropperService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_WeightedREDDropperService_STUB.cxx
+	SOURCES += UNIX_WeightedREDDropperService_STUB.cxx
 endif
 
 LIBRARIES = \

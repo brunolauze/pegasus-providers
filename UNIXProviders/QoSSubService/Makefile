@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_QoSSubServiceMain.cpp \
 	UNIX_QoSSubService.cpp \
-	UNIX_QoSSubServiceProvider.cpp \
-	UNIX_QoSSubServiceMain.cpp
+	UNIX_QoSSubServiceProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_QoSSubService_AIX.cxx
+	SOURCES += UNIX_QoSSubService_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_QoSSubService_DARWIN.cxx
+	SOURCES += UNIX_QoSSubService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_QoSSubService_FREEBSD.cxx
+	SOURCES += UNIX_QoSSubService_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_QoSSubService_HPUX.cxx
+	SOURCES += UNIX_QoSSubService_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_QoSSubService_LINUX.cxx
+	SOURCES += UNIX_QoSSubService_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_QoSSubService_SOLARIS.cxx
+	SOURCES += UNIX_QoSSubService_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_QoSSubService_TRU64.cxx
+	SOURCES += UNIX_QoSSubService_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_QoSSubService_VMS.cxx
+	SOURCES += UNIX_QoSSubService_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_QoSSubService_WIN32.cxx
+	SOURCES += UNIX_QoSSubService_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_QoSSubService_ZOS.cxx
+	SOURCES += UNIX_QoSSubService_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_QoSSubService_STUB.cxx
+	SOURCES += UNIX_QoSSubService_STUB.cxx
 endif
 
 LIBRARIES = \

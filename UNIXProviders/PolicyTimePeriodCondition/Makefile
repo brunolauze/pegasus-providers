@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_PolicyTimePeriodConditionMain.cpp \
 	UNIX_PolicyTimePeriodCondition.cpp \
-	UNIX_PolicyTimePeriodConditionProvider.cpp \
-	UNIX_PolicyTimePeriodConditionMain.cpp
+	UNIX_PolicyTimePeriodConditionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_PolicyTimePeriodCondition_AIX.cxx
+	SOURCES += UNIX_PolicyTimePeriodCondition_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_PolicyTimePeriodCondition_DARWIN.cxx
+	SOURCES += UNIX_PolicyTimePeriodCondition_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_PolicyTimePeriodCondition_FREEBSD.cxx
+	SOURCES += UNIX_PolicyTimePeriodCondition_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_PolicyTimePeriodCondition_HPUX.cxx
+	SOURCES += UNIX_PolicyTimePeriodCondition_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_PolicyTimePeriodCondition_LINUX.cxx
+	SOURCES += UNIX_PolicyTimePeriodCondition_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_PolicyTimePeriodCondition_SOLARIS.cxx
+	SOURCES += UNIX_PolicyTimePeriodCondition_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_PolicyTimePeriodCondition_TRU64.cxx
+	SOURCES += UNIX_PolicyTimePeriodCondition_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_PolicyTimePeriodCondition_VMS.cxx
+	SOURCES += UNIX_PolicyTimePeriodCondition_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_PolicyTimePeriodCondition_WIN32.cxx
+	SOURCES += UNIX_PolicyTimePeriodCondition_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_PolicyTimePeriodCondition_ZOS.cxx
+	SOURCES += UNIX_PolicyTimePeriodCondition_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_PolicyTimePeriodCondition_STUB.cxx
+	SOURCES += UNIX_PolicyTimePeriodCondition_STUB.cxx
 endif
 
 LIBRARIES = \

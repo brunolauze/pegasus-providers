@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_RemotePortProvider.cpp \
 	UNIX_RemotePortMain.cpp
 ifeq ($(OS), aix)
-	SOURCE += UNIX_RemotePort_AIX.cxx
+	SOURCES += UNIX_RemotePort_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_RemotePort_DARWIN.cxx
+	SOURCES += UNIX_RemotePort_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_RemotePort_FREEBSD.cxx
+	SOURCES += UNIX_RemotePort_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_RemotePort_HPUX.cxx
+	SOURCES += UNIX_RemotePort_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_RemotePort_LINUX.cxx
+	SOURCES += UNIX_RemotePort_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_RemotePort_SOLARIS.cxx
+	SOURCES += UNIX_RemotePort_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_RemotePort_TRU64.cxx
+	SOURCES += UNIX_RemotePort_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_RemotePort_VMS.cxx
+	SOURCES += UNIX_RemotePort_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_RemotePort_WIN32.cxx
+	SOURCES += UNIX_RemotePort_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_RemotePort_ZOS.cxx
+	SOURCES += UNIX_RemotePort_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_RemotePort_STUB.cxx
+	SOURCES += UNIX_RemotePort_STUB.cxx
 endif
 
 LIBRARIES = \

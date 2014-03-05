@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AuthorizedPrivilegeMain.cpp \
 	UNIX_AuthorizedPrivilege.cpp \
-	UNIX_AuthorizedPrivilegeProvider.cpp \
-	UNIX_AuthorizedPrivilegeMain.cpp
+	UNIX_AuthorizedPrivilegeProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AuthorizedPrivilege_AIX.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AuthorizedPrivilege_DARWIN.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AuthorizedPrivilege_FREEBSD.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AuthorizedPrivilege_HPUX.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AuthorizedPrivilege_LINUX.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AuthorizedPrivilege_SOLARIS.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AuthorizedPrivilege_TRU64.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AuthorizedPrivilege_VMS.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AuthorizedPrivilege_WIN32.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AuthorizedPrivilege_ZOS.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AuthorizedPrivilege_STUB.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_STUB.cxx
 endif
 
 LIBRARIES = \

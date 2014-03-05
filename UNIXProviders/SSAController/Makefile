@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SSAControllerMain.cpp \
 	UNIX_SSAController.cpp \
-	UNIX_SSAControllerProvider.cpp \
-	UNIX_SSAControllerMain.cpp
+	UNIX_SSAControllerProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SSAController_AIX.cxx
+	SOURCES += UNIX_SSAController_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SSAController_DARWIN.cxx
+	SOURCES += UNIX_SSAController_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SSAController_FREEBSD.cxx
+	SOURCES += UNIX_SSAController_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SSAController_HPUX.cxx
+	SOURCES += UNIX_SSAController_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SSAController_LINUX.cxx
+	SOURCES += UNIX_SSAController_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SSAController_SOLARIS.cxx
+	SOURCES += UNIX_SSAController_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SSAController_TRU64.cxx
+	SOURCES += UNIX_SSAController_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SSAController_VMS.cxx
+	SOURCES += UNIX_SSAController_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SSAController_WIN32.cxx
+	SOURCES += UNIX_SSAController_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SSAController_ZOS.cxx
+	SOURCES += UNIX_SSAController_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SSAController_STUB.cxx
+	SOURCES += UNIX_SSAController_STUB.cxx
 endif
 
 LIBRARIES = \

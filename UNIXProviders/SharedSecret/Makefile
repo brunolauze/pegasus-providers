@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_SharedSecretMain.cpp \
 	UNIX_SharedSecret.cpp \
-	UNIX_SharedSecretProvider.cpp \
-	UNIX_SharedSecretMain.cpp
+	UNIX_SharedSecretProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_SharedSecret_AIX.cxx
+	SOURCES += UNIX_SharedSecret_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_SharedSecret_DARWIN.cxx
+	SOURCES += UNIX_SharedSecret_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_SharedSecret_FREEBSD.cxx
+	SOURCES += UNIX_SharedSecret_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_SharedSecret_HPUX.cxx
+	SOURCES += UNIX_SharedSecret_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_SharedSecret_LINUX.cxx
+	SOURCES += UNIX_SharedSecret_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_SharedSecret_SOLARIS.cxx
+	SOURCES += UNIX_SharedSecret_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_SharedSecret_TRU64.cxx
+	SOURCES += UNIX_SharedSecret_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_SharedSecret_VMS.cxx
+	SOURCES += UNIX_SharedSecret_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_SharedSecret_WIN32.cxx
+	SOURCES += UNIX_SharedSecret_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_SharedSecret_ZOS.cxx
+	SOURCES += UNIX_SharedSecret_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_SharedSecret_STUB.cxx
+	SOURCES += UNIX_SharedSecret_STUB.cxx
 endif
 
 LIBRARIES = \

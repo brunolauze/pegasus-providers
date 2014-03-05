@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_VolatileStorageMain.cpp \
 	UNIX_VolatileStorage.cpp \
-	UNIX_VolatileStorageProvider.cpp \
-	UNIX_VolatileStorageMain.cpp
+	UNIX_VolatileStorageProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_VolatileStorage_AIX.cxx
+	SOURCES += UNIX_VolatileStorage_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_VolatileStorage_DARWIN.cxx
+	SOURCES += UNIX_VolatileStorage_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_VolatileStorage_FREEBSD.cxx
+	SOURCES += UNIX_VolatileStorage_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_VolatileStorage_HPUX.cxx
+	SOURCES += UNIX_VolatileStorage_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_VolatileStorage_LINUX.cxx
+	SOURCES += UNIX_VolatileStorage_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_VolatileStorage_SOLARIS.cxx
+	SOURCES += UNIX_VolatileStorage_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_VolatileStorage_TRU64.cxx
+	SOURCES += UNIX_VolatileStorage_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_VolatileStorage_VMS.cxx
+	SOURCES += UNIX_VolatileStorage_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_VolatileStorage_WIN32.cxx
+	SOURCES += UNIX_VolatileStorage_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_VolatileStorage_ZOS.cxx
+	SOURCES += UNIX_VolatileStorage_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_VolatileStorage_STUB.cxx
+	SOURCES += UNIX_VolatileStorage_STUB.cxx
 endif
 
 LIBRARIES = \

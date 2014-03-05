@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_AbstractIndicationSubscriptionMain.cpp \
 	UNIX_AbstractIndicationSubscription.cpp \
-	UNIX_AbstractIndicationSubscriptionProvider.cpp \
-	UNIX_AbstractIndicationSubscriptionMain.cpp
+	UNIX_AbstractIndicationSubscriptionProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_AbstractIndicationSubscription_AIX.cxx
+	SOURCES += UNIX_AbstractIndicationSubscription_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_AbstractIndicationSubscription_DARWIN.cxx
+	SOURCES += UNIX_AbstractIndicationSubscription_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_AbstractIndicationSubscription_FREEBSD.cxx
+	SOURCES += UNIX_AbstractIndicationSubscription_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_AbstractIndicationSubscription_HPUX.cxx
+	SOURCES += UNIX_AbstractIndicationSubscription_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_AbstractIndicationSubscription_LINUX.cxx
+	SOURCES += UNIX_AbstractIndicationSubscription_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_AbstractIndicationSubscription_SOLARIS.cxx
+	SOURCES += UNIX_AbstractIndicationSubscription_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_AbstractIndicationSubscription_TRU64.cxx
+	SOURCES += UNIX_AbstractIndicationSubscription_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_AbstractIndicationSubscription_VMS.cxx
+	SOURCES += UNIX_AbstractIndicationSubscription_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_AbstractIndicationSubscription_WIN32.cxx
+	SOURCES += UNIX_AbstractIndicationSubscription_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_AbstractIndicationSubscription_ZOS.cxx
+	SOURCES += UNIX_AbstractIndicationSubscription_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_AbstractIndicationSubscription_STUB.cxx
+	SOURCES += UNIX_AbstractIndicationSubscription_STUB.cxx
 endif
 
 LIBRARIES = \

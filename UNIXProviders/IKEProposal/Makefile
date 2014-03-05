@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_IKEProposalMain.cpp \
 	UNIX_IKEProposal.cpp \
-	UNIX_IKEProposalProvider.cpp \
-	UNIX_IKEProposalMain.cpp
+	UNIX_IKEProposalProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_IKEProposal_AIX.cxx
+	SOURCES += UNIX_IKEProposal_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_IKEProposal_DARWIN.cxx
+	SOURCES += UNIX_IKEProposal_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_IKEProposal_FREEBSD.cxx
+	SOURCES += UNIX_IKEProposal_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_IKEProposal_HPUX.cxx
+	SOURCES += UNIX_IKEProposal_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_IKEProposal_LINUX.cxx
+	SOURCES += UNIX_IKEProposal_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_IKEProposal_SOLARIS.cxx
+	SOURCES += UNIX_IKEProposal_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_IKEProposal_TRU64.cxx
+	SOURCES += UNIX_IKEProposal_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_IKEProposal_VMS.cxx
+	SOURCES += UNIX_IKEProposal_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_IKEProposal_WIN32.cxx
+	SOURCES += UNIX_IKEProposal_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_IKEProposal_ZOS.cxx
+	SOURCES += UNIX_IKEProposal_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_IKEProposal_STUB.cxx
+	SOURCES += UNIX_IKEProposal_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ProtectedExtentBasedOnMain.cpp \
 	UNIX_ProtectedExtentBasedOn.cpp \
-	UNIX_ProtectedExtentBasedOnProvider.cpp \
-	UNIX_ProtectedExtentBasedOnMain.cpp
+	UNIX_ProtectedExtentBasedOnProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ProtectedExtentBasedOn_AIX.cxx
+	SOURCES += UNIX_ProtectedExtentBasedOn_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ProtectedExtentBasedOn_DARWIN.cxx
+	SOURCES += UNIX_ProtectedExtentBasedOn_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ProtectedExtentBasedOn_FREEBSD.cxx
+	SOURCES += UNIX_ProtectedExtentBasedOn_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ProtectedExtentBasedOn_HPUX.cxx
+	SOURCES += UNIX_ProtectedExtentBasedOn_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ProtectedExtentBasedOn_LINUX.cxx
+	SOURCES += UNIX_ProtectedExtentBasedOn_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ProtectedExtentBasedOn_SOLARIS.cxx
+	SOURCES += UNIX_ProtectedExtentBasedOn_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ProtectedExtentBasedOn_TRU64.cxx
+	SOURCES += UNIX_ProtectedExtentBasedOn_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ProtectedExtentBasedOn_VMS.cxx
+	SOURCES += UNIX_ProtectedExtentBasedOn_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ProtectedExtentBasedOn_WIN32.cxx
+	SOURCES += UNIX_ProtectedExtentBasedOn_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ProtectedExtentBasedOn_ZOS.cxx
+	SOURCES += UNIX_ProtectedExtentBasedOn_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ProtectedExtentBasedOn_STUB.cxx
+	SOURCES += UNIX_ProtectedExtentBasedOn_STUB.cxx
 endif
 
 LIBRARIES = \

@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_RealizedOnSideMain.cpp \
 	UNIX_RealizedOnSide.cpp \
-	UNIX_RealizedOnSideProvider.cpp \
-	UNIX_RealizedOnSideMain.cpp
+	UNIX_RealizedOnSideProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_RealizedOnSide_AIX.cxx
+	SOURCES += UNIX_RealizedOnSide_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_RealizedOnSide_DARWIN.cxx
+	SOURCES += UNIX_RealizedOnSide_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_RealizedOnSide_FREEBSD.cxx
+	SOURCES += UNIX_RealizedOnSide_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_RealizedOnSide_HPUX.cxx
+	SOURCES += UNIX_RealizedOnSide_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_RealizedOnSide_LINUX.cxx
+	SOURCES += UNIX_RealizedOnSide_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_RealizedOnSide_SOLARIS.cxx
+	SOURCES += UNIX_RealizedOnSide_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_RealizedOnSide_TRU64.cxx
+	SOURCES += UNIX_RealizedOnSide_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_RealizedOnSide_VMS.cxx
+	SOURCES += UNIX_RealizedOnSide_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_RealizedOnSide_WIN32.cxx
+	SOURCES += UNIX_RealizedOnSide_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_RealizedOnSide_ZOS.cxx
+	SOURCES += UNIX_RealizedOnSide_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_RealizedOnSide_STUB.cxx
+	SOURCES += UNIX_RealizedOnSide_STUB.cxx
 endif
 
 LIBRARIES = \

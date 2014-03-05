@@ -43,43 +43,44 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	UNIX_ListsInRoutingPolicyMain.cpp \
 	UNIX_ListsInRoutingPolicy.cpp \
-	UNIX_ListsInRoutingPolicyProvider.cpp \
-	UNIX_ListsInRoutingPolicyMain.cpp
+	UNIX_ListsInRoutingPolicyProvider.cpp
+
 ifeq ($(OS), aix)
-	SOURCE += UNIX_ListsInRoutingPolicy_AIX.cxx
+	SOURCES += UNIX_ListsInRoutingPolicy_AIX.cxx
 endif
 ifeq ($(OS), darwin)
-	SOURCE += UNIX_ListsInRoutingPolicy_DARWIN.cxx
+	SOURCES += UNIX_ListsInRoutingPolicy_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += UNIX_ListsInRoutingPolicy_FREEBSD.cxx
+	SOURCES += UNIX_ListsInRoutingPolicy_FREEBSD.cxx
 endif
 ifeq ($(OS), hpux)
-	SOURCE += UNIX_ListsInRoutingPolicy_HPUX.cxx
+	SOURCES += UNIX_ListsInRoutingPolicy_HPUX.cxx
 endif
 ifeq ($(OS), linux)
-	SOURCE += UNIX_ListsInRoutingPolicy_LINUX.cxx
+	SOURCES += UNIX_ListsInRoutingPolicy_LINUX.cxx
 endif
 ifeq ($(OS), solaris)
-	SOURCE += UNIX_ListsInRoutingPolicy_SOLARIS.cxx
+	SOURCES += UNIX_ListsInRoutingPolicy_SOLARIS.cxx
 endif
 ifeq ($(OS), tru64)
-	SOURCE += UNIX_ListsInRoutingPolicy_TRU64.cxx
+	SOURCES += UNIX_ListsInRoutingPolicy_TRU64.cxx
 endif
 ifeq ($(OS), vms)
-	SOURCE += UNIX_ListsInRoutingPolicy_VMS.cxx
+	SOURCES += UNIX_ListsInRoutingPolicy_VMS.cxx
 endif
 ifeq ($(OS), win32)
-	SOURCE += UNIX_ListsInRoutingPolicy_WIN32.cxx
+	SOURCES += UNIX_ListsInRoutingPolicy_WIN32.cxx
 endif
 ifeq ($(OS), zos)
-	SOURCE += UNIX_ListsInRoutingPolicy_ZOS.cxx
+	SOURCES += UNIX_ListsInRoutingPolicy_ZOS.cxx
 endif
-ifeq ($(OS), aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos)
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += UNIX_ListsInRoutingPolicy_STUB.cxx
+	SOURCES += UNIX_ListsInRoutingPolicy_STUB.cxx
 endif
 
 LIBRARIES = \
