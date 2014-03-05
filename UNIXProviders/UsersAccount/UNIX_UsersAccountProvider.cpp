@@ -43,7 +43,7 @@ UNIX_UsersAccountProvider::~UNIX_UsersAccountProvider()
 CIMInstance UNIX_UsersAccountProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_UsersAccount &_p)
+	const UNIX_UsersAccount &_p) const
 {
 	CIMProperty p;
 
@@ -65,7 +65,7 @@ CIMInstance UNIX_UsersAccountProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_UsersAccountProvider::constructKeyBindings(const UNIX_UsersAccount& _p)
+Array<CIMKeyBinding> UNIX_UsersAccountProvider::constructKeyBindings(const UNIX_UsersAccount& _p) const
 
 {
 
@@ -91,7 +91,7 @@ Array<CIMKeyBinding> UNIX_UsersAccountProvider::constructKeyBindings(const UNIX_
 #define CLASS_IMPLEMENTATION UNIX_UsersAccount
 #define CLASS_IMPLEMENTATION_NAME "UNIX_UsersAccount"
 #define BASE_CLASS_NAME "CIM_UsersAccount"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 2
 
 
 #include "UNIXProviderBase.hpp"

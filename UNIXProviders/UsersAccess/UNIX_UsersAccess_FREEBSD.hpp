@@ -131,7 +131,7 @@ Array<Uint16> UNIX_UsersAccess::getBiometric() const
 
 }
 
-Boolean UNIX_UsersAccess::getByUserID(Uint32 userID)
+Boolean UNIX_UsersAccess::getByUserID(String userID)
 {
 	return account.getByUserID(userID);
 }

@@ -54,7 +54,11 @@ ifeq ($(OS), darwin)
 	SOURCES += UNIX_AccountManagementService_DARWIN.cxx
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_AccountManagementService_FREEBSD.cxx
+	SOURCES += \
+		UNIX_AccountManagementService_FREEBSD.cxx \
+		UNIX_AccountManagementService_FREEBSD_openpam.cxx \
+		UNIX_AccountManagementService_FREEBSD_openldap.cxx \
+		UNIX_AccountManagementService_FREEBSD_samba.cxx
 endif
 ifeq ($(OS), hpux)
 	SOURCES += UNIX_AccountManagementService_HPUX.cxx

@@ -154,7 +154,44 @@ Array<CIMKeyBinding> UNIX_NFSProvider::constructKeyBindings(const UNIX_NFS& _p) 
 	return keys;
 }
 
+#define __deleteInstance_H
+// =============================================================================
+// NAME              : createInstance
+// DESCRIPTION       : Create a UnixProcess instance.
+// ASSUMPTIONS       : None
+// PRE-CONDITIONS    :
+// POST-CONDITIONS   :
+// NOTES             : Currently not supported.
+// PARAMETERS        :
+// =============================================================================
+void UNIX_NFSProvider::deleteInstance(
+    const OperationContext& context,
+    const CIMObjectPath& ref,
+    ResponseHandler& handler)
+{
+	handler.processing();
 
+	CIMName className = ref.getClassName();
+	if (String::equal(className.getString(), String("UNIX_NFS")))
+	{
+		Array<CIMKeyBinding> bindings = ref.getKeyBindings();
+		for(Uint32 i = 0; i < bindings.size(); i++)
+		{
+			String name = bindings[i].getName().getString();
+
+			if (String::equal(name, "Name"))
+			{
+				String target = bindings[i].getValue();
+				String cmd("umount ");
+				cmd.append(target);
+			 	system(cmd.getCString());
+			 	break;
+			}
+		}
+	}
+
+	handler.complete();
+}
 
 #define UNIX_PROVIDER UNIX_NFSProvider
 #define UNIX_PROVIDER_NAME "UNIX_NFSProvider"

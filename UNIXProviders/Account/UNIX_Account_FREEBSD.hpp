@@ -646,9 +646,10 @@ Uint32 UNIX_Account::getUserPasswordEncoding() const
 	return Uint32(5);
 }
 
-Boolean UNIX_Account::getByUserID(Uint32 userID)
+Boolean UNIX_Account::getByUserID(String userID)
 {
-	if ((user = getpwuid(userID)) != NULL)
+	int id = atoi(userID.getCString());
+	if ((user = getpwuid(id)) != NULL)
 	{
 		return true;
 	}

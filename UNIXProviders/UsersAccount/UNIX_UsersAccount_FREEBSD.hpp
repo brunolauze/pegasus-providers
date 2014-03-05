@@ -65,17 +65,21 @@ CIMInstance UNIX_UsersAccount::getDependent() const
 
 Boolean UNIX_UsersAccount::initialize()
 {
-	return false;
+	return account.initialize() && access.initialize();
 }
 
 Boolean UNIX_UsersAccount::load(int &pIndex)
 {
+	if (account.load(pIndex))
+	{
+		return access.getByUserID(account.getUserID());
+	}
 	return false;
 }
 
 Boolean UNIX_UsersAccount::finalize()
 {
-	return false;
+	return account.finalize() && access.finalize();
 }
 
 Boolean UNIX_UsersAccount::find(Array<CIMKeyBinding> &kbArray)

@@ -385,17 +385,32 @@ Boolean UNIX_AccountManagementService::getStarted() const
 
 Boolean UNIX_AccountManagementService::initialize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_AccountManagementService::load(int &pIndex)
 {
-	return false;
+	if (pIndex == 0)
+	{
+		currentService = new OpenPAMService();
+		return true;
+	}
+	else if (pIndex == 1)
+	{
+		/* Check openldap */
+		currentService = new OpenLdapService();
+	}
+	else if (pIndex == 2)
+	{
+		/* Check SAMBA */
+		currentService = new SambaService();
+	}
+	return true;
 }
 
 Boolean UNIX_AccountManagementService::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_AccountManagementService::find(Array<CIMKeyBinding> &kbArray)
@@ -422,4 +437,14 @@ Boolean UNIX_AccountManagementService::find(Array<CIMKeyBinding> &kbArray)
 /* EXecute find with extracted keys */
 
 	return false;
+}
+
+Boolean UNIX_AccountManagementService::createAccount(
+						CIMObjectPath accountTemplate,
+						Array<CIMInstance> &accountIdenties,
+						CIMInstance &account,
+						CIMInstance computerSystem) const
+{
+	
+	return true;
 }

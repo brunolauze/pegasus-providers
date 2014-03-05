@@ -76,7 +76,36 @@ Uint16 UNIX_ServiceProcess::getExecutionType() const
 
 Boolean UNIX_ServiceProcess::initialize()
 {
-	return false;
+	/* Fetch services that are enabled */
+
+	/* Filter a match with /var/run .pid issue */
+	/* We will try :
+		/var/run/${service}.pid
+		/var/run/${service}d.pid
+		/var/run/${service}{-d}.pid // without the d
+		/var/run/${service}/${service}.pid
+		/var/run/lib${service}/${service}.pid
+	*/
+	/* Still we would miss any program on /etc/ttys */
+
+
+	FILE* pipe = popen("/usr/sbin/service -e", "r");
+    if (!pipe) return false;
+    char buffer[256];
+    while(!feof(pipe)) {
+    	while (fgets(buffer, 128, pipe) != NULL)
+    	{
+    		/* Extract service name from daemon script path */
+
+    		/* Find pid file from service name*/
+
+    		/* check if pid exists */
+
+    		/* Create CIM_Service instance */
+    		/* Get CIM_Process from pid */
+    	}
+    }
+	return true;
 }
 
 Boolean UNIX_ServiceProcess::load(int &pIndex)
@@ -86,7 +115,7 @@ Boolean UNIX_ServiceProcess::load(int &pIndex)
 
 Boolean UNIX_ServiceProcess::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_ServiceProcess::find(Array<CIMKeyBinding> &kbArray)
@@ -106,7 +135,7 @@ Boolean UNIX_ServiceProcess::find(Array<CIMKeyBinding> &kbArray)
 
 
 
-/* EXecute find with extracted keys */
+	/* EXecute find with extracted keys */
 
 	return false;
 }

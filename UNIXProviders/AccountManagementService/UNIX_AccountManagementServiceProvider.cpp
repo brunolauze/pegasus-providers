@@ -43,7 +43,7 @@ UNIX_AccountManagementServiceProvider::~UNIX_AccountManagementServiceProvider()
 CIMInstance UNIX_AccountManagementServiceProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_AccountManagementService &_p)
+	const UNIX_AccountManagementService &_p) const
 {
 	CIMProperty p;
 
@@ -101,7 +101,7 @@ CIMInstance UNIX_AccountManagementServiceProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_AccountManagementServiceProvider::constructKeyBindings(const UNIX_AccountManagementService& _p)
+Array<CIMKeyBinding> UNIX_AccountManagementServiceProvider::constructKeyBindings(const UNIX_AccountManagementService& _p) const
 
 {
 
@@ -129,13 +129,113 @@ Array<CIMKeyBinding> UNIX_AccountManagementServiceProvider::constructKeyBindings
 }
 
 
+#define __invokeMethod_H
+/*
+================================================================================
+NAME              : invokeMethod
+DESCRIPTION       : tests the argument for valid classname,
+                  : throws exception if not
+ASSUMPTIONS       : None
+PRE-CONDITIONS    :
+POST-CONDITIONS   :
+NOTES             :
+================================================================================
+*/
+void UNIX_AccountManagementServiceProvider::invokeMethod(
+    const OperationContext& context,
+    const CIMObjectPath& objectReference,
+    const CIMName& methodName,
+    const Array<CIMParamValue>& inParameters,
+    MethodResultResponseHandler& handler)
+{
+    UNIX_AccountManagementService service;
+    CIMName className = objectReference.getClassName();
+    if (className.equal(String("UNIX_AccountManagementService")))
+    {
+	    if (String::equalNoCase(methodName.getString(),String("CreateAccount")))
+	    {
+	    	/* Retreive the targeted Account Management Service */
+	    	Array<CIMKeyBinding> bindings = objectReference.getKeyBindings();
+	    	if (service.find(bindings))
+	    	{
+	    		/* Convert CIMParamValues to AccountTemplate and ComputerSystem */
+	    		int count = 0;
+	    		CIMObjectPath accountTemplate;
+	    		CIMInstance computerSystem;
+
+	    		for(Uint32 i = 0; i < inParameters.size(); i++)
+	    		{
+	    			CIMParamValue paramValue = inParameters[i];
+	    			if (String::equalNoCase(paramValue.getParameterName(),String("AccountTemplate")))
+	    			{
+	    				String accountTemplateString;
+	    				CIMValue accountTemplateValue = paramValue.getValue();
+	    				if (!accountTemplateValue.isNull())
+	    				{
+		    				accountTemplateValue.get(accountTemplateString);
+		    				accountTemplate = CIMObjectPath(accountTemplateString);
+		    				count++;
+		    			}
+	    			}
+	    			else if (String::equalNoCase(paramValue.getParameterName(),String("System")))
+	    			{
+	    				CIMValue computerSystemValue = paramValue.getValue();
+	    				if (!computerSystemValue.isNull())
+	    				{
+	    					computerSystemValue.get(computerSystem);
+	    					count++;
+    					}
+	    			}
+	    		}
+	    		if (count == 2)
+	    		{
+	    			handler.processing();
+	    			/* We have the template and the keys */
+	    			/* Call the createAccount method */
+	    			Array<CIMInstance> accountIdentities;
+					CIMInstance account;
+	    			if (service.createAccount(
+	    						accountTemplate, 
+	    						accountIdentities, 
+	    						account, 
+	    						computerSystem))
+	    			{
+	    				handler.deliverParamValue(CIMParamValue(String("Identities"), 
+	    					CIMValue(accountIdentities)));
+	    				handler.deliverParamValue(CIMParamValue(String("Account"), 
+	    					CIMValue(account)));
+	    				handler.deliver(CIMValue(Uint32(0)));
+	    			}
+	    		}
+	    	    else {
+	    	    	handler.deliver(CIMValue(Uint32(2)));
+	    	    }
+	    	}
+			else {
+	    	    	handler.deliver(CIMValue(Uint32(2)));
+    	    }
+	    }
+		else if (String::equalNoCase(methodName.getString(),String("CreateUserContact")))
+		{
+			
+		}
+	    handler.complete();
+	}
+	else {
+	    String message;
+	    message.append(className.getString());
+	    message.append(" does not support invokeMethod");
+	    throw CIMNotSupportedException(message);
+   }
+}
+
 
 #define UNIX_PROVIDER UNIX_AccountManagementServiceProvider
 #define UNIX_PROVIDER_NAME "UNIX_AccountManagementServiceProvider"
 #define CLASS_IMPLEMENTATION UNIX_AccountManagementService
 #define CLASS_IMPLEMENTATION_NAME "UNIX_AccountManagementService"
 #define BASE_CLASS_NAME "CIM_AccountManagementService"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 4
 
 
 #include "UNIXProviderBase.hpp"

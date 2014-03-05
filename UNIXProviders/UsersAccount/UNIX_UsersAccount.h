@@ -35,6 +35,9 @@
 
 #include "CIM_Dependency.h"
 
+#include <Account/UNIX_AccountProvider.h>
+#include <UsersAccess/UNIX_UsersAccessProvider.h>
+
 #include "UNIX_UsersAccountDeps.h"
 
 
@@ -62,6 +65,10 @@ public:
 
 private:
 	CIMName currentScope;
+	UNIX_Account account;
+	UNIX_AccountProvider accountProvider;
+	UNIX_UsersAccess access;
+	UNIX_UsersAccessProvider accessProvider;
 
 #	include "UNIX_UsersAccountPrivate.h"
 

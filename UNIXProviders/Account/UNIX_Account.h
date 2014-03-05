@@ -165,7 +165,7 @@ public:
 	virtual Uint32 getUserPasswordEncoding() const;
 
 
-	virtual Boolean getByUserID(Uint32 userID);
+	virtual Boolean getByUserID(String userID);
 	virtual Boolean getByName(String name);
 private:
 	CIMName currentScope;

@@ -63,6 +63,11 @@ public:
 	static char * ltrim(char *s);
 	static char * rtrim(char *s);
 	static char * trim(char *s);
+	static bool startsWith (char* base, char* str);
+	static bool endsWith (char* base, char* str);
+	static int indexOf (char* base, char* str);
+	static int indexOf (char* base, char* str, int startIndex);
+	static int lastIndexOf (char* base, char* str);
 	static std::string encode(std::string str);
 	static String getHostName();
 	static String getOSName();

@@ -112,8 +112,17 @@ public:
 	virtual Boolean getStarted(CIMProperty&) const;
 	virtual Boolean getStarted() const;
 
+
+	/* Methods */
+	virtual Boolean createAccount(
+						CIMObjectPath accountTemplate,
+						Array<CIMInstance> &accountIdenties,
+						CIMInstance &account,
+						CIMInstance computerSystem) const;
+
 private:
 	CIMName currentScope;
+	CIM_SecurityService *currentService;
 
 #	include "UNIX_AccountManagementServicePrivate.h"
 
