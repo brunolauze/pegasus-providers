@@ -555,7 +555,7 @@ Boolean UNIX_SoftwareElement::initialize()
     int ret;
     if (!pkg_initialized())
 		if (pkg_init(NULL, NULL) != EPKG_OK)
-			return false;
+			throw new CIMException(CIM_ERR_FAILED, "Cannot init software manager");
 		
 	if (currentScope.equal(String("UNIX_ComputerSystem")))
 	{
@@ -568,18 +568,20 @@ Boolean UNIX_SoftwareElement::initialize()
 	}
 	if (ret == EPKG_ENOACCESS) {
 	        //warnx("Insufficient privileges to query the package database");
-	        return false; /* (EX_NOPERM); */
+	        throw new CIMException(CIM_ERR_FAILED, "Insufficient privileges to query the package database");
+	        //return false; /* (EX_NOPERM); */
 	} else if (ret == EPKG_ENODB) {
 	        //if (match == MATCH_ALL)
 	        //        return false; /* (EX_OK); */
 	        //if (origin_search)
 	        //        return false; /* (EX_OK); */
-	        
-	        return false; /* (EX_UNAVAILABLE); */
+	        throw new CIMException(CIM_ERR_FAILED, "Sofware database not present");
+	        //return false; /* (EX_UNAVAILABLE); */
 	} else if (ret != EPKG_OK)
-	        return false; /* (EX_IOERR); */
+	        throw new CIMException(CIM_ERR_FAILED, "Sofware database is corrupted");
+	        //return false; /* (EX_IOERR); */
     
-	return false;
+	return true;
 }
 
 Boolean UNIX_SoftwareElement::load(int &pIndex)
@@ -596,7 +598,8 @@ Boolean UNIX_SoftwareElement::load(int &pIndex)
 			if (ret != EPKG_OK)
 	    	return false;
 			if ((it = pkgdb_query(db, pkgname, MATCH_ALL)) == NULL) {
-			        return false; //(EX_IOERR);
+			        throw new CIMException(CIM_ERR_FAILED, "Software Manager query failed");
+			        //return false; //(EX_IOERR);
 			}
 			query_flags = getPkgFlag(INFO_ALL, false);
 		}
@@ -606,9 +609,10 @@ Boolean UNIX_SoftwareElement::load(int &pIndex)
                 return false;
 			ret = pkgdb_open(&db, PKGDB_REMOTE);	
 			if (ret != EPKG_OK)
-	    		return false;
+	    		throw new CIMException(CIM_ERR_FAILED, "Cannot open software database");
 			if ((it = pkgdb_rquery(db, pkgname, MATCH_ALL, reponame)) == NULL) {
-			        return false; //(EX_IOERR);
+			    throw new CIMException(CIM_ERR_FAILED, "Software Manager remote query failed");
+			    //return false; //(EX_IOERR);
 			}
 			query_flags = PKG_LOAD_BASIC; //getPkgFlag(INFO_ALL, true);
 		}
