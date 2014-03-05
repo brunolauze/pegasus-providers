@@ -231,7 +231,7 @@ Boolean UNIX_LogEntry::initialize()
 	fp = NULL;
 	logs.initialize();
 	logIndex = 0;
-	return false;
+	return true;
 }
 
 Boolean UNIX_LogEntry::load(int &pIndex)
@@ -302,7 +302,7 @@ Boolean UNIX_LogEntry::finalize()
 {
 	logIndex = 0;
 	logs.finalize();
-	return false;
+	return true;
 }
 
 Boolean UNIX_LogEntry::find(Array<CIMKeyBinding> &kbArray)
