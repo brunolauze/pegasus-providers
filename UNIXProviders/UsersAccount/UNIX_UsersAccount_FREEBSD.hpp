@@ -47,7 +47,10 @@ Boolean UNIX_UsersAccount::getAntecedent(CIMProperty &p) const
 
 CIMInstance UNIX_UsersAccount::getAntecedent() const
 {
-	return CIMInstance(CIMName("CIM_Dependency"));
+	return accountProvider.constructInstance(
+		CIMName("UNIX_Account"),
+		CIMNamespaceName("root/cimv2"),
+		account);
 }
 
 Boolean UNIX_UsersAccount::getDependent(CIMProperty &p) const
@@ -58,7 +61,10 @@ Boolean UNIX_UsersAccount::getDependent(CIMProperty &p) const
 
 CIMInstance UNIX_UsersAccount::getDependent() const
 {
-	return CIMInstance(CIMName("CIM_Dependency"));
+	return accessProvider.constructInstance(
+		CIMName("UNIX_UsersAccess"),
+		CIMNamespaceName("root/cimv2"),
+		access);
 }
 
 
@@ -72,7 +78,7 @@ Boolean UNIX_UsersAccount::load(int &pIndex)
 {
 	if (account.load(pIndex))
 	{
-		return access.getByUserID(account.getUserID());
+		return access.setAccount(account);
 	}
 	return false;
 }

@@ -460,21 +460,24 @@ String UNIX_VirtualComputerSystem::getVirtualSystem() const
 	return String ("");
 }
 
-
-
 Boolean UNIX_VirtualComputerSystem::initialize()
 {
-	return false;
+	return _jailSystem.initialize();
 }
 
 Boolean UNIX_VirtualComputerSystem::load(int &pIndex)
 {
+	if (_jailSystem.load(pIndex))
+	{
+		return true;
+	}
+
 	return false;
 }
 
 Boolean UNIX_VirtualComputerSystem::finalize()
 {
-	return false;
+	return _jailSystem.finalize();
 }
 
 Boolean UNIX_VirtualComputerSystem::find(Array<CIMKeyBinding> &kbArray)

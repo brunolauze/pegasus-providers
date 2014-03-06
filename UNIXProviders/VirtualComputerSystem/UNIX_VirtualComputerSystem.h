@@ -37,7 +37,6 @@
 
 #include "UNIX_VirtualComputerSystemDeps.h"
 
-
 #define PROPERTY_VIRTUAL_SYSTEM				"VirtualSystem"
 
 
@@ -125,7 +124,6 @@ public:
 
 private:
 	CIMName currentScope;
-
 #	include "UNIX_VirtualComputerSystemPrivate.h"
 
 

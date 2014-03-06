@@ -86,7 +86,6 @@ Boolean UNIX_ServiceProcess::initialize()
 		/var/run/${service}/${service}.pid
 		/var/run/lib${service}/${service}.pid
 	*/
-	/* Still we would miss any program on /etc/ttys */
 
 
 	FILE* pipe = popen("/usr/sbin/service -e", "r");

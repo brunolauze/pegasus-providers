@@ -546,19 +546,28 @@ Array<String> UNIX_Process::getParameters() const
 	int narg = 2048;
 	char **argv = kvm_getargv(CIMHelper::kd, kp, narg);
 	if (argv == NULL) return as;
-	String s(argv[0]);
-
-	Uint32 start = 0;
-	Uint32 end = s.find(start, ' ');
-	bool found = false;
-	while(end != PEG_NOT_FOUND)
+	argv++;
+	while (*argv)
 	{
-		if (found)
-			as.append(s.subString(start, end - start));
-		start = end + 1;
-		end = s.find(start, ' ');
-		found = true;
+		String s(*argv);
+		Uint32 start = 0;
+		Uint32 end = s.find(start, ' ');
+		bool found = false;
+		if (end == PEG_NOT_FOUND) as.append(s);
+		else {
+			while(end != PEG_NOT_FOUND)
+			{
+				if (found)
+					as.append(s.subString(start, end - start));
+				start = end + 1;
+				end = s.find(start, ' ');
+				found = true;
+			}
+		}
+		argv++;
 	}
+
+
 
 	return as;
 }

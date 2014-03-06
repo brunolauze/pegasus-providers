@@ -263,6 +263,7 @@ EXTRA_LIBRARIES = \
 	-pthread \
 	-lutil \
 	-lgeom \
+	-ljail \
 	-lkvm \
 	-lcam
 

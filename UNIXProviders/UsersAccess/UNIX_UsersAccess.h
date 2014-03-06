@@ -79,6 +79,9 @@ public:
 
 	virtual Boolean getByUserID(String userID);
 	virtual Boolean getByName(String name);
+
+	virtual Boolean setAccount(UNIX_Account source) { account = source; return true; };
+
 private:
 	CIMName currentScope;
 	UNIX_Account account;

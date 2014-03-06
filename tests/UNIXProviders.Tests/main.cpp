@@ -1046,8 +1046,8 @@
 //#include "UNIX_UseOfLogFixture.h"
 //#include "UNIX_UseOfMessageLogFixture.h"
 //#include "UNIX_UserContactFixture.h"
-//#include "UNIX_UsersAccessFixture.h"
-//#include "UNIX_UsersAccountFixture.h"
+#include "UNIX_UsersAccessFixture.h"
+#include "UNIX_UsersAccountFixture.h"
 //#include "UNIX_UsersCredentialFixture.h"
 //#include "UNIX_VDSLModemFixture.h"
 //#include "UNIX_VendorPolicyActionFixture.h"
@@ -1061,7 +1061,7 @@
 //#include "UNIX_VideoHeadFixture.h"
 //#include "UNIX_VideoHeadResolutionFixture.h"
 //#include "UNIX_ViewFixture.h"
-//#include "UNIX_VirtualComputerSystemFixture.h"
+#include "UNIX_VirtualComputerSystemFixture.h"
 //#include "UNIX_VirtualEthernetSwitchSettingDataFixture.h"
 //#include "UNIX_VirtualSystemManagementCapabilitiesFixture.h"
 //#include "UNIX_VirtualSystemManagementServiceFixture.h"
@@ -2147,8 +2147,8 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_UseOfLog")) { UNIX_UseOfLogFixture useOfLog; useOfLog.Run(); }
 	//if (IsTarget(s, "UNIX_UseOfMessageLog")) { UNIX_UseOfMessageLogFixture useOfMessageLog; useOfMessageLog.Run(); }
 	//if (IsTarget(s, "UNIX_UserContact")) { UNIX_UserContactFixture userContact; userContact.Run(); }
-	//if (IsTarget(s, "UNIX_UsersAccess")) { UNIX_UsersAccessFixture usersAccess; usersAccess.Run(); }
-	//if (IsTarget(s, "UNIX_UsersAccount")) { UNIX_UsersAccountFixture usersAccount; usersAccount.Run(); }
+	if (IsTarget(s, "UNIX_UsersAccess")) { UNIX_UsersAccessFixture usersAccess; usersAccess.Run(); }
+	if (IsTarget(s, "UNIX_UsersAccount")) { UNIX_UsersAccountFixture usersAccount; usersAccount.Run(); }
 	//if (IsTarget(s, "UNIX_UsersCredential")) { UNIX_UsersCredentialFixture usersCredential; usersCredential.Run(); }
 	//if (IsTarget(s, "UNIX_VDSLModem")) { UNIX_VDSLModemFixture vDSLModem; vDSLModem.Run(); }
 	//if (IsTarget(s, "UNIX_VendorPolicyAction")) { UNIX_VendorPolicyActionFixture vendorPolicyAction; vendorPolicyAction.Run(); }
@@ -2162,7 +2162,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_VideoHead")) { UNIX_VideoHeadFixture videoHead; videoHead.Run(); }
 	//if (IsTarget(s, "UNIX_VideoHeadResolution")) { UNIX_VideoHeadResolutionFixture videoHeadResolution; videoHeadResolution.Run(); }
 	//if (IsTarget(s, "UNIX_View")) { UNIX_ViewFixture view; view.Run(); }
-	//if (IsTarget(s, "UNIX_VirtualComputerSystem")) { UNIX_VirtualComputerSystemFixture virtualComputerSystem; virtualComputerSystem.Run(); }
+	if (IsTarget(s, "UNIX_VirtualComputerSystem")) { UNIX_VirtualComputerSystemFixture virtualComputerSystem; virtualComputerSystem.Run(); }
 	//if (IsTarget(s, "UNIX_VirtualEthernetSwitchSettingData")) { UNIX_VirtualEthernetSwitchSettingDataFixture virtualEthernetSwitchSettingData; virtualEthernetSwitchSettingData.Run(); }
 	//if (IsTarget(s, "UNIX_VirtualSystemManagementCapabilities")) { UNIX_VirtualSystemManagementCapabilitiesFixture virtualSystemManagementCapabilities; virtualSystemManagementCapabilities.Run(); }
 	//if (IsTarget(s, "UNIX_VirtualSystemManagementService")) { UNIX_VirtualSystemManagementServiceFixture virtualSystemManagementService; virtualSystemManagementService.Run(); }

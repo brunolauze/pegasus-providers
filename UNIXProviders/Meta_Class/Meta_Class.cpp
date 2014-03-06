@@ -128,7 +128,7 @@ Boolean Meta_Class::getNamespace(CIMProperty &p) const
 
 String Meta_Class::getNamespace() const
 {
-	return currentclass.getPath().getNameSpace().getString();
+	return String(_ns); //currentclass.getPath().getNameSpace().getString();
 }
 
 Boolean Meta_Class::getIsAssociation(CIMProperty &p) const
@@ -139,7 +139,6 @@ Boolean Meta_Class::getIsAssociation(CIMProperty &p) const
 
 Boolean Meta_Class::getIsAssociation() const
 {
-	cout << "IS_ASSOCIATION" << endl;
 	return currentclass.isAssociation();
 }
 
@@ -204,7 +203,7 @@ Boolean Meta_Class::initialize()
 	CIMRepository rep(repositoryRootPath);
 	try {
 
-		classes = rep.enumerateClasses(CIMNamespaceName(String(_ns)), CIMName(), true, true, true, true);
+		classes = rep.enumerateClasses(CIMNamespaceName(String(_ns)), CIMName(), true, false, true, true);
 		return true;
 	}
 	catch(Exception &e)

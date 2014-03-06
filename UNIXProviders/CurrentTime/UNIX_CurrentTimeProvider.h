@@ -34,8 +34,9 @@
 
 #define UNIX_PROVIDER UNIX_CurrentTimeProvider
 #define CLASS_IMPLEMENTATION UNIX_CurrentTime
-#define CLASS_IMPLEMENTATION_NAME "UNIX_CurrentTime"
-#define BASE_CLASS_NAME "CIM_CurrentTime"
+#define CLASS_IMPLEMENTATION_NAME "UNIX_LocalTime"
+#define BASE_CLASS_NAME "UNIX_CurrentTime"
+#define BASE_BASE_CLASS_NAME "CIM_CurrentTime"
 #define NUMKEYS_CLASS_IMPLEMENTATION 3
 
 
