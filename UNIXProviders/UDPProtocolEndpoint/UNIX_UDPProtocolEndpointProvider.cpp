@@ -43,7 +43,7 @@ UNIX_UDPProtocolEndpointProvider::~UNIX_UDPProtocolEndpointProvider()
 CIMInstance UNIX_UDPProtocolEndpointProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_UDPProtocolEndpoint &_p)
+	const UNIX_UDPProtocolEndpoint &_p) const
 {
 	CIMProperty p;
 
@@ -102,7 +102,7 @@ CIMInstance UNIX_UDPProtocolEndpointProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_UDPProtocolEndpointProvider::constructKeyBindings(const UNIX_UDPProtocolEndpoint& _p)
+Array<CIMKeyBinding> UNIX_UDPProtocolEndpointProvider::constructKeyBindings(const UNIX_UDPProtocolEndpoint& _p) const
 
 {
 

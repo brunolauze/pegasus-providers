@@ -47,7 +47,7 @@ Boolean UNIX_UDPProtocolEndpoint::getInstanceID(CIMProperty &p) const
 
 String UNIX_UDPProtocolEndpoint::getInstanceID() const
 {
-	return String ("");
+	return _instanceID;
 }
 
 Boolean UNIX_UDPProtocolEndpoint::getCaption(CIMProperty &p) const
@@ -58,7 +58,7 @@ Boolean UNIX_UDPProtocolEndpoint::getCaption(CIMProperty &p) const
 
 String UNIX_UDPProtocolEndpoint::getCaption() const
 {
-	return String ("");
+	return _caption;
 }
 
 Boolean UNIX_UDPProtocolEndpoint::getDescription(CIMProperty &p) const
@@ -113,7 +113,7 @@ Boolean UNIX_UDPProtocolEndpoint::getName(CIMProperty &p) const
 
 String UNIX_UDPProtocolEndpoint::getName() const
 {
-	return String ("");
+	return _name;
 }
 
 Boolean UNIX_UDPProtocolEndpoint::getOperationalStatus(CIMProperty &p) const
@@ -125,7 +125,7 @@ Boolean UNIX_UDPProtocolEndpoint::getOperationalStatus(CIMProperty &p) const
 Array<Uint16> UNIX_UDPProtocolEndpoint::getOperationalStatus() const
 {
 	Array<Uint16> as;
-	
+	as.append(2); //OK
 
 	return as;
 
@@ -264,18 +264,7 @@ Boolean UNIX_UDPProtocolEndpoint::getTimeOfLastStateChange(CIMProperty &p) const
 
 CIMDateTime UNIX_UDPProtocolEndpoint::getTimeOfLastStateChange() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return _lastStateChange;
 }
 
 Boolean UNIX_UDPProtocolEndpoint::getAvailableRequestedStates(CIMProperty &p) const
@@ -345,7 +334,7 @@ Boolean UNIX_UDPProtocolEndpoint::getNameFormat(CIMProperty &p) const
 
 String UNIX_UDPProtocolEndpoint::getNameFormat() const
 {
-	return String ("");
+	return String ("[IP].[PORT]");
 }
 
 Boolean UNIX_UDPProtocolEndpoint::getProtocolType(CIMProperty &p) const
@@ -356,7 +345,7 @@ Boolean UNIX_UDPProtocolEndpoint::getProtocolType(CIMProperty &p) const
 
 Uint16 UNIX_UDPProtocolEndpoint::getProtocolType() const
 {
-	return Uint16(0);
+	return _protocolType;
 }
 
 Boolean UNIX_UDPProtocolEndpoint::getProtocolIFType(CIMProperty &p) const
@@ -367,7 +356,7 @@ Boolean UNIX_UDPProtocolEndpoint::getProtocolIFType(CIMProperty &p) const
 
 Uint16 UNIX_UDPProtocolEndpoint::getProtocolIFType() const
 {
-	return Uint16(0);
+	return _protocolIFType;
 }
 
 Boolean UNIX_UDPProtocolEndpoint::getOtherTypeDescription(CIMProperty &p) const
@@ -378,7 +367,7 @@ Boolean UNIX_UDPProtocolEndpoint::getOtherTypeDescription(CIMProperty &p) const
 
 String UNIX_UDPProtocolEndpoint::getOtherTypeDescription() const
 {
-	return String ("");
+	return _otherTypeDescription;
 }
 
 Boolean UNIX_UDPProtocolEndpoint::getPortNumber(CIMProperty &p) const
@@ -389,14 +378,58 @@ Boolean UNIX_UDPProtocolEndpoint::getPortNumber(CIMProperty &p) const
 
 Uint32 UNIX_UDPProtocolEndpoint::getPortNumber() const
 {
-	return Uint32(0);
+	return _portNumber;
+}
+
+void UNIX_UDPProtocolEndpoint::setInstanceID(String instanceID)
+{
+	_instanceID = instanceID;
+}
+
+void UNIX_UDPProtocolEndpoint::setCaption(String caption)
+{
+	_caption = caption;
+}
+
+void UNIX_UDPProtocolEndpoint::setDescription(String description)
+{
+	_description = description;
+}
+
+void UNIX_UDPProtocolEndpoint::setName(String name)
+{
+	_name = name;
+}
+
+void UNIX_UDPProtocolEndpoint::setTimeOfLastStateChange(CIMDateTime lastStateChange)
+{
+	_lastStateChange = lastStateChange;
+}
+
+void UNIX_UDPProtocolEndpoint::setProtocolType(Uint16 protocolType)
+{
+	_protocolType = protocolType;
+}
+
+void UNIX_UDPProtocolEndpoint::setProtocolIFType(Uint16 protocolIFType)
+{
+	_protocolIFType = protocolIFType;
+}
+
+void UNIX_UDPProtocolEndpoint::setOtherTypeDescription(String otherTypeDescription)
+{
+	_otherTypeDescription = otherTypeDescription;
 }
 
 
+void UNIX_UDPProtocolEndpoint::setPortNumber(Uint32 portNumber)
+{
+	_portNumber = portNumber;
+}
 
 Boolean UNIX_UDPProtocolEndpoint::initialize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_UDPProtocolEndpoint::load(int &pIndex)
@@ -406,7 +439,7 @@ Boolean UNIX_UDPProtocolEndpoint::load(int &pIndex)
 
 Boolean UNIX_UDPProtocolEndpoint::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_UDPProtocolEndpoint::find(Array<CIMKeyBinding> &kbArray)

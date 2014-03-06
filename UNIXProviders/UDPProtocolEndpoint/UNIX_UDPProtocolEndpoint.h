@@ -115,8 +115,29 @@ public:
 	virtual Boolean getPortNumber(CIMProperty&) const;
 	virtual Uint32 getPortNumber() const;
 
+
+	virtual void setInstanceID(String instanceID);
+	virtual void setCaption(String caption);
+	virtual void setDescription(String description);
+	virtual void setName(String name);
+	virtual void setTimeOfLastStateChange(CIMDateTime lastStateChange);
+	virtual void setProtocolType(Uint16 protocolType);
+	virtual void setProtocolIFType(Uint16 protocolIFType);
+	virtual void setOtherTypeDescription(String otherTypeDescription);
+	virtual void setPortNumber(Uint32 portNumber);
+
 private:
 	CIMName currentScope;
+
+	String _instanceID;
+	String _caption;
+	String _description;
+	String _name;
+	CIMDateTime _lastStateChange;
+	Uint16 _protocolType;
+	Uint16 _protocolIFType;
+	String _otherTypeDescription;
+	Uint32 _portNumber;
 
 #	include "UNIX_UDPProtocolEndpointPrivate.h"
 

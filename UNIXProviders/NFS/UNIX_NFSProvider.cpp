@@ -154,6 +154,51 @@ Array<CIMKeyBinding> UNIX_NFSProvider::constructKeyBindings(const UNIX_NFS& _p) 
 	return keys;
 }
 
+#define __createInstance_H
+void UNIX_NFSProvider::createInstance(
+    const OperationContext& context,
+    const CIMObjectPath& ref,
+    const CIMInstance& instanceObject,
+    ObjectPathResponseHandler& handler )
+{
+    handler.processing();
+
+	CIMName className = ref.getClassName();
+	if (String::equal(className.getString(), String("UNIX_NFS")))
+	{
+		Array<CIMKeyBinding> bindings = ref.getKeyBindings();
+		for(Uint32 i = 0; i < bindings.size(); i++)
+		{
+			String name = bindings[i].getName().getString();
+
+			if (String::equal(name, "Name"))
+			{
+				String source = bindings[i].getValue();
+
+				Uint32 rootIndex = instanceObject.findProperty(String("Root"));
+				if (rootIndex != PEG_NOT_FOUND)
+				{
+					CIMConstProperty rootProperty = instanceObject.getProperty(rootIndex);
+					CIMValue rootValue = rootProperty.getValue();
+					if (!rootValue.isNull())
+					{
+						String target;
+						rootValue.get(target);
+						String cmd("mount -t nfs ");
+						cmd.append(source);
+						cmd.append(" ");
+						cmd.append(target);
+						system(cmd.getCString());
+					}
+				}
+			 	break;
+			}
+		}
+	}
+
+	handler.complete();
+}
+
 #define __deleteInstance_H
 // =============================================================================
 // NAME              : createInstance

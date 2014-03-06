@@ -47,7 +47,7 @@ Boolean UNIX_TCPProtocolEndpoint::getInstanceID(CIMProperty &p) const
 
 String UNIX_TCPProtocolEndpoint::getInstanceID() const
 {
-	return String ("");
+	return _instanceID;
 }
 
 Boolean UNIX_TCPProtocolEndpoint::getCaption(CIMProperty &p) const
@@ -58,7 +58,7 @@ Boolean UNIX_TCPProtocolEndpoint::getCaption(CIMProperty &p) const
 
 String UNIX_TCPProtocolEndpoint::getCaption() const
 {
-	return String ("");
+	return _caption;
 }
 
 Boolean UNIX_TCPProtocolEndpoint::getDescription(CIMProperty &p) const
@@ -80,7 +80,7 @@ Boolean UNIX_TCPProtocolEndpoint::getElementName(CIMProperty &p) const
 
 String UNIX_TCPProtocolEndpoint::getElementName() const
 {
-	return String("TCPProtocolEndpoint");
+	return String("UDPProtocolEndpoint");
 }
 
 Boolean UNIX_TCPProtocolEndpoint::getInstallDate(CIMProperty &p) const
@@ -113,7 +113,7 @@ Boolean UNIX_TCPProtocolEndpoint::getName(CIMProperty &p) const
 
 String UNIX_TCPProtocolEndpoint::getName() const
 {
-	return String ("");
+	return _name;
 }
 
 Boolean UNIX_TCPProtocolEndpoint::getOperationalStatus(CIMProperty &p) const
@@ -125,7 +125,7 @@ Boolean UNIX_TCPProtocolEndpoint::getOperationalStatus(CIMProperty &p) const
 Array<Uint16> UNIX_TCPProtocolEndpoint::getOperationalStatus() const
 {
 	Array<Uint16> as;
-	
+	as.append(2); //OK
 
 	return as;
 
@@ -264,18 +264,7 @@ Boolean UNIX_TCPProtocolEndpoint::getTimeOfLastStateChange(CIMProperty &p) const
 
 CIMDateTime UNIX_TCPProtocolEndpoint::getTimeOfLastStateChange() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return _lastStateChange;
 }
 
 Boolean UNIX_TCPProtocolEndpoint::getAvailableRequestedStates(CIMProperty &p) const
@@ -345,7 +334,7 @@ Boolean UNIX_TCPProtocolEndpoint::getNameFormat(CIMProperty &p) const
 
 String UNIX_TCPProtocolEndpoint::getNameFormat() const
 {
-	return String ("");
+	return String ("[IP].[PORT]");
 }
 
 Boolean UNIX_TCPProtocolEndpoint::getProtocolType(CIMProperty &p) const
@@ -356,7 +345,7 @@ Boolean UNIX_TCPProtocolEndpoint::getProtocolType(CIMProperty &p) const
 
 Uint16 UNIX_TCPProtocolEndpoint::getProtocolType() const
 {
-	return Uint16(0);
+	return _protocolType;
 }
 
 Boolean UNIX_TCPProtocolEndpoint::getProtocolIFType(CIMProperty &p) const
@@ -367,7 +356,7 @@ Boolean UNIX_TCPProtocolEndpoint::getProtocolIFType(CIMProperty &p) const
 
 Uint16 UNIX_TCPProtocolEndpoint::getProtocolIFType() const
 {
-	return Uint16(0);
+	return _protocolIFType;
 }
 
 Boolean UNIX_TCPProtocolEndpoint::getOtherTypeDescription(CIMProperty &p) const
@@ -378,7 +367,7 @@ Boolean UNIX_TCPProtocolEndpoint::getOtherTypeDescription(CIMProperty &p) const
 
 String UNIX_TCPProtocolEndpoint::getOtherTypeDescription() const
 {
-	return String ("");
+	return _otherTypeDescription;
 }
 
 Boolean UNIX_TCPProtocolEndpoint::getPortNumber(CIMProperty &p) const
@@ -389,14 +378,55 @@ Boolean UNIX_TCPProtocolEndpoint::getPortNumber(CIMProperty &p) const
 
 Uint32 UNIX_TCPProtocolEndpoint::getPortNumber() const
 {
-	return Uint32(0);
+	return _portNumber;
+}
+
+
+void UNIX_TCPProtocolEndpoint::setInstanceID(String instanceID)
+{
+	_instanceID = instanceID;
+}
+
+void UNIX_TCPProtocolEndpoint::setCaption(String caption)
+{
+	_caption = caption;
+}
+
+void UNIX_TCPProtocolEndpoint::setDescription(String description)
+{
+	_description = description;
+}
+
+void UNIX_TCPProtocolEndpoint::setName(String name)
+{
+	_name = name;
+}
+
+void UNIX_TCPProtocolEndpoint::setTimeOfLastStateChange(CIMDateTime lastStateChange)
+{
+	_lastStateChange = lastStateChange;
+}
+
+void UNIX_TCPProtocolEndpoint::setProtocolType(Uint16 protocolType)
+{
+	_protocolType = protocolType;
+}
+
+void UNIX_TCPProtocolEndpoint::setProtocolIFType(Uint16 protocolIFType)
+{
+	_protocolIFType = protocolIFType;
+}
+
+void UNIX_TCPProtocolEndpoint::setOtherTypeDescription(String otherTypeDescription)
+{
+	_otherTypeDescription = otherTypeDescription;
 }
 
 
 
 Boolean UNIX_TCPProtocolEndpoint::initialize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_TCPProtocolEndpoint::load(int &pIndex)
@@ -406,7 +436,7 @@ Boolean UNIX_TCPProtocolEndpoint::load(int &pIndex)
 
 Boolean UNIX_TCPProtocolEndpoint::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_TCPProtocolEndpoint::find(Array<CIMKeyBinding> &kbArray)

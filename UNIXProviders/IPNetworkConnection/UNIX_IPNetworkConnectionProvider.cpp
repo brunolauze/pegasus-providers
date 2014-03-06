@@ -43,7 +43,7 @@ UNIX_IPNetworkConnectionProvider::~UNIX_IPNetworkConnectionProvider()
 CIMInstance UNIX_IPNetworkConnectionProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_IPNetworkConnection &_p)
+	const UNIX_IPNetworkConnection &_p) const
 {
 	CIMProperty p;
 
@@ -96,7 +96,7 @@ CIMInstance UNIX_IPNetworkConnectionProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_IPNetworkConnectionProvider::constructKeyBindings(const UNIX_IPNetworkConnection& _p)
+Array<CIMKeyBinding> UNIX_IPNetworkConnectionProvider::constructKeyBindings(const UNIX_IPNetworkConnection& _p) const
 
 {
 

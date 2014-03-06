@@ -43,7 +43,7 @@ UNIX_TCPProtocolEndpointProvider::~UNIX_TCPProtocolEndpointProvider()
 CIMInstance UNIX_TCPProtocolEndpointProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_TCPProtocolEndpoint &_p)
+	const UNIX_TCPProtocolEndpoint &_p) const
 {
 	CIMProperty p;
 
@@ -102,7 +102,7 @@ CIMInstance UNIX_TCPProtocolEndpointProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_TCPProtocolEndpointProvider::constructKeyBindings(const UNIX_TCPProtocolEndpoint& _p)
+Array<CIMKeyBinding> UNIX_TCPProtocolEndpointProvider::constructKeyBindings(const UNIX_TCPProtocolEndpoint& _p) const
 
 {
 

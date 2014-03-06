@@ -43,7 +43,7 @@ UNIX_ActiveConnectionProvider::~UNIX_ActiveConnectionProvider()
 CIMInstance UNIX_ActiveConnectionProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_ActiveConnection &_p)
+	const UNIX_ActiveConnection &_p) const
 {
 	CIMProperty p;
 
@@ -70,7 +70,7 @@ CIMInstance UNIX_ActiveConnectionProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_ActiveConnectionProvider::constructKeyBindings(const UNIX_ActiveConnection& _p)
+Array<CIMKeyBinding> UNIX_ActiveConnectionProvider::constructKeyBindings(const UNIX_ActiveConnection& _p) const
 
 {
 
