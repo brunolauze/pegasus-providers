@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_WiFiPortConfigurationServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_WiFiPortConfigurationService_AIX.cxx
+	SOURCES += UNIX_WiFiPortConfigurationService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_WiFiPortConfigurationService_DARWIN.cxx
+	SOURCES += UNIX_WiFiPortConfigurationService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_WiFiPortConfigurationService_FREEBSD.cxx
+	SOURCES += UNIX_WiFiPortConfigurationService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_WiFiPortConfigurationService_HPUX.cxx
+	SOURCES += UNIX_WiFiPortConfigurationService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_WiFiPortConfigurationService_LINUX.cxx
+	SOURCES += UNIX_WiFiPortConfigurationService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_WiFiPortConfigurationService_SOLARIS.cxx
+	SOURCES += UNIX_WiFiPortConfigurationService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_WiFiPortConfigurationService_TRU64.cxx
+	SOURCES += UNIX_WiFiPortConfigurationService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_WiFiPortConfigurationService_VMS.cxx
+	SOURCES += UNIX_WiFiPortConfigurationService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_WiFiPortConfigurationService_WIN32.cxx
+	SOURCES += UNIX_WiFiPortConfigurationService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_WiFiPortConfigurationService_ZOS.cxx
+	SOURCES += UNIX_WiFiPortConfigurationService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_WiFiPortConfigurationService_STUB.cxx
+	SOURCES += UNIX_WiFiPortConfigurationService_STUB.cpp
 endif
 
 LIBRARIES = \

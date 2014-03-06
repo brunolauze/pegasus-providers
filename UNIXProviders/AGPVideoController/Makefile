@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_AGPVideoControllerProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_AGPVideoController_AIX.cxx
+	SOURCES += UNIX_AGPVideoController_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_AGPVideoController_DARWIN.cxx
+	SOURCES += UNIX_AGPVideoController_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_AGPVideoController_FREEBSD.cxx
+	SOURCES += UNIX_AGPVideoController_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_AGPVideoController_HPUX.cxx
+	SOURCES += UNIX_AGPVideoController_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_AGPVideoController_LINUX.cxx
+	SOURCES += UNIX_AGPVideoController_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_AGPVideoController_SOLARIS.cxx
+	SOURCES += UNIX_AGPVideoController_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_AGPVideoController_TRU64.cxx
+	SOURCES += UNIX_AGPVideoController_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_AGPVideoController_VMS.cxx
+	SOURCES += UNIX_AGPVideoController_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_AGPVideoController_WIN32.cxx
+	SOURCES += UNIX_AGPVideoController_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_AGPVideoController_ZOS.cxx
+	SOURCES += UNIX_AGPVideoController_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_AGPVideoController_STUB.cxx
+	SOURCES += UNIX_AGPVideoController_STUB.cpp
 endif
 
 LIBRARIES = \

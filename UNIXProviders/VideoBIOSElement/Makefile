@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_VideoBIOSElementProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_VideoBIOSElement_AIX.cxx
+	SOURCES += UNIX_VideoBIOSElement_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_VideoBIOSElement_DARWIN.cxx
+	SOURCES += UNIX_VideoBIOSElement_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_VideoBIOSElement_FREEBSD.cxx
+	SOURCES += UNIX_VideoBIOSElement_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_VideoBIOSElement_HPUX.cxx
+	SOURCES += UNIX_VideoBIOSElement_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_VideoBIOSElement_LINUX.cxx
+	SOURCES += UNIX_VideoBIOSElement_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_VideoBIOSElement_SOLARIS.cxx
+	SOURCES += UNIX_VideoBIOSElement_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_VideoBIOSElement_TRU64.cxx
+	SOURCES += UNIX_VideoBIOSElement_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_VideoBIOSElement_VMS.cxx
+	SOURCES += UNIX_VideoBIOSElement_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_VideoBIOSElement_WIN32.cxx
+	SOURCES += UNIX_VideoBIOSElement_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_VideoBIOSElement_ZOS.cxx
+	SOURCES += UNIX_VideoBIOSElement_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_VideoBIOSElement_STUB.cxx
+	SOURCES += UNIX_VideoBIOSElement_STUB.cpp
 endif
 
 LIBRARIES = \

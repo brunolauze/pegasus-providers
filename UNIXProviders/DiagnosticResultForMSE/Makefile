@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_DiagnosticResultForMSEProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_DiagnosticResultForMSE_AIX.cxx
+	SOURCES += UNIX_DiagnosticResultForMSE_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_DiagnosticResultForMSE_DARWIN.cxx
+	SOURCES += UNIX_DiagnosticResultForMSE_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_DiagnosticResultForMSE_FREEBSD.cxx
+	SOURCES += UNIX_DiagnosticResultForMSE_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_DiagnosticResultForMSE_HPUX.cxx
+	SOURCES += UNIX_DiagnosticResultForMSE_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_DiagnosticResultForMSE_LINUX.cxx
+	SOURCES += UNIX_DiagnosticResultForMSE_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_DiagnosticResultForMSE_SOLARIS.cxx
+	SOURCES += UNIX_DiagnosticResultForMSE_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_DiagnosticResultForMSE_TRU64.cxx
+	SOURCES += UNIX_DiagnosticResultForMSE_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_DiagnosticResultForMSE_VMS.cxx
+	SOURCES += UNIX_DiagnosticResultForMSE_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_DiagnosticResultForMSE_WIN32.cxx
+	SOURCES += UNIX_DiagnosticResultForMSE_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_DiagnosticResultForMSE_ZOS.cxx
+	SOURCES += UNIX_DiagnosticResultForMSE_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_DiagnosticResultForMSE_STUB.cxx
+	SOURCES += UNIX_DiagnosticResultForMSE_STUB.cpp
 endif
 
 LIBRARIES = \

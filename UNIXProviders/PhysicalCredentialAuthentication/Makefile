@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PhysicalCredentialAuthenticationProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PhysicalCredentialAuthentication_AIX.cxx
+	SOURCES += UNIX_PhysicalCredentialAuthentication_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PhysicalCredentialAuthentication_DARWIN.cxx
+	SOURCES += UNIX_PhysicalCredentialAuthentication_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PhysicalCredentialAuthentication_FREEBSD.cxx
+	SOURCES += UNIX_PhysicalCredentialAuthentication_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PhysicalCredentialAuthentication_HPUX.cxx
+	SOURCES += UNIX_PhysicalCredentialAuthentication_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PhysicalCredentialAuthentication_LINUX.cxx
+	SOURCES += UNIX_PhysicalCredentialAuthentication_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PhysicalCredentialAuthentication_SOLARIS.cxx
+	SOURCES += UNIX_PhysicalCredentialAuthentication_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PhysicalCredentialAuthentication_TRU64.cxx
+	SOURCES += UNIX_PhysicalCredentialAuthentication_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PhysicalCredentialAuthentication_VMS.cxx
+	SOURCES += UNIX_PhysicalCredentialAuthentication_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PhysicalCredentialAuthentication_WIN32.cxx
+	SOURCES += UNIX_PhysicalCredentialAuthentication_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PhysicalCredentialAuthentication_ZOS.cxx
+	SOURCES += UNIX_PhysicalCredentialAuthentication_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PhysicalCredentialAuthentication_STUB.cxx
+	SOURCES += UNIX_PhysicalCredentialAuthentication_STUB.cpp
 endif
 
 LIBRARIES = \

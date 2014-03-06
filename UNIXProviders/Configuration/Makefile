@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ConfigurationProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_Configuration_AIX.cxx
+	SOURCES += UNIX_Configuration_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_Configuration_DARWIN.cxx
+	SOURCES += UNIX_Configuration_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_Configuration_FREEBSD.cxx
+	SOURCES += UNIX_Configuration_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_Configuration_HPUX.cxx
+	SOURCES += UNIX_Configuration_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_Configuration_LINUX.cxx
+	SOURCES += UNIX_Configuration_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_Configuration_SOLARIS.cxx
+	SOURCES += UNIX_Configuration_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_Configuration_TRU64.cxx
+	SOURCES += UNIX_Configuration_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_Configuration_VMS.cxx
+	SOURCES += UNIX_Configuration_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_Configuration_WIN32.cxx
+	SOURCES += UNIX_Configuration_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_Configuration_ZOS.cxx
+	SOURCES += UNIX_Configuration_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_Configuration_STUB.cxx
+	SOURCES += UNIX_Configuration_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_FileSystemCapabilitiesProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_FileSystemCapabilities_AIX.cxx
+	SOURCES += UNIX_FileSystemCapabilities_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_FileSystemCapabilities_DARWIN.cxx
+	SOURCES += UNIX_FileSystemCapabilities_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_FileSystemCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_FileSystemCapabilities_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_FileSystemCapabilities_HPUX.cxx
+	SOURCES += UNIX_FileSystemCapabilities_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_FileSystemCapabilities_LINUX.cxx
+	SOURCES += UNIX_FileSystemCapabilities_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_FileSystemCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_FileSystemCapabilities_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_FileSystemCapabilities_TRU64.cxx
+	SOURCES += UNIX_FileSystemCapabilities_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_FileSystemCapabilities_VMS.cxx
+	SOURCES += UNIX_FileSystemCapabilities_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_FileSystemCapabilities_WIN32.cxx
+	SOURCES += UNIX_FileSystemCapabilities_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_FileSystemCapabilities_ZOS.cxx
+	SOURCES += UNIX_FileSystemCapabilities_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_FileSystemCapabilities_STUB.cxx
+	SOURCES += UNIX_FileSystemCapabilities_STUB.cpp
 endif
 
 LIBRARIES = \

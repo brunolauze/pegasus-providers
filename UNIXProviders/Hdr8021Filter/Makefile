@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_Hdr8021FilterProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_Hdr8021Filter_AIX.cxx
+	SOURCES += UNIX_Hdr8021Filter_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_Hdr8021Filter_DARWIN.cxx
+	SOURCES += UNIX_Hdr8021Filter_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_Hdr8021Filter_FREEBSD.cxx
+	SOURCES += UNIX_Hdr8021Filter_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_Hdr8021Filter_HPUX.cxx
+	SOURCES += UNIX_Hdr8021Filter_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_Hdr8021Filter_LINUX.cxx
+	SOURCES += UNIX_Hdr8021Filter_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_Hdr8021Filter_SOLARIS.cxx
+	SOURCES += UNIX_Hdr8021Filter_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_Hdr8021Filter_TRU64.cxx
+	SOURCES += UNIX_Hdr8021Filter_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_Hdr8021Filter_VMS.cxx
+	SOURCES += UNIX_Hdr8021Filter_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_Hdr8021Filter_WIN32.cxx
+	SOURCES += UNIX_Hdr8021Filter_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_Hdr8021Filter_ZOS.cxx
+	SOURCES += UNIX_Hdr8021Filter_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_Hdr8021Filter_STUB.cxx
+	SOURCES += UNIX_Hdr8021Filter_STUB.cpp
 endif
 
 LIBRARIES = \

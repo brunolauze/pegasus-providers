@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_IEEE8021xCapabilitiesProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_IEEE8021xCapabilities_AIX.cxx
+	SOURCES += UNIX_IEEE8021xCapabilities_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_IEEE8021xCapabilities_DARWIN.cxx
+	SOURCES += UNIX_IEEE8021xCapabilities_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_IEEE8021xCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_IEEE8021xCapabilities_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_IEEE8021xCapabilities_HPUX.cxx
+	SOURCES += UNIX_IEEE8021xCapabilities_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_IEEE8021xCapabilities_LINUX.cxx
+	SOURCES += UNIX_IEEE8021xCapabilities_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_IEEE8021xCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_IEEE8021xCapabilities_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_IEEE8021xCapabilities_TRU64.cxx
+	SOURCES += UNIX_IEEE8021xCapabilities_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_IEEE8021xCapabilities_VMS.cxx
+	SOURCES += UNIX_IEEE8021xCapabilities_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_IEEE8021xCapabilities_WIN32.cxx
+	SOURCES += UNIX_IEEE8021xCapabilities_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_IEEE8021xCapabilities_ZOS.cxx
+	SOURCES += UNIX_IEEE8021xCapabilities_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_IEEE8021xCapabilities_STUB.cxx
+	SOURCES += UNIX_IEEE8021xCapabilities_STUB.cpp
 endif
 
 LIBRARIES = \

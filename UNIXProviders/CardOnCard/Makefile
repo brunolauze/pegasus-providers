@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_CardOnCardProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_CardOnCard_AIX.cxx
+	SOURCES += UNIX_CardOnCard_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_CardOnCard_DARWIN.cxx
+	SOURCES += UNIX_CardOnCard_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_CardOnCard_FREEBSD.cxx
+	SOURCES += UNIX_CardOnCard_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_CardOnCard_HPUX.cxx
+	SOURCES += UNIX_CardOnCard_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_CardOnCard_LINUX.cxx
+	SOURCES += UNIX_CardOnCard_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_CardOnCard_SOLARIS.cxx
+	SOURCES += UNIX_CardOnCard_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_CardOnCard_TRU64.cxx
+	SOURCES += UNIX_CardOnCard_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_CardOnCard_VMS.cxx
+	SOURCES += UNIX_CardOnCard_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_CardOnCard_WIN32.cxx
+	SOURCES += UNIX_CardOnCard_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_CardOnCard_ZOS.cxx
+	SOURCES += UNIX_CardOnCard_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_CardOnCard_STUB.cxx
+	SOURCES += UNIX_CardOnCard_STUB.cpp
 endif
 
 LIBRARIES = \

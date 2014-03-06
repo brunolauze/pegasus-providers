@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_HostedFileSystemProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_HostedFileSystem_AIX.cxx
+	SOURCES += UNIX_HostedFileSystem_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_HostedFileSystem_DARWIN.cxx
+	SOURCES += UNIX_HostedFileSystem_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_HostedFileSystem_FREEBSD.cxx
+	SOURCES += UNIX_HostedFileSystem_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_HostedFileSystem_HPUX.cxx
+	SOURCES += UNIX_HostedFileSystem_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_HostedFileSystem_LINUX.cxx
+	SOURCES += UNIX_HostedFileSystem_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_HostedFileSystem_SOLARIS.cxx
+	SOURCES += UNIX_HostedFileSystem_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_HostedFileSystem_TRU64.cxx
+	SOURCES += UNIX_HostedFileSystem_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_HostedFileSystem_VMS.cxx
+	SOURCES += UNIX_HostedFileSystem_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_HostedFileSystem_WIN32.cxx
+	SOURCES += UNIX_HostedFileSystem_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_HostedFileSystem_ZOS.cxx
+	SOURCES += UNIX_HostedFileSystem_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_HostedFileSystem_STUB.cxx
+	SOURCES += UNIX_HostedFileSystem_STUB.cpp
 endif
 
 LIBRARIES = \

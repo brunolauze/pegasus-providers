@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ESPTransformProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ESPTransform_AIX.cxx
+	SOURCES += UNIX_ESPTransform_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ESPTransform_DARWIN.cxx
+	SOURCES += UNIX_ESPTransform_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ESPTransform_FREEBSD.cxx
+	SOURCES += UNIX_ESPTransform_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ESPTransform_HPUX.cxx
+	SOURCES += UNIX_ESPTransform_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ESPTransform_LINUX.cxx
+	SOURCES += UNIX_ESPTransform_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ESPTransform_SOLARIS.cxx
+	SOURCES += UNIX_ESPTransform_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ESPTransform_TRU64.cxx
+	SOURCES += UNIX_ESPTransform_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ESPTransform_VMS.cxx
+	SOURCES += UNIX_ESPTransform_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ESPTransform_WIN32.cxx
+	SOURCES += UNIX_ESPTransform_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ESPTransform_ZOS.cxx
+	SOURCES += UNIX_ESPTransform_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ESPTransform_STUB.cxx
+	SOURCES += UNIX_ESPTransform_STUB.cpp
 endif
 
 LIBRARIES = \

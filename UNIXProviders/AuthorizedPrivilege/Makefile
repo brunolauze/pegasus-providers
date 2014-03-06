@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_AuthorizedPrivilegeProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_AuthorizedPrivilege_AIX.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_AuthorizedPrivilege_DARWIN.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_AuthorizedPrivilege_FREEBSD.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_AuthorizedPrivilege_HPUX.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_AuthorizedPrivilege_LINUX.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_AuthorizedPrivilege_SOLARIS.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_AuthorizedPrivilege_TRU64.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_AuthorizedPrivilege_VMS.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_AuthorizedPrivilege_WIN32.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_AuthorizedPrivilege_ZOS.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_AuthorizedPrivilege_STUB.cxx
+	SOURCES += UNIX_AuthorizedPrivilege_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ComputerSystemDMAProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ComputerSystemDMA_AIX.cxx
+	SOURCES += UNIX_ComputerSystemDMA_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ComputerSystemDMA_DARWIN.cxx
+	SOURCES += UNIX_ComputerSystemDMA_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ComputerSystemDMA_FREEBSD.cxx
+	SOURCES += UNIX_ComputerSystemDMA_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ComputerSystemDMA_HPUX.cxx
+	SOURCES += UNIX_ComputerSystemDMA_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ComputerSystemDMA_LINUX.cxx
+	SOURCES += UNIX_ComputerSystemDMA_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ComputerSystemDMA_SOLARIS.cxx
+	SOURCES += UNIX_ComputerSystemDMA_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ComputerSystemDMA_TRU64.cxx
+	SOURCES += UNIX_ComputerSystemDMA_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ComputerSystemDMA_VMS.cxx
+	SOURCES += UNIX_ComputerSystemDMA_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ComputerSystemDMA_WIN32.cxx
+	SOURCES += UNIX_ComputerSystemDMA_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ComputerSystemDMA_ZOS.cxx
+	SOURCES += UNIX_ComputerSystemDMA_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ComputerSystemDMA_STUB.cxx
+	SOURCES += UNIX_ComputerSystemDMA_STUB.cpp
 endif
 
 LIBRARIES = \

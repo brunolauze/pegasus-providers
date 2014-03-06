@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_SpanningTreeServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_SpanningTreeService_AIX.cxx
+	SOURCES += UNIX_SpanningTreeService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_SpanningTreeService_DARWIN.cxx
+	SOURCES += UNIX_SpanningTreeService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_SpanningTreeService_FREEBSD.cxx
+	SOURCES += UNIX_SpanningTreeService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_SpanningTreeService_HPUX.cxx
+	SOURCES += UNIX_SpanningTreeService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_SpanningTreeService_LINUX.cxx
+	SOURCES += UNIX_SpanningTreeService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_SpanningTreeService_SOLARIS.cxx
+	SOURCES += UNIX_SpanningTreeService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_SpanningTreeService_TRU64.cxx
+	SOURCES += UNIX_SpanningTreeService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_SpanningTreeService_VMS.cxx
+	SOURCES += UNIX_SpanningTreeService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_SpanningTreeService_WIN32.cxx
+	SOURCES += UNIX_SpanningTreeService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_SpanningTreeService_ZOS.cxx
+	SOURCES += UNIX_SpanningTreeService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_SpanningTreeService_STUB.cxx
+	SOURCES += UNIX_SpanningTreeService_STUB.cpp
 endif
 
 LIBRARIES = \

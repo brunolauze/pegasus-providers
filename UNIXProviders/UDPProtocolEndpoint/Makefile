@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_UDPProtocolEndpointProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_UDPProtocolEndpoint_AIX.cxx
+	SOURCES += UNIX_UDPProtocolEndpoint_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_UDPProtocolEndpoint_DARWIN.cxx
+	SOURCES += UNIX_UDPProtocolEndpoint_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_UDPProtocolEndpoint_FREEBSD.cxx
+	SOURCES += UNIX_UDPProtocolEndpoint_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_UDPProtocolEndpoint_HPUX.cxx
+	SOURCES += UNIX_UDPProtocolEndpoint_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_UDPProtocolEndpoint_LINUX.cxx
+	SOURCES += UNIX_UDPProtocolEndpoint_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_UDPProtocolEndpoint_SOLARIS.cxx
+	SOURCES += UNIX_UDPProtocolEndpoint_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_UDPProtocolEndpoint_TRU64.cxx
+	SOURCES += UNIX_UDPProtocolEndpoint_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_UDPProtocolEndpoint_VMS.cxx
+	SOURCES += UNIX_UDPProtocolEndpoint_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_UDPProtocolEndpoint_WIN32.cxx
+	SOURCES += UNIX_UDPProtocolEndpoint_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_UDPProtocolEndpoint_ZOS.cxx
+	SOURCES += UNIX_UDPProtocolEndpoint_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_UDPProtocolEndpoint_STUB.cxx
+	SOURCES += UNIX_UDPProtocolEndpoint_STUB.cpp
 endif
 
 LIBRARIES = \

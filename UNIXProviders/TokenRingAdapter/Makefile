@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_TokenRingAdapterProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_TokenRingAdapter_AIX.cxx
+	SOURCES += UNIX_TokenRingAdapter_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_TokenRingAdapter_DARWIN.cxx
+	SOURCES += UNIX_TokenRingAdapter_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_TokenRingAdapter_FREEBSD.cxx
+	SOURCES += UNIX_TokenRingAdapter_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_TokenRingAdapter_HPUX.cxx
+	SOURCES += UNIX_TokenRingAdapter_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_TokenRingAdapter_LINUX.cxx
+	SOURCES += UNIX_TokenRingAdapter_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_TokenRingAdapter_SOLARIS.cxx
+	SOURCES += UNIX_TokenRingAdapter_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_TokenRingAdapter_TRU64.cxx
+	SOURCES += UNIX_TokenRingAdapter_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_TokenRingAdapter_VMS.cxx
+	SOURCES += UNIX_TokenRingAdapter_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_TokenRingAdapter_WIN32.cxx
+	SOURCES += UNIX_TokenRingAdapter_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_TokenRingAdapter_ZOS.cxx
+	SOURCES += UNIX_TokenRingAdapter_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_TokenRingAdapter_STUB.cxx
+	SOURCES += UNIX_TokenRingAdapter_STUB.cpp
 endif
 
 LIBRARIES = \

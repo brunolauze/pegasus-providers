@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_RejectConnectionActionProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_RejectConnectionAction_AIX.cxx
+	SOURCES += UNIX_RejectConnectionAction_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_RejectConnectionAction_DARWIN.cxx
+	SOURCES += UNIX_RejectConnectionAction_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_RejectConnectionAction_FREEBSD.cxx
+	SOURCES += UNIX_RejectConnectionAction_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_RejectConnectionAction_HPUX.cxx
+	SOURCES += UNIX_RejectConnectionAction_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_RejectConnectionAction_LINUX.cxx
+	SOURCES += UNIX_RejectConnectionAction_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_RejectConnectionAction_SOLARIS.cxx
+	SOURCES += UNIX_RejectConnectionAction_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_RejectConnectionAction_TRU64.cxx
+	SOURCES += UNIX_RejectConnectionAction_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_RejectConnectionAction_VMS.cxx
+	SOURCES += UNIX_RejectConnectionAction_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_RejectConnectionAction_WIN32.cxx
+	SOURCES += UNIX_RejectConnectionAction_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_RejectConnectionAction_ZOS.cxx
+	SOURCES += UNIX_RejectConnectionAction_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_RejectConnectionAction_STUB.cxx
+	SOURCES += UNIX_RejectConnectionAction_STUB.cpp
 endif
 
 LIBRARIES = \

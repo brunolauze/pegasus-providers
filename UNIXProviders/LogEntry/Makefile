@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_LogEntryProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_LogEntry_AIX.cxx
+	SOURCES += UNIX_LogEntry_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_LogEntry_DARWIN.cxx
+	SOURCES += UNIX_LogEntry_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_LogEntry_FREEBSD.cxx
+	SOURCES += UNIX_LogEntry_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_LogEntry_HPUX.cxx
+	SOURCES += UNIX_LogEntry_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_LogEntry_LINUX.cxx
+	SOURCES += UNIX_LogEntry_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_LogEntry_SOLARIS.cxx
+	SOURCES += UNIX_LogEntry_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_LogEntry_TRU64.cxx
+	SOURCES += UNIX_LogEntry_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_LogEntry_VMS.cxx
+	SOURCES += UNIX_LogEntry_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_LogEntry_WIN32.cxx
+	SOURCES += UNIX_LogEntry_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_LogEntry_ZOS.cxx
+	SOURCES += UNIX_LogEntry_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_LogEntry_STUB.cxx
+	SOURCES += UNIX_LogEntry_STUB.cpp
 endif
 
 
@@ -89,39 +89,39 @@ SOURCES += \
 	../MessageLog/UNIX_MessageLogProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCE += ../MessageLog/UNIX_MessageLog_AIX.cxx
+	SOURCE += ../MessageLog/UNIX_MessageLog_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCE += ../MessageLog/UNIX_MessageLog_DARWIN.cxx
+	SOURCE += ../MessageLog/UNIX_MessageLog_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += ../MessageLog/UNIX_MessageLog_FREEBSD.cxx
+	SOURCE += ../MessageLog/UNIX_MessageLog_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCE += ../MessageLog/UNIX_MessageLog_HPUX.cxx
+	SOURCE += ../MessageLog/UNIX_MessageLog_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCE += ../MessageLog/UNIX_MessageLog_LINUX.cxx
+	SOURCE += ../MessageLog/UNIX_MessageLog_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCE += ../MessageLog/UNIX_MessageLog_SOLARIS.cxx
+	SOURCE += ../MessageLog/UNIX_MessageLog_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCE += ../MessageLog/UNIX_MessageLog_TRU64.cxx
+	SOURCE += ../MessageLog/UNIX_MessageLog_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCE += ../MessageLog/UNIX_MessageLog_VMS.cxx
+	SOURCE += ../MessageLog/UNIX_MessageLog_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCE += ../MessageLog/UNIX_MessageLog_WIN32.cxx
+	SOURCE += ../MessageLog/UNIX_MessageLog_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCE += ../MessageLog/UNIX_MessageLog_ZOS.cxx
+	SOURCE += ../MessageLog/UNIX_MessageLog_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += ../MessageLog/UNIX_MessageLog_STUB.cxx
+	SOURCE += ../MessageLog/UNIX_MessageLog_STUB.cpp
 endif
 
 

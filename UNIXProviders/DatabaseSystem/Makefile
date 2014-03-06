@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_DatabaseSystemProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_DatabaseSystem_AIX.cxx
+	SOURCES += UNIX_DatabaseSystem_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_DatabaseSystem_DARWIN.cxx
+	SOURCES += UNIX_DatabaseSystem_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_DatabaseSystem_FREEBSD.cxx
+	SOURCES += UNIX_DatabaseSystem_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_DatabaseSystem_HPUX.cxx
+	SOURCES += UNIX_DatabaseSystem_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_DatabaseSystem_LINUX.cxx
+	SOURCES += UNIX_DatabaseSystem_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_DatabaseSystem_SOLARIS.cxx
+	SOURCES += UNIX_DatabaseSystem_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_DatabaseSystem_TRU64.cxx
+	SOURCES += UNIX_DatabaseSystem_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_DatabaseSystem_VMS.cxx
+	SOURCES += UNIX_DatabaseSystem_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_DatabaseSystem_WIN32.cxx
+	SOURCES += UNIX_DatabaseSystem_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_DatabaseSystem_ZOS.cxx
+	SOURCES += UNIX_DatabaseSystem_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_DatabaseSystem_STUB.cxx
+	SOURCES += UNIX_DatabaseSystem_STUB.cpp
 endif
 
 
@@ -89,39 +89,39 @@ SOURCES += \
 	../ApplicationSystem/UNIX_ApplicationSystemProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_AIX.cxx
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_DARWIN.cxx
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_FREEBSD.cxx
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_HPUX.cxx
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_LINUX.cxx
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_SOLARIS.cxx
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_TRU64.cxx
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_VMS.cxx
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_WIN32.cxx
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_ZOS.cxx
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_STUB.cxx
+	SOURCE += ../ApplicationSystem/UNIX_ApplicationSystem_STUB.cpp
 endif
 
 
@@ -130,39 +130,39 @@ SOURCES += \
 	../SoftwareElement/UNIX_SoftwareElementProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_AIX.cxx
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_DARWIN.cxx
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_FREEBSD.cxx
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_HPUX.cxx
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_LINUX.cxx
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_SOLARIS.cxx
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_TRU64.cxx
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_VMS.cxx
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_WIN32.cxx
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_ZOS.cxx
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_STUB.cxx
+	SOURCE += ../SoftwareElement/UNIX_SoftwareElement_STUB.cpp
 endif
 
 LIBRARIES = \

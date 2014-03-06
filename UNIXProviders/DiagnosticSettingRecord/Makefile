@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_DiagnosticSettingRecordProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_DiagnosticSettingRecord_AIX.cxx
+	SOURCES += UNIX_DiagnosticSettingRecord_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_DiagnosticSettingRecord_DARWIN.cxx
+	SOURCES += UNIX_DiagnosticSettingRecord_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_DiagnosticSettingRecord_FREEBSD.cxx
+	SOURCES += UNIX_DiagnosticSettingRecord_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_DiagnosticSettingRecord_HPUX.cxx
+	SOURCES += UNIX_DiagnosticSettingRecord_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_DiagnosticSettingRecord_LINUX.cxx
+	SOURCES += UNIX_DiagnosticSettingRecord_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_DiagnosticSettingRecord_SOLARIS.cxx
+	SOURCES += UNIX_DiagnosticSettingRecord_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_DiagnosticSettingRecord_TRU64.cxx
+	SOURCES += UNIX_DiagnosticSettingRecord_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_DiagnosticSettingRecord_VMS.cxx
+	SOURCES += UNIX_DiagnosticSettingRecord_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_DiagnosticSettingRecord_WIN32.cxx
+	SOURCES += UNIX_DiagnosticSettingRecord_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_DiagnosticSettingRecord_ZOS.cxx
+	SOURCES += UNIX_DiagnosticSettingRecord_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_DiagnosticSettingRecord_STUB.cxx
+	SOURCES += UNIX_DiagnosticSettingRecord_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PhysicalTapeProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PhysicalTape_AIX.cxx
+	SOURCES += UNIX_PhysicalTape_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PhysicalTape_DARWIN.cxx
+	SOURCES += UNIX_PhysicalTape_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PhysicalTape_FREEBSD.cxx
+	SOURCES += UNIX_PhysicalTape_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PhysicalTape_HPUX.cxx
+	SOURCES += UNIX_PhysicalTape_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PhysicalTape_LINUX.cxx
+	SOURCES += UNIX_PhysicalTape_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PhysicalTape_SOLARIS.cxx
+	SOURCES += UNIX_PhysicalTape_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PhysicalTape_TRU64.cxx
+	SOURCES += UNIX_PhysicalTape_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PhysicalTape_VMS.cxx
+	SOURCES += UNIX_PhysicalTape_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PhysicalTape_WIN32.cxx
+	SOURCES += UNIX_PhysicalTape_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PhysicalTape_ZOS.cxx
+	SOURCES += UNIX_PhysicalTape_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PhysicalTape_STUB.cxx
+	SOURCES += UNIX_PhysicalTape_STUB.cpp
 endif
 
 LIBRARIES = \

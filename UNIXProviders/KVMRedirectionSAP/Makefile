@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_KVMRedirectionSAPProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_KVMRedirectionSAP_AIX.cxx
+	SOURCES += UNIX_KVMRedirectionSAP_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_KVMRedirectionSAP_DARWIN.cxx
+	SOURCES += UNIX_KVMRedirectionSAP_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_KVMRedirectionSAP_FREEBSD.cxx
+	SOURCES += UNIX_KVMRedirectionSAP_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_KVMRedirectionSAP_HPUX.cxx
+	SOURCES += UNIX_KVMRedirectionSAP_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_KVMRedirectionSAP_LINUX.cxx
+	SOURCES += UNIX_KVMRedirectionSAP_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_KVMRedirectionSAP_SOLARIS.cxx
+	SOURCES += UNIX_KVMRedirectionSAP_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_KVMRedirectionSAP_TRU64.cxx
+	SOURCES += UNIX_KVMRedirectionSAP_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_KVMRedirectionSAP_VMS.cxx
+	SOURCES += UNIX_KVMRedirectionSAP_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_KVMRedirectionSAP_WIN32.cxx
+	SOURCES += UNIX_KVMRedirectionSAP_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_KVMRedirectionSAP_ZOS.cxx
+	SOURCES += UNIX_KVMRedirectionSAP_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_KVMRedirectionSAP_STUB.cxx
+	SOURCES += UNIX_KVMRedirectionSAP_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_EndpointInAreaProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_EndpointInArea_AIX.cxx
+	SOURCES += UNIX_EndpointInArea_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_EndpointInArea_DARWIN.cxx
+	SOURCES += UNIX_EndpointInArea_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_EndpointInArea_FREEBSD.cxx
+	SOURCES += UNIX_EndpointInArea_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_EndpointInArea_HPUX.cxx
+	SOURCES += UNIX_EndpointInArea_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_EndpointInArea_LINUX.cxx
+	SOURCES += UNIX_EndpointInArea_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_EndpointInArea_SOLARIS.cxx
+	SOURCES += UNIX_EndpointInArea_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_EndpointInArea_TRU64.cxx
+	SOURCES += UNIX_EndpointInArea_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_EndpointInArea_VMS.cxx
+	SOURCES += UNIX_EndpointInArea_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_EndpointInArea_WIN32.cxx
+	SOURCES += UNIX_EndpointInArea_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_EndpointInArea_ZOS.cxx
+	SOURCES += UNIX_EndpointInArea_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_EndpointInArea_STUB.cxx
+	SOURCES += UNIX_EndpointInArea_STUB.cpp
 endif
 
 LIBRARIES = \

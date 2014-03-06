@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_RealizesAggregatePExtentProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_RealizesAggregatePExtent_AIX.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_RealizesAggregatePExtent_DARWIN.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_RealizesAggregatePExtent_FREEBSD.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_RealizesAggregatePExtent_HPUX.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_RealizesAggregatePExtent_LINUX.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_RealizesAggregatePExtent_SOLARIS.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_RealizesAggregatePExtent_TRU64.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_RealizesAggregatePExtent_VMS.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_RealizesAggregatePExtent_WIN32.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_RealizesAggregatePExtent_ZOS.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_RealizesAggregatePExtent_STUB.cxx
+	SOURCES += UNIX_RealizesAggregatePExtent_STUB.cpp
 endif
 
 LIBRARIES = \

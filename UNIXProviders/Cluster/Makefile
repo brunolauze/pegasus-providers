@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ClusterProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_Cluster_AIX.cxx
+	SOURCES += UNIX_Cluster_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_Cluster_DARWIN.cxx
+	SOURCES += UNIX_Cluster_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_Cluster_FREEBSD.cxx
+	SOURCES += UNIX_Cluster_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_Cluster_HPUX.cxx
+	SOURCES += UNIX_Cluster_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_Cluster_LINUX.cxx
+	SOURCES += UNIX_Cluster_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_Cluster_SOLARIS.cxx
+	SOURCES += UNIX_Cluster_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_Cluster_TRU64.cxx
+	SOURCES += UNIX_Cluster_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_Cluster_VMS.cxx
+	SOURCES += UNIX_Cluster_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_Cluster_WIN32.cxx
+	SOURCES += UNIX_Cluster_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_Cluster_ZOS.cxx
+	SOURCES += UNIX_Cluster_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_Cluster_STUB.cxx
+	SOURCES += UNIX_Cluster_STUB.cpp
 endif
 
 LIBRARIES = \

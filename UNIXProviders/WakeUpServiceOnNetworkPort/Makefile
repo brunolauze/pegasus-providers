@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_WakeUpServiceOnNetworkPortProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_WakeUpServiceOnNetworkPort_AIX.cxx
+	SOURCES += UNIX_WakeUpServiceOnNetworkPort_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_WakeUpServiceOnNetworkPort_DARWIN.cxx
+	SOURCES += UNIX_WakeUpServiceOnNetworkPort_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_WakeUpServiceOnNetworkPort_FREEBSD.cxx
+	SOURCES += UNIX_WakeUpServiceOnNetworkPort_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_WakeUpServiceOnNetworkPort_HPUX.cxx
+	SOURCES += UNIX_WakeUpServiceOnNetworkPort_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_WakeUpServiceOnNetworkPort_LINUX.cxx
+	SOURCES += UNIX_WakeUpServiceOnNetworkPort_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_WakeUpServiceOnNetworkPort_SOLARIS.cxx
+	SOURCES += UNIX_WakeUpServiceOnNetworkPort_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_WakeUpServiceOnNetworkPort_TRU64.cxx
+	SOURCES += UNIX_WakeUpServiceOnNetworkPort_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_WakeUpServiceOnNetworkPort_VMS.cxx
+	SOURCES += UNIX_WakeUpServiceOnNetworkPort_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_WakeUpServiceOnNetworkPort_WIN32.cxx
+	SOURCES += UNIX_WakeUpServiceOnNetworkPort_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_WakeUpServiceOnNetworkPort_ZOS.cxx
+	SOURCES += UNIX_WakeUpServiceOnNetworkPort_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_WakeUpServiceOnNetworkPort_STUB.cxx
+	SOURCES += UNIX_WakeUpServiceOnNetworkPort_STUB.cpp
 endif
 
 LIBRARIES = \

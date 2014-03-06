@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_ContainedDomainProvider.cpp \
 	UNIX_ContainedDomainMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ContainedDomain_AIX.cxx
+	SOURCES += UNIX_ContainedDomain_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ContainedDomain_DARWIN.cxx
+	SOURCES += UNIX_ContainedDomain_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ContainedDomain_FREEBSD.cxx
+	SOURCES += UNIX_ContainedDomain_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ContainedDomain_HPUX.cxx
+	SOURCES += UNIX_ContainedDomain_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ContainedDomain_LINUX.cxx
+	SOURCES += UNIX_ContainedDomain_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ContainedDomain_SOLARIS.cxx
+	SOURCES += UNIX_ContainedDomain_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ContainedDomain_TRU64.cxx
+	SOURCES += UNIX_ContainedDomain_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ContainedDomain_VMS.cxx
+	SOURCES += UNIX_ContainedDomain_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ContainedDomain_WIN32.cxx
+	SOURCES += UNIX_ContainedDomain_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ContainedDomain_ZOS.cxx
+	SOURCES += UNIX_ContainedDomain_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ContainedDomain_STUB.cxx
+	SOURCES += UNIX_ContainedDomain_STUB.cpp
 endif
 
 LIBRARIES = \

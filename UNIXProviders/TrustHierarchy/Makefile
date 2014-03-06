@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_TrustHierarchyProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_TrustHierarchy_AIX.cxx
+	SOURCES += UNIX_TrustHierarchy_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_TrustHierarchy_DARWIN.cxx
+	SOURCES += UNIX_TrustHierarchy_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_TrustHierarchy_FREEBSD.cxx
+	SOURCES += UNIX_TrustHierarchy_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_TrustHierarchy_HPUX.cxx
+	SOURCES += UNIX_TrustHierarchy_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_TrustHierarchy_LINUX.cxx
+	SOURCES += UNIX_TrustHierarchy_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_TrustHierarchy_SOLARIS.cxx
+	SOURCES += UNIX_TrustHierarchy_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_TrustHierarchy_TRU64.cxx
+	SOURCES += UNIX_TrustHierarchy_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_TrustHierarchy_VMS.cxx
+	SOURCES += UNIX_TrustHierarchy_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_TrustHierarchy_WIN32.cxx
+	SOURCES += UNIX_TrustHierarchy_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_TrustHierarchy_ZOS.cxx
+	SOURCES += UNIX_TrustHierarchy_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_TrustHierarchy_STUB.cxx
+	SOURCES += UNIX_TrustHierarchy_STUB.cpp
 endif
 
 LIBRARIES = \

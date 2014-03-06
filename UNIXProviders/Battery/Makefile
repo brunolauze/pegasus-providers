@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_BatteryProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_Battery_AIX.cxx
+	SOURCES += UNIX_Battery_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_Battery_DARWIN.cxx
+	SOURCES += UNIX_Battery_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_Battery_FREEBSD.cxx
+	SOURCES += UNIX_Battery_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_Battery_HPUX.cxx
+	SOURCES += UNIX_Battery_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_Battery_LINUX.cxx
+	SOURCES += UNIX_Battery_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_Battery_SOLARIS.cxx
+	SOURCES += UNIX_Battery_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_Battery_TRU64.cxx
+	SOURCES += UNIX_Battery_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_Battery_VMS.cxx
+	SOURCES += UNIX_Battery_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_Battery_WIN32.cxx
+	SOURCES += UNIX_Battery_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_Battery_ZOS.cxx
+	SOURCES += UNIX_Battery_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_Battery_STUB.cxx
+	SOURCES += UNIX_Battery_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_MethodActionProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_MethodAction_AIX.cxx
+	SOURCES += UNIX_MethodAction_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_MethodAction_DARWIN.cxx
+	SOURCES += UNIX_MethodAction_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_MethodAction_FREEBSD.cxx
+	SOURCES += UNIX_MethodAction_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_MethodAction_HPUX.cxx
+	SOURCES += UNIX_MethodAction_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_MethodAction_LINUX.cxx
+	SOURCES += UNIX_MethodAction_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_MethodAction_SOLARIS.cxx
+	SOURCES += UNIX_MethodAction_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_MethodAction_TRU64.cxx
+	SOURCES += UNIX_MethodAction_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_MethodAction_VMS.cxx
+	SOURCES += UNIX_MethodAction_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_MethodAction_WIN32.cxx
+	SOURCES += UNIX_MethodAction_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_MethodAction_ZOS.cxx
+	SOURCES += UNIX_MethodAction_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_MethodAction_STUB.cxx
+	SOURCES += UNIX_MethodAction_STUB.cpp
 endif
 
 LIBRARIES = \

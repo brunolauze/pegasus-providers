@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_FlatPanelProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_FlatPanel_AIX.cxx
+	SOURCES += UNIX_FlatPanel_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_FlatPanel_DARWIN.cxx
+	SOURCES += UNIX_FlatPanel_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_FlatPanel_FREEBSD.cxx
+	SOURCES += UNIX_FlatPanel_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_FlatPanel_HPUX.cxx
+	SOURCES += UNIX_FlatPanel_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_FlatPanel_LINUX.cxx
+	SOURCES += UNIX_FlatPanel_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_FlatPanel_SOLARIS.cxx
+	SOURCES += UNIX_FlatPanel_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_FlatPanel_TRU64.cxx
+	SOURCES += UNIX_FlatPanel_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_FlatPanel_VMS.cxx
+	SOURCES += UNIX_FlatPanel_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_FlatPanel_WIN32.cxx
+	SOURCES += UNIX_FlatPanel_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_FlatPanel_ZOS.cxx
+	SOURCES += UNIX_FlatPanel_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_FlatPanel_STUB.cxx
+	SOURCES += UNIX_FlatPanel_STUB.cpp
 endif
 
 LIBRARIES = \

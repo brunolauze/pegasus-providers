@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PlatformWatchdogServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PlatformWatchdogService_AIX.cxx
+	SOURCES += UNIX_PlatformWatchdogService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PlatformWatchdogService_DARWIN.cxx
+	SOURCES += UNIX_PlatformWatchdogService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PlatformWatchdogService_FREEBSD.cxx
+	SOURCES += UNIX_PlatformWatchdogService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PlatformWatchdogService_HPUX.cxx
+	SOURCES += UNIX_PlatformWatchdogService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PlatformWatchdogService_LINUX.cxx
+	SOURCES += UNIX_PlatformWatchdogService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PlatformWatchdogService_SOLARIS.cxx
+	SOURCES += UNIX_PlatformWatchdogService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PlatformWatchdogService_TRU64.cxx
+	SOURCES += UNIX_PlatformWatchdogService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PlatformWatchdogService_VMS.cxx
+	SOURCES += UNIX_PlatformWatchdogService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PlatformWatchdogService_WIN32.cxx
+	SOURCES += UNIX_PlatformWatchdogService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PlatformWatchdogService_ZOS.cxx
+	SOURCES += UNIX_PlatformWatchdogService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PlatformWatchdogService_STUB.cxx
+	SOURCES += UNIX_PlatformWatchdogService_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_HostedFilterListProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_HostedFilterList_AIX.cxx
+	SOURCES += UNIX_HostedFilterList_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_HostedFilterList_DARWIN.cxx
+	SOURCES += UNIX_HostedFilterList_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_HostedFilterList_FREEBSD.cxx
+	SOURCES += UNIX_HostedFilterList_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_HostedFilterList_HPUX.cxx
+	SOURCES += UNIX_HostedFilterList_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_HostedFilterList_LINUX.cxx
+	SOURCES += UNIX_HostedFilterList_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_HostedFilterList_SOLARIS.cxx
+	SOURCES += UNIX_HostedFilterList_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_HostedFilterList_TRU64.cxx
+	SOURCES += UNIX_HostedFilterList_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_HostedFilterList_VMS.cxx
+	SOURCES += UNIX_HostedFilterList_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_HostedFilterList_WIN32.cxx
+	SOURCES += UNIX_HostedFilterList_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_HostedFilterList_ZOS.cxx
+	SOURCES += UNIX_HostedFilterList_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_HostedFilterList_STUB.cxx
+	SOURCES += UNIX_HostedFilterList_STUB.cpp
 endif
 
 LIBRARIES = \

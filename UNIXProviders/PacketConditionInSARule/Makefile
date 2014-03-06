@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PacketConditionInSARuleProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PacketConditionInSARule_AIX.cxx
+	SOURCES += UNIX_PacketConditionInSARule_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PacketConditionInSARule_DARWIN.cxx
+	SOURCES += UNIX_PacketConditionInSARule_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PacketConditionInSARule_FREEBSD.cxx
+	SOURCES += UNIX_PacketConditionInSARule_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PacketConditionInSARule_HPUX.cxx
+	SOURCES += UNIX_PacketConditionInSARule_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PacketConditionInSARule_LINUX.cxx
+	SOURCES += UNIX_PacketConditionInSARule_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PacketConditionInSARule_SOLARIS.cxx
+	SOURCES += UNIX_PacketConditionInSARule_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PacketConditionInSARule_TRU64.cxx
+	SOURCES += UNIX_PacketConditionInSARule_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PacketConditionInSARule_VMS.cxx
+	SOURCES += UNIX_PacketConditionInSARule_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PacketConditionInSARule_WIN32.cxx
+	SOURCES += UNIX_PacketConditionInSARule_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PacketConditionInSARule_ZOS.cxx
+	SOURCES += UNIX_PacketConditionInSARule_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PacketConditionInSARule_STUB.cxx
+	SOURCES += UNIX_PacketConditionInSARule_STUB.cpp
 endif
 
 LIBRARIES = \

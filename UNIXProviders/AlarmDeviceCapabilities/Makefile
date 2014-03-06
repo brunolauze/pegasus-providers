@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_AlarmDeviceCapabilitiesProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_AlarmDeviceCapabilities_AIX.cxx
+	SOURCES += UNIX_AlarmDeviceCapabilities_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_AlarmDeviceCapabilities_DARWIN.cxx
+	SOURCES += UNIX_AlarmDeviceCapabilities_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_AlarmDeviceCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_AlarmDeviceCapabilities_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_AlarmDeviceCapabilities_HPUX.cxx
+	SOURCES += UNIX_AlarmDeviceCapabilities_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_AlarmDeviceCapabilities_LINUX.cxx
+	SOURCES += UNIX_AlarmDeviceCapabilities_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_AlarmDeviceCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_AlarmDeviceCapabilities_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_AlarmDeviceCapabilities_TRU64.cxx
+	SOURCES += UNIX_AlarmDeviceCapabilities_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_AlarmDeviceCapabilities_VMS.cxx
+	SOURCES += UNIX_AlarmDeviceCapabilities_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_AlarmDeviceCapabilities_WIN32.cxx
+	SOURCES += UNIX_AlarmDeviceCapabilities_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_AlarmDeviceCapabilities_ZOS.cxx
+	SOURCES += UNIX_AlarmDeviceCapabilities_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_AlarmDeviceCapabilities_STUB.cxx
+	SOURCES += UNIX_AlarmDeviceCapabilities_STUB.cpp
 endif
 
 LIBRARIES = \

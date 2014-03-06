@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_JobQueueProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_JobQueue_AIX.cxx
+	SOURCES += UNIX_JobQueue_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_JobQueue_DARWIN.cxx
+	SOURCES += UNIX_JobQueue_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_JobQueue_FREEBSD.cxx
+	SOURCES += UNIX_JobQueue_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_JobQueue_HPUX.cxx
+	SOURCES += UNIX_JobQueue_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_JobQueue_LINUX.cxx
+	SOURCES += UNIX_JobQueue_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_JobQueue_SOLARIS.cxx
+	SOURCES += UNIX_JobQueue_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_JobQueue_TRU64.cxx
+	SOURCES += UNIX_JobQueue_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_JobQueue_VMS.cxx
+	SOURCES += UNIX_JobQueue_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_JobQueue_WIN32.cxx
+	SOURCES += UNIX_JobQueue_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_JobQueue_ZOS.cxx
+	SOURCES += UNIX_JobQueue_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_JobQueue_STUB.cxx
+	SOURCES += UNIX_JobQueue_STUB.cpp
 endif
 
 LIBRARIES = \

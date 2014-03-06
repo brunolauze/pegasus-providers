@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PhysicalMemoryProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PhysicalMemory_AIX.cxx
+	SOURCES += UNIX_PhysicalMemory_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PhysicalMemory_DARWIN.cxx
+	SOURCES += UNIX_PhysicalMemory_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PhysicalMemory_FREEBSD.cxx
+	SOURCES += UNIX_PhysicalMemory_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PhysicalMemory_HPUX.cxx
+	SOURCES += UNIX_PhysicalMemory_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PhysicalMemory_LINUX.cxx
+	SOURCES += UNIX_PhysicalMemory_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PhysicalMemory_SOLARIS.cxx
+	SOURCES += UNIX_PhysicalMemory_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PhysicalMemory_TRU64.cxx
+	SOURCES += UNIX_PhysicalMemory_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PhysicalMemory_VMS.cxx
+	SOURCES += UNIX_PhysicalMemory_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PhysicalMemory_WIN32.cxx
+	SOURCES += UNIX_PhysicalMemory_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PhysicalMemory_ZOS.cxx
+	SOURCES += UNIX_PhysicalMemory_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PhysicalMemory_STUB.cxx
+	SOURCES += UNIX_PhysicalMemory_STUB.cpp
 endif
 
 LIBRARIES = \

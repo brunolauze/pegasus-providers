@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_OtherOrgUnitInformationProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_OtherOrgUnitInformation_AIX.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_OtherOrgUnitInformation_DARWIN.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_OtherOrgUnitInformation_FREEBSD.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_OtherOrgUnitInformation_HPUX.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_OtherOrgUnitInformation_LINUX.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_OtherOrgUnitInformation_SOLARIS.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_OtherOrgUnitInformation_TRU64.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_OtherOrgUnitInformation_VMS.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_OtherOrgUnitInformation_WIN32.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_OtherOrgUnitInformation_ZOS.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_OtherOrgUnitInformation_STUB.cxx
+	SOURCES += UNIX_OtherOrgUnitInformation_STUB.cpp
 endif
 
 LIBRARIES = \

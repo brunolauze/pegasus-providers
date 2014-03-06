@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_Specific802dot1QVLANServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_Specific802dot1QVLANService_AIX.cxx
+	SOURCES += UNIX_Specific802dot1QVLANService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_Specific802dot1QVLANService_DARWIN.cxx
+	SOURCES += UNIX_Specific802dot1QVLANService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_Specific802dot1QVLANService_FREEBSD.cxx
+	SOURCES += UNIX_Specific802dot1QVLANService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_Specific802dot1QVLANService_HPUX.cxx
+	SOURCES += UNIX_Specific802dot1QVLANService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_Specific802dot1QVLANService_LINUX.cxx
+	SOURCES += UNIX_Specific802dot1QVLANService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_Specific802dot1QVLANService_SOLARIS.cxx
+	SOURCES += UNIX_Specific802dot1QVLANService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_Specific802dot1QVLANService_TRU64.cxx
+	SOURCES += UNIX_Specific802dot1QVLANService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_Specific802dot1QVLANService_VMS.cxx
+	SOURCES += UNIX_Specific802dot1QVLANService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_Specific802dot1QVLANService_WIN32.cxx
+	SOURCES += UNIX_Specific802dot1QVLANService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_Specific802dot1QVLANService_ZOS.cxx
+	SOURCES += UNIX_Specific802dot1QVLANService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_Specific802dot1QVLANService_STUB.cxx
+	SOURCES += UNIX_Specific802dot1QVLANService_STUB.cpp
 endif
 
 LIBRARIES = \

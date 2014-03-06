@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_StatisticsCapabilitiesProvider.cpp \
 	UNIX_StatisticsCapabilitiesMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_StatisticsCapabilities_AIX.cxx
+	SOURCES += UNIX_StatisticsCapabilities_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_StatisticsCapabilities_DARWIN.cxx
+	SOURCES += UNIX_StatisticsCapabilities_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_StatisticsCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_StatisticsCapabilities_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_StatisticsCapabilities_HPUX.cxx
+	SOURCES += UNIX_StatisticsCapabilities_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_StatisticsCapabilities_LINUX.cxx
+	SOURCES += UNIX_StatisticsCapabilities_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_StatisticsCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_StatisticsCapabilities_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_StatisticsCapabilities_TRU64.cxx
+	SOURCES += UNIX_StatisticsCapabilities_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_StatisticsCapabilities_VMS.cxx
+	SOURCES += UNIX_StatisticsCapabilities_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_StatisticsCapabilities_WIN32.cxx
+	SOURCES += UNIX_StatisticsCapabilities_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_StatisticsCapabilities_ZOS.cxx
+	SOURCES += UNIX_StatisticsCapabilities_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_StatisticsCapabilities_STUB.cxx
+	SOURCES += UNIX_StatisticsCapabilities_STUB.cpp
 endif
 
 LIBRARIES = \

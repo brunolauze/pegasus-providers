@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_AdapterActiveConnectionProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_AdapterActiveConnection_AIX.cxx
+	SOURCES += UNIX_AdapterActiveConnection_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_AdapterActiveConnection_DARWIN.cxx
+	SOURCES += UNIX_AdapterActiveConnection_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_AdapterActiveConnection_FREEBSD.cxx
+	SOURCES += UNIX_AdapterActiveConnection_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_AdapterActiveConnection_HPUX.cxx
+	SOURCES += UNIX_AdapterActiveConnection_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_AdapterActiveConnection_LINUX.cxx
+	SOURCES += UNIX_AdapterActiveConnection_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_AdapterActiveConnection_SOLARIS.cxx
+	SOURCES += UNIX_AdapterActiveConnection_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_AdapterActiveConnection_TRU64.cxx
+	SOURCES += UNIX_AdapterActiveConnection_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_AdapterActiveConnection_VMS.cxx
+	SOURCES += UNIX_AdapterActiveConnection_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_AdapterActiveConnection_WIN32.cxx
+	SOURCES += UNIX_AdapterActiveConnection_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_AdapterActiveConnection_ZOS.cxx
+	SOURCES += UNIX_AdapterActiveConnection_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_AdapterActiveConnection_STUB.cxx
+	SOURCES += UNIX_AdapterActiveConnection_STUB.cpp
 endif
 
 LIBRARIES = \

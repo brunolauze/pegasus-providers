@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_CalculationBasedOnQueueProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_CalculationBasedOnQueue_AIX.cxx
+	SOURCES += UNIX_CalculationBasedOnQueue_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_CalculationBasedOnQueue_DARWIN.cxx
+	SOURCES += UNIX_CalculationBasedOnQueue_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_CalculationBasedOnQueue_FREEBSD.cxx
+	SOURCES += UNIX_CalculationBasedOnQueue_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_CalculationBasedOnQueue_HPUX.cxx
+	SOURCES += UNIX_CalculationBasedOnQueue_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_CalculationBasedOnQueue_LINUX.cxx
+	SOURCES += UNIX_CalculationBasedOnQueue_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_CalculationBasedOnQueue_SOLARIS.cxx
+	SOURCES += UNIX_CalculationBasedOnQueue_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_CalculationBasedOnQueue_TRU64.cxx
+	SOURCES += UNIX_CalculationBasedOnQueue_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_CalculationBasedOnQueue_VMS.cxx
+	SOURCES += UNIX_CalculationBasedOnQueue_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_CalculationBasedOnQueue_WIN32.cxx
+	SOURCES += UNIX_CalculationBasedOnQueue_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_CalculationBasedOnQueue_ZOS.cxx
+	SOURCES += UNIX_CalculationBasedOnQueue_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_CalculationBasedOnQueue_STUB.cxx
+	SOURCES += UNIX_CalculationBasedOnQueue_STUB.cpp
 endif
 
 LIBRARIES = \

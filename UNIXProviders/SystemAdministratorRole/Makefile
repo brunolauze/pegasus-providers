@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_SystemAdministratorRoleProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_SystemAdministratorRole_AIX.cxx
+	SOURCES += UNIX_SystemAdministratorRole_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_SystemAdministratorRole_DARWIN.cxx
+	SOURCES += UNIX_SystemAdministratorRole_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_SystemAdministratorRole_FREEBSD.cxx
+	SOURCES += UNIX_SystemAdministratorRole_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_SystemAdministratorRole_HPUX.cxx
+	SOURCES += UNIX_SystemAdministratorRole_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_SystemAdministratorRole_LINUX.cxx
+	SOURCES += UNIX_SystemAdministratorRole_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_SystemAdministratorRole_SOLARIS.cxx
+	SOURCES += UNIX_SystemAdministratorRole_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_SystemAdministratorRole_TRU64.cxx
+	SOURCES += UNIX_SystemAdministratorRole_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_SystemAdministratorRole_VMS.cxx
+	SOURCES += UNIX_SystemAdministratorRole_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_SystemAdministratorRole_WIN32.cxx
+	SOURCES += UNIX_SystemAdministratorRole_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_SystemAdministratorRole_ZOS.cxx
+	SOURCES += UNIX_SystemAdministratorRole_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_SystemAdministratorRole_STUB.cxx
+	SOURCES += UNIX_SystemAdministratorRole_STUB.cpp
 endif
 
 LIBRARIES = \

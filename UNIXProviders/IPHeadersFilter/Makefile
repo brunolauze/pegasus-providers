@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_IPHeadersFilterProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_IPHeadersFilter_AIX.cxx
+	SOURCES += UNIX_IPHeadersFilter_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_IPHeadersFilter_DARWIN.cxx
+	SOURCES += UNIX_IPHeadersFilter_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_IPHeadersFilter_FREEBSD.cxx
+	SOURCES += UNIX_IPHeadersFilter_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_IPHeadersFilter_HPUX.cxx
+	SOURCES += UNIX_IPHeadersFilter_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_IPHeadersFilter_LINUX.cxx
+	SOURCES += UNIX_IPHeadersFilter_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_IPHeadersFilter_SOLARIS.cxx
+	SOURCES += UNIX_IPHeadersFilter_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_IPHeadersFilter_TRU64.cxx
+	SOURCES += UNIX_IPHeadersFilter_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_IPHeadersFilter_VMS.cxx
+	SOURCES += UNIX_IPHeadersFilter_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_IPHeadersFilter_WIN32.cxx
+	SOURCES += UNIX_IPHeadersFilter_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_IPHeadersFilter_ZOS.cxx
+	SOURCES += UNIX_IPHeadersFilter_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_IPHeadersFilter_STUB.cxx
+	SOURCES += UNIX_IPHeadersFilter_STUB.cpp
 endif
 
 LIBRARIES = \

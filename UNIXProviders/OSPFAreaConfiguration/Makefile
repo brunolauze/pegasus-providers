@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_OSPFAreaConfigurationProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_OSPFAreaConfiguration_AIX.cxx
+	SOURCES += UNIX_OSPFAreaConfiguration_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_OSPFAreaConfiguration_DARWIN.cxx
+	SOURCES += UNIX_OSPFAreaConfiguration_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_OSPFAreaConfiguration_FREEBSD.cxx
+	SOURCES += UNIX_OSPFAreaConfiguration_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_OSPFAreaConfiguration_HPUX.cxx
+	SOURCES += UNIX_OSPFAreaConfiguration_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_OSPFAreaConfiguration_LINUX.cxx
+	SOURCES += UNIX_OSPFAreaConfiguration_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_OSPFAreaConfiguration_SOLARIS.cxx
+	SOURCES += UNIX_OSPFAreaConfiguration_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_OSPFAreaConfiguration_TRU64.cxx
+	SOURCES += UNIX_OSPFAreaConfiguration_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_OSPFAreaConfiguration_VMS.cxx
+	SOURCES += UNIX_OSPFAreaConfiguration_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_OSPFAreaConfiguration_WIN32.cxx
+	SOURCES += UNIX_OSPFAreaConfiguration_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_OSPFAreaConfiguration_ZOS.cxx
+	SOURCES += UNIX_OSPFAreaConfiguration_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_OSPFAreaConfiguration_STUB.cxx
+	SOURCES += UNIX_OSPFAreaConfiguration_STUB.cpp
 endif
 
 LIBRARIES = \

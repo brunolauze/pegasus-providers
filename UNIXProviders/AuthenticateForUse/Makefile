@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_AuthenticateForUseProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_AuthenticateForUse_AIX.cxx
+	SOURCES += UNIX_AuthenticateForUse_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_AuthenticateForUse_DARWIN.cxx
+	SOURCES += UNIX_AuthenticateForUse_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_AuthenticateForUse_FREEBSD.cxx
+	SOURCES += UNIX_AuthenticateForUse_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_AuthenticateForUse_HPUX.cxx
+	SOURCES += UNIX_AuthenticateForUse_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_AuthenticateForUse_LINUX.cxx
+	SOURCES += UNIX_AuthenticateForUse_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_AuthenticateForUse_SOLARIS.cxx
+	SOURCES += UNIX_AuthenticateForUse_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_AuthenticateForUse_TRU64.cxx
+	SOURCES += UNIX_AuthenticateForUse_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_AuthenticateForUse_VMS.cxx
+	SOURCES += UNIX_AuthenticateForUse_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_AuthenticateForUse_WIN32.cxx
+	SOURCES += UNIX_AuthenticateForUse_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_AuthenticateForUse_ZOS.cxx
+	SOURCES += UNIX_AuthenticateForUse_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_AuthenticateForUse_STUB.cxx
+	SOURCES += UNIX_AuthenticateForUse_STUB.cpp
 endif
 
 LIBRARIES = \

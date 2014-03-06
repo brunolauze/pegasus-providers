@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_SparedProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_Spared_AIX.cxx
+	SOURCES += UNIX_Spared_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_Spared_DARWIN.cxx
+	SOURCES += UNIX_Spared_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_Spared_FREEBSD.cxx
+	SOURCES += UNIX_Spared_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_Spared_HPUX.cxx
+	SOURCES += UNIX_Spared_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_Spared_LINUX.cxx
+	SOURCES += UNIX_Spared_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_Spared_SOLARIS.cxx
+	SOURCES += UNIX_Spared_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_Spared_TRU64.cxx
+	SOURCES += UNIX_Spared_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_Spared_VMS.cxx
+	SOURCES += UNIX_Spared_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_Spared_WIN32.cxx
+	SOURCES += UNIX_Spared_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_Spared_ZOS.cxx
+	SOURCES += UNIX_Spared_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_Spared_STUB.cxx
+	SOURCES += UNIX_Spared_STUB.cpp
 endif
 
 LIBRARIES = \

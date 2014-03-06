@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_BGPIPRouteProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_BGPIPRoute_AIX.cxx
+	SOURCES += UNIX_BGPIPRoute_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_BGPIPRoute_DARWIN.cxx
+	SOURCES += UNIX_BGPIPRoute_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_BGPIPRoute_FREEBSD.cxx
+	SOURCES += UNIX_BGPIPRoute_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_BGPIPRoute_HPUX.cxx
+	SOURCES += UNIX_BGPIPRoute_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_BGPIPRoute_LINUX.cxx
+	SOURCES += UNIX_BGPIPRoute_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_BGPIPRoute_SOLARIS.cxx
+	SOURCES += UNIX_BGPIPRoute_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_BGPIPRoute_TRU64.cxx
+	SOURCES += UNIX_BGPIPRoute_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_BGPIPRoute_VMS.cxx
+	SOURCES += UNIX_BGPIPRoute_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_BGPIPRoute_WIN32.cxx
+	SOURCES += UNIX_BGPIPRoute_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_BGPIPRoute_ZOS.cxx
+	SOURCES += UNIX_BGPIPRoute_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_BGPIPRoute_STUB.cxx
+	SOURCES += UNIX_BGPIPRoute_STUB.cpp
 endif
 
 LIBRARIES = \

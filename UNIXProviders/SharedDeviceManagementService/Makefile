@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_SharedDeviceManagementServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_SharedDeviceManagementService_AIX.cxx
+	SOURCES += UNIX_SharedDeviceManagementService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_SharedDeviceManagementService_DARWIN.cxx
+	SOURCES += UNIX_SharedDeviceManagementService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_SharedDeviceManagementService_FREEBSD.cxx
+	SOURCES += UNIX_SharedDeviceManagementService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_SharedDeviceManagementService_HPUX.cxx
+	SOURCES += UNIX_SharedDeviceManagementService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_SharedDeviceManagementService_LINUX.cxx
+	SOURCES += UNIX_SharedDeviceManagementService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_SharedDeviceManagementService_SOLARIS.cxx
+	SOURCES += UNIX_SharedDeviceManagementService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_SharedDeviceManagementService_TRU64.cxx
+	SOURCES += UNIX_SharedDeviceManagementService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_SharedDeviceManagementService_VMS.cxx
+	SOURCES += UNIX_SharedDeviceManagementService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_SharedDeviceManagementService_WIN32.cxx
+	SOURCES += UNIX_SharedDeviceManagementService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_SharedDeviceManagementService_ZOS.cxx
+	SOURCES += UNIX_SharedDeviceManagementService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_SharedDeviceManagementService_STUB.cxx
+	SOURCES += UNIX_SharedDeviceManagementService_STUB.cpp
 endif
 
 LIBRARIES = \

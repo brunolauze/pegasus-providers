@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_RemoveDirectoryActionProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_RemoveDirectoryAction_AIX.cxx
+	SOURCES += UNIX_RemoveDirectoryAction_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_RemoveDirectoryAction_DARWIN.cxx
+	SOURCES += UNIX_RemoveDirectoryAction_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_RemoveDirectoryAction_FREEBSD.cxx
+	SOURCES += UNIX_RemoveDirectoryAction_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_RemoveDirectoryAction_HPUX.cxx
+	SOURCES += UNIX_RemoveDirectoryAction_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_RemoveDirectoryAction_LINUX.cxx
+	SOURCES += UNIX_RemoveDirectoryAction_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_RemoveDirectoryAction_SOLARIS.cxx
+	SOURCES += UNIX_RemoveDirectoryAction_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_RemoveDirectoryAction_TRU64.cxx
+	SOURCES += UNIX_RemoveDirectoryAction_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_RemoveDirectoryAction_VMS.cxx
+	SOURCES += UNIX_RemoveDirectoryAction_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_RemoveDirectoryAction_WIN32.cxx
+	SOURCES += UNIX_RemoveDirectoryAction_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_RemoveDirectoryAction_ZOS.cxx
+	SOURCES += UNIX_RemoveDirectoryAction_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_RemoveDirectoryAction_STUB.cxx
+	SOURCES += UNIX_RemoveDirectoryAction_STUB.cpp
 endif
 
 LIBRARIES = \

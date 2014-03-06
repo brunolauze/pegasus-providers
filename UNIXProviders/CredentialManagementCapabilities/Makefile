@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_CredentialManagementCapabilitiesProvider.cpp \
 	UNIX_CredentialManagementCapabilitiesMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_CredentialManagementCapabilities_AIX.cxx
+	SOURCES += UNIX_CredentialManagementCapabilities_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_CredentialManagementCapabilities_DARWIN.cxx
+	SOURCES += UNIX_CredentialManagementCapabilities_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_CredentialManagementCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_CredentialManagementCapabilities_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_CredentialManagementCapabilities_HPUX.cxx
+	SOURCES += UNIX_CredentialManagementCapabilities_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_CredentialManagementCapabilities_LINUX.cxx
+	SOURCES += UNIX_CredentialManagementCapabilities_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_CredentialManagementCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_CredentialManagementCapabilities_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_CredentialManagementCapabilities_TRU64.cxx
+	SOURCES += UNIX_CredentialManagementCapabilities_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_CredentialManagementCapabilities_VMS.cxx
+	SOURCES += UNIX_CredentialManagementCapabilities_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_CredentialManagementCapabilities_WIN32.cxx
+	SOURCES += UNIX_CredentialManagementCapabilities_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_CredentialManagementCapabilities_ZOS.cxx
+	SOURCES += UNIX_CredentialManagementCapabilities_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_CredentialManagementCapabilities_STUB.cxx
+	SOURCES += UNIX_CredentialManagementCapabilities_STUB.cpp
 endif
 
 LIBRARIES = \

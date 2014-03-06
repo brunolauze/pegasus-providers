@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_LocallyManagedPublicKeyProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_LocallyManagedPublicKey_AIX.cxx
+	SOURCES += UNIX_LocallyManagedPublicKey_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_LocallyManagedPublicKey_DARWIN.cxx
+	SOURCES += UNIX_LocallyManagedPublicKey_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_LocallyManagedPublicKey_FREEBSD.cxx
+	SOURCES += UNIX_LocallyManagedPublicKey_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_LocallyManagedPublicKey_HPUX.cxx
+	SOURCES += UNIX_LocallyManagedPublicKey_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_LocallyManagedPublicKey_LINUX.cxx
+	SOURCES += UNIX_LocallyManagedPublicKey_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_LocallyManagedPublicKey_SOLARIS.cxx
+	SOURCES += UNIX_LocallyManagedPublicKey_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_LocallyManagedPublicKey_TRU64.cxx
+	SOURCES += UNIX_LocallyManagedPublicKey_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_LocallyManagedPublicKey_VMS.cxx
+	SOURCES += UNIX_LocallyManagedPublicKey_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_LocallyManagedPublicKey_WIN32.cxx
+	SOURCES += UNIX_LocallyManagedPublicKey_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_LocallyManagedPublicKey_ZOS.cxx
+	SOURCES += UNIX_LocallyManagedPublicKey_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_LocallyManagedPublicKey_STUB.cxx
+	SOURCES += UNIX_LocallyManagedPublicKey_STUB.cpp
 endif
 
 LIBRARIES = \

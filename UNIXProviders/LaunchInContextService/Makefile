@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_LaunchInContextServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_LaunchInContextService_AIX.cxx
+	SOURCES += UNIX_LaunchInContextService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_LaunchInContextService_DARWIN.cxx
+	SOURCES += UNIX_LaunchInContextService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_LaunchInContextService_FREEBSD.cxx
+	SOURCES += UNIX_LaunchInContextService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_LaunchInContextService_HPUX.cxx
+	SOURCES += UNIX_LaunchInContextService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_LaunchInContextService_LINUX.cxx
+	SOURCES += UNIX_LaunchInContextService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_LaunchInContextService_SOLARIS.cxx
+	SOURCES += UNIX_LaunchInContextService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_LaunchInContextService_TRU64.cxx
+	SOURCES += UNIX_LaunchInContextService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_LaunchInContextService_VMS.cxx
+	SOURCES += UNIX_LaunchInContextService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_LaunchInContextService_WIN32.cxx
+	SOURCES += UNIX_LaunchInContextService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_LaunchInContextService_ZOS.cxx
+	SOURCES += UNIX_LaunchInContextService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_LaunchInContextService_STUB.cxx
+	SOURCES += UNIX_LaunchInContextService_STUB.cpp
 endif
 
 LIBRARIES = \

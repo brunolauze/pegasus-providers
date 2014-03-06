@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_ChipProvider.cpp \
 	UNIX_ChipMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_Chip_AIX.cxx
+	SOURCES += UNIX_Chip_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_Chip_DARWIN.cxx
+	SOURCES += UNIX_Chip_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_Chip_FREEBSD.cxx
+	SOURCES += UNIX_Chip_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_Chip_HPUX.cxx
+	SOURCES += UNIX_Chip_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_Chip_LINUX.cxx
+	SOURCES += UNIX_Chip_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_Chip_SOLARIS.cxx
+	SOURCES += UNIX_Chip_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_Chip_TRU64.cxx
+	SOURCES += UNIX_Chip_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_Chip_VMS.cxx
+	SOURCES += UNIX_Chip_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_Chip_WIN32.cxx
+	SOURCES += UNIX_Chip_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_Chip_ZOS.cxx
+	SOURCES += UNIX_Chip_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_Chip_STUB.cxx
+	SOURCES += UNIX_Chip_STUB.cpp
 endif
 
 LIBRARIES = \

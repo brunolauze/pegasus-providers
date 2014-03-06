@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_BootSourceSettingProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_BootSourceSetting_AIX.cxx
+	SOURCES += UNIX_BootSourceSetting_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_BootSourceSetting_DARWIN.cxx
+	SOURCES += UNIX_BootSourceSetting_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_BootSourceSetting_FREEBSD.cxx
+	SOURCES += UNIX_BootSourceSetting_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_BootSourceSetting_HPUX.cxx
+	SOURCES += UNIX_BootSourceSetting_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_BootSourceSetting_LINUX.cxx
+	SOURCES += UNIX_BootSourceSetting_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_BootSourceSetting_SOLARIS.cxx
+	SOURCES += UNIX_BootSourceSetting_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_BootSourceSetting_TRU64.cxx
+	SOURCES += UNIX_BootSourceSetting_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_BootSourceSetting_VMS.cxx
+	SOURCES += UNIX_BootSourceSetting_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_BootSourceSetting_WIN32.cxx
+	SOURCES += UNIX_BootSourceSetting_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_BootSourceSetting_ZOS.cxx
+	SOURCES += UNIX_BootSourceSetting_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_BootSourceSetting_STUB.cxx
+	SOURCES += UNIX_BootSourceSetting_STUB.cpp
 endif
 
 LIBRARIES = \

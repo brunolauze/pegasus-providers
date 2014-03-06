@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_USBControllerProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_USBController_AIX.cxx
+	SOURCES += UNIX_USBController_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_USBController_DARWIN.cxx
+	SOURCES += UNIX_USBController_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_USBController_FREEBSD.cxx
+	SOURCES += UNIX_USBController_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_USBController_HPUX.cxx
+	SOURCES += UNIX_USBController_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_USBController_LINUX.cxx
+	SOURCES += UNIX_USBController_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_USBController_SOLARIS.cxx
+	SOURCES += UNIX_USBController_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_USBController_TRU64.cxx
+	SOURCES += UNIX_USBController_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_USBController_VMS.cxx
+	SOURCES += UNIX_USBController_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_USBController_WIN32.cxx
+	SOURCES += UNIX_USBController_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_USBController_ZOS.cxx
+	SOURCES += UNIX_USBController_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_USBController_STUB.cxx
+	SOURCES += UNIX_USBController_STUB.cpp
 endif
 
 LIBRARIES = \

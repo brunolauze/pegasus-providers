@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_AverageRateMeterServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_AverageRateMeterService_AIX.cxx
+	SOURCES += UNIX_AverageRateMeterService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_AverageRateMeterService_DARWIN.cxx
+	SOURCES += UNIX_AverageRateMeterService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_AverageRateMeterService_FREEBSD.cxx
+	SOURCES += UNIX_AverageRateMeterService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_AverageRateMeterService_HPUX.cxx
+	SOURCES += UNIX_AverageRateMeterService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_AverageRateMeterService_LINUX.cxx
+	SOURCES += UNIX_AverageRateMeterService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_AverageRateMeterService_SOLARIS.cxx
+	SOURCES += UNIX_AverageRateMeterService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_AverageRateMeterService_TRU64.cxx
+	SOURCES += UNIX_AverageRateMeterService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_AverageRateMeterService_VMS.cxx
+	SOURCES += UNIX_AverageRateMeterService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_AverageRateMeterService_WIN32.cxx
+	SOURCES += UNIX_AverageRateMeterService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_AverageRateMeterService_ZOS.cxx
+	SOURCES += UNIX_AverageRateMeterService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_AverageRateMeterService_STUB.cxx
+	SOURCES += UNIX_AverageRateMeterService_STUB.cpp
 endif
 
 LIBRARIES = \

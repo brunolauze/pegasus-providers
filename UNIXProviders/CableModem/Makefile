@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_CableModemProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_CableModem_AIX.cxx
+	SOURCES += UNIX_CableModem_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_CableModem_DARWIN.cxx
+	SOURCES += UNIX_CableModem_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_CableModem_FREEBSD.cxx
+	SOURCES += UNIX_CableModem_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_CableModem_HPUX.cxx
+	SOURCES += UNIX_CableModem_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_CableModem_LINUX.cxx
+	SOURCES += UNIX_CableModem_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_CableModem_SOLARIS.cxx
+	SOURCES += UNIX_CableModem_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_CableModem_TRU64.cxx
+	SOURCES += UNIX_CableModem_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_CableModem_VMS.cxx
+	SOURCES += UNIX_CableModem_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_CableModem_WIN32.cxx
+	SOURCES += UNIX_CableModem_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_CableModem_ZOS.cxx
+	SOURCES += UNIX_CableModem_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_CableModem_STUB.cxx
+	SOURCES += UNIX_CableModem_STUB.cpp
 endif
 
 LIBRARIES = \

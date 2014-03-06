@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_SwapSpaceCheckProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_SwapSpaceCheck_AIX.cxx
+	SOURCES += UNIX_SwapSpaceCheck_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_SwapSpaceCheck_DARWIN.cxx
+	SOURCES += UNIX_SwapSpaceCheck_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_SwapSpaceCheck_FREEBSD.cxx
+	SOURCES += UNIX_SwapSpaceCheck_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_SwapSpaceCheck_HPUX.cxx
+	SOURCES += UNIX_SwapSpaceCheck_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_SwapSpaceCheck_LINUX.cxx
+	SOURCES += UNIX_SwapSpaceCheck_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_SwapSpaceCheck_SOLARIS.cxx
+	SOURCES += UNIX_SwapSpaceCheck_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_SwapSpaceCheck_TRU64.cxx
+	SOURCES += UNIX_SwapSpaceCheck_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_SwapSpaceCheck_VMS.cxx
+	SOURCES += UNIX_SwapSpaceCheck_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_SwapSpaceCheck_WIN32.cxx
+	SOURCES += UNIX_SwapSpaceCheck_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_SwapSpaceCheck_ZOS.cxx
+	SOURCES += UNIX_SwapSpaceCheck_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_SwapSpaceCheck_STUB.cxx
+	SOURCES += UNIX_SwapSpaceCheck_STUB.cpp
 endif
 
 LIBRARIES = \

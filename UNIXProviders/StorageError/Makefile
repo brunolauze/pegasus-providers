@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_StorageErrorProvider.cpp \
 	UNIX_StorageErrorMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_StorageError_AIX.cxx
+	SOURCES += UNIX_StorageError_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_StorageError_DARWIN.cxx
+	SOURCES += UNIX_StorageError_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_StorageError_FREEBSD.cxx
+	SOURCES += UNIX_StorageError_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_StorageError_HPUX.cxx
+	SOURCES += UNIX_StorageError_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_StorageError_LINUX.cxx
+	SOURCES += UNIX_StorageError_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_StorageError_SOLARIS.cxx
+	SOURCES += UNIX_StorageError_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_StorageError_TRU64.cxx
+	SOURCES += UNIX_StorageError_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_StorageError_VMS.cxx
+	SOURCES += UNIX_StorageError_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_StorageError_WIN32.cxx
+	SOURCES += UNIX_StorageError_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_StorageError_ZOS.cxx
+	SOURCES += UNIX_StorageError_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_StorageError_STUB.cxx
+	SOURCES += UNIX_StorageError_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PolicyConditionInPolicyRepositoryProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PolicyConditionInPolicyRepository_AIX.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyRepository_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PolicyConditionInPolicyRepository_DARWIN.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyRepository_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PolicyConditionInPolicyRepository_FREEBSD.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyRepository_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PolicyConditionInPolicyRepository_HPUX.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyRepository_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PolicyConditionInPolicyRepository_LINUX.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyRepository_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PolicyConditionInPolicyRepository_SOLARIS.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyRepository_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PolicyConditionInPolicyRepository_TRU64.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyRepository_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PolicyConditionInPolicyRepository_VMS.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyRepository_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PolicyConditionInPolicyRepository_WIN32.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyRepository_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PolicyConditionInPolicyRepository_ZOS.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyRepository_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PolicyConditionInPolicyRepository_STUB.cxx
+	SOURCES += UNIX_PolicyConditionInPolicyRepository_STUB.cpp
 endif
 
 LIBRARIES = \

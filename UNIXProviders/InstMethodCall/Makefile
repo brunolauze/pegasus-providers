@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_InstMethodCallProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_InstMethodCall_AIX.cxx
+	SOURCES += UNIX_InstMethodCall_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_InstMethodCall_DARWIN.cxx
+	SOURCES += UNIX_InstMethodCall_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_InstMethodCall_FREEBSD.cxx
+	SOURCES += UNIX_InstMethodCall_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_InstMethodCall_HPUX.cxx
+	SOURCES += UNIX_InstMethodCall_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_InstMethodCall_LINUX.cxx
+	SOURCES += UNIX_InstMethodCall_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_InstMethodCall_SOLARIS.cxx
+	SOURCES += UNIX_InstMethodCall_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_InstMethodCall_TRU64.cxx
+	SOURCES += UNIX_InstMethodCall_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_InstMethodCall_VMS.cxx
+	SOURCES += UNIX_InstMethodCall_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_InstMethodCall_WIN32.cxx
+	SOURCES += UNIX_InstMethodCall_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_InstMethodCall_ZOS.cxx
+	SOURCES += UNIX_InstMethodCall_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_InstMethodCall_STUB.cxx
+	SOURCES += UNIX_InstMethodCall_STUB.cpp
 endif
 
 LIBRARIES = \

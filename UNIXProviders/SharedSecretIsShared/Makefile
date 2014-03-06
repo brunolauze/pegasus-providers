@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_SharedSecretIsSharedProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_SharedSecretIsShared_AIX.cxx
+	SOURCES += UNIX_SharedSecretIsShared_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_SharedSecretIsShared_DARWIN.cxx
+	SOURCES += UNIX_SharedSecretIsShared_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_SharedSecretIsShared_FREEBSD.cxx
+	SOURCES += UNIX_SharedSecretIsShared_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_SharedSecretIsShared_HPUX.cxx
+	SOURCES += UNIX_SharedSecretIsShared_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_SharedSecretIsShared_LINUX.cxx
+	SOURCES += UNIX_SharedSecretIsShared_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_SharedSecretIsShared_SOLARIS.cxx
+	SOURCES += UNIX_SharedSecretIsShared_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_SharedSecretIsShared_TRU64.cxx
+	SOURCES += UNIX_SharedSecretIsShared_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_SharedSecretIsShared_VMS.cxx
+	SOURCES += UNIX_SharedSecretIsShared_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_SharedSecretIsShared_WIN32.cxx
+	SOURCES += UNIX_SharedSecretIsShared_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_SharedSecretIsShared_ZOS.cxx
+	SOURCES += UNIX_SharedSecretIsShared_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_SharedSecretIsShared_STUB.cxx
+	SOURCES += UNIX_SharedSecretIsShared_STUB.cpp
 endif
 
 LIBRARIES = \

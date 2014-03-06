@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_LabelReaderStatInfoProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_LabelReaderStatInfo_AIX.cxx
+	SOURCES += UNIX_LabelReaderStatInfo_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_LabelReaderStatInfo_DARWIN.cxx
+	SOURCES += UNIX_LabelReaderStatInfo_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_LabelReaderStatInfo_FREEBSD.cxx
+	SOURCES += UNIX_LabelReaderStatInfo_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_LabelReaderStatInfo_HPUX.cxx
+	SOURCES += UNIX_LabelReaderStatInfo_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_LabelReaderStatInfo_LINUX.cxx
+	SOURCES += UNIX_LabelReaderStatInfo_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_LabelReaderStatInfo_SOLARIS.cxx
+	SOURCES += UNIX_LabelReaderStatInfo_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_LabelReaderStatInfo_TRU64.cxx
+	SOURCES += UNIX_LabelReaderStatInfo_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_LabelReaderStatInfo_VMS.cxx
+	SOURCES += UNIX_LabelReaderStatInfo_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_LabelReaderStatInfo_WIN32.cxx
+	SOURCES += UNIX_LabelReaderStatInfo_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_LabelReaderStatInfo_ZOS.cxx
+	SOURCES += UNIX_LabelReaderStatInfo_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_LabelReaderStatInfo_STUB.cxx
+	SOURCES += UNIX_LabelReaderStatInfo_STUB.cpp
 endif
 
 LIBRARIES = \

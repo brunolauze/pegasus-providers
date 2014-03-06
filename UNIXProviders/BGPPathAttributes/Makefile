@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_BGPPathAttributesProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_BGPPathAttributes_AIX.cxx
+	SOURCES += UNIX_BGPPathAttributes_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_BGPPathAttributes_DARWIN.cxx
+	SOURCES += UNIX_BGPPathAttributes_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_BGPPathAttributes_FREEBSD.cxx
+	SOURCES += UNIX_BGPPathAttributes_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_BGPPathAttributes_HPUX.cxx
+	SOURCES += UNIX_BGPPathAttributes_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_BGPPathAttributes_LINUX.cxx
+	SOURCES += UNIX_BGPPathAttributes_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_BGPPathAttributes_SOLARIS.cxx
+	SOURCES += UNIX_BGPPathAttributes_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_BGPPathAttributes_TRU64.cxx
+	SOURCES += UNIX_BGPPathAttributes_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_BGPPathAttributes_VMS.cxx
+	SOURCES += UNIX_BGPPathAttributes_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_BGPPathAttributes_WIN32.cxx
+	SOURCES += UNIX_BGPPathAttributes_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_BGPPathAttributes_ZOS.cxx
+	SOURCES += UNIX_BGPPathAttributes_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_BGPPathAttributes_STUB.cxx
+	SOURCES += UNIX_BGPPathAttributes_STUB.cpp
 endif
 
 LIBRARIES = \

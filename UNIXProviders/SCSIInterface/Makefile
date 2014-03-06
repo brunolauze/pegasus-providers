@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_SCSIInterfaceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_SCSIInterface_AIX.cxx
+	SOURCES += UNIX_SCSIInterface_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_SCSIInterface_DARWIN.cxx
+	SOURCES += UNIX_SCSIInterface_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_SCSIInterface_FREEBSD.cxx
+	SOURCES += UNIX_SCSIInterface_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_SCSIInterface_HPUX.cxx
+	SOURCES += UNIX_SCSIInterface_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_SCSIInterface_LINUX.cxx
+	SOURCES += UNIX_SCSIInterface_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_SCSIInterface_SOLARIS.cxx
+	SOURCES += UNIX_SCSIInterface_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_SCSIInterface_TRU64.cxx
+	SOURCES += UNIX_SCSIInterface_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_SCSIInterface_VMS.cxx
+	SOURCES += UNIX_SCSIInterface_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_SCSIInterface_WIN32.cxx
+	SOURCES += UNIX_SCSIInterface_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_SCSIInterface_ZOS.cxx
+	SOURCES += UNIX_SCSIInterface_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_SCSIInterface_STUB.cxx
+	SOURCES += UNIX_SCSIInterface_STUB.cpp
 endif
 
 LIBRARIES = \

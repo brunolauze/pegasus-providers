@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_PackagedComponentProvider.cpp \
 	UNIX_PackagedComponentMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PackagedComponent_AIX.cxx
+	SOURCES += UNIX_PackagedComponent_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PackagedComponent_DARWIN.cxx
+	SOURCES += UNIX_PackagedComponent_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PackagedComponent_FREEBSD.cxx
+	SOURCES += UNIX_PackagedComponent_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PackagedComponent_HPUX.cxx
+	SOURCES += UNIX_PackagedComponent_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PackagedComponent_LINUX.cxx
+	SOURCES += UNIX_PackagedComponent_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PackagedComponent_SOLARIS.cxx
+	SOURCES += UNIX_PackagedComponent_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PackagedComponent_TRU64.cxx
+	SOURCES += UNIX_PackagedComponent_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PackagedComponent_VMS.cxx
+	SOURCES += UNIX_PackagedComponent_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PackagedComponent_WIN32.cxx
+	SOURCES += UNIX_PackagedComponent_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PackagedComponent_ZOS.cxx
+	SOURCES += UNIX_PackagedComponent_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PackagedComponent_STUB.cxx
+	SOURCES += UNIX_PackagedComponent_STUB.cpp
 endif
 
 LIBRARIES = \

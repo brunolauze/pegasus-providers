@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_StorageConfigurationCapabilitiesProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_StorageConfigurationCapabilities_AIX.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_StorageConfigurationCapabilities_DARWIN.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_StorageConfigurationCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_StorageConfigurationCapabilities_HPUX.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_StorageConfigurationCapabilities_LINUX.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_StorageConfigurationCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_StorageConfigurationCapabilities_TRU64.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_StorageConfigurationCapabilities_VMS.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_StorageConfigurationCapabilities_WIN32.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_StorageConfigurationCapabilities_ZOS.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_StorageConfigurationCapabilities_STUB.cxx
+	SOURCES += UNIX_StorageConfigurationCapabilities_STUB.cpp
 endif
 
 LIBRARIES = \

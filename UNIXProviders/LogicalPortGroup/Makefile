@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_LogicalPortGroupProvider.cpp \
 	UNIX_LogicalPortGroupMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_LogicalPortGroup_AIX.cxx
+	SOURCES += UNIX_LogicalPortGroup_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_LogicalPortGroup_DARWIN.cxx
+	SOURCES += UNIX_LogicalPortGroup_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_LogicalPortGroup_FREEBSD.cxx
+	SOURCES += UNIX_LogicalPortGroup_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_LogicalPortGroup_HPUX.cxx
+	SOURCES += UNIX_LogicalPortGroup_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_LogicalPortGroup_LINUX.cxx
+	SOURCES += UNIX_LogicalPortGroup_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_LogicalPortGroup_SOLARIS.cxx
+	SOURCES += UNIX_LogicalPortGroup_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_LogicalPortGroup_TRU64.cxx
+	SOURCES += UNIX_LogicalPortGroup_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_LogicalPortGroup_VMS.cxx
+	SOURCES += UNIX_LogicalPortGroup_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_LogicalPortGroup_WIN32.cxx
+	SOURCES += UNIX_LogicalPortGroup_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_LogicalPortGroup_ZOS.cxx
+	SOURCES += UNIX_LogicalPortGroup_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_LogicalPortGroup_STUB.cxx
+	SOURCES += UNIX_LogicalPortGroup_STUB.cpp
 endif
 
 LIBRARIES = \

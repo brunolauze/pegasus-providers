@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_AuthorizedSubjectProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_AuthorizedSubject_AIX.cxx
+	SOURCES += UNIX_AuthorizedSubject_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_AuthorizedSubject_DARWIN.cxx
+	SOURCES += UNIX_AuthorizedSubject_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_AuthorizedSubject_FREEBSD.cxx
+	SOURCES += UNIX_AuthorizedSubject_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_AuthorizedSubject_HPUX.cxx
+	SOURCES += UNIX_AuthorizedSubject_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_AuthorizedSubject_LINUX.cxx
+	SOURCES += UNIX_AuthorizedSubject_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_AuthorizedSubject_SOLARIS.cxx
+	SOURCES += UNIX_AuthorizedSubject_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_AuthorizedSubject_TRU64.cxx
+	SOURCES += UNIX_AuthorizedSubject_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_AuthorizedSubject_VMS.cxx
+	SOURCES += UNIX_AuthorizedSubject_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_AuthorizedSubject_WIN32.cxx
+	SOURCES += UNIX_AuthorizedSubject_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_AuthorizedSubject_ZOS.cxx
+	SOURCES += UNIX_AuthorizedSubject_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_AuthorizedSubject_STUB.cxx
+	SOURCES += UNIX_AuthorizedSubject_STUB.cpp
 endif
 
 LIBRARIES = \

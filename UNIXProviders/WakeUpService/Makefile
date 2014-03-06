@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_WakeUpServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_WakeUpService_AIX.cxx
+	SOURCES += UNIX_WakeUpService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_WakeUpService_DARWIN.cxx
+	SOURCES += UNIX_WakeUpService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_WakeUpService_FREEBSD.cxx
+	SOURCES += UNIX_WakeUpService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_WakeUpService_HPUX.cxx
+	SOURCES += UNIX_WakeUpService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_WakeUpService_LINUX.cxx
+	SOURCES += UNIX_WakeUpService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_WakeUpService_SOLARIS.cxx
+	SOURCES += UNIX_WakeUpService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_WakeUpService_TRU64.cxx
+	SOURCES += UNIX_WakeUpService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_WakeUpService_VMS.cxx
+	SOURCES += UNIX_WakeUpService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_WakeUpService_WIN32.cxx
+	SOURCES += UNIX_WakeUpService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_WakeUpService_ZOS.cxx
+	SOURCES += UNIX_WakeUpService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_WakeUpService_STUB.cxx
+	SOURCES += UNIX_WakeUpService_STUB.cpp
 endif
 
 LIBRARIES = \

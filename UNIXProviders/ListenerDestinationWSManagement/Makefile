@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ListenerDestinationWSManagementProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ListenerDestinationWSManagement_AIX.cxx
+	SOURCES += UNIX_ListenerDestinationWSManagement_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ListenerDestinationWSManagement_DARWIN.cxx
+	SOURCES += UNIX_ListenerDestinationWSManagement_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ListenerDestinationWSManagement_FREEBSD.cxx
+	SOURCES += UNIX_ListenerDestinationWSManagement_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ListenerDestinationWSManagement_HPUX.cxx
+	SOURCES += UNIX_ListenerDestinationWSManagement_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ListenerDestinationWSManagement_LINUX.cxx
+	SOURCES += UNIX_ListenerDestinationWSManagement_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ListenerDestinationWSManagement_SOLARIS.cxx
+	SOURCES += UNIX_ListenerDestinationWSManagement_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ListenerDestinationWSManagement_TRU64.cxx
+	SOURCES += UNIX_ListenerDestinationWSManagement_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ListenerDestinationWSManagement_VMS.cxx
+	SOURCES += UNIX_ListenerDestinationWSManagement_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ListenerDestinationWSManagement_WIN32.cxx
+	SOURCES += UNIX_ListenerDestinationWSManagement_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ListenerDestinationWSManagement_ZOS.cxx
+	SOURCES += UNIX_ListenerDestinationWSManagement_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ListenerDestinationWSManagement_STUB.cxx
+	SOURCES += UNIX_ListenerDestinationWSManagement_STUB.cpp
 endif
 
 LIBRARIES = \

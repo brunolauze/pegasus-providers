@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_MediaRedirectionSAPProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_MediaRedirectionSAP_AIX.cxx
+	SOURCES += UNIX_MediaRedirectionSAP_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_MediaRedirectionSAP_DARWIN.cxx
+	SOURCES += UNIX_MediaRedirectionSAP_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_MediaRedirectionSAP_FREEBSD.cxx
+	SOURCES += UNIX_MediaRedirectionSAP_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_MediaRedirectionSAP_HPUX.cxx
+	SOURCES += UNIX_MediaRedirectionSAP_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_MediaRedirectionSAP_LINUX.cxx
+	SOURCES += UNIX_MediaRedirectionSAP_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_MediaRedirectionSAP_SOLARIS.cxx
+	SOURCES += UNIX_MediaRedirectionSAP_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_MediaRedirectionSAP_TRU64.cxx
+	SOURCES += UNIX_MediaRedirectionSAP_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_MediaRedirectionSAP_VMS.cxx
+	SOURCES += UNIX_MediaRedirectionSAP_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_MediaRedirectionSAP_WIN32.cxx
+	SOURCES += UNIX_MediaRedirectionSAP_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_MediaRedirectionSAP_ZOS.cxx
+	SOURCES += UNIX_MediaRedirectionSAP_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_MediaRedirectionSAP_STUB.cxx
+	SOURCES += UNIX_MediaRedirectionSAP_STUB.cpp
 endif
 
 LIBRARIES = \

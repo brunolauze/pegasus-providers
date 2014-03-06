@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_DynamicForwardingEntryProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_DynamicForwardingEntry_AIX.cxx
+	SOURCES += UNIX_DynamicForwardingEntry_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_DynamicForwardingEntry_DARWIN.cxx
+	SOURCES += UNIX_DynamicForwardingEntry_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_DynamicForwardingEntry_FREEBSD.cxx
+	SOURCES += UNIX_DynamicForwardingEntry_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_DynamicForwardingEntry_HPUX.cxx
+	SOURCES += UNIX_DynamicForwardingEntry_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_DynamicForwardingEntry_LINUX.cxx
+	SOURCES += UNIX_DynamicForwardingEntry_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_DynamicForwardingEntry_SOLARIS.cxx
+	SOURCES += UNIX_DynamicForwardingEntry_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_DynamicForwardingEntry_TRU64.cxx
+	SOURCES += UNIX_DynamicForwardingEntry_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_DynamicForwardingEntry_VMS.cxx
+	SOURCES += UNIX_DynamicForwardingEntry_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_DynamicForwardingEntry_WIN32.cxx
+	SOURCES += UNIX_DynamicForwardingEntry_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_DynamicForwardingEntry_ZOS.cxx
+	SOURCES += UNIX_DynamicForwardingEntry_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_DynamicForwardingEntry_STUB.cxx
+	SOURCES += UNIX_DynamicForwardingEntry_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ElementInSchedulingServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ElementInSchedulingService_AIX.cxx
+	SOURCES += UNIX_ElementInSchedulingService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ElementInSchedulingService_DARWIN.cxx
+	SOURCES += UNIX_ElementInSchedulingService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ElementInSchedulingService_FREEBSD.cxx
+	SOURCES += UNIX_ElementInSchedulingService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ElementInSchedulingService_HPUX.cxx
+	SOURCES += UNIX_ElementInSchedulingService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ElementInSchedulingService_LINUX.cxx
+	SOURCES += UNIX_ElementInSchedulingService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ElementInSchedulingService_SOLARIS.cxx
+	SOURCES += UNIX_ElementInSchedulingService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ElementInSchedulingService_TRU64.cxx
+	SOURCES += UNIX_ElementInSchedulingService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ElementInSchedulingService_VMS.cxx
+	SOURCES += UNIX_ElementInSchedulingService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ElementInSchedulingService_WIN32.cxx
+	SOURCES += UNIX_ElementInSchedulingService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ElementInSchedulingService_ZOS.cxx
+	SOURCES += UNIX_ElementInSchedulingService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ElementInSchedulingService_STUB.cxx
+	SOURCES += UNIX_ElementInSchedulingService_STUB.cpp
 endif
 
 LIBRARIES = \

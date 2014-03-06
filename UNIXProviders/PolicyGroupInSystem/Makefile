@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PolicyGroupInSystemProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PolicyGroupInSystem_AIX.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PolicyGroupInSystem_DARWIN.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PolicyGroupInSystem_FREEBSD.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PolicyGroupInSystem_HPUX.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PolicyGroupInSystem_LINUX.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PolicyGroupInSystem_SOLARIS.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PolicyGroupInSystem_TRU64.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PolicyGroupInSystem_VMS.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PolicyGroupInSystem_WIN32.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PolicyGroupInSystem_ZOS.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PolicyGroupInSystem_STUB.cxx
+	SOURCES += UNIX_PolicyGroupInSystem_STUB.cpp
 endif
 
 LIBRARIES = \

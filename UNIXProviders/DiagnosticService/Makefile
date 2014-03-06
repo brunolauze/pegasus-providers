@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_DiagnosticServiceProvider.cpp \
 	UNIX_DiagnosticServiceMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_DiagnosticService_AIX.cxx
+	SOURCES += UNIX_DiagnosticService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_DiagnosticService_DARWIN.cxx
+	SOURCES += UNIX_DiagnosticService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_DiagnosticService_FREEBSD.cxx
+	SOURCES += UNIX_DiagnosticService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_DiagnosticService_HPUX.cxx
+	SOURCES += UNIX_DiagnosticService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_DiagnosticService_LINUX.cxx
+	SOURCES += UNIX_DiagnosticService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_DiagnosticService_SOLARIS.cxx
+	SOURCES += UNIX_DiagnosticService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_DiagnosticService_TRU64.cxx
+	SOURCES += UNIX_DiagnosticService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_DiagnosticService_VMS.cxx
+	SOURCES += UNIX_DiagnosticService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_DiagnosticService_WIN32.cxx
+	SOURCES += UNIX_DiagnosticService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_DiagnosticService_ZOS.cxx
+	SOURCES += UNIX_DiagnosticService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_DiagnosticService_STUB.cxx
+	SOURCES += UNIX_DiagnosticService_STUB.cpp
 endif
 
 LIBRARIES = \

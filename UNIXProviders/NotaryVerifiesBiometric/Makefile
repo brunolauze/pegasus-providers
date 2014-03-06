@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_NotaryVerifiesBiometricProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_NotaryVerifiesBiometric_AIX.cxx
+	SOURCES += UNIX_NotaryVerifiesBiometric_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_NotaryVerifiesBiometric_DARWIN.cxx
+	SOURCES += UNIX_NotaryVerifiesBiometric_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_NotaryVerifiesBiometric_FREEBSD.cxx
+	SOURCES += UNIX_NotaryVerifiesBiometric_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_NotaryVerifiesBiometric_HPUX.cxx
+	SOURCES += UNIX_NotaryVerifiesBiometric_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_NotaryVerifiesBiometric_LINUX.cxx
+	SOURCES += UNIX_NotaryVerifiesBiometric_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_NotaryVerifiesBiometric_SOLARIS.cxx
+	SOURCES += UNIX_NotaryVerifiesBiometric_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_NotaryVerifiesBiometric_TRU64.cxx
+	SOURCES += UNIX_NotaryVerifiesBiometric_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_NotaryVerifiesBiometric_VMS.cxx
+	SOURCES += UNIX_NotaryVerifiesBiometric_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_NotaryVerifiesBiometric_WIN32.cxx
+	SOURCES += UNIX_NotaryVerifiesBiometric_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_NotaryVerifiesBiometric_ZOS.cxx
+	SOURCES += UNIX_NotaryVerifiesBiometric_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_NotaryVerifiesBiometric_STUB.cxx
+	SOURCES += UNIX_NotaryVerifiesBiometric_STUB.cpp
 endif
 
 LIBRARIES = \

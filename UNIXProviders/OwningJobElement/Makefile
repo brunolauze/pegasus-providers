@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_OwningJobElementProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_OwningJobElement_AIX.cxx
+	SOURCES += UNIX_OwningJobElement_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_OwningJobElement_DARWIN.cxx
+	SOURCES += UNIX_OwningJobElement_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_OwningJobElement_FREEBSD.cxx
+	SOURCES += UNIX_OwningJobElement_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_OwningJobElement_HPUX.cxx
+	SOURCES += UNIX_OwningJobElement_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_OwningJobElement_LINUX.cxx
+	SOURCES += UNIX_OwningJobElement_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_OwningJobElement_SOLARIS.cxx
+	SOURCES += UNIX_OwningJobElement_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_OwningJobElement_TRU64.cxx
+	SOURCES += UNIX_OwningJobElement_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_OwningJobElement_VMS.cxx
+	SOURCES += UNIX_OwningJobElement_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_OwningJobElement_WIN32.cxx
+	SOURCES += UNIX_OwningJobElement_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_OwningJobElement_ZOS.cxx
+	SOURCES += UNIX_OwningJobElement_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_OwningJobElement_STUB.cxx
+	SOURCES += UNIX_OwningJobElement_STUB.cpp
 endif
 
 LIBRARIES = \

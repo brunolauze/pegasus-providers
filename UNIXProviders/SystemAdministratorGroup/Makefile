@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_SystemAdministratorGroupProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_SystemAdministratorGroup_AIX.cxx
+	SOURCES += UNIX_SystemAdministratorGroup_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_SystemAdministratorGroup_DARWIN.cxx
+	SOURCES += UNIX_SystemAdministratorGroup_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_SystemAdministratorGroup_FREEBSD.cxx
+	SOURCES += UNIX_SystemAdministratorGroup_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_SystemAdministratorGroup_HPUX.cxx
+	SOURCES += UNIX_SystemAdministratorGroup_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_SystemAdministratorGroup_LINUX.cxx
+	SOURCES += UNIX_SystemAdministratorGroup_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_SystemAdministratorGroup_SOLARIS.cxx
+	SOURCES += UNIX_SystemAdministratorGroup_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_SystemAdministratorGroup_TRU64.cxx
+	SOURCES += UNIX_SystemAdministratorGroup_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_SystemAdministratorGroup_VMS.cxx
+	SOURCES += UNIX_SystemAdministratorGroup_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_SystemAdministratorGroup_WIN32.cxx
+	SOURCES += UNIX_SystemAdministratorGroup_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_SystemAdministratorGroup_ZOS.cxx
+	SOURCES += UNIX_SystemAdministratorGroup_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_SystemAdministratorGroup_STUB.cxx
+	SOURCES += UNIX_SystemAdministratorGroup_STUB.cpp
 endif
 
 LIBRARIES = \

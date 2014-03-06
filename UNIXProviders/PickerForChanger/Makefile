@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PickerForChangerProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PickerForChanger_AIX.cxx
+	SOURCES += UNIX_PickerForChanger_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PickerForChanger_DARWIN.cxx
+	SOURCES += UNIX_PickerForChanger_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PickerForChanger_FREEBSD.cxx
+	SOURCES += UNIX_PickerForChanger_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PickerForChanger_HPUX.cxx
+	SOURCES += UNIX_PickerForChanger_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PickerForChanger_LINUX.cxx
+	SOURCES += UNIX_PickerForChanger_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PickerForChanger_SOLARIS.cxx
+	SOURCES += UNIX_PickerForChanger_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PickerForChanger_TRU64.cxx
+	SOURCES += UNIX_PickerForChanger_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PickerForChanger_VMS.cxx
+	SOURCES += UNIX_PickerForChanger_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PickerForChanger_WIN32.cxx
+	SOURCES += UNIX_PickerForChanger_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PickerForChanger_ZOS.cxx
+	SOURCES += UNIX_PickerForChanger_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PickerForChanger_STUB.cxx
+	SOURCES += UNIX_PickerForChanger_STUB.cpp
 endif
 
 LIBRARIES = \

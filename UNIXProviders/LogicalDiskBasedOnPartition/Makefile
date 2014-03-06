@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_LogicalDiskBasedOnPartitionProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_LogicalDiskBasedOnPartition_AIX.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_LogicalDiskBasedOnPartition_DARWIN.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_LogicalDiskBasedOnPartition_FREEBSD.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_LogicalDiskBasedOnPartition_HPUX.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_LogicalDiskBasedOnPartition_LINUX.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_LogicalDiskBasedOnPartition_SOLARIS.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_LogicalDiskBasedOnPartition_TRU64.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_LogicalDiskBasedOnPartition_VMS.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_LogicalDiskBasedOnPartition_WIN32.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_LogicalDiskBasedOnPartition_ZOS.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_LogicalDiskBasedOnPartition_STUB.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnPartition_STUB.cpp
 endif
 
 LIBRARIES = \

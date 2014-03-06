@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_OOBAlertServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_OOBAlertService_AIX.cxx
+	SOURCES += UNIX_OOBAlertService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_OOBAlertService_DARWIN.cxx
+	SOURCES += UNIX_OOBAlertService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_OOBAlertService_FREEBSD.cxx
+	SOURCES += UNIX_OOBAlertService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_OOBAlertService_HPUX.cxx
+	SOURCES += UNIX_OOBAlertService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_OOBAlertService_LINUX.cxx
+	SOURCES += UNIX_OOBAlertService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_OOBAlertService_SOLARIS.cxx
+	SOURCES += UNIX_OOBAlertService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_OOBAlertService_TRU64.cxx
+	SOURCES += UNIX_OOBAlertService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_OOBAlertService_VMS.cxx
+	SOURCES += UNIX_OOBAlertService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_OOBAlertService_WIN32.cxx
+	SOURCES += UNIX_OOBAlertService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_OOBAlertService_ZOS.cxx
+	SOURCES += UNIX_OOBAlertService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_OOBAlertService_STUB.cxx
+	SOURCES += UNIX_OOBAlertService_STUB.cpp
 endif
 
 LIBRARIES = \

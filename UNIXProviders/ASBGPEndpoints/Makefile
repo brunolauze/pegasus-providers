@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ASBGPEndpointsProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ASBGPEndpoints_AIX.cxx
+	SOURCES += UNIX_ASBGPEndpoints_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ASBGPEndpoints_DARWIN.cxx
+	SOURCES += UNIX_ASBGPEndpoints_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ASBGPEndpoints_FREEBSD.cxx
+	SOURCES += UNIX_ASBGPEndpoints_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ASBGPEndpoints_HPUX.cxx
+	SOURCES += UNIX_ASBGPEndpoints_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ASBGPEndpoints_LINUX.cxx
+	SOURCES += UNIX_ASBGPEndpoints_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ASBGPEndpoints_SOLARIS.cxx
+	SOURCES += UNIX_ASBGPEndpoints_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ASBGPEndpoints_TRU64.cxx
+	SOURCES += UNIX_ASBGPEndpoints_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ASBGPEndpoints_VMS.cxx
+	SOURCES += UNIX_ASBGPEndpoints_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ASBGPEndpoints_WIN32.cxx
+	SOURCES += UNIX_ASBGPEndpoints_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ASBGPEndpoints_ZOS.cxx
+	SOURCES += UNIX_ASBGPEndpoints_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ASBGPEndpoints_STUB.cxx
+	SOURCES += UNIX_ASBGPEndpoints_STUB.cpp
 endif
 
 LIBRARIES = \

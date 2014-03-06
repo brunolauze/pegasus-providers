@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_OSProcessProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_OSProcess_AIX.cxx
+	SOURCES += UNIX_OSProcess_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_OSProcess_DARWIN.cxx
+	SOURCES += UNIX_OSProcess_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_OSProcess_FREEBSD.cxx
+	SOURCES += UNIX_OSProcess_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_OSProcess_HPUX.cxx
+	SOURCES += UNIX_OSProcess_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_OSProcess_LINUX.cxx
+	SOURCES += UNIX_OSProcess_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_OSProcess_SOLARIS.cxx
+	SOURCES += UNIX_OSProcess_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_OSProcess_TRU64.cxx
+	SOURCES += UNIX_OSProcess_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_OSProcess_VMS.cxx
+	SOURCES += UNIX_OSProcess_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_OSProcess_WIN32.cxx
+	SOURCES += UNIX_OSProcess_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_OSProcess_ZOS.cxx
+	SOURCES += UNIX_OSProcess_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_OSProcess_STUB.cxx
+	SOURCES += UNIX_OSProcess_STUB.cpp
 endif
 
 
@@ -89,39 +89,39 @@ SOURCES += \
 	../OperatingSystem/UNIX_OperatingSystemProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_AIX.cxx
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_DARWIN.cxx
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_FREEBSD.cxx
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_HPUX.cxx
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_LINUX.cxx
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_SOLARIS.cxx
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_TRU64.cxx
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_VMS.cxx
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_WIN32.cxx
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_ZOS.cxx
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_STUB.cxx
+	SOURCE += ../OperatingSystem/UNIX_OperatingSystem_STUB.cpp
 endif
 
 
@@ -130,39 +130,39 @@ SOURCES += \
 	../Process/UNIX_ProcessProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCE += ../Process/UNIX_Process_AIX.cxx
+	SOURCE += ../Process/UNIX_Process_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCE += ../Process/UNIX_Process_DARWIN.cxx
+	SOURCE += ../Process/UNIX_Process_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += ../Process/UNIX_Process_FREEBSD.cxx
+	SOURCE += ../Process/UNIX_Process_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCE += ../Process/UNIX_Process_HPUX.cxx
+	SOURCE += ../Process/UNIX_Process_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCE += ../Process/UNIX_Process_LINUX.cxx
+	SOURCE += ../Process/UNIX_Process_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCE += ../Process/UNIX_Process_SOLARIS.cxx
+	SOURCE += ../Process/UNIX_Process_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCE += ../Process/UNIX_Process_TRU64.cxx
+	SOURCE += ../Process/UNIX_Process_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCE += ../Process/UNIX_Process_VMS.cxx
+	SOURCE += ../Process/UNIX_Process_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCE += ../Process/UNIX_Process_WIN32.cxx
+	SOURCE += ../Process/UNIX_Process_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCE += ../Process/UNIX_Process_ZOS.cxx
+	SOURCE += ../Process/UNIX_Process_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += ../Process/UNIX_Process_STUB.cxx
+	SOURCE += ../Process/UNIX_Process_STUB.cpp
 endif
 
 

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_KerberosKeyDistributionCenterProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_KerberosKeyDistributionCenter_AIX.cxx
+	SOURCES += UNIX_KerberosKeyDistributionCenter_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_KerberosKeyDistributionCenter_DARWIN.cxx
+	SOURCES += UNIX_KerberosKeyDistributionCenter_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_KerberosKeyDistributionCenter_FREEBSD.cxx
+	SOURCES += UNIX_KerberosKeyDistributionCenter_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_KerberosKeyDistributionCenter_HPUX.cxx
+	SOURCES += UNIX_KerberosKeyDistributionCenter_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_KerberosKeyDistributionCenter_LINUX.cxx
+	SOURCES += UNIX_KerberosKeyDistributionCenter_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_KerberosKeyDistributionCenter_SOLARIS.cxx
+	SOURCES += UNIX_KerberosKeyDistributionCenter_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_KerberosKeyDistributionCenter_TRU64.cxx
+	SOURCES += UNIX_KerberosKeyDistributionCenter_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_KerberosKeyDistributionCenter_VMS.cxx
+	SOURCES += UNIX_KerberosKeyDistributionCenter_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_KerberosKeyDistributionCenter_WIN32.cxx
+	SOURCES += UNIX_KerberosKeyDistributionCenter_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_KerberosKeyDistributionCenter_ZOS.cxx
+	SOURCES += UNIX_KerberosKeyDistributionCenter_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_KerberosKeyDistributionCenter_STUB.cxx
+	SOURCES += UNIX_KerberosKeyDistributionCenter_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_SystemPartitionProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_SystemPartition_AIX.cxx
+	SOURCES += UNIX_SystemPartition_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_SystemPartition_DARWIN.cxx
+	SOURCES += UNIX_SystemPartition_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_SystemPartition_FREEBSD.cxx
+	SOURCES += UNIX_SystemPartition_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_SystemPartition_HPUX.cxx
+	SOURCES += UNIX_SystemPartition_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_SystemPartition_LINUX.cxx
+	SOURCES += UNIX_SystemPartition_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_SystemPartition_SOLARIS.cxx
+	SOURCES += UNIX_SystemPartition_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_SystemPartition_TRU64.cxx
+	SOURCES += UNIX_SystemPartition_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_SystemPartition_VMS.cxx
+	SOURCES += UNIX_SystemPartition_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_SystemPartition_WIN32.cxx
+	SOURCES += UNIX_SystemPartition_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_SystemPartition_ZOS.cxx
+	SOURCES += UNIX_SystemPartition_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_SystemPartition_STUB.cxx
+	SOURCES += UNIX_SystemPartition_STUB.cpp
 endif
 
 LIBRARIES = \

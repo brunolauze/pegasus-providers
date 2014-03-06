@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_BGPRoutingPolicyProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_BGPRoutingPolicy_AIX.cxx
+	SOURCES += UNIX_BGPRoutingPolicy_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_BGPRoutingPolicy_DARWIN.cxx
+	SOURCES += UNIX_BGPRoutingPolicy_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_BGPRoutingPolicy_FREEBSD.cxx
+	SOURCES += UNIX_BGPRoutingPolicy_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_BGPRoutingPolicy_HPUX.cxx
+	SOURCES += UNIX_BGPRoutingPolicy_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_BGPRoutingPolicy_LINUX.cxx
+	SOURCES += UNIX_BGPRoutingPolicy_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_BGPRoutingPolicy_SOLARIS.cxx
+	SOURCES += UNIX_BGPRoutingPolicy_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_BGPRoutingPolicy_TRU64.cxx
+	SOURCES += UNIX_BGPRoutingPolicy_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_BGPRoutingPolicy_VMS.cxx
+	SOURCES += UNIX_BGPRoutingPolicy_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_BGPRoutingPolicy_WIN32.cxx
+	SOURCES += UNIX_BGPRoutingPolicy_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_BGPRoutingPolicy_ZOS.cxx
+	SOURCES += UNIX_BGPRoutingPolicy_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_BGPRoutingPolicy_STUB.cxx
+	SOURCES += UNIX_BGPRoutingPolicy_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_AccessControlInformationProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_AccessControlInformation_AIX.cxx
+	SOURCES += UNIX_AccessControlInformation_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_AccessControlInformation_DARWIN.cxx
+	SOURCES += UNIX_AccessControlInformation_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_AccessControlInformation_FREEBSD.cxx
+	SOURCES += UNIX_AccessControlInformation_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_AccessControlInformation_HPUX.cxx
+	SOURCES += UNIX_AccessControlInformation_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_AccessControlInformation_LINUX.cxx
+	SOURCES += UNIX_AccessControlInformation_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_AccessControlInformation_SOLARIS.cxx
+	SOURCES += UNIX_AccessControlInformation_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_AccessControlInformation_TRU64.cxx
+	SOURCES += UNIX_AccessControlInformation_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_AccessControlInformation_VMS.cxx
+	SOURCES += UNIX_AccessControlInformation_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_AccessControlInformation_WIN32.cxx
+	SOURCES += UNIX_AccessControlInformation_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_AccessControlInformation_ZOS.cxx
+	SOURCES += UNIX_AccessControlInformation_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_AccessControlInformation_STUB.cxx
+	SOURCES += UNIX_AccessControlInformation_STUB.cpp
 endif
 
 LIBRARIES = \

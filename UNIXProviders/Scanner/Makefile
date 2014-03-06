@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ScannerProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_Scanner_AIX.cxx
+	SOURCES += UNIX_Scanner_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_Scanner_DARWIN.cxx
+	SOURCES += UNIX_Scanner_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_Scanner_FREEBSD.cxx
+	SOURCES += UNIX_Scanner_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_Scanner_HPUX.cxx
+	SOURCES += UNIX_Scanner_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_Scanner_LINUX.cxx
+	SOURCES += UNIX_Scanner_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_Scanner_SOLARIS.cxx
+	SOURCES += UNIX_Scanner_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_Scanner_TRU64.cxx
+	SOURCES += UNIX_Scanner_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_Scanner_VMS.cxx
+	SOURCES += UNIX_Scanner_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_Scanner_WIN32.cxx
+	SOURCES += UNIX_Scanner_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_Scanner_ZOS.cxx
+	SOURCES += UNIX_Scanner_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_Scanner_STUB.cxx
+	SOURCES += UNIX_Scanner_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_BGPClustersInASProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_BGPClustersInAS_AIX.cxx
+	SOURCES += UNIX_BGPClustersInAS_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_BGPClustersInAS_DARWIN.cxx
+	SOURCES += UNIX_BGPClustersInAS_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_BGPClustersInAS_FREEBSD.cxx
+	SOURCES += UNIX_BGPClustersInAS_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_BGPClustersInAS_HPUX.cxx
+	SOURCES += UNIX_BGPClustersInAS_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_BGPClustersInAS_LINUX.cxx
+	SOURCES += UNIX_BGPClustersInAS_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_BGPClustersInAS_SOLARIS.cxx
+	SOURCES += UNIX_BGPClustersInAS_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_BGPClustersInAS_TRU64.cxx
+	SOURCES += UNIX_BGPClustersInAS_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_BGPClustersInAS_VMS.cxx
+	SOURCES += UNIX_BGPClustersInAS_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_BGPClustersInAS_WIN32.cxx
+	SOURCES += UNIX_BGPClustersInAS_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_BGPClustersInAS_ZOS.cxx
+	SOURCES += UNIX_BGPClustersInAS_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_BGPClustersInAS_STUB.cxx
+	SOURCES += UNIX_BGPClustersInAS_STUB.cpp
 endif
 
 LIBRARIES = \

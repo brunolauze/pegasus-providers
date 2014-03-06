@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ElementsLinkedProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ElementsLinked_AIX.cxx
+	SOURCES += UNIX_ElementsLinked_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ElementsLinked_DARWIN.cxx
+	SOURCES += UNIX_ElementsLinked_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ElementsLinked_FREEBSD.cxx
+	SOURCES += UNIX_ElementsLinked_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ElementsLinked_HPUX.cxx
+	SOURCES += UNIX_ElementsLinked_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ElementsLinked_LINUX.cxx
+	SOURCES += UNIX_ElementsLinked_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ElementsLinked_SOLARIS.cxx
+	SOURCES += UNIX_ElementsLinked_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ElementsLinked_TRU64.cxx
+	SOURCES += UNIX_ElementsLinked_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ElementsLinked_VMS.cxx
+	SOURCES += UNIX_ElementsLinked_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ElementsLinked_WIN32.cxx
+	SOURCES += UNIX_ElementsLinked_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ElementsLinked_ZOS.cxx
+	SOURCES += UNIX_ElementsLinked_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ElementsLinked_STUB.cxx
+	SOURCES += UNIX_ElementsLinked_STUB.cpp
 endif
 
 LIBRARIES = \

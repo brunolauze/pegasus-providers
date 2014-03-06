@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PrinterProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_Printer_AIX.cxx
+	SOURCES += UNIX_Printer_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_Printer_DARWIN.cxx
+	SOURCES += UNIX_Printer_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_Printer_FREEBSD.cxx
+	SOURCES += UNIX_Printer_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_Printer_HPUX.cxx
+	SOURCES += UNIX_Printer_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_Printer_LINUX.cxx
+	SOURCES += UNIX_Printer_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_Printer_SOLARIS.cxx
+	SOURCES += UNIX_Printer_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_Printer_TRU64.cxx
+	SOURCES += UNIX_Printer_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_Printer_VMS.cxx
+	SOURCES += UNIX_Printer_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_Printer_WIN32.cxx
+	SOURCES += UNIX_Printer_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_Printer_ZOS.cxx
+	SOURCES += UNIX_Printer_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_Printer_STUB.cxx
+	SOURCES += UNIX_Printer_STUB.cpp
 endif
 
 LIBRARIES = \

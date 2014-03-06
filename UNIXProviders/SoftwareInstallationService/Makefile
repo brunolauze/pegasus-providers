@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_SoftwareInstallationServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_SoftwareInstallationService_AIX.cxx
+	SOURCES += UNIX_SoftwareInstallationService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_SoftwareInstallationService_DARWIN.cxx
+	SOURCES += UNIX_SoftwareInstallationService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_SoftwareInstallationService_FREEBSD.cxx
+	SOURCES += UNIX_SoftwareInstallationService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_SoftwareInstallationService_HPUX.cxx
+	SOURCES += UNIX_SoftwareInstallationService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_SoftwareInstallationService_LINUX.cxx
+	SOURCES += UNIX_SoftwareInstallationService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_SoftwareInstallationService_SOLARIS.cxx
+	SOURCES += UNIX_SoftwareInstallationService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_SoftwareInstallationService_TRU64.cxx
+	SOURCES += UNIX_SoftwareInstallationService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_SoftwareInstallationService_VMS.cxx
+	SOURCES += UNIX_SoftwareInstallationService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_SoftwareInstallationService_WIN32.cxx
+	SOURCES += UNIX_SoftwareInstallationService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_SoftwareInstallationService_ZOS.cxx
+	SOURCES += UNIX_SoftwareInstallationService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_SoftwareInstallationService_STUB.cxx
+	SOURCES += UNIX_SoftwareInstallationService_STUB.cpp
 endif
 
 LIBRARIES = \

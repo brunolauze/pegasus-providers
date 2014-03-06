@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_CorrespondingSettingDataRecordProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_CorrespondingSettingDataRecord_AIX.cxx
+	SOURCES += UNIX_CorrespondingSettingDataRecord_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_CorrespondingSettingDataRecord_DARWIN.cxx
+	SOURCES += UNIX_CorrespondingSettingDataRecord_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_CorrespondingSettingDataRecord_FREEBSD.cxx
+	SOURCES += UNIX_CorrespondingSettingDataRecord_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_CorrespondingSettingDataRecord_HPUX.cxx
+	SOURCES += UNIX_CorrespondingSettingDataRecord_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_CorrespondingSettingDataRecord_LINUX.cxx
+	SOURCES += UNIX_CorrespondingSettingDataRecord_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_CorrespondingSettingDataRecord_SOLARIS.cxx
+	SOURCES += UNIX_CorrespondingSettingDataRecord_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_CorrespondingSettingDataRecord_TRU64.cxx
+	SOURCES += UNIX_CorrespondingSettingDataRecord_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_CorrespondingSettingDataRecord_VMS.cxx
+	SOURCES += UNIX_CorrespondingSettingDataRecord_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_CorrespondingSettingDataRecord_WIN32.cxx
+	SOURCES += UNIX_CorrespondingSettingDataRecord_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_CorrespondingSettingDataRecord_ZOS.cxx
+	SOURCES += UNIX_CorrespondingSettingDataRecord_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_CorrespondingSettingDataRecord_STUB.cxx
+	SOURCES += UNIX_CorrespondingSettingDataRecord_STUB.cpp
 endif
 
 LIBRARIES = \

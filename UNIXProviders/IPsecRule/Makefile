@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_IPsecRuleProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_IPsecRule_AIX.cxx
+	SOURCES += UNIX_IPsecRule_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_IPsecRule_DARWIN.cxx
+	SOURCES += UNIX_IPsecRule_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_IPsecRule_FREEBSD.cxx
+	SOURCES += UNIX_IPsecRule_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_IPsecRule_HPUX.cxx
+	SOURCES += UNIX_IPsecRule_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_IPsecRule_LINUX.cxx
+	SOURCES += UNIX_IPsecRule_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_IPsecRule_SOLARIS.cxx
+	SOURCES += UNIX_IPsecRule_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_IPsecRule_TRU64.cxx
+	SOURCES += UNIX_IPsecRule_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_IPsecRule_VMS.cxx
+	SOURCES += UNIX_IPsecRule_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_IPsecRule_WIN32.cxx
+	SOURCES += UNIX_IPsecRule_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_IPsecRule_ZOS.cxx
+	SOURCES += UNIX_IPsecRule_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_IPsecRule_STUB.cxx
+	SOURCES += UNIX_IPsecRule_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PersonProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_Person_AIX.cxx
+	SOURCES += UNIX_Person_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_Person_DARWIN.cxx
+	SOURCES += UNIX_Person_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_Person_FREEBSD.cxx
+	SOURCES += UNIX_Person_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_Person_HPUX.cxx
+	SOURCES += UNIX_Person_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_Person_LINUX.cxx
+	SOURCES += UNIX_Person_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_Person_SOLARIS.cxx
+	SOURCES += UNIX_Person_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_Person_TRU64.cxx
+	SOURCES += UNIX_Person_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_Person_VMS.cxx
+	SOURCES += UNIX_Person_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_Person_WIN32.cxx
+	SOURCES += UNIX_Person_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_Person_ZOS.cxx
+	SOURCES += UNIX_Person_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_Person_STUB.cxx
+	SOURCES += UNIX_Person_STUB.cpp
 endif
 
 LIBRARIES = \

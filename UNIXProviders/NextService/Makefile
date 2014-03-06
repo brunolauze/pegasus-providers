@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_NextServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_NextService_AIX.cxx
+	SOURCES += UNIX_NextService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_NextService_DARWIN.cxx
+	SOURCES += UNIX_NextService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_NextService_FREEBSD.cxx
+	SOURCES += UNIX_NextService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_NextService_HPUX.cxx
+	SOURCES += UNIX_NextService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_NextService_LINUX.cxx
+	SOURCES += UNIX_NextService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_NextService_SOLARIS.cxx
+	SOURCES += UNIX_NextService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_NextService_TRU64.cxx
+	SOURCES += UNIX_NextService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_NextService_VMS.cxx
+	SOURCES += UNIX_NextService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_NextService_WIN32.cxx
+	SOURCES += UNIX_NextService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_NextService_ZOS.cxx
+	SOURCES += UNIX_NextService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_NextService_STUB.cxx
+	SOURCES += UNIX_NextService_STUB.cpp
 endif
 
 LIBRARIES = \

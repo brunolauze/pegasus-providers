@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_QueueHierarchyProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_QueueHierarchy_AIX.cxx
+	SOURCES += UNIX_QueueHierarchy_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_QueueHierarchy_DARWIN.cxx
+	SOURCES += UNIX_QueueHierarchy_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_QueueHierarchy_FREEBSD.cxx
+	SOURCES += UNIX_QueueHierarchy_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_QueueHierarchy_HPUX.cxx
+	SOURCES += UNIX_QueueHierarchy_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_QueueHierarchy_LINUX.cxx
+	SOURCES += UNIX_QueueHierarchy_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_QueueHierarchy_SOLARIS.cxx
+	SOURCES += UNIX_QueueHierarchy_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_QueueHierarchy_TRU64.cxx
+	SOURCES += UNIX_QueueHierarchy_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_QueueHierarchy_VMS.cxx
+	SOURCES += UNIX_QueueHierarchy_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_QueueHierarchy_WIN32.cxx
+	SOURCES += UNIX_QueueHierarchy_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_QueueHierarchy_ZOS.cxx
+	SOURCES += UNIX_QueueHierarchy_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_QueueHierarchy_STUB.cxx
+	SOURCES += UNIX_QueueHierarchy_STUB.cpp
 endif
 
 LIBRARIES = \

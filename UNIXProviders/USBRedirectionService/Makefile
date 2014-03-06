@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_USBRedirectionServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_USBRedirectionService_AIX.cxx
+	SOURCES += UNIX_USBRedirectionService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_USBRedirectionService_DARWIN.cxx
+	SOURCES += UNIX_USBRedirectionService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_USBRedirectionService_FREEBSD.cxx
+	SOURCES += UNIX_USBRedirectionService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_USBRedirectionService_HPUX.cxx
+	SOURCES += UNIX_USBRedirectionService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_USBRedirectionService_LINUX.cxx
+	SOURCES += UNIX_USBRedirectionService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_USBRedirectionService_SOLARIS.cxx
+	SOURCES += UNIX_USBRedirectionService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_USBRedirectionService_TRU64.cxx
+	SOURCES += UNIX_USBRedirectionService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_USBRedirectionService_VMS.cxx
+	SOURCES += UNIX_USBRedirectionService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_USBRedirectionService_WIN32.cxx
+	SOURCES += UNIX_USBRedirectionService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_USBRedirectionService_ZOS.cxx
+	SOURCES += UNIX_USBRedirectionService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_USBRedirectionService_STUB.cxx
+	SOURCES += UNIX_USBRedirectionService_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_KDCIssuesKerberosTicketProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_KDCIssuesKerberosTicket_AIX.cxx
+	SOURCES += UNIX_KDCIssuesKerberosTicket_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_KDCIssuesKerberosTicket_DARWIN.cxx
+	SOURCES += UNIX_KDCIssuesKerberosTicket_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_KDCIssuesKerberosTicket_FREEBSD.cxx
+	SOURCES += UNIX_KDCIssuesKerberosTicket_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_KDCIssuesKerberosTicket_HPUX.cxx
+	SOURCES += UNIX_KDCIssuesKerberosTicket_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_KDCIssuesKerberosTicket_LINUX.cxx
+	SOURCES += UNIX_KDCIssuesKerberosTicket_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_KDCIssuesKerberosTicket_SOLARIS.cxx
+	SOURCES += UNIX_KDCIssuesKerberosTicket_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_KDCIssuesKerberosTicket_TRU64.cxx
+	SOURCES += UNIX_KDCIssuesKerberosTicket_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_KDCIssuesKerberosTicket_VMS.cxx
+	SOURCES += UNIX_KDCIssuesKerberosTicket_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_KDCIssuesKerberosTicket_WIN32.cxx
+	SOURCES += UNIX_KDCIssuesKerberosTicket_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_KDCIssuesKerberosTicket_ZOS.cxx
+	SOURCES += UNIX_KDCIssuesKerberosTicket_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_KDCIssuesKerberosTicket_STUB.cxx
+	SOURCES += UNIX_KDCIssuesKerberosTicket_STUB.cpp
 endif
 
 LIBRARIES = \

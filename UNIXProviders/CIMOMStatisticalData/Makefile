@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_CIMOMStatisticalDataProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_CIMOMStatisticalData_AIX.cxx
+	SOURCES += UNIX_CIMOMStatisticalData_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_CIMOMStatisticalData_DARWIN.cxx
+	SOURCES += UNIX_CIMOMStatisticalData_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_CIMOMStatisticalData_FREEBSD.cxx
+	SOURCES += UNIX_CIMOMStatisticalData_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_CIMOMStatisticalData_HPUX.cxx
+	SOURCES += UNIX_CIMOMStatisticalData_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_CIMOMStatisticalData_LINUX.cxx
+	SOURCES += UNIX_CIMOMStatisticalData_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_CIMOMStatisticalData_SOLARIS.cxx
+	SOURCES += UNIX_CIMOMStatisticalData_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_CIMOMStatisticalData_TRU64.cxx
+	SOURCES += UNIX_CIMOMStatisticalData_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_CIMOMStatisticalData_VMS.cxx
+	SOURCES += UNIX_CIMOMStatisticalData_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_CIMOMStatisticalData_WIN32.cxx
+	SOURCES += UNIX_CIMOMStatisticalData_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_CIMOMStatisticalData_ZOS.cxx
+	SOURCES += UNIX_CIMOMStatisticalData_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_CIMOMStatisticalData_STUB.cxx
+	SOURCES += UNIX_CIMOMStatisticalData_STUB.cpp
 endif
 
 LIBRARIES = \

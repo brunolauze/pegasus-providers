@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_DirectoryContainsFileProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_DirectoryContainsFile_AIX.cxx
+	SOURCES += UNIX_DirectoryContainsFile_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_DirectoryContainsFile_DARWIN.cxx
+	SOURCES += UNIX_DirectoryContainsFile_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_DirectoryContainsFile_FREEBSD.cxx
+	SOURCES += UNIX_DirectoryContainsFile_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_DirectoryContainsFile_HPUX.cxx
+	SOURCES += UNIX_DirectoryContainsFile_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_DirectoryContainsFile_LINUX.cxx
+	SOURCES += UNIX_DirectoryContainsFile_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_DirectoryContainsFile_SOLARIS.cxx
+	SOURCES += UNIX_DirectoryContainsFile_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_DirectoryContainsFile_TRU64.cxx
+	SOURCES += UNIX_DirectoryContainsFile_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_DirectoryContainsFile_VMS.cxx
+	SOURCES += UNIX_DirectoryContainsFile_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_DirectoryContainsFile_WIN32.cxx
+	SOURCES += UNIX_DirectoryContainsFile_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_DirectoryContainsFile_ZOS.cxx
+	SOURCES += UNIX_DirectoryContainsFile_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_DirectoryContainsFile_STUB.cxx
+	SOURCES += UNIX_DirectoryContainsFile_STUB.cpp
 endif
 
 LIBRARIES = \

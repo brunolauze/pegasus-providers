@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PickerStatDataProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PickerStatData_AIX.cxx
+	SOURCES += UNIX_PickerStatData_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PickerStatData_DARWIN.cxx
+	SOURCES += UNIX_PickerStatData_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PickerStatData_FREEBSD.cxx
+	SOURCES += UNIX_PickerStatData_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PickerStatData_HPUX.cxx
+	SOURCES += UNIX_PickerStatData_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PickerStatData_LINUX.cxx
+	SOURCES += UNIX_PickerStatData_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PickerStatData_SOLARIS.cxx
+	SOURCES += UNIX_PickerStatData_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PickerStatData_TRU64.cxx
+	SOURCES += UNIX_PickerStatData_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PickerStatData_VMS.cxx
+	SOURCES += UNIX_PickerStatData_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PickerStatData_WIN32.cxx
+	SOURCES += UNIX_PickerStatData_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PickerStatData_ZOS.cxx
+	SOURCES += UNIX_PickerStatData_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PickerStatData_STUB.cxx
+	SOURCES += UNIX_PickerStatData_STUB.cpp
 endif
 
 LIBRARIES = \

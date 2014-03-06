@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_FileProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_File_AIX.cxx
+	SOURCES += UNIX_File_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_File_DARWIN.cxx
+	SOURCES += UNIX_File_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_File_FREEBSD.cxx
+	SOURCES += UNIX_File_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_File_HPUX.cxx
+	SOURCES += UNIX_File_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_File_LINUX.cxx
+	SOURCES += UNIX_File_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_File_SOLARIS.cxx
+	SOURCES += UNIX_File_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_File_TRU64.cxx
+	SOURCES += UNIX_File_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_File_VMS.cxx
+	SOURCES += UNIX_File_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_File_WIN32.cxx
+	SOURCES += UNIX_File_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_File_ZOS.cxx
+	SOURCES += UNIX_File_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_File_STUB.cxx
+	SOURCES += UNIX_File_STUB.cpp
 endif
 
 LIBRARIES = \

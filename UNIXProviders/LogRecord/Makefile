@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_LogRecordProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_LogRecord_AIX.cxx
+	SOURCES += UNIX_LogRecord_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_LogRecord_DARWIN.cxx
+	SOURCES += UNIX_LogRecord_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_LogRecord_FREEBSD.cxx
+	SOURCES += UNIX_LogRecord_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_LogRecord_HPUX.cxx
+	SOURCES += UNIX_LogRecord_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_LogRecord_LINUX.cxx
+	SOURCES += UNIX_LogRecord_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_LogRecord_SOLARIS.cxx
+	SOURCES += UNIX_LogRecord_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_LogRecord_TRU64.cxx
+	SOURCES += UNIX_LogRecord_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_LogRecord_VMS.cxx
+	SOURCES += UNIX_LogRecord_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_LogRecord_WIN32.cxx
+	SOURCES += UNIX_LogRecord_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_LogRecord_ZOS.cxx
+	SOURCES += UNIX_LogRecord_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_LogRecord_STUB.cxx
+	SOURCES += UNIX_LogRecord_STUB.cpp
 endif
 
 LIBRARIES = \

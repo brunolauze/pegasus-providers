@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_BGPServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_BGPService_AIX.cxx
+	SOURCES += UNIX_BGPService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_BGPService_DARWIN.cxx
+	SOURCES += UNIX_BGPService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_BGPService_FREEBSD.cxx
+	SOURCES += UNIX_BGPService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_BGPService_HPUX.cxx
+	SOURCES += UNIX_BGPService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_BGPService_LINUX.cxx
+	SOURCES += UNIX_BGPService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_BGPService_SOLARIS.cxx
+	SOURCES += UNIX_BGPService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_BGPService_TRU64.cxx
+	SOURCES += UNIX_BGPService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_BGPService_VMS.cxx
+	SOURCES += UNIX_BGPService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_BGPService_WIN32.cxx
+	SOURCES += UNIX_BGPService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_BGPService_ZOS.cxx
+	SOURCES += UNIX_BGPService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_BGPService_STUB.cxx
+	SOURCES += UNIX_BGPService_STUB.cpp
 endif
 
 LIBRARIES = \

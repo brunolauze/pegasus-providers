@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_BootServiceCapabilitiesProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_BootServiceCapabilities_AIX.cxx
+	SOURCES += UNIX_BootServiceCapabilities_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_BootServiceCapabilities_DARWIN.cxx
+	SOURCES += UNIX_BootServiceCapabilities_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_BootServiceCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_BootServiceCapabilities_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_BootServiceCapabilities_HPUX.cxx
+	SOURCES += UNIX_BootServiceCapabilities_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_BootServiceCapabilities_LINUX.cxx
+	SOURCES += UNIX_BootServiceCapabilities_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_BootServiceCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_BootServiceCapabilities_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_BootServiceCapabilities_TRU64.cxx
+	SOURCES += UNIX_BootServiceCapabilities_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_BootServiceCapabilities_VMS.cxx
+	SOURCES += UNIX_BootServiceCapabilities_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_BootServiceCapabilities_WIN32.cxx
+	SOURCES += UNIX_BootServiceCapabilities_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_BootServiceCapabilities_ZOS.cxx
+	SOURCES += UNIX_BootServiceCapabilities_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_BootServiceCapabilities_STUB.cxx
+	SOURCES += UNIX_BootServiceCapabilities_STUB.cpp
 endif
 
 LIBRARIES = \

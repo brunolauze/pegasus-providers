@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_IdentityManagementServiceProvider.cpp \
 	UNIX_IdentityManagementServiceMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_IdentityManagementService_AIX.cxx
+	SOURCES += UNIX_IdentityManagementService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_IdentityManagementService_DARWIN.cxx
+	SOURCES += UNIX_IdentityManagementService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_IdentityManagementService_FREEBSD.cxx
+	SOURCES += UNIX_IdentityManagementService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_IdentityManagementService_HPUX.cxx
+	SOURCES += UNIX_IdentityManagementService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_IdentityManagementService_LINUX.cxx
+	SOURCES += UNIX_IdentityManagementService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_IdentityManagementService_SOLARIS.cxx
+	SOURCES += UNIX_IdentityManagementService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_IdentityManagementService_TRU64.cxx
+	SOURCES += UNIX_IdentityManagementService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_IdentityManagementService_VMS.cxx
+	SOURCES += UNIX_IdentityManagementService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_IdentityManagementService_WIN32.cxx
+	SOURCES += UNIX_IdentityManagementService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_IdentityManagementService_ZOS.cxx
+	SOURCES += UNIX_IdentityManagementService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_IdentityManagementService_STUB.cxx
+	SOURCES += UNIX_IdentityManagementService_STUB.cpp
 endif
 
 LIBRARIES = \

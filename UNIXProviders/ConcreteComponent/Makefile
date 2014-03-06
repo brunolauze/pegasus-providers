@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ConcreteComponentProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ConcreteComponent_AIX.cxx
+	SOURCES += UNIX_ConcreteComponent_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ConcreteComponent_DARWIN.cxx
+	SOURCES += UNIX_ConcreteComponent_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ConcreteComponent_FREEBSD.cxx
+	SOURCES += UNIX_ConcreteComponent_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ConcreteComponent_HPUX.cxx
+	SOURCES += UNIX_ConcreteComponent_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ConcreteComponent_LINUX.cxx
+	SOURCES += UNIX_ConcreteComponent_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ConcreteComponent_SOLARIS.cxx
+	SOURCES += UNIX_ConcreteComponent_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ConcreteComponent_TRU64.cxx
+	SOURCES += UNIX_ConcreteComponent_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ConcreteComponent_VMS.cxx
+	SOURCES += UNIX_ConcreteComponent_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ConcreteComponent_WIN32.cxx
+	SOURCES += UNIX_ConcreteComponent_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ConcreteComponent_ZOS.cxx
+	SOURCES += UNIX_ConcreteComponent_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ConcreteComponent_STUB.cxx
+	SOURCES += UNIX_ConcreteComponent_STUB.cpp
 endif
 
 LIBRARIES = \

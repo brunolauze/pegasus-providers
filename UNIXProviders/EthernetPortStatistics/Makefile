@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_EthernetPortStatisticsProvider.cpp \
 	UNIX_EthernetPortStatisticsMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_EthernetPortStatistics_AIX.cxx
+	SOURCES += UNIX_EthernetPortStatistics_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_EthernetPortStatistics_DARWIN.cxx
+	SOURCES += UNIX_EthernetPortStatistics_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_EthernetPortStatistics_FREEBSD.cxx
+	SOURCES += UNIX_EthernetPortStatistics_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_EthernetPortStatistics_HPUX.cxx
+	SOURCES += UNIX_EthernetPortStatistics_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_EthernetPortStatistics_LINUX.cxx
+	SOURCES += UNIX_EthernetPortStatistics_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_EthernetPortStatistics_SOLARIS.cxx
+	SOURCES += UNIX_EthernetPortStatistics_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_EthernetPortStatistics_TRU64.cxx
+	SOURCES += UNIX_EthernetPortStatistics_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_EthernetPortStatistics_VMS.cxx
+	SOURCES += UNIX_EthernetPortStatistics_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_EthernetPortStatistics_WIN32.cxx
+	SOURCES += UNIX_EthernetPortStatistics_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_EthernetPortStatistics_ZOS.cxx
+	SOURCES += UNIX_EthernetPortStatistics_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_EthernetPortStatistics_STUB.cxx
+	SOURCES += UNIX_EthernetPortStatistics_STUB.cpp
 endif
 
 LIBRARIES = \

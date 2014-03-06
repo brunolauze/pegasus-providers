@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_BGPProtocolEndpointProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_BGPProtocolEndpoint_AIX.cxx
+	SOURCES += UNIX_BGPProtocolEndpoint_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_BGPProtocolEndpoint_DARWIN.cxx
+	SOURCES += UNIX_BGPProtocolEndpoint_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_BGPProtocolEndpoint_FREEBSD.cxx
+	SOURCES += UNIX_BGPProtocolEndpoint_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_BGPProtocolEndpoint_HPUX.cxx
+	SOURCES += UNIX_BGPProtocolEndpoint_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_BGPProtocolEndpoint_LINUX.cxx
+	SOURCES += UNIX_BGPProtocolEndpoint_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_BGPProtocolEndpoint_SOLARIS.cxx
+	SOURCES += UNIX_BGPProtocolEndpoint_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_BGPProtocolEndpoint_TRU64.cxx
+	SOURCES += UNIX_BGPProtocolEndpoint_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_BGPProtocolEndpoint_VMS.cxx
+	SOURCES += UNIX_BGPProtocolEndpoint_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_BGPProtocolEndpoint_WIN32.cxx
+	SOURCES += UNIX_BGPProtocolEndpoint_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_BGPProtocolEndpoint_ZOS.cxx
+	SOURCES += UNIX_BGPProtocolEndpoint_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_BGPProtocolEndpoint_STUB.cxx
+	SOURCES += UNIX_BGPProtocolEndpoint_STUB.cpp
 endif
 
 LIBRARIES = \

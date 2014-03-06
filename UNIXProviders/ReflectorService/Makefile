@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ReflectorServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ReflectorService_AIX.cxx
+	SOURCES += UNIX_ReflectorService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ReflectorService_DARWIN.cxx
+	SOURCES += UNIX_ReflectorService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ReflectorService_FREEBSD.cxx
+	SOURCES += UNIX_ReflectorService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ReflectorService_HPUX.cxx
+	SOURCES += UNIX_ReflectorService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ReflectorService_LINUX.cxx
+	SOURCES += UNIX_ReflectorService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ReflectorService_SOLARIS.cxx
+	SOURCES += UNIX_ReflectorService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ReflectorService_TRU64.cxx
+	SOURCES += UNIX_ReflectorService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ReflectorService_VMS.cxx
+	SOURCES += UNIX_ReflectorService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ReflectorService_WIN32.cxx
+	SOURCES += UNIX_ReflectorService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ReflectorService_ZOS.cxx
+	SOURCES += UNIX_ReflectorService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ReflectorService_STUB.cxx
+	SOURCES += UNIX_ReflectorService_STUB.cpp
 endif
 
 LIBRARIES = \

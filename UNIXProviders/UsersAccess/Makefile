@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_UsersAccessProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_UsersAccess_AIX.cxx
+	SOURCES += UNIX_UsersAccess_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_UsersAccess_DARWIN.cxx
+	SOURCES += UNIX_UsersAccess_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_UsersAccess_FREEBSD.cxx
+	SOURCES += UNIX_UsersAccess_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_UsersAccess_HPUX.cxx
+	SOURCES += UNIX_UsersAccess_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_UsersAccess_LINUX.cxx
+	SOURCES += UNIX_UsersAccess_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_UsersAccess_SOLARIS.cxx
+	SOURCES += UNIX_UsersAccess_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_UsersAccess_TRU64.cxx
+	SOURCES += UNIX_UsersAccess_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_UsersAccess_VMS.cxx
+	SOURCES += UNIX_UsersAccess_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_UsersAccess_WIN32.cxx
+	SOURCES += UNIX_UsersAccess_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_UsersAccess_ZOS.cxx
+	SOURCES += UNIX_UsersAccess_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_UsersAccess_STUB.cxx
+	SOURCES += UNIX_UsersAccess_STUB.cpp
 endif
 
 
@@ -89,39 +89,39 @@ SOURCES += \
 	../Account/UNIX_AccountProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCE += ../Account/UNIX_Account_AIX.cxx
+	SOURCE += ../Account/UNIX_Account_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCE += ../Account/UNIX_Account_DARWIN.cxx
+	SOURCE += ../Account/UNIX_Account_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += ../Account/UNIX_Account_FREEBSD.cxx
+	SOURCE += ../Account/UNIX_Account_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCE += ../Account/UNIX_Account_HPUX.cxx
+	SOURCE += ../Account/UNIX_Account_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCE += ../Account/UNIX_Account_LINUX.cxx
+	SOURCE += ../Account/UNIX_Account_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCE += ../Account/UNIX_Account_SOLARIS.cxx
+	SOURCE += ../Account/UNIX_Account_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCE += ../Account/UNIX_Account_TRU64.cxx
+	SOURCE += ../Account/UNIX_Account_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCE += ../Account/UNIX_Account_VMS.cxx
+	SOURCE += ../Account/UNIX_Account_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCE += ../Account/UNIX_Account_WIN32.cxx
+	SOURCE += ../Account/UNIX_Account_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCE += ../Account/UNIX_Account_ZOS.cxx
+	SOURCE += ../Account/UNIX_Account_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += ../Account/UNIX_Account_STUB.cxx
+	SOURCE += ../Account/UNIX_Account_STUB.cpp
 endif
 
 

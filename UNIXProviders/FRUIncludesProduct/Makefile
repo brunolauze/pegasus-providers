@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_FRUIncludesProductProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_FRUIncludesProduct_AIX.cxx
+	SOURCES += UNIX_FRUIncludesProduct_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_FRUIncludesProduct_DARWIN.cxx
+	SOURCES += UNIX_FRUIncludesProduct_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_FRUIncludesProduct_FREEBSD.cxx
+	SOURCES += UNIX_FRUIncludesProduct_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_FRUIncludesProduct_HPUX.cxx
+	SOURCES += UNIX_FRUIncludesProduct_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_FRUIncludesProduct_LINUX.cxx
+	SOURCES += UNIX_FRUIncludesProduct_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_FRUIncludesProduct_SOLARIS.cxx
+	SOURCES += UNIX_FRUIncludesProduct_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_FRUIncludesProduct_TRU64.cxx
+	SOURCES += UNIX_FRUIncludesProduct_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_FRUIncludesProduct_VMS.cxx
+	SOURCES += UNIX_FRUIncludesProduct_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_FRUIncludesProduct_WIN32.cxx
+	SOURCES += UNIX_FRUIncludesProduct_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_FRUIncludesProduct_ZOS.cxx
+	SOURCES += UNIX_FRUIncludesProduct_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_FRUIncludesProduct_STUB.cxx
+	SOURCES += UNIX_FRUIncludesProduct_STUB.cpp
 endif
 
 LIBRARIES = \

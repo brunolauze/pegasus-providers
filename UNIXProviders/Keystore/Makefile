@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_KeystoreProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_Keystore_AIX.cxx
+	SOURCES += UNIX_Keystore_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_Keystore_DARWIN.cxx
+	SOURCES += UNIX_Keystore_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_Keystore_FREEBSD.cxx
+	SOURCES += UNIX_Keystore_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_Keystore_HPUX.cxx
+	SOURCES += UNIX_Keystore_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_Keystore_LINUX.cxx
+	SOURCES += UNIX_Keystore_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_Keystore_SOLARIS.cxx
+	SOURCES += UNIX_Keystore_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_Keystore_TRU64.cxx
+	SOURCES += UNIX_Keystore_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_Keystore_VMS.cxx
+	SOURCES += UNIX_Keystore_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_Keystore_WIN32.cxx
+	SOURCES += UNIX_Keystore_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_Keystore_ZOS.cxx
+	SOURCES += UNIX_Keystore_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_Keystore_STUB.cxx
+	SOURCES += UNIX_Keystore_STUB.cpp
 endif
 
 LIBRARIES = \

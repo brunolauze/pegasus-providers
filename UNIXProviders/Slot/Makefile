@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_SlotProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_Slot_AIX.cxx
+	SOURCES += UNIX_Slot_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_Slot_DARWIN.cxx
+	SOURCES += UNIX_Slot_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_Slot_FREEBSD.cxx
+	SOURCES += UNIX_Slot_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_Slot_HPUX.cxx
+	SOURCES += UNIX_Slot_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_Slot_LINUX.cxx
+	SOURCES += UNIX_Slot_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_Slot_SOLARIS.cxx
+	SOURCES += UNIX_Slot_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_Slot_TRU64.cxx
+	SOURCES += UNIX_Slot_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_Slot_VMS.cxx
+	SOURCES += UNIX_Slot_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_Slot_WIN32.cxx
+	SOURCES += UNIX_Slot_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_Slot_ZOS.cxx
+	SOURCES += UNIX_Slot_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_Slot_STUB.cxx
+	SOURCES += UNIX_Slot_STUB.cpp
 endif
 
 LIBRARIES = \

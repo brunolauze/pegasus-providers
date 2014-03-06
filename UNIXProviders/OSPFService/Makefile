@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_OSPFServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_OSPFService_AIX.cxx
+	SOURCES += UNIX_OSPFService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_OSPFService_DARWIN.cxx
+	SOURCES += UNIX_OSPFService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_OSPFService_FREEBSD.cxx
+	SOURCES += UNIX_OSPFService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_OSPFService_HPUX.cxx
+	SOURCES += UNIX_OSPFService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_OSPFService_LINUX.cxx
+	SOURCES += UNIX_OSPFService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_OSPFService_SOLARIS.cxx
+	SOURCES += UNIX_OSPFService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_OSPFService_TRU64.cxx
+	SOURCES += UNIX_OSPFService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_OSPFService_VMS.cxx
+	SOURCES += UNIX_OSPFService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_OSPFService_WIN32.cxx
+	SOURCES += UNIX_OSPFService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_OSPFService_ZOS.cxx
+	SOURCES += UNIX_OSPFService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_OSPFService_STUB.cxx
+	SOURCES += UNIX_OSPFService_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_IPXProtocolEndpointProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_IPXProtocolEndpoint_AIX.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_IPXProtocolEndpoint_DARWIN.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_IPXProtocolEndpoint_FREEBSD.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_IPXProtocolEndpoint_HPUX.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_IPXProtocolEndpoint_LINUX.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_IPXProtocolEndpoint_SOLARIS.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_IPXProtocolEndpoint_TRU64.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_IPXProtocolEndpoint_VMS.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_IPXProtocolEndpoint_WIN32.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_IPXProtocolEndpoint_ZOS.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_IPXProtocolEndpoint_STUB.cxx
+	SOURCES += UNIX_IPXProtocolEndpoint_STUB.cpp
 endif
 
 LIBRARIES = \

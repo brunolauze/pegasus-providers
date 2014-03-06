@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_EthernetAdapterProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_EthernetAdapter_AIX.cxx
+	SOURCES += UNIX_EthernetAdapter_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_EthernetAdapter_DARWIN.cxx
+	SOURCES += UNIX_EthernetAdapter_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_EthernetAdapter_FREEBSD.cxx
+	SOURCES += UNIX_EthernetAdapter_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_EthernetAdapter_HPUX.cxx
+	SOURCES += UNIX_EthernetAdapter_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_EthernetAdapter_LINUX.cxx
+	SOURCES += UNIX_EthernetAdapter_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_EthernetAdapter_SOLARIS.cxx
+	SOURCES += UNIX_EthernetAdapter_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_EthernetAdapter_TRU64.cxx
+	SOURCES += UNIX_EthernetAdapter_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_EthernetAdapter_VMS.cxx
+	SOURCES += UNIX_EthernetAdapter_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_EthernetAdapter_WIN32.cxx
+	SOURCES += UNIX_EthernetAdapter_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_EthernetAdapter_ZOS.cxx
+	SOURCES += UNIX_EthernetAdapter_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_EthernetAdapter_STUB.cxx
+	SOURCES += UNIX_EthernetAdapter_STUB.cpp
 endif
 
 
@@ -89,39 +89,39 @@ SOURCES += \
 	../EthernetPort/UNIX_EthernetPortProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCE += ../EthernetPort/UNIX_EthernetPort_AIX.cxx
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCE += ../EthernetPort/UNIX_EthernetPort_DARWIN.cxx
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += ../EthernetPort/UNIX_EthernetPort_FREEBSD.cxx
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCE += ../EthernetPort/UNIX_EthernetPort_HPUX.cxx
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCE += ../EthernetPort/UNIX_EthernetPort_LINUX.cxx
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCE += ../EthernetPort/UNIX_EthernetPort_SOLARIS.cxx
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCE += ../EthernetPort/UNIX_EthernetPort_TRU64.cxx
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCE += ../EthernetPort/UNIX_EthernetPort_VMS.cxx
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCE += ../EthernetPort/UNIX_EthernetPort_WIN32.cxx
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCE += ../EthernetPort/UNIX_EthernetPort_ZOS.cxx
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += ../EthernetPort/UNIX_EthernetPort_STUB.cxx
+	SOURCE += ../EthernetPort/UNIX_EthernetPort_STUB.cpp
 endif
 
 

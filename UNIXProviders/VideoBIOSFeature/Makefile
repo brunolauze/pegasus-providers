@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_VideoBIOSFeatureProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_VideoBIOSFeature_AIX.cxx
+	SOURCES += UNIX_VideoBIOSFeature_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_VideoBIOSFeature_DARWIN.cxx
+	SOURCES += UNIX_VideoBIOSFeature_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_VideoBIOSFeature_FREEBSD.cxx
+	SOURCES += UNIX_VideoBIOSFeature_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_VideoBIOSFeature_HPUX.cxx
+	SOURCES += UNIX_VideoBIOSFeature_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_VideoBIOSFeature_LINUX.cxx
+	SOURCES += UNIX_VideoBIOSFeature_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_VideoBIOSFeature_SOLARIS.cxx
+	SOURCES += UNIX_VideoBIOSFeature_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_VideoBIOSFeature_TRU64.cxx
+	SOURCES += UNIX_VideoBIOSFeature_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_VideoBIOSFeature_VMS.cxx
+	SOURCES += UNIX_VideoBIOSFeature_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_VideoBIOSFeature_WIN32.cxx
+	SOURCES += UNIX_VideoBIOSFeature_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_VideoBIOSFeature_ZOS.cxx
+	SOURCES += UNIX_VideoBIOSFeature_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_VideoBIOSFeature_STUB.cxx
+	SOURCES += UNIX_VideoBIOSFeature_STUB.cpp
 endif
 
 LIBRARIES = \

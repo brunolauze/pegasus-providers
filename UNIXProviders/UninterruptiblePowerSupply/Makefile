@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_UninterruptiblePowerSupplyProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_UninterruptiblePowerSupply_AIX.cxx
+	SOURCES += UNIX_UninterruptiblePowerSupply_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_UninterruptiblePowerSupply_DARWIN.cxx
+	SOURCES += UNIX_UninterruptiblePowerSupply_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_UninterruptiblePowerSupply_FREEBSD.cxx
+	SOURCES += UNIX_UninterruptiblePowerSupply_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_UninterruptiblePowerSupply_HPUX.cxx
+	SOURCES += UNIX_UninterruptiblePowerSupply_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_UninterruptiblePowerSupply_LINUX.cxx
+	SOURCES += UNIX_UninterruptiblePowerSupply_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_UninterruptiblePowerSupply_SOLARIS.cxx
+	SOURCES += UNIX_UninterruptiblePowerSupply_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_UninterruptiblePowerSupply_TRU64.cxx
+	SOURCES += UNIX_UninterruptiblePowerSupply_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_UninterruptiblePowerSupply_VMS.cxx
+	SOURCES += UNIX_UninterruptiblePowerSupply_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_UninterruptiblePowerSupply_WIN32.cxx
+	SOURCES += UNIX_UninterruptiblePowerSupply_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_UninterruptiblePowerSupply_ZOS.cxx
+	SOURCES += UNIX_UninterruptiblePowerSupply_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_UninterruptiblePowerSupply_STUB.cxx
+	SOURCES += UNIX_UninterruptiblePowerSupply_STUB.cpp
 endif
 
 LIBRARIES = \

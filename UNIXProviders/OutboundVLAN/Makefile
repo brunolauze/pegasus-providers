@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_OutboundVLANProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_OutboundVLAN_AIX.cxx
+	SOURCES += UNIX_OutboundVLAN_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_OutboundVLAN_DARWIN.cxx
+	SOURCES += UNIX_OutboundVLAN_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_OutboundVLAN_FREEBSD.cxx
+	SOURCES += UNIX_OutboundVLAN_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_OutboundVLAN_HPUX.cxx
+	SOURCES += UNIX_OutboundVLAN_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_OutboundVLAN_LINUX.cxx
+	SOURCES += UNIX_OutboundVLAN_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_OutboundVLAN_SOLARIS.cxx
+	SOURCES += UNIX_OutboundVLAN_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_OutboundVLAN_TRU64.cxx
+	SOURCES += UNIX_OutboundVLAN_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_OutboundVLAN_VMS.cxx
+	SOURCES += UNIX_OutboundVLAN_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_OutboundVLAN_WIN32.cxx
+	SOURCES += UNIX_OutboundVLAN_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_OutboundVLAN_ZOS.cxx
+	SOURCES += UNIX_OutboundVLAN_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_OutboundVLAN_STUB.cxx
+	SOURCES += UNIX_OutboundVLAN_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_RelatedTransparentBridgingServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_RelatedTransparentBridgingService_AIX.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_RelatedTransparentBridgingService_DARWIN.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_RelatedTransparentBridgingService_FREEBSD.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_RelatedTransparentBridgingService_HPUX.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_RelatedTransparentBridgingService_LINUX.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_RelatedTransparentBridgingService_SOLARIS.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_RelatedTransparentBridgingService_TRU64.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_RelatedTransparentBridgingService_VMS.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_RelatedTransparentBridgingService_WIN32.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_RelatedTransparentBridgingService_ZOS.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_RelatedTransparentBridgingService_STUB.cxx
+	SOURCES += UNIX_RelatedTransparentBridgingService_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ApplicationSystemDependencyProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ApplicationSystemDependency_AIX.cxx
+	SOURCES += UNIX_ApplicationSystemDependency_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ApplicationSystemDependency_DARWIN.cxx
+	SOURCES += UNIX_ApplicationSystemDependency_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ApplicationSystemDependency_FREEBSD.cxx
+	SOURCES += UNIX_ApplicationSystemDependency_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ApplicationSystemDependency_HPUX.cxx
+	SOURCES += UNIX_ApplicationSystemDependency_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ApplicationSystemDependency_LINUX.cxx
+	SOURCES += UNIX_ApplicationSystemDependency_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ApplicationSystemDependency_SOLARIS.cxx
+	SOURCES += UNIX_ApplicationSystemDependency_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ApplicationSystemDependency_TRU64.cxx
+	SOURCES += UNIX_ApplicationSystemDependency_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ApplicationSystemDependency_VMS.cxx
+	SOURCES += UNIX_ApplicationSystemDependency_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ApplicationSystemDependency_WIN32.cxx
+	SOURCES += UNIX_ApplicationSystemDependency_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ApplicationSystemDependency_ZOS.cxx
+	SOURCES += UNIX_ApplicationSystemDependency_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ApplicationSystemDependency_STUB.cxx
+	SOURCES += UNIX_ApplicationSystemDependency_STUB.cpp
 endif
 
 LIBRARIES = \

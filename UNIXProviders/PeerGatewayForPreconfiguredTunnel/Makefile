@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PeerGatewayForPreconfiguredTunnelProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_AIX.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_DARWIN.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_FREEBSD.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_HPUX.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_LINUX.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_SOLARIS.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_TRU64.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_VMS.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_WIN32.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_ZOS.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_STUB.cxx
+	SOURCES += UNIX_PeerGatewayForPreconfiguredTunnel_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_LLDPEthernetPortProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_LLDPEthernetPort_AIX.cxx
+	SOURCES += UNIX_LLDPEthernetPort_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_LLDPEthernetPort_DARWIN.cxx
+	SOURCES += UNIX_LLDPEthernetPort_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_LLDPEthernetPort_FREEBSD.cxx
+	SOURCES += UNIX_LLDPEthernetPort_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_LLDPEthernetPort_HPUX.cxx
+	SOURCES += UNIX_LLDPEthernetPort_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_LLDPEthernetPort_LINUX.cxx
+	SOURCES += UNIX_LLDPEthernetPort_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_LLDPEthernetPort_SOLARIS.cxx
+	SOURCES += UNIX_LLDPEthernetPort_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_LLDPEthernetPort_TRU64.cxx
+	SOURCES += UNIX_LLDPEthernetPort_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_LLDPEthernetPort_VMS.cxx
+	SOURCES += UNIX_LLDPEthernetPort_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_LLDPEthernetPort_WIN32.cxx
+	SOURCES += UNIX_LLDPEthernetPort_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_LLDPEthernetPort_ZOS.cxx
+	SOURCES += UNIX_LLDPEthernetPort_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_LLDPEthernetPort_STUB.cxx
+	SOURCES += UNIX_LLDPEthernetPort_STUB.cpp
 endif
 
 LIBRARIES = \

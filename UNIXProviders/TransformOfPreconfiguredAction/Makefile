@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_TransformOfPreconfiguredActionProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_TransformOfPreconfiguredAction_AIX.cxx
+	SOURCES += UNIX_TransformOfPreconfiguredAction_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_TransformOfPreconfiguredAction_DARWIN.cxx
+	SOURCES += UNIX_TransformOfPreconfiguredAction_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_TransformOfPreconfiguredAction_FREEBSD.cxx
+	SOURCES += UNIX_TransformOfPreconfiguredAction_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_TransformOfPreconfiguredAction_HPUX.cxx
+	SOURCES += UNIX_TransformOfPreconfiguredAction_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_TransformOfPreconfiguredAction_LINUX.cxx
+	SOURCES += UNIX_TransformOfPreconfiguredAction_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_TransformOfPreconfiguredAction_SOLARIS.cxx
+	SOURCES += UNIX_TransformOfPreconfiguredAction_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_TransformOfPreconfiguredAction_TRU64.cxx
+	SOURCES += UNIX_TransformOfPreconfiguredAction_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_TransformOfPreconfiguredAction_VMS.cxx
+	SOURCES += UNIX_TransformOfPreconfiguredAction_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_TransformOfPreconfiguredAction_WIN32.cxx
+	SOURCES += UNIX_TransformOfPreconfiguredAction_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_TransformOfPreconfiguredAction_ZOS.cxx
+	SOURCES += UNIX_TransformOfPreconfiguredAction_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_TransformOfPreconfiguredAction_STUB.cxx
+	SOURCES += UNIX_TransformOfPreconfiguredAction_STUB.cpp
 endif
 
 LIBRARIES = \

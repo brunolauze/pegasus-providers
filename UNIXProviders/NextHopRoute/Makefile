@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_NextHopRouteProvider.cpp \
 	UNIX_NextHopRouteMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_NextHopRoute_AIX.cxx
+	SOURCES += UNIX_NextHopRoute_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_NextHopRoute_DARWIN.cxx
+	SOURCES += UNIX_NextHopRoute_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_NextHopRoute_FREEBSD.cxx
+	SOURCES += UNIX_NextHopRoute_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_NextHopRoute_HPUX.cxx
+	SOURCES += UNIX_NextHopRoute_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_NextHopRoute_LINUX.cxx
+	SOURCES += UNIX_NextHopRoute_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_NextHopRoute_SOLARIS.cxx
+	SOURCES += UNIX_NextHopRoute_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_NextHopRoute_TRU64.cxx
+	SOURCES += UNIX_NextHopRoute_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_NextHopRoute_VMS.cxx
+	SOURCES += UNIX_NextHopRoute_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_NextHopRoute_WIN32.cxx
+	SOURCES += UNIX_NextHopRoute_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_NextHopRoute_ZOS.cxx
+	SOURCES += UNIX_NextHopRoute_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_NextHopRoute_STUB.cxx
+	SOURCES += UNIX_NextHopRoute_STUB.cpp
 endif
 
 LIBRARIES = \

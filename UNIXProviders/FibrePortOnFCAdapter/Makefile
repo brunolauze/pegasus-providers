@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_FibrePortOnFCAdapterProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_FibrePortOnFCAdapter_AIX.cxx
+	SOURCES += UNIX_FibrePortOnFCAdapter_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_FibrePortOnFCAdapter_DARWIN.cxx
+	SOURCES += UNIX_FibrePortOnFCAdapter_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_FibrePortOnFCAdapter_FREEBSD.cxx
+	SOURCES += UNIX_FibrePortOnFCAdapter_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_FibrePortOnFCAdapter_HPUX.cxx
+	SOURCES += UNIX_FibrePortOnFCAdapter_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_FibrePortOnFCAdapter_LINUX.cxx
+	SOURCES += UNIX_FibrePortOnFCAdapter_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_FibrePortOnFCAdapter_SOLARIS.cxx
+	SOURCES += UNIX_FibrePortOnFCAdapter_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_FibrePortOnFCAdapter_TRU64.cxx
+	SOURCES += UNIX_FibrePortOnFCAdapter_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_FibrePortOnFCAdapter_VMS.cxx
+	SOURCES += UNIX_FibrePortOnFCAdapter_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_FibrePortOnFCAdapter_WIN32.cxx
+	SOURCES += UNIX_FibrePortOnFCAdapter_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_FibrePortOnFCAdapter_ZOS.cxx
+	SOURCES += UNIX_FibrePortOnFCAdapter_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_FibrePortOnFCAdapter_STUB.cxx
+	SOURCES += UNIX_FibrePortOnFCAdapter_STUB.cpp
 endif
 
 LIBRARIES = \

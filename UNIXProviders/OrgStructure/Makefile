@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_OrgStructureProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_OrgStructure_AIX.cxx
+	SOURCES += UNIX_OrgStructure_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_OrgStructure_DARWIN.cxx
+	SOURCES += UNIX_OrgStructure_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_OrgStructure_FREEBSD.cxx
+	SOURCES += UNIX_OrgStructure_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_OrgStructure_HPUX.cxx
+	SOURCES += UNIX_OrgStructure_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_OrgStructure_LINUX.cxx
+	SOURCES += UNIX_OrgStructure_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_OrgStructure_SOLARIS.cxx
+	SOURCES += UNIX_OrgStructure_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_OrgStructure_TRU64.cxx
+	SOURCES += UNIX_OrgStructure_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_OrgStructure_VMS.cxx
+	SOURCES += UNIX_OrgStructure_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_OrgStructure_WIN32.cxx
+	SOURCES += UNIX_OrgStructure_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_OrgStructure_ZOS.cxx
+	SOURCES += UNIX_OrgStructure_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_OrgStructure_STUB.cxx
+	SOURCES += UNIX_OrgStructure_STUB.cpp
 endif
 
 LIBRARIES = \

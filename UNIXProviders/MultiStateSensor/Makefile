@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_MultiStateSensorProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_MultiStateSensor_AIX.cxx
+	SOURCES += UNIX_MultiStateSensor_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_MultiStateSensor_DARWIN.cxx
+	SOURCES += UNIX_MultiStateSensor_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_MultiStateSensor_FREEBSD.cxx
+	SOURCES += UNIX_MultiStateSensor_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_MultiStateSensor_HPUX.cxx
+	SOURCES += UNIX_MultiStateSensor_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_MultiStateSensor_LINUX.cxx
+	SOURCES += UNIX_MultiStateSensor_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_MultiStateSensor_SOLARIS.cxx
+	SOURCES += UNIX_MultiStateSensor_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_MultiStateSensor_TRU64.cxx
+	SOURCES += UNIX_MultiStateSensor_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_MultiStateSensor_VMS.cxx
+	SOURCES += UNIX_MultiStateSensor_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_MultiStateSensor_WIN32.cxx
+	SOURCES += UNIX_MultiStateSensor_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_MultiStateSensor_ZOS.cxx
+	SOURCES += UNIX_MultiStateSensor_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_MultiStateSensor_STUB.cxx
+	SOURCES += UNIX_MultiStateSensor_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ProcessorCoreProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ProcessorCore_AIX.cxx
+	SOURCES += UNIX_ProcessorCore_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ProcessorCore_DARWIN.cxx
+	SOURCES += UNIX_ProcessorCore_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ProcessorCore_FREEBSD.cxx
+	SOURCES += UNIX_ProcessorCore_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ProcessorCore_HPUX.cxx
+	SOURCES += UNIX_ProcessorCore_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ProcessorCore_LINUX.cxx
+	SOURCES += UNIX_ProcessorCore_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ProcessorCore_SOLARIS.cxx
+	SOURCES += UNIX_ProcessorCore_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ProcessorCore_TRU64.cxx
+	SOURCES += UNIX_ProcessorCore_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ProcessorCore_VMS.cxx
+	SOURCES += UNIX_ProcessorCore_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ProcessorCore_WIN32.cxx
+	SOURCES += UNIX_ProcessorCore_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ProcessorCore_ZOS.cxx
+	SOURCES += UNIX_ProcessorCore_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ProcessorCore_STUB.cxx
+	SOURCES += UNIX_ProcessorCore_STUB.cpp
 endif
 
 LIBRARIES = \

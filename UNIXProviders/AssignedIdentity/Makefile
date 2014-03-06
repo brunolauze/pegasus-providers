@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_AssignedIdentityProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_AssignedIdentity_AIX.cxx
+	SOURCES += UNIX_AssignedIdentity_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_AssignedIdentity_DARWIN.cxx
+	SOURCES += UNIX_AssignedIdentity_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_AssignedIdentity_FREEBSD.cxx
+	SOURCES += UNIX_AssignedIdentity_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_AssignedIdentity_HPUX.cxx
+	SOURCES += UNIX_AssignedIdentity_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_AssignedIdentity_LINUX.cxx
+	SOURCES += UNIX_AssignedIdentity_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_AssignedIdentity_SOLARIS.cxx
+	SOURCES += UNIX_AssignedIdentity_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_AssignedIdentity_TRU64.cxx
+	SOURCES += UNIX_AssignedIdentity_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_AssignedIdentity_VMS.cxx
+	SOURCES += UNIX_AssignedIdentity_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_AssignedIdentity_WIN32.cxx
+	SOURCES += UNIX_AssignedIdentity_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_AssignedIdentity_ZOS.cxx
+	SOURCES += UNIX_AssignedIdentity_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_AssignedIdentity_STUB.cxx
+	SOURCES += UNIX_AssignedIdentity_STUB.cpp
 endif
 
 LIBRARIES = \

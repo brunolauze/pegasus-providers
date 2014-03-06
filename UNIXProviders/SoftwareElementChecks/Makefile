@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_SoftwareElementChecksProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_SoftwareElementChecks_AIX.cxx
+	SOURCES += UNIX_SoftwareElementChecks_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_SoftwareElementChecks_DARWIN.cxx
+	SOURCES += UNIX_SoftwareElementChecks_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_SoftwareElementChecks_FREEBSD.cxx
+	SOURCES += UNIX_SoftwareElementChecks_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_SoftwareElementChecks_HPUX.cxx
+	SOURCES += UNIX_SoftwareElementChecks_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_SoftwareElementChecks_LINUX.cxx
+	SOURCES += UNIX_SoftwareElementChecks_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_SoftwareElementChecks_SOLARIS.cxx
+	SOURCES += UNIX_SoftwareElementChecks_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_SoftwareElementChecks_TRU64.cxx
+	SOURCES += UNIX_SoftwareElementChecks_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_SoftwareElementChecks_VMS.cxx
+	SOURCES += UNIX_SoftwareElementChecks_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_SoftwareElementChecks_WIN32.cxx
+	SOURCES += UNIX_SoftwareElementChecks_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_SoftwareElementChecks_ZOS.cxx
+	SOURCES += UNIX_SoftwareElementChecks_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_SoftwareElementChecks_STUB.cxx
+	SOURCES += UNIX_SoftwareElementChecks_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ServiceAvailableToElementProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ServiceAvailableToElement_AIX.cxx
+	SOURCES += UNIX_ServiceAvailableToElement_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ServiceAvailableToElement_DARWIN.cxx
+	SOURCES += UNIX_ServiceAvailableToElement_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ServiceAvailableToElement_FREEBSD.cxx
+	SOURCES += UNIX_ServiceAvailableToElement_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ServiceAvailableToElement_HPUX.cxx
+	SOURCES += UNIX_ServiceAvailableToElement_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ServiceAvailableToElement_LINUX.cxx
+	SOURCES += UNIX_ServiceAvailableToElement_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ServiceAvailableToElement_SOLARIS.cxx
+	SOURCES += UNIX_ServiceAvailableToElement_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ServiceAvailableToElement_TRU64.cxx
+	SOURCES += UNIX_ServiceAvailableToElement_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ServiceAvailableToElement_VMS.cxx
+	SOURCES += UNIX_ServiceAvailableToElement_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ServiceAvailableToElement_WIN32.cxx
+	SOURCES += UNIX_ServiceAvailableToElement_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ServiceAvailableToElement_ZOS.cxx
+	SOURCES += UNIX_ServiceAvailableToElement_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ServiceAvailableToElement_STUB.cxx
+	SOURCES += UNIX_ServiceAvailableToElement_STUB.cpp
 endif
 
 LIBRARIES = \

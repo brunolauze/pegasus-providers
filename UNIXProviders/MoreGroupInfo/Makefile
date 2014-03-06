@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_MoreGroupInfoProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_MoreGroupInfo_AIX.cxx
+	SOURCES += UNIX_MoreGroupInfo_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_MoreGroupInfo_DARWIN.cxx
+	SOURCES += UNIX_MoreGroupInfo_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_MoreGroupInfo_FREEBSD.cxx
+	SOURCES += UNIX_MoreGroupInfo_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_MoreGroupInfo_HPUX.cxx
+	SOURCES += UNIX_MoreGroupInfo_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_MoreGroupInfo_LINUX.cxx
+	SOURCES += UNIX_MoreGroupInfo_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_MoreGroupInfo_SOLARIS.cxx
+	SOURCES += UNIX_MoreGroupInfo_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_MoreGroupInfo_TRU64.cxx
+	SOURCES += UNIX_MoreGroupInfo_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_MoreGroupInfo_VMS.cxx
+	SOURCES += UNIX_MoreGroupInfo_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_MoreGroupInfo_WIN32.cxx
+	SOURCES += UNIX_MoreGroupInfo_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_MoreGroupInfo_ZOS.cxx
+	SOURCES += UNIX_MoreGroupInfo_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_MoreGroupInfo_STUB.cxx
+	SOURCES += UNIX_MoreGroupInfo_STUB.cpp
 endif
 
 LIBRARIES = \

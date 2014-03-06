@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ResidesOnExtentProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ResidesOnExtent_AIX.cxx
+	SOURCES += UNIX_ResidesOnExtent_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ResidesOnExtent_DARWIN.cxx
+	SOURCES += UNIX_ResidesOnExtent_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ResidesOnExtent_FREEBSD.cxx
+	SOURCES += UNIX_ResidesOnExtent_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ResidesOnExtent_HPUX.cxx
+	SOURCES += UNIX_ResidesOnExtent_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ResidesOnExtent_LINUX.cxx
+	SOURCES += UNIX_ResidesOnExtent_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ResidesOnExtent_SOLARIS.cxx
+	SOURCES += UNIX_ResidesOnExtent_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ResidesOnExtent_TRU64.cxx
+	SOURCES += UNIX_ResidesOnExtent_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ResidesOnExtent_VMS.cxx
+	SOURCES += UNIX_ResidesOnExtent_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ResidesOnExtent_WIN32.cxx
+	SOURCES += UNIX_ResidesOnExtent_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ResidesOnExtent_ZOS.cxx
+	SOURCES += UNIX_ResidesOnExtent_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ResidesOnExtent_STUB.cxx
+	SOURCES += UNIX_ResidesOnExtent_STUB.cpp
 endif
 
 LIBRARIES = \

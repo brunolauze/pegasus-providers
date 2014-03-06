@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_NetworkPortCapabilitiesProvider.cpp \
 	UNIX_NetworkPortCapabilitiesMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_NetworkPortCapabilities_AIX.cxx
+	SOURCES += UNIX_NetworkPortCapabilities_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_NetworkPortCapabilities_DARWIN.cxx
+	SOURCES += UNIX_NetworkPortCapabilities_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_NetworkPortCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_NetworkPortCapabilities_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_NetworkPortCapabilities_HPUX.cxx
+	SOURCES += UNIX_NetworkPortCapabilities_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_NetworkPortCapabilities_LINUX.cxx
+	SOURCES += UNIX_NetworkPortCapabilities_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_NetworkPortCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_NetworkPortCapabilities_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_NetworkPortCapabilities_TRU64.cxx
+	SOURCES += UNIX_NetworkPortCapabilities_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_NetworkPortCapabilities_VMS.cxx
+	SOURCES += UNIX_NetworkPortCapabilities_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_NetworkPortCapabilities_WIN32.cxx
+	SOURCES += UNIX_NetworkPortCapabilities_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_NetworkPortCapabilities_ZOS.cxx
+	SOURCES += UNIX_NetworkPortCapabilities_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_NetworkPortCapabilities_STUB.cxx
+	SOURCES += UNIX_NetworkPortCapabilities_STUB.cpp
 endif
 
 LIBRARIES = \

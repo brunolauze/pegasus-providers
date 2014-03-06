@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PublicPrivateKeyAuthenticationProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PublicPrivateKeyAuthentication_AIX.cxx
+	SOURCES += UNIX_PublicPrivateKeyAuthentication_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PublicPrivateKeyAuthentication_DARWIN.cxx
+	SOURCES += UNIX_PublicPrivateKeyAuthentication_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PublicPrivateKeyAuthentication_FREEBSD.cxx
+	SOURCES += UNIX_PublicPrivateKeyAuthentication_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PublicPrivateKeyAuthentication_HPUX.cxx
+	SOURCES += UNIX_PublicPrivateKeyAuthentication_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PublicPrivateKeyAuthentication_LINUX.cxx
+	SOURCES += UNIX_PublicPrivateKeyAuthentication_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PublicPrivateKeyAuthentication_SOLARIS.cxx
+	SOURCES += UNIX_PublicPrivateKeyAuthentication_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PublicPrivateKeyAuthentication_TRU64.cxx
+	SOURCES += UNIX_PublicPrivateKeyAuthentication_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PublicPrivateKeyAuthentication_VMS.cxx
+	SOURCES += UNIX_PublicPrivateKeyAuthentication_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PublicPrivateKeyAuthentication_WIN32.cxx
+	SOURCES += UNIX_PublicPrivateKeyAuthentication_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PublicPrivateKeyAuthentication_ZOS.cxx
+	SOURCES += UNIX_PublicPrivateKeyAuthentication_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PublicPrivateKeyAuthentication_STUB.cxx
+	SOURCES += UNIX_PublicPrivateKeyAuthentication_STUB.cpp
 endif
 
 LIBRARIES = \

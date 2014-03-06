@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_LogInDeviceFileProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_LogInDeviceFile_AIX.cxx
+	SOURCES += UNIX_LogInDeviceFile_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_LogInDeviceFile_DARWIN.cxx
+	SOURCES += UNIX_LogInDeviceFile_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_LogInDeviceFile_FREEBSD.cxx
+	SOURCES += UNIX_LogInDeviceFile_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_LogInDeviceFile_HPUX.cxx
+	SOURCES += UNIX_LogInDeviceFile_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_LogInDeviceFile_LINUX.cxx
+	SOURCES += UNIX_LogInDeviceFile_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_LogInDeviceFile_SOLARIS.cxx
+	SOURCES += UNIX_LogInDeviceFile_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_LogInDeviceFile_TRU64.cxx
+	SOURCES += UNIX_LogInDeviceFile_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_LogInDeviceFile_VMS.cxx
+	SOURCES += UNIX_LogInDeviceFile_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_LogInDeviceFile_WIN32.cxx
+	SOURCES += UNIX_LogInDeviceFile_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_LogInDeviceFile_ZOS.cxx
+	SOURCES += UNIX_LogInDeviceFile_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_LogInDeviceFile_STUB.cxx
+	SOURCES += UNIX_LogInDeviceFile_STUB.cpp
 endif
 
 LIBRARIES = \

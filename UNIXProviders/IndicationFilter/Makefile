@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_IndicationFilterProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_IndicationFilter_AIX.cxx
+	SOURCES += UNIX_IndicationFilter_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_IndicationFilter_DARWIN.cxx
+	SOURCES += UNIX_IndicationFilter_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_IndicationFilter_FREEBSD.cxx
+	SOURCES += UNIX_IndicationFilter_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_IndicationFilter_HPUX.cxx
+	SOURCES += UNIX_IndicationFilter_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_IndicationFilter_LINUX.cxx
+	SOURCES += UNIX_IndicationFilter_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_IndicationFilter_SOLARIS.cxx
+	SOURCES += UNIX_IndicationFilter_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_IndicationFilter_TRU64.cxx
+	SOURCES += UNIX_IndicationFilter_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_IndicationFilter_VMS.cxx
+	SOURCES += UNIX_IndicationFilter_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_IndicationFilter_WIN32.cxx
+	SOURCES += UNIX_IndicationFilter_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_IndicationFilter_ZOS.cxx
+	SOURCES += UNIX_IndicationFilter_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_IndicationFilter_STUB.cxx
+	SOURCES += UNIX_IndicationFilter_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_AllocatedFromStoragePoolProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_AllocatedFromStoragePool_AIX.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_AllocatedFromStoragePool_DARWIN.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_AllocatedFromStoragePool_FREEBSD.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_AllocatedFromStoragePool_HPUX.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_AllocatedFromStoragePool_LINUX.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_AllocatedFromStoragePool_SOLARIS.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_AllocatedFromStoragePool_TRU64.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_AllocatedFromStoragePool_VMS.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_AllocatedFromStoragePool_WIN32.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_AllocatedFromStoragePool_ZOS.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_AllocatedFromStoragePool_STUB.cxx
+	SOURCES += UNIX_AllocatedFromStoragePool_STUB.cpp
 endif
 
 LIBRARIES = \

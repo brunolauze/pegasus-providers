@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_HostedBGPRouteMapProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_HostedBGPRouteMap_AIX.cxx
+	SOURCES += UNIX_HostedBGPRouteMap_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_HostedBGPRouteMap_DARWIN.cxx
+	SOURCES += UNIX_HostedBGPRouteMap_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_HostedBGPRouteMap_FREEBSD.cxx
+	SOURCES += UNIX_HostedBGPRouteMap_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_HostedBGPRouteMap_HPUX.cxx
+	SOURCES += UNIX_HostedBGPRouteMap_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_HostedBGPRouteMap_LINUX.cxx
+	SOURCES += UNIX_HostedBGPRouteMap_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_HostedBGPRouteMap_SOLARIS.cxx
+	SOURCES += UNIX_HostedBGPRouteMap_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_HostedBGPRouteMap_TRU64.cxx
+	SOURCES += UNIX_HostedBGPRouteMap_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_HostedBGPRouteMap_VMS.cxx
+	SOURCES += UNIX_HostedBGPRouteMap_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_HostedBGPRouteMap_WIN32.cxx
+	SOURCES += UNIX_HostedBGPRouteMap_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_HostedBGPRouteMap_ZOS.cxx
+	SOURCES += UNIX_HostedBGPRouteMap_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_HostedBGPRouteMap_STUB.cxx
+	SOURCES += UNIX_HostedBGPRouteMap_STUB.cpp
 endif
 
 LIBRARIES = \

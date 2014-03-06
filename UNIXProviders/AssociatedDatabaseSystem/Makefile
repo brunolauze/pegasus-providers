@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_AssociatedDatabaseSystemProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_AssociatedDatabaseSystem_AIX.cxx
+	SOURCES += UNIX_AssociatedDatabaseSystem_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_AssociatedDatabaseSystem_DARWIN.cxx
+	SOURCES += UNIX_AssociatedDatabaseSystem_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_AssociatedDatabaseSystem_FREEBSD.cxx
+	SOURCES += UNIX_AssociatedDatabaseSystem_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_AssociatedDatabaseSystem_HPUX.cxx
+	SOURCES += UNIX_AssociatedDatabaseSystem_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_AssociatedDatabaseSystem_LINUX.cxx
+	SOURCES += UNIX_AssociatedDatabaseSystem_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_AssociatedDatabaseSystem_SOLARIS.cxx
+	SOURCES += UNIX_AssociatedDatabaseSystem_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_AssociatedDatabaseSystem_TRU64.cxx
+	SOURCES += UNIX_AssociatedDatabaseSystem_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_AssociatedDatabaseSystem_VMS.cxx
+	SOURCES += UNIX_AssociatedDatabaseSystem_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_AssociatedDatabaseSystem_WIN32.cxx
+	SOURCES += UNIX_AssociatedDatabaseSystem_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_AssociatedDatabaseSystem_ZOS.cxx
+	SOURCES += UNIX_AssociatedDatabaseSystem_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_AssociatedDatabaseSystem_STUB.cxx
+	SOURCES += UNIX_AssociatedDatabaseSystem_STUB.cpp
 endif
 
 LIBRARIES = \

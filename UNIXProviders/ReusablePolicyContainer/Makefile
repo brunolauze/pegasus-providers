@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ReusablePolicyContainerProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ReusablePolicyContainer_AIX.cxx
+	SOURCES += UNIX_ReusablePolicyContainer_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ReusablePolicyContainer_DARWIN.cxx
+	SOURCES += UNIX_ReusablePolicyContainer_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ReusablePolicyContainer_FREEBSD.cxx
+	SOURCES += UNIX_ReusablePolicyContainer_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ReusablePolicyContainer_HPUX.cxx
+	SOURCES += UNIX_ReusablePolicyContainer_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ReusablePolicyContainer_LINUX.cxx
+	SOURCES += UNIX_ReusablePolicyContainer_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ReusablePolicyContainer_SOLARIS.cxx
+	SOURCES += UNIX_ReusablePolicyContainer_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ReusablePolicyContainer_TRU64.cxx
+	SOURCES += UNIX_ReusablePolicyContainer_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ReusablePolicyContainer_VMS.cxx
+	SOURCES += UNIX_ReusablePolicyContainer_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ReusablePolicyContainer_WIN32.cxx
+	SOURCES += UNIX_ReusablePolicyContainer_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ReusablePolicyContainer_ZOS.cxx
+	SOURCES += UNIX_ReusablePolicyContainer_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ReusablePolicyContainer_STUB.cxx
+	SOURCES += UNIX_ReusablePolicyContainer_STUB.cpp
 endif
 
 LIBRARIES = \

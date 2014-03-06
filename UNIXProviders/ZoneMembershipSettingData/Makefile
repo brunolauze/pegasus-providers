@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ZoneMembershipSettingDataProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ZoneMembershipSettingData_AIX.cxx
+	SOURCES += UNIX_ZoneMembershipSettingData_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ZoneMembershipSettingData_DARWIN.cxx
+	SOURCES += UNIX_ZoneMembershipSettingData_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ZoneMembershipSettingData_FREEBSD.cxx
+	SOURCES += UNIX_ZoneMembershipSettingData_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ZoneMembershipSettingData_HPUX.cxx
+	SOURCES += UNIX_ZoneMembershipSettingData_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ZoneMembershipSettingData_LINUX.cxx
+	SOURCES += UNIX_ZoneMembershipSettingData_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ZoneMembershipSettingData_SOLARIS.cxx
+	SOURCES += UNIX_ZoneMembershipSettingData_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ZoneMembershipSettingData_TRU64.cxx
+	SOURCES += UNIX_ZoneMembershipSettingData_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ZoneMembershipSettingData_VMS.cxx
+	SOURCES += UNIX_ZoneMembershipSettingData_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ZoneMembershipSettingData_WIN32.cxx
+	SOURCES += UNIX_ZoneMembershipSettingData_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ZoneMembershipSettingData_ZOS.cxx
+	SOURCES += UNIX_ZoneMembershipSettingData_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ZoneMembershipSettingData_STUB.cxx
+	SOURCES += UNIX_ZoneMembershipSettingData_STUB.cpp
 endif
 
 LIBRARIES = \

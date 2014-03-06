@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_CollectedCollectionsProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_CollectedCollections_AIX.cxx
+	SOURCES += UNIX_CollectedCollections_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_CollectedCollections_DARWIN.cxx
+	SOURCES += UNIX_CollectedCollections_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_CollectedCollections_FREEBSD.cxx
+	SOURCES += UNIX_CollectedCollections_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_CollectedCollections_HPUX.cxx
+	SOURCES += UNIX_CollectedCollections_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_CollectedCollections_LINUX.cxx
+	SOURCES += UNIX_CollectedCollections_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_CollectedCollections_SOLARIS.cxx
+	SOURCES += UNIX_CollectedCollections_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_CollectedCollections_TRU64.cxx
+	SOURCES += UNIX_CollectedCollections_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_CollectedCollections_VMS.cxx
+	SOURCES += UNIX_CollectedCollections_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_CollectedCollections_WIN32.cxx
+	SOURCES += UNIX_CollectedCollections_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_CollectedCollections_ZOS.cxx
+	SOURCES += UNIX_CollectedCollections_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_CollectedCollections_STUB.cxx
+	SOURCES += UNIX_CollectedCollections_STUB.cpp
 endif
 
 LIBRARIES = \

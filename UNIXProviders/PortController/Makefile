@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PortControllerProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PortController_AIX.cxx
+	SOURCES += UNIX_PortController_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PortController_DARWIN.cxx
+	SOURCES += UNIX_PortController_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PortController_FREEBSD.cxx
+	SOURCES += UNIX_PortController_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PortController_HPUX.cxx
+	SOURCES += UNIX_PortController_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PortController_LINUX.cxx
+	SOURCES += UNIX_PortController_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PortController_SOLARIS.cxx
+	SOURCES += UNIX_PortController_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PortController_TRU64.cxx
+	SOURCES += UNIX_PortController_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PortController_VMS.cxx
+	SOURCES += UNIX_PortController_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PortController_WIN32.cxx
+	SOURCES += UNIX_PortController_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PortController_ZOS.cxx
+	SOURCES += UNIX_PortController_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PortController_STUB.cxx
+	SOURCES += UNIX_PortController_STUB.cpp
 endif
 
 LIBRARIES = \

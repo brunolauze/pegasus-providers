@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_InstDeletionProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_InstDeletion_AIX.cxx
+	SOURCES += UNIX_InstDeletion_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_InstDeletion_DARWIN.cxx
+	SOURCES += UNIX_InstDeletion_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_InstDeletion_FREEBSD.cxx
+	SOURCES += UNIX_InstDeletion_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_InstDeletion_HPUX.cxx
+	SOURCES += UNIX_InstDeletion_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_InstDeletion_LINUX.cxx
+	SOURCES += UNIX_InstDeletion_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_InstDeletion_SOLARIS.cxx
+	SOURCES += UNIX_InstDeletion_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_InstDeletion_TRU64.cxx
+	SOURCES += UNIX_InstDeletion_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_InstDeletion_VMS.cxx
+	SOURCES += UNIX_InstDeletion_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_InstDeletion_WIN32.cxx
+	SOURCES += UNIX_InstDeletion_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_InstDeletion_ZOS.cxx
+	SOURCES += UNIX_InstDeletion_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_InstDeletion_STUB.cxx
+	SOURCES += UNIX_InstDeletion_STUB.cpp
 endif
 
 LIBRARIES = \

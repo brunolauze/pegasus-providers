@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_SoftwareIdentityProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_SoftwareIdentity_AIX.cxx
+	SOURCES += UNIX_SoftwareIdentity_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_SoftwareIdentity_DARWIN.cxx
+	SOURCES += UNIX_SoftwareIdentity_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_SoftwareIdentity_FREEBSD.cxx
+	SOURCES += UNIX_SoftwareIdentity_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_SoftwareIdentity_HPUX.cxx
+	SOURCES += UNIX_SoftwareIdentity_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_SoftwareIdentity_LINUX.cxx
+	SOURCES += UNIX_SoftwareIdentity_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_SoftwareIdentity_SOLARIS.cxx
+	SOURCES += UNIX_SoftwareIdentity_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_SoftwareIdentity_TRU64.cxx
+	SOURCES += UNIX_SoftwareIdentity_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_SoftwareIdentity_VMS.cxx
+	SOURCES += UNIX_SoftwareIdentity_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_SoftwareIdentity_WIN32.cxx
+	SOURCES += UNIX_SoftwareIdentity_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_SoftwareIdentity_ZOS.cxx
+	SOURCES += UNIX_SoftwareIdentity_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_SoftwareIdentity_STUB.cxx
+	SOURCES += UNIX_SoftwareIdentity_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_CollectedSoftwareFeaturesProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_CollectedSoftwareFeatures_AIX.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_CollectedSoftwareFeatures_DARWIN.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_CollectedSoftwareFeatures_FREEBSD.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_CollectedSoftwareFeatures_HPUX.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_CollectedSoftwareFeatures_LINUX.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_CollectedSoftwareFeatures_SOLARIS.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_CollectedSoftwareFeatures_TRU64.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_CollectedSoftwareFeatures_VMS.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_CollectedSoftwareFeatures_WIN32.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_CollectedSoftwareFeatures_ZOS.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_CollectedSoftwareFeatures_STUB.cxx
+	SOURCES += UNIX_CollectedSoftwareFeatures_STUB.cpp
 endif
 
 LIBRARIES = \

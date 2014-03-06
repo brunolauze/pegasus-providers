@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_LinkHasConnectorProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_LinkHasConnector_AIX.cxx
+	SOURCES += UNIX_LinkHasConnector_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_LinkHasConnector_DARWIN.cxx
+	SOURCES += UNIX_LinkHasConnector_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_LinkHasConnector_FREEBSD.cxx
+	SOURCES += UNIX_LinkHasConnector_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_LinkHasConnector_HPUX.cxx
+	SOURCES += UNIX_LinkHasConnector_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_LinkHasConnector_LINUX.cxx
+	SOURCES += UNIX_LinkHasConnector_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_LinkHasConnector_SOLARIS.cxx
+	SOURCES += UNIX_LinkHasConnector_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_LinkHasConnector_TRU64.cxx
+	SOURCES += UNIX_LinkHasConnector_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_LinkHasConnector_VMS.cxx
+	SOURCES += UNIX_LinkHasConnector_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_LinkHasConnector_WIN32.cxx
+	SOURCES += UNIX_LinkHasConnector_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_LinkHasConnector_ZOS.cxx
+	SOURCES += UNIX_LinkHasConnector_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_LinkHasConnector_STUB.cxx
+	SOURCES += UNIX_LinkHasConnector_STUB.cpp
 endif
 
 LIBRARIES = \

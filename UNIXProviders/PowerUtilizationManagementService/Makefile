@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PowerUtilizationManagementServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PowerUtilizationManagementService_AIX.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PowerUtilizationManagementService_DARWIN.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PowerUtilizationManagementService_FREEBSD.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PowerUtilizationManagementService_HPUX.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PowerUtilizationManagementService_LINUX.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PowerUtilizationManagementService_SOLARIS.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PowerUtilizationManagementService_TRU64.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PowerUtilizationManagementService_VMS.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PowerUtilizationManagementService_WIN32.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PowerUtilizationManagementService_ZOS.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PowerUtilizationManagementService_STUB.cxx
+	SOURCES += UNIX_PowerUtilizationManagementService_STUB.cpp
 endif
 
 LIBRARIES = \

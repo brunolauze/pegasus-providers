@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_PhysicalConnectorProvider.cpp \
 	UNIX_PhysicalConnectorMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PhysicalConnector_AIX.cxx
+	SOURCES += UNIX_PhysicalConnector_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PhysicalConnector_DARWIN.cxx
+	SOURCES += UNIX_PhysicalConnector_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PhysicalConnector_FREEBSD.cxx
+	SOURCES += UNIX_PhysicalConnector_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PhysicalConnector_HPUX.cxx
+	SOURCES += UNIX_PhysicalConnector_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PhysicalConnector_LINUX.cxx
+	SOURCES += UNIX_PhysicalConnector_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PhysicalConnector_SOLARIS.cxx
+	SOURCES += UNIX_PhysicalConnector_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PhysicalConnector_TRU64.cxx
+	SOURCES += UNIX_PhysicalConnector_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PhysicalConnector_VMS.cxx
+	SOURCES += UNIX_PhysicalConnector_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PhysicalConnector_WIN32.cxx
+	SOURCES += UNIX_PhysicalConnector_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PhysicalConnector_ZOS.cxx
+	SOURCES += UNIX_PhysicalConnector_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PhysicalConnector_STUB.cxx
+	SOURCES += UNIX_PhysicalConnector_STUB.cpp
 endif
 
 LIBRARIES = \

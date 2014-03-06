@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PrecedenceServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PrecedenceService_AIX.cxx
+	SOURCES += UNIX_PrecedenceService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PrecedenceService_DARWIN.cxx
+	SOURCES += UNIX_PrecedenceService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PrecedenceService_FREEBSD.cxx
+	SOURCES += UNIX_PrecedenceService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PrecedenceService_HPUX.cxx
+	SOURCES += UNIX_PrecedenceService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PrecedenceService_LINUX.cxx
+	SOURCES += UNIX_PrecedenceService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PrecedenceService_SOLARIS.cxx
+	SOURCES += UNIX_PrecedenceService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PrecedenceService_TRU64.cxx
+	SOURCES += UNIX_PrecedenceService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PrecedenceService_VMS.cxx
+	SOURCES += UNIX_PrecedenceService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PrecedenceService_WIN32.cxx
+	SOURCES += UNIX_PrecedenceService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PrecedenceService_ZOS.cxx
+	SOURCES += UNIX_PrecedenceService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PrecedenceService_STUB.cxx
+	SOURCES += UNIX_PrecedenceService_STUB.cpp
 endif
 
 LIBRARIES = \

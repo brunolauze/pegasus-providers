@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_NetworkPipeCompositionProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_NetworkPipeComposition_AIX.cxx
+	SOURCES += UNIX_NetworkPipeComposition_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_NetworkPipeComposition_DARWIN.cxx
+	SOURCES += UNIX_NetworkPipeComposition_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_NetworkPipeComposition_FREEBSD.cxx
+	SOURCES += UNIX_NetworkPipeComposition_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_NetworkPipeComposition_HPUX.cxx
+	SOURCES += UNIX_NetworkPipeComposition_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_NetworkPipeComposition_LINUX.cxx
+	SOURCES += UNIX_NetworkPipeComposition_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_NetworkPipeComposition_SOLARIS.cxx
+	SOURCES += UNIX_NetworkPipeComposition_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_NetworkPipeComposition_TRU64.cxx
+	SOURCES += UNIX_NetworkPipeComposition_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_NetworkPipeComposition_VMS.cxx
+	SOURCES += UNIX_NetworkPipeComposition_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_NetworkPipeComposition_WIN32.cxx
+	SOURCES += UNIX_NetworkPipeComposition_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_NetworkPipeComposition_ZOS.cxx
+	SOURCES += UNIX_NetworkPipeComposition_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_NetworkPipeComposition_STUB.cxx
+	SOURCES += UNIX_NetworkPipeComposition_STUB.cpp
 endif
 
 LIBRARIES = \

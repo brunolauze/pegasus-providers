@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_LogicalDiskBasedOnVolumeProvider.cpp \
 	UNIX_LogicalDiskBasedOnVolumeMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_LogicalDiskBasedOnVolume_AIX.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnVolume_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_LogicalDiskBasedOnVolume_DARWIN.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnVolume_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_LogicalDiskBasedOnVolume_FREEBSD.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnVolume_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_LogicalDiskBasedOnVolume_HPUX.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnVolume_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_LogicalDiskBasedOnVolume_LINUX.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnVolume_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_LogicalDiskBasedOnVolume_SOLARIS.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnVolume_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_LogicalDiskBasedOnVolume_TRU64.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnVolume_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_LogicalDiskBasedOnVolume_VMS.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnVolume_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_LogicalDiskBasedOnVolume_WIN32.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnVolume_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_LogicalDiskBasedOnVolume_ZOS.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnVolume_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_LogicalDiskBasedOnVolume_STUB.cxx
+	SOURCES += UNIX_LogicalDiskBasedOnVolume_STUB.cpp
 endif
 
 LIBRARIES = \

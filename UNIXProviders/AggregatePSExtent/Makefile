@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_AggregatePSExtentProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_AggregatePSExtent_AIX.cxx
+	SOURCES += UNIX_AggregatePSExtent_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_AggregatePSExtent_DARWIN.cxx
+	SOURCES += UNIX_AggregatePSExtent_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_AggregatePSExtent_FREEBSD.cxx
+	SOURCES += UNIX_AggregatePSExtent_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_AggregatePSExtent_HPUX.cxx
+	SOURCES += UNIX_AggregatePSExtent_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_AggregatePSExtent_LINUX.cxx
+	SOURCES += UNIX_AggregatePSExtent_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_AggregatePSExtent_SOLARIS.cxx
+	SOURCES += UNIX_AggregatePSExtent_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_AggregatePSExtent_TRU64.cxx
+	SOURCES += UNIX_AggregatePSExtent_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_AggregatePSExtent_VMS.cxx
+	SOURCES += UNIX_AggregatePSExtent_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_AggregatePSExtent_WIN32.cxx
+	SOURCES += UNIX_AggregatePSExtent_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_AggregatePSExtent_ZOS.cxx
+	SOURCES += UNIX_AggregatePSExtent_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_AggregatePSExtent_STUB.cxx
+	SOURCES += UNIX_AggregatePSExtent_STUB.cpp
 endif
 
 LIBRARIES = \

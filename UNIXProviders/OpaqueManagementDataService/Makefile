@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_OpaqueManagementDataServiceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_OpaqueManagementDataService_AIX.cxx
+	SOURCES += UNIX_OpaqueManagementDataService_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_OpaqueManagementDataService_DARWIN.cxx
+	SOURCES += UNIX_OpaqueManagementDataService_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_OpaqueManagementDataService_FREEBSD.cxx
+	SOURCES += UNIX_OpaqueManagementDataService_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_OpaqueManagementDataService_HPUX.cxx
+	SOURCES += UNIX_OpaqueManagementDataService_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_OpaqueManagementDataService_LINUX.cxx
+	SOURCES += UNIX_OpaqueManagementDataService_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_OpaqueManagementDataService_SOLARIS.cxx
+	SOURCES += UNIX_OpaqueManagementDataService_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_OpaqueManagementDataService_TRU64.cxx
+	SOURCES += UNIX_OpaqueManagementDataService_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_OpaqueManagementDataService_VMS.cxx
+	SOURCES += UNIX_OpaqueManagementDataService_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_OpaqueManagementDataService_WIN32.cxx
+	SOURCES += UNIX_OpaqueManagementDataService_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_OpaqueManagementDataService_ZOS.cxx
+	SOURCES += UNIX_OpaqueManagementDataService_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_OpaqueManagementDataService_STUB.cxx
+	SOURCES += UNIX_OpaqueManagementDataService_STUB.cpp
 endif
 
 LIBRARIES = \

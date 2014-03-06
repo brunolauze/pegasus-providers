@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_UsersCredentialProvider.cpp \
 	UNIX_UsersCredentialMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_UsersCredential_AIX.cxx
+	SOURCES += UNIX_UsersCredential_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_UsersCredential_DARWIN.cxx
+	SOURCES += UNIX_UsersCredential_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_UsersCredential_FREEBSD.cxx
+	SOURCES += UNIX_UsersCredential_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_UsersCredential_HPUX.cxx
+	SOURCES += UNIX_UsersCredential_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_UsersCredential_LINUX.cxx
+	SOURCES += UNIX_UsersCredential_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_UsersCredential_SOLARIS.cxx
+	SOURCES += UNIX_UsersCredential_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_UsersCredential_TRU64.cxx
+	SOURCES += UNIX_UsersCredential_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_UsersCredential_VMS.cxx
+	SOURCES += UNIX_UsersCredential_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_UsersCredential_WIN32.cxx
+	SOURCES += UNIX_UsersCredential_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_UsersCredential_ZOS.cxx
+	SOURCES += UNIX_UsersCredential_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_UsersCredential_STUB.cxx
+	SOURCES += UNIX_UsersCredential_STUB.cpp
 endif
 
 LIBRARIES = \

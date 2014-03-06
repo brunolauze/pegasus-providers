@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_OSVersionCheckProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_OSVersionCheck_AIX.cxx
+	SOURCES += UNIX_OSVersionCheck_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_OSVersionCheck_DARWIN.cxx
+	SOURCES += UNIX_OSVersionCheck_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_OSVersionCheck_FREEBSD.cxx
+	SOURCES += UNIX_OSVersionCheck_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_OSVersionCheck_HPUX.cxx
+	SOURCES += UNIX_OSVersionCheck_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_OSVersionCheck_LINUX.cxx
+	SOURCES += UNIX_OSVersionCheck_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_OSVersionCheck_SOLARIS.cxx
+	SOURCES += UNIX_OSVersionCheck_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_OSVersionCheck_TRU64.cxx
+	SOURCES += UNIX_OSVersionCheck_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_OSVersionCheck_VMS.cxx
+	SOURCES += UNIX_OSVersionCheck_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_OSVersionCheck_WIN32.cxx
+	SOURCES += UNIX_OSVersionCheck_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_OSVersionCheck_ZOS.cxx
+	SOURCES += UNIX_OSVersionCheck_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_OSVersionCheck_STUB.cxx
+	SOURCES += UNIX_OSVersionCheck_STUB.cpp
 endif
 
 LIBRARIES = \

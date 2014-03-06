@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_OperatingSystemCapabilitiesProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_OperatingSystemCapabilities_AIX.cxx
+	SOURCES += UNIX_OperatingSystemCapabilities_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_OperatingSystemCapabilities_DARWIN.cxx
+	SOURCES += UNIX_OperatingSystemCapabilities_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_OperatingSystemCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_OperatingSystemCapabilities_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_OperatingSystemCapabilities_HPUX.cxx
+	SOURCES += UNIX_OperatingSystemCapabilities_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_OperatingSystemCapabilities_LINUX.cxx
+	SOURCES += UNIX_OperatingSystemCapabilities_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_OperatingSystemCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_OperatingSystemCapabilities_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_OperatingSystemCapabilities_TRU64.cxx
+	SOURCES += UNIX_OperatingSystemCapabilities_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_OperatingSystemCapabilities_VMS.cxx
+	SOURCES += UNIX_OperatingSystemCapabilities_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_OperatingSystemCapabilities_WIN32.cxx
+	SOURCES += UNIX_OperatingSystemCapabilities_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_OperatingSystemCapabilities_ZOS.cxx
+	SOURCES += UNIX_OperatingSystemCapabilities_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_OperatingSystemCapabilities_STUB.cxx
+	SOURCES += UNIX_OperatingSystemCapabilities_STUB.cpp
 endif
 
 LIBRARIES = \

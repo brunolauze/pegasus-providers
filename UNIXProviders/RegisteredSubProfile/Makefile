@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_RegisteredSubProfileProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_RegisteredSubProfile_AIX.cxx
+	SOURCES += UNIX_RegisteredSubProfile_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_RegisteredSubProfile_DARWIN.cxx
+	SOURCES += UNIX_RegisteredSubProfile_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_RegisteredSubProfile_FREEBSD.cxx
+	SOURCES += UNIX_RegisteredSubProfile_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_RegisteredSubProfile_HPUX.cxx
+	SOURCES += UNIX_RegisteredSubProfile_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_RegisteredSubProfile_LINUX.cxx
+	SOURCES += UNIX_RegisteredSubProfile_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_RegisteredSubProfile_SOLARIS.cxx
+	SOURCES += UNIX_RegisteredSubProfile_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_RegisteredSubProfile_TRU64.cxx
+	SOURCES += UNIX_RegisteredSubProfile_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_RegisteredSubProfile_VMS.cxx
+	SOURCES += UNIX_RegisteredSubProfile_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_RegisteredSubProfile_WIN32.cxx
+	SOURCES += UNIX_RegisteredSubProfile_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_RegisteredSubProfile_ZOS.cxx
+	SOURCES += UNIX_RegisteredSubProfile_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_RegisteredSubProfile_STUB.cxx
+	SOURCES += UNIX_RegisteredSubProfile_STUB.cpp
 endif
 
 LIBRARIES = \

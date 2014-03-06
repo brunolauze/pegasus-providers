@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_ElementInConnectorProvider.cpp \
 	UNIX_ElementInConnectorMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ElementInConnector_AIX.cxx
+	SOURCES += UNIX_ElementInConnector_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ElementInConnector_DARWIN.cxx
+	SOURCES += UNIX_ElementInConnector_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ElementInConnector_FREEBSD.cxx
+	SOURCES += UNIX_ElementInConnector_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ElementInConnector_HPUX.cxx
+	SOURCES += UNIX_ElementInConnector_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ElementInConnector_LINUX.cxx
+	SOURCES += UNIX_ElementInConnector_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ElementInConnector_SOLARIS.cxx
+	SOURCES += UNIX_ElementInConnector_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ElementInConnector_TRU64.cxx
+	SOURCES += UNIX_ElementInConnector_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ElementInConnector_VMS.cxx
+	SOURCES += UNIX_ElementInConnector_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ElementInConnector_WIN32.cxx
+	SOURCES += UNIX_ElementInConnector_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ElementInConnector_ZOS.cxx
+	SOURCES += UNIX_ElementInConnector_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ElementInConnector_STUB.cxx
+	SOURCES += UNIX_ElementInConnector_STUB.cpp
 endif
 
 LIBRARIES = \

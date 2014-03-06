@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_ConnectedToProvider.cpp \
 	UNIX_ConnectedToMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ConnectedTo_AIX.cxx
+	SOURCES += UNIX_ConnectedTo_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ConnectedTo_DARWIN.cxx
+	SOURCES += UNIX_ConnectedTo_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ConnectedTo_FREEBSD.cxx
+	SOURCES += UNIX_ConnectedTo_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ConnectedTo_HPUX.cxx
+	SOURCES += UNIX_ConnectedTo_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ConnectedTo_LINUX.cxx
+	SOURCES += UNIX_ConnectedTo_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ConnectedTo_SOLARIS.cxx
+	SOURCES += UNIX_ConnectedTo_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ConnectedTo_TRU64.cxx
+	SOURCES += UNIX_ConnectedTo_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ConnectedTo_VMS.cxx
+	SOURCES += UNIX_ConnectedTo_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ConnectedTo_WIN32.cxx
+	SOURCES += UNIX_ConnectedTo_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ConnectedTo_ZOS.cxx
+	SOURCES += UNIX_ConnectedTo_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ConnectedTo_STUB.cxx
+	SOURCES += UNIX_ConnectedTo_STUB.cpp
 endif
 
 LIBRARIES = \

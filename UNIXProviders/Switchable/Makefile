@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_SwitchableProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_Switchable_AIX.cxx
+	SOURCES += UNIX_Switchable_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_Switchable_DARWIN.cxx
+	SOURCES += UNIX_Switchable_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_Switchable_FREEBSD.cxx
+	SOURCES += UNIX_Switchable_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_Switchable_HPUX.cxx
+	SOURCES += UNIX_Switchable_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_Switchable_LINUX.cxx
+	SOURCES += UNIX_Switchable_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_Switchable_SOLARIS.cxx
+	SOURCES += UNIX_Switchable_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_Switchable_TRU64.cxx
+	SOURCES += UNIX_Switchable_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_Switchable_VMS.cxx
+	SOURCES += UNIX_Switchable_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_Switchable_WIN32.cxx
+	SOURCES += UNIX_Switchable_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_Switchable_ZOS.cxx
+	SOURCES += UNIX_Switchable_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_Switchable_STUB.cxx
+	SOURCES += UNIX_Switchable_STUB.cpp
 endif
 
 LIBRARIES = \

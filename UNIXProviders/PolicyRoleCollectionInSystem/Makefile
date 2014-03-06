@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PolicyRoleCollectionInSystemProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PolicyRoleCollectionInSystem_AIX.cxx
+	SOURCES += UNIX_PolicyRoleCollectionInSystem_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PolicyRoleCollectionInSystem_DARWIN.cxx
+	SOURCES += UNIX_PolicyRoleCollectionInSystem_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PolicyRoleCollectionInSystem_FREEBSD.cxx
+	SOURCES += UNIX_PolicyRoleCollectionInSystem_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PolicyRoleCollectionInSystem_HPUX.cxx
+	SOURCES += UNIX_PolicyRoleCollectionInSystem_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PolicyRoleCollectionInSystem_LINUX.cxx
+	SOURCES += UNIX_PolicyRoleCollectionInSystem_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PolicyRoleCollectionInSystem_SOLARIS.cxx
+	SOURCES += UNIX_PolicyRoleCollectionInSystem_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PolicyRoleCollectionInSystem_TRU64.cxx
+	SOURCES += UNIX_PolicyRoleCollectionInSystem_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PolicyRoleCollectionInSystem_VMS.cxx
+	SOURCES += UNIX_PolicyRoleCollectionInSystem_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PolicyRoleCollectionInSystem_WIN32.cxx
+	SOURCES += UNIX_PolicyRoleCollectionInSystem_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PolicyRoleCollectionInSystem_ZOS.cxx
+	SOURCES += UNIX_PolicyRoleCollectionInSystem_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PolicyRoleCollectionInSystem_STUB.cxx
+	SOURCES += UNIX_PolicyRoleCollectionInSystem_STUB.cpp
 endif
 
 LIBRARIES = \

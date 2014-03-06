@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PrintJobProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PrintJob_AIX.cxx
+	SOURCES += UNIX_PrintJob_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PrintJob_DARWIN.cxx
+	SOURCES += UNIX_PrintJob_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PrintJob_FREEBSD.cxx
+	SOURCES += UNIX_PrintJob_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PrintJob_HPUX.cxx
+	SOURCES += UNIX_PrintJob_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PrintJob_LINUX.cxx
+	SOURCES += UNIX_PrintJob_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PrintJob_SOLARIS.cxx
+	SOURCES += UNIX_PrintJob_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PrintJob_TRU64.cxx
+	SOURCES += UNIX_PrintJob_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PrintJob_VMS.cxx
+	SOURCES += UNIX_PrintJob_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PrintJob_WIN32.cxx
+	SOURCES += UNIX_PrintJob_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PrintJob_ZOS.cxx
+	SOURCES += UNIX_PrintJob_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PrintJob_STUB.cxx
+	SOURCES += UNIX_PrintJob_STUB.cpp
 endif
 
 LIBRARIES = \

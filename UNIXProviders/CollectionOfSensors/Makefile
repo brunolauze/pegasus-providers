@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_CollectionOfSensorsProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_CollectionOfSensors_AIX.cxx
+	SOURCES += UNIX_CollectionOfSensors_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_CollectionOfSensors_DARWIN.cxx
+	SOURCES += UNIX_CollectionOfSensors_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_CollectionOfSensors_FREEBSD.cxx
+	SOURCES += UNIX_CollectionOfSensors_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_CollectionOfSensors_HPUX.cxx
+	SOURCES += UNIX_CollectionOfSensors_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_CollectionOfSensors_LINUX.cxx
+	SOURCES += UNIX_CollectionOfSensors_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_CollectionOfSensors_SOLARIS.cxx
+	SOURCES += UNIX_CollectionOfSensors_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_CollectionOfSensors_TRU64.cxx
+	SOURCES += UNIX_CollectionOfSensors_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_CollectionOfSensors_VMS.cxx
+	SOURCES += UNIX_CollectionOfSensors_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_CollectionOfSensors_WIN32.cxx
+	SOURCES += UNIX_CollectionOfSensors_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_CollectionOfSensors_ZOS.cxx
+	SOURCES += UNIX_CollectionOfSensors_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_CollectionOfSensors_STUB.cxx
+	SOURCES += UNIX_CollectionOfSensors_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_MemoryOnCardProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_MemoryOnCard_AIX.cxx
+	SOURCES += UNIX_MemoryOnCard_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_MemoryOnCard_DARWIN.cxx
+	SOURCES += UNIX_MemoryOnCard_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_MemoryOnCard_FREEBSD.cxx
+	SOURCES += UNIX_MemoryOnCard_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_MemoryOnCard_HPUX.cxx
+	SOURCES += UNIX_MemoryOnCard_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_MemoryOnCard_LINUX.cxx
+	SOURCES += UNIX_MemoryOnCard_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_MemoryOnCard_SOLARIS.cxx
+	SOURCES += UNIX_MemoryOnCard_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_MemoryOnCard_TRU64.cxx
+	SOURCES += UNIX_MemoryOnCard_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_MemoryOnCard_VMS.cxx
+	SOURCES += UNIX_MemoryOnCard_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_MemoryOnCard_WIN32.cxx
+	SOURCES += UNIX_MemoryOnCard_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_MemoryOnCard_ZOS.cxx
+	SOURCES += UNIX_MemoryOnCard_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_MemoryOnCard_STUB.cxx
+	SOURCES += UNIX_MemoryOnCard_STUB.cpp
 endif
 
 LIBRARIES = \

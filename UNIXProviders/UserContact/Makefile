@@ -47,39 +47,39 @@ SOURCES = \
 	UNIX_UserContactProvider.cpp \
 	UNIX_UserContactMain.cpp
 ifeq ($(OS), aix)
-	SOURCES += UNIX_UserContact_AIX.cxx
+	SOURCES += UNIX_UserContact_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_UserContact_DARWIN.cxx
+	SOURCES += UNIX_UserContact_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_UserContact_FREEBSD.cxx
+	SOURCES += UNIX_UserContact_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_UserContact_HPUX.cxx
+	SOURCES += UNIX_UserContact_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_UserContact_LINUX.cxx
+	SOURCES += UNIX_UserContact_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_UserContact_SOLARIS.cxx
+	SOURCES += UNIX_UserContact_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_UserContact_TRU64.cxx
+	SOURCES += UNIX_UserContact_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_UserContact_VMS.cxx
+	SOURCES += UNIX_UserContact_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_UserContact_WIN32.cxx
+	SOURCES += UNIX_UserContact_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_UserContact_ZOS.cxx
+	SOURCES += UNIX_UserContact_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_UserContact_STUB.cxx
+	SOURCES += UNIX_UserContact_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ActionSequenceProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ActionSequence_AIX.cxx
+	SOURCES += UNIX_ActionSequence_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ActionSequence_DARWIN.cxx
+	SOURCES += UNIX_ActionSequence_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ActionSequence_FREEBSD.cxx
+	SOURCES += UNIX_ActionSequence_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ActionSequence_HPUX.cxx
+	SOURCES += UNIX_ActionSequence_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ActionSequence_LINUX.cxx
+	SOURCES += UNIX_ActionSequence_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ActionSequence_SOLARIS.cxx
+	SOURCES += UNIX_ActionSequence_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ActionSequence_TRU64.cxx
+	SOURCES += UNIX_ActionSequence_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ActionSequence_VMS.cxx
+	SOURCES += UNIX_ActionSequence_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ActionSequence_WIN32.cxx
+	SOURCES += UNIX_ActionSequence_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ActionSequence_ZOS.cxx
+	SOURCES += UNIX_ActionSequence_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ActionSequence_STUB.cxx
+	SOURCES += UNIX_ActionSequence_STUB.cpp
 endif
 
 LIBRARIES = \

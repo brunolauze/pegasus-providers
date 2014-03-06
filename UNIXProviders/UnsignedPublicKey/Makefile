@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_UnsignedPublicKeyProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_UnsignedPublicKey_AIX.cxx
+	SOURCES += UNIX_UnsignedPublicKey_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_UnsignedPublicKey_DARWIN.cxx
+	SOURCES += UNIX_UnsignedPublicKey_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_UnsignedPublicKey_FREEBSD.cxx
+	SOURCES += UNIX_UnsignedPublicKey_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_UnsignedPublicKey_HPUX.cxx
+	SOURCES += UNIX_UnsignedPublicKey_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_UnsignedPublicKey_LINUX.cxx
+	SOURCES += UNIX_UnsignedPublicKey_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_UnsignedPublicKey_SOLARIS.cxx
+	SOURCES += UNIX_UnsignedPublicKey_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_UnsignedPublicKey_TRU64.cxx
+	SOURCES += UNIX_UnsignedPublicKey_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_UnsignedPublicKey_VMS.cxx
+	SOURCES += UNIX_UnsignedPublicKey_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_UnsignedPublicKey_WIN32.cxx
+	SOURCES += UNIX_UnsignedPublicKey_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_UnsignedPublicKey_ZOS.cxx
+	SOURCES += UNIX_UnsignedPublicKey_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_UnsignedPublicKey_STUB.cxx
+	SOURCES += UNIX_UnsignedPublicKey_STUB.cpp
 endif
 
 LIBRARIES = \

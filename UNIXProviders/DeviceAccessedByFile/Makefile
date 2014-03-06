@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_DeviceAccessedByFileProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_DeviceAccessedByFile_AIX.cxx
+	SOURCES += UNIX_DeviceAccessedByFile_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_DeviceAccessedByFile_DARWIN.cxx
+	SOURCES += UNIX_DeviceAccessedByFile_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_DeviceAccessedByFile_FREEBSD.cxx
+	SOURCES += UNIX_DeviceAccessedByFile_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_DeviceAccessedByFile_HPUX.cxx
+	SOURCES += UNIX_DeviceAccessedByFile_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_DeviceAccessedByFile_LINUX.cxx
+	SOURCES += UNIX_DeviceAccessedByFile_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_DeviceAccessedByFile_SOLARIS.cxx
+	SOURCES += UNIX_DeviceAccessedByFile_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_DeviceAccessedByFile_TRU64.cxx
+	SOURCES += UNIX_DeviceAccessedByFile_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_DeviceAccessedByFile_VMS.cxx
+	SOURCES += UNIX_DeviceAccessedByFile_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_DeviceAccessedByFile_WIN32.cxx
+	SOURCES += UNIX_DeviceAccessedByFile_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_DeviceAccessedByFile_ZOS.cxx
+	SOURCES += UNIX_DeviceAccessedByFile_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_DeviceAccessedByFile_STUB.cxx
+	SOURCES += UNIX_DeviceAccessedByFile_STUB.cpp
 endif
 
 LIBRARIES = \

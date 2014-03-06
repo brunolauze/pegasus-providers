@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_CertificateAuthorityProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_CertificateAuthority_AIX.cxx
+	SOURCES += UNIX_CertificateAuthority_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_CertificateAuthority_DARWIN.cxx
+	SOURCES += UNIX_CertificateAuthority_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_CertificateAuthority_FREEBSD.cxx
+	SOURCES += UNIX_CertificateAuthority_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_CertificateAuthority_HPUX.cxx
+	SOURCES += UNIX_CertificateAuthority_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_CertificateAuthority_LINUX.cxx
+	SOURCES += UNIX_CertificateAuthority_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_CertificateAuthority_SOLARIS.cxx
+	SOURCES += UNIX_CertificateAuthority_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_CertificateAuthority_TRU64.cxx
+	SOURCES += UNIX_CertificateAuthority_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_CertificateAuthority_VMS.cxx
+	SOURCES += UNIX_CertificateAuthority_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_CertificateAuthority_WIN32.cxx
+	SOURCES += UNIX_CertificateAuthority_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_CertificateAuthority_ZOS.cxx
+	SOURCES += UNIX_CertificateAuthority_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_CertificateAuthority_STUB.cxx
+	SOURCES += UNIX_CertificateAuthority_STUB.cpp
 endif
 
 LIBRARIES = \

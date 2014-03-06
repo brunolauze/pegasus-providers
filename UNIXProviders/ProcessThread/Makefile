@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ProcessThreadProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_ProcessThread_AIX.cxx
+	SOURCES += UNIX_ProcessThread_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_ProcessThread_DARWIN.cxx
+	SOURCES += UNIX_ProcessThread_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_ProcessThread_FREEBSD.cxx
+	SOURCES += UNIX_ProcessThread_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_ProcessThread_HPUX.cxx
+	SOURCES += UNIX_ProcessThread_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_ProcessThread_LINUX.cxx
+	SOURCES += UNIX_ProcessThread_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_ProcessThread_SOLARIS.cxx
+	SOURCES += UNIX_ProcessThread_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_ProcessThread_TRU64.cxx
+	SOURCES += UNIX_ProcessThread_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_ProcessThread_VMS.cxx
+	SOURCES += UNIX_ProcessThread_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_ProcessThread_WIN32.cxx
+	SOURCES += UNIX_ProcessThread_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_ProcessThread_ZOS.cxx
+	SOURCES += UNIX_ProcessThread_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_ProcessThread_STUB.cxx
+	SOURCES += UNIX_ProcessThread_STUB.cpp
 endif
 
 LIBRARIES = \

@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_ChassisProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_Chassis_AIX.cxx
+	SOURCES += UNIX_Chassis_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_Chassis_DARWIN.cxx
+	SOURCES += UNIX_Chassis_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_Chassis_FREEBSD.cxx
+	SOURCES += UNIX_Chassis_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_Chassis_HPUX.cxx
+	SOURCES += UNIX_Chassis_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_Chassis_LINUX.cxx
+	SOURCES += UNIX_Chassis_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_Chassis_SOLARIS.cxx
+	SOURCES += UNIX_Chassis_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_Chassis_TRU64.cxx
+	SOURCES += UNIX_Chassis_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_Chassis_VMS.cxx
+	SOURCES += UNIX_Chassis_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_Chassis_WIN32.cxx
+	SOURCES += UNIX_Chassis_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_Chassis_ZOS.cxx
+	SOURCES += UNIX_Chassis_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_Chassis_STUB.cxx
+	SOURCES += UNIX_Chassis_STUB.cpp
 endif
 
 LIBRARIES = \

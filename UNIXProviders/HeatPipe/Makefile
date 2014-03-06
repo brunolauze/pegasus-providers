@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_HeatPipeProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_HeatPipe_AIX.cxx
+	SOURCES += UNIX_HeatPipe_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_HeatPipe_DARWIN.cxx
+	SOURCES += UNIX_HeatPipe_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_HeatPipe_FREEBSD.cxx
+	SOURCES += UNIX_HeatPipe_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_HeatPipe_HPUX.cxx
+	SOURCES += UNIX_HeatPipe_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_HeatPipe_LINUX.cxx
+	SOURCES += UNIX_HeatPipe_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_HeatPipe_SOLARIS.cxx
+	SOURCES += UNIX_HeatPipe_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_HeatPipe_TRU64.cxx
+	SOURCES += UNIX_HeatPipe_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_HeatPipe_VMS.cxx
+	SOURCES += UNIX_HeatPipe_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_HeatPipe_WIN32.cxx
+	SOURCES += UNIX_HeatPipe_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_HeatPipe_ZOS.cxx
+	SOURCES += UNIX_HeatPipe_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_HeatPipe_STUB.cxx
+	SOURCES += UNIX_HeatPipe_STUB.cpp
 endif
 
 LIBRARIES = \

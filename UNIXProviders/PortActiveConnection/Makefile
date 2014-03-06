@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PortActiveConnectionProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PortActiveConnection_AIX.cxx
+	SOURCES += UNIX_PortActiveConnection_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PortActiveConnection_DARWIN.cxx
+	SOURCES += UNIX_PortActiveConnection_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PortActiveConnection_FREEBSD.cxx
+	SOURCES += UNIX_PortActiveConnection_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PortActiveConnection_HPUX.cxx
+	SOURCES += UNIX_PortActiveConnection_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PortActiveConnection_LINUX.cxx
+	SOURCES += UNIX_PortActiveConnection_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PortActiveConnection_SOLARIS.cxx
+	SOURCES += UNIX_PortActiveConnection_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PortActiveConnection_TRU64.cxx
+	SOURCES += UNIX_PortActiveConnection_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PortActiveConnection_VMS.cxx
+	SOURCES += UNIX_PortActiveConnection_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PortActiveConnection_WIN32.cxx
+	SOURCES += UNIX_PortActiveConnection_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PortActiveConnection_ZOS.cxx
+	SOURCES += UNIX_PortActiveConnection_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PortActiveConnection_STUB.cxx
+	SOURCES += UNIX_PortActiveConnection_STUB.cpp
 endif
 
 LIBRARIES = \

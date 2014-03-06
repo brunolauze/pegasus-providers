@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_PrintMarkerProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_PrintMarker_AIX.cxx
+	SOURCES += UNIX_PrintMarker_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_PrintMarker_DARWIN.cxx
+	SOURCES += UNIX_PrintMarker_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_PrintMarker_FREEBSD.cxx
+	SOURCES += UNIX_PrintMarker_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_PrintMarker_HPUX.cxx
+	SOURCES += UNIX_PrintMarker_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_PrintMarker_LINUX.cxx
+	SOURCES += UNIX_PrintMarker_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_PrintMarker_SOLARIS.cxx
+	SOURCES += UNIX_PrintMarker_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_PrintMarker_TRU64.cxx
+	SOURCES += UNIX_PrintMarker_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_PrintMarker_VMS.cxx
+	SOURCES += UNIX_PrintMarker_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_PrintMarker_WIN32.cxx
+	SOURCES += UNIX_PrintMarker_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_PrintMarker_ZOS.cxx
+	SOURCES += UNIX_PrintMarker_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_PrintMarker_STUB.cxx
+	SOURCES += UNIX_PrintMarker_STUB.cpp
 endif
 
 LIBRARIES = \

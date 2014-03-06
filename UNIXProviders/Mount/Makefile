@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_MountProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_Mount_AIX.cxx
+	SOURCES += UNIX_Mount_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_Mount_DARWIN.cxx
+	SOURCES += UNIX_Mount_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_Mount_FREEBSD.cxx
+	SOURCES += UNIX_Mount_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_Mount_HPUX.cxx
+	SOURCES += UNIX_Mount_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_Mount_LINUX.cxx
+	SOURCES += UNIX_Mount_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_Mount_SOLARIS.cxx
+	SOURCES += UNIX_Mount_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_Mount_TRU64.cxx
+	SOURCES += UNIX_Mount_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_Mount_VMS.cxx
+	SOURCES += UNIX_Mount_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_Mount_WIN32.cxx
+	SOURCES += UNIX_Mount_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_Mount_ZOS.cxx
+	SOURCES += UNIX_Mount_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_Mount_STUB.cxx
+	SOURCES += UNIX_Mount_STUB.cpp
 endif
 
 
@@ -89,39 +89,39 @@ SOURCES += \
 	../FileSystem/UNIX_FileSystemProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCE += ../FileSystem/UNIX_FileSystem_AIX.cxx
+	SOURCE += ../FileSystem/UNIX_FileSystem_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCE += ../FileSystem/UNIX_FileSystem_DARWIN.cxx
+	SOURCE += ../FileSystem/UNIX_FileSystem_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += ../FileSystem/UNIX_FileSystem_FREEBSD.cxx
+	SOURCE += ../FileSystem/UNIX_FileSystem_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCE += ../FileSystem/UNIX_FileSystem_HPUX.cxx
+	SOURCE += ../FileSystem/UNIX_FileSystem_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCE += ../FileSystem/UNIX_FileSystem_LINUX.cxx
+	SOURCE += ../FileSystem/UNIX_FileSystem_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCE += ../FileSystem/UNIX_FileSystem_SOLARIS.cxx
+	SOURCE += ../FileSystem/UNIX_FileSystem_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCE += ../FileSystem/UNIX_FileSystem_TRU64.cxx
+	SOURCE += ../FileSystem/UNIX_FileSystem_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCE += ../FileSystem/UNIX_FileSystem_VMS.cxx
+	SOURCE += ../FileSystem/UNIX_FileSystem_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCE += ../FileSystem/UNIX_FileSystem_WIN32.cxx
+	SOURCE += ../FileSystem/UNIX_FileSystem_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCE += ../FileSystem/UNIX_FileSystem_ZOS.cxx
+	SOURCE += ../FileSystem/UNIX_FileSystem_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += ../FileSystem/UNIX_FileSystem_STUB.cxx
+	SOURCE += ../FileSystem/UNIX_FileSystem_STUB.cpp
 endif
 
 
@@ -130,39 +130,39 @@ SOURCES += \
 	../Directory/UNIX_DirectoryProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCE += ../Directory/UNIX_Directory_AIX.cxx
+	SOURCE += ../Directory/UNIX_Directory_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCE += ../Directory/UNIX_Directory_DARWIN.cxx
+	SOURCE += ../Directory/UNIX_Directory_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCE += ../Directory/UNIX_Directory_FREEBSD.cxx
+	SOURCE += ../Directory/UNIX_Directory_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCE += ../Directory/UNIX_Directory_HPUX.cxx
+	SOURCE += ../Directory/UNIX_Directory_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCE += ../Directory/UNIX_Directory_LINUX.cxx
+	SOURCE += ../Directory/UNIX_Directory_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCE += ../Directory/UNIX_Directory_SOLARIS.cxx
+	SOURCE += ../Directory/UNIX_Directory_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCE += ../Directory/UNIX_Directory_TRU64.cxx
+	SOURCE += ../Directory/UNIX_Directory_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCE += ../Directory/UNIX_Directory_VMS.cxx
+	SOURCE += ../Directory/UNIX_Directory_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCE += ../Directory/UNIX_Directory_WIN32.cxx
+	SOURCE += ../Directory/UNIX_Directory_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCE += ../Directory/UNIX_Directory_ZOS.cxx
+	SOURCE += ../Directory/UNIX_Directory_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCE += ../Directory/UNIX_Directory_STUB.cxx
+	SOURCE += ../Directory/UNIX_Directory_STUB.cpp
 endif
 
 

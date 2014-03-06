@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_RecordAppliesToElementProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_RecordAppliesToElement_AIX.cxx
+	SOURCES += UNIX_RecordAppliesToElement_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_RecordAppliesToElement_DARWIN.cxx
+	SOURCES += UNIX_RecordAppliesToElement_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_RecordAppliesToElement_FREEBSD.cxx
+	SOURCES += UNIX_RecordAppliesToElement_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_RecordAppliesToElement_HPUX.cxx
+	SOURCES += UNIX_RecordAppliesToElement_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_RecordAppliesToElement_LINUX.cxx
+	SOURCES += UNIX_RecordAppliesToElement_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_RecordAppliesToElement_SOLARIS.cxx
+	SOURCES += UNIX_RecordAppliesToElement_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_RecordAppliesToElement_TRU64.cxx
+	SOURCES += UNIX_RecordAppliesToElement_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_RecordAppliesToElement_VMS.cxx
+	SOURCES += UNIX_RecordAppliesToElement_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_RecordAppliesToElement_WIN32.cxx
+	SOURCES += UNIX_RecordAppliesToElement_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_RecordAppliesToElement_ZOS.cxx
+	SOURCES += UNIX_RecordAppliesToElement_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_RecordAppliesToElement_STUB.cxx
+	SOURCES += UNIX_RecordAppliesToElement_STUB.cpp
 endif
 
 LIBRARIES = \

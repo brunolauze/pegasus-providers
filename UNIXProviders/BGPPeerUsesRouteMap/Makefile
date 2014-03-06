@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_BGPPeerUsesRouteMapProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_BGPPeerUsesRouteMap_AIX.cxx
+	SOURCES += UNIX_BGPPeerUsesRouteMap_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_BGPPeerUsesRouteMap_DARWIN.cxx
+	SOURCES += UNIX_BGPPeerUsesRouteMap_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_BGPPeerUsesRouteMap_FREEBSD.cxx
+	SOURCES += UNIX_BGPPeerUsesRouteMap_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_BGPPeerUsesRouteMap_HPUX.cxx
+	SOURCES += UNIX_BGPPeerUsesRouteMap_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_BGPPeerUsesRouteMap_LINUX.cxx
+	SOURCES += UNIX_BGPPeerUsesRouteMap_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_BGPPeerUsesRouteMap_SOLARIS.cxx
+	SOURCES += UNIX_BGPPeerUsesRouteMap_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_BGPPeerUsesRouteMap_TRU64.cxx
+	SOURCES += UNIX_BGPPeerUsesRouteMap_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_BGPPeerUsesRouteMap_VMS.cxx
+	SOURCES += UNIX_BGPPeerUsesRouteMap_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_BGPPeerUsesRouteMap_WIN32.cxx
+	SOURCES += UNIX_BGPPeerUsesRouteMap_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_BGPPeerUsesRouteMap_ZOS.cxx
+	SOURCES += UNIX_BGPPeerUsesRouteMap_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_BGPPeerUsesRouteMap_STUB.cxx
+	SOURCES += UNIX_BGPPeerUsesRouteMap_STUB.cpp
 endif
 
 LIBRARIES = \

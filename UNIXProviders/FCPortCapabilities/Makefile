@@ -48,39 +48,39 @@ SOURCES = \
 	UNIX_FCPortCapabilitiesProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_FCPortCapabilities_AIX.cxx
+	SOURCES += UNIX_FCPortCapabilities_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_FCPortCapabilities_DARWIN.cxx
+	SOURCES += UNIX_FCPortCapabilities_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_FCPortCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_FCPortCapabilities_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_FCPortCapabilities_HPUX.cxx
+	SOURCES += UNIX_FCPortCapabilities_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_FCPortCapabilities_LINUX.cxx
+	SOURCES += UNIX_FCPortCapabilities_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_FCPortCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_FCPortCapabilities_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_FCPortCapabilities_TRU64.cxx
+	SOURCES += UNIX_FCPortCapabilities_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_FCPortCapabilities_VMS.cxx
+	SOURCES += UNIX_FCPortCapabilities_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_FCPortCapabilities_WIN32.cxx
+	SOURCES += UNIX_FCPortCapabilities_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_FCPortCapabilities_ZOS.cxx
+	SOURCES += UNIX_FCPortCapabilities_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_FCPortCapabilities_STUB.cxx
+	SOURCES += UNIX_FCPortCapabilities_STUB.cpp
 endif
 
 LIBRARIES = \

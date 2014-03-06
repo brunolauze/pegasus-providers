@@ -49,39 +49,39 @@ SOURCES = \
 	UNIX_BIOSServiceCapabilitiesProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_BIOSServiceCapabilities_AIX.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_BIOSServiceCapabilities_DARWIN.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_BIOSServiceCapabilities_FREEBSD.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_BIOSServiceCapabilities_HPUX.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_BIOSServiceCapabilities_LINUX.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_BIOSServiceCapabilities_SOLARIS.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_BIOSServiceCapabilities_TRU64.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_BIOSServiceCapabilities_VMS.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_BIOSServiceCapabilities_WIN32.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_BIOSServiceCapabilities_ZOS.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_BIOSServiceCapabilities_STUB.cxx
+	SOURCES += UNIX_BIOSServiceCapabilities_STUB.cpp
 endif
 
 LIBRARIES = \

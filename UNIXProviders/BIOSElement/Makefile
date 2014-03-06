@@ -49,39 +49,39 @@ SOURCES = \
 	UNIX_BIOSElementProvider.cpp
 
 ifeq ($(OS), aix)
-	SOURCES += UNIX_BIOSElement_AIX.cxx
+	SOURCES += UNIX_BIOSElement_AIX.cpp
 endif
 ifeq ($(OS), darwin)
-	SOURCES += UNIX_BIOSElement_DARWIN.cxx
+	SOURCES += UNIX_BIOSElement_DARWIN.cpp
 endif
 ifeq ($(OS), freebsd)
-	SOURCES += UNIX_BIOSElement_FREEBSD.cxx
+	SOURCES += UNIX_BIOSElement_FREEBSD.cpp
 endif
 ifeq ($(OS), hpux)
-	SOURCES += UNIX_BIOSElement_HPUX.cxx
+	SOURCES += UNIX_BIOSElement_HPUX.cpp
 endif
 ifeq ($(OS), linux)
-	SOURCES += UNIX_BIOSElement_LINUX.cxx
+	SOURCES += UNIX_BIOSElement_LINUX.cpp
 endif
 ifeq ($(OS), solaris)
-	SOURCES += UNIX_BIOSElement_SOLARIS.cxx
+	SOURCES += UNIX_BIOSElement_SOLARIS.cpp
 endif
 ifeq ($(OS), tru64)
-	SOURCES += UNIX_BIOSElement_TRU64.cxx
+	SOURCES += UNIX_BIOSElement_TRU64.cpp
 endif
 ifeq ($(OS), vms)
-	SOURCES += UNIX_BIOSElement_VMS.cxx
+	SOURCES += UNIX_BIOSElement_VMS.cpp
 endif
 ifeq ($(OS), win32)
-	SOURCES += UNIX_BIOSElement_WIN32.cxx
+	SOURCES += UNIX_BIOSElement_WIN32.cpp
 endif
 ifeq ($(OS), zos)
-	SOURCES += UNIX_BIOSElement_ZOS.cxx
+	SOURCES += UNIX_BIOSElement_ZOS.cpp
 endif
 ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
 
 else
-	SOURCES += UNIX_BIOSElement_STUB.cxx
+	SOURCES += UNIX_BIOSElement_STUB.cpp
 endif
 
 LIBRARIES = \
