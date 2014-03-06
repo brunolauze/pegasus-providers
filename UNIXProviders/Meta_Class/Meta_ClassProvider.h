@@ -45,8 +45,6 @@
                  	const Boolean includeClassOrigin, \
 				    Meta_Class _p) const;
 
-#define EXTRA_PROVIDER_DEFINES virtual void setExtern();
-
 #include "UNIXProviderBase.h"
 
 #undef UNIX_PROVIDER

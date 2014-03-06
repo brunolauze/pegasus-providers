@@ -1,6 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/Meta_Class/Meta_Class.cpp">
+    <Files>
+      <File FileName="UNIXProviders/Meta_Class/Meta_Class.cpp" Line="37" Column="1" />
+      <File FileName="UNIXProviders/Meta_Class/Meta_Class.h" Line="53" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

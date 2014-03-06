@@ -421,7 +421,6 @@ void UNIX_UDPProtocolEndpoint::setOtherTypeDescription(String otherTypeDescripti
 	_otherTypeDescription = otherTypeDescription;
 }
 
-
 void UNIX_UDPProtocolEndpoint::setPortNumber(Uint32 portNumber)
 {
 	_portNumber = portNumber;

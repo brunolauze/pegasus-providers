@@ -601,7 +601,7 @@ Boolean UNIX_SoftwareElement::load(int &pIndex)
 			        throw new CIMException(CIM_ERR_FAILED, "Software Manager query failed");
 			        //return false; //(EX_IOERR);
 			}
-			query_flags = getPkgFlag(INFO_ALL, false);
+			query_flags = PKG_LOAD_BASIC; //getPkgFlag(INFO_ALL, false);
 		}
 		else {
 			bool auto_update = true; // TODO: Review

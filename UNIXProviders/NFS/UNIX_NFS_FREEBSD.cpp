@@ -77,8 +77,7 @@ __FBSDID("$FreeBSD: head/sbin/mount_nfs/mount_nfs.c 247856 2013-03-05 22:41:35Z 
 #include <sysexits.h>
 #include <unistd.h>
 
-#include "mntopts.h"
-#include "mounttab.h"
+#include "UNIX_NFS_FREEBSD_mntopt.h"
 
 /* Table for af,sotype -> netid conversions. */
 struct nc_protos {
@@ -100,10 +99,12 @@ struct nfhret {
 	long		fhsize;
 	u_char		nfh[NFS3_FHSIZE];
 };
+
 #define	BGRND	1
 #define	ISBGRND	2
 #define	OF_NOINET4	4
 #define	OF_NOINET6	8
+
 int retrycnt = -1;
 int opflags = 0;
 int nfsproto = IPPROTO_TCP;
@@ -146,14 +147,14 @@ static enum tryret nfs_tryproto(struct addrinfo *ai, char *hostp, char *spec,
     char **errstr, struct iovec **iov, int *iovlen);
 static enum tryret returncode(enum clnt_stat stat, struct rpc_err *rpcerr);
 
-int
-main(int argc, char *argv[])
+int mount_nfs(char *spec, char *name)
 {
-	int c;
 	struct iovec *iov;
-	int num, iovlen;
+	//int num;
+	int iovlen;
 	int osversion;
-	char *name, *p, *spec, *fstype;
+	//char *p;
+	char *fstype;
 	char mntpath[MAXPATHLEN], errmsg[255];
 	char hostname[MAXHOSTNAMELEN + 1], *gssname, gssn[MAXHOSTNAMELEN + 50];
 
@@ -162,220 +163,78 @@ main(int argc, char *argv[])
 	memset(errmsg, 0, sizeof(errmsg));
 	gssname = NULL;
 
-	while ((c = getopt(argc, argv,
-	    "23a:bcdD:g:I:iLlNo:PR:r:sTt:w:x:U")) != -1)
-		switch (c) {
-		case '2':
-			mountmode = V2;
-			break;
-		case '3':
-			mountmode = V3;
-			break;
-		/*
-		case 'a':
-			printf("-a deprecated, use -o readahead=<value>\n");
-			build_iovec(&iov, &iovlen, "readahead", optarg, (size_t)-1);
-			break;
-		*/
-		case 'b':
-			opflags |= BGRND;
-			break;
-		/*
-		case 'c':
-			printf("-c deprecated, use -o noconn\n");
-			build_iovec(&iov, &iovlen, "noconn", NULL, 0);
-			noconn = 1;
-			break;
-		case 'D':
-			printf("-D deprecated, use -o deadthresh=<value>\n");
-			build_iovec(&iov, &iovlen, "deadthresh", optarg, (size_t)-1);
-			break;
-		case 'd':
-			printf("-d deprecated, use -o dumbtimer");
-			build_iovec(&iov, &iovlen, "dumbtimer", NULL, 0);
-			break;
-		case 'g':
-			printf("-g deprecated, use -o maxgroups");
-			num = strtol(optarg, &p, 10);
-			if (*p || num <= 0)
-				errx(1, "illegal -g value -- %s", optarg);
-			//set_rpc_maxgrouplist(num);
-			build_iovec(&iov, &iovlen, "maxgroups", optarg, (size_t)-1);
-			break;
-		case 'I':
-			printf("-I deprecated, use -o readdirsize=<value>\n");
-			build_iovec(&iov, &iovlen, "readdirsize", optarg, (size_t)-1);
-			break;
-		case 'i':
-			printf("-i deprecated, use -o intr\n");
-			build_iovec(&iov, &iovlen, "intr", NULL, 0);
-			break;
-		case 'L':
-			printf("-L deprecated, use -o nolockd\n");
-			build_iovec(&iov, &iovlen, "nolockd", NULL, 0);
-			break;
-		case 'l':
-			printf("-l deprecated, -o rdirplus\n");
-			build_iovec(&iov, &iovlen, "rdirplus", NULL, 0);
-			break;
-		case 'N':
-			printf("-N deprecated, do not specify -o resvport\n");
-			break;
-		*/
-		case 'o': {
-			int pass_flag_to_nmount;
-			char *opt = optarg;
-			while (opt) {
-				char *pval = NULL;
-				char *pnextopt = NULL;
-				char *val = "";
-				pass_flag_to_nmount = 1;
-				pnextopt = strchr(opt, ',');
-				if (pnextopt != NULL) {
-					*pnextopt = '\0';
-					pnextopt++;
-				}
-				pval = strchr(opt, '=');
-				if (pval != NULL) {
-					*pval = '\0';
-					val = pval + 1;
-				}
-				if (strcmp(opt, "bg") == 0) {
-					opflags |= BGRND;
-					pass_flag_to_nmount=0;
-				} else if (strcmp(opt, "fg") == 0) {
-					/* same as not specifying -o bg */
-					pass_flag_to_nmount=0;
-				} else if (strcmp(opt, "gssname") == 0) {
-					pass_flag_to_nmount = 0;
-					gssname = val;
-				} else if (strcmp(opt, "mntudp") == 0) {
-					mnttcp_ok = 0;
-					nfsproto = IPPROTO_UDP;
-				} else if (strcmp(opt, "udp") == 0) {
-					nfsproto = IPPROTO_UDP;
-				} else if (strcmp(opt, "tcp") == 0) {
-					nfsproto = IPPROTO_TCP;
-				} else if (strcmp(opt, "noinet4") == 0) {
-					pass_flag_to_nmount=0;
-					opflags |= OF_NOINET4;
-				} else if (strcmp(opt, "noinet6") == 0) {
-					pass_flag_to_nmount=0;
-					opflags |= OF_NOINET6;
-				} else if (strcmp(opt, "noconn") == 0) {
-					noconn = 1; 
-				} else if (strcmp(opt, "nfsv2") == 0) {
-					pass_flag_to_nmount=0;
-					mountmode = V2;
-				} else if (strcmp(opt, "nfsv3") == 0) {
-					mountmode = V3;
-				} else if (strcmp(opt, "nfsv4") == 0) {
-					pass_flag_to_nmount=0;
-					mountmode = V4;
-					fstype = "nfs";
-					nfsproto = IPPROTO_TCP;
-					if (portspec == NULL)
-						portspec = "2049";
-				} else if (strcmp(opt, "port") == 0) {
-					pass_flag_to_nmount=0;
-					asprintf(&portspec, "%d",
-					    atoi(val));
-					if (portspec == NULL)
-						err(1, "asprintf");
-				} else if (strcmp(opt, "principal") == 0) {
-					got_principal = 1;
-				} else if (strcmp(opt, "sec") == 0) {
-					/*
-					 * Don't add this option to
-					 * the iovec yet - we will
-					 * negotiate which sec flavor
-					 * to use with the remote
-					 * mountd.
-					 */
-					pass_flag_to_nmount=0;
-					secflavor = sec_name_to_num(val);
-					if (secflavor < 0) {
-						errx(1,
-						    "illegal sec value -- %s",
-						    val);
-					}
-				} else if (strcmp(opt, "retrycnt") == 0) {
-					pass_flag_to_nmount=0;
-					num = strtol(val, &p, 10);
-					if (*p || num < 0)
-						errx(1, "illegal retrycnt value -- %s", val);
-					retrycnt = num;
-				} else if (strcmp(opt, "maxgroups") == 0) {
-					num = strtol(val, &p, 10);
-					if (*p || num <= 0)
-						errx(1, "illegal maxgroups value -- %s", val);
-					//set_rpc_maxgrouplist(num);
-				}
-				if (pass_flag_to_nmount)
-					build_iovec(&iov, &iovlen, opt, val,
-					    strlen(val) + 1);
-				opt = pnextopt;
-			}
-			}
-			break;
-		/*
-		case 'P':
-			// obsolete for -o noresvport now default
-			printf("-P deprecated, use -o noresvport\n");
-			build_iovec(&iov, &iovlen, "noresvport", NULL, 0);
-			break;
-		case 'R':
-			printf("-R deprecated, use -o retrycnt=<retrycnt>\n");
-			num = strtol(optarg, &p, 10);
-			if (*p || num < 0)
-				errx(1, "illegal -R value -- %s", optarg);
-			retrycnt = num;
-			break;
-		case 'r':
-			printf("-r deprecated, use -o rsize=<rsize>\n");
-			build_iovec(&iov, &iovlen, "rsize", optarg, (size_t)-1);
-			break;
-		case 's':
-			printf("-s deprecated, use -o soft\n");
-			build_iovec(&iov, &iovlen, "soft", NULL, 0);
-			break;
-		case 'T':
-			nfsproto = IPPROTO_TCP;
-			printf("-T deprecated, use -o tcp\n");
-			break;
-		case 't':
-			printf("-t deprecated, use -o timeout=<value>\n");
-			build_iovec(&iov, &iovlen, "timeout", optarg, (size_t)-1);
-			break;
-		case 'w':
-			printf("-w deprecated, use -o wsize=<value>\n");
-			build_iovec(&iov, &iovlen, "wsize", optarg, (size_t)-1);
-			break;
-		case 'x':
-			printf("-x deprecated, use -o retrans=<value>\n");
-			build_iovec(&iov, &iovlen, "retrans", optarg, (size_t)-1);
-			break;
-		case 'U':
-			printf("-U deprecated, use -o mntudp\n");
-			mnttcp_ok = 0;
-			nfsproto = IPPROTO_UDP;
-			build_iovec(&iov, &iovlen, "mntudp", NULL, 0);
-			break;
-		default:
-			usage();
-			break;
-		*/
-		}
-	argc -= optind;
-	argv += optind;
+	// -o bg
+	//opflags |= BGRND; pass_flag_to_nmount=0;
 
-	if (argc != 2) {
-		usage();
-		/* NOTREACHED */
-	}
+	// -o fg
+	//pass_flag_to_nmount=0;
 
-	spec = *argv++;
-	name = *argv;
+	// -o gssname=<val>
+	//pass_flag_to_nmount = 0;
+	//gssname = val;
+
+	// -o mntudp
+	//mnttcp_ok = 0;
+	//nfsproto = IPPROTO_UDP;
+
+	// -o udp
+	//nfsproto = IPPROTO_UDP;
+	
+	// -o tcp
+	//nfsproto = IPPROTO_TCP;
+
+	// -o noinet4
+	//pass_flag_to_nmount=0;
+	//opflags |= OF_NOINET4;
+	// -o noinet6
+	//pass_flag_to_nmount=0;
+	//opflags |= OF_NOINET6;
+
+	// -o noconn
+	//noconn = 1; 
+
+	// -o nfsv2
+	//pass_flag_to_nmount=0;
+	//mountmode = V2;
+
+	// -o nfsv3
+	//mountmode = V3;
+
+	// -o nfsv4
+	//pass_flag_to_nmount=0;
+	//mountmode = V4; fstype = "nfs"; nfsproto = IPPROTO_TCP;
+	//if (portspec == NULL)
+		//portspec = "2049";
+
+
+
+	// -o port=<val>
+	//pass_flag_to_nmount=0;
+	//asprintf(&portspec, "%d", atoi(val));
+	//if (portspec == NULL) err(1, "asprintf");
+
+	// -o principal
+	//got_principal = 1;
+
+
+	// -o sec=<val>
+	//secflavor = sec_name_to_num(val);pass_flag_to_nmount=0;
+	//if (secflavor < 0) { errx(1, "illegal sec value -- %s", val); }
+
+	// -o retrycnt=<val>
+	//num = strtol(val, &p, 10); pass_flag_to_nmount=0;
+	//if (*p || num < 0) errx(1, "illegal retrycnt value -- %s", val);
+	//retrycnt = num;
+
+	//-o maxgroups=<val>
+	//num = strtol(val, &p, 10);
+	//if (*p || num <= 0) errx(1, "illegal maxgroups value -- %s", val);
+	//set_rpc_maxgrouplist(num);
+
+
+	// --- extra flags ---
+	//if (pass_flag_to_nmount) build_iovec(&iov, &iovlen, opt, val, strlen(val) + 1);
+
 
 	if (retrycnt == -1)
 		/* The default is to keep retrying forever. */
@@ -390,7 +249,7 @@ main(int argc, char *argv[])
 			/* Not present in kernel, try loading it */
 			if (kldload("nfscl") < 0 ||
 			    modfind("nfscl") < 0)
-				errx(1, "nfscl is not available");
+					return (-1); //errx(1, "nfscl is not available");
 		}
 	}
 
@@ -409,11 +268,11 @@ main(int argc, char *argv[])
 	}
 
 	if (!getnfsargs(spec, &iov, &iovlen))
-		exit(1);
+		return (-1);
 
 	/* resolve the mountpoint with realpath(3) */
 	if (checkpath(name, mntpath) != 0)
-		err(1, "%s", mntpath);
+		return (-1); //err(1, "%s", mntpath);
 
 	build_iovec(&iov, &iovlen, "fstype", fstype, (size_t)-1);
 	build_iovec(&iov, &iovlen, "fspath", mntpath, (size_t)-1);
@@ -429,11 +288,12 @@ main(int argc, char *argv[])
 	osversion = getosreldate();
 	if (osversion >= 702100) {
 		if (nmount(iov, iovlen, 0))
-			err(1, "%s, %s", mntpath, errmsg);
+			return (-1); //err(1, "%s, %s", mntpath, errmsg);
 	} else {
 		if (fallback_mount(iov, iovlen))
-			err(1, "%s, %s", mntpath, errmsg);
+			return (-1); //err(1, "%s, %s", mntpath, errmsg);
 	}
+	return 0;
 }
 
 static int
@@ -443,9 +303,9 @@ findopt(struct iovec *iov, int iovlen, const char *name,
 	int i;
 
 	for (i = 0; i < iovlen/2; i++, iov += 2) {
-		if (strcmp(name, iov[0].iov_base) == 0) {
+		if (strcmp(name, (char*)iov[0].iov_base) == 0) {
 			if (valuep)
-				*valuep = iov[1].iov_base;
+				*valuep = (char*)iov[1].iov_base;
 			if (lenp)
 				*lenp = iov[1].iov_len;
 			return (0);
@@ -645,7 +505,7 @@ fallback_mount(struct iovec *iov, int iovlen)
 		args.addr = (struct sockaddr *) opt;
 	}
 	if (findopt(iov, iovlen, "fh", &opt, &args.fhsize) == 0) {
-		args.fh = opt;
+		args.fh = reinterpret_cast<u_char*>(opt);
 	}
 	if (findopt(iov, iovlen, "hostname", &args.hostname,
 		NULL) == 0) {
@@ -828,7 +688,7 @@ getnfsargs(char *spec, struct iovec **iov, int *iovlen)
 			if (daemon(0, 0) != 0)
 				err(1, "daemon");
 		}
-		sleep(60);
+		sleep(60); // what the heck??
 	}
 	freeaddrinfo(ai_nfs);
 

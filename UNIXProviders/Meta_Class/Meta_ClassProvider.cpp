@@ -92,11 +92,6 @@ CIMInstance Meta_ClassProvider::constructInstance(
 	return inst;
 }
 
-void Meta_ClassProvider::setExtern()
-{
-	_p.setExtern();
-}
-
 Array<CIMKeyBinding> Meta_ClassProvider::constructKeyBindings(const Meta_Class& _p) const
 
 {

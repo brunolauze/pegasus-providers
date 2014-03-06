@@ -55,7 +55,6 @@ public:
 	virtual Boolean find(Array<CIMKeyBinding>&);
 	virtual Boolean validateKey(CIMKeyBinding&) const;
 	virtual void setScope(CIMName);
-	virtual void setExtern();
 	virtual void setCIMOMHandle(CIMOMHandle&);
 	virtual void setContext(const OperationContext&, const CIMNamespaceName&);
 	virtual Boolean getInstanceID(CIMProperty&) const;
@@ -81,7 +80,6 @@ public:
 
 private:
 	CIMName currentScope;
-	Boolean _isExtern;
 	CIMOMHandle _cimomHandle;
 	OperationContext _context;
 	const char *_ns;

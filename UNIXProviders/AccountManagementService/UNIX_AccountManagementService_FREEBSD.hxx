@@ -50,7 +50,7 @@ public:
 	Boolean finalize() { return true; };
 	Boolean find(Array<CIMKeyBinding>&) { return false; };
 	Boolean validateKey(CIMKeyBinding&) const { return false; };
-	void setScope(CIMName);
+	void setScope(CIMName scope) { currentScope = scope; };
 
 	Boolean getInstanceID(CIMProperty&) const;
 	String getInstanceID() const;
@@ -135,7 +135,7 @@ public:
 	Boolean finalize() { return true; };
 	Boolean find(Array<CIMKeyBinding>&) { return false; };
 	Boolean validateKey(CIMKeyBinding&) const { return false; };
-	void setScope(CIMName);
+	void setScope(CIMName scope) { currentScope = scope; };
 
 	Boolean getInstanceID(CIMProperty&) const;
 	String getInstanceID() const;
@@ -219,7 +219,7 @@ public:
 	Boolean finalize() { return true; };
 	Boolean find(Array<CIMKeyBinding>&) { return false; };
 	Boolean validateKey(CIMKeyBinding&) const { return false; };
-	void setScope(CIMName);
+	void setScope(CIMName scope) { currentScope = scope; };
 
 	Boolean getInstanceID(CIMProperty&) const;
 	String getInstanceID() const;

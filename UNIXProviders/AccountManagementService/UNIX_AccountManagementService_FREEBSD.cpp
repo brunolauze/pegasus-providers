@@ -33,8 +33,4 @@
 
 #include "UNIX_AccountManagementService_FREEBSD.hxx"
 
-#include "UNIX_AccountManagementService_FREEBSD_openpam.cxx"
-#include "UNIX_AccountManagementService_FREEBSD_openldap.cxx"
-#include "UNIX_AccountManagementService_FREEBSD_samba.cxx"
-
 #endif

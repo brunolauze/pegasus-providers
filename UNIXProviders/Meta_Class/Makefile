@@ -32,7 +32,7 @@
 ROOT = ../../../../..
 
 
-DIR = Providers/ManagedSystem/UNIXProviders/UsersAccess
+DIR = Providers/ManagedSystem/UNIXProviders/Meta_Class
 
 include $(ROOT)/mak/config.mak
 
@@ -53,6 +53,7 @@ LIBRARIES = \
 	pegcommon \
 	pegquerycommon \
 	pegqueryexpression \
+	pegrepository \
 	pegcql \
 	pegwql
 

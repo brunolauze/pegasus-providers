@@ -1,5 +1,6 @@
 ﻿
 #include <sys/stat.h>
+#include "UNIX_AccountManagementService_FREEBSD.hxx"
 
 OpenPAMService::OpenPAMService(void)
 {

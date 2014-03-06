@@ -422,7 +422,10 @@ void UNIX_TCPProtocolEndpoint::setOtherTypeDescription(String otherTypeDescripti
 	_otherTypeDescription = otherTypeDescription;
 }
 
-
+void UNIX_TCPProtocolEndpoint::setPortNumber(Uint32 portNumber)
+{
+	_portNumber = portNumber;
+}
 
 Boolean UNIX_TCPProtocolEndpoint::initialize()
 {

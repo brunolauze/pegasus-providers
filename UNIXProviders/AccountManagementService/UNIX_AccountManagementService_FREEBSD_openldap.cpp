@@ -1,6 +1,8 @@
 ﻿
 #include <sys/stat.h>
 
+#include "UNIX_AccountManagementService_FREEBSD.hxx"
+
 OpenLdapService::OpenLdapService(void)
 {
 }

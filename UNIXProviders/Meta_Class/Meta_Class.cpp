@@ -32,7 +32,7 @@
 
 #include "Meta_Class.h"
 #include <Pegasus/Client/CIMClient.h>
-
+#include <Pegasus/Repository/CIMRepository.h>
 
 Meta_Class::Meta_Class(void)
 {
@@ -171,11 +171,6 @@ void Meta_Class::setContext(const OperationContext &context, const CIMNamespaceN
 	_context = context;
 }
 
-void Meta_Class::setExtern()
-{
-	_isExtern = true;
-}
-
 Boolean Meta_Class::validateKey(CIMKeyBinding &kb) const
 {
 
@@ -201,22 +196,21 @@ void Meta_Class::setScope(CIMName scope)
 Boolean Meta_Class::initialize()
 {
 	CIMName className;
-	if (_isExtern)
-	{
-		CIMClient client;
-		client.connectLocal();
-		classes = client.enumerateClasses(CIMNamespaceName(String(_ns)),
-										 	CIMName(), true, true, true, true);
+
+	    String repositoryRootPath =
+        ConfigManager::getHomedPath(
+            ConfigManager::getInstance()->getCurrentValue("repositoryDir"));
+
+	CIMRepository rep(repositoryRootPath);
+	try {
+
+		classes = rep.enumerateClasses(CIMNamespaceName(String(_ns)), CIMName(), true, true, true, true);
+		return true;
 	}
-	else {
-		classes = _cimomHandle.enumerateClasses(
-									_context,
-									CIMNamespaceName(_ns), 
-									className,
-									true,
-									true,
-									true,
-									true);
+	catch(Exception &e)
+	{
+		cout << e.getMessage() << endl;
+		return false;
 	}
 	return true;
 }
@@ -230,7 +224,7 @@ Boolean Meta_Class::load(int &pIndex)
 
 Boolean Meta_Class::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean Meta_Class::find(Array<CIMKeyBinding> &kbArray)

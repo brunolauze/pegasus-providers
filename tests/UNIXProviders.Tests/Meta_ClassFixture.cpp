@@ -32,6 +32,8 @@
 #include "Meta_ClassFixture.h"
 #include <Meta_Class/Meta_ClassProvider.h>
 
+/* NOTE: This fixture needs to be executed with repository access */
+
 Meta_ClassFixture::Meta_ClassFixture()
 {
 }
@@ -48,8 +50,6 @@ void Meta_ClassFixture::Run()
 	Meta_ClassProvider _provider;
 	Uint32 propertyCount;
 	CIMOMHandle omHandle;
-	//_p.setExtern(); /* WILL USE CLIENT */
-	//_provider.setExtern(); /* WILL USE CLIENT */
 	_provider.initialize(omHandle);
 	OperationContext context;
 	_provider.prepareEnumeration(context, nameSpace, true, true, _p);

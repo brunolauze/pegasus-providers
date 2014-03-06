@@ -26,7 +26,7 @@
       </Includes>
     </Includes>
     <ExtraCompilerArguments>-W -Wall -Wno-unused-parameter  -Wno-unused-value -D_GNU_SOURCE -DTHREAD_SAFE -D_REENTRANT -Werror=unused-variable	-DPEGASUS_COMMON_INTERNAL -DPEGASUS_INTERNALONLY  -DPEGASUS_PLATFORM_FREEBSD_GENERIC_GNU -DPEGASUS_OS_FREEBSD -DPEGASUS_PLATFORM_FREEBSD_X86_64_CLANG -DPEGASUS_USE_SYSLOGS -DPEGASUS_ARCH_LIB=\"lib\" -DPEGASUS_ENABLE_USERGROUP_AUTHORIZATION -DPEGASUS_ENABLE_CQL -DPEGASUS_DEFAULT_ENABLE_OOP -DPEGASUS_ENABLE_EXECQUERY -DPEGASUS_HAS_SSL -DPEGASUS_SSL_RANDOMFILE -DPEGASUS_ENABLE_SSL_CRL_VERIFICATION -DPEGASUS_ENABLE_AUDIT_LOGGER -DPEGASUS_ENABLE_IPV6 -DPEGASUS_ENABLE_INDICATION_COUNT -DPEGASUS_ENABLE_SLP -DPEGASUS_USE_EXTERNAL_SLP_TYPE=1 -DPEGASUS_ENABLE_INTEROP_PROVIDER -DPEGASUS_USE_EXPERIMENTAL_INTERFACES -DPEGASUS_ENABLE_CMPI_PROVIDER_MANAGER -DPEGASUS_DEST_LIB_DIR=\"lib\" -DPEGASUS_ENABLE_PROTOCOL_WSMAN -DPEGASUS_PAM_AUTHENTICATION -DPEGASUS_NO_PASSWORDFILE -DPEGASUS_ENABLE_PROTOCOL_BINARY -DPEGASUS_EXTRA_PROVIDER_LIB_DIR=\"\"</ExtraCompilerArguments>
-    <ExtraLinkerArguments>-L/usr/local/lib/pegasus/lib -L/usr/local/lib -lpegcommon -lpegprovider -lpegclient -lpegslp_client -lpegquerycommon -lpegqueryexpression -lpegcql -lpegwql -lutil -lgeom -lpkg -lkvm -pthread -lcam</ExtraLinkerArguments>
+    <ExtraLinkerArguments>-L/usr/local/lib/pegasus/lib -L/usr/local/lib -lpegcommon -lpegprovider -lpegclient -lpegslp_client -lpegquerycommon -lpegqueryexpression -lpegcql -lpegwql -lpegrepository -lutil -lgeom -lpkg -lkvm -pthread -lcam</ExtraLinkerArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release</OutputPath>
@@ -468,7 +468,6 @@
     <Compile Include="NFS\UNIX_NFSProvider.cpp" />
     <Compile Include="NFS\UNIX_NFS_AIX.cpp" />
     <Compile Include="NFS\UNIX_NFS_DARWIN.cpp" />
-    <Compile Include="NFS\UNIX_NFS_FREEBSD.cpp" />
     <Compile Include="NFS\UNIX_NFS_HPUX.cpp" />
     <Compile Include="NFS\UNIX_NFS_LINUX.cpp" />
     <Compile Include="NFS\UNIX_NFS_SOLARIS.cpp" />
@@ -596,6 +595,9 @@
     <Compile Include="UDPProtocolEndpoint\UNIX_UDPProtocolEndpoint_TRU64.cpp" />
     <Compile Include="UDPProtocolEndpoint\UNIX_UDPProtocolEndpoint_VMS.cpp" />
     <Compile Include="UDPProtocolEndpoint\UNIX_UDPProtocolEndpoint_ZOS.cpp" />
+    <Compile Include="AccountManagementService\UNIX_AccountManagementService_FREEBSD_openpam.cpp" />
+    <Compile Include="AccountManagementService\UNIX_AccountManagementService_FREEBSD_openldap.cpp" />
+    <Compile Include="AccountManagementService\UNIX_AccountManagementService_FREEBSD_samba.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CIMHelper.h" />
@@ -2542,9 +2544,6 @@
     <None Include="AccountManagementService\UNIX_AccountManagementService_ZOS.hpp" />
     <None Include="AccountManagementService\UNIX_AccountManagementService_ZOS.hxx" />
     <None Include="AccountManagementService\UNIX_AccountManagementServiceMain.cpp" />
-    <None Include="AccountManagementService\UNIX_AccountManagementService_FREEBSD_openpam.cpp" />
-    <None Include="AccountManagementService\UNIX_AccountManagementService_FREEBSD_openldap.cpp" />
-    <None Include="AccountManagementService\UNIX_AccountManagementService_FREEBSD_samba.cpp" />
     <None Include="UsersAccount\Makefile" />
     <None Include="UsersAccount\UNIX_UsersAccount.h" />
     <None Include="UsersAccount\UNIX_UsersAccountDeps.h" />
@@ -2780,6 +2779,8 @@
     <None Include="UDPProtocolEndpoint\UNIX_UDPProtocolEndpointMain.cpp" />
     <None Include="TCPProtocolEndpoint\UNIX_TCPProtocolEndpointMain.cpp" />
     <None Include="ActiveConnection\UNIX_ActiveConnectionMain.cpp" />
+    <None Include="NFS\UNIX_NFS_FREEBSD_mntopt.h" />
+    <None Include="NFS\UNIX_NFS_FREEBSD.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Account\" />
