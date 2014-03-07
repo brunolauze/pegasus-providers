@@ -98,6 +98,8 @@ Boolean UNIX_ActiveConnection::getIsUnidirectional() const
 
 Boolean UNIX_ActiveConnection::initialize()
 {
+	char *argv[] = { };
+	run_sockstat(1, argv);
 	return false;
 }
 

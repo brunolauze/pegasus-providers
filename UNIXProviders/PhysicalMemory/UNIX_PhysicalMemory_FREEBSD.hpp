@@ -29,6 +29,7 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
+using namespace smbios;
 
 UNIX_PhysicalMemory::UNIX_PhysicalMemory(void)
 {
@@ -47,7 +48,7 @@ Boolean UNIX_PhysicalMemory::getInstanceID(CIMProperty &p) const
 
 String UNIX_PhysicalMemory::getInstanceID() const
 {
-	return String ("");
+	return String (strings[1]);
 }
 
 Boolean UNIX_PhysicalMemory::getCaption(CIMProperty &p) const
@@ -58,7 +59,7 @@ Boolean UNIX_PhysicalMemory::getCaption(CIMProperty &p) const
 
 String UNIX_PhysicalMemory::getCaption() const
 {
-	return String ("");
+	return getInstanceID();
 }
 
 Boolean UNIX_PhysicalMemory::getDescription(CIMProperty &p) const
@@ -91,18 +92,8 @@ Boolean UNIX_PhysicalMemory::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_PhysicalMemory::getInstallDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	/* Here we could refer to a manual log entry about RAM manipulation */
+	return CIMHelper::getInstallDate();
 }
 
 Boolean UNIX_PhysicalMemory::getName(CIMProperty &p) const
@@ -113,7 +104,7 @@ Boolean UNIX_PhysicalMemory::getName(CIMProperty &p) const
 
 String UNIX_PhysicalMemory::getName() const
 {
-	return String ("");
+	return getInstanceID();
 }
 
 Boolean UNIX_PhysicalMemory::getOperationalStatus(CIMProperty &p) const
@@ -220,7 +211,7 @@ Boolean UNIX_PhysicalMemory::getTag(CIMProperty &p) const
 
 String UNIX_PhysicalMemory::getTag() const
 {
-	return String ("");
+	return String (strings[1]); //assert_tag is too often Unspecified
 }
 
 Boolean UNIX_PhysicalMemory::getCreationClassName(CIMProperty &p) const
@@ -242,7 +233,10 @@ Boolean UNIX_PhysicalMemory::getManufacturer(CIMProperty &p) const
 
 String UNIX_PhysicalMemory::getManufacturer() const
 {
-	return String ("");
+	if (!p->manufacturer) return String("");
+	char str[256];
+	sprintf(str, "%u", p->manufacturer);
+	return String (str);
 }
 
 Boolean UNIX_PhysicalMemory::getModel(CIMProperty &p) const
@@ -264,7 +258,8 @@ Boolean UNIX_PhysicalMemory::getSKU(CIMProperty &p) const
 
 String UNIX_PhysicalMemory::getSKU() const
 {
-	return String ("");
+	if (!p->serial_number) return CIMHelper::EmptyString;
+	return String (reinterpret_cast<char*>(p->serial_number));
 }
 
 Boolean UNIX_PhysicalMemory::getSerialNumber(CIMProperty &p) const
@@ -275,7 +270,8 @@ Boolean UNIX_PhysicalMemory::getSerialNumber(CIMProperty &p) const
 
 String UNIX_PhysicalMemory::getSerialNumber() const
 {
-	return String ("");
+	if (!p->serial_number) return CIMHelper::EmptyString;
+	return String (reinterpret_cast<const char *>(p->serial_number));
 }
 
 Boolean UNIX_PhysicalMemory::getVersion(CIMProperty &p) const
@@ -297,7 +293,10 @@ Boolean UNIX_PhysicalMemory::getPartNumber(CIMProperty &p) const
 
 String UNIX_PhysicalMemory::getPartNumber() const
 {
-	return String ("");
+	if (!p->part_number) return String("");
+	char str[256];
+	sprintf(str, "%u", p->part_number);
+	return String (str);
 }
 
 Boolean UNIX_PhysicalMemory::getOtherIdentifyingInfo(CIMProperty &p) const
@@ -308,7 +307,10 @@ Boolean UNIX_PhysicalMemory::getOtherIdentifyingInfo(CIMProperty &p) const
 
 String UNIX_PhysicalMemory::getOtherIdentifyingInfo() const
 {
-	return String ("");
+	if (!p->assert_tag) return CIMHelper::EmptyString;
+	char str[256];
+	sprintf(str, "%u", p->assert_tag);
+	return String (str);
 }
 
 Boolean UNIX_PhysicalMemory::getPoweredOn(CIMProperty &p) const
@@ -319,7 +321,7 @@ Boolean UNIX_PhysicalMemory::getPoweredOn(CIMProperty &p) const
 
 Boolean UNIX_PhysicalMemory::getPoweredOn() const
 {
-	return Boolean(false);
+	return Boolean(true);
 }
 
 Boolean UNIX_PhysicalMemory::getManufactureDate(CIMProperty &p) const
@@ -363,7 +365,10 @@ Boolean UNIX_PhysicalMemory::getUserTracking(CIMProperty &p) const
 
 String UNIX_PhysicalMemory::getUserTracking() const
 {
-	return String ("");
+	if (!p->assert_tag) return CIMHelper::EmptyString;
+	char str[256];
+	sprintf(str, "%u", p->assert_tag);
+	return String (str);
 }
 
 Boolean UNIX_PhysicalMemory::getCanBeFRUed(CIMProperty &p) const
@@ -396,7 +401,7 @@ Boolean UNIX_PhysicalMemory::getRemovable(CIMProperty &p) const
 
 Boolean UNIX_PhysicalMemory::getRemovable() const
 {
-	return Boolean(false);
+	return Boolean(true);
 }
 
 Boolean UNIX_PhysicalMemory::getReplaceable(CIMProperty &p) const
@@ -407,7 +412,7 @@ Boolean UNIX_PhysicalMemory::getReplaceable(CIMProperty &p) const
 
 Boolean UNIX_PhysicalMemory::getReplaceable() const
 {
-	return Boolean(false);
+	return Boolean(true);
 }
 
 Boolean UNIX_PhysicalMemory::getHotSwappable(CIMProperty &p) const
@@ -429,7 +434,7 @@ Boolean UNIX_PhysicalMemory::getFormFactor(CIMProperty &p) const
 
 Uint16 UNIX_PhysicalMemory::getFormFactor() const
 {
-	return Uint16(0);
+	return Uint16(p->form_factor);
 }
 
 Boolean UNIX_PhysicalMemory::getMemoryType(CIMProperty &p) const
@@ -440,7 +445,7 @@ Boolean UNIX_PhysicalMemory::getMemoryType(CIMProperty &p) const
 
 Uint16 UNIX_PhysicalMemory::getMemoryType() const
 {
-	return Uint16(0);
+	return Uint16(p->type);
 }
 
 Boolean UNIX_PhysicalMemory::getTotalWidth(CIMProperty &p) const
@@ -451,7 +456,7 @@ Boolean UNIX_PhysicalMemory::getTotalWidth(CIMProperty &p) const
 
 Uint16 UNIX_PhysicalMemory::getTotalWidth() const
 {
-	return Uint16(0);
+	return Uint16(p->total_width);
 }
 
 Boolean UNIX_PhysicalMemory::getDataWidth(CIMProperty &p) const
@@ -462,7 +467,7 @@ Boolean UNIX_PhysicalMemory::getDataWidth(CIMProperty &p) const
 
 Uint16 UNIX_PhysicalMemory::getDataWidth() const
 {
-	return Uint16(0);
+	return Uint16(p->data_width);
 }
 
 Boolean UNIX_PhysicalMemory::getSpeed(CIMProperty &p) const
@@ -473,7 +478,7 @@ Boolean UNIX_PhysicalMemory::getSpeed(CIMProperty &p) const
 
 Uint32 UNIX_PhysicalMemory::getSpeed() const
 {
-	return Uint32(0);
+	return Uint32(p->speed);
 }
 
 Boolean UNIX_PhysicalMemory::getCapacity(CIMProperty &p) const
@@ -484,7 +489,7 @@ Boolean UNIX_PhysicalMemory::getCapacity(CIMProperty &p) const
 
 Uint64 UNIX_PhysicalMemory::getCapacity() const
 {
-	return Uint64(0);
+	return Uint64(p->size);
 }
 
 Boolean UNIX_PhysicalMemory::getBankLabel(CIMProperty &p) const
@@ -495,7 +500,10 @@ Boolean UNIX_PhysicalMemory::getBankLabel(CIMProperty &p) const
 
 String UNIX_PhysicalMemory::getBankLabel() const
 {
-	return String ("");
+	if (!p->bank_locator) return String(strings[2]);
+	char str[256];
+	sprintf(str, "%u", p->bank_locator);
+	return String (str);
 }
 
 Boolean UNIX_PhysicalMemory::getPositionInRow(CIMProperty &p) const
@@ -528,7 +536,7 @@ Boolean UNIX_PhysicalMemory::getConfiguredMemoryClockSpeed(CIMProperty &p) const
 
 Uint32 UNIX_PhysicalMemory::getConfiguredMemoryClockSpeed() const
 {
-	return Uint32(0);
+	return Uint32(p->clock_speed);
 }
 
 Boolean UNIX_PhysicalMemory::getIsSpeedInMhz(CIMProperty &p) const
@@ -550,24 +558,42 @@ Boolean UNIX_PhysicalMemory::getMaxMemorySpeed(CIMProperty &p) const
 
 Uint32 UNIX_PhysicalMemory::getMaxMemorySpeed() const
 {
-	return Uint32(0);
+	return Uint32(p->speed);
 }
 
 
 
 Boolean UNIX_PhysicalMemory::initialize()
 {
-	return false;
+	buff = nullptr;
+	buff_size = 0;
+	int count = meta.init(buff, buff_size);
+	if (count < 1) return false;
+	it = meta.headers.begin();
+	return true;
 }
 
 Boolean UNIX_PhysicalMemory::load(int &pIndex)
 {
-	return false;
+	while (it != meta.headers.end())
+    {
+    	if ((*it)->type == types::memory_device)
+    	{
+    		p = static_cast<struct mem_device *>(*it);
+			parser::extract_strings(*it, strings);
+			//byte_t *data = (byte_t*)*it;
+			++it;
+    		return true;
+    	}
+    	++it;
+    }
+    return false;
 }
 
 Boolean UNIX_PhysicalMemory::finalize()
 {
-	return false;
+    meta.clear(buff);
+	return true;
 }
 
 Boolean UNIX_PhysicalMemory::find(Array<CIMKeyBinding> &kbArray)

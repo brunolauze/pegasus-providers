@@ -43,7 +43,7 @@ UNIX_PhysicalMemoryProvider::~UNIX_PhysicalMemoryProvider()
 CIMInstance UNIX_PhysicalMemoryProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_PhysicalMemory &_p)
+	const UNIX_PhysicalMemory &_p) const
 {
 	CIMProperty p;
 
@@ -76,25 +76,30 @@ CIMInstance UNIX_PhysicalMemoryProvider::constructInstance(
 	//CIM_PhysicalElement Properties
 	if (_p.getTag(p)) inst.addProperty(p);
 	if (_p.getCreationClassName(p)) inst.addProperty(p);
+	cout <<  "TEST1" << endl;
 	if (_p.getManufacturer(p)) inst.addProperty(p);
 	if (_p.getModel(p)) inst.addProperty(p);
+	cout <<  "TEST2" << endl;
 	if (_p.getSKU(p)) inst.addProperty(p);
 	if (_p.getSerialNumber(p)) inst.addProperty(p);
+	cout <<  "TEST3" << endl;
 	if (_p.getVersion(p)) inst.addProperty(p);
 	if (_p.getPartNumber(p)) inst.addProperty(p);
+	cout <<  "TEST4" << endl;
 	if (_p.getOtherIdentifyingInfo(p)) inst.addProperty(p);
 	if (_p.getPoweredOn(p)) inst.addProperty(p);
 	if (_p.getManufactureDate(p)) inst.addProperty(p);
 	if (_p.getVendorEquipmentType(p)) inst.addProperty(p);
+	cout <<  "TEST5" << endl;
 	if (_p.getUserTracking(p)) inst.addProperty(p);
 	if (_p.getCanBeFRUed(p)) inst.addProperty(p);
-
+	cout <<  "TEST6" << endl;
 	//CIM_PhysicalComponent Properties
 	if (_p.getRemovalConditions(p)) inst.addProperty(p);
 	if (_p.getRemovable(p)) inst.addProperty(p);
 	if (_p.getReplaceable(p)) inst.addProperty(p);
 	if (_p.getHotSwappable(p)) inst.addProperty(p);
-
+	cout <<  "TEST7" << endl;
 	//CIM_Chip Properties
 	if (_p.getFormFactor(p)) inst.addProperty(p);
 
@@ -115,7 +120,7 @@ CIMInstance UNIX_PhysicalMemoryProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_PhysicalMemoryProvider::constructKeyBindings(const UNIX_PhysicalMemory& _p)
+Array<CIMKeyBinding> UNIX_PhysicalMemoryProvider::constructKeyBindings(const UNIX_PhysicalMemory& _p) const
 
 {
 
@@ -141,7 +146,7 @@ Array<CIMKeyBinding> UNIX_PhysicalMemoryProvider::constructKeyBindings(const UNI
 #define CLASS_IMPLEMENTATION UNIX_PhysicalMemory
 #define CLASS_IMPLEMENTATION_NAME "UNIX_PhysicalMemory"
 #define BASE_CLASS_NAME "CIM_PhysicalMemory"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 2
 
 
 #include "UNIXProviderBase.hpp"

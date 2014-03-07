@@ -5,6 +5,9 @@
 #define __UNIX_ACTIVECONNECTION_PRIVATE_H
 
 
+int run_sockstat(int argc, char *argv[]);
+
+
 #endif
 
 

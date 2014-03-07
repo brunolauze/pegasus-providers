@@ -599,6 +599,18 @@
     <Compile Include="AccountManagementService\UNIX_AccountManagementService_FREEBSD_openldap.cpp" />
     <Compile Include="AccountManagementService\UNIX_AccountManagementService_FREEBSD_samba.cpp" />
     <Compile Include="VirtualComputerSystem\UNIX_JailComputerSystem_FREEBSD.cpp" />
+    <Compile Include="PhysicalMemory\UNIX_PhysicalMemory.cpp" />
+    <Compile Include="PhysicalMemory\UNIX_PhysicalMemoryProvider.cpp" />
+    <Compile Include="PhysicalMemory\UNIX_PhysicalMemory_AIX.cpp" />
+    <Compile Include="PhysicalMemory\UNIX_PhysicalMemory_DARWIN.cpp" />
+    <Compile Include="PhysicalMemory\UNIX_PhysicalMemory_FREEBSD.cpp" />
+    <Compile Include="PhysicalMemory\UNIX_PhysicalMemory_HPUX.cpp" />
+    <Compile Include="PhysicalMemory\UNIX_PhysicalMemory_LINUX.cpp" />
+    <Compile Include="PhysicalMemory\UNIX_PhysicalMemory_SOLARIS.cpp" />
+    <Compile Include="PhysicalMemory\UNIX_PhysicalMemory_STUB.cpp" />
+    <Compile Include="PhysicalMemory\UNIX_PhysicalMemory_TRU64.cpp" />
+    <Compile Include="PhysicalMemory\UNIX_PhysicalMemory_VMS.cpp" />
+    <Compile Include="PhysicalMemory\UNIX_PhysicalMemory_ZOS.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CIMHelper.h" />
@@ -2782,6 +2794,55 @@
     <None Include="ActiveConnection\UNIX_ActiveConnectionMain.cpp" />
     <None Include="NFS\UNIX_NFS_FREEBSD_mntopt.h" />
     <None Include="NFS\UNIX_NFS_FREEBSD.cpp" />
+    <None Include="PhysicalMemory\Makefile" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryDeps.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryDeps_AIX.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryDeps_DARWIN.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryDeps_FREEBSD.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryDeps_HPUX.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryDeps_LINUX.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryDeps_SOLARIS.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryDeps_STUB.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryDeps_TRU64.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryDeps_VMS.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryDeps_ZOS.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryPrivate.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryPrivate_AIX.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryPrivate_DARWIN.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryPrivate_FREEBSD.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryPrivate_HPUX.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryPrivate_LINUX.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryPrivate_SOLARIS.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryPrivate_STUB.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryPrivate_TRU64.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryPrivate_VMS.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryPrivate_ZOS.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryProvider.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_AIX.hpp" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_AIX.hxx" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_DARWIN.hpp" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_DARWIN.hxx" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_FREEBSD.hpp" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_FREEBSD.hxx" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_HPUX.hpp" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_HPUX.hxx" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_LINUX.hpp" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_LINUX.hxx" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_SOLARIS.hpp" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_SOLARIS.hxx" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_STUB.hpp" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_STUB.hxx" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_TRU64.hpp" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_TRU64.hxx" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_VMS.hpp" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_VMS.hxx" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_WIN32.hpp" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_ZOS.hpp" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemory_ZOS.hxx" />
+    <None Include="CIM_Chip.h" />
+    <None Include="CIM_PhysicalComponent.h" />
+    <None Include="PhysicalMemory\UNIX_PhysicalMemoryMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Account\" />
@@ -2834,5 +2895,6 @@
     <Folder Include="IPNetworkConnection\" />
     <Folder Include="TCPProtocolEndpoint\" />
     <Folder Include="UDPProtocolEndpoint\" />
+    <Folder Include="PhysicalMemory\" />
   </ItemGroup>
 </Project>

@@ -45,7 +45,7 @@
 #include "UNIX_AccountOnSystemFixture.h"
 //#include "UNIX_AccountSettingDataFixture.h"
 //#include "UNIX_ActionSequenceFixture.h"
-//#include "UNIX_ActiveConnectionFixture.h"
+#include "UNIX_ActiveConnectionFixture.h"
 //#include "UNIX_ActsAsSpareFixture.h"
 //#include "UNIX_AdapterActiveConnectionFixture.h"
 //#include "UNIX_AdjacentSlotsFixture.h"
@@ -696,7 +696,7 @@
 //#include "UNIX_PhysicalLinkFixture.h"
 //#include "UNIX_PhysicalMediaFixture.h"
 //#include "UNIX_PhysicalMediaInLocationFixture.h"
-//#include "UNIX_PhysicalMemoryFixture.h"
+#include "UNIX_PhysicalMemoryFixture.h"
 //#include "UNIX_PhysicalStatisticalInformationFixture.h"
 //#include "UNIX_PhysicalStatisticsFixture.h"
 //#include "UNIX_PhysicalTapeFixture.h"
@@ -1146,7 +1146,7 @@ int main (int argc, char *argv[])
 	if (IsTarget(s, "UNIX_AccountOnSystem")) { UNIX_AccountOnSystemFixture accountOnSystem; accountOnSystem.Run(); }
 	//if (IsTarget(s, "UNIX_AccountSettingData")) { UNIX_AccountSettingDataFixture accountSettingData; accountSettingData.Run(); }
 	//if (IsTarget(s, "UNIX_ActionSequence")) { UNIX_ActionSequenceFixture actionSequence; actionSequence.Run(); }
-	//if (IsTarget(s, "UNIX_ActiveConnection")) { UNIX_ActiveConnectionFixture activeConnection; activeConnection.Run(); }
+	if (IsTarget(s, "UNIX_ActiveConnection")) { UNIX_ActiveConnectionFixture activeConnection; activeConnection.Run(); }
 	//if (IsTarget(s, "UNIX_ActsAsSpare")) { UNIX_ActsAsSpareFixture actsAsSpare; actsAsSpare.Run(); }
 	//if (IsTarget(s, "UNIX_AdapterActiveConnection")) { UNIX_AdapterActiveConnectionFixture adapterActiveConnection; adapterActiveConnection.Run(); }
 	//if (IsTarget(s, "UNIX_AdjacentSlots")) { UNIX_AdjacentSlotsFixture adjacentSlots; adjacentSlots.Run(); }
@@ -1797,7 +1797,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_PhysicalLink")) { UNIX_PhysicalLinkFixture physicalLink; physicalLink.Run(); }
 	//if (IsTarget(s, "UNIX_PhysicalMedia")) { UNIX_PhysicalMediaFixture physicalMedia; physicalMedia.Run(); }
 	//if (IsTarget(s, "UNIX_PhysicalMediaInLocation")) { UNIX_PhysicalMediaInLocationFixture physicalMediaInLocation; physicalMediaInLocation.Run(); }
-	//if (IsTarget(s, "UNIX_PhysicalMemory")) { UNIX_PhysicalMemoryFixture physicalMemory; physicalMemory.Run(); }
+	if (IsTarget(s, "UNIX_PhysicalMemory")) { UNIX_PhysicalMemoryFixture physicalMemory; physicalMemory.Run(); }
 	//if (IsTarget(s, "UNIX_PhysicalStatisticalInformation")) { UNIX_PhysicalStatisticalInformationFixture physicalStatisticalInformation; physicalStatisticalInformation.Run(); }
 	//if (IsTarget(s, "UNIX_PhysicalStatistics")) { UNIX_PhysicalStatisticsFixture physicalStatistics; physicalStatistics.Run(); }
 	//if (IsTarget(s, "UNIX_PhysicalTape")) { UNIX_PhysicalTapeFixture physicalTape; physicalTape.Run(); }

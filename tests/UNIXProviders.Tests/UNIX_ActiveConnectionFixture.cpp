@@ -50,6 +50,14 @@ void UNIX_ActiveConnectionFixture::Run()
 	CIMOMHandle omHandle;
 	_provider.initialize(omHandle);
 	_p.initialize();
+	_p.initialize();
+	_p.initialize();
+	_p.initialize();
+	_p.initialize();
+	_p.initialize();
+	_p.initialize();
+	_p.initialize();
+	_p.initialize();
 
 	for(int pIndex = 0; _p.load(pIndex); pIndex++)
 	{

@@ -43,6 +43,7 @@ EXTRA_INCLUDES += -I/usr/local/include -I./..
 
 SOURCES = \
 	../CIMHelper.cpp \
+	../smbios.cpp \
 	UNIX_PhysicalMemoryMain.cpp \
 	UNIX_PhysicalMemory.cpp \
 	UNIX_PhysicalMemoryProvider.cpp

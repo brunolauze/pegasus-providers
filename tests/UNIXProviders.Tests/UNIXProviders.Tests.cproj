@@ -37,7 +37,7 @@
         <Variable name="LD_LIBRARY_PATH" value="/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/bin/Debug:/usr/local/lib/pegasus/lib:/usr/local/lib:/usr/lib:/lib" />
       </EnvironmentVariables>
     </EnvironmentVariables>
-    <Commandlineparameters>UNIX_VirtualComputerSystem</Commandlineparameters>
+    <Commandlineparameters>UNIX_PhysicalMemory</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release</OutputPath>
@@ -82,6 +82,8 @@
     <Compile Include="UNIX_VirtualComputerSystemFixture.cpp" />
     <Compile Include="UNIX_UsersAccountFixture.cpp" />
     <Compile Include="UNIX_UsersAccessFixture.cpp" />
+    <Compile Include="UNIX_ActiveConnectionFixture.cpp" />
+    <Compile Include="UNIX_PhysicalMemoryFixture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CIMFixtureBase.h" />
@@ -118,5 +120,7 @@
     <None Include="UNIX_VirtualComputerSystemFixture.h" />
     <None Include="UNIX_UsersAccountFixture.h" />
     <None Include="UNIX_UsersAccessFixture.h" />
+    <None Include="UNIX_ActiveConnectionFixture.h" />
+    <None Include="UNIX_PhysicalMemoryFixture.h" />
   </ItemGroup>
 </Project>

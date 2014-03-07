@@ -55,6 +55,7 @@ DIRS = \
 	RemoteFileSystem \
 	NFS \
 	Processor \
+	PhysicalMemory \
 	DiskDrive \
 	EthernetPort \
 	EthernetAdapter \
