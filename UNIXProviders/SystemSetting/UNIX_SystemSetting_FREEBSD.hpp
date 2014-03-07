@@ -131,17 +131,22 @@ String UNIX_SystemSetting::getCreationClassName() const
 
 Boolean UNIX_SystemSetting::initialize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_SystemSetting::load(int &pIndex)
 {
+	if (currentScope.equal(String("UNIX_OperatingSystem")))
+	{
+		
+	}
+
 	return false;
 }
 
 Boolean UNIX_SystemSetting::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_SystemSetting::find(Array<CIMKeyBinding> &kbArray)

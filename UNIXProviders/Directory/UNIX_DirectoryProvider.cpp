@@ -137,6 +137,24 @@ Array<CIMKeyBinding> UNIX_DirectoryProvider::constructKeyBindings(const UNIX_Dir
 }
 
 
+#define __createInstance_H
+void UNIX_DirectoryProvider::createInstance(
+    const OperationContext& context,
+    const CIMObjectPath& ref,
+    const CIMInstance& instanceObject,
+    ObjectPathResponseHandler& handler )
+{
+	CIMObjectPath localReference(String(""), //empty host
+    				ref.getNameSpace(),
+    				ref.getClassName(),
+    				ref.getKeyBindings());
+    CIMName className(localReference.getClassName());
+	_checkClass(className);
+
+
+
+
+}
 
 #define UNIX_PROVIDER UNIX_DirectoryProvider
 #define UNIX_PROVIDER_NAME "UNIX_DirectoryProvider"

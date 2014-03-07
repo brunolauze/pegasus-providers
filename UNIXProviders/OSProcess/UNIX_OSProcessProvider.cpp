@@ -93,7 +93,7 @@ Array<CIMKeyBinding> UNIX_OSProcessProvider::constructKeyBindings(const UNIX_OSP
 #define CLASS_IMPLEMENTATION UNIX_OSProcess
 #define CLASS_IMPLEMENTATION_NAME "UNIX_OSProcess"
 #define BASE_CLASS_NAME "CIM_OSProcess"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 2
 
 
 #include "UNIXProviderBase.hpp"

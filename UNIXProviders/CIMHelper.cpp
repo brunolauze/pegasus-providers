@@ -256,6 +256,52 @@ int CIMHelper::lastIndexOf (char* base, char* str) {
 }
 
 
+CIMValue CIMHelper::getPropertyValue(const CIMInstance &instanceObject, String name)
+{
+    CIMName cname(name);
+    Uint32 index = instanceObject.findProperty(cname);
+    if (index == PEG_NOT_FOUND) return CIMValue();
+    CIMConstProperty property = instanceObject.getProperty(index);
+    return property.getValue();
+}
+
+
+String CIMHelper::getPropertyAsString(const CIMInstance &instanceObject, String name)
+{
+    CIMValue value = getPropertyValue(instanceObject, name);
+    if (value.isNull()) return String("");
+    String result;
+    value.get(result);
+    return result;
+}
+
+Array<String> CIMHelper::getPropertyAsStringArray(const CIMInstance &instanceObject, String name)
+{
+    CIMValue value = getPropertyValue(instanceObject, name);
+    if (value.isNull()) return Array<String>();
+    Array<String> result;
+    value.get(result);
+    return result;
+}
+
+Uint32 CIMHelper::getPropertyAsUint32(const CIMInstance &instanceObject, String name)
+{
+    CIMValue value = getPropertyValue(instanceObject, name);
+    if (value.isNull()) return PEG_NOT_FOUND;
+    Uint32 result;
+    value.get(result);
+    return result;
+}
+
+Uint64 CIMHelper::getPropertyAsUint64(const CIMInstance &instanceObject, String name)
+{
+    CIMValue value = getPropertyValue(instanceObject, name);
+    if (value.isNull()) return PEG_NOT_FOUND;
+    Uint64 result;
+    value.get(result);
+    return result;
+}
+
 
 #if defined(PEGASUS_OS_HPUX)
 

@@ -36,7 +36,7 @@
 #define CLASS_IMPLEMENTATION UNIX_RebootAction
 #define CLASS_IMPLEMENTATION_NAME "UNIX_RebootAction"
 #define BASE_CLASS_NAME "CIM_RebootAction"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 6
 
 
 #include "UNIXProviderBase.h"

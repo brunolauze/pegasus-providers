@@ -1,15 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/CIM_Chip.h">
-    <Files>
-      <File FileName="UNIXProviders/PhysicalMemory/UNIX_PhysicalMemory_FREEBSD.hpp" Line="563" Column="38" />
-      <File FileName="UNIXProviders/PhysicalMemory/UNIX_PhysicalMemory.h" Line="37" Column="1" />
-      <File FileName="UNIXProviders/CIM_Chip.h" Line="46" Column="31" />
-      <File FileName="UNIXProviders/smbios.h" Line="98" Column="1" />
-      <File FileName="tests/UNIXProviders.Tests/main.cpp" Line="1800" Column="2" />
-      <File FileName="UNIXProviders/CIM_Log.h" Line="45" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -63,7 +63,7 @@ Boolean UNIX_Account::getCaption(CIMProperty &p) const
 
 String UNIX_Account::getCaption() const
 {
-	return getInstanceID();
+	return String (user->pw_gecos);
 }
 
 Boolean UNIX_Account::getDescription(CIMProperty &p) const
@@ -74,7 +74,7 @@ Boolean UNIX_Account::getDescription(CIMProperty &p) const
 
 String UNIX_Account::getDescription() const
 {
-	return String (user->pw_gecos);
+	return String("");
 }
 
 Boolean UNIX_Account::getElementName(CIMProperty &p) const

@@ -171,11 +171,9 @@ String UNIX_CreateDirectoryAction::getDirectoryName() const
 	return String ("");
 }
 
-
-
 Boolean UNIX_CreateDirectoryAction::initialize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_CreateDirectoryAction::load(int &pIndex)
@@ -185,7 +183,7 @@ Boolean UNIX_CreateDirectoryAction::load(int &pIndex)
 
 Boolean UNIX_CreateDirectoryAction::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_CreateDirectoryAction::find(Array<CIMKeyBinding> &kbArray)

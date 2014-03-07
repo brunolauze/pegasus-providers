@@ -122,7 +122,7 @@ public:
 
 private:
 	CIMName currentScope;
-	CIM_SecurityService *currentService;
+	UNIX_AccountManagementService *currentService;
 
 #	include "UNIX_AccountManagementServicePrivate.h"
 

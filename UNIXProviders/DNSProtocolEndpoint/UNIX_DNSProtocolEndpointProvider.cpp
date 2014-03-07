@@ -43,7 +43,7 @@ UNIX_DNSProtocolEndpointProvider::~UNIX_DNSProtocolEndpointProvider()
 CIMInstance UNIX_DNSProtocolEndpointProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_DNSProtocolEndpoint &_p)
+	const UNIX_DNSProtocolEndpoint &_p) const
 {
 	CIMProperty p;
 
@@ -109,7 +109,7 @@ CIMInstance UNIX_DNSProtocolEndpointProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_DNSProtocolEndpointProvider::constructKeyBindings(const UNIX_DNSProtocolEndpoint& _p)
+Array<CIMKeyBinding> UNIX_DNSProtocolEndpointProvider::constructKeyBindings(const UNIX_DNSProtocolEndpoint& _p) const
 
 {
 
@@ -143,7 +143,7 @@ Array<CIMKeyBinding> UNIX_DNSProtocolEndpointProvider::constructKeyBindings(cons
 #define CLASS_IMPLEMENTATION UNIX_DNSProtocolEndpoint
 #define CLASS_IMPLEMENTATION_NAME "UNIX_DNSProtocolEndpoint"
 #define BASE_CLASS_NAME "CIM_DNSProtocolEndpoint"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 4
 
 
 #include "UNIXProviderBase.hpp"

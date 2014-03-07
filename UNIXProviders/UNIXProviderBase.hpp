@@ -449,6 +449,7 @@ void UNIX_PROVIDER::enumerateInstanceNames(const OperationContext &ctx,
 }  // enumerateInstanceNames
 #endif
 
+
 /* Undefine everything */
 #undef UNIX_PROVIDER
 #undef UNIX_PROVIDER_NAME

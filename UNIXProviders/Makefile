@@ -49,6 +49,7 @@ DIRS = \
 	BIOSElement \
 	Process \
 	Account \
+	AccountManagementService \
 	OperatingSystem \
 	FileSystem \
 	LocalFileSystem \

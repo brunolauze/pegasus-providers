@@ -43,7 +43,7 @@ UNIX_DNSSettingDataProvider::~UNIX_DNSSettingDataProvider()
 CIMInstance UNIX_DNSSettingDataProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_DNSSettingData &_p)
+	const UNIX_DNSSettingData &_p) const
 {
 	CIMProperty p;
 
@@ -81,7 +81,7 @@ CIMInstance UNIX_DNSSettingDataProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_DNSSettingDataProvider::constructKeyBindings(const UNIX_DNSSettingData& _p)
+Array<CIMKeyBinding> UNIX_DNSSettingDataProvider::constructKeyBindings(const UNIX_DNSSettingData& _p) const
 
 {
 
@@ -103,7 +103,7 @@ Array<CIMKeyBinding> UNIX_DNSSettingDataProvider::constructKeyBindings(const UNI
 #define CLASS_IMPLEMENTATION UNIX_DNSSettingData
 #define CLASS_IMPLEMENTATION_NAME "UNIX_DNSSettingData"
 #define BASE_CLASS_NAME "CIM_DNSSettingData"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 1
 
 
 #include "UNIXProviderBase.hpp"

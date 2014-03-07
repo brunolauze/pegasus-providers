@@ -43,7 +43,7 @@ UNIX_SystemSettingProvider::~UNIX_SystemSettingProvider()
 CIMInstance UNIX_SystemSettingProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_SystemSetting &_p)
+	const UNIX_SystemSetting &_p) const
 {
 	CIMProperty p;
 
@@ -73,7 +73,7 @@ CIMInstance UNIX_SystemSettingProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_SystemSettingProvider::constructKeyBindings(const UNIX_SystemSetting& _p)
+Array<CIMKeyBinding> UNIX_SystemSettingProvider::constructKeyBindings(const UNIX_SystemSetting& _p) const
 
 {
 

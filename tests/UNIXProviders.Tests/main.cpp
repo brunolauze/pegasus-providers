@@ -40,7 +40,7 @@
 //#include "UNIX_AccountAuthenticationFixture.h"
 //#include "UNIX_AccountIdentityFixture.h"
 //#include "UNIX_AccountManagementCapabilitiesFixture.h"
-//#include "UNIX_AccountManagementServiceFixture.h"
+#include "UNIX_AccountManagementServiceFixture.h"
 //#include "UNIX_AccountMapsToAccountFixture.h"
 #include "UNIX_AccountOnSystemFixture.h"
 //#include "UNIX_AccountSettingDataFixture.h"
@@ -1141,7 +1141,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_AccountAuthentication")) { UNIX_AccountAuthenticationFixture accountAuthentication; accountAuthentication.Run(); }
 	//if (IsTarget(s, "UNIX_AccountIdentity")) { UNIX_AccountIdentityFixture accountIdentity; accountIdentity.Run(); }
 	//if (IsTarget(s, "UNIX_AccountManagementCapabilities")) { UNIX_AccountManagementCapabilitiesFixture accountManagementCapabilities; accountManagementCapabilities.Run(); }
-	//if (IsTarget(s, "UNIX_AccountManagementService")) { UNIX_AccountManagementServiceFixture accountManagementService; accountManagementService.Run(); }
+	if (IsTarget(s, "UNIX_AccountManagementService")) { UNIX_AccountManagementServiceFixture accountManagementService; accountManagementService.Run(); }
 	//if (IsTarget(s, "UNIX_AccountMapsToAccount")) { UNIX_AccountMapsToAccountFixture accountMapsToAccount; accountMapsToAccount.Run(); }
 	if (IsTarget(s, "UNIX_AccountOnSystem")) { UNIX_AccountOnSystemFixture accountOnSystem; accountOnSystem.Run(); }
 	//if (IsTarget(s, "UNIX_AccountSettingData")) { UNIX_AccountSettingDataFixture accountSettingData; accountSettingData.Run(); }

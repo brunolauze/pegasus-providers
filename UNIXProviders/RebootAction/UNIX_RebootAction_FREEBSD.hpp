@@ -29,6 +29,7 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
+#include <Pegasus/Common/System.h>
 
 UNIX_RebootAction::UNIX_RebootAction(void)
 {
@@ -47,7 +48,7 @@ Boolean UNIX_RebootAction::getInstanceID(CIMProperty &p) const
 
 String UNIX_RebootAction::getInstanceID() const
 {
-	return String ("");
+	return String ("RebootAction");
 }
 
 Boolean UNIX_RebootAction::getCaption(CIMProperty &p) const
@@ -58,7 +59,7 @@ Boolean UNIX_RebootAction::getCaption(CIMProperty &p) const
 
 String UNIX_RebootAction::getCaption() const
 {
-	return String ("");
+	return String ("Reboot Action");
 }
 
 Boolean UNIX_RebootAction::getDescription(CIMProperty &p) const
@@ -69,7 +70,7 @@ Boolean UNIX_RebootAction::getDescription(CIMProperty &p) const
 
 String UNIX_RebootAction::getDescription() const
 {
-	return String ("");
+	return String ("This action invoke will reboot the system.");
 }
 
 Boolean UNIX_RebootAction::getElementName(CIMProperty &p) const
@@ -135,7 +136,7 @@ Boolean UNIX_RebootAction::getTargetOperatingSystem(CIMProperty &p) const
 
 Uint16 UNIX_RebootAction::getTargetOperatingSystem() const
 {
-	return Uint16(0);
+	return Uint16(42);
 }
 
 Boolean UNIX_RebootAction::getActionID(CIMProperty &p) const
@@ -146,7 +147,7 @@ Boolean UNIX_RebootAction::getActionID(CIMProperty &p) const
 
 String UNIX_RebootAction::getActionID() const
 {
-	return String ("");
+	return String ("_.RebootAction");
 }
 
 Boolean UNIX_RebootAction::getDirection(CIMProperty &p) const
@@ -164,17 +165,18 @@ Uint16 UNIX_RebootAction::getDirection() const
 
 Boolean UNIX_RebootAction::initialize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_RebootAction::load(int &pIndex)
 {
+	if (pIndex == 0) return true;
 	return false;
 }
 
 Boolean UNIX_RebootAction::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_RebootAction::find(Array<CIMKeyBinding> &kbArray)
@@ -200,9 +202,24 @@ Boolean UNIX_RebootAction::find(Array<CIMKeyBinding> &kbArray)
 		else if (keyName.equal(PROPERTY_ACTION_ID)) actionIDKey = kb.getValue();
 	}
 
-
-
-/* EXecute find with extracted keys */
+	/* EXecute find with extracted keys */
+	if (String::equalNoCase(nameKey,CIMHelper::HostName) &&
+		String::equal(targetOperatingSystemKey, "42" /* FreeBSD */) &&
+		String::equal(softwareElementIDKey, getSoftwareElementID()) &&
+		String::equal(actionIDKey, getActionID()))
+	{
+		return true;
+	}
 
 	return false;
+}
+
+Uint32 UNIX_RebootAction::reboot() const
+{
+	if (System::getEffectiveUserName() == "root")
+	{
+		system("reboot");
+		return Uint32(0);
+	}
+	return Uint32(1);
 }

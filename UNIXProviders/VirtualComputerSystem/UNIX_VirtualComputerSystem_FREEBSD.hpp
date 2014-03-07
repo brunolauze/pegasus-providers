@@ -47,7 +47,7 @@ Boolean UNIX_VirtualComputerSystem::getInstanceID(CIMProperty &p) const
 
 String UNIX_VirtualComputerSystem::getInstanceID() const
 {
-	return String ("");
+	return currentSystem->getInstanceID();
 }
 
 Boolean UNIX_VirtualComputerSystem::getCaption(CIMProperty &p) const
@@ -58,7 +58,7 @@ Boolean UNIX_VirtualComputerSystem::getCaption(CIMProperty &p) const
 
 String UNIX_VirtualComputerSystem::getCaption() const
 {
-	return String ("");
+	return currentSystem->getCaption();
 }
 
 Boolean UNIX_VirtualComputerSystem::getDescription(CIMProperty &p) const
@@ -69,7 +69,7 @@ Boolean UNIX_VirtualComputerSystem::getDescription(CIMProperty &p) const
 
 String UNIX_VirtualComputerSystem::getDescription() const
 {
-	return String ("");
+	return currentSystem->getDescription();
 }
 
 Boolean UNIX_VirtualComputerSystem::getElementName(CIMProperty &p) const
@@ -91,18 +91,7 @@ Boolean UNIX_VirtualComputerSystem::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_VirtualComputerSystem::getInstallDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return currentSystem->getInstallDate();
 }
 
 Boolean UNIX_VirtualComputerSystem::getName(CIMProperty &p) const
@@ -113,7 +102,7 @@ Boolean UNIX_VirtualComputerSystem::getName(CIMProperty &p) const
 
 String UNIX_VirtualComputerSystem::getName() const
 {
-	return String ("");
+	return currentSystem->getName();
 }
 
 Boolean UNIX_VirtualComputerSystem::getOperationalStatus(CIMProperty &p) const
@@ -124,11 +113,7 @@ Boolean UNIX_VirtualComputerSystem::getOperationalStatus(CIMProperty &p) const
 
 Array<Uint16> UNIX_VirtualComputerSystem::getOperationalStatus() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
-
+	return currentSystem->getOperationalStatus();
 }
 
 Boolean UNIX_VirtualComputerSystem::getStatusDescriptions(CIMProperty &p) const
@@ -139,11 +124,7 @@ Boolean UNIX_VirtualComputerSystem::getStatusDescriptions(CIMProperty &p) const
 
 Array<String> UNIX_VirtualComputerSystem::getStatusDescriptions() const
 {
-	Array<String> as;
-	
-
-	return as;
-
+	return currentSystem->getStatusDescriptions();
 }
 
 Boolean UNIX_VirtualComputerSystem::getStatus(CIMProperty &p) const
@@ -154,7 +135,7 @@ Boolean UNIX_VirtualComputerSystem::getStatus(CIMProperty &p) const
 
 String UNIX_VirtualComputerSystem::getStatus() const
 {
-	return String(DEFAULT_STATUS);
+	return currentSystem->getStatus();
 }
 
 Boolean UNIX_VirtualComputerSystem::getHealthState(CIMProperty &p) const
@@ -165,7 +146,7 @@ Boolean UNIX_VirtualComputerSystem::getHealthState(CIMProperty &p) const
 
 Uint16 UNIX_VirtualComputerSystem::getHealthState() const
 {
-	return Uint16(DEFAULT_HEALTH_STATE);
+	return currentSystem->getHealthState();
 }
 
 Boolean UNIX_VirtualComputerSystem::getCommunicationStatus(CIMProperty &p) const
@@ -176,7 +157,7 @@ Boolean UNIX_VirtualComputerSystem::getCommunicationStatus(CIMProperty &p) const
 
 Uint16 UNIX_VirtualComputerSystem::getCommunicationStatus() const
 {
-	return Uint16(0);
+	return currentSystem->getCommunicationStatus();
 }
 
 Boolean UNIX_VirtualComputerSystem::getDetailedStatus(CIMProperty &p) const
@@ -187,7 +168,7 @@ Boolean UNIX_VirtualComputerSystem::getDetailedStatus(CIMProperty &p) const
 
 Uint16 UNIX_VirtualComputerSystem::getDetailedStatus() const
 {
-	return Uint16(0);
+	return currentSystem->getDetailedStatus();
 }
 
 Boolean UNIX_VirtualComputerSystem::getOperatingStatus(CIMProperty &p) const
@@ -198,7 +179,7 @@ Boolean UNIX_VirtualComputerSystem::getOperatingStatus(CIMProperty &p) const
 
 Uint16 UNIX_VirtualComputerSystem::getOperatingStatus() const
 {
-	return Uint16(DEFAULT_OPERATING_STATUS);
+	return currentSystem->getOperatingStatus();
 }
 
 Boolean UNIX_VirtualComputerSystem::getPrimaryStatus(CIMProperty &p) const
@@ -209,7 +190,7 @@ Boolean UNIX_VirtualComputerSystem::getPrimaryStatus(CIMProperty &p) const
 
 Uint16 UNIX_VirtualComputerSystem::getPrimaryStatus() const
 {
-	return Uint16(DEFAULT_PRIMARY_STATUS);
+	return currentSystem->getPrimaryStatus();
 }
 
 Boolean UNIX_VirtualComputerSystem::getEnabledState(CIMProperty &p) const
@@ -220,7 +201,7 @@ Boolean UNIX_VirtualComputerSystem::getEnabledState(CIMProperty &p) const
 
 Uint16 UNIX_VirtualComputerSystem::getEnabledState() const
 {
-	return Uint16(DEFAULT_ENABLED_STATE);
+	return currentSystem->getEnabledState();
 }
 
 Boolean UNIX_VirtualComputerSystem::getOtherEnabledState(CIMProperty &p) const
@@ -231,7 +212,7 @@ Boolean UNIX_VirtualComputerSystem::getOtherEnabledState(CIMProperty &p) const
 
 String UNIX_VirtualComputerSystem::getOtherEnabledState() const
 {
-	return String ("");
+	return currentSystem->getOtherEnabledState();
 }
 
 Boolean UNIX_VirtualComputerSystem::getRequestedState(CIMProperty &p) const
@@ -242,7 +223,7 @@ Boolean UNIX_VirtualComputerSystem::getRequestedState(CIMProperty &p) const
 
 Uint16 UNIX_VirtualComputerSystem::getRequestedState() const
 {
-	return Uint16(0);
+	return currentSystem->getRequestedState();
 }
 
 Boolean UNIX_VirtualComputerSystem::getEnabledDefault(CIMProperty &p) const
@@ -253,7 +234,7 @@ Boolean UNIX_VirtualComputerSystem::getEnabledDefault(CIMProperty &p) const
 
 Uint16 UNIX_VirtualComputerSystem::getEnabledDefault() const
 {
-	return Uint16(0);
+	return currentSystem->getEnabledDefault();
 }
 
 Boolean UNIX_VirtualComputerSystem::getTimeOfLastStateChange(CIMProperty &p) const
@@ -264,18 +245,7 @@ Boolean UNIX_VirtualComputerSystem::getTimeOfLastStateChange(CIMProperty &p) con
 
 CIMDateTime UNIX_VirtualComputerSystem::getTimeOfLastStateChange() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return currentSystem->getTimeOfLastStateChange();
 }
 
 Boolean UNIX_VirtualComputerSystem::getAvailableRequestedStates(CIMProperty &p) const
@@ -286,10 +256,7 @@ Boolean UNIX_VirtualComputerSystem::getAvailableRequestedStates(CIMProperty &p) 
 
 Array<Uint16> UNIX_VirtualComputerSystem::getAvailableRequestedStates() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
+	return currentSystem->getAvailableRequestedStates();
 
 }
 
@@ -301,7 +268,7 @@ Boolean UNIX_VirtualComputerSystem::getTransitioningToState(CIMProperty &p) cons
 
 Uint16 UNIX_VirtualComputerSystem::getTransitioningToState() const
 {
-	return Uint16(0);
+	return currentSystem->getTransitioningToState();
 }
 
 Boolean UNIX_VirtualComputerSystem::getCreationClassName(CIMProperty &p) const
@@ -323,7 +290,7 @@ Boolean UNIX_VirtualComputerSystem::getNameFormat(CIMProperty &p) const
 
 String UNIX_VirtualComputerSystem::getNameFormat() const
 {
-	return String ("");
+	return currentSystem->getNameFormat();
 }
 
 Boolean UNIX_VirtualComputerSystem::getPrimaryOwnerName(CIMProperty &p) const
@@ -334,7 +301,7 @@ Boolean UNIX_VirtualComputerSystem::getPrimaryOwnerName(CIMProperty &p) const
 
 String UNIX_VirtualComputerSystem::getPrimaryOwnerName() const
 {
-	return String ("");
+	return currentSystem->getPrimaryOwnerName();
 }
 
 Boolean UNIX_VirtualComputerSystem::getPrimaryOwnerContact(CIMProperty &p) const
@@ -345,7 +312,7 @@ Boolean UNIX_VirtualComputerSystem::getPrimaryOwnerContact(CIMProperty &p) const
 
 String UNIX_VirtualComputerSystem::getPrimaryOwnerContact() const
 {
-	return String ("");
+	return currentSystem->getPrimaryOwnerContact();
 }
 
 Boolean UNIX_VirtualComputerSystem::getRoles(CIMProperty &p) const
@@ -356,11 +323,7 @@ Boolean UNIX_VirtualComputerSystem::getRoles(CIMProperty &p) const
 
 Array<String> UNIX_VirtualComputerSystem::getRoles() const
 {
-	Array<String> as;
-	
-
-	return as;
-
+	return currentSystem->getRoles();
 }
 
 Boolean UNIX_VirtualComputerSystem::getOtherIdentifyingInfo(CIMProperty &p) const
@@ -371,11 +334,7 @@ Boolean UNIX_VirtualComputerSystem::getOtherIdentifyingInfo(CIMProperty &p) cons
 
 Array<String> UNIX_VirtualComputerSystem::getOtherIdentifyingInfo() const
 {
-	Array<String> as;
-	
-
-	return as;
-
+	return currentSystem->getOtherIdentifyingInfo();
 }
 
 Boolean UNIX_VirtualComputerSystem::getIdentifyingDescriptions(CIMProperty &p) const
@@ -386,11 +345,7 @@ Boolean UNIX_VirtualComputerSystem::getIdentifyingDescriptions(CIMProperty &p) c
 
 Array<String> UNIX_VirtualComputerSystem::getIdentifyingDescriptions() const
 {
-	Array<String> as;
-	
-
-	return as;
-
+	return currentSystem->getIdentifyingDescriptions();
 }
 
 Boolean UNIX_VirtualComputerSystem::getDedicated(CIMProperty &p) const
@@ -401,11 +356,7 @@ Boolean UNIX_VirtualComputerSystem::getDedicated(CIMProperty &p) const
 
 Array<Uint16> UNIX_VirtualComputerSystem::getDedicated() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
-
+	return currentSystem->getDedicated();
 }
 
 Boolean UNIX_VirtualComputerSystem::getOtherDedicatedDescriptions(CIMProperty &p) const
@@ -416,11 +367,7 @@ Boolean UNIX_VirtualComputerSystem::getOtherDedicatedDescriptions(CIMProperty &p
 
 Array<String> UNIX_VirtualComputerSystem::getOtherDedicatedDescriptions() const
 {
-	Array<String> as;
-	
-
-	return as;
-
+	return currentSystem->getOtherDedicatedDescriptions();
 }
 
 Boolean UNIX_VirtualComputerSystem::getResetCapability(CIMProperty &p) const
@@ -431,7 +378,7 @@ Boolean UNIX_VirtualComputerSystem::getResetCapability(CIMProperty &p) const
 
 Uint16 UNIX_VirtualComputerSystem::getResetCapability() const
 {
-	return Uint16(0);
+	return currentSystem->getResetCapability();
 }
 
 Boolean UNIX_VirtualComputerSystem::getPowerManagementCapabilities(CIMProperty &p) const
@@ -442,11 +389,7 @@ Boolean UNIX_VirtualComputerSystem::getPowerManagementCapabilities(CIMProperty &
 
 Array<Uint16> UNIX_VirtualComputerSystem::getPowerManagementCapabilities() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
-
+	return currentSystem->getPowerManagementCapabilities();
 }
 
 Boolean UNIX_VirtualComputerSystem::getVirtualSystem(CIMProperty &p) const
@@ -457,18 +400,20 @@ Boolean UNIX_VirtualComputerSystem::getVirtualSystem(CIMProperty &p) const
 
 String UNIX_VirtualComputerSystem::getVirtualSystem() const
 {
-	return String ("");
+	return currentSystem->getVirtualSystem();
 }
 
 Boolean UNIX_VirtualComputerSystem::initialize()
 {
-	return _jailSystem.initialize();
+	_jailSystem = new UNIX_JailComputerSystem();
+	return _jailSystem->initialize();
 }
 
 Boolean UNIX_VirtualComputerSystem::load(int &pIndex)
 {
-	if (_jailSystem.load(pIndex))
+	if (_jailSystem->load(pIndex))
 	{
+		currentSystem = _jailSystem;
 		return true;
 	}
 
@@ -477,7 +422,7 @@ Boolean UNIX_VirtualComputerSystem::load(int &pIndex)
 
 Boolean UNIX_VirtualComputerSystem::finalize()
 {
-	return _jailSystem.finalize();
+	return _jailSystem->finalize();
 }
 
 Boolean UNIX_VirtualComputerSystem::find(Array<CIMKeyBinding> &kbArray)

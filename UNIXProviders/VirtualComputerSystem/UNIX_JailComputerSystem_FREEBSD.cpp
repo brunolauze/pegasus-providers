@@ -30,11 +30,15 @@
 //////////////////////////////////////////////////////////////////////////
 //
 //%/////////////////////////////////////////////////////////////////////////
+#define INET
+#define INET6
+
 #include <sys/cdefs.h>
 __FBSDID("$FreeBSD: head/usr.sbin/jls/jls.c 250736 2013-05-17 08:48:16Z des $");
 
 #include <sys/param.h>
 #include <sys/jail.h>
+#include <sys/stat.h>
 #include <sys/socket.h>
 #include <sys/sysctl.h>
 
@@ -72,7 +76,9 @@ Boolean UNIX_JailComputerSystem::getInstanceID(CIMProperty &p) const
 
 String UNIX_JailComputerSystem::getInstanceID() const
 {
-	return String ("");
+	String s("jail://");
+	s.append(_get_param_String("path"));
+	return s;
 }
 
 Boolean UNIX_JailComputerSystem::getCaption(CIMProperty &p) const
@@ -83,7 +89,7 @@ Boolean UNIX_JailComputerSystem::getCaption(CIMProperty &p) const
 
 String UNIX_JailComputerSystem::getCaption() const
 {
-	return String ("");
+	return _get_param_String("host.hostname");
 }
 
 Boolean UNIX_JailComputerSystem::getDescription(CIMProperty &p) const
@@ -94,7 +100,11 @@ Boolean UNIX_JailComputerSystem::getDescription(CIMProperty &p) const
 
 String UNIX_JailComputerSystem::getDescription() const
 {
-	return String ("");
+	String s("FreeBSD Jail ");
+	s.append(getCaption());
+	s.append(" mounted at ");
+	s.append(_get_param_String("path"));
+	return s;
 }
 
 Boolean UNIX_JailComputerSystem::getElementName(CIMProperty &p) const
@@ -117,8 +127,9 @@ Boolean UNIX_JailComputerSystem::getInstallDate(CIMProperty &p) const
 CIMDateTime UNIX_JailComputerSystem::getInstallDate() const
 {
 	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
+	struct stat attrib;			// create a file attribute structure
+	stat(_get_param_String("path").getCString(), &attrib);		// get the attributes mnt
+	clock = gmtime(&(attrib.st_birthtime));	// Get the last modified time and put it into the time structure
 	return CIMDateTime(
 		clock->tm_year + 1900,
 		clock->tm_mon + 1,
@@ -138,7 +149,7 @@ Boolean UNIX_JailComputerSystem::getName(CIMProperty &p) const
 
 String UNIX_JailComputerSystem::getName() const
 {
-	return String ("");
+	return _get_param_String("name");
 }
 
 Boolean UNIX_JailComputerSystem::getOperationalStatus(CIMProperty &p) const
@@ -150,7 +161,11 @@ Boolean UNIX_JailComputerSystem::getOperationalStatus(CIMProperty &p) const
 Array<Uint16> UNIX_JailComputerSystem::getOperationalStatus() const
 {
 	Array<Uint16> as;
-	
+	Uint32 dying = _get_param_Uint32("dying");
+	if (dying) 
+		as.append(4); //Stopping
+	else 
+		as.append(2); //OK
 
 	return as;
 
@@ -382,8 +397,87 @@ Boolean UNIX_JailComputerSystem::getRoles(CIMProperty &p) const
 Array<String> UNIX_JailComputerSystem::getRoles() const
 {
 	Array<String> as;
-	
+	// Defines Roles
+    // SSH Server -- check sshd_enable
+    // WebServer -- check nginx or apache22
+    // Database Server -- check mysql or postgresql
+    // Network Switch -- check gateway_enable
+    // Firewall -- check pf_enable
+    // Cim Server -- check cimserver
+    // VPN Server -- check openikve2
+    // Mail Server - check dovecot2
+    // Developement - check git lab
+    //  
+    // Desktop check ttys8, kde_enable or gdm_enable or just dbus_enable ?
 
+    Array<String> array;
+    String cmd("jexec "); // JailMe ??
+    char sjid[128];
+    Uint32 jid = _get_param_Uint32("jid");
+    if (jid == 0) return array;
+    sprintf(sjid, "%d", jid);
+    cmd.append(sjid);
+    cmd.append(" /usr/sbin/sysrc sshd_enable ftpd_enable cimserver_enable samba_server_enable nfsd_enable nginx_enable apache22_enable dovecot2_enable postfix_enable dbus_enable");
+    FILE* pipe = popen(cmd.getCString(), "r");
+    if (!pipe) return false;
+    char buffer[256];
+    bool webserver = false;
+    while(!feof(pipe)) {
+    	if (fgets(buffer, 128, pipe) != NULL)
+    	{
+    		if (strstr(buffer, "sshd_enable: YES") != NULL)
+    		{
+    			as.append("SSH Server");
+    		}
+    		if (strstr(buffer, "ftpd_enable: YES") != NULL)
+    		{
+    			as.append("FTP Server");
+    		}
+    		if (strstr(buffer, "cimserver_enable: YES") != NULL)
+    		{
+    			as.append("CIM Server");
+    		}
+    		if (strstr(buffer, "samba_server_enable: YES") != NULL)
+    		{
+    			as.append("Directory Server");
+    			as.append("File Server");
+    		}
+    		if (strstr(buffer, "nfsd_enable: YES") != NULL)
+    		{
+    			array.append("NFS Server");
+    		}
+    		if (strstr(buffer, "nginx_enable: YES") != NULL)
+    		{
+    			if (!webserver)
+    			{
+	    			as.append("Web Server");
+	    			webserver = true;
+    			}
+    		}
+    		if (strstr(buffer, "apache22_enable: YES") != NULL)
+    		{
+    			if (!webserver)
+    			{
+	    			as.append("Web Server");
+	    			webserver = true;
+    			}
+    		}
+    		if (strstr(buffer, "dovecot2_enable: YES") != NULL)
+    		{
+    			as.append("Mail Server");
+    		}
+    		if (strstr(buffer, "postfix_enable: YES") != NULL)
+    		{
+    			as.append("Smtp Server");
+    		}
+    		/* What is the best way to describe Desktop Role? */
+    		if (strstr(buffer, "dbus_enable: YES") != NULL)
+    		{
+    			as.append("Desktop System");
+    		}
+    	}
+    }
+    pclose(pipe);
 	return as;
 
 }
@@ -484,13 +578,19 @@ String UNIX_JailComputerSystem::getVirtualSystem() const
 	return String ("Jail");
 }
 
-
-
 Boolean UNIX_JailComputerSystem::initialize()
 {
-	nparams = jailparam_all(&params);
+	nparams = 0;
 
-	//add_param("lastjid", &lastjid, sizeof(lastjid), NULL, 0);
+#ifdef INET6
+	ip6_ok = feature_present("inet6");
+#endif
+#ifdef INET
+	ip4_ok = feature_present("inet");
+#endif
+
+	add_param("all", NULL, (size_t)0, NULL, JP_USER);
+	add_param("lastjid", &lastjid, sizeof(lastjid), NULL, 0);
 	lastjid = 0;
 	return true;
 }
@@ -629,49 +729,42 @@ void UNIX_JailComputerSystem::quoted_print(char *str)
 		putchar(qc);
 }
 
-int UNIX_JailComputerSystem::add_param(const char *name, void *value, size_t valuelen,
+int
+UNIX_JailComputerSystem::add_param(const char *name, void *value, size_t valuelen,
     struct jailparam *source, unsigned flags)
-
 {
 	struct jailparam *param, *tparams;
 	int i, tnparams;
 
 	static int paramlistsize;
+
 	/* The pseudo-parameter "all" scans the list of available parameters. */
 	if (!strcmp(name, "all")) {
-		tnparams = jailparam_all(&params);
+		tnparams = jailparam_all(&tparams);
 		if (tnparams < 0)
-			return (-1); //errx(1, "%s", jail_errmsg);
+			errx(1, "%s", jail_errmsg);
 		qsort(tparams, (size_t)tnparams, sizeof(struct jailparam),
 		    sort_param);
-		
-		for (i = 0; i < tnparams; i++)
-		{
-			cout << tparams[i].jp_name << endl;
-		}
-
 		for (i = 0; i < tnparams; i++)
 			add_param(tparams[i].jp_name, NULL, (size_t)0,
 			    tparams + i, flags);
 		free(tparams);
-		return 0;
+		return -1;
 	}
 
 	/* Check for repeat parameters. */
 	for (i = 0; i < nparams; i++)
 	{
-		if (params == NULL) continue;
 		if (!strcmp(name, params[i].jp_name)) {
 			if (value != NULL && jailparam_import_raw(params + i,
 			    value, valuelen) < 0)
-				return (-1); //errx(1, "%s", jail_errmsg);
+				errx(1, "%s", jail_errmsg);
 			params[i].jp_flags |= flags;
 			if (source != NULL)
 				jailparam_free(source, 1);
 			return i;
 		}
 	}
-	cout << "TEST" << endl;
 
 	/* Make sure there is room for the new param record. */
 	if (!nparams) {
@@ -698,7 +791,7 @@ int UNIX_JailComputerSystem::add_param(const char *name, void *value, size_t val
 		return param - params;
 	}
 	if (jailparam_init(param, name) < 0)
-		return (-1); //errx(1, "%s", jail_errmsg);
+		errx(1, "%s", jail_errmsg);
 	param->jp_flags = flags;
 	if ((value != NULL ? jailparam_import_raw(param, value, valuelen)
 	     : jailparam_import(param, reinterpret_cast<const char *>(value))) < 0) {
@@ -706,22 +799,32 @@ int UNIX_JailComputerSystem::add_param(const char *name, void *value, size_t val
 			nparams--;
 			return (-1);
 		}
-		return (-1); //errx(1, "%s", jail_errmsg);
+		errx(1, "%s", jail_errmsg);
 	}
 	return param - params;
 }
 
 int UNIX_JailComputerSystem::print_jail(int pflags, int jflags)
 {
+	int jid;
+
 	//char *nname;
 	//char **param_values;
-	//int ai;
-	int jid, n;
+	//int count, ai, n;
 	//char ipbuf[INET6_ADDRSTRLEN];
 
 	jid = jailparam_get(params, nparams, jflags);
 	if (jid < 0)
 		return jid;
+	/*
+	int i;
+	for(i = 0; i < nparams; i++)
+	{
+		cout << "\t" << params[i].jp_name << " : " << (char *)params[i].jp_value << endl;
+	}
+
+	cout << "-----------------" << endl;
+	cout << endl;
 	printf("%6d  %-29.29s %.74s\n"
 	       "%6s  %-29.29s %.74s\n"
 	       "%6s  %-6d\n",
@@ -733,6 +836,8 @@ int UNIX_JailComputerSystem::print_jail(int pflags, int jflags)
 	    *(int *)params[4].jp_value ? "DYING" : "ACTIVE",
 	    "",
 	    *(int *)params[5].jp_value);
+	*/
+/*
 	n = 6;
 #ifdef INET
 	if (ip4_ok && !strcmp(params[n].jp_name, "ip4.addr")) {
@@ -761,7 +866,35 @@ int UNIX_JailComputerSystem::print_jail(int pflags, int jflags)
 		n++;
 	}
 #endif
+*/
 	return (jid);
+}
+
+
+String UNIX_JailComputerSystem::_get_param_String(const char *name) const
+{
+	int i;
+	for(i = 0; i < nparams; i++)
+	{
+		if (!strcmp(params[i].jp_name, name))
+		{
+			return String((char *)params[i].jp_value);
+		}
+	}
+	return CIMHelper::EmptyString;
+}
+
+Uint32 UNIX_JailComputerSystem::_get_param_Uint32(const char *name) const
+{
+	int i;
+	for(i = 0; i < nparams; i++)
+	{
+		if (!strcmp(params[i].jp_name, name))
+		{
+			return *(int *)params[i].jp_value;
+		}
+	}
+	return 0;
 }
 
 #endif

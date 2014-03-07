@@ -354,6 +354,23 @@ Boolean SambaService::getStarted() const
 	return Boolean(true);
 }
 
+Boolean SambaService::initialize()
+{
+	return false;
+}
+
+Boolean SambaService::load(int &pIndex)
+{
+	if (pIndex == 0) return true;
+	return false;
+}
+
+Boolean SambaService::finalize()
+{
+	return true;
+}
+
+
 Boolean SambaService::createAccount(
 						CIMObjectPath accountTemplate,
 						Array<CIMInstance> &accountIdenties,

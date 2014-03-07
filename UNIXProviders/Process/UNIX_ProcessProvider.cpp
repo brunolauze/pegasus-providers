@@ -153,6 +153,23 @@ Array<CIMKeyBinding> UNIX_ProcessProvider::constructKeyBindings(const UNIX_Proce
 }
 
 
+#define __createInstance_H
+void UNIX_ProcessProvider::createInstance(
+    const OperationContext& context,
+    const CIMObjectPath& ref,
+    const CIMInstance& instanceObject,
+    ObjectPathResponseHandler& handler )
+{
+
+    CIMObjectPath localReference(String(""), //empty host
+    				ref.getNameSpace(),
+    				ref.getClassName(),
+    				ref.getKeyBindings());
+    CIMName className(localReference.getClassName());
+	_checkClass(className);
+	_p.createInstance(instanceObject);
+}
+
 #define UNIX_PROVIDER UNIX_ProcessProvider
 #define UNIX_PROVIDER_NAME "UNIX_ProcessProvider"
 #define CLASS_IMPLEMENTATION UNIX_Process

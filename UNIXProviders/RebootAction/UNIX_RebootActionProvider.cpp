@@ -43,7 +43,7 @@ UNIX_RebootActionProvider::~UNIX_RebootActionProvider()
 CIMInstance UNIX_RebootActionProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_RebootAction &_p)
+	const UNIX_RebootAction &_p) const
 {
 	CIMProperty p;
 
@@ -76,7 +76,33 @@ CIMInstance UNIX_RebootActionProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_RebootActionProvider::constructKeyBindings(const UNIX_RebootAction& _p)
+#define __invokeMethod_H
+/*
+================================================================================
+NAME              : invokeMethod
+DESCRIPTION       : tests the argument for valid classname,
+                  : throws exception if not
+ASSUMPTIONS       : None
+PRE-CONDITIONS    :
+POST-CONDITIONS   :
+NOTES             :
+================================================================================
+*/
+void UNIX_RebootActionProvider::invokeMethod(
+    const OperationContext& context,
+    const CIMObjectPath& objectReference,
+    const CIMName& methodName,
+    const Array<CIMParamValue>& inParameters,
+    MethodResultResponseHandler& handler)
+{
+    Array<CIMKeyBinding> bindings(objectReference.getKeyBindings());
+	if (_p.find(bindings))
+	{
+		_p.reboot();
+	}
+}
+
+Array<CIMKeyBinding> UNIX_RebootActionProvider::constructKeyBindings(const UNIX_RebootAction& _p) const
 
 {
 
@@ -118,7 +144,7 @@ Array<CIMKeyBinding> UNIX_RebootActionProvider::constructKeyBindings(const UNIX_
 #define CLASS_IMPLEMENTATION UNIX_RebootAction
 #define CLASS_IMPLEMENTATION_NAME "UNIX_RebootAction"
 #define BASE_CLASS_NAME "CIM_RebootAction"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 6
 
 
 #include "UNIXProviderBase.hpp"

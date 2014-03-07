@@ -153,6 +153,8 @@ public:
 	virtual Boolean getProcessWaitingForEvent(CIMProperty&) const;
 	virtual String getProcessWaitingForEvent() const;
 
+	virtual Uint32 createInstance(const CIMInstance& instanceObject) const;
+
 private:
 	CIMName currentScope;
 	int processCount;

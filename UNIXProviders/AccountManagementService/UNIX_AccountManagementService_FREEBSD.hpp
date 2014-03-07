@@ -32,10 +32,12 @@
 
 UNIX_AccountManagementService::UNIX_AccountManagementService(void)
 {
+	currentService = NULL;
 }
 
 UNIX_AccountManagementService::~UNIX_AccountManagementService(void)
 {
+	currentService = NULL;
 }
 
 
@@ -47,7 +49,7 @@ Boolean UNIX_AccountManagementService::getInstanceID(CIMProperty &p) const
 
 String UNIX_AccountManagementService::getInstanceID() const
 {
-	return String ("");
+	return currentService->getInstanceID();
 }
 
 Boolean UNIX_AccountManagementService::getCaption(CIMProperty &p) const
@@ -58,7 +60,7 @@ Boolean UNIX_AccountManagementService::getCaption(CIMProperty &p) const
 
 String UNIX_AccountManagementService::getCaption() const
 {
-	return String ("");
+	return currentService->getCaption();
 }
 
 Boolean UNIX_AccountManagementService::getDescription(CIMProperty &p) const
@@ -69,7 +71,7 @@ Boolean UNIX_AccountManagementService::getDescription(CIMProperty &p) const
 
 String UNIX_AccountManagementService::getDescription() const
 {
-	return String ("");
+	return currentService->getDescription();
 }
 
 Boolean UNIX_AccountManagementService::getElementName(CIMProperty &p) const
@@ -91,18 +93,7 @@ Boolean UNIX_AccountManagementService::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_AccountManagementService::getInstallDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return currentService->getInstallDate();
 }
 
 Boolean UNIX_AccountManagementService::getName(CIMProperty &p) const
@@ -113,7 +104,7 @@ Boolean UNIX_AccountManagementService::getName(CIMProperty &p) const
 
 String UNIX_AccountManagementService::getName() const
 {
-	return String ("");
+	return currentService->getName();
 }
 
 Boolean UNIX_AccountManagementService::getOperationalStatus(CIMProperty &p) const
@@ -124,11 +115,7 @@ Boolean UNIX_AccountManagementService::getOperationalStatus(CIMProperty &p) cons
 
 Array<Uint16> UNIX_AccountManagementService::getOperationalStatus() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
-
+	return currentService->getOperationalStatus();
 }
 
 Boolean UNIX_AccountManagementService::getStatusDescriptions(CIMProperty &p) const
@@ -139,11 +126,7 @@ Boolean UNIX_AccountManagementService::getStatusDescriptions(CIMProperty &p) con
 
 Array<String> UNIX_AccountManagementService::getStatusDescriptions() const
 {
-	Array<String> as;
-	
-
-	return as;
-
+	return currentService->getStatusDescriptions();
 }
 
 Boolean UNIX_AccountManagementService::getStatus(CIMProperty &p) const
@@ -154,7 +137,7 @@ Boolean UNIX_AccountManagementService::getStatus(CIMProperty &p) const
 
 String UNIX_AccountManagementService::getStatus() const
 {
-	return String(DEFAULT_STATUS);
+	return currentService->getStatus();
 }
 
 Boolean UNIX_AccountManagementService::getHealthState(CIMProperty &p) const
@@ -165,7 +148,7 @@ Boolean UNIX_AccountManagementService::getHealthState(CIMProperty &p) const
 
 Uint16 UNIX_AccountManagementService::getHealthState() const
 {
-	return Uint16(DEFAULT_HEALTH_STATE);
+	return currentService->getHealthState();
 }
 
 Boolean UNIX_AccountManagementService::getCommunicationStatus(CIMProperty &p) const
@@ -176,7 +159,7 @@ Boolean UNIX_AccountManagementService::getCommunicationStatus(CIMProperty &p) co
 
 Uint16 UNIX_AccountManagementService::getCommunicationStatus() const
 {
-	return Uint16(0);
+	return currentService->getCommunicationStatus();
 }
 
 Boolean UNIX_AccountManagementService::getDetailedStatus(CIMProperty &p) const
@@ -187,7 +170,7 @@ Boolean UNIX_AccountManagementService::getDetailedStatus(CIMProperty &p) const
 
 Uint16 UNIX_AccountManagementService::getDetailedStatus() const
 {
-	return Uint16(0);
+	return currentService->getDetailedStatus();
 }
 
 Boolean UNIX_AccountManagementService::getOperatingStatus(CIMProperty &p) const
@@ -198,7 +181,7 @@ Boolean UNIX_AccountManagementService::getOperatingStatus(CIMProperty &p) const
 
 Uint16 UNIX_AccountManagementService::getOperatingStatus() const
 {
-	return Uint16(DEFAULT_OPERATING_STATUS);
+	return currentService->getOperatingStatus();
 }
 
 Boolean UNIX_AccountManagementService::getPrimaryStatus(CIMProperty &p) const
@@ -209,7 +192,7 @@ Boolean UNIX_AccountManagementService::getPrimaryStatus(CIMProperty &p) const
 
 Uint16 UNIX_AccountManagementService::getPrimaryStatus() const
 {
-	return Uint16(DEFAULT_PRIMARY_STATUS);
+	return currentService->getPrimaryStatus();
 }
 
 Boolean UNIX_AccountManagementService::getEnabledState(CIMProperty &p) const
@@ -220,7 +203,7 @@ Boolean UNIX_AccountManagementService::getEnabledState(CIMProperty &p) const
 
 Uint16 UNIX_AccountManagementService::getEnabledState() const
 {
-	return Uint16(DEFAULT_ENABLED_STATE);
+	return currentService->getEnabledState();
 }
 
 Boolean UNIX_AccountManagementService::getOtherEnabledState(CIMProperty &p) const
@@ -231,7 +214,7 @@ Boolean UNIX_AccountManagementService::getOtherEnabledState(CIMProperty &p) cons
 
 String UNIX_AccountManagementService::getOtherEnabledState() const
 {
-	return String ("");
+	return currentService->getOtherEnabledState();
 }
 
 Boolean UNIX_AccountManagementService::getRequestedState(CIMProperty &p) const
@@ -242,7 +225,7 @@ Boolean UNIX_AccountManagementService::getRequestedState(CIMProperty &p) const
 
 Uint16 UNIX_AccountManagementService::getRequestedState() const
 {
-	return Uint16(0);
+	return currentService->getRequestedState();
 }
 
 Boolean UNIX_AccountManagementService::getEnabledDefault(CIMProperty &p) const
@@ -253,7 +236,7 @@ Boolean UNIX_AccountManagementService::getEnabledDefault(CIMProperty &p) const
 
 Uint16 UNIX_AccountManagementService::getEnabledDefault() const
 {
-	return Uint16(0);
+	return currentService->getEnabledDefault();
 }
 
 Boolean UNIX_AccountManagementService::getTimeOfLastStateChange(CIMProperty &p) const
@@ -264,18 +247,7 @@ Boolean UNIX_AccountManagementService::getTimeOfLastStateChange(CIMProperty &p) 
 
 CIMDateTime UNIX_AccountManagementService::getTimeOfLastStateChange() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return currentService->getTimeOfLastStateChange();
 }
 
 Boolean UNIX_AccountManagementService::getAvailableRequestedStates(CIMProperty &p) const
@@ -286,11 +258,7 @@ Boolean UNIX_AccountManagementService::getAvailableRequestedStates(CIMProperty &
 
 Array<Uint16> UNIX_AccountManagementService::getAvailableRequestedStates() const
 {
-	Array<Uint16> as;
-	
-
-	return as;
-
+	return currentService->getAvailableRequestedStates();
 }
 
 Boolean UNIX_AccountManagementService::getTransitioningToState(CIMProperty &p) const
@@ -301,7 +269,7 @@ Boolean UNIX_AccountManagementService::getTransitioningToState(CIMProperty &p) c
 
 Uint16 UNIX_AccountManagementService::getTransitioningToState() const
 {
-	return Uint16(0);
+	return currentService->getTransitioningToState();
 }
 
 Boolean UNIX_AccountManagementService::getSystemCreationClassName(CIMProperty &p) const
@@ -345,7 +313,7 @@ Boolean UNIX_AccountManagementService::getPrimaryOwnerName(CIMProperty &p) const
 
 String UNIX_AccountManagementService::getPrimaryOwnerName() const
 {
-	return String ("");
+	return currentService->getPrimaryOwnerName();
 }
 
 Boolean UNIX_AccountManagementService::getPrimaryOwnerContact(CIMProperty &p) const
@@ -356,7 +324,7 @@ Boolean UNIX_AccountManagementService::getPrimaryOwnerContact(CIMProperty &p) co
 
 String UNIX_AccountManagementService::getPrimaryOwnerContact() const
 {
-	return String ("");
+	return currentService->getPrimaryOwnerContact();
 }
 
 Boolean UNIX_AccountManagementService::getStartMode(CIMProperty &p) const
@@ -367,7 +335,7 @@ Boolean UNIX_AccountManagementService::getStartMode(CIMProperty &p) const
 
 String UNIX_AccountManagementService::getStartMode() const
 {
-	return String ("");
+	return currentService->getStartMode();
 }
 
 Boolean UNIX_AccountManagementService::getStarted(CIMProperty &p) const
@@ -378,13 +346,14 @@ Boolean UNIX_AccountManagementService::getStarted(CIMProperty &p) const
 
 Boolean UNIX_AccountManagementService::getStarted() const
 {
-	return Boolean(false);
+	return currentService->getStarted();
 }
 
 
 
 Boolean UNIX_AccountManagementService::initialize()
 {
+	currentService = NULL;
 	return true;
 }
 
@@ -392,24 +361,29 @@ Boolean UNIX_AccountManagementService::load(int &pIndex)
 {
 	if (pIndex == 0)
 	{
+		if (currentService != NULL) currentService->finalize();
 		currentService = new OpenPAMService();
-		return true;
+		return currentService->initialize();
 	}
 	else if (pIndex == 1)
 	{
-		/* Check openldap */
+		if (currentService != NULL) currentService->finalize();
 		currentService = new OpenLdapService();
+		return currentService->initialize();
 	}
 	else if (pIndex == 2)
 	{
+		if (currentService != NULL) currentService->finalize();
 		/* Check SAMBA */
 		currentService = new SambaService();
+		return currentService->initialize();
 	}
-	return true;
+	return false;
 }
 
 Boolean UNIX_AccountManagementService::finalize()
 {
+	if (currentService != NULL) currentService->finalize();
 	return true;
 }
 
@@ -432,19 +406,39 @@ Boolean UNIX_AccountManagementService::find(Array<CIMKeyBinding> &kbArray)
 		else if (keyName.equal(PROPERTY_NAME)) nameKey = kb.getValue();
 	}
 
+	/* Execute find with extracted keys */
+	if (String::equalNoCase(creationClassNameKey, getCreationClassName()))
+	{
+		int pIndex;
+		if (String::equal(nameKey, String("OpenPAM")))
+		{
+			pIndex = 0;
+			return load(pIndex);
+		}
+		else if (String::equal(nameKey, String("OpenLDAP")))
+		{
+			pIndex = 1;
+			return load(pIndex);
+		}
+		else if (String::equal(nameKey, String("Samba")))
+		{
+			pIndex = 2;
+			return load(pIndex);
+		}
+	}
 
-
-/* EXecute find with extracted keys */
 
 	return false;
 }
 
 Boolean UNIX_AccountManagementService::createAccount(
 						CIMObjectPath accountTemplate,
-						Array<CIMInstance> &accountIdenties,
+						Array<CIMInstance> &accountIdentities,
 						CIMInstance &account,
 						CIMInstance computerSystem) const
 {
-	
-	return true;
+	return currentService->createAccount(accountTemplate, 
+				accountIdentities, 
+				account, 
+				computerSystem);
 }

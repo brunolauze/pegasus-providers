@@ -33,6 +33,7 @@
 #include <sys/stat.h>
 #include <sys/fcntl.h>
 #include <sys/sysctl.h>
+#include <unistd.h>
 
 UNIX_Process::UNIX_Process(void)
 {
@@ -682,4 +683,30 @@ Boolean UNIX_Process::find(Array<CIMKeyBinding> &kbArray)
 	}
 
 	return found;
+}
+
+Uint32 UNIX_Process::createInstance(const CIMInstance& instanceObject) const
+{
+	String processName = CIMHelper::getPropertyAsString(instanceObject, String("Name"));
+	Array<String> parameters = CIMHelper::getPropertyAsStringArray(instanceObject, String("Parameters"));
+
+	char *argv[parameters.size() + 1];
+	const char *pName = processName.getCString();
+	argv[0] = const_cast<char*>(pName);
+	for(Uint32 i = 0; i < parameters.size(); i++)
+	{
+		const char *val = parameters[i].getCString();
+		argv[i + 1] = const_cast<char*>(val);
+	}
+	int pid = vfork();
+	if (pid == 0)
+	{
+		pid = vfork();
+		if (pid != 0)
+		{
+			execvp(argv[0], argv);
+		}
+		exit(0);
+	}
+	return Uint32(0);
 }

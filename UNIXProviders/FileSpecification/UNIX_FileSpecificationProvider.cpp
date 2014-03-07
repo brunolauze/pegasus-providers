@@ -43,7 +43,7 @@ UNIX_FileSpecificationProvider::~UNIX_FileSpecificationProvider()
 CIMInstance UNIX_FileSpecificationProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_FileSpecification &_p)
+	const UNIX_FileSpecification &_p) const
 {
 	CIMProperty p;
 
@@ -83,7 +83,7 @@ CIMInstance UNIX_FileSpecificationProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_FileSpecificationProvider::constructKeyBindings(const UNIX_FileSpecification& _p)
+Array<CIMKeyBinding> UNIX_FileSpecificationProvider::constructKeyBindings(const UNIX_FileSpecification& _p) const
 
 {
 

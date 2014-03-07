@@ -4,12 +4,10 @@
 #ifndef __UNIX_VIRTUALCOMPUTERSYSTEM_PRIVATE_H
 #define __UNIX_VIRTUALCOMPUTERSYSTEM_PRIVATE_H
 
-#include <CIM_ComputerSystem.h>
-
-#define PROPERTY_VIRTUAL_SYSTEM				"VirtualSystem"
+#include "UNIX_VirtualComputerSystem.h"
 
 class UNIX_JailComputerSystem :
-	public CIM_ComputerSystem
+	public UNIX_VirtualComputerSystem
 {
 public:
 
@@ -98,7 +96,10 @@ private:
 	static char *nononame(const char *name);
 	static void quoted_print(char *str);
 	int add_param(const char *name, void *value, size_t valuelen, struct jailparam *source, unsigned flags);
-
+	String _get_param_String(const char *name) const;
+	Uint32 _get_param_Uint32(const char *name) const;
+	int ip6_ok;
+	int ip4_ok;
 	struct jailparam *params;
 	int *param_parent;
 	int nparams;

@@ -124,6 +124,7 @@ public:
 
 private:
 	CIMName currentScope;
+	UNIX_VirtualComputerSystem *currentSystem;
 #	include "UNIX_VirtualComputerSystemPrivate.h"
 
 

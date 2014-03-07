@@ -78,6 +78,8 @@ public:
 	virtual Boolean getDirection(CIMProperty&) const;
 	virtual Uint16 getDirection() const;
 
+	virtual Uint32 reboot() const;
+
 private:
 	CIMName currentScope;
 

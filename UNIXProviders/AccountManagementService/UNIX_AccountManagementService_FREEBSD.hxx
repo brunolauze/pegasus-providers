@@ -35,19 +35,19 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
-#include "CIM_SecurityService.h"
+#include "UNIX_AccountManagementService.h"
 
 class OpenPAMService :
-	public CIM_SecurityService
+	public UNIX_AccountManagementService
 {
 public:
 
 	OpenPAMService();
 	~OpenPAMService();
 
-	Boolean initialize() { return true; };
-	Boolean load(int&) { return false; };
-	Boolean finalize() { return true; };
+	Boolean initialize();
+	Boolean load(int&);
+	Boolean finalize();
 	Boolean find(Array<CIMKeyBinding>&) { return false; };
 	Boolean validateKey(CIMKeyBinding&) const { return false; };
 	void setScope(CIMName scope) { currentScope = scope; };
@@ -123,16 +123,16 @@ private:
 
 /* OpenLdap Service */
 class OpenLdapService :
-	public CIM_SecurityService
+	public UNIX_AccountManagementService
 {
 public:
 
 	OpenLdapService();
 	~OpenLdapService();
 
-	Boolean initialize() { return true; };
-	Boolean load(int&) { return false; };
-	Boolean finalize() { return true; };
+	Boolean initialize();
+	Boolean load(int&);
+	Boolean finalize();
 	Boolean find(Array<CIMKeyBinding>&) { return false; };
 	Boolean validateKey(CIMKeyBinding&) const { return false; };
 	void setScope(CIMName scope) { currentScope = scope; };
@@ -207,16 +207,16 @@ private:
 
 /* Samba Service */
 class SambaService :
-	public CIM_SecurityService
+	public UNIX_AccountManagementService
 {
 public:
 
 	SambaService();
 	~SambaService();
 
-	Boolean initialize() { return true; };
-	Boolean load(int&) { return false; };
-	Boolean finalize() { return true; };
+	Boolean initialize();
+	Boolean load(int&);
+	Boolean finalize();
 	Boolean find(Array<CIMKeyBinding>&) { return false; };
 	Boolean validateKey(CIMKeyBinding&) const { return false; };
 	void setScope(CIMName scope) { currentScope = scope; };

@@ -1,6 +1,8 @@
 ﻿
 #include <sys/stat.h>
 #include "UNIX_AccountManagementService_FREEBSD.hxx"
+#include <unistd.h>
+#include <stdio.h>
 
 OpenPAMService::OpenPAMService(void)
 {
@@ -354,6 +356,24 @@ Boolean OpenPAMService::getStarted() const
 	return Boolean(true);
 }
 
+
+Boolean OpenPAMService::initialize()
+{
+	return true;
+}
+
+Boolean OpenPAMService::load(int &pIndex)
+{
+	if (pIndex == 0) return true;
+	return false;
+}
+
+Boolean OpenPAMService::finalize()
+{
+	return true;
+}
+
+
 Boolean OpenPAMService::createAccount(
 						CIMObjectPath accountTemplate,
 						Array<CIMInstance> &accountIdenties,
@@ -361,5 +381,55 @@ Boolean OpenPAMService::createAccount(
 						CIMInstance computerSystem) const
 {
 	
+	String name = CIMHelper::getPropertyAsString(account, "Name");
+	String cmd("pw user add -e /etc/pw.conf -q ");
+
+	//Login Class TODO: Review
+	//cmd.append("-L <default>");
+
+	cmd.append("-n ");
+	cmd.append(name);
+
+	String suid = CIMHelper::getPropertyAsString(account, "UserID");
+	if (suid.size() > 0)
+	{
+		int uid;
+		uid = atoi(suid.getCString());
+		if (uid > 80) // Seems fairs FreeBSD takes the other ones....
+		{
+			cmd.append("-u ");
+			cmd.append(suid);
+		}
+	}
+
+	cmd.append("-c ");
+
+	String fullname = CIMHelper::getPropertyAsString(account, "Caption");
+
+	if (fullname.size() == 0)
+		cmd.append(name);
+	else
+		cmd.append(fullname);
+
+	cmd.append("-h fd");
+	cmd.append("-m"); /* Create Home Directory */
+	cmd.append("-g ");
+	cmd.append(name);
+	cmd.append("-s csh"); // Shell TODO: Review
+
+	FILE * fp = popen(cmd.getCString(), "w");
+
+	if (fp == NULL) 
+	{
+		//throw Exception
+		return false;
+	}
+	String password("");
+	const char *pwd = password.getCString();
+	size_t pwd_len = strlen(pwd);
+	fwrite(pwd, sizeof(char), pwd_len, fp);
+
+	pclose(fp);
+
 	return true;
 }

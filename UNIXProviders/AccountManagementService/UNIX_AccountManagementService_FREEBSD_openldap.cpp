@@ -355,6 +355,22 @@ Boolean OpenLdapService::getStarted() const
 	return Boolean(true);
 }
 
+Boolean OpenLdapService::initialize()
+{
+	return false;
+}
+
+Boolean OpenLdapService::load(int &pIndex)
+{
+	if (pIndex == 0) return true;
+	return false;
+}
+
+Boolean OpenLdapService::finalize()
+{
+	return true;
+}
+
 Boolean OpenLdapService::createAccount(
 						CIMObjectPath accountTemplate,
 						Array<CIMInstance> &accountIdenties,

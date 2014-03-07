@@ -69,6 +69,13 @@ public:
 	static int indexOf (char* base, char* str, int startIndex);
 	static int lastIndexOf (char* base, char* str);
 	static std::string encode(std::string str);
+
+	static CIMValue getPropertyValue(const CIMInstance&, String name);
+    static String getPropertyAsString(const CIMInstance&, String name);
+    static Array<String> getPropertyAsStringArray(const CIMInstance&, String name);
+    static Uint32 getPropertyAsUint32(const CIMInstance&, String name);
+    static Uint64 getPropertyAsUint64(const CIMInstance&, String name);
+
 	static String getHostName();
 	static String getOSName();
 	static String HostName;
