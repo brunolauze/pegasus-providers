@@ -36,7 +36,7 @@
 #define CLASS_IMPLEMENTATION UNIX_VirtualSystemSettingData
 #define CLASS_IMPLEMENTATION_NAME "UNIX_VirtualSystemSettingData"
 #define BASE_CLASS_NAME "CIM_VirtualSystemSettingData"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 1
 
 
 #include "UNIXProviderBase.h"

@@ -57,11 +57,16 @@ NOTES             :
 */
 void UNIX_PROVIDER::_checkClass(CIMName& className)
 {
-  if (!className.equal (CLASS_IMPLEMENTATION_CIM_NAME) &&
-#ifdef BASE_BASE_CLASS_CIM_NAME
-  	!className.equal (BASE_BASE_CLASS_CIM_NAME) &&
+  if (className.equal (CLASS_IMPLEMENTATION_CIM_NAME) ||
+#ifdef EXTRA_CLASS_IMPLEMENTATION_STATEMENTS
+  	  EXTRA_CLASS_IMPLEMENTATION_STATEMENTS
 #endif
-      !className.equal (BASE_CLASS_CIM_NAME))
+#ifdef BASE_BASE_CLASS_CIM_NAME
+  	className.equal (BASE_BASE_CLASS_CIM_NAME) ||
+#endif
+      className.equal (BASE_CLASS_CIM_NAME))
+      return;
+
     throw CIMNotSupportedException(className.getString() +
         ": Class not supported");
 }
@@ -242,7 +247,7 @@ void UNIX_PROVIDER::getInstance(const OperationContext &ctx,
   /* pstat_getproc() as an integer.                                 */
   bool found = false;
 #ifdef __PROVIDER_PREPARE
-    __PROVIDER_PREPARE(ctx, nameSpace, includeQualifiers, includeClassOrigin, _p);
+    __PROVIDER_PREPARE(ctx, className, nameSpace, includeQualifiers, includeClassOrigin, _p);
 #endif
 
   if (_p.initialize())
@@ -300,6 +305,9 @@ void UNIX_PROVIDER::enumerateInstances(
     // there would be dups
 
     if (className.equal (BASE_CLASS_CIM_NAME) ||
+#ifdef EXTRA_CLASS_IMPLEMENTATION_STATEMENTS
+  	  EXTRA_CLASS_IMPLEMENTATION_STATEMENTS
+#endif
 #ifdef BASE_BASE_CLASS_CIM_NAME
     	className.equal(BASE_BASE_CLASS_CIM_NAME) ||
 #endif
@@ -308,7 +316,7 @@ void UNIX_PROVIDER::enumerateInstances(
         handler.processing();
 #ifdef __PROVIDER_PREPARE
         __PROVIDER_PREPARE(
-        context, nameSpace, includeQualifiers, includeClassOrigin, _p);
+        context, className, nameSpace, includeQualifiers, includeClassOrigin, _p);
 #endif    
         if (_p.initialize())
         {
@@ -348,6 +356,9 @@ void UNIX_PROVIDER::execQuery(
     // enumerate - if we return instances on enumerate of our superclass,
     // there would be dups
     if (className.equal (CLASS_IMPLEMENTATION_CIM_NAME) ||
+#ifdef EXTRA_CLASS_IMPLEMENTATION_STATEMENTS
+  	  EXTRA_CLASS_IMPLEMENTATION_STATEMENTS
+#endif
 #ifdef BASE_BASE_CLASS_CIM_NAME
 		className.equal (BASE_BASE_CLASS_CIM_NAME) ||
 #endif
@@ -356,7 +367,7 @@ void UNIX_PROVIDER::execQuery(
         handler.processing();
         #ifdef __PROVIDER_PREPARE
         __PROVIDER_PREPARE(
-        context, nameSpace, true, true, _p);
+        context, className, nameSpace, true, true, _p);
 
 		#endif       
         if (_p.initialize())
@@ -412,16 +423,19 @@ void UNIX_PROVIDER::enumerateInstanceNames(const OperationContext &ctx,
     handler.processing();
     // We are only going to respond to enumeration requests on
     // CLASS_IMPLEMENTATION_CIM_NAME or BASE_CLASS_CIM_NAME
-    if (className.equal (BASE_CLASS_CIM_NAME)
-#ifdef BASE_BASE_CLASS_CIM_NAME
-    || className.equal (BASE_BASE_CLASS_CIM_NAME)
+    if (className.equal (BASE_CLASS_CIM_NAME) ||
+#ifdef EXTRA_CLASS_IMPLEMENTATION_STATEMENTS
+  	  EXTRA_CLASS_IMPLEMENTATION_STATEMENTS
 #endif
-    || className.equal(CLASS_IMPLEMENTATION_CIM_NAME))
+#ifdef BASE_BASE_CLASS_CIM_NAME
+     className.equal (BASE_BASE_CLASS_CIM_NAME) ||
+#endif
+    className.equal(CLASS_IMPLEMENTATION_CIM_NAME))
     {
 
     #ifdef __PROVIDER_PREPARE
         __PROVIDER_PREPARE(
-        ctx, nameSpace, true, true, _p);
+        ctx, className, nameSpace, true, true, _p);
 	#endif  
       // Get the process information and deliver an ObjectPath for
       // each process

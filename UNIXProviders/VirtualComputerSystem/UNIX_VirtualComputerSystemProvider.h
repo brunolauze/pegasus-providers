@@ -38,6 +38,7 @@
 #define BASE_CLASS_NAME "CIM_VirtualComputerSystem"
 #define NUMKEYS_CLASS_IMPLEMENTATION 2
 
+#define __PROVIDER_PREPARE prepareEnumeration
 
 #include "UNIXProviderBase.h"
 

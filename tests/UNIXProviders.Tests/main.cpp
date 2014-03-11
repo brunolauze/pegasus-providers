@@ -2162,7 +2162,9 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_VideoHead")) { UNIX_VideoHeadFixture videoHead; videoHead.Run(); }
 	//if (IsTarget(s, "UNIX_VideoHeadResolution")) { UNIX_VideoHeadResolutionFixture videoHeadResolution; videoHeadResolution.Run(); }
 	//if (IsTarget(s, "UNIX_View")) { UNIX_ViewFixture view; view.Run(); }
-	if (IsTarget(s, "UNIX_VirtualComputerSystem")) { UNIX_VirtualComputerSystemFixture virtualComputerSystem; virtualComputerSystem.Run(); }
+	if (IsTarget(s, "UNIX_VirtualComputerSystem")) { UNIX_VirtualComputerSystemFixture virtualComputerSystem("UNIX_VirtualComputerSystem"); virtualComputerSystem.Run(); }
+	if (IsTarget(s, "UNIX_JailComputerSystem")) { UNIX_VirtualComputerSystemFixture virtualComputerSystem("UNIX_JailComputerSystem"); virtualComputerSystem.Run(); }
+	if (IsTarget(s, "UNIX_BhyveComputerSystem")) { UNIX_VirtualComputerSystemFixture virtualComputerSystem("UNIX_BhyveComputerSystem"); virtualComputerSystem.Run(); }
 	//if (IsTarget(s, "UNIX_VirtualEthernetSwitchSettingData")) { UNIX_VirtualEthernetSwitchSettingDataFixture virtualEthernetSwitchSettingData; virtualEthernetSwitchSettingData.Run(); }
 	//if (IsTarget(s, "UNIX_VirtualSystemManagementCapabilities")) { UNIX_VirtualSystemManagementCapabilitiesFixture virtualSystemManagementCapabilities; virtualSystemManagementCapabilities.Run(); }
 	//if (IsTarget(s, "UNIX_VirtualSystemManagementService")) { UNIX_VirtualSystemManagementServiceFixture virtualSystemManagementService; virtualSystemManagementService.Run(); }

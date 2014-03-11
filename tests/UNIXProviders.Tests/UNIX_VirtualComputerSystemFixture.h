@@ -35,8 +35,9 @@ class UNIX_VirtualComputerSystemFixture :
 	public CIMFixtureBase
 {
 public:
-	UNIX_VirtualComputerSystemFixture();
+	UNIX_VirtualComputerSystemFixture(const char *target);
 	~UNIX_VirtualComputerSystemFixture();
 	virtual void Run();
-
+private:
+	const char *realTarget;
 };

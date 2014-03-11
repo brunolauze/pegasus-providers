@@ -122,8 +122,17 @@ public:
 	virtual Boolean getVirtualSystem(CIMProperty&) const;
 	virtual String getVirtualSystem() const;
 
+	virtual void setContext(const CIMName&);
+
+
+	/* Methods */
+	virtual void requestStateChange(Uint32 requestedState, CIMDateTime timeoutPeriod);
+	virtual void setPowerState(Uint32 powerState, CIMDateTime time);
+
+
 private:
 	CIMName currentScope;
+	CIMName contextClassName;
 	UNIX_VirtualComputerSystem *currentSystem;
 #	include "UNIX_VirtualComputerSystemPrivate.h"
 

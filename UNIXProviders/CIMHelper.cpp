@@ -256,6 +256,72 @@ int CIMHelper::lastIndexOf (char* base, char* str) {
 }
 
 
+String CIMHelper::extractStringParameter(const Array<CIMParamValue>& inParameters, String name)
+{
+    for(Uint32 i = 0; i < inParameters.size(); i++)
+    {
+    	CIMParamValue paramValue = inParameters[i];
+    	CIMName paramName = paramValue.getParameterName();
+    	if (paramName.equal(name))
+    	{
+    		String s;
+    		paramValue.getValue().get(s);
+    		return s;
+    	}
+    }
+    return CIMHelper::EmptyString;
+}
+
+Uint32 CIMHelper::extractUint32Parameter(const Array<CIMParamValue>& inParameters, String name)
+{
+    for(Uint32 i = 0; i < inParameters.size(); i++)
+    {
+    	CIMParamValue paramValue = inParameters[i];
+    	CIMName paramName = paramValue.getParameterName();
+    	if (paramName.equal(name))
+    	{
+    		Uint32 value;
+    		paramValue.getValue().get(value);
+    		return value;
+    	}
+    }
+    return Uint32(0);
+}
+
+
+CIMDateTime CIMHelper::extractDateTimeParameter(const Array<CIMParamValue>& inParameters, String name)
+{
+    for(Uint32 i = 0; i < inParameters.size(); i++)
+    {
+    	CIMParamValue paramValue = inParameters[i];
+    	CIMName paramName = paramValue.getParameterName();
+    	if (paramName.equal(name))
+    	{
+    		CIMDateTime value;
+    		paramValue.getValue().get(value);
+    		return value;
+    	}
+    }
+    return CIMDateTime();
+}
+
+
+CIMInstance CIMHelper::extractInstanceParameter(const Array<CIMParamValue>& inParameters, String name)
+{
+    for(Uint32 i = 0; i < inParameters.size(); i++)
+    {
+    	CIMParamValue paramValue = inParameters[i];
+    	CIMName paramName = paramValue.getParameterName();
+    	if (paramName.equal(name))
+    	{
+    		CIMInstance value;
+    		paramValue.getValue().get(value);
+    		return value;
+    	}
+    }
+    return CIMInstance();
+}
+
 CIMValue CIMHelper::getPropertyValue(const CIMInstance &instanceObject, String name)
 {
     CIMName cname(name);

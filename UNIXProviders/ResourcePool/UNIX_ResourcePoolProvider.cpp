@@ -43,7 +43,7 @@ UNIX_ResourcePoolProvider::~UNIX_ResourcePoolProvider()
 CIMInstance UNIX_ResourcePoolProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_ResourcePool &_p)
+	const UNIX_ResourcePool &_p) const
 {
 	CIMProperty p;
 
@@ -92,7 +92,7 @@ CIMInstance UNIX_ResourcePoolProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_ResourcePoolProvider::constructKeyBindings(const UNIX_ResourcePool& _p)
+Array<CIMKeyBinding> UNIX_ResourcePoolProvider::constructKeyBindings(const UNIX_ResourcePool& _p) const
 
 {
 

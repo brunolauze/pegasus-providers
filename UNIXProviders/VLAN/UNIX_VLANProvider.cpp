@@ -43,7 +43,7 @@ UNIX_VLANProvider::~UNIX_VLANProvider()
 CIMInstance UNIX_VLANProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_VLAN &_p)
+	const UNIX_VLAN &_p) const
 {
 	CIMProperty p;
 
@@ -96,7 +96,7 @@ CIMInstance UNIX_VLANProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_VLANProvider::constructKeyBindings(const UNIX_VLAN& _p)
+Array<CIMKeyBinding> UNIX_VLANProvider::constructKeyBindings(const UNIX_VLAN& _p) const
 
 {
 

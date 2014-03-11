@@ -43,7 +43,7 @@ UNIX_VirtualSystemSettingDataProvider::~UNIX_VirtualSystemSettingDataProvider()
 CIMInstance UNIX_VirtualSystemSettingDataProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_VirtualSystemSettingData &_p)
+	const UNIX_VirtualSystemSettingData &_p) const
 {
 	CIMProperty p;
 
@@ -88,7 +88,7 @@ CIMInstance UNIX_VirtualSystemSettingDataProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_VirtualSystemSettingDataProvider::constructKeyBindings(const UNIX_VirtualSystemSettingData& _p)
+Array<CIMKeyBinding> UNIX_VirtualSystemSettingDataProvider::constructKeyBindings(const UNIX_VirtualSystemSettingData& _p) const
 
 {
 
@@ -110,7 +110,7 @@ Array<CIMKeyBinding> UNIX_VirtualSystemSettingDataProvider::constructKeyBindings
 #define CLASS_IMPLEMENTATION UNIX_VirtualSystemSettingData
 #define CLASS_IMPLEMENTATION_NAME "UNIX_VirtualSystemSettingData"
 #define BASE_CLASS_NAME "CIM_VirtualSystemSettingData"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 1
 
 
 #include "UNIXProviderBase.hpp"

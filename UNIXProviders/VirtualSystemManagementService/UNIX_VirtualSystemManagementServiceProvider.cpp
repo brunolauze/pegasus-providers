@@ -43,7 +43,7 @@ UNIX_VirtualSystemManagementServiceProvider::~UNIX_VirtualSystemManagementServic
 CIMInstance UNIX_VirtualSystemManagementServiceProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_VirtualSystemManagementService &_p)
+	const UNIX_VirtualSystemManagementService &_p) const
 {
 	CIMProperty p;
 
@@ -99,7 +99,7 @@ CIMInstance UNIX_VirtualSystemManagementServiceProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_VirtualSystemManagementServiceProvider::constructKeyBindings(const UNIX_VirtualSystemManagementService& _p)
+Array<CIMKeyBinding> UNIX_VirtualSystemManagementServiceProvider::constructKeyBindings(const UNIX_VirtualSystemManagementService& _p) const
 
 {
 
@@ -133,7 +133,7 @@ Array<CIMKeyBinding> UNIX_VirtualSystemManagementServiceProvider::constructKeyBi
 #define CLASS_IMPLEMENTATION UNIX_VirtualSystemManagementService
 #define CLASS_IMPLEMENTATION_NAME "UNIX_VirtualSystemManagementService"
 #define BASE_CLASS_NAME "CIM_VirtualSystemManagementService"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 4
 
 
 #include "UNIXProviderBase.hpp"

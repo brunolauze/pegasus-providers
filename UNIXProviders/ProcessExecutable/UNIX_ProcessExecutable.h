@@ -34,7 +34,8 @@
 
 
 #include "CIM_Dependency.h"
-
+#include <DataFile/UNIX_DataFileProvider.h>
+#include <Process/UNIX_ProcessProvider.h>
 #include "UNIX_ProcessExecutableDeps.h"
 
 

@@ -32,6 +32,7 @@
 
 UNIX_VirtualComputerSystem::UNIX_VirtualComputerSystem(void)
 {
+
 }
 
 UNIX_VirtualComputerSystem::~UNIX_VirtualComputerSystem(void)
@@ -279,7 +280,7 @@ Boolean UNIX_VirtualComputerSystem::getCreationClassName(CIMProperty &p) const
 
 String UNIX_VirtualComputerSystem::getCreationClassName() const
 {
-	return String("UNIX_VirtualComputerSystem");
+	return currentSystem->getCreationClassName();
 }
 
 Boolean UNIX_VirtualComputerSystem::getNameFormat(CIMProperty &p) const
@@ -403,18 +404,44 @@ String UNIX_VirtualComputerSystem::getVirtualSystem() const
 	return currentSystem->getVirtualSystem();
 }
 
+void UNIX_VirtualComputerSystem::requestStateChange(Uint32 requestedState, CIMDateTime timeoutPeriod)
+{
+	currentSystem->requestStateChange(requestedState, timeoutPeriod);
+}
+
+void UNIX_VirtualComputerSystem::setPowerState(Uint32 powerState, CIMDateTime time)
+{
+	currentSystem->setPowerState(powerState, time);
+}
+
 Boolean UNIX_VirtualComputerSystem::initialize()
 {
 	_jailSystem = new UNIX_JailComputerSystem();
-	return _jailSystem->initialize();
+	_bhyveSystem = new UNIX_BhyveComputerSystem();
+	return _jailSystem->initialize() && _bhyveSystem->initialize();
 }
 
 Boolean UNIX_VirtualComputerSystem::load(int &pIndex)
 {
-	if (_jailSystem->load(pIndex))
+	if (contextClassName.isNull() || contextClassName.equal(String("CIM_VirtualComputerSystem")) ||
+		contextClassName.equal(String("UNIX_VirtualComputerSystem")) ||
+		contextClassName.equal(String("UNIX_JailComputerSystem")))
 	{
-		currentSystem = _jailSystem;
-		return true;
+		if (_jailSystem->load(pIndex))
+		{
+			currentSystem = _jailSystem;
+			return true;
+		}
+	}
+	if (contextClassName.isNull() || contextClassName.equal(String("CIM_VirtualComputerSystem")) ||
+		contextClassName.equal(String("UNIX_VirtualComputerSystem")) ||
+		contextClassName.equal(String("UNIX_BhyveComputerSystem")))
+	{
+		if (_bhyveSystem->load(pIndex))
+		{
+			currentSystem = _bhyveSystem;
+			return true;
+		}
 	}
 
 	return false;
@@ -422,6 +449,7 @@ Boolean UNIX_VirtualComputerSystem::load(int &pIndex)
 
 Boolean UNIX_VirtualComputerSystem::finalize()
 {
+	contextClassName = CIMName();
 	return _jailSystem->finalize();
 }
 
@@ -431,7 +459,6 @@ Boolean UNIX_VirtualComputerSystem::find(Array<CIMKeyBinding> &kbArray)
 	String creationClassNameKey;
 	String nameKey;
 
-
 	for(Uint32 i = 0; i < kbArray.size(); i++)
 	{
 		kb = kbArray[i];
@@ -440,9 +467,22 @@ Boolean UNIX_VirtualComputerSystem::find(Array<CIMKeyBinding> &kbArray)
 		else if (keyName.equal(PROPERTY_NAME)) nameKey = kb.getValue();
 	}
 
+	setContext(creationClassNameKey);
 
+	/* Execute find with extracted keys */
+	for(int i = 0; load(i); i++)
+	{
+		if (String::equalNoCase(nameKey, getName()))
+		{
+			return true;
+		}
+	}
 
-/* EXecute find with extracted keys */
 
 	return false;
+}
+
+void UNIX_VirtualComputerSystem::setContext(const CIMName &name)
+{
+	contextClassName = name;
 }

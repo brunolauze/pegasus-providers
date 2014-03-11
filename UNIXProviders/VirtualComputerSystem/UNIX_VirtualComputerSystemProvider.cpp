@@ -46,13 +46,13 @@ CIMInstance UNIX_VirtualComputerSystemProvider::constructInstance(
 	const UNIX_VirtualComputerSystem &_p) const
 {
 	CIMProperty p;
-
-	CIMInstance inst(className);
+	// Use CreationClassName as Instance to be created.
+	CIMInstance inst(_p.getCreationClassName());
 
 	// Set path
 	inst.setPath(CIMObjectPath(String(""), // hostname
 			nameSpace,
-			CIMName("UNIX_VirtualComputerSystem"),
+			_p.getCreationClassName(),
 			constructKeyBindings(_p)));
 
 	//CIM_ManagedElement Properties
@@ -124,15 +124,82 @@ Array<CIMKeyBinding> UNIX_VirtualComputerSystemProvider::constructKeyBindings(co
 	return keys;
 }
 
+#define __invokeMethod_H
+/*
+================================================================================
+NAME              : invokeMethod
+DESCRIPTION       : tests the argument for valid classname,
+                  : throws exception if not
+ASSUMPTIONS       : None
+PRE-CONDITIONS    :
+POST-CONDITIONS   :
+NOTES             :
+================================================================================
+*/
+void UNIX_VirtualComputerSystemProvider::invokeMethod(
+    const OperationContext& context,
+    const CIMObjectPath& objectReference,
+    const CIMName& methodName,
+    const Array<CIMParamValue>& inParameters,
+    MethodResultResponseHandler& handler)
+{
+    Array<CIMKeyBinding> bindings(objectReference.getKeyBindings());
+    CIMName className(objectReference.getClassName());
+    _checkClass(className);
+    handler.processing();
+    _p.initialize();
+	if (_p.find(bindings))
+	{
+		cout << "CHECKING METHOD NAME" << endl;
+		if (methodName.equal(String("RequestStateChange")))
+		{
+			_p.setContext(className);
 
+			/* Extract Parameters */
+			Uint32 requestState = CIMHelper::extractUint32Parameter(inParameters, String("RequestedState"));
+			CIMDateTime timeoutPeriod = CIMHelper::extractDateTimeParameter(inParameters, String("TimeoutPeriod"));
+
+			_p.requestStateChange(requestState, timeoutPeriod);
+			handler.deliver(CIMValue(Uint32(0)));
+		}
+		else if (methodName.equal(String("SetPowerState")))
+		{
+			_p.setContext(className);
+
+
+			handler.deliver(CIMValue(Uint32(0)));
+		}
+		else { handler.deliver(CIMValue(Uint32(3))); }
+	}
+	else { handler.deliver(CIMValue(Uint32(3))); }
+	_p.finalize();
+	handler.complete();
+}
+
+
+#define __PROVIDER_PREPARE prepareEnumeration
+
+void UNIX_VirtualComputerSystemProvider::__PROVIDER_PREPARE(
+    const OperationContext& context,
+    const CIMName &className,
+    const CIMNamespaceName &ns,
+    const Boolean includeQualifiers,
+    const Boolean includeClassOrigin,
+    UNIX_VirtualComputerSystem _p) const
+{
+	_p.setContext(className);
+}
 
 #define UNIX_PROVIDER UNIX_VirtualComputerSystemProvider
 #define UNIX_PROVIDER_NAME "UNIX_VirtualComputerSystemProvider"
 #define CLASS_IMPLEMENTATION UNIX_VirtualComputerSystem
 #define CLASS_IMPLEMENTATION_NAME "UNIX_VirtualComputerSystem"
 #define BASE_CLASS_NAME "CIM_VirtualComputerSystem"
+
+
 #define NUMKEYS_CLASS_IMPLEMENTATION 2
 
 
 #include "UNIXProviderBase.hpp"
 
+#undef EXTRA_CLASS_IMPLEMENTATION_STATEMENTS

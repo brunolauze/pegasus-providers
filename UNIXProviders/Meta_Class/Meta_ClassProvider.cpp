@@ -114,6 +114,7 @@ Array<CIMKeyBinding> Meta_ClassProvider::constructKeyBindings(const Meta_Class& 
 
 void Meta_ClassProvider::__PROVIDER_PREPARE(
     const OperationContext& context,
+    const CIMName &className,
     const CIMNamespaceName &ns,
     const Boolean includeQualifiers,
     const Boolean includeClassOrigin,

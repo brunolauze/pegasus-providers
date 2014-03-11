@@ -121,7 +121,13 @@ public:
 	Array<CIMKeyBinding> constructKeyBindings(const CLASS_IMPLEMENTATION&) const;
 
 #ifdef __PROVIDER_PREPARE
-	__PROVIDER_PREPARE
+	virtual void __PROVIDER_PREPARE(
+				    const OperationContext& context,
+					const CIMName &className,
+				    const CIMNamespaceName &ns,
+				    const Boolean includeQualifiers,
+                 	const Boolean includeClassOrigin,
+				    CLASS_IMPLEMENTATION _p) const;
 #endif
 
 #ifdef EXTRA_PROVIDER_DEFINES

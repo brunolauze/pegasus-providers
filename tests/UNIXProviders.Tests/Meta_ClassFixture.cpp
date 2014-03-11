@@ -52,7 +52,7 @@ void Meta_ClassFixture::Run()
 	CIMOMHandle omHandle;
 	_provider.initialize(omHandle);
 	OperationContext context;
-	_provider.prepareEnumeration(context, nameSpace, true, true, _p);
+	_provider.prepareEnumeration(context, className, nameSpace, true, true, _p);
 	_p.setContext(context, nameSpace);
 	_p.initialize();
 	for(int pIndex = 0; _p.load(pIndex); pIndex++)

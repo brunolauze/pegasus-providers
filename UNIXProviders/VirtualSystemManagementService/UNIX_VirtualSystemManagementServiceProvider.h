@@ -36,7 +36,7 @@
 #define CLASS_IMPLEMENTATION UNIX_VirtualSystemManagementService
 #define CLASS_IMPLEMENTATION_NAME "UNIX_VirtualSystemManagementService"
 #define BASE_CLASS_NAME "CIM_VirtualSystemManagementService"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 4
 
 
 #include "UNIXProviderBase.h"

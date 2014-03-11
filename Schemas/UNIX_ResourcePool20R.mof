@@ -70,3 +70,28 @@ instance of PG_ProviderCapabilities
 	SupportedMethods = NULL; // All methods
 };
 
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIX_ResourcePoolModule";
+	ProviderName = "UNIX_ResourcePoolProvider";
+	CapabilityID = "3";
+	ClassName = "UNIX_DiskPool";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+
+
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIX_ResourcePoolModule";
+	ProviderName = "UNIX_ResourcePoolProvider";
+	CapabilityID = "4";
+	ClassName = "UNIX_NetworkPool";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+

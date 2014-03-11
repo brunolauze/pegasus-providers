@@ -30,10 +30,13 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 #include "UNIX_VirtualComputerSystemFixture.h"
+#include "MockMethodResultResponseHandler.h"
+
 #include <VirtualComputerSystem/UNIX_VirtualComputerSystemProvider.h>
 
-UNIX_VirtualComputerSystemFixture::UNIX_VirtualComputerSystemFixture()
+UNIX_VirtualComputerSystemFixture::UNIX_VirtualComputerSystemFixture(const char *target)
 {
+	realTarget = target;
 }
 
 UNIX_VirtualComputerSystemFixture::~UNIX_VirtualComputerSystemFixture()
@@ -42,12 +45,16 @@ UNIX_VirtualComputerSystemFixture::~UNIX_VirtualComputerSystemFixture()
 
 void UNIX_VirtualComputerSystemFixture::Run()
 {
-	CIMName className("UNIX_VirtualComputerSystem");
+	CIMName className(realTarget);
 	CIMNamespaceName nameSpace("root/cimv2");
 	UNIX_VirtualComputerSystem _p;
 	UNIX_VirtualComputerSystemProvider _provider;
+	UNIX_VirtualComputerSystemProvider _provider2;
 	Uint32 propertyCount;
 	CIMOMHandle omHandle;
+
+	OperationContext operationContext;
+
 	_provider.initialize(omHandle);
 	_p.initialize();
 
@@ -68,8 +75,23 @@ void UNIX_VirtualComputerSystemFixture::Run()
 		}
 		cout << "------------------------------------" << endl;
 		cout << endl;
-	}
 
+		/* TESTING INVOKE METHOD */
+		/* SHUTTINGDOWN JAIL */
+		/*
+		Array<CIMParamValue> inParameters;
+		inParameters.append(CIMParamValue(String("RequestedState"), CIMValue(Uint32(6))));
+		inParameters.append(CIMParamValue(String("TimeoutPeriod"), CIMValue(CIMDateTime(10, true))));
+		MockMethodResultResponseHandler handler;
+		_provider2.invokeMethod(
+			operationContext,
+			path,
+			CIMName("RequestStateChange"),
+			inParameters, 
+			handler
+		);
+		*/
+	}
 	_p.finalize();
 }
 

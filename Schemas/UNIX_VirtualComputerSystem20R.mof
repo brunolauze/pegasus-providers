@@ -70,3 +70,16 @@ instance of PG_ProviderCapabilities
 	SupportedMethods = NULL; // All methods
 };
 
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIX_VirtualComputerSystemModule";
+	ProviderName = "UNIX_VirtualComputerSystemProvider";
+	CapabilityID = "3";
+	ClassName = "UNIX_JailComputerSystem";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+
+

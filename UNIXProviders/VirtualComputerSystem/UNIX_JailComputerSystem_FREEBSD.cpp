@@ -115,7 +115,7 @@ Boolean UNIX_JailComputerSystem::getElementName(CIMProperty &p) const
 
 String UNIX_JailComputerSystem::getElementName() const
 {
-	return String("VirtualComputerSystem");
+	return String("JailComputerSystem");
 }
 
 Boolean UNIX_JailComputerSystem::getInstallDate(CIMProperty &p) const
@@ -363,7 +363,7 @@ Boolean UNIX_JailComputerSystem::getNameFormat(CIMProperty &p) const
 
 String UNIX_JailComputerSystem::getNameFormat() const
 {
-	return String ("");
+	return String ("[NAME]");
 }
 
 Boolean UNIX_JailComputerSystem::getPrimaryOwnerName(CIMProperty &p) const
@@ -418,6 +418,7 @@ Array<String> UNIX_JailComputerSystem::getRoles() const
     sprintf(sjid, "%d", jid);
     cmd.append(sjid);
     cmd.append(" /usr/sbin/sysrc sshd_enable ftpd_enable cimserver_enable samba_server_enable nfsd_enable nginx_enable apache22_enable dovecot2_enable postfix_enable dbus_enable");
+    cmd.append(" 2>/dev/null");
     FILE* pipe = popen(cmd.getCString(), "r");
     if (!pipe) return false;
     char buffer[256];
@@ -576,6 +577,42 @@ Boolean UNIX_JailComputerSystem::getVirtualSystem(CIMProperty &p) const
 String UNIX_JailComputerSystem::getVirtualSystem() const
 {
 	return String ("Jail");
+}
+
+
+void UNIX_JailComputerSystem::requestStateChange(Uint32 requestedState, CIMDateTime timeoutPeriod)
+{
+	cout << "Executing in jail" << endl;
+	String cmd;
+	Uint32 dying = _get_param_Uint32("dying");
+	if (!dying && (requestedState == 3 || 
+		requestedState == 4 || 
+		requestedState == 6))
+	{
+		//cmd.append("service jail stop ");
+		cmd.append("ezjail-admin stop ");
+		cmd.append(getName());
+		system(cmd.getCString());
+	}
+	else if (requestedState == 1)
+	{
+		cmd.append("ezjail-admin start ");
+		cmd.append(getName());
+		system(cmd.getCString());
+	}
+	else if (!dying && (requestedState == 10 || 
+		requestedState == 10))
+	{
+		//cmd.append("service jail restart ");
+		cmd.append("ezjail-admin restart ");
+		cmd.append(getName());
+		system(cmd.getCString());
+	}
+}
+
+void UNIX_JailComputerSystem::setPowerState(Uint32 powerState, CIMDateTime time)
+{
+
 }
 
 Boolean UNIX_JailComputerSystem::initialize()

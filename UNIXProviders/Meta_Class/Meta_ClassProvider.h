@@ -38,12 +38,7 @@
 #define BASE_CLASS_NAME "Meta_Class"
 #define NUMKEYS_CLASS_IMPLEMENTATION 2
 
-#define __PROVIDER_PREPARE virtual void prepareEnumeration( \
-				    const OperationContext& context, \
-				    const CIMNamespaceName &ns, \
-				    const Boolean includeQualifiers, \
-                 	const Boolean includeClassOrigin, \
-				    Meta_Class _p) const;
+#define __PROVIDER_PREPARE prepareEnumeration
 
 #include "UNIXProviderBase.h"
 

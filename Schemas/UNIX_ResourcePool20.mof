@@ -657,3 +657,29 @@ class UNIX_ResourcePool : CIM_ResourcePool
 
 };
 
+class UNIX_DiskPool : UNIX_ResourcePool
+{
+   string Path;
+   string Host;
+   string SourceDirectory;
+};
+
+class UNIX_ProcessorPool : CIM_ResourcePool
+{
+
+};
+
+class UNIX_InputPool : CIM_ResourcePool
+{
+
+};
+
+class UNIX_MemoryPool : CIM_ResourcePool
+{
+
+};
+
+class UNIX_NetworkPool : CIM_ResourcePool
+{
+
+};

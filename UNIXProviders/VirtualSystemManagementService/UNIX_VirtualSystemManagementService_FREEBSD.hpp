@@ -419,7 +419,7 @@ Boolean UNIX_VirtualSystemManagementService::find(Array<CIMKeyBinding> &kbArray)
 
 
 
-/* EXecute find with extracted keys */
+	/* Execute find with extracted keys */
 
 	return false;
 }

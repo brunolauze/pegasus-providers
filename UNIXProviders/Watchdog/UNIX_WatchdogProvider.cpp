@@ -43,7 +43,7 @@ UNIX_WatchdogProvider::~UNIX_WatchdogProvider()
 CIMInstance UNIX_WatchdogProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_Watchdog &_p)
+	const UNIX_Watchdog &_p) const
 {
 	CIMProperty p;
 
@@ -116,7 +116,7 @@ CIMInstance UNIX_WatchdogProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_WatchdogProvider::constructKeyBindings(const UNIX_Watchdog& _p)
+Array<CIMKeyBinding> UNIX_WatchdogProvider::constructKeyBindings(const UNIX_Watchdog& _p) const
 
 {
 

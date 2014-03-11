@@ -36,7 +36,7 @@
 #define CLASS_IMPLEMENTATION UNIX_AllocationCapabilities
 #define CLASS_IMPLEMENTATION_NAME "UNIX_AllocationCapabilities"
 #define BASE_CLASS_NAME "CIM_AllocationCapabilities"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 1
 
 
 #include "UNIXProviderBase.h"

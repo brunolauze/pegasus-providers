@@ -43,7 +43,7 @@ UNIX_AllocationCapabilitiesProvider::~UNIX_AllocationCapabilitiesProvider()
 CIMInstance UNIX_AllocationCapabilitiesProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_AllocationCapabilities &_p)
+	const UNIX_AllocationCapabilities &_p) const
 {
 	CIMProperty p;
 
@@ -76,7 +76,7 @@ CIMInstance UNIX_AllocationCapabilitiesProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_AllocationCapabilitiesProvider::constructKeyBindings(const UNIX_AllocationCapabilities& _p)
+Array<CIMKeyBinding> UNIX_AllocationCapabilitiesProvider::constructKeyBindings(const UNIX_AllocationCapabilities& _p) const
 
 {
 
@@ -98,7 +98,7 @@ Array<CIMKeyBinding> UNIX_AllocationCapabilitiesProvider::constructKeyBindings(c
 #define CLASS_IMPLEMENTATION UNIX_AllocationCapabilities
 #define CLASS_IMPLEMENTATION_NAME "UNIX_AllocationCapabilities"
 #define BASE_CLASS_NAME "CIM_AllocationCapabilities"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 1
 
 
 #include "UNIXProviderBase.hpp"

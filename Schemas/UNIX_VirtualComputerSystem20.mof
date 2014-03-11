@@ -1029,3 +1029,13 @@ class UNIX_VirtualComputerSystem : CIM_VirtualComputerSystem
 
 };
 
+class UNIX_JailComputerSystem : UNIX_VirtualComputerSystem
+{
+
+};
+
+class UNIX_BhyveComputerSystem : UNIX_VirtualComputerSystem
+{
+
+};
+
