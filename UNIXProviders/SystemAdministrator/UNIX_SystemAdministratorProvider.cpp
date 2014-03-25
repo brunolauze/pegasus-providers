@@ -43,7 +43,7 @@ UNIX_SystemAdministratorProvider::~UNIX_SystemAdministratorProvider()
 CIMInstance UNIX_SystemAdministratorProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_SystemAdministrator &_p)
+	const UNIX_SystemAdministrator &_p) const
 {
 	CIMProperty p;
 
@@ -65,21 +65,23 @@ CIMInstance UNIX_SystemAdministratorProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_SystemAdministratorProvider::constructKeyBindings(const UNIX_SystemAdministrator& _p)
+Array<CIMKeyBinding> UNIX_SystemAdministratorProvider::constructKeyBindings(const UNIX_SystemAdministrator& _p) const
 
 {
 
 	Array<CIMKeyBinding> keys;
 
-	keys.append(CIMKeyBinding(
+	CIMKeyBinding k1(
 		PROPERTY_ANTECEDENT,
-		CIMValue(_p.getAntecedent()).toString(),
-		CIMKeyBinding::REFERENCE));
-	keys.append(CIMKeyBinding(
+		CIMValue(_p.getAntecedent().getPath()));
+	k1.setType(CIMKeyBinding::REFERENCE);
+	CIMKeyBinding k2(
 		PROPERTY_DEPENDENT,
-		CIMValue(_p.getDependent()).toString(),
-		CIMKeyBinding::REFERENCE));
+		CIMValue(_p.getDependent().getPath()));
+	k2.setType(CIMKeyBinding::REFERENCE);
 
+	keys.append(k1);
+	keys.append(k2);
 
 	return keys;
 }
@@ -91,7 +93,7 @@ Array<CIMKeyBinding> UNIX_SystemAdministratorProvider::constructKeyBindings(cons
 #define CLASS_IMPLEMENTATION UNIX_SystemAdministrator
 #define CLASS_IMPLEMENTATION_NAME "UNIX_SystemAdministrator"
 #define BASE_CLASS_NAME "CIM_SystemAdministrator"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 2
 
 
 #include "UNIXProviderBase.hpp"

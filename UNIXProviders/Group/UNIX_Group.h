@@ -80,6 +80,8 @@ public:
 	virtual Boolean getGroupID(CIMProperty&) const;
 	virtual String getGroupID() const;
 
+	virtual Boolean loadByName(String name);
+
 private:
 	CIMName currentScope;
 

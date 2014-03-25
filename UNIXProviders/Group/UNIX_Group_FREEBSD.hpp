@@ -159,6 +159,21 @@ Boolean UNIX_Group::load(int &pIndex)
 	return false;
 }
 
+Boolean UNIX_Group::loadByName(String name)
+{
+	finalize();
+	initialize();
+	int pIndex = 0;
+	while (load(pIndex))
+	{
+		if (String::equalNoCase(getCommonName(), name))
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
 Boolean UNIX_Group::finalize()
 {
 	endgrent();

@@ -47,7 +47,10 @@ Boolean UNIX_SystemAdministrator::getAntecedent(CIMProperty &p) const
 
 CIMInstance UNIX_SystemAdministrator::getAntecedent() const
 {
-	return CIMInstance(CIMName("CIM_Dependency"));
+	return _systemProvider.constructInstance(
+				CIMName("UNIX_ComputerSystem"),
+				CIMNamespaceName("root/cimv2"),
+				_s);
 }
 
 Boolean UNIX_SystemAdministrator::getDependent(CIMProperty &p) const
@@ -58,24 +61,70 @@ Boolean UNIX_SystemAdministrator::getDependent(CIMProperty &p) const
 
 CIMInstance UNIX_SystemAdministrator::getDependent() const
 {
-	return CIMInstance(CIMName("CIM_Dependency"));
+	return _usersProvider.constructInstance(
+				CIMName("UNIX_UsersAccess"),
+				CIMNamespaceName("root/cimv2"),
+				_u);
 }
-
-
 
 Boolean UNIX_SystemAdministrator::initialize()
 {
-	return false;
+	users.clear();
+	//TODO: Loop through SystemAdministratorGroup */
+	FILE* pipe = popen("pw group show wheel && pw group show operator", "r");
+	if (!pipe) return false;
+	char buffer[1024];
+	if(!feof(pipe)) {
+    	while (fgets(buffer, 1024, pipe) != NULL)
+    	{
+    		std::vector<std::string> gline = CIMHelper::split(buffer, ':');
+    		if (gline.size() > 0)
+    		{
+	    		std::vector<std::string> gusers = CIMHelper::split(gline[gline.size() - 1].c_str(), ',');
+	    		for(unsigned int i = 0; i < gusers.size(); i++)
+	    		{
+	    			bool found = false;
+	    			const char *val = gusers.at(i).c_str();
+	    			/* Strip newline */
+	    			char *pos;
+	    			while ((pos=strchr(val, '\n')) != NULL)
+	    				*pos = '\0';
+
+	    		    String name = String(val);
+	    			for (Uint32 j = 0; j < users.size(); j++)
+	    			{
+	    				if (String::equal(users[j], name))
+	    				{
+	    					found = true;
+	    					break;
+	    				}
+	    			}
+	    			if (!found)
+	    				users.append(name);
+	    		}
+	    	}
+    	}
+	}
+	fclose(pipe);
+	return _s.initialize();
 }
 
 Boolean UNIX_SystemAdministrator::load(int &pIndex)
 {
+	if (Uint32(pIndex) < users.size())
+	{
+		if (!_u.getByName(users[pIndex]))
+		{
+			return load(++pIndex);
+		}
+		return true;
+	}
 	return false;
 }
 
 Boolean UNIX_SystemAdministrator::finalize()
 {
-	return false;
+	return _s.finalize();
 }
 
 Boolean UNIX_SystemAdministrator::find(Array<CIMKeyBinding> &kbArray)
@@ -83,7 +132,6 @@ Boolean UNIX_SystemAdministrator::find(Array<CIMKeyBinding> &kbArray)
 	CIMKeyBinding kb;
 	String antecedentKey;
 	String dependentKey;
-
 
 	for(Uint32 i = 0; i < kbArray.size(); i++)
 	{

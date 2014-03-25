@@ -47,7 +47,10 @@ Boolean UNIX_SystemAdministratorGroup::getAntecedent(CIMProperty &p) const
 
 CIMInstance UNIX_SystemAdministratorGroup::getAntecedent() const
 {
-	return CIMInstance(CIMName("CIM_Dependency"));
+	return _systemProvider.constructInstance(
+				CIMName("UNIX_ComputerSystem"),
+				CIMNamespaceName("root/cimv2"),
+				_s);
 }
 
 Boolean UNIX_SystemAdministratorGroup::getDependent(CIMProperty &p) const
@@ -58,24 +61,29 @@ Boolean UNIX_SystemAdministratorGroup::getDependent(CIMProperty &p) const
 
 CIMInstance UNIX_SystemAdministratorGroup::getDependent() const
 {
-	return CIMInstance(CIMName("CIM_Dependency"));
+	return _groupProvider.constructInstance(
+				CIMName("UNIX_Group"),
+				CIMNamespaceName("root/cimv2"),
+				_g);
 }
-
 
 
 Boolean UNIX_SystemAdministratorGroup::initialize()
 {
-	return false;
+	return _s.initialize();
 }
 
 Boolean UNIX_SystemAdministratorGroup::load(int &pIndex)
 {
+	/* TODO: How  to determine on FreeBSD what is a system adminitrator group */
+	if (pIndex == 0) return _g.loadByName("wheel");
+	if (pIndex == 1) return _g.loadByName("operator");
 	return false;
 }
 
 Boolean UNIX_SystemAdministratorGroup::finalize()
 {
-	return false;
+	return _s.finalize();
 }
 
 Boolean UNIX_SystemAdministratorGroup::find(Array<CIMKeyBinding> &kbArray)

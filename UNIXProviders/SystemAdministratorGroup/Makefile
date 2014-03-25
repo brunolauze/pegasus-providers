@@ -83,6 +83,87 @@ else
 	SOURCES += UNIX_SystemAdministratorGroup_STUB.cpp
 endif
 
+SOURCES += 	\
+	../ComputerSystem/UNIX_ComputerSystem.cpp \
+	../ComputerSystem/UNIX_ComputerSystemProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCES += ../ComputerSystem/UNIX_ComputerSystem_AIX.cpp
+endif
+ifeq ($(OS), darwin)
+	SOURCES += ../ComputerSystem/UNIX_ComputerSystem_DARWIN.cpp
+endif
+ifeq ($(OS), freebsd)
+	SOURCES += ../ComputerSystem/UNIX_ComputerSystem_FREEBSD.cpp
+endif
+ifeq ($(OS), hpux)
+	SOURCES += ../ComputerSystem/UNIX_ComputerSystem_HPUX.cpp
+endif
+ifeq ($(OS), linux)
+	SOURCES += ../ComputerSystem/UNIX_ComputerSystem_LINUX.cpp
+endif
+ifeq ($(OS), solaris)
+	SOURCES += ../ComputerSystem/UNIX_ComputerSystem_SOLARIS.cpp
+endif
+ifeq ($(OS), tru64)
+	SOURCES += ../ComputerSystem/UNIX_ComputerSystem_TRU64.cpp
+endif
+ifeq ($(OS), vms)
+	SOURCES += ../ComputerSystem/UNIX_ComputerSystem_VMS.cpp
+endif
+ifeq ($(OS), win32)
+	SOURCES += ../ComputerSystem/UNIX_ComputerSystem_WIN32.cpp
+endif
+ifeq ($(OS), zos)
+	SOURCES += ../ComputerSystem/UNIX_ComputerSystem_ZOS.cpp
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCES += ../ComputerSystem/UNIX_ComputerSystem_STUB.cpp
+endif
+
+
+SOURCES+= \
+	../Group/UNIX_Group.cpp \
+	../Group/UNIX_GroupProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCES += ../Group/UNIX_Group_AIX.cpp
+endif
+ifeq ($(OS), darwin)
+	SOURCES += ../Group/UNIX_Group_DARWIN.cpp
+endif
+ifeq ($(OS), freebsd)
+	SOURCES += ../Group/UNIX_Group_FREEBSD.cpp
+endif
+ifeq ($(OS), hpux)
+	SOURCES += ../Group/UNIX_Group_HPUX.cpp
+endif
+ifeq ($(OS), linux)
+	SOURCES += ../Group/UNIX_Group_LINUX.cpp
+endif
+ifeq ($(OS), solaris)
+	SOURCES += ../Group/UNIX_Group_SOLARIS.cpp
+endif
+ifeq ($(OS), tru64)
+	SOURCES += ../Group/UNIX_Group_TRU64.cpp
+endif
+ifeq ($(OS), vms)
+	SOURCES += ../Group/UNIX_Group_VMS.cpp
+endif
+ifeq ($(OS), win32)
+	SOURCES += ../Group/UNIX_Group_WIN32.cpp
+endif
+ifeq ($(OS), zos)
+	SOURCES += ../Group/UNIX_Group_ZOS.cpp
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCES += ../Group/UNIX_Group_STUB.cpp
+endif
+
 LIBRARIES = \
 	pegprovider \
 	pegclient \

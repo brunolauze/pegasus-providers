@@ -981,8 +981,8 @@
 //#include "UNIX_SwitchServiceVLANFixture.h"
 //#include "UNIX_SymbolicLinkFixture.h"
 //#include "UNIX_SynchronizedFixture.h"
-//#include "UNIX_SystemAdministratorFixture.h"
-//#include "UNIX_SystemAdministratorGroupFixture.h"
+#include "UNIX_SystemAdministratorFixture.h"
+#include "UNIX_SystemAdministratorGroupFixture.h"
 //#include "UNIX_SystemAdministratorRoleFixture.h"
 #include "UNIX_SystemBIOSFixture.h"
 //#include "UNIX_SystemBusCardFixture.h"
@@ -2082,8 +2082,8 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_SwitchServiceVLAN")) { UNIX_SwitchServiceVLANFixture switchServiceVLAN; switchServiceVLAN.Run(); }
 	//if (IsTarget(s, "UNIX_SymbolicLink")) { UNIX_SymbolicLinkFixture symbolicLink; symbolicLink.Run(); }
 	//if (IsTarget(s, "UNIX_Synchronized")) { UNIX_SynchronizedFixture synchronized; synchronized.Run(); }
-	//if (IsTarget(s, "UNIX_SystemAdministrator")) { UNIX_SystemAdministratorFixture systemAdministrator; systemAdministrator.Run(); }
-	//if (IsTarget(s, "UNIX_SystemAdministratorGroup")) { UNIX_SystemAdministratorGroupFixture systemAdministratorGroup; systemAdministratorGroup.Run(); }
+	if (IsTarget(s, "UNIX_SystemAdministrator")) { UNIX_SystemAdministratorFixture systemAdministrator; systemAdministrator.Run(); }
+	if (IsTarget(s, "UNIX_SystemAdministratorGroup")) { UNIX_SystemAdministratorGroupFixture systemAdministratorGroup; systemAdministratorGroup.Run(); }
 	//if (IsTarget(s, "UNIX_SystemAdministratorRole")) { UNIX_SystemAdministratorRoleFixture systemAdministratorRole; systemAdministratorRole.Run(); }
 	if (IsTarget(s, "UNIX_SystemBIOS")) { UNIX_SystemBIOSFixture systemBIOS; systemBIOS.Run(); }
 	//if (IsTarget(s, "UNIX_SystemBusCard")) { UNIX_SystemBusCardFixture systemBusCard; systemBusCard.Run(); }

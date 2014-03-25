@@ -32,7 +32,8 @@
 #ifndef __CIM_HELPER_H
 #define __CIM_HELPER_H
 #include "UNIX_Common.h"
-
+#include <vector>
+#include <iterator>
 #if defined(PEGASUS_OS_HPUX)
 
 #elif defined(PEGASUS_OS_LINUX)
@@ -79,6 +80,9 @@ public:
     static Array<String> getPropertyAsStringArray(const CIMInstance&, String name);
     static Uint32 getPropertyAsUint32(const CIMInstance&, String name);
     static Uint64 getPropertyAsUint64(const CIMInstance&, String name);
+
+    static std::vector<std::string> &split(const std::string &s, char delim, std::vector<std::string> &elems);
+    static std::vector<std::string> split(const std::string &s, char delim);
 
 	static String getHostName();
 	static String getOSName();

@@ -34,7 +34,8 @@
 
 
 #include "CIM_Dependency.h"
-
+#include <ComputerSystem/UNIX_ComputerSystemProvider.h>
+#include <UsersAccess/UNIX_UsersAccessProvider.h>
 #include "UNIX_SystemAdministratorDeps.h"
 
 
@@ -62,7 +63,10 @@ public:
 
 private:
 	CIMName currentScope;
-
+	UNIX_ComputerSystem _s;
+	UNIX_ComputerSystemProvider _systemProvider;
+	UNIX_UsersAccess  _u;
+	UNIX_UsersAccessProvider  _usersProvider;
 #	include "UNIX_SystemAdministratorPrivate.h"
 
 

@@ -37,7 +37,7 @@
         <Variable name="LD_LIBRARY_PATH" value="/usr/home/bruno/workspace/pegasus-providers/UNIXProviders/bin/Debug:/usr/local/lib/pegasus/lib:/usr/local/lib:/usr/lib:/lib" />
       </EnvironmentVariables>
     </EnvironmentVariables>
-    <Commandlineparameters>UNIX_ServiceProcess</Commandlineparameters>
+    <Commandlineparameters>UNIX_SystemAdministrator</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release</OutputPath>
@@ -88,6 +88,8 @@
     <Compile Include="MockMethodResultResponseHandler.cpp" />
     <Compile Include="UNIX_ProcessExecutableFixture.cpp" />
     <Compile Include="UNIX_ServiceProcessFixture.cpp" />
+    <Compile Include="UNIX_SystemAdministratorGroupFixture.cpp" />
+    <Compile Include="UNIX_SystemAdministratorFixture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CIMFixtureBase.h" />
@@ -130,5 +132,7 @@
     <None Include="MockMethodResultResponseHandler.h" />
     <None Include="UNIX_ProcessExecutableFixture.h" />
     <None Include="UNIX_ServiceProcessFixture.h" />
+    <None Include="UNIX_SystemAdministratorGroupFixture.h" />
+    <None Include="UNIX_SystemAdministratorFixture.h" />
   </ItemGroup>
 </Project>

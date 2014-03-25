@@ -36,7 +36,7 @@
 #define CLASS_IMPLEMENTATION UNIX_SystemAdministratorGroup
 #define CLASS_IMPLEMENTATION_NAME "UNIX_SystemAdministratorGroup"
 #define BASE_CLASS_NAME "CIM_SystemAdministratorGroup"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define NUMKEYS_CLASS_IMPLEMENTATION 2s
 
 
 #include "UNIXProviderBase.h"

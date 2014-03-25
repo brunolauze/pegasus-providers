@@ -34,7 +34,8 @@
 
 
 #include "CIM_Dependency.h"
-
+#include <ComputerSystem/UNIX_ComputerSystemProvider.h>
+#include <Group/UNIX_GroupProvider.h>
 #include "UNIX_SystemAdministratorGroupDeps.h"
 
 
@@ -62,7 +63,10 @@ public:
 
 private:
 	CIMName currentScope;
-
+	UNIX_ComputerSystem _s;
+	UNIX_Group _g;
+	UNIX_ComputerSystemProvider _systemProvider;
+	UNIX_GroupProvider _groupProvider;
 #	include "UNIX_SystemAdministratorGroupPrivate.h"
 
 

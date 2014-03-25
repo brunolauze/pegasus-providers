@@ -1,9 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/ServiceProcess/UNIX_ServiceProcess_FREEBSD.hpp">
+  <MonoDevelop.Ide.Workbench ActiveDocument="tests/UNIXProviders.Tests/main.cpp">
     <Files>
-      <File FileName="UNIXProviders/ServiceProcess/UNIX_ServiceProcess_FREEBSD.hpp" Line="120" Column="20" />
-      <File FileName="UNIXProviders/CIMHelper.cpp" Line="142" Column="2" />
+      <File FileName="UNIXProviders/CIMHelper.cpp" Line="378" Column="22" />
+      <File FileName="UNIXProviders/CIMHelper.h" Line="84" Column="38" />
+      <File FileName="UNIXProviders/SystemAdministrator/UNIX_SystemAdministrator_FREEBSD.hpp" Line="110" Column="20" />
+      <File FileName="UNIXProviders/SystemAdministrator/UNIX_SystemAdministratorProvider.cpp" Line="96" Column="39" />
+      <File FileName="UNIXProviders/SystemAdministrator/UNIX_SystemAdministratorProvider.h" Line="39" Column="39" />
+      <File FileName="UNIXProviders/SystemAdministrator/UNIX_SystemAdministratorPrivate_FREEBSD.h" Line="3" Column="22" />
+      <File FileName="tests/UNIXProviders.Tests/main.cpp" Line="984" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
