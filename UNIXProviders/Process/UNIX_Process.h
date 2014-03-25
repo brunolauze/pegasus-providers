@@ -155,6 +155,8 @@ public:
 
 	virtual Uint32 createInstance(const CIMInstance& instanceObject) const;
 
+	virtual Boolean loadByPID(int pid);
+
 private:
 	CIMName currentScope;
 	int processCount;

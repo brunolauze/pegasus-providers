@@ -96,7 +96,7 @@ Boolean UNIX_Account::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_Account::getInstallDate() const
 {
-	if (sizeof(user->pw_dir) == 0) return CIMHelper::getInstallDate();
+	if (sizeof(user->pw_dir) == 0) return CIMHelper::getOSInstallDate();
     /// We could at least check the user profile creationdate
     struct tm* clock;			// create a time structure
 	struct stat attrib;			// create a file attribute structure
@@ -114,7 +114,7 @@ CIMDateTime UNIX_Account::getInstallDate() const
 				clock->tm_gmtoff
 				);
     }
-    return CIMHelper::getInstallDate();
+    return CIMHelper::getOSInstallDate();
 }
 
 Boolean UNIX_Account::getName(CIMProperty &p) const
@@ -278,7 +278,7 @@ CIMDateTime UNIX_Account::getTimeOfLastStateChange() const
 {
 	/* TODO: LAST LOGIN for now */
     time_t ll = getLastLoginValue(user);
-    if (ll == 0) return CIMHelper::getInstallDate();
+    if (ll == 0) return CIMHelper::getOSInstallDate();
 	struct tm* clock;			// create a time structure
 	clock = gmtime(&(ll));	// Get the last modified time and put it into the time structure
 	return CIMDateTime(
@@ -576,7 +576,7 @@ Boolean UNIX_Account::getLastLogin(CIMProperty &p) const
 CIMDateTime UNIX_Account::getLastLogin() const
 {
 	time_t ll = getLastLoginValue(user);
-    if (ll == 0) return CIMHelper::getInstallDate();
+    if (ll == 0) return CIMHelper::getOSInstallDate();
     struct tm* clock;			// create a time structure
 	clock = gmtime(&(ll));	// Get the last modified time and put it into the time structure
 	return CIMDateTime(
@@ -610,7 +610,7 @@ Boolean UNIX_Account::getPasswordExpiration(CIMProperty &p) const
 
 CIMDateTime UNIX_Account::getPasswordExpiration() const
 {
-	if (user->pw_change == 0) return CIMHelper::getInstallDate();
+	if (user->pw_change == 0) return CIMHelper::getOSInstallDate();
     struct tm* clock;			// create a time structure
 	clock = gmtime(&(user->pw_change));	// Get the last modified time and put it into the time structure
 	return CIMDateTime(

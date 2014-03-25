@@ -104,7 +104,7 @@ Boolean UNIX_ComputerSystem::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_ComputerSystem::getInstallDate() const
 {
-	return CIMHelper::getInstallDate();
+	return CIMHelper::getOSInstallDate();
 }
 
 Boolean UNIX_ComputerSystem::getName(CIMProperty &p) const

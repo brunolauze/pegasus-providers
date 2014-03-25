@@ -106,7 +106,7 @@ Boolean UNIX_OperatingSystem::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_OperatingSystem::getInstallDate() const
 {
-	return CIMHelper::getInstallDate();
+	return CIMHelper::getOSInstallDate();
 }
 
 Boolean UNIX_OperatingSystem::getName(CIMProperty &p) const
@@ -406,7 +406,7 @@ CIMDateTime UNIX_OperatingSystem::getLastBootUpTime() const
     size_t len = sizeof(tv);
     if (sysctl(mib, 2, &tv, &len, NULL, 0) == -1)
     {
-        return CIMHelper::getInstallDate();
+        return CIMHelper::getOSInstallDate();
     }
 	clock = gmtime(&(tv.tv_sec));	// Get the last modified time and put it into the time structure
 	return CIMDateTime(

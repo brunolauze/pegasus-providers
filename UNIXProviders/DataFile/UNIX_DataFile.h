@@ -114,8 +114,11 @@ public:
 	virtual Boolean getInUseCount(CIMProperty&) const;
 	virtual Uint64 getInUseCount() const;
 
+	virtual void loadFromPath(String filePath);
+
 private:
 	CIMName currentScope;
+	String _filePath;
 
 #	include "UNIX_DataFilePrivate.h"
 

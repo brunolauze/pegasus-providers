@@ -47,7 +47,10 @@ Boolean UNIX_ServiceProcess::getService(CIMProperty &p) const
 
 CIMInstance UNIX_ServiceProcess::getService() const
 {
-	return CIMInstance(CIMName("CIM_ManagedElement"));
+	return _serviceProvider.constructInstance(
+			CIMName("UNIX_Service"), 
+			CIMNamespaceName("root/cimv2"),
+			_s);
 }
 
 Boolean UNIX_ServiceProcess::getProcess(CIMProperty &p) const
@@ -58,7 +61,10 @@ Boolean UNIX_ServiceProcess::getProcess(CIMProperty &p) const
 
 CIMInstance UNIX_ServiceProcess::getProcess() const
 {
-	return CIMInstance(CIMName("CIM_ManagedElement"));
+	return _processProvider.constructInstance(
+			CIMName("UNIX_Process"), 
+			CIMNamespaceName("root/cimv2"),
+			_p);
 }
 
 Boolean UNIX_ServiceProcess::getExecutionType(CIMProperty &p) const
@@ -69,25 +75,14 @@ Boolean UNIX_ServiceProcess::getExecutionType(CIMProperty &p) const
 
 Uint16 UNIX_ServiceProcess::getExecutionType() const
 {
-	return Uint16(0);
+	return Uint16(3); //Independant /* TODO: How to detect this? */
 }
-
 
 
 Boolean UNIX_ServiceProcess::initialize()
 {
+	svcnames.clear();
 	/* Fetch services that are enabled */
-
-	/* Filter a match with /var/run .pid issue */
-	/* We will try :
-		/var/run/${service}.pid
-		/var/run/${service}d.pid
-		/var/run/${service}{-d}.pid // without the d
-		/var/run/${service}/${service}.pid
-		/var/run/lib${service}/${service}.pid
-	*/
-
-
 	FILE* pipe = popen("/usr/sbin/service -e", "r");
     if (!pipe) return false;
     char buffer[256];
@@ -95,25 +90,69 @@ Boolean UNIX_ServiceProcess::initialize()
     	while (fgets(buffer, 128, pipe) != NULL)
     	{
     		/* Extract service name from daemon script path */
-
-    		/* Find pid file from service name*/
-
-    		/* check if pid exists */
-
-    		/* Create CIM_Service instance */
-    		/* Get CIM_Process from pid */
+    		int index = CIMHelper::lastIndexOf(buffer, strdup("/"));
+    		if (index > 0)
+    		{
+    			svcnames.append(String(CIMHelper::trim(buffer)).subString(index + 1));
+    		}
     	}
     }
+    fclose(pipe);
 	return true;
 }
 
 Boolean UNIX_ServiceProcess::load(int &pIndex)
 {
+	if (Uint32(pIndex) < svcnames.size())
+	{
+		_p.finalize();
+		_s.finalize();
+		bool found = false;
+		String svcname = svcnames[pIndex];
+		String statuscmd("/usr/sbin/service ");
+		statuscmd.append(svcname);
+		statuscmd.append(" status 2>/dev/null");
+		const char *statuscmdline = statuscmd.getCString();
+		FILE* statuspipe = popen(statuscmdline, "r");
+		if (!statuspipe) return load(++pIndex);
+		char statusbuffer[512];
+		if(!feof(statuspipe)) {
+	    	if (fgets(statusbuffer, 512, statuspipe) != NULL)
+	    	{
+	    		if (strstr(statusbuffer, "is not") == NULL && strstr(statusbuffer, "Permission denied") == NULL)
+	    		{
+	    			int pidindex = CIMHelper::lastIndexOf(statusbuffer, strdup(" "));
+	    			if (pidindex > 0)
+	    			{
+	    				String pidstring = String(statusbuffer).subString(pidindex + 1, strlen(statusbuffer) - 2);
+	    				int pid = atoi(pidstring.getCString());
+	    				if (pid > 0)
+	    				{
+	    					_p.initialize();
+
+	    					if (_p.loadByPID(pid))
+	    					{
+	    						_s.initialize();
+	    						_s.loadService(svcname, true, "Automatic");
+	    					 	found = true;
+	    					}
+    					}
+	    			}
+	    		}
+    		}
+		}
+		fclose(statuspipe);
+		if (!found) return load(++pIndex);
+		return true;
+	}
 	return false;
 }
 
 Boolean UNIX_ServiceProcess::finalize()
 {
+	_p.finalize();
+	_s.finalize();
+
 	return true;
 }
 

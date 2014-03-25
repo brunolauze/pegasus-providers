@@ -94,7 +94,7 @@ Boolean UNIX_BhyveComputerSystem::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_BhyveComputerSystem::getInstallDate() const
 {
-	return CIMHelper::getInstallDate();
+	return CIMHelper::getOSInstallDate();
 }
 
 Boolean UNIX_BhyveComputerSystem::getName(CIMProperty &p) const

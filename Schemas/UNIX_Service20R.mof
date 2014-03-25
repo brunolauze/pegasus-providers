@@ -29,48 +29,44 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
-#ifndef __UNIX_SERVICEPROCESS_H
-#define __UNIX_SERVICEPROCESS_H
 
-
-#include "CIM_ClassBase.h"
-#include <Service/UNIX_ServiceProvider.h>
-#include <Process/UNIX_ProcessProvider.h>
-#include "UNIX_ServiceProcessDeps.h"
-
-#define PROPERTY_SERVICE				"Service"
-#define PROPERTY_PROCESS				"Process"
-#define PROPERTY_EXECUTION_TYPE			"ExecutionType"
-
-
-class UNIX_ServiceProcess :
-	public CIM_ClassBase
+instance of PG_ProviderModule
 {
-public:
-
-	UNIX_ServiceProcess();
-	~UNIX_ServiceProcess();
-
-	virtual Boolean initialize();
-	virtual Boolean load(int&);
-	virtual Boolean finalize();
-	virtual Boolean find(Array<CIMKeyBinding>&);
-	virtual Boolean validateKey(CIMKeyBinding&) const;
-	virtual void setScope(CIMName);
-
-	virtual Boolean getService(CIMProperty&) const;
-	virtual CIMInstance getService() const;
-	virtual Boolean getProcess(CIMProperty&) const;
-	virtual CIMInstance getProcess() const;
-	virtual Boolean getExecutionType(CIMProperty&) const;
-	virtual Uint16 getExecutionType() const;
-
-private:
-	CIMName currentScope;
-
-#	include "UNIX_ServiceProcessPrivate.h"
-
-
+	Name = "UNIX_ServiceModule";
+	Location = "UNIX_ServiceProvider";
+	Vendor = "OpenPegasus";
+	Version = "2.4.0";
+	InterfaceType = "C++Default";
+	InterfaceVersion = "2.1.0";
 };
 
-#endif /* UNIX_SERVICEPROCESS */
+instance of PG_Provider
+{
+	ProviderModuleName = "UNIX_ServiceModule";
+	Name = "UNIX_ServiceProvider";
+};
+
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIX_ServiceModule";
+	ProviderName = "UNIX_ServiceProvider";
+	CapabilityID = "1";
+	ClassName = "CIM_Service";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+
+instance of PG_ProviderCapabilities
+{
+	ProviderModuleName = "UNIX_ServiceModule";
+	ProviderName = "UNIX_ServiceProvider";
+	CapabilityID = "2";
+	ClassName = "UNIX_Service";
+	Namespaces = {"root/cimv2"};
+	ProviderType = { 2,5,7 };
+	SupportedProperties = NULL; // All properties
+	SupportedMethods = NULL; // All methods
+};
+

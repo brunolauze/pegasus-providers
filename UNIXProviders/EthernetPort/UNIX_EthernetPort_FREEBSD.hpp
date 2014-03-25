@@ -126,7 +126,7 @@ Boolean UNIX_EthernetPort::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_EthernetPort::getInstallDate() const
 {
-	return CIMHelper::getInstallDate();
+	return CIMHelper::getOSInstallDate();
 }
 
 Boolean UNIX_EthernetPort::getName(CIMProperty &p) const

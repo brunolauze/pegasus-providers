@@ -39,8 +39,6 @@
 #include "UNIX_ProcessExecutableDeps.h"
 
 
-
-
 class UNIX_ProcessExecutable :
 	public CIM_Dependency
 {
@@ -63,7 +61,10 @@ public:
 
 private:
 	CIMName currentScope;
-
+	UNIX_Process _p;
+	UNIX_ProcessProvider _processProvider;
+	UNIX_DataFile _d;
+	UNIX_DataFileProvider _dataFileProvider;
 #	include "UNIX_ProcessExecutablePrivate.h"
 
 

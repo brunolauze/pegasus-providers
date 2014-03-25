@@ -695,7 +695,6 @@
     <Compile Include="VLAN\UNIX_VLAN_VMS.cpp" />
     <Compile Include="VLAN\UNIX_VLAN_ZOS.cpp" />
     <Compile Include="ProcessExecutable\UNIX_ProcessExecutable.cpp" />
-    <Compile Include="ProcessExecutable\UNIX_ProcessExecutableMain.cpp" />
     <Compile Include="ProcessExecutable\UNIX_ProcessExecutableProvider.cpp" />
     <Compile Include="ProcessExecutable\UNIX_ProcessExecutable_AIX.cpp" />
     <Compile Include="ProcessExecutable\UNIX_ProcessExecutable_DARWIN.cpp" />
@@ -720,7 +719,6 @@
     <Compile Include="VirtualSystemSettingData\UNIX_VirtualSystemSettingData_VMS.cpp" />
     <Compile Include="VirtualSystemSettingData\UNIX_VirtualSystemSettingData_ZOS.cpp" />
     <Compile Include="AllocationCapabilities\UNIX_AllocationCapabilities.cpp" />
-    <Compile Include="AllocationCapabilities\UNIX_AllocationCapabilitiesMain.cpp" />
     <Compile Include="AllocationCapabilities\UNIX_AllocationCapabilitiesProvider.cpp" />
     <Compile Include="AllocationCapabilities\UNIX_AllocationCapabilities_AIX.cpp" />
     <Compile Include="AllocationCapabilities\UNIX_AllocationCapabilities_DARWIN.cpp" />
@@ -733,7 +731,6 @@
     <Compile Include="AllocationCapabilities\UNIX_AllocationCapabilities_VMS.cpp" />
     <Compile Include="AllocationCapabilities\UNIX_AllocationCapabilities_ZOS.cpp" />
     <Compile Include="VirtualSystemManagementService\UNIX_VirtualSystemManagementService.cpp" />
-    <Compile Include="VirtualSystemManagementService\UNIX_VirtualSystemManagementServiceMain.cpp" />
     <Compile Include="VirtualSystemManagementService\UNIX_VirtualSystemManagementServiceProvider.cpp" />
     <Compile Include="VirtualSystemManagementService\UNIX_VirtualSystemManagementService_AIX.cpp" />
     <Compile Include="VirtualSystemManagementService\UNIX_VirtualSystemManagementService_DARWIN.cpp" />
@@ -746,7 +743,6 @@
     <Compile Include="VirtualSystemManagementService\UNIX_VirtualSystemManagementService_VMS.cpp" />
     <Compile Include="VirtualSystemManagementService\UNIX_VirtualSystemManagementService_ZOS.cpp" />
     <Compile Include="ResourcePool\UNIX_ResourcePool.cpp" />
-    <Compile Include="ResourcePool\UNIX_ResourcePoolMain.cpp" />
     <Compile Include="ResourcePool\UNIX_ResourcePoolProvider.cpp" />
     <Compile Include="ResourcePool\UNIX_ResourcePool_AIX.cpp" />
     <Compile Include="ResourcePool\UNIX_ResourcePool_DARWIN.cpp" />
@@ -758,6 +754,20 @@
     <Compile Include="ResourcePool\UNIX_ResourcePool_TRU64.cpp" />
     <Compile Include="ResourcePool\UNIX_ResourcePool_VMS.cpp" />
     <Compile Include="ResourcePool\UNIX_ResourcePool_ZOS.cpp" />
+    <Compile Include="DataFile\UNIX_DataFile.cpp" />
+    <Compile Include="DataFile\UNIX_DataFileProvider.cpp" />
+    <Compile Include="DataFile\UNIX_DataFile_AIX.cpp" />
+    <Compile Include="DataFile\UNIX_DataFile_DARWIN.cpp" />
+    <Compile Include="DataFile\UNIX_DataFile_FREEBSD.cpp" />
+    <Compile Include="DataFile\UNIX_DataFile_HPUX.cpp" />
+    <Compile Include="DataFile\UNIX_DataFile_LINUX.cpp" />
+    <Compile Include="DataFile\UNIX_DataFile_SOLARIS.cpp" />
+    <Compile Include="DataFile\UNIX_DataFile_STUB.cpp" />
+    <Compile Include="DataFile\UNIX_DataFile_TRU64.cpp" />
+    <Compile Include="DataFile\UNIX_DataFile_VMS.cpp" />
+    <Compile Include="DataFile\UNIX_DataFile_ZOS.cpp" />
+    <Compile Include="Service\UNIX_Service.cpp" />
+    <Compile Include="Service\UNIX_ServiceProvider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CIMHelper.h" />
@@ -3552,6 +3562,60 @@
     <None Include="ResourcePool\UNIX_ResourcePool_WIN32.hpp" />
     <None Include="ResourcePool\UNIX_ResourcePool_ZOS.hpp" />
     <None Include="ResourcePool\UNIX_ResourcePool_ZOS.hxx" />
+    <None Include="ProcessExecutable\UNIX_ProcessExecutableMain.cpp" />
+    <None Include="DataFile\Makefile" />
+    <None Include="DataFile\UNIX_DataFile.h" />
+    <None Include="DataFile\UNIX_DataFileDeps.h" />
+    <None Include="DataFile\UNIX_DataFileDeps_AIX.h" />
+    <None Include="DataFile\UNIX_DataFileDeps_DARWIN.h" />
+    <None Include="DataFile\UNIX_DataFileDeps_FREEBSD.h" />
+    <None Include="DataFile\UNIX_DataFileDeps_HPUX.h" />
+    <None Include="DataFile\UNIX_DataFileDeps_LINUX.h" />
+    <None Include="DataFile\UNIX_DataFileDeps_SOLARIS.h" />
+    <None Include="DataFile\UNIX_DataFileDeps_STUB.h" />
+    <None Include="DataFile\UNIX_DataFileDeps_TRU64.h" />
+    <None Include="DataFile\UNIX_DataFileDeps_VMS.h" />
+    <None Include="DataFile\UNIX_DataFileDeps_ZOS.h" />
+    <None Include="DataFile\UNIX_DataFilePrivate.h" />
+    <None Include="DataFile\UNIX_DataFilePrivate_AIX.h" />
+    <None Include="DataFile\UNIX_DataFilePrivate_DARWIN.h" />
+    <None Include="DataFile\UNIX_DataFilePrivate_FREEBSD.h" />
+    <None Include="DataFile\UNIX_DataFilePrivate_HPUX.h" />
+    <None Include="DataFile\UNIX_DataFilePrivate_LINUX.h" />
+    <None Include="DataFile\UNIX_DataFilePrivate_SOLARIS.h" />
+    <None Include="DataFile\UNIX_DataFilePrivate_STUB.h" />
+    <None Include="DataFile\UNIX_DataFilePrivate_TRU64.h" />
+    <None Include="DataFile\UNIX_DataFilePrivate_VMS.h" />
+    <None Include="DataFile\UNIX_DataFilePrivate_ZOS.h" />
+    <None Include="DataFile\UNIX_DataFileProvider.h" />
+    <None Include="DataFile\UNIX_DataFile_AIX.hpp" />
+    <None Include="DataFile\UNIX_DataFile_AIX.hxx" />
+    <None Include="DataFile\UNIX_DataFile_DARWIN.hpp" />
+    <None Include="DataFile\UNIX_DataFile_DARWIN.hxx" />
+    <None Include="DataFile\UNIX_DataFile_FREEBSD.hpp" />
+    <None Include="DataFile\UNIX_DataFile_FREEBSD.hxx" />
+    <None Include="DataFile\UNIX_DataFile_HPUX.hpp" />
+    <None Include="DataFile\UNIX_DataFile_HPUX.hxx" />
+    <None Include="DataFile\UNIX_DataFile_LINUX.hpp" />
+    <None Include="DataFile\UNIX_DataFile_LINUX.hxx" />
+    <None Include="DataFile\UNIX_DataFile_SOLARIS.hpp" />
+    <None Include="DataFile\UNIX_DataFile_SOLARIS.hxx" />
+    <None Include="DataFile\UNIX_DataFile_STUB.hpp" />
+    <None Include="DataFile\UNIX_DataFile_STUB.hxx" />
+    <None Include="DataFile\UNIX_DataFile_TRU64.hpp" />
+    <None Include="DataFile\UNIX_DataFile_TRU64.hxx" />
+    <None Include="DataFile\UNIX_DataFile_VMS.hpp" />
+    <None Include="DataFile\UNIX_DataFile_VMS.hxx" />
+    <None Include="DataFile\UNIX_DataFile_WIN32.hpp" />
+    <None Include="DataFile\UNIX_DataFile_ZOS.hpp" />
+    <None Include="DataFile\UNIX_DataFile_ZOS.hxx" />
+    <None Include="Process\Makefile" />
+    <None Include="DataFile\UNIX_DataFileMain.cpp" />
+    <None Include="AllocationCapabilities\UNIX_AllocationCapabilitiesMain.cpp" />
+    <None Include="VirtualSystemManagementService\UNIX_VirtualSystemManagementServiceMain.cpp" />
+    <None Include="ResourcePool\UNIX_ResourcePoolMain.cpp" />
+    <None Include="Service\UNIX_Service.h" />
+    <None Include="Service\UNIX_ServiceProvider.h" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Account\" />
@@ -3617,5 +3681,7 @@
     <Folder Include="AllocationCapabilities\" />
     <Folder Include="VirtualSystemManagementService\" />
     <Folder Include="ResourcePool\" />
+    <Folder Include="DataFile\" />
+    <Folder Include="Service\" />
   </ItemGroup>
 </Project>

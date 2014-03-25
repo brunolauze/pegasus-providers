@@ -30,6 +30,8 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
+#include <unistd.h>
+
 UNIX_ProcessExecutable::UNIX_ProcessExecutable(void)
 {
 }
@@ -47,7 +49,10 @@ Boolean UNIX_ProcessExecutable::getAntecedent(CIMProperty &p) const
 
 CIMInstance UNIX_ProcessExecutable::getAntecedent() const
 {
-	return CIMInstance(CIMName("CIM_Dependency"));
+	return _processProvider.constructInstance(
+				CIMName("UNIX_Process"),
+				CIMNamespaceName("root/cimv2"),
+				_p);
 }
 
 Boolean UNIX_ProcessExecutable::getDependent(CIMProperty &p) const
@@ -58,24 +63,35 @@ Boolean UNIX_ProcessExecutable::getDependent(CIMProperty &p) const
 
 CIMInstance UNIX_ProcessExecutable::getDependent() const
 {
-	return CIMInstance(CIMName("CIM_Dependency"));
+	return _dataFileProvider.constructInstance(
+				CIMName("UNIX_DataFile"),
+				CIMNamespaceName("root/cimv2"),
+				_d);
 }
 
 
 
 Boolean UNIX_ProcessExecutable::initialize()
 {
-	return false;
+	return _p.initialize();
 }
 
 Boolean UNIX_ProcessExecutable::load(int &pIndex)
 {
+	if (_p.load(pIndex))
+	{
+		_d.finalize();
+		_d.initialize();
+
+		_d.loadFromPath(_p.getCaption());
+		return true;
+	}
 	return false;
 }
 
 Boolean UNIX_ProcessExecutable::finalize()
 {
-	return false;
+	return _p.finalize() && _d.finalize();
 }
 
 Boolean UNIX_ProcessExecutable::find(Array<CIMKeyBinding> &kbArray)
@@ -95,7 +111,7 @@ Boolean UNIX_ProcessExecutable::find(Array<CIMKeyBinding> &kbArray)
 
 
 
-/* EXecute find with extracted keys */
+	/* Execute find with extracted keys */
 
 	return false;
 }

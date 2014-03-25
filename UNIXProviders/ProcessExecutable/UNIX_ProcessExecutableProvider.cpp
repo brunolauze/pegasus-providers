@@ -43,7 +43,7 @@ UNIX_ProcessExecutableProvider::~UNIX_ProcessExecutableProvider()
 CIMInstance UNIX_ProcessExecutableProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_ProcessExecutable &_p)
+	const UNIX_ProcessExecutable &_p) const
 {
 	CIMProperty p;
 
@@ -65,21 +65,23 @@ CIMInstance UNIX_ProcessExecutableProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_ProcessExecutableProvider::constructKeyBindings(const UNIX_ProcessExecutable& _p)
+Array<CIMKeyBinding> UNIX_ProcessExecutableProvider::constructKeyBindings(const UNIX_ProcessExecutable& _p) const
 
 {
 
 	Array<CIMKeyBinding> keys;
 
-	keys.append(CIMKeyBinding(
+	CIMKeyBinding k1(
 		PROPERTY_ANTECEDENT,
-		CIMValue(_p.getAntecedent()).toString(),
-		CIMKeyBinding::REFERENCE));
-	keys.append(CIMKeyBinding(
+		CIMValue(_p.getAntecedent().getPath()));
+	k1.setType(CIMKeyBinding::REFERENCE);
+	CIMKeyBinding k2(
 		PROPERTY_DEPENDENT,
-		CIMValue(_p.getDependent()).toString(),
-		CIMKeyBinding::REFERENCE));
+		CIMValue(_p.getDependent().getPath()));
+	k2.setType(CIMKeyBinding::REFERENCE);
 
+	keys.append(k1);
+	keys.append(k2);
 
 	return keys;
 }

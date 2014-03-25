@@ -70,14 +70,17 @@ Array<CIMKeyBinding> UNIX_ServiceProcessProvider::constructKeyBindings(const UNI
 
 	Array<CIMKeyBinding> keys;
 
-	keys.append(CIMKeyBinding(
+	CIMKeyBinding k1(
 		PROPERTY_SERVICE,
-		CIMValue(_p.getService()).toString(),
-		CIMKeyBinding::REFERENCE));
-	keys.append(CIMKeyBinding(
+		CIMValue(_p.getService().getPath()));
+	k1.setType(CIMKeyBinding::REFERENCE);
+	CIMKeyBinding k2(
 		PROPERTY_PROCESS,
-		CIMValue(_p.getProcess()).toString(),
-		CIMKeyBinding::REFERENCE));
+		CIMValue(_p.getProcess().getPath()));
+	k2.setType(CIMKeyBinding::REFERENCE);
+
+	keys.append(k1);
+	keys.append(k2);
 
 
 	return keys;

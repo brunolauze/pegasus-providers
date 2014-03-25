@@ -1,6 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/ServiceProcess/UNIX_ServiceProcess_FREEBSD.hpp">
+    <Files>
+      <File FileName="UNIXProviders/ServiceProcess/UNIX_ServiceProcess_FREEBSD.hpp" Line="120" Column="20" />
+      <File FileName="UNIXProviders/CIMHelper.cpp" Line="142" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

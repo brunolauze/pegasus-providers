@@ -47,7 +47,7 @@ Boolean UNIX_DataFile::getInstanceID(CIMProperty &p) const
 
 String UNIX_DataFile::getInstanceID() const
 {
-	return String ("");
+	return _filePath;
 }
 
 Boolean UNIX_DataFile::getCaption(CIMProperty &p) const
@@ -58,7 +58,7 @@ Boolean UNIX_DataFile::getCaption(CIMProperty &p) const
 
 String UNIX_DataFile::getCaption() const
 {
-	return String ("");
+	return _filePath;
 }
 
 Boolean UNIX_DataFile::getDescription(CIMProperty &p) const
@@ -91,18 +91,7 @@ Boolean UNIX_DataFile::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_DataFile::getInstallDate() const
 {
-	struct tm* clock;			// create a time structure
-	time_t val = time(NULL);
-	clock = gmtime(&(val));	// Get the last modified time and put it into the time structure
-	return CIMDateTime(
-		clock->tm_year + 1900,
-		clock->tm_mon + 1,
-		clock->tm_mday,
-		clock->tm_hour,
-		clock->tm_min,
-		clock->tm_sec,
-		0,0,
-		clock->tm_gmtoff);
+	return CIMHelper::getInstallDate(_filePath);
 }
 
 Boolean UNIX_DataFile::getName(CIMProperty &p) const
@@ -113,7 +102,7 @@ Boolean UNIX_DataFile::getName(CIMProperty &p) const
 
 String UNIX_DataFile::getName() const
 {
-	return String ("");
+	return _filePath;
 }
 
 Boolean UNIX_DataFile::getOperationalStatus(CIMProperty &p) const
@@ -125,7 +114,7 @@ Boolean UNIX_DataFile::getOperationalStatus(CIMProperty &p) const
 Array<Uint16> UNIX_DataFile::getOperationalStatus() const
 {
 	Array<Uint16> as;
-	
+	as.append(2); //OK
 
 	return as;
 
@@ -410,11 +399,14 @@ Uint64 UNIX_DataFile::getInUseCount() const
 	return Uint64(0);
 }
 
-
+void UNIX_DataFile::loadFromPath(String filePath)
+{
+	_filePath = filePath;
+}
 
 Boolean UNIX_DataFile::initialize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_DataFile::load(int &pIndex)
@@ -424,7 +416,7 @@ Boolean UNIX_DataFile::load(int &pIndex)
 
 Boolean UNIX_DataFile::finalize()
 {
-	return false;
+	return true;
 }
 
 Boolean UNIX_DataFile::find(Array<CIMKeyBinding> &kbArray)

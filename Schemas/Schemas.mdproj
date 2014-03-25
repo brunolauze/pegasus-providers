@@ -2166,5 +2166,7 @@
     <None Include="Meta_Class20R.mof" />
     <None Include="UNIX_ManagedSystemSchema20.mof" />
     <None Include="UNIX_ManagedSystemSchema20R.mof" />
+    <None Include="UNIX_Service20.mof" />
+    <None Include="UNIX_Service20R.mof" />
   </ItemGroup>
 </Project>

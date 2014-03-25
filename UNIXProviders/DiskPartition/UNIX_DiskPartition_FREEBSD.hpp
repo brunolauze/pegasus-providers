@@ -90,7 +90,7 @@ Boolean UNIX_DiskPartition::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_DiskPartition::getInstallDate() const
 {
-	return CIMHelper::getInstallDate();
+	return CIMHelper::getOSInstallDate();
 }
 
 Boolean UNIX_DiskPartition::getName(CIMProperty &p) const

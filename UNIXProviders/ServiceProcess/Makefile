@@ -45,7 +45,9 @@ SOURCES = \
 	../CIMHelper.cpp \
 	UNIX_ServiceProcessMain.cpp \
 	UNIX_ServiceProcess.cpp \
-	UNIX_ServiceProcessProvider.cpp
+	UNIX_ServiceProcessProvider.cpp \
+	../Service/UNIX_Service.cpp \
+	../Service/UNIX_ServiceProvider.cpp
 
 ifeq ($(OS), aix)
 	SOURCES += UNIX_ServiceProcess_AIX.cpp
@@ -81,6 +83,45 @@ ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)
 
 else
 	SOURCES += UNIX_ServiceProcess_STUB.cpp
+endif
+
+SOURCES += 	../Process/UNIX_Process.cpp \
+			../Process/UNIX_ProcessProvider.cpp
+
+ifeq ($(OS), aix)
+	SOURCES += ../Process/UNIX_Process_AIX.cpp
+endif
+ifeq ($(OS), darwin)
+	SOURCES += ../Process/UNIX_Process_DARWIN.cpp
+endif
+ifeq ($(OS), freebsd)
+	SOURCES += ../Process/UNIX_Process_FREEBSD.cpp
+endif
+ifeq ($(OS), hpux)
+	SOURCES += ../Process/UNIX_Process_HPUX.cpp
+endif
+ifeq ($(OS), linux)
+	SOURCES += ../Process/UNIX_Process_LINUX.cpp
+endif
+ifeq ($(OS), solaris)
+	SOURCES += ../Process/UNIX_Process_SOLARIS.cpp
+endif
+ifeq ($(OS), tru64)
+	SOURCES += ../Process/UNIX_Process_TRU64.cpp
+endif
+ifeq ($(OS), vms)
+	SOURCES += ../Process/UNIX_Process_VMS.cpp
+endif
+ifeq ($(OS), win32)
+	SOURCES += ../Process/UNIX_Process_WIN32.cpp
+endif
+ifeq ($(OS), zos)
+	SOURCES += ../Process/UNIX_Process_ZOS.cpp
+endif
+ifeq (, $(filter aix,darwin,freebsd,hpux,linux,solaris,tru64,vms,win32,zos $(OS)))
+
+else
+	SOURCES += ../Process/UNIX_Process_STUB.cpp
 endif
 
 LIBRARIES = \

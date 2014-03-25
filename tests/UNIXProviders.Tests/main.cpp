@@ -764,7 +764,7 @@
 //#include "UNIX_PrivilegeFixture.h"
 //#include "UNIX_PrivilegeManagementCapabilitiesFixture.h"
 //#include "UNIX_PrivilegeManagementServiceFixture.h"
-//#include "UNIX_ProcessExecutableFixture.h"
+#include "UNIX_ProcessExecutableFixture.h"
 //#include "UNIX_ProcessOfJobFixture.h"
 #include "UNIX_ProcessorFixture.h"
 //#include "UNIX_ProcessorAllocationSettingDataFixture.h"
@@ -889,7 +889,7 @@
 //#include "UNIX_ServiceAccessURIFixture.h"
 //#include "UNIX_ServiceAffectsElementFixture.h"
 //#include "UNIX_ServiceAvailableToElementFixture.h"
-//#include "UNIX_ServiceProcessFixture.h"
+#include "UNIX_ServiceProcessFixture.h"
 //#include "UNIX_ServiceStatisticsFixture.h"
 //#include "UNIX_ServiceUsesSecurityServiceFixture.h"
 //#include "UNIX_SettingCheckFixture.h"
@@ -1865,7 +1865,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_Privilege")) { UNIX_PrivilegeFixture privilege; privilege.Run(); }
 	//if (IsTarget(s, "UNIX_PrivilegeManagementCapabilities")) { UNIX_PrivilegeManagementCapabilitiesFixture privilegeManagementCapabilities; privilegeManagementCapabilities.Run(); }
 	//if (IsTarget(s, "UNIX_PrivilegeManagementService")) { UNIX_PrivilegeManagementServiceFixture privilegeManagementService; privilegeManagementService.Run(); }
-	//if (IsTarget(s, "UNIX_ProcessExecutable")) { UNIX_ProcessExecutableFixture processExecutable; processExecutable.Run(); }
+	if (IsTarget(s, "UNIX_ProcessExecutable")) { UNIX_ProcessExecutableFixture processExecutable; processExecutable.Run(); }
 	//if (IsTarget(s, "UNIX_ProcessOfJob")) { UNIX_ProcessOfJobFixture processOfJob; processOfJob.Run(); }
 	if (IsTarget(s, "UNIX_Processor")) { UNIX_ProcessorFixture processor; processor.Run(); }
 	//if (IsTarget(s, "UNIX_ProcessorAllocationSettingData")) { UNIX_ProcessorAllocationSettingDataFixture processorAllocationSettingData; processorAllocationSettingData.Run(); }
@@ -1990,7 +1990,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_ServiceAccessURI")) { UNIX_ServiceAccessURIFixture serviceAccessURI; serviceAccessURI.Run(); }
 	//if (IsTarget(s, "UNIX_ServiceAffectsElement")) { UNIX_ServiceAffectsElementFixture serviceAffectsElement; serviceAffectsElement.Run(); }
 	//if (IsTarget(s, "UNIX_ServiceAvailableToElement")) { UNIX_ServiceAvailableToElementFixture serviceAvailableToElement; serviceAvailableToElement.Run(); }
-	//if (IsTarget(s, "UNIX_ServiceProcess")) { UNIX_ServiceProcessFixture serviceProcess; serviceProcess.Run(); }
+	if (IsTarget(s, "UNIX_ServiceProcess")) { UNIX_ServiceProcessFixture serviceProcess; serviceProcess.Run(); }
 	//if (IsTarget(s, "UNIX_ServiceStatistics")) { UNIX_ServiceStatisticsFixture serviceStatistics; serviceStatistics.Run(); }
 	//if (IsTarget(s, "UNIX_ServiceUsesSecurityService")) { UNIX_ServiceUsesSecurityServiceFixture serviceUsesSecurityService; serviceUsesSecurityService.Run(); }
 	//if (IsTarget(s, "UNIX_SettingCheck")) { UNIX_SettingCheckFixture settingCheck; settingCheck.Run(); }

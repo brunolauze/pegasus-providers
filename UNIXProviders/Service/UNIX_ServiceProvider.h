@@ -1,4 +1,4 @@
-//%LICENSE////////////////////////////////////////////////////////////////
+﻿//%LICENSE////////////////////////////////////////////////////////////////
 //
 // Licensed to The Open Group (TOG) under one or more contributor license
 // agreements.  Refer to the OpenPegasusNOTICE.txt file distributed with
@@ -29,48 +29,20 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
-#ifndef __UNIX_SERVICEPROCESS_H
-#define __UNIX_SERVICEPROCESS_H
+
+#include "UNIX_Service.h"
+
+#define UNIX_PROVIDER UNIX_ServiceProvider
+#define CLASS_IMPLEMENTATION UNIX_Service
+#define CLASS_IMPLEMENTATION_NAME "UNIX_Service"
+#define BASE_CLASS_NAME "CIM_Service"
+#define NUMKEYS_CLASS_IMPLEMENTATION 4
 
 
-#include "CIM_ClassBase.h"
-#include <Service/UNIX_ServiceProvider.h>
-#include <Process/UNIX_ProcessProvider.h>
-#include "UNIX_ServiceProcessDeps.h"
+#include "UNIXProviderBase.h"
 
-#define PROPERTY_SERVICE				"Service"
-#define PROPERTY_PROCESS				"Process"
-#define PROPERTY_EXECUTION_TYPE			"ExecutionType"
-
-
-class UNIX_ServiceProcess :
-	public CIM_ClassBase
-{
-public:
-
-	UNIX_ServiceProcess();
-	~UNIX_ServiceProcess();
-
-	virtual Boolean initialize();
-	virtual Boolean load(int&);
-	virtual Boolean finalize();
-	virtual Boolean find(Array<CIMKeyBinding>&);
-	virtual Boolean validateKey(CIMKeyBinding&) const;
-	virtual void setScope(CIMName);
-
-	virtual Boolean getService(CIMProperty&) const;
-	virtual CIMInstance getService() const;
-	virtual Boolean getProcess(CIMProperty&) const;
-	virtual CIMInstance getProcess() const;
-	virtual Boolean getExecutionType(CIMProperty&) const;
-	virtual Uint16 getExecutionType() const;
-
-private:
-	CIMName currentScope;
-
-#	include "UNIX_ServiceProcessPrivate.h"
-
-
-};
-
-#endif /* UNIX_SERVICEPROCESS */
+#undef UNIX_PROVIDER
+#undef CLASS_IMPLEMENTATION
+#undef CLASS_IMPLEMENTATION_NAME
+#undef BASE_CLASS_NAME
+#undef NUMKEYS_CLASS_IMPLEMENTATION

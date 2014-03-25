@@ -93,7 +93,7 @@ Boolean UNIX_PhysicalMemory::getInstallDate(CIMProperty &p) const
 CIMDateTime UNIX_PhysicalMemory::getInstallDate() const
 {
 	/* Here we could refer to a manual log entry about RAM manipulation */
-	return CIMHelper::getInstallDate();
+	return CIMHelper::getOSInstallDate();
 }
 
 Boolean UNIX_PhysicalMemory::getName(CIMProperty &p) const

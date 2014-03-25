@@ -100,7 +100,7 @@ Boolean UNIX_Processor::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_Processor::getInstallDate() const
 {
-	return CIMHelper::getInstallDate();
+	return CIMHelper::getOSInstallDate();
 }
 
 Boolean UNIX_Processor::getName(CIMProperty &p) const

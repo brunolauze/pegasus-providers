@@ -34,6 +34,7 @@
 #include <sys/fcntl.h>
 #include <sys/sysctl.h>
 #include <unistd.h>
+#include <libutil.h>
 
 UNIX_Process::UNIX_Process(void)
 {
@@ -65,7 +66,10 @@ Boolean UNIX_Process::getCaption(CIMProperty &p) const
 
 String UNIX_Process::getCaption() const
 {
-	return String (kp->ki_comm);
+	int cnt;
+	kinfo_file *_f = kinfo_getfile(kp->ki_ppid, &cnt); 
+	if (_f == NULL) return String (kp->ki_comm);
+	return String(_f->kf_path);
 }
 
 Boolean UNIX_Process::getDescription(CIMProperty &p) const
@@ -98,8 +102,10 @@ Boolean UNIX_Process::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_Process::getInstallDate() const
 {
-	//TODO: we could instead return the birthdate of the executable??
-	return getCreationDate();
+	int cnt;
+	kinfo_file *_f = kinfo_getfile(kp->ki_ppid, &cnt); 
+	if (_f == NULL) return getCreationDate();
+	return CIMHelper::getInstallDate(String(_f->kf_path));
 }
 
 Boolean UNIX_Process::getName(CIMProperty &p) const
@@ -622,6 +628,21 @@ Boolean UNIX_Process::initialize()
 	cout << "ENDING " << endl;
 	*/
 	return true;
+}
+
+Boolean UNIX_Process::loadByPID(int pid)
+{
+	bool found = false;
+	while (kp != NULL)
+	{
+		if (kp->ki_pid == pid)
+		{
+			found = true;
+			break;
+		}
+		++kp; 
+	}
+	return found;
 }
 
 Boolean UNIX_Process::load(int &pIndex)

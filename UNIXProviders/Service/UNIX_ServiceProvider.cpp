@@ -1,4 +1,4 @@
-//%LICENSE////////////////////////////////////////////////////////////////
+﻿//%LICENSE////////////////////////////////////////////////////////////////
 //
 // Licensed to The Open Group (TOG) under one or more contributor license
 // agreements.  Refer to the OpenPegasusNOTICE.txt file distributed with
@@ -30,20 +30,20 @@
 //%/////////////////////////////////////////////////////////////////////////
 
 
-#include "UNIX_DataFileProvider.h"
+#include "UNIX_ServiceProvider.h"
 
-UNIX_DataFileProvider::UNIX_DataFileProvider()
+UNIX_ServiceProvider::UNIX_ServiceProvider()
 {
 }
 
-UNIX_DataFileProvider::~UNIX_DataFileProvider()
+UNIX_ServiceProvider::~UNIX_ServiceProvider()
 {
 }
 
-CIMInstance UNIX_DataFileProvider::constructInstance(
+CIMInstance UNIX_ServiceProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_DataFile &_p) const
+	const UNIX_Service &_p) const
 {
 	CIMProperty p;
 
@@ -52,7 +52,7 @@ CIMInstance UNIX_DataFileProvider::constructInstance(
 	// Set path
 	inst.setPath(CIMObjectPath(String(""), // hostname
 			nameSpace,
-			CIMName("UNIX_DataFile"),
+			CIMName("UNIX_Service"),
 			constructKeyBindings(_p)));
 
 	//CIM_ManagedElement Properties
@@ -75,50 +75,39 @@ CIMInstance UNIX_DataFileProvider::constructInstance(
 
 	//CIM_LogicalElement Properties
 
-	//CIM_LogicalFile Properties
-	if (_p.getCSCreationClassName(p)) inst.addProperty(p);
-	if (_p.getCSName(p)) inst.addProperty(p);
-	if (_p.getFSCreationClassName(p)) inst.addProperty(p);
-	if (_p.getFSName(p)) inst.addProperty(p);
+	//CIM_EnabledLogicalElement Properties
+	if (_p.getEnabledState(p)) inst.addProperty(p);
+	if (_p.getOtherEnabledState(p)) inst.addProperty(p);
+	if (_p.getRequestedState(p)) inst.addProperty(p);
+	if (_p.getEnabledDefault(p)) inst.addProperty(p);
+	if (_p.getTimeOfLastStateChange(p)) inst.addProperty(p);
+	if (_p.getAvailableRequestedStates(p)) inst.addProperty(p);
+	if (_p.getTransitioningToState(p)) inst.addProperty(p);
+
+	//CIM_Service Properties
+	if (_p.getSystemCreationClassName(p)) inst.addProperty(p);
+	if (_p.getSystemName(p)) inst.addProperty(p);
 	if (_p.getCreationClassName(p)) inst.addProperty(p);
-	if (_p.getFileSize(p)) inst.addProperty(p);
-	if (_p.getCreationDate(p)) inst.addProperty(p);
-	if (_p.getLastModified(p)) inst.addProperty(p);
-	if (_p.getLastAccessed(p)) inst.addProperty(p);
-	if (_p.getReadable(p)) inst.addProperty(p);
-	if (_p.getWriteable(p)) inst.addProperty(p);
-	if (_p.getExecutable(p)) inst.addProperty(p);
-	if (_p.getCompressionMethod(p)) inst.addProperty(p);
-	if (_p.getEncryptionMethod(p)) inst.addProperty(p);
-	if (_p.getInUseCount(p)) inst.addProperty(p);
-
-	//CIM_DataFile Properties
-
+	if (_p.getPrimaryOwnerName(p)) inst.addProperty(p);
+	if (_p.getPrimaryOwnerContact(p)) inst.addProperty(p);
+	if (_p.getStartMode(p)) inst.addProperty(p);
+	if (_p.getStarted(p)) inst.addProperty(p);
 
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_DataFileProvider::constructKeyBindings(const UNIX_DataFile& _p) const
-
+Array<CIMKeyBinding> UNIX_ServiceProvider::constructKeyBindings(const UNIX_Service& _p) const
 {
 
 	Array<CIMKeyBinding> keys;
 
 	keys.append(CIMKeyBinding(
-		PROPERTY_CS_CREATION_CLASS_NAME,
-		_p.getCSCreationClassName(),
+		PROPERTY_SYSTEM_CREATION_CLASS_NAME,
+		_p.getSystemCreationClassName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
-		PROPERTY_CS_NAME,
-		_p.getCSName(),
-		CIMKeyBinding::STRING));
-	keys.append(CIMKeyBinding(
-		PROPERTY_FS_CREATION_CLASS_NAME,
-		_p.getFSCreationClassName(),
-		CIMKeyBinding::STRING));
-	keys.append(CIMKeyBinding(
-		PROPERTY_FS_NAME,
-		_p.getFSName(),
+		PROPERTY_SYSTEM_NAME,
+		_p.getSystemName(),
 		CIMKeyBinding::STRING));
 	keys.append(CIMKeyBinding(
 		PROPERTY_CREATION_CLASS_NAME,
@@ -135,12 +124,12 @@ Array<CIMKeyBinding> UNIX_DataFileProvider::constructKeyBindings(const UNIX_Data
 
 
 
-#define UNIX_PROVIDER UNIX_DataFileProvider
-#define UNIX_PROVIDER_NAME "UNIX_DataFileProvider"
-#define CLASS_IMPLEMENTATION UNIX_DataFile
-#define CLASS_IMPLEMENTATION_NAME "UNIX_DataFile"
-#define BASE_CLASS_NAME "CIM_DataFile"
-#define NUMKEYS_CLASS_IMPLEMENTATION 0
+#define UNIX_PROVIDER UNIX_ServiceProvider
+#define UNIX_PROVIDER_NAME "UNIX_ServiceProvider"
+#define CLASS_IMPLEMENTATION UNIX_Service
+#define CLASS_IMPLEMENTATION_NAME "UNIX_Service"
+#define BASE_CLASS_NAME "CIM_Service"
+#define NUMKEYS_CLASS_IMPLEMENTATION 4
 
 
 #include "UNIXProviderBase.hpp"

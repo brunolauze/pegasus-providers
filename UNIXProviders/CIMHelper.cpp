@@ -83,11 +83,11 @@ String CIMHelper::getOSName()
     return String(unameInfo.sysname);
 }
 
-CIMDateTime CIMHelper::getInstallDate()
+CIMDateTime CIMHelper::getInstallDate(String path)
 {
 	struct tm* clock;			// create a time structure
 	struct stat attrib;			// create a file attribute structure
-	stat("/mnt", &attrib);		// get the attributes mnt
+	stat(path.getCString(), &attrib);		// get the attributes mnt
 	clock = gmtime(&(attrib.st_birthtime));	// Get the last modified time and put it into the time structure
 	return CIMDateTime(
 		clock->tm_year + 1900,
@@ -98,6 +98,11 @@ CIMDateTime CIMHelper::getInstallDate()
 		clock->tm_sec,
 		0,0,
 		clock->tm_gmtoff);
+}
+
+CIMDateTime CIMHelper::getOSInstallDate()
+{
+	return getInstallDate(String("/mnt"));
 }
 
 CIMDateTime CIMHelper::getCurrentTime()
@@ -136,7 +141,7 @@ char * CIMHelper::ltrim(char *s)
 char * CIMHelper::rtrim(char *s)
 {
     char* back = s + strlen(s);
-    while((*--back) == ' ');
+    while((*--back) == ' ' || (*--back) == '\n');
     *(back+1) = '\0';
     return s;
 }

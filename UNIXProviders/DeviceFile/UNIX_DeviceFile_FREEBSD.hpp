@@ -94,7 +94,7 @@ Boolean UNIX_DeviceFile::getInstallDate(CIMProperty &p) const
 
 CIMDateTime UNIX_DeviceFile::getInstallDate() const
 {
-	return CIMHelper::getInstallDate();
+	return CIMHelper::getOSInstallDate();
 }
 
 Boolean UNIX_DeviceFile::getName(CIMProperty &p) const
@@ -284,7 +284,7 @@ Boolean UNIX_DeviceFile::getCreationDate(CIMProperty &p) const
 
 CIMDateTime UNIX_DeviceFile::getCreationDate() const
 {
-	return CIMHelper::getInstallDate();
+	return CIMHelper::getOSInstallDate();
 }
 
 Boolean UNIX_DeviceFile::getLastModified(CIMProperty &p) const

@@ -59,7 +59,8 @@ class CIMHelper
 public:
 	static String getTimeAsString();
 	static CIMDateTime getCurrentTime();
-	static CIMDateTime getInstallDate();
+	static CIMDateTime getInstallDate(String path);
+	static CIMDateTime getOSInstallDate();
 	static char * ltrim(char *s);
 	static char * rtrim(char *s);
 	static char * trim(char *s);

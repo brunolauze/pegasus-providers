@@ -29,48 +29,33 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
-#ifndef __UNIX_SERVICEPROCESS_H
-#define __UNIX_SERVICEPROCESS_H
 
+// Copyright (c) 2005 DMTF.  All rights reserved.
+// <change cr="ArchCR00066.004" type="add">Add UmlPackagePath
+// qualifier values to CIM Schema.</change>
+// ==================================================================
+//  CIM_FileShare 
+// ==================================================================
+   [Experimental, Abstract, Version ( "2.8.1000" ), 
+    UMLPackagePath ( "CIM::System::FileElements" ), 
+    Description ( 
+       "A FileShare is representative of a LogicalFile presented for "
+       "use (or shared) across systems. Instances of FileShare are "
+       "associated with the shared object on the \'server\'-side via "
+       "the CIM_SharedElement association. Shares are attached on the "
+       "\'client\'-side (usually into another namespace) via the "
+       "CIM_ImportedShare association. FileShare is Abstract to force "
+       "subclassing to define the semantics of the file-sharing "
+       "protocol. FileShare when used for importing deprecates "
+       "RemoteFileSystem." )]
+class CIM_FileShare : CIM_Share {
 
-#include "CIM_ClassBase.h"
-#include <Service/UNIX_ServiceProvider.h>
-#include <Process/UNIX_ProcessProvider.h>
-#include "UNIX_ServiceProcessDeps.h"
-
-#define PROPERTY_SERVICE				"Service"
-#define PROPERTY_PROCESS				"Process"
-#define PROPERTY_EXECUTION_TYPE			"ExecutionType"
-
-
-class UNIX_ServiceProcess :
-	public CIM_ClassBase
-{
-public:
-
-	UNIX_ServiceProcess();
-	~UNIX_ServiceProcess();
-
-	virtual Boolean initialize();
-	virtual Boolean load(int&);
-	virtual Boolean finalize();
-	virtual Boolean find(Array<CIMKeyBinding>&);
-	virtual Boolean validateKey(CIMKeyBinding&) const;
-	virtual void setScope(CIMName);
-
-	virtual Boolean getService(CIMProperty&) const;
-	virtual CIMInstance getService() const;
-	virtual Boolean getProcess(CIMProperty&) const;
-	virtual CIMInstance getProcess() const;
-	virtual Boolean getExecutionType(CIMProperty&) const;
-	virtual Uint16 getExecutionType() const;
-
-private:
-	CIMName currentScope;
-
-#	include "UNIX_ServiceProcessPrivate.h"
+      [Description ( 
+          "Indicates whether a directory or file is presented for "
+          "use (or shared) across systems. A value of true "
+          "represents a directory. A value of false represents a "
+          "file." )]
+   boolean SharingDirectory;
 
 
 };
-
-#endif /* UNIX_SERVICEPROCESS */
