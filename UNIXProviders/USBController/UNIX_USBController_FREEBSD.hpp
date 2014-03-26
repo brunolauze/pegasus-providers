@@ -29,7 +29,6 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
-
 UNIX_USBController::UNIX_USBController(void)
 {
 }
@@ -47,7 +46,7 @@ Boolean UNIX_USBController::getInstanceID(CIMProperty &p) const
 
 String UNIX_USBController::getInstanceID() const
 {
-	return String ("");
+	return String (items->desc);
 }
 
 Boolean UNIX_USBController::getCaption(CIMProperty &p) const
@@ -58,7 +57,7 @@ Boolean UNIX_USBController::getCaption(CIMProperty &p) const
 
 String UNIX_USBController::getCaption() const
 {
-	return String ("");
+	return String (items->desc);
 }
 
 Boolean UNIX_USBController::getDescription(CIMProperty &p) const
@@ -113,7 +112,7 @@ Boolean UNIX_USBController::getName(CIMProperty &p) const
 
 String UNIX_USBController::getName() const
 {
-	return String ("");
+	return String (items->desc);
 }
 
 Boolean UNIX_USBController::getOperationalStatus(CIMProperty &p) const
@@ -599,17 +598,26 @@ Uint16 UNIX_USBController::getControllerVersion() const
 
 Boolean UNIX_USBController::initialize()
 {
-	return false;
+	PCIConf pcic;
+	items = NULL;
+	items = pcic.list_devs("USB", items);
+	return true;
 }
 
 Boolean UNIX_USBController::load(int &pIndex)
 {
+	if (pIndex > 0) items = items->next;
+	if (items != NULL)
+	{
+		return true;
+	}
 	return false;
 }
 
 Boolean UNIX_USBController::finalize()
 {
-	return false;
+	free(items);
+	return true;
 }
 
 Boolean UNIX_USBController::find(Array<CIMKeyBinding> &kbArray)

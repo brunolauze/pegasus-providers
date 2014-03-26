@@ -2,13 +2,16 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="tests/UNIXProviders.Tests/main.cpp">
     <Files>
-      <File FileName="UNIXProviders/CIMHelper.cpp" Line="378" Column="22" />
-      <File FileName="UNIXProviders/CIMHelper.h" Line="84" Column="38" />
-      <File FileName="UNIXProviders/SystemAdministrator/UNIX_SystemAdministrator_FREEBSD.hpp" Line="110" Column="20" />
-      <File FileName="UNIXProviders/SystemAdministrator/UNIX_SystemAdministratorProvider.cpp" Line="96" Column="39" />
-      <File FileName="UNIXProviders/SystemAdministrator/UNIX_SystemAdministratorProvider.h" Line="39" Column="39" />
-      <File FileName="UNIXProviders/SystemAdministrator/UNIX_SystemAdministratorPrivate_FREEBSD.h" Line="3" Column="22" />
-      <File FileName="tests/UNIXProviders.Tests/main.cpp" Line="984" Column="1" />
+      <File FileName="UNIXProviders/USBController/Makefile" Line="44" Column="12" />
+      <File FileName="UNIXProviders/SCSIController/Makefile" Line="50" Column="2" />
+      <File FileName="UNIXProviders/USBController/UNIX_USBControllerPrivate_FREEBSD.h" Line="3" Column="2" />
+      <File FileName="UNIXProviders/SCSIController/UNIX_SCSIControllerProvider.cpp" Line="123" Column="108" />
+      <File FileName="UNIXProviders/SCSIController/UNIX_SCSIControllerPrivate_FREEBSD.h" Line="3" Column="30" />
+      <File FileName="UNIXProviders/USBController/UNIX_USBControllerDeps_FREEBSD.h" Line="3" Column="1" />
+      <File FileName="UNIXProviders/SCSIController/UNIX_SCSIControllerDeps_FREEBSD.h" Line="3" Column="47" />
+      <File FileName="UNIXProviders/USBController/UNIX_USBController_FREEBSD.hpp" Line="601" Column="2" />
+      <File FileName="UNIXProviders/SCSIController/UNIX_SCSIController_FREEBSD.hpp" Line="628" Column="15" />
+      <File FileName="tests/UNIXProviders.Tests/main.cpp" Line="1975" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

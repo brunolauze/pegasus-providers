@@ -43,7 +43,7 @@ UNIX_USBControllerProvider::~UNIX_USBControllerProvider()
 CIMInstance UNIX_USBControllerProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_USBController &_p)
+	const UNIX_USBController &_p) const
 {
 	CIMProperty p;
 
@@ -118,7 +118,7 @@ CIMInstance UNIX_USBControllerProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_USBControllerProvider::constructKeyBindings(const UNIX_USBController& _p)
+Array<CIMKeyBinding> UNIX_USBControllerProvider::constructKeyBindings(const UNIX_USBController& _p) const
 
 {
 

@@ -47,7 +47,7 @@ Boolean UNIX_SCSIController::getInstanceID(CIMProperty &p) const
 
 String UNIX_SCSIController::getInstanceID() const
 {
-	return String ("");
+	return String (items->desc);
 }
 
 Boolean UNIX_SCSIController::getCaption(CIMProperty &p) const
@@ -58,7 +58,7 @@ Boolean UNIX_SCSIController::getCaption(CIMProperty &p) const
 
 String UNIX_SCSIController::getCaption() const
 {
-	return String ("");
+	return String (items->desc);
 }
 
 Boolean UNIX_SCSIController::getDescription(CIMProperty &p) const
@@ -113,7 +113,7 @@ Boolean UNIX_SCSIController::getName(CIMProperty &p) const
 
 String UNIX_SCSIController::getName() const
 {
-	return String ("");
+	return String (items->desc);
 }
 
 Boolean UNIX_SCSIController::getOperationalStatus(CIMProperty &p) const
@@ -625,17 +625,26 @@ Array<Uint16> UNIX_SCSIController::getSignalCapabilities() const
 
 Boolean UNIX_SCSIController::initialize()
 {
-	return false;
+	PCIConf pcic;
+	items = NULL;
+	items = pcic.list_devs("SCSI", items);
+	return true;
 }
 
 Boolean UNIX_SCSIController::load(int &pIndex)
 {
+	if (pIndex > 0) items = items->next;
+	if (items != NULL)
+	{
+		return true;
+	}
 	return false;
 }
 
 Boolean UNIX_SCSIController::finalize()
 {
-	return false;
+	free(items);
+	return true;
 }
 
 Boolean UNIX_SCSIController::find(Array<CIMKeyBinding> &kbArray)

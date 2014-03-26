@@ -871,7 +871,7 @@
 //#include "UNIX_SchedulerUsedFixture.h"
 //#include "UNIX_SchedulingServiceToScheduleFixture.h"
 //#include "UNIX_ScopedSettingFixture.h"
-//#include "UNIX_SCSIControllerFixture.h"
+#include "UNIX_SCSIControllerFixture.h"
 //#include "UNIX_SCSIInitiatorTargetLogicalUnitPathFixture.h"
 //#include "UNIX_SCSIInterfaceFixture.h"
 //#include "UNIX_SCSIMultipathConfigurationCapabilitiesFixture.h"
@@ -1034,7 +1034,7 @@
 //#include "UNIX_UnsignedCredentialFixture.h"
 //#include "UNIX_UnsignedPublicKeyFixture.h"
 //#include "UNIX_USBConnectionFixture.h"
-//#include "UNIX_USBControllerFixture.h"
+#include "UNIX_USBControllerFixture.h"
 //#include "UNIX_USBControllerHasHubFixture.h"
 //#include "UNIX_USBDeviceFixture.h"
 //#include "UNIX_USBHubFixture.h"
@@ -1972,7 +1972,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_SchedulerUsed")) { UNIX_SchedulerUsedFixture schedulerUsed; schedulerUsed.Run(); }
 	//if (IsTarget(s, "UNIX_SchedulingServiceToSchedule")) { UNIX_SchedulingServiceToScheduleFixture schedulingServiceToSchedule; schedulingServiceToSchedule.Run(); }
 	//if (IsTarget(s, "UNIX_ScopedSetting")) { UNIX_ScopedSettingFixture scopedSetting; scopedSetting.Run(); }
-	//if (IsTarget(s, "UNIX_SCSIController")) { UNIX_SCSIControllerFixture sCSIController; sCSIController.Run(); }
+	if (IsTarget(s, "UNIX_SCSIController")) { UNIX_SCSIControllerFixture sCSIController; sCSIController.Run(); }
 	//if (IsTarget(s, "UNIX_SCSIInitiatorTargetLogicalUnitPath")) { UNIX_SCSIInitiatorTargetLogicalUnitPathFixture sCSIInitiatorTargetLogicalUnitPath; sCSIInitiatorTargetLogicalUnitPath.Run(); }
 	//if (IsTarget(s, "UNIX_SCSIInterface")) { UNIX_SCSIInterfaceFixture sCSIInterface; sCSIInterface.Run(); }
 	//if (IsTarget(s, "UNIX_SCSIMultipathConfigurationCapabilities")) { UNIX_SCSIMultipathConfigurationCapabilitiesFixture sCSIMultipathConfigurationCapabilities; sCSIMultipathConfigurationCapabilities.Run(); }
@@ -2135,7 +2135,7 @@ int main (int argc, char *argv[])
 	//if (IsTarget(s, "UNIX_UnsignedCredential")) { UNIX_UnsignedCredentialFixture unsignedCredential; unsignedCredential.Run(); }
 	//if (IsTarget(s, "UNIX_UnsignedPublicKey")) { UNIX_UnsignedPublicKeyFixture unsignedPublicKey; unsignedPublicKey.Run(); }
 	//if (IsTarget(s, "UNIX_USBConnection")) { UNIX_USBConnectionFixture uSBConnection; uSBConnection.Run(); }
-	//if (IsTarget(s, "UNIX_USBController")) { UNIX_USBControllerFixture uSBController; uSBController.Run(); }
+	if (IsTarget(s, "UNIX_USBController")) { UNIX_USBControllerFixture uSBController; uSBController.Run(); }
 	//if (IsTarget(s, "UNIX_USBControllerHasHub")) { UNIX_USBControllerHasHubFixture uSBControllerHasHub; uSBControllerHasHub.Run(); }
 	//if (IsTarget(s, "UNIX_USBDevice")) { UNIX_USBDeviceFixture uSBDevice; uSBDevice.Run(); }
 	//if (IsTarget(s, "UNIX_USBHub")) { UNIX_USBHubFixture uSBHub; uSBHub.Run(); }

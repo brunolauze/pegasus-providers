@@ -43,7 +43,7 @@ UNIX_SCSIControllerProvider::~UNIX_SCSIControllerProvider()
 CIMInstance UNIX_SCSIControllerProvider::constructInstance(
 	const CIMName &className,
 	const CIMNamespaceName &nameSpace,
-	const UNIX_SCSIController &_p)
+	const UNIX_SCSIController &_p) const
 {
 	CIMProperty p;
 
@@ -120,7 +120,7 @@ CIMInstance UNIX_SCSIControllerProvider::constructInstance(
 	return inst;
 }
 
-Array<CIMKeyBinding> UNIX_SCSIControllerProvider::constructKeyBindings(const UNIX_SCSIController& _p)
+Array<CIMKeyBinding> UNIX_SCSIControllerProvider::constructKeyBindings(const UNIX_SCSIController& _p) const
 
 {
 

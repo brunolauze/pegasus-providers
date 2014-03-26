@@ -45,7 +45,8 @@ SOURCES = \
 	../CIMHelper.cpp \
 	UNIX_USBControllerMain.cpp \
 	UNIX_USBController.cpp \
-	UNIX_USBControllerProvider.cpp
+	UNIX_USBControllerProvider.cpp \
+	../External/pciconf/pciconf_FREEBSD.cpp
 
 ifeq ($(OS), aix)
 	SOURCES += UNIX_USBController_AIX.cpp

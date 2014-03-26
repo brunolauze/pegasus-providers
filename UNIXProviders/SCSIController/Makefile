@@ -45,7 +45,8 @@ SOURCES = \
 	../CIMHelper.cpp \
 	UNIX_SCSIControllerMain.cpp \
 	UNIX_SCSIController.cpp \
-	UNIX_SCSIControllerProvider.cpp
+	UNIX_SCSIControllerProvider.cpp \
+	../_External/pciconf/pciconf_FREEBSD.cpp
 
 ifeq ($(OS), aix)
 	SOURCES += UNIX_SCSIController_AIX.cpp
