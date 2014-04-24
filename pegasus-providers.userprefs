@@ -1,17 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="tests/UNIXProviders.Tests/main.cpp">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UNIXProviders/UNIX_Common.h">
     <Files>
-      <File FileName="UNIXProviders/USBController/Makefile" Line="44" Column="12" />
-      <File FileName="UNIXProviders/SCSIController/Makefile" Line="50" Column="2" />
-      <File FileName="UNIXProviders/USBController/UNIX_USBControllerPrivate_FREEBSD.h" Line="3" Column="2" />
-      <File FileName="UNIXProviders/SCSIController/UNIX_SCSIControllerProvider.cpp" Line="123" Column="108" />
-      <File FileName="UNIXProviders/SCSIController/UNIX_SCSIControllerPrivate_FREEBSD.h" Line="3" Column="30" />
-      <File FileName="UNIXProviders/USBController/UNIX_USBControllerDeps_FREEBSD.h" Line="3" Column="1" />
-      <File FileName="UNIXProviders/SCSIController/UNIX_SCSIControllerDeps_FREEBSD.h" Line="3" Column="47" />
-      <File FileName="UNIXProviders/USBController/UNIX_USBController_FREEBSD.hpp" Line="601" Column="2" />
-      <File FileName="UNIXProviders/SCSIController/UNIX_SCSIController_FREEBSD.hpp" Line="628" Column="15" />
+      <File FileName="UNIXProviders/USBController/Makefile" Line="1" Column="1" />
+      <File FileName="UNIXProviders/SCSIController/Makefile" Line="1" Column="1" />
+      <File FileName="UNIXProviders/USBController/UNIX_USBControllerPrivate_FREEBSD.h" Line="1" Column="1" />
+      <File FileName="UNIXProviders/SCSIController/UNIX_SCSIControllerProvider.cpp" Line="1" Column="1" />
+      <File FileName="UNIXProviders/SCSIController/UNIX_SCSIControllerPrivate_FREEBSD.h" Line="1" Column="1" />
+      <File FileName="UNIXProviders/USBController/UNIX_USBControllerDeps_FREEBSD.h" Line="1" Column="1" />
+      <File FileName="UNIXProviders/SCSIController/UNIX_SCSIControllerDeps_FREEBSD.h" Line="1" Column="1" />
+      <File FileName="UNIXProviders/USBController/UNIX_USBController_FREEBSD.hpp" Line="1" Column="1" />
+      <File FileName="UNIXProviders/SCSIController/UNIX_SCSIController_FREEBSD.hpp" Line="1" Column="1" />
       <File FileName="tests/UNIXProviders.Tests/main.cpp" Line="1975" Column="38" />
+      <File FileName="UNIXProviders/UNIX_Common.h" Line="36" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

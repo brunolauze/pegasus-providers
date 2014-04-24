@@ -39,8 +39,6 @@
 #include <net/if_types.h>
 
 #include <netinet/in.h>
-#include <netipx/ipx.h>
-#include <netatalk/at.h>
 #include <netgraph/ng_socket.h>
 #include <arpa/inet.h>
 #include <libutil.h>
