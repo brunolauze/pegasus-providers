@@ -29,7 +29,7 @@
 //
 //%/////////////////////////////////////////////////////////////////////////
 
-#include <Pegasus/Common/System.h>
+//#include <Pegasus/Common/System.h>
 
 UNIX_RebootAction::UNIX_RebootAction(void)
 {
@@ -216,10 +216,6 @@ Boolean UNIX_RebootAction::find(Array<CIMKeyBinding> &kbArray)
 
 Uint32 UNIX_RebootAction::reboot() const
 {
-	if (System::getEffectiveUserName() == "root")
-	{
-		system("reboot");
-		return Uint32(0);
-	}
-	return Uint32(1);
+	system("sudo /sbin/reboot");
+	return Uint32(0);
 }

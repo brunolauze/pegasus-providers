@@ -32,9 +32,8 @@
 #ifndef __CIM_HELPER_H
 #include "CIMHelper.h"
 #endif
-
-#include <Pegasus/Common/Config.h>
 #include <Pegasus/Common/MessageLoader.h>
+#include <Pegasus/Common/Config.h>
 #include <Pegasus/Provider/CIMInstanceQueryProvider.h>
 #include <Pegasus/Provider/CIMMethodProvider.h>
 #include <Pegasus/Common/String.h>
